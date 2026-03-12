@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Tres Puntos — Agencia UX/UI Barcelona</title>
+  <meta name="description" content="Contacta con Tres Puntos. Solicita información sobre nuestros servicios de UX/UI, desarrollo web y arquitectura digital en Barcelona." />
+
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/contacto/" />
+  <meta property="og:title" content="Contacto | Tres Puntos — Agencia UX/UI y Arquitectura Digital" />
+  <meta property="og:description"
+    content="Agencia de UX/UI y arquitectura digital en Barcelona. Especialistas en conversion y escalabilidad técnica." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/contacto" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tres Puntos Comunicación",
+      "description": "Agencia de UX/UI y arquitectura digital en Barcelona",
+      "url": "https://www.trespuntoscomunicacion.es",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barcelona",
+        "addressCountry": "ES"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "availableLanguage": ["es", "en"]
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ CONTACT PAGE: Animated Split Layout ═══ */
+
+    .contact-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 80px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── Left: Creative Side ── */
+    .contact-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem 0;
+      z-index: 2;
+    }
+
+    .contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 0.6s 0.2s forwards;
+    }
+
+    .contact-badge .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--mint);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    .contact-title {
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      font-family: var(--font-heading);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeSlideUp 0.7s 0.35s forwards;
+    }
+
+    .contact-title .text-mint {
+      color: var(--mint);
+      position: relative;
+      display: inline-block;
+    }
+
+    .contact-title .text-mint::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--mint);
+      border-radius: 2px;
+      animation: lineGrow 0.8s 1s forwards;
+    }
+
+    .contact-subtitle {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 0.6s 0.5s forwards;
+    }
+
+    /* Contact info inline */
+    .contact-info-inline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 0.6s 0.65s forwards;
+    }
+
+    .contact-info-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      background: rgba(93, 255, 191, 0.04);
+      border: 1px solid rgba(93, 255, 191, 0.08);
+      border-radius: var(--radius-lg);
+      transition: all 0.3s ease;
+    }
+
+    .contact-info-row:hover {
+      border-color: rgba(93, 255, 191, 0.25);
+      background: rgba(93, 255, 191, 0.06);
+      transform: translateX(6px);
+    }
+
+    .contact-info-row svg {
+      flex-shrink: 0;
+      color: var(--mint);
+      opacity: 0.7;
+    }
+
+    .contact-info-row .info-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-right: 0.5rem;
+    }
+
+    .contact-info-row .info-value {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .contact-info-row a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-info-row a:hover {
+      color: var(--mint);
+    }
+
+    /* ── Right: Form Side ── */
+    .contact-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 0 3rem 3rem;
+      z-index: 2;
+    }
+
+    .contact-form-wrap {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .contact-form-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-base);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px) scale(0.98);
+      animation: formAppear 0.8s 0.4s forwards;
+    }
+
+    .contact-form-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--mint), rgba(93, 255, 191, 0.2), transparent);
+    }
+
+    .form-card-header {
+      margin-bottom: 1.75rem;
+    }
+
+    .form-card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-card-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Background Animations ── */
+    #contact-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .mouse-glow {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(93, 255, 191, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      transition: left 0.3s ease-out, top 0.3s ease-out;
+      will-change: left, top;
+    }
+
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(93, 255, 191, 0.07) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse 60% 50% at 30% 50%, black 0%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 60% 50% at 30% 50%, black 0%, transparent 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Floating orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .orb-1 {
+      width: 250px;
+      height: 250px;
+      top: 10%;
+      left: -5%;
+      background: radial-gradient(circle, rgba(93, 255, 191, 0.08) 0%, transparent 70%);
+      animation: orbFloat1 8s ease-in-out infinite;
+    }
+
+    .orb-2 {
+      width: 180px;
+      height: 180px;
+      bottom: 20%;
+      left: 25%;
+      background: radial-gradient(circle, rgba(78, 165, 255, 0.06) 0%, transparent 70%);
+      animation: orbFloat2 10s ease-in-out infinite;
+    }
+
+    .orb-3 {
+      width: 300px;
+      height: 300px;
+      top: 5%;
+      right: -10%;
+      background: radial-gradient(circle, rgba(192, 132, 252, 0.04) 0%, transparent 70%);
+      animation: orbFloat1 12s ease-in-out infinite reverse;
+    }
+
+    /* Animated connecting lines */
+    .connect-lines {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .connect-line {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(93, 255, 191, 0.15), transparent);
+      animation: lineSweep 6s linear infinite;
+    }
+
+    .connect-line:nth-child(1) { top: 20%; width: 40%; left: 5%; animation-delay: 0s; }
+    .connect-line:nth-child(2) { top: 45%; width: 35%; left: 10%; animation-delay: 2s; }
+    .connect-line:nth-child(3) { top: 70%; width: 45%; left: 0; animation-delay: 4s; }
+    .connect-line:nth-child(4) { top: 85%; width: 30%; left: 15%; animation-delay: 1s; }
+
+    /* ── Bottom Section: compact info ── */
+    .contact-bottom {
+      padding: 3rem 0 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-bottom-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border-base);
+    }
+
+    .contact-bottom-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-bottom-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(93, 255, 191, 0.06);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: var(--radius-md);
+      color: var(--mint);
+    }
+
+    .contact-bottom-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-bottom-value {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ── Keyframes ── */
+    @keyframes fadeSlideUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes formAppear {
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.5); }
+    }
+
+    @keyframes lineGrow {
+      to { width: 100%; }
+    }
+
+    @keyframes orbFloat1 {
+      0%, 100% { transform: translate(0, 0); }
+      33% { transform: translate(15px, -20px); }
+      66% { transform: translate(-10px, 15px); }
+    }
+
+    @keyframes orbFloat2 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-20px, -25px); }
+    }
+
+    @keyframes lineSweep {
+      0% { opacity: 0; transform: translateX(-100%); }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; transform: translateX(250%); }
+    }
+
+    @keyframes particleDrift {
+      0% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+    }
+
+    /* ── Form Validation UX ── */
+    .field-error {
+      display: block;
+      font-size: 0.75rem;
+      color: #f87171;
+      margin-top: 0.35rem;
+      min-height: 0;
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: opacity 0.25s ease, transform 0.25s ease, min-height 0.25s ease;
+    }
+
+    .field-error.visible {
+      opacity: 1;
+      transform: translateY(0);
+      min-height: 1.1rem;
+    }
+
+    .input.input-error {
+      border-color: #f87171 !important;
+      box-shadow: 0 0 0 3px rgba(248, 113, 113, .08) !important;
+    }
+
+    .input.input-valid {
+      border-color: rgba(93, 255, 191, .35);
+      box-shadow: 0 0 0 3px rgba(93, 255, 191, .06);
+    }
+
+    .custom-select.select-error .custom-select-trigger {
+      border-color: #f87171 !important;
+      box-shadow: 0 0 0 3px rgba(248, 113, 113, .08) !important;
+    }
+
+    .checkbox-row.checkbox-error {
+      outline: 1px solid #f87171;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .btn-disabled {
+      opacity: 0.45 !important;
+      cursor: not-allowed !important;
+      pointer-events: auto !important;
+      filter: grayscale(0.3);
+      transition: opacity 0.3s ease, filter 0.3s ease;
+    }
+
+    .btn-disabled:hover {
+      opacity: 0.55 !important;
+    }
+
+    .btn-enabled {
+      opacity: 1 !important;
+      cursor: pointer !important;
+      filter: none;
+    }
+
+    @keyframes shakeField {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-6px); }
+      40% { transform: translateX(5px); }
+      60% { transform: translateX(-4px); }
+      80% { transform: translateX(3px); }
+    }
+
+    .shake {
+      animation: shakeField 0.45s ease-in-out;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .contact-split {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .contact-left {
+        padding: 3rem 0 2rem;
+        text-align: center;
+        align-items: center;
+      }
+
+      .contact-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .contact-info-inline {
+        align-items: center;
+      }
+
+      .contact-right {
+        padding: 0 0 3rem;
+        justify-content: center;
+      }
+
+      .contact-form-wrap {
+        max-width: 100%;
+      }
+
+      .grid-overlay {
+        mask-image: radial-gradient(ellipse 80% 40% at 50% 30%, black 0%, transparent 100%);
+        -webkit-mask-image: radial-gradient(ellipse 80% 40% at 50% 30%, black 0%, transparent 100%);
+      }
+
+      .connect-lines { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .contact-title {
+        font-size: 2.2rem;
+      }
+
+      .contact-form-card {
+        padding: 1.75rem;
+      }
+
+      .contact-bottom-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .orb-1, .orb-2, .orb-3 { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar placeholder -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ HERO SPLIT ============ -->
+  <section class="contact-split" aria-label="Contacto">
+    <!-- Background animations -->
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="orb orb-3" aria-hidden="true"></div>
+    <canvas id="contact-canvas" aria-hidden="true"></canvas>
+    <div class="mouse-glow" id="mouse-glow" aria-hidden="true"></div>
+
+    <div class="connect-lines" aria-hidden="true">
+      <div class="connect-line"></div>
+      <div class="connect-line"></div>
+      <div class="connect-line"></div>
+      <div class="connect-line"></div>
+    </div>
+
+    <!-- Left: Creative copy -->
+    <div class="contact-left">
+      <div class="container-main">
+        <div class="contact-badge section-badge">
+          <span class="badge-dot"></span>
+          Contacto
+        </div>
+
+        <h1 class="contact-title">
+          Hablemos de tu<br/>
+          <span class="text-mint">próximo proyecto</span>
+        </h1>
+
+        <p class="contact-subtitle">
+          Cada conversación empieza con una idea. Nosotros la transformamos en una experiencia digital que convierte.
+        </p>
+
+        <div class="contact-info-inline">
+          <div class="contact-info-row">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="info-label">BCN</span>
+            <span class="info-value">Paseig de Sant Joan, 7 · 08010</span>
+          </div>
+          <div class="contact-info-row">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span class="info-label">Tel</span>
+            <a href="tel:+34932176017" class="info-value">+34 932 17 60 17</a>
+          </div>
+          <div class="contact-info-row">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 4-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 4"/></svg>
+            <span class="info-label">Email</span>
+            <a href="mailto:hola@trespuntos.es" class="info-value">hola@trespuntos.es</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="contact-right">
+      <div class="contact-form-wrap">
+        <div class="contact-form-card">
+          <div class="form-card-header">
+            <div class="form-card-title">Cuéntanos tu proyecto</div>
+            <div class="form-card-sub">Respuesta en menos de 48h laborables</div>
+          </div>
+
+          <form>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-nombre">Nombre</label>
+                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" required />
+                <span class="field-error" id="err-nombre"></span>
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="f-email">Email</label>
+                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
+                <span class="field-error" id="err-email"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-tel">Teléfono</label>
+                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" required minlength="9" />
+                <span class="field-error" id="err-tel"></span>
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
+                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false"
+                  aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
+                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Rango aproximado</div>
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                  </div>
+                </div>
+                <input type="hidden" id="f-presupuesto" name="budget" value="" />
+                <span class="field-error" id="err-presupuesto"></span>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
+              <textarea id="f-mensaje" class="input" rows="3"
+                placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
+            </div>
+
+            <label class="checkbox-row" id="privacy-row" for="f-privacidad">
+              <input type="checkbox" id="f-privacidad" required />
+              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
+                  Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+            </label>
+            <span class="field-error" id="err-privacidad"></span>
+
+            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn btn-disabled"
+              style="width:100%;justify-content:center;">
+              Enviar mensaje
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <p class="form-note">Sin compromiso. Respuesta en menos de 24h.</p>
+
+            <div class="form-divider" style="display:flex;align-items:center;gap:1rem;margin:1.25rem 0;">
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+              <span style="font-size:0.8rem;color:var(--text-muted);">O si prefieres ir al detalle</span>
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+            </div>
+
+            <a href="/iniciar-proyecto" class="btn-secondary" style="width:100%;justify-content:center;">
+              Formulario completo (Presupuesto en 48h)
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOTTOM INFO BAR ============ -->
+  <section class="contact-bottom" aria-label="Información de contacto">
+    <div class="container-main">
+      <div class="contact-bottom-grid reveal">
+        <div class="contact-bottom-item">
+          <div class="contact-bottom-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <div class="contact-bottom-label">Horario</div>
+            <div class="contact-bottom-value">L–V 09:00–18:00 CET</div>
+          </div>
+        </div>
+        <div class="contact-bottom-item">
+          <div class="contact-bottom-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-bottom-label">Ubicación</div>
+            <div class="contact-bottom-value">Barcelona, España</div>
+          </div>
+        </div>
+        <div class="contact-bottom-item">
+          <div class="contact-bottom-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="contact-bottom-label">Garantía</div>
+            <div class="contact-bottom-value">+50 proyectos · 5.0/5 Google</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS (TP.testimonios) ============ -->
+  <div id="tp-testimonios"></div>
+
+  <!-- Footer placeholder -->
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    TP.navbar('contacto');
+    TP.testimonios();
+    TP.footer();
+    TP.initJS();
+  </script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js" defer></script>
+
+  <!-- Form validation UX -->
+  <script>
+    (function () {
+      'use strict';
+
+      var btn = document.getElementById('form-submit-btn');
+      if (!btn) return;
+
+      var fields = {
+        nombre: { el: document.getElementById('f-nombre'), err: document.getElementById('err-nombre') },
+        email:  { el: document.getElementById('f-email'),  err: document.getElementById('err-email') },
+        tel:    { el: document.getElementById('f-tel'),     err: document.getElementById('err-tel') },
+        presupuesto: { el: document.getElementById('f-presupuesto'), err: document.getElementById('err-presupuesto') },
+        privacidad:  { el: document.getElementById('f-privacidad'),  err: document.getElementById('err-privacidad') }
+      };
+
+      var selectWrap = document.getElementById('cs-presupuesto');
+      var privacyRow = document.getElementById('privacy-row');
+      var userTriedSubmit = false;
+
+      // ── Validators ──
+      function validateNombre() {
+        var v = (fields.nombre.el.value || '').trim();
+        if (!v) return 'Introduce tu nombre';
+        if (v.length < 2) return 'El nombre debe tener al menos 2 caracteres';
+        return '';
+      }
+
+      function validateEmail() {
+        var v = (fields.email.el.value || '').trim();
+        if (!v) return 'Introduce tu email';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return 'Introduce un email válido';
+        return '';
+      }
+
+      function validateTel() {
+        var v = (fields.tel.el.value || '').replace(/[\s\-\(\)\+]/g, '');
+        if (!v) return 'Introduce tu teléfono';
+        if (v.length < 9) return 'El teléfono debe tener mínimo 9 dígitos';
+        if (!/^\d+$/.test(v)) return 'Solo dígitos, sin letras';
+        return '';
+      }
+
+      function validatePresupuesto() {
+        var v = (fields.presupuesto.el.value || '').trim();
+        if (!v) return 'Selecciona un rango de presupuesto';
+        return '';
+      }
+
+      function validatePrivacidad() {
+        if (!fields.privacidad.el.checked) return 'Debes aceptar la política de privacidad';
+        return '';
+      }
+
+      var validators = {
+        nombre: validateNombre,
+        email: validateEmail,
+        tel: validateTel,
+        presupuesto: validatePresupuesto,
+        privacidad: validatePrivacidad
+      };
+
+      // ── Show/hide errors ──
+      function showError(key, msg) {
+        var f = fields[key];
+        if (f.err) {
+          f.err.textContent = msg;
+          f.err.classList.toggle('visible', !!msg);
+        }
+        if (key === 'presupuesto') {
+          if (selectWrap) selectWrap.classList.toggle('select-error', !!msg);
+        } else if (key === 'privacidad') {
+          if (privacyRow) privacyRow.classList.toggle('checkbox-error', !!msg);
+        } else {
+          if (f.el) {
+            f.el.classList.toggle('input-error', !!msg);
+            f.el.classList.toggle('input-valid', !msg && (f.el.value || '').trim().length > 0);
+          }
+        }
+      }
+
+      // ── Check all fields ──
+      function checkAll(showErrors) {
+        var allValid = true;
+        var firstInvalid = null;
+        Object.keys(validators).forEach(function (key) {
+          var msg = validators[key]();
+          if (showErrors) showError(key, msg);
+          if (msg) {
+            allValid = false;
+            if (!firstInvalid) firstInvalid = key;
+          }
+        });
+        return { valid: allValid, firstInvalid: firstInvalid };
+      }
+
+      // ── Update button state ──
+      function updateBtn() {
+        var result = checkAll(false);
+        if (result.valid) {
+          btn.classList.remove('btn-disabled');
+          btn.classList.add('btn-enabled');
+          btn.dataset.formReady = 'true';
+        } else {
+          btn.classList.add('btn-disabled');
+          btn.classList.remove('btn-enabled');
+          btn.dataset.formReady = 'false';
+        }
+      }
+
+      // ── Real-time validation on input ──
+      ['nombre', 'email', 'tel'].forEach(function (key) {
+        fields[key].el.addEventListener('input', function () {
+          if (userTriedSubmit) {
+            var msg = validators[key]();
+            showError(key, msg);
+          }
+          updateBtn();
+        });
+
+        fields[key].el.addEventListener('blur', function () {
+          var v = (fields[key].el.value || '').trim();
+          if (v) {
+            var msg = validators[key]();
+            showError(key, msg);
+          }
+          updateBtn();
+        });
+      });
+
+      // Phone: only allow digits, spaces, dashes, parens, plus
+      fields.tel.el.addEventListener('input', function () {
+        this.value = this.value.replace(/[^0-9\s\-\(\)\+]/g, '');
+      });
+
+      // Listen to custom select changes
+      var selectObserver = new MutationObserver(function () {
+        if (userTriedSubmit) {
+          var msg = validators.presupuesto();
+          showError('presupuesto', msg);
+        }
+        updateBtn();
+      });
+      selectObserver.observe(fields.presupuesto.el, { attributes: true, attributeFilter: ['value'] });
+
+      // Listen for change event dispatched by custom select
+      fields.presupuesto.el.addEventListener('change', function () {
+        if (userTriedSubmit) {
+          showError('presupuesto', validators.presupuesto());
+        }
+        updateBtn();
+      });
+
+      // Also observe via click on options
+      document.querySelectorAll('#cs-presupuesto .custom-select-option').forEach(function (opt) {
+        opt.addEventListener('click', function () {
+          setTimeout(function () {
+            if (userTriedSubmit) {
+              showError('presupuesto', validators.presupuesto());
+            }
+            updateBtn();
+          }, 50);
+        });
+      });
+
+      // Privacy checkbox
+      fields.privacidad.el.addEventListener('change', function () {
+        if (userTriedSubmit) {
+          showError('privacidad', validators.privacidad());
+        }
+        updateBtn();
+      });
+
+      // ── Click on disabled button → show all errors + shake ──
+      btn.addEventListener('click', function (e) {
+        if (btn.classList.contains('btn-disabled')) {
+          e.preventDefault();
+          e.stopPropagation();
+          userTriedSubmit = true;
+
+          var result = checkAll(true);
+
+          // Shake invalid fields
+          Object.keys(validators).forEach(function (key) {
+            var msg = validators[key]();
+            if (msg) {
+              var target;
+              if (key === 'presupuesto') {
+                target = selectWrap;
+              } else if (key === 'privacidad') {
+                target = privacyRow;
+              } else {
+                target = fields[key].el;
+              }
+              if (target) {
+                target.classList.remove('shake');
+                void target.offsetWidth;
+                target.classList.add('shake');
+                setTimeout(function () { target.classList.remove('shake'); }, 500);
+              }
+            }
+          });
+
+          // Focus first invalid
+          if (result.firstInvalid) {
+            var fk = result.firstInvalid;
+            if (fk === 'presupuesto') {
+              var trigger = document.getElementById('cs-trigger');
+              if (trigger) trigger.focus();
+            } else if (fk === 'privacidad') {
+              fields.privacidad.el.focus();
+            } else {
+              fields[fk].el.focus();
+            }
+          }
+          return;
+        }
+        // If enabled, mark as tried and let supabase-forms.js handle the actual submit
+        userTriedSubmit = true;
+      });
+
+      // Initial state
+      updateBtn();
+    })();
+  </script>
+
+  <!-- Contact page animations -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ── Mouse glow follow ──
+      var glow = document.getElementById('mouse-glow');
+      if (glow && window.innerWidth > 768) {
+        document.addEventListener('mousemove', function (e) {
+          glow.style.left = e.clientX + 'px';
+          glow.style.top = e.clientY + 'px';
+        });
+      }
+
+      // ── Canvas particle system ──
+      var canvas = document.getElementById('contact-canvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var particles = [];
+      var mouseX = 0, mouseY = 0;
+      var dpr = window.devicePixelRatio || 1;
+
+      function resize() {
+        var rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        canvas.style.width = rect.width + 'px';
+        canvas.style.height = rect.height + 'px';
+        ctx.scale(dpr, dpr);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      // Track mouse relative to canvas
+      canvas.parentElement.addEventListener('mousemove', function (e) {
+        var rect = canvas.parentElement.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+      });
+
+      // Create particles
+      var PARTICLE_COUNT = 50;
+      for (var i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push({
+          x: Math.random() * (canvas.width / dpr),
+          y: Math.random() * (canvas.height / dpr),
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          size: Math.random() * 2 + 1,
+          alpha: Math.random() * 0.4 + 0.1
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
+        var w = canvas.width / dpr;
+        var h = canvas.height / dpr;
+
+        for (var i = 0; i < particles.length; i++) {
+          var p = particles[i];
+
+          // Mouse influence (gentle attraction)
+          var dx = mouseX - p.x;
+          var dy = mouseY - p.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 200 && dist > 0) {
+            var force = (200 - dist) / 200 * 0.01;
+            p.vx += dx / dist * force;
+            p.vy += dy / dist * force;
+          }
+
+          // Damping
+          p.vx *= 0.99;
+          p.vy *= 0.99;
+
+          p.x += p.vx;
+          p.y += p.vy;
+
+          // Wrap around
+          if (p.x < 0) p.x = w;
+          if (p.x > w) p.x = 0;
+          if (p.y < 0) p.y = h;
+          if (p.y > h) p.y = 0;
+
+          // Draw particle
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(93, 255, 191, ' + p.alpha + ')';
+          ctx.fill();
+
+          // Draw connections
+          for (var j = i + 1; j < particles.length; j++) {
+            var p2 = particles[j];
+            var d = Math.hypot(p.x - p2.x, p.y - p2.y);
+            if (d < 120) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = 'rgba(93, 255, 191, ' + (0.08 * (1 - d / 120)) + ')';
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      // Only run on desktop
+      if (window.innerWidth > 768) {
+        animate();
+      }
+    })();
+  </script>
+</body>
+
+</html>

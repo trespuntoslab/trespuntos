@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gracias | Tres Puntos</title>
+  <meta name="description" content="Hemos recibido tu mensaje. Te contactamos en menos de 48h." />
+  <meta name="robots" content="noindex, nofollow" />
+  
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/gracias/" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+
+  <style>
+    /* ─── GRACIAS PAGE ─── */
+    .gracias-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .gracias-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(93, 255, 191, .12);
+      border: 1.5px solid rgba(93, 255, 191, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      animation: popIn .5s cubic-bezier(.34, 1.56, .64, 1);
+    }
+
+    .gracias-icon svg {
+      width: 40px;
+      height: 40px;
+      color: var(--mint, #5dffbf);
+    }
+
+    .gracias-h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: .75rem;
+      color: var(--text-primary, #fff);
+    }
+
+    .gracias-p {
+      font-size: 1.1rem;
+      color: var(--text-secondary, #999);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+
+    /* ─── NEXT STEPS CARD ─── */
+    .next-step-card {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      max-width: 560px;
+      width: 100%;
+      margin: 0 auto 2rem;
+      text-align: left;
+      animation: fadeUp .6s ease .2s both;
+    }
+
+    .next-step-card__tag {
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--mint, #5dffbf);
+      margin-bottom: .75rem;
+    }
+
+    .next-step-card__title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary, #fff);
+      margin-bottom: .5rem;
+    }
+
+    .next-step-card__desc {
+      font-size: .95rem;
+      color: var(--text-secondary, #999);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .next-step-card__benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .next-step-card__benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: .5rem;
+      font-size: .9rem;
+      color: var(--text-secondary, #aaa);
+      line-height: 1.5;
+    }
+
+    .next-step-card__benefits li svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--mint, #5dffbf);
+    }
+
+    .btn-briefing {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .875rem 1.75rem;
+      background: var(--mint, #5dffbf);
+      color: #0a0a0a;
+      font-weight: 600;
+      font-size: .95rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .btn-briefing:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(93, 255, 191, .2);
+    }
+
+    .btn-briefing svg {
+      transition: transform .2s;
+    }
+
+    .btn-briefing:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* ─── SECONDARY LINK ─── */
+    .gracias-home {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .875rem;
+      color: var(--text-secondary, #666);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .gracias-home:hover {
+      color: var(--text-primary, #fff);
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes popIn {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ============ NAVBAR ============ -->
+  <div id="tp-navbar"></div>
+
+  <main class="gracias-wrap">
+
+    <!-- Success Icon -->
+    <div class="gracias-icon">
+      <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+
+    <h1 class="gracias-h1">Hemos recibido tu mensaje</h1>
+    <p class="gracias-p">
+      Nuestro equipo ya tiene tus datos y te contactaremos lo antes posible.
+      Mientras tanto, hay algo que puedes hacer para acelerar el proceso.
+    </p>
+
+    <!-- Next Step Card — CTA to briefing -->
+    <div class="next-step-card">
+      <div class="next-step-card__tag">Siguiente paso recomendado</div>
+      <div class="next-step-card__title">Presupuesto en 48h</div>
+      <div class="next-step-card__desc">
+        Completa nuestro briefing detallado y recibirás una propuesta personalizada
+        con documento funcional, arquitectura y presupuesto en menos de 48 horas.
+      </div>
+      <ul class="next-step-card__benefits">
+        <li>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+          </svg>
+          Documento funcional con arquitectura de tu proyecto
+        </li>
+        <li>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+          </svg>
+          Presupuesto detallado sin compromiso
+        </li>
+        <li>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+          </svg>
+          Tus datos ya pre-rellenados — solo 3 minutos
+        </li>
+      </ul>
+      <a href="/iniciar-proyecto" class="btn-briefing" id="btn-go-briefing">
+        Completar briefing
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+
+    <a href="/" class="gracias-home">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+      </svg>
+      Volver al inicio
+    </a>
+  </main>
+
+  <script src="/js/components.js" defer></script>
+  <script>TP.navbar();</script>
+  <script src="/js/main.js" defer></script>
+  <script>TP.initJS();</script>
+</body>
+
+</html>

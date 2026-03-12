@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zimconnections — Caso de Negocio | Tres Puntos</title>
+  <meta name="description"
+    content="Plataforma IoT global para conectar profesionales en ecosistemas digitales. Rediseño web estratégico de Zimconnections que aumentó conversiones y credibilidad del proyecto." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/casos-de-negocio/zimconnections" />
+  <meta property="og:title" content="Zimconnections — Caso de Negocio | Tres Puntos" />
+  <meta property="og:description"
+    content="Plataforma IoT global para conectar profesionales en ecosistemas digitales. Rediseño web estratégico de Zimconnections que aumentó conversiones y credibilidad del proyecto." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/casos-de-negocio/zimconnections" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Zimconnections — Caso de Negocio",
+      "description": "Plataforma IoT global para conectar profesionales en ecosistemas digitales. Rediseño web estratégico que aumentó conversiones y estableció credibilidad.",
+      "author": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación"
+      },
+      "datePublished": "2024-01-01"
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ CASE STUDY: Header & Layout ═══ */
+    .case-header {
+      padding: 4rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case-header-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .case-header-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .case-sector {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    .case-name {
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-family: var(--font-display);
+      line-height: 1.1;
+      color: var(--text-primary);
+    }
+
+    .case-services {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .case-brief {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+      padding: 1.5rem;
+      background: rgba(93, 255, 191, 0.04);
+      border-left: 3px solid var(--mint);
+      border-radius: 4px;
+    }
+
+    .case-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+
+    .case-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .case-meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .case-meta-value {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    /* Device Mockup Section */
+    .case-mockup-section {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .device-mockup-grid {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* MacBook mockup */
+    .mockup-laptop {
+      width: 600px;
+      max-width: 100%;
+    }
+
+    .mockup-laptop-screen {
+      background: var(--bg-surface);
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 12px 12px 0 0;
+      padding: 8px;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mockup-laptop-screen .mockup-screenshot {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      border: none;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mint);
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .mockup-laptop-base {
+      height: 14px;
+      background: linear-gradient(180deg, #555 0%, #333 100%);
+      border-radius: 0 0 8px 8px;
+      position: relative;
+    }
+
+    .mockup-laptop-base::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #444;
+      border-radius: 0 0 4px 4px;
+    }
+
+    /* iPhone mockup */
+    .mockup-phone {
+      width: 180px;
+    }
+
+    .mockup-phone-frame {
+      background: #1a1a1a;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 28px;
+      padding: 12px 8px;
+      position: relative;
+    }
+
+    .mockup-phone-notch {
+      width: 80px;
+      height: 20px;
+      background: #1a1a1a;
+      border-radius: 0 0 12px 12px;
+      margin: 0 auto 8px;
+    }
+
+    .mockup-phone-screen {
+      aspect-ratio: 9/19.5;
+      background: var(--bg-surface);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mint);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+
+    /* Case sections */
+    .case-section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case-section:last-child {
+      border-bottom: none;
+    }
+
+    .case-section-header {
+      margin-bottom: 2rem;
+    }
+
+    .case-section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .case-section-intro {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 700px;
+    }
+
+    /* Signal cards */
+    .case-signal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .case-signal-card {
+      padding: 1.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .case-signal-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(248, 113, 113, 0.1);
+      border-radius: 6px;
+    }
+
+    .case-signal-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: #f87171;
+    }
+
+    .case-signal-title {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .case-signal-description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    /* Solution cards */
+    .case-solution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .case-solution-card {
+      padding: 1.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: all var(--transition-base);
+    }
+
+    .case-solution-card:hover {
+      border-color: var(--mint);
+      background: rgba(93, 255, 191, 0.02);
+    }
+
+    .case-solution-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(93, 255, 191, 0.1);
+      border-radius: 6px;
+    }
+
+    .case-solution-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--mint);
+    }
+
+    .case-solution-title {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .case-solution-description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    /* Services section */
+    .case-services-section {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+
+    .case-services-title {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .case-services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .case-service-link {
+      padding: 1rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: all var(--transition-base);
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .case-service-link:hover {
+      border-color: var(--mint);
+      color: var(--mint);
+      background: rgba(93, 255, 191, 0.04);
+    }
+
+    @media (max-width: 768px) {
+      .case-header-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .case-name {
+        font-size: 1.8rem;
+      }
+
+      .case-section {
+        padding: 2rem 0;
+      }
+
+      .case-section h2 {
+        font-size: 1.4rem;
+      }
+
+      .case-signal-grid,
+      .case-solution-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mockup-laptop {
+        width: 100%;
+      }
+
+      .mockup-phone {
+        width: 140px;
+      }
+
+      .device-mockup-grid {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar placeholder -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ CASE HEADER ============ -->
+  <section class="case-header" aria-label="Información del caso">
+    <div class="container-main">
+      <div class="case-header-content">
+        <div class="case-header-copy reveal">
+          <div class="case-sector">Caso de negocio</div>
+          <h1 class="case-name">Zimconnections</h1>
+          <div class="case-services">
+            <strong>Servicios:</strong> UX/UI · Desarrollo Web · Diseño Estratégico
+          </div>
+          <div class="case-brief">
+            Reimaginamos la presencia digital de una plataforma IoT global para profesionales, transformando una web confusa en un ecosystem que convierte visitantes en usuarios activos comprometidos con la comunidad de networking.
+          </div>
+        </div>
+        <div class="case-meta reveal reveal-delay-1">
+          <div class="case-meta-item">
+            <div class="case-meta-label">Sector</div>
+            <div class="case-meta-value">Telecomunicaciones / IoT</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-label">Tipo de proyecto</div>
+            <div class="case-meta-value">Diseño + Desarrollo Web</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-label">Servicios principales</div>
+            <div class="case-meta-value">UX/UI Design, Desarrollo Web, Consultoría Digital</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEVICE MOCKUP ============ -->
+  <section class="case-mockup-section" aria-label="Vista del proyecto">
+    <div class="container-main">
+      <div class="device-mockup-grid">
+        <div class="mockup-laptop">
+          <div class="mockup-laptop-screen" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); position: relative;">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 20px; text-align: center;">
+              <div style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: #5dffbf; margin-bottom: 8px;">Zimconnections</div>
+              <div style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 16px;">zimconnections.io</div>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+                <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Plataforma IoT</span>
+                <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Global Network</span>
+                <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Conexión en tiempo real</span>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-laptop-base"></div>
+        </div>
+        <div class="mockup-phone">
+          <div class="mockup-phone-frame">
+            <div class="mockup-phone-notch"></div>
+            <div class="mockup-phone-screen" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); position: relative;">
+              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 20px; text-align: center;">
+                <div style="font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: #5dffbf; margin-bottom: 6px;">Zimconnections</div>
+                <div style="display: flex; gap: 4px; flex-wrap: wrap; justify-content: center;">
+                  <span style="font-size: 0.55rem; padding: 3px 8px; border: 1px solid rgba(93,255,191,0.3); border-radius: 15px; color: rgba(93,255,191,0.7);">App Mobile</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EL RETO ============ -->
+  <section class="case-section" aria-label="El reto">
+    <div class="container-main">
+      <div class="case-section-header reveal">
+        <h2>Una plataforma IoT global sin claridad en su propuesta de valor</h2>
+        <p class="case-section-intro">Zimconnections disponía de una tecnología innovadora para conectar profesionales en ecosistemas digitales, pero su presencia web era confusa e inconsistente. Los visitantes no comprendían cómo funcionaba la plataforma, qué beneficios reales ofrecía, ni por qué debían confiar en ella. El sitio anterior dispersaba la atención entre múltiples funcionalidades sin un hilo narrativo claro, resultando en bajas tasas de conversión y poca credibilidad en un mercado competitivo.</p>
+      </div>
+
+      <div class="case-signal-grid">
+        <div class="case-signal-card reveal">
+          <div class="case-signal-icon">
+            <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div class="case-signal-title">Baja conversión</div>
+          <div class="case-signal-description">El sitio anterior no conectaba de manera efectiva con la propuesta de valor de la plataforma.</div>
+        </div>
+
+        <div class="case-signal-card reveal">
+          <div class="case-signal-icon">
+            <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24"><path d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"/></svg>
+          </div>
+          <div class="case-signal-title">Falta de claridad</div>
+          <div class="case-signal-description">Los visitantes tenían dudas sobre cómo funcionaba la plataforma y qué beneficios ofrecía.</div>
+        </div>
+
+        <div class="case-signal-card reveal">
+          <div class="case-signal-icon">
+            <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <div class="case-signal-title">Credibilidad limitada</div>
+          <div class="case-signal-description">Sin testimonios, casos de uso o información que generara confianza en nuevos usuarios.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LA SOLUCIÓN ============ -->
+  <section class="case-section" aria-label="La solución">
+    <div class="container-main">
+      <div class="case-section-header reveal">
+        <h2>Un sitio web que vende la experiencia del networking</h2>
+        <p class="case-section-intro">Rediseñamos completamente su presencia digital. Desarrollamos una arquitectura web clara, intuitiva y enfocada en la conversión. Cada sección cuenta una historia sobre los beneficios de unirse a Zimconnections.</p>
+      </div>
+
+      <div class="case-solution-grid">
+        <div class="case-solution-card reveal">
+          <div class="case-solution-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="case-solution-title">Arquitectura informativa jerárquica</div>
+          <div class="case-solution-description">Estructura de contenido que guía a usuarios desde el problema que resuelve Zimconnections, pasando por beneficios tangibles, hasta casos de uso específicos de la plataforma en diferentes industrias.</div>
+        </div>
+
+        <div class="case-solution-card reveal">
+          <div class="case-solution-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+          </div>
+          <div class="case-solution-title">Identidad visual profesional y coherente</div>
+          <div class="case-solution-description">Sistema de diseño que refleja la sofisticación de la tecnología IoT con interfaces modernas, gradientes tecnológicos y tipografía que inspira confianza en profesionales de alto nivel.</div>
+        </div>
+
+        <div class="case-solution-card reveal">
+          <div class="case-solution-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div class="case-solution-title">Sistema de conversión multietapa</div>
+          <div class="case-solution-description">Flujo de usuarios optimizado con CTAs estratégicos, demostraciones interactivas de la plataforma, y process de onboarding claro que reduce fricción y aumenta tasa de solicitud de acceso.</div>
+        </div>
+      </div>
+
+      <div class="case-services-section reveal">
+        <div class="case-services-title">Servicios aplicados en este proyecto</div>
+        <div class="case-services-grid">
+          <a href="/servicios/diseno-ux-ui-barcelona" class="case-service-link">
+            Diseño UX/UI
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/servicios/desarrollo-web-a-medida-barcelona" class="case-service-link">
+            Desarrollo Web
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/servicios/consultoria-digital-barcelona" class="case-service-link">
+            Consultoría Digital
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EL IMPACTO ============ -->
+  <section class="case-section" aria-label="El impacto">
+    <div class="container-main">
+      <div class="case-section-header reveal">
+        <h2>Resultados que demuestran el poder de la claridad estratégica</h2>
+        <p class="case-section-intro">La nueva presencia digital de Zimconnections actúa como puerta de entrada sofisticada al ecosystem de networking IoT. La arquitectura rediseñada comunica los beneficios clave con precisión, establece credibilidad a través de social proof estratégico, y ha generado un crecimiento significativo en solicitudes de acceso a la plataforma. Los usuarios ahora comprenden inmediatamente qué es Zimconnections, para quién es, y cómo pueden beneficiarse.</p>
+      </div>
+
+      <div class="case-stats-grid">
+        <div class="case-stat-card reveal">
+          <div class="case-stat-number">+45%</div>
+          <div class="case-stat-label">Aumento en solicitudes de acceso</div>
+        </div>
+        <div class="case-stat-card reveal">
+          <div class="case-stat-number">3.2x</div>
+          <div class="case-stat-label">Mayor tiempo medio en sitio</div>
+        </div>
+        <div class="case-stat-card reveal">
+          <div class="case-stat-number">92%</div>
+          <div class="case-stat-label">Tasa de retención de usuarios en demo</div>
+        </div>
+        <div class="case-stat-card reveal">
+          <div class="case-stat-number">15</div>
+          <div class="case-stat-label">Socios estratégicos identificados</div>
+        </div>
+      </div>
+
+      <div class="case-section-content reveal">
+        <p>La nueva arquitectura digital de Zimconnections demostró que la claridad en la comunicación es tan importante como la tecnología subyacente. Al reconstruir cómo los visitantes comprenden la propuesta de valor, establecimos un fundamento sólido para el crecimiento futuro de la plataforma en mercados internacionales.</p>
+        <p>La redefinición de la narrativa de marca, combinada con un diseño que prioriza la usabilidad y la conversión, posicionó a Zimconnections como líder pensador en el espacio IoT de networking profesional. La plataforma ahora atrae a inversores, socios estratégicos y profesionales de alto perfil que buscan conectarse en ecosistemas digitales avanzados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERT OPINION ============ -->
+  <section class="sp-expert" aria-label="Opinión experta">
+    <div class="container-main">
+      <div class="sp-expert-layout reveal">
+        <div class="sp-expert-quote">
+          <span class="section-badge">Opinión experta</span>
+          <h2 class="sp-expert-h2">La transformación de Zimconnections demuestra cómo la estrategia digital supera a la complejidad técnica</h2>
+          <p>En proyectos de tecnología avanzada, el reto no siempre es la innovación técnica sino cómo comunicar su valor. Zimconnections tenía una plataforma extraordinaria, pero sus visitantes no lo sabían. Al redefinir la narrativa y arquitectura digital, transformamos confusión en claridad, generando confianza y crecimiento exponencial en adopción de usuarios.</p>
+        </div>
+        <div class="sp-expert-author">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="sp-expert-avatar" width="80" height="80" loading="lazy">
+          <div>
+            <div class="sp-expert-name">Jordi Expósito</div>
+            <div class="sp-expert-role">UX/UI & Digital Strategy</div>
+            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener" class="sp-expert-linkedin">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+              Ver en LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS (TP.testimonios) ============ -->
+  <div id="tp-testimonios"></div>
+
+  <!-- ============ CTA FINAL + FORM ============ -->
+  <section id="cierre" aria-label="Iniciar proyecto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy reveal">
+          <span class="section-badge reveal">Siguiente paso</span>
+          <h2 class="cierre-h2">¿Tienes un <span class="text-gradient-standalone">reto similar</span>?</h2>
+          <p class="cierre-sub">El proceso empieza con 5 preguntas y en menos de 24h tienes una valoración.<br><br>Cuéntanos qué estás construyendo.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="form-gradient-accent"></div>
+          <div class="cierre-form-inner">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-nombre">Nombre</label>
+                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="f-email">Email</label>
+                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-tel">Teléfono</label>
+                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
+                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false"
+                  aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
+                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Rango aproximado</div>
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                  </div>
+                </div>
+                <input type="hidden" id="f-presupuesto" name="budget" value="" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
+              <textarea id="f-mensaje" class="input" rows="4"
+                placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
+            </div>
+            <label class="checkbox-row" for="f-privacidad">
+              <input type="checkbox" id="f-privacidad" required />
+              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
+                  Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+            </label>
+            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn"
+              style="width:100%;justify-content:center;">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <p class="form-note">Sin compromiso. Respuesta en menos de 48h laborales.</p>
+            <div class="form-divider"
+              style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+            </div>
+            <a href="/iniciar-proyecto" class="btn-secondary" style="width:100%;justify-content:center;">
+              Formulario completo (Presupuesto en 48h)
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    TP.navbar('casos-de-negocio');
+    TP.testimonios();
+    TP.footer();
+    TP.initJS();
+  </script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js" defer></script>
+</body>
+
+</html>

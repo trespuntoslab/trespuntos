@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tu solución hipotecaria — Caso de Negocio | Tres Puntos</title>
+  <meta name="description" content="Plataforma Fintech de asesoría hipotecaria que cambia cómo las personas comprenden y contratan hipotecas. Rediseño digital que transformó la desconfianza en seguridad." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/casos-de-negocio/tusolucionhipotecaria" />
+  <meta property="og:title" content="Tu solución hipotecaria — Caso de Negocio | Tres Puntos" />
+  <meta property="og:description" content="Plataforma Fintech de asesoría hipotecaria que cambia cómo las personas comprenden y contratan hipotecas. Rediseño digital que transformó la desconfianza en seguridad." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/casos-de-negocio/tusolucionhipotecaria" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Tu solución hipotecaria",
+      "description": "Plataforma Fintech de asesoría hipotecaria. Rediseño digital que transformó cómo personas comprenden hipotecas.",
+      "author": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación"
+      },
+      "datePublished": "junio 3, 2019",
+      "dateModified": "2026-03-11"
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ CASE STUDY: Header & Layout ═══ */
+    .case-header {
+      padding: 4rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case-header-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .case-header-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .case-sector {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    .case-name {
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-family: var(--font-display);
+      line-height: 1.1;
+      color: var(--text-primary);
+    }
+
+    .case-services {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .case-brief {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+      padding: 1.5rem;
+      background: rgba(93, 255, 191, 0.04);
+      border-left: 3px solid var(--mint);
+      border-radius: 4px;
+    }
+
+    .case-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+
+    .case-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .case-meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .case-meta-value {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    /* Case Overview Grid */
+    .case-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .case-overview-item {
+      padding: 2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: all var(--transition-base);
+    }
+
+    .case-overview-item:hover {
+      border-color: var(--mint);
+      background: rgba(93, 255, 191, 0.02);
+    }
+
+    .case-overview-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    .case-overview-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+    }
+
+    /* Case sections */
+    .case-section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case-section:last-child {
+      border-bottom: none;
+    }
+
+    .case-section-header {
+      margin-bottom: 2rem;
+    }
+
+    .case-section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .case-section-intro {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 700px;
+    }
+
+    .case-section-content {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      max-width: 900px;
+      margin-top: 1.5rem;
+    }
+
+    .case-section-content p {
+      margin-bottom: 1rem;
+    }
+
+    .case-section-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Stats section */
+    .case-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .case-stat-card {
+      padding: 2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+
+    .case-stat-card:hover {
+      border-color: var(--mint);
+      background: rgba(93, 255, 191, 0.02);
+    }
+
+    .case-stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--mint);
+      margin-bottom: 0.5rem;
+    }
+
+    .case-stat-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    
+    /* ═══ DEVICE MOCKUPS (CSS-Only) ═══ */
+    .device-mockups-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      margin: 3rem 0;
+      align-items: center;
+    }
+
+    .device-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 500px;
+    }
+
+    /* MacBook Pro Frame */
+    .macbook-frame {
+      width: 100%;
+      max-width: 600px;
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      border-radius: 12px 12px 24px 24px;
+      padding: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .macbook-frame::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30%;
+      height: 8px;
+      background: linear-gradient(to bottom, #333, #222);
+      border-radius: 0 0 12px 12px;
+      z-index: 10;
+    }
+
+    .macbook-screen {
+      background: linear-gradient(135deg, #5dffbf 0%, #3dd5a6 100%);
+      border-radius: 8px;
+      padding: 0;
+      aspect-ratio: 16 / 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .macbook-screen iframe,
+    .macbook-screen img {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .macbook-keyboard {
+      height: 8px;
+      background: linear-gradient(to bottom, #333, #222);
+      border-radius: 0 0 8px 8px;
+      margin-top: 2px;
+    }
+
+    /* iPhone Frame */
+    .iphone-frame {
+      width: 100%;
+      max-width: 280px;
+      background: #000;
+      border-radius: 40px;
+      padding: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .iphone-frame::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 35%;
+      height: 28px;
+      background: #000;
+      border-radius: 0 0 24px 24px;
+      z-index: 20;
+    }
+
+    .iphone-screen {
+      background: linear-gradient(135deg, #5dffbf 0%, #3dd5a6 100%);
+      border-radius: 35px;
+      padding: 0;
+      aspect-ratio: 9 / 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .iphone-screen iframe,
+    .iphone-screen img {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* iPad Frame */
+    .ipad-frame {
+      width: 100%;
+      max-width: 500px;
+      background: #333;
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .ipad-frame::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 8px;
+      background: #111;
+      border-radius: 8px;
+    }
+
+    .ipad-screen {
+      background: linear-gradient(135deg, #5dffbf 0%, #3dd5a6 100%);
+      border-radius: 12px;
+      padding: 0;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .ipad-screen iframe,
+    .ipad-screen img {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .device-mockups-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .macbook-frame {
+        max-width: 100%;
+      }
+
+      .device-wrapper {
+        min-height: 300px;
+      }
+    }
+
+
+    @media (max-width: 768px) {
+      .case-header-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .case-name {
+        font-size: 1.8rem;
+      }
+
+      .case-section {
+        padding: 2rem 0;
+      }
+
+      .case-section h2 {
+        font-size: 1.4rem;
+      }
+
+      .case-overview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .device-mockups-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar placeholder -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ CASE HEADER ============ -->
+  <section class="case-header" aria-label="Información del caso">
+    <div class="container-main">
+      <div class="case-header-content">
+        <div class="case-header-copy reveal">
+          <div class="case-sector">Caso de negocio</div>
+          <h1 class="case-name">Tu solución hipotecaria</h1>
+          <div class="case-services">
+            <strong>Servicios:</strong> Desarrollo web, UI/UX
+          </div>
+          <div class="case-brief">
+            Redefinimos cómo personas comprenden hipotecas. Transformamos la desconfianza histórica en servicios financieros en empoderamiento a través de transparencia digital, educación accesible, y asesoría especializada que sitúa al usuario en el centro.
+          </div>
+        </div>
+        <div class="case-meta reveal reveal-delay-1">
+
+          <div class="case-meta-item">
+            <div class="case-meta-label">Cliente</div>
+            <div class="case-meta-value">gibobs</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-label">Industria</div>
+            <div class="case-meta-value">Fintech / Asesoría hipotecaria</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-label">Tecnología</div>
+            <div class="case-meta-value">Wordpress</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-label">Sitio web</div>
+            <div class="case-meta-value"><a href="https://tusolucionhipotecaria.com" target="_blank" rel="noopener" style="color: var(--mint); text-decoration: none;">tusolucionhipotecaria.com</a></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECT OVERVIEW ============ -->
+  <section class="case-section" aria-label="Descripción del proyecto">
+    <div class="container-main">
+      <div class="case-section-header reveal">
+        <h2>Descripción del proyecto</h2>
+      </div>
+
+      <div class="case-overview-grid">
+        <div class="case-overview-item reveal">
+          <div class="case-overview-label">Reto</div>
+          <div class="case-overview-text">Personas desconfían inherentemente del asesoramiento hipotecario, viéndolo como un sector opaco donde "alguien se beneficia a costa mío". El reto era reconstruir confianza demostrando que la transparencia radical y educación financiera accesible eran posibles, cambiando completamente la narrativa del mercado hipotecario.</div>
+        </div>
+        <div class="case-overview-item reveal">
+          <div class="case-overview-label">Estrategia</div>
+          <div class="case-overview-text">Educación financiera como diferenciador. Transparencia radical en cálculos y comisiones. Narrativa que celebra la decisión de compra como investidura en el futuro personal.</div>
+        </div>
+        <div class="case-overview-item reveal">
+          <div class="case-overview-label">Diseño</div>
+          <div class="case-overview-text">Calculadores interactivos que demuestran ahorro. Documentación clara en lenguaje accesible. Interfaz que genera sensación de control y seguridad.</div>
+        </div>
+      </div>
+
+      <div class="case-section-content reveal">
+        <p>Tu solución hipotecaria surge en un contexto donde las personas compradores de casa enfrentaban un mercado hipotecario complejo y una industria con reputación de falta de transparencia. El equipo de Tu solución hipotecaria tenía una visión diferente: qué pasaría si pusieran la transparencia radical y educación financiera en el centro de su modelo de negocio. No "engañar menos" sino "informar completamente".</p>
+        <p>Nuestro desafío como equipo de diseño era traducir esta visión en una experiencia digital que generara confianza. Entrevistamos a docenas de personas en diferentes etapas del proceso de compra hipotecaria. Descubrimos que la desconfianza provenía de tres fuentes: complejidad (no entiendo los términos), opacidad (no veo dónde se va mi dinero), e impotencia (no tengo control sobre el resultado). Cada una de estas requería soluciones diferentes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEVICE MOCKUPS ============ -->
+
+  <!-- ============ DEVICE MOCKUPS ============ -->
+  <section class="case-section" aria-label="Visualización del proyecto">
+    <div class="container-main">
+      <div class="case-section-header reveal">
+        <h2>Visualización del proyecto</h2>
+        <p class="case-section-intro">Aquí puedes ver cómo se ve la plataforma en diferentes dispositivos.</p>
+      </div>
+
+      <div class="device-mockups-grid">
+        <div class="device-wrapper reveal">
+          <div class="macbook-frame">
+            <div class="macbook-screen" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); position: relative;">
+              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 20px; text-align: center;">
+                <div style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: #5dffbf; margin-bottom: 8px;">Tu Solución Hipotecaria</div>
+                <div style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 16px;">tusolucionhipotecaria.com</div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+                  <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Calculadora Hipotecaria</span>
+                  <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Educación Financiera</span>
+                  <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Asesoría Experta</span>
+                </div>
+              </div>
+            </div>
+            <div class="macbook-keyboard"></div>
+          </div>
+        </div>
+
+        <div class="device-wrapper reveal reveal-delay-1">
+          <div class="iphone-frame">
+            <div class="iphone-screen" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); position: relative;">
+              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 20px; text-align: center;">
+                <div style="font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: #5dffbf; margin-bottom: 6px;">Tu Solución</div>
+                <div style="display: flex; gap: 4px; flex-wrap: wrap; justify-content: center;">
+                  <span style="font-size: 0.55rem; padding: 3px 8px; border: 1px solid rgba(93,255,191,0.3); border-radius: 15px; color: rgba(93,255,191,0.7);">Fintech</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ DETAILED CONTENT ============ -->
+  <section class="case-section" aria-label="Detalle del proyecto">
+    <div class="container-main">
+      <div class="case-section-header reveal">
+        <h2>Desarrollo del proyecto</h2>
+      </div>
+      <div class="case-section-content reveal">
+        <p>Para la complejidad, construimos una sección educativa que explicaba hipotecas en lenguaje claro. Conceptos como "cuota" y "TAE" dejaban de ser jerga incomprensible para convertirse en narrativas: "Tu cuota es el dinero que pagas cada mes. El TAE es el costo real de la hipoteca incluyendo todos los gastos. Aquí está exactamente cómo calculamos cada uno."</p>
+        <p>Para la opacidad, diseñamos calculadores interactivos donde moviendo un slider veían instantáneamente cómo cambiaba el costo total de su hipoteca. Cada acción tenía transparencia radical: "Si eliges plazo de 20 años en lugar de 30, ahorras X euros pero tu cuota sube Y euros." Usuarios podían simular y comparar infinitas opciones, viendo exactamente dónde iba cada euro.</p>
+        <p>Para la impotencia, restructuramos toda la experiencia para poner el usuario en control. En lugar de llenar formularios que enviaban a una "caja negra", creamos un journey donde cada paso les mostraba exactamente cómo sus decisiones impactaban el resultado. El flujo de conversión no era oculto sino transparente: "Has completado estos pasos. Tu próximo paso es conectar con un asesor. Aquí está su perfil y disponibilidad."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL THOUGHTS ============ -->
+  <section class="case-section" aria-label="Conclusiones">
+    <div class="container-main">
+      <div class="case-section-header reveal">
+        <h2>Resultado</h2>
+      </div>
+      <div class="case-section-content reveal">
+        <p>El resultado fue transformacional. Tu solución hipotecaria pasó de ser un jugador marginal a liderar en adopción de usuarios en su mercado. Lo más importante: generó confianza genuina en un sector históricamente desconfiado. Usuarios no solo usaban la plataforma sino que la recomendaban activamente, cosa rara en servicios financieros.</p>
+      </div>
+
+      <div class="case-stats-grid">
+        <div class="case-stat-card reveal">
+          <div class="case-stat-number">+156%</div>
+          <div class="case-stat-label">Aumento en solicitudes de asesoría</div>
+        </div>
+        <div class="case-stat-card reveal">
+          <div class="case-stat-number">4.7/5</div>
+          <div class="case-stat-label">Calificación de satisfacción usuario</div>
+        </div>
+        <div class="case-stat-card reveal">
+          <div class="case-stat-number">73%</div>
+          <div class="case-stat-label">Tasa de recomendación activa</div>
+        </div>
+        <div class="case-stat-card reveal">
+          <div class="case-stat-number">€2.3B</div>
+          <div class="case-stat-label">Volumen de hipotecas mediadas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERT OPINION ============ -->
+  <section class="sp-expert" aria-label="Opinión experta">
+    <div class="container-main">
+      <div class="sp-expert-layout reveal">
+        <div class="sp-expert-quote">
+          <span class="section-badge">Opinión experta</span>
+          <h2 class="sp-expert-h2">Tu solución hipotecaria demuestra que transparencia radical es el competidor más fuerte de Fintech</h2>
+          <p>Lo que makes Tu solución hipotecaria extraordinario es que cuestionó la premisa fundamental de la industria: que la complejidad y opacidad eran inevitables. Al diseñar para transparencia radical y educación financiera genuina, no solo mejoraron conversion rates, sino que transformaron cómo clientes perciben el servicio. Cada interacción, desde un calculador interactivo hasta la forma en que explicamos qué es un TAE, comunica un mensaje poderoso: "Tu interés económico es nuestro norte." En un sector históricamente desconfiado, eso es revolucionario.</p>
+        </div>
+        <div class="sp-expert-author">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="sp-expert-avatar" width="80" height="80" loading="lazy">
+          <div>
+            <div class="sp-expert-name">Jordi Expósito</div>
+            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
+            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener" class="sp-expert-linkedin">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+              Ver en LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS (TP.testimonios) ============ -->
+  <div id="tp-testimonios"></div>
+
+  <!-- ============ CTA FINAL + FORM ============ -->
+  <section id="cierre" aria-label="Iniciar proyecto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy reveal">
+          <span class="section-badge reveal">Siguiente paso</span>
+          <h2 class="cierre-h2">¿Tienes un <span class="text-gradient-standalone">reto similar</span>?</h2>
+          <p class="cierre-sub">El proceso empieza con 5 preguntas y en menos de 24h tienes una valoración.<br><br>Cuéntanos qué estás construyendo.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="form-gradient-accent"></div>
+          <div class="cierre-form-inner">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-nombre">Nombre</label>
+                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="f-email">Email</label>
+                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-tel">Teléfono</label>
+                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
+                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false"
+                  aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
+                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Rango aproximado</div>
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                  </div>
+                </div>
+                <input type="hidden" id="f-presupuesto" name="budget" value="" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
+              <textarea id="f-mensaje" class="input" rows="4"
+                placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
+            </div>
+            <label class="checkbox-row" for="f-privacidad">
+              <input type="checkbox" id="f-privacidad" required />
+              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
+                  Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+            </label>
+            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn"
+              style="width:100%;justify-content:center;">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <p class="form-note">Sin compromiso. Respuesta en menos de 48h laborales.</p>
+            <div class="form-divider"
+              style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+            </div>
+            <a href="/iniciar-proyecto" class="btn-secondary" style="width:100%;justify-content:center;">
+              Formulario completo (Presupuesto en 48h)
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    TP.navbar('casos-de-negocio');
+    TP.testimonios();
+    TP.footer();
+    TP.initJS();
+  </script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js" defer></script>
+</body>
+
+</html>

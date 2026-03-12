@@ -1,0 +1,1719 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA Generativa para Empresas | Tres Puntos Barcelona</title>
+  <meta name="description" content="Integración de IA generativa en tu plataforma digital. Automatización inteligente y chatbots personalizados para mejorar la experiencia del usuario." />
+  
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/servicios/ia-generativa-empresas/" />
+  <meta property="og:title" content="IA Generativa para Empresas | Automatización Inteligente" />
+  <meta property="og:description"
+    content="Diseñamos automatizaciones y agentes de inteligencia artificial para reducir trabajo manual, acelerar procesos y tomar mejores decisiones." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/servicios/ia-generativa-empresas" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "IA Generativa para Empresas",
+      "description": "Diseñamos automatizaciones y agentes de inteligencia artificial para empresas que necesitan reducir trabajo manual y escalar procesos.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "url": "https://www.trespuntoscomunicacion.es/"
+      },
+      "serviceType": "IA Generativa"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué tipo de empresas pueden beneficiarse de la IA generativa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cualquier empresa con procesos repetitivos, gestión de datos intensiva o necesidad de escalar operaciones sin multiplicar equipo. Es especialmente útil en B2B, e-commerce y empresas con equipos de ventas o atención al cliente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿La IA generativa puede integrarse con nuestros sistemas actuales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Diseñamos las integraciones para que la IA trabaje con tu ERP, CRM, email y herramientas de trabajo actuales. No hace falta cambiar nada de lo que ya funciona."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tarda en implementarse un proyecto de IA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende del alcance. Un agente de automatización puede estar funcionando en semanas. Sistemas más complejos como cerebros digitales empresariales requieren fases de desarrollo modulares."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué diferencia hay entre automatización e IA generativa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La automatización ejecuta reglas predefinidas. La IA generativa entiende contexto, procesa lenguaje natural y toma decisiones basadas en datos. Combinamos ambas según lo que necesite el proyecto."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ Page-specific: IA Generativa para Empresas — AI Workflow Animation ═══ */
+
+    /* ── 1. HERO: AI Workflow Agent Diagram ── */
+    .ia-workflow {
+      position: absolute;
+      inset: 0;
+      overflow: hidden
+    }
+
+    .ia-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(93, 255, 191, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(93, 255, 191, .04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0;
+      animation: iaFade .8s .3s forwards
+    }
+
+    .ia-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%
+    }
+
+    .ia-line {
+      stroke: var(--line-color, rgba(93, 255, 191, .18));
+      stroke-width: 1.5;
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      animation: iaDraw 1.2s ease-out forwards
+    }
+
+    .ia-line:nth-child(1) {
+      animation-delay: .5s
+    }
+
+    .ia-line:nth-child(2) {
+      animation-delay: .7s
+    }
+
+    .ia-line:nth-child(3) {
+      animation-delay: .9s
+    }
+
+    .ia-line:nth-child(4) {
+      animation-delay: 1.1s
+    }
+
+    .ia-pulse-line {
+      stroke: var(--pulse-color, var(--mint));
+      stroke-width: 1.5;
+      stroke-dasharray: 4 20;
+      opacity: 0;
+      animation: iaPulseIn .3s 1.8s forwards, iaTravel 3s 1.8s linear infinite
+    }
+
+    .ia-pulse-line:nth-child(6) {
+      animation-delay: 2s, 2s
+    }
+
+    .ia-pulse-line:nth-child(7) {
+      animation-delay: 2.1s, 2.1s
+    }
+
+    .ia-pulse-line:nth-child(8) {
+      animation-delay: 2.3s, 2.3s
+    }
+
+    .ia-node {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .35rem .7rem;
+      background: var(--bg-color, rgba(93, 255, 191, .06));
+      border: 1px solid var(--border-color, rgba(93, 255, 191, .2));
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      letter-spacing: .03em;
+      color: var(--text-color, rgba(93, 255, 191, .9));
+      white-space: nowrap;
+      opacity: 0;
+      transform: scale(.85);
+      z-index: 2
+    }
+
+    .ia-node-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--dot-color, var(--mint));
+      box-shadow: 0 0 8px var(--glow-color, rgba(93, 255, 191, .5))
+    }
+
+    .ia-n-input {
+      top: 8%;
+      left: 50%;
+      transform: translateX(-50%) scale(.85);
+      animation: iaNodeC .5s .6s ease-out forwards
+    }
+
+    .ia-n-crm {
+      bottom: 18%;
+      left: 8%;
+      animation: iaNodeIn .5s .8s ease-out forwards
+    }
+
+    .ia-n-output {
+      bottom: 18%;
+      right: 8%;
+      animation: iaNodeIn .5s 1s ease-out forwards
+    }
+
+    .ia-n-analytics {
+      top: 8%;
+      right: 10%;
+      animation: iaNodeIn .5s 1.2s ease-out forwards
+    }
+
+    .ia-brain-icon {
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(.85);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      opacity: 0;
+      animation: iaNodeC .5s .4s ease-out forwards;
+      z-index: 10;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(2px);
+    }
+
+    .ia-brain-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: #fff;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+    }
+
+    .ia-status {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--font-mono);
+      font-size: .55rem;
+      color: var(--mint);
+      opacity: 0;
+      animation: iaFade .4s 2.4s forwards
+    }
+
+    .ia-status-led {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 8px var(--mint);
+      animation: iaLed 2s 2.4s infinite
+    }
+
+    @keyframes iaFade {
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes iaNodeIn {
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    @keyframes iaNodeC {
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1)
+      }
+    }
+
+    @keyframes iaDraw {
+      to {
+        stroke-dashoffset: 0
+      }
+    }
+
+    @keyframes iaPulseIn {
+      to {
+        opacity: .5
+      }
+    }
+
+    @keyframes iaTravel {
+      to {
+        stroke-dashoffset: -48
+      }
+    }
+
+    @keyframes iaLed {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .3
+      }
+    }
+
+    /* Fix iaNodeC for nodes that only translateX */
+    .ia-n-input {
+      animation-name: iaNodeCX
+    }
+
+    @keyframes iaNodeCX {
+      to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1)
+      }
+    }
+
+    /* ── 2. PROCESS ANIMATION (MANUAL -> IA -> AUTO) ── */
+    .ia-process-anim {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      background: rgba(10, 10, 10, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+
+    .ia-proc-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ia-proc-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, .02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .02) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .ia-proc-labels {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: flex;
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      font-weight: 500;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .ia-proc-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      white-space: nowrap;
+      padding: .25rem .5rem;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      opacity: 0;
+    }
+
+    .ia-lbl-1 {
+      color: #f87171;
+      background: rgba(248, 113, 113, .05);
+      border-color: rgba(248, 113, 113, .2);
+      animation: procLabel1 8s infinite;
+    }
+
+    .ia-lbl-3 {
+      color: var(--mint);
+      background: rgba(93, 255, 191, .05);
+      border-color: rgba(93, 255, 191, .2);
+      animation: procLabel3 8s infinite;
+    }
+
+    .ia-lbl-4 {
+      color: #38bdf8;
+      background: rgba(56, 189, 248, .05);
+      border-color: rgba(56, 189, 248, .2);
+      animation: procLabel4 8s infinite;
+    }
+
+    @keyframes procLabel1 {
+
+      0%,
+      35% {
+        opacity: 1;
+      }
+
+      40%,
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes procLabel3 {
+
+      0%,
+      35% {
+        opacity: 0;
+      }
+
+      40%,
+      65% {
+        opacity: 1;
+      }
+
+      70%,
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes procLabel4 {
+
+      0%,
+      65% {
+        opacity: 0;
+      }
+
+      70%,
+      95% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* Central AI Node */
+    .ia-proc-center {
+      position: relative;
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      z-index: 10;
+      animation: procCenterPulse 8s infinite;
+    }
+
+    .ia-proc-center svg {
+      width: 24px;
+      height: 24px;
+      stroke: #fff;
+    }
+
+    .ia-proc-scan {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid var(--mint);
+      opacity: 0;
+      transform: scale(1);
+      animation: procScan 8s infinite;
+    }
+
+    @keyframes procCenterPulse {
+
+      0%,
+      35% {
+        box-shadow: 0 0 0 rgba(93, 255, 191, 0);
+        border-color: rgba(255, 255, 255, .1);
+      }
+
+      40%,
+      65% {
+        box-shadow: 0 0 20px rgba(93, 255, 191, .3);
+        border-color: var(--mint);
+      }
+
+      70%,
+      100% {
+        box-shadow: 0 0 0 rgba(93, 255, 191, 0);
+        border-color: rgba(255, 255, 255, .1);
+      }
+    }
+
+    @keyframes procScan {
+      40% {
+        transform: scale(1);
+        opacity: .8;
+      }
+
+      60% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* Tasks IN */
+    .ia-task-in {
+      position: absolute;
+      padding: .25rem .5rem;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 6px;
+      font-size: .6rem;
+      font-family: var(--font-body);
+      color: rgba(255, 255, 255, .7);
+      white-space: nowrap;
+      opacity: 0;
+      z-index: 5;
+    }
+
+    .ia-proc-inputs,
+    .ia-proc-outputs {
+      position: absolute;
+      inset: 0;
+    }
+
+    .ia-tin-1 {
+      animation: taskIn1 8s infinite;
+    }
+
+    .ia-tin-2 {
+      animation: taskIn2 8s infinite;
+    }
+
+    .ia-tin-3 {
+      animation: taskIn3 8s infinite;
+    }
+
+    .ia-tin-4 {
+      animation: taskIn4 8s infinite;
+    }
+
+    .ia-tin-5 {
+      animation: taskIn5 8s infinite;
+    }
+
+    @keyframes taskIn1 {
+      0% {
+        left: 0%;
+        top: 20%;
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
+      }
+
+      5% {
+        opacity: 1;
+        color: #f87171;
+        border-color: rgba(248, 113, 113, .3);
+        background: rgba(248, 113, 113, .05);
+      }
+
+      20% {
+        left: 25%;
+        top: 25%;
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+
+      30% {
+        left: 35%;
+        top: 45%;
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 1;
+      }
+
+      40% {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes taskIn2 {
+
+      0%,
+      2% {
+        left: 0%;
+        top: 40%;
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
+      }
+
+      7% {
+        opacity: 1;
+        color: #f87171;
+        border-color: rgba(248, 113, 113, .3);
+        background: rgba(248, 113, 113, .05);
+      }
+
+      22% {
+        left: 22%;
+        top: 40%;
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+
+      32% {
+        left: 38%;
+        top: 35%;
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 1;
+      }
+
+      42% {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes taskIn3 {
+
+      0%,
+      4% {
+        left: 0%;
+        top: 60%;
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
+      }
+
+      9% {
+        opacity: 1;
+        color: #f87171;
+        border-color: rgba(248, 113, 113, .3);
+        background: rgba(248, 113, 113, .05);
+      }
+
+      24% {
+        left: 20%;
+        top: 70%;
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+
+      34% {
+        left: 40%;
+        top: 60%;
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 1;
+      }
+
+      44% {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes taskIn4 {
+
+      0%,
+      6% {
+        left: 0%;
+        top: 80%;
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
+      }
+
+      11% {
+        opacity: 1;
+        color: #f87171;
+        border-color: rgba(248, 113, 113, .3);
+        background: rgba(248, 113, 113, .05);
+      }
+
+      26% {
+        left: 18%;
+        top: 85%;
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+
+      36% {
+        left: 36%;
+        top: 70%;
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 1;
+      }
+
+      46% {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes taskIn5 {
+
+      0%,
+      8% {
+        left: -5%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
+      }
+
+      13% {
+        opacity: 1;
+        color: #f87171;
+        border-color: rgba(248, 113, 113, .3);
+        background: rgba(248, 113, 113, .05);
+      }
+
+      28% {
+        left: 15%;
+        top: 55%;
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+
+      38% {
+        left: 42%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 1;
+      }
+
+      48% {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: 0;
+      }
+    }
+
+    /* Tasks OUT */
+    .ia-task-out {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.5);
+      padding: .25rem .5rem;
+      background: rgba(56, 189, 248, .05);
+      border: 1px solid rgba(56, 189, 248, .3);
+      border-radius: 6px;
+      font-size: .6rem;
+      font-family: var(--font-body);
+      color: #38bdf8;
+      white-space: nowrap;
+      opacity: 0;
+      z-index: 5;
+    }
+
+    .ia-tout-1 {
+      animation: taskOut1 8s infinite;
+    }
+
+    .ia-tout-2 {
+      animation: taskOut2 8s infinite;
+    }
+
+    .ia-tout-3 {
+      animation: taskOut3 8s infinite;
+    }
+
+    .ia-tout-4 {
+      animation: taskOut4 8s infinite;
+    }
+
+    @keyframes taskOut1 {
+
+      0%,
+      65% {
+        opacity: 0;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+
+      70% {
+        opacity: 1;
+        left: 60%;
+        top: 30%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      90% {
+        opacity: 1;
+        left: 85%;
+        top: 20%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      95%,
+      100% {
+        opacity: 0;
+        left: 100%;
+        top: 15%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    @keyframes taskOut2 {
+
+      0%,
+      67% {
+        opacity: 0;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+
+      72% {
+        opacity: 1;
+        left: 65%;
+        top: 45%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      92% {
+        opacity: 1;
+        left: 90%;
+        top: 40%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      95%,
+      100% {
+        opacity: 0;
+        left: 105%;
+        top: 38%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    @keyframes taskOut3 {
+
+      0%,
+      69% {
+        opacity: 0;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+
+      74% {
+        opacity: 1;
+        left: 62%;
+        top: 65%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      94% {
+        opacity: 1;
+        left: 85%;
+        top: 70%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      97%,
+      100% {
+        opacity: 0;
+        left: 95%;
+        top: 75%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    @keyframes taskOut4 {
+
+      0%,
+      71% {
+        opacity: 0;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+
+      76% {
+        opacity: 1;
+        left: 68%;
+        top: 80%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      96% {
+        opacity: 1;
+        left: 88%;
+        top: 85%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        left: 98%;
+        top: 90%;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    @media(max-width:768px) {
+      .ia-node {
+        font-size: .5rem;
+        padding: .25rem .5rem
+      }
+
+      .ia-n-crm {
+        left: 5%
+      }
+
+      .ia-n-output {
+        right: 5%
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar placeholder -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="sp-hero" aria-label="IA Generativa para Empresas">
+    <div class="container-main">
+      <div class="sp-hero-layout">
+        <div class="sp-hero-copy">
+          <span class="section-badge reveal">IA Generativa para Empresas</span>
+          <h1 class="sp-hero-h1 reveal"><span class="text-gradient-standalone">IA generativa para empresas</span> que
+            necesitan escalar sin multiplicar equipos</h1>
+          <p class="sp-hero-sub reveal">Diseñamos automatizaciones y agentes de inteligencia artificial para reducir
+            trabajo manual, acelerar procesos y tomar mejores decisiones. No vendemos tecnología por moda. Construimos
+            sistemas de IA que resuelven problemas reales de negocio.</p>
+          <div class="sp-hero-ctas reveal">
+            <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="/arquitectura-digital-conversion" class="btn-ghost">
+              Conoce nuestra metodología
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Hero visual: AI workflow agent diagram -->
+        <div class="sp-hero-visual reveal reveal-delay-1">
+          <div class="sp-browser-mock">
+            <div class="sp-browser-topbar">
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-url">agente-ia.empresa.com/workflow</span>
+            </div>
+            <div class="sp-browser-body" id="ia-mockup">
+              <!-- AI Workflow Node Diagram -->
+              <div class="ia-workflow">
+                <div class="ia-grid-bg"></div>
+                <svg class="ia-lines" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
+                  <!-- Static connection lines -->
+                  <line class="ia-line" x1="200" y1="130" x2="200" y2="45"
+                    style="--line-color: rgba(56, 189, 248, .18);" />
+                  <line class="ia-line" x1="200" y1="130" x2="75" y2="200"
+                    style="--line-color: rgba(251, 113, 133, .18);" />
+                  <line class="ia-line" x1="200" y1="130" x2="325" y2="200"
+                    style="--line-color: rgba(167, 139, 250, .18);" />
+                  <line class="ia-line" x1="200" y1="130" x2="340" y2="45"
+                    style="--line-color: rgba(250, 204, 21, .18);" />
+                  <!-- Data flow pulses -->
+                  <line class="ia-pulse-line" x1="200" y1="130" x2="200" y2="45" style="--pulse-color: #38bdf8;" />
+                  <line class="ia-pulse-line" x1="200" y1="130" x2="75" y2="200" style="--pulse-color: #fb7185;" />
+                  <line class="ia-pulse-line" x1="200" y1="130" x2="325" y2="200" style="--pulse-color: #a78bfa;" />
+                  <line class="ia-pulse-line" x1="200" y1="130" x2="340" y2="45" style="--pulse-color: #facc15;" />
+                </svg>
+                <div class="ia-brain-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+                    <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+                    <path d="M12 5v13" />
+                    <path d="M9 13h2" />
+                    <path d="M13 13h2" />
+                  </svg>
+                </div>
+                <!-- Nodes with customized colors -->
+                <div class="ia-node ia-n-input"
+                  style="--bg-color: rgba(56, 189, 248, .06); --border-color: rgba(56, 189, 248, .2); --text-color: rgba(56, 189, 248, .9); --dot-color: #38bdf8; --glow-color: rgba(56, 189, 248, .5);">
+                  <span class="ia-node-dot"></span>Input
+                </div>
+                <div class="ia-node ia-n-crm"
+                  style="--bg-color: rgba(251, 113, 133, .06); --border-color: rgba(251, 113, 133, .2); --text-color: rgba(251, 113, 133, .9); --dot-color: #fb7185; --glow-color: rgba(251, 113, 133, .5);">
+                  <span class="ia-node-dot"></span>CRM
+                </div>
+                <div class="ia-node ia-n-output"
+                  style="--bg-color: rgba(167, 139, 250, .06); --border-color: rgba(167, 139, 250, .2); --text-color: rgba(167, 139, 250, .9); --dot-color: #a78bfa; --glow-color: rgba(167, 139, 250, .5);">
+                  <span class="ia-node-dot"></span>Output
+                </div>
+                <div class="ia-node ia-n-analytics"
+                  style="--bg-color: rgba(250, 204, 21, .06); --border-color: rgba(250, 204, 21, .2); --text-color: rgba(250, 204, 21, .9); --dot-color: #facc15; --glow-color: rgba(250, 204, 21, .5);">
+                  <span class="ia-node-dot"></span>Análisis
+                </div>
+                <div class="ia-status"><span class="ia-status-led"></span>Automatización activa</div>
+              </div>
+            </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="sp-float-badge reveal" id="sp-analysis-badge">
+            <svg width="14" height="14" fill="none" stroke="var(--mint)" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+            <span>Procesos 24/7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT MARQUEE ============ -->
+  <div class="sp-marquee" aria-hidden="true">
+    <div class="sp-marquee-track">
+      <span>Automatización inteligente</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Agentes IA</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Cerebros digitales</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Procesos sin fricción</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Automatización inteligente</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Agentes IA</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Cerebros digitales</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Procesos sin fricción</span>
+      <span class="sp-marquee-sep">&bull;</span>
+    </div>
+  </div>
+
+  <!-- ============ 2. PROBLEMA (SATURACIÓN DE EQUIPOS) ============ -->
+  <section class="sp-problem" aria-label="El problema">
+    <div class="container-main">
+      <div class="sp-problem-layout">
+        <div class="sp-problem-copy reveal">
+          <span class="section-badge reveal">El problema</span>
+          <h2 class="section-h2 reveal">Equipos saturados y procesos manuales que <span
+              class="text-gradient-standalone">frenan el crecimiento</span></h2>
+          <p class="sp-problem-text reveal">Cuando la IA se convierte en una herramienta estratégica, el impacto es
+            inmediato. Pero muchas empresas no saben por dónde empezar. Identificamos exactamente dónde la IA puede
+            resolver un problema real.</p>
+
+          <!-- ANIMATION: MANUAL TO AUTOMATED -->
+          <div class="ia-process-anim reveal reveal-delay-2" aria-hidden="true">
+            <div class="ia-proc-wrap">
+              <div class="ia-proc-grid"></div>
+
+              <!-- Labels that swap -->
+              <div class="ia-proc-labels">
+                <span class="ia-proc-label ia-lbl-1">Procesos manuales</span>
+                <span class="ia-proc-label ia-lbl-3">IA analizando procesos</span>
+                <span class="ia-proc-label ia-lbl-4">Procesos automatizados</span>
+              </div>
+
+              <!-- Center AI Node -->
+              <div class="ia-proc-center">
+                <div class="ia-proc-scan"></div>
+                <!-- Sparkles AI Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+                </svg>
+              </div>
+
+              <!-- Input tasks (Manuales) -->
+              <div class="ia-proc-inputs">
+                <div class="ia-task-in ia-tin-1">Email</div>
+                <div class="ia-task-in ia-tin-2">Ticket soporte</div>
+                <div class="ia-task-in ia-tin-3">Pedido</div>
+                <div class="ia-task-in ia-tin-4">Excel</div>
+                <div class="ia-task-in ia-tin-5">Mensaje cliente</div>
+              </div>
+
+              <!-- Output tasks (Automatizadas) -->
+              <div class="ia-proc-outputs">
+                <div class="ia-task-out ia-tout-1">Ticket → CRM</div>
+                <div class="ia-task-out ia-tout-2">Pedido → ERP</div>
+                <div class="ia-task-out ia-tout-3">Email → Respuesta auto</div>
+                <div class="ia-task-out ia-tout-4">Datos → Dashboard</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Friction signals -->
+        <div class="sp-signals reveal reveal-delay-1">
+          <div class="sp-signals-title">Los síntomas de procesos sin automatizar son evidentes</div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Procesos manuales repetitivos</strong>
+              <span>Equipos dedicando horas a tareas que deberían estar automatizadas.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Datos dispersos sin análisis</strong>
+              <span>Decisiones de negocio basadas en intuición, no en información.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Atención al cliente lenta</strong>
+              <span>Respuestas tardías que generan pérdida de oportunidades.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Escalabilidad imposible</strong>
+              <span>El negocio crece pero el equipo no puede seguir el ritmo.</span>
+            </div>
+          </div>
+          <div class="sp-signal-bottom">La IA no es una moda. Es una herramienta para eliminar lo manual y dejar que tu
+            equipo se enfoque en lo que realmente genera valor.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. SOLUCIÓN (AGENTES IA) ============ -->
+  <section class="sp-services" aria-label="Qué incluye el servicio">
+    <div class="container-main">
+      <span class="section-badge reveal">Servicio</span>
+      <h2 class="section-h2 reveal">IA generativa aplicada a procesos reales de negocio</h2>
+      <p class="sp-services-intro reveal">No implementamos IA porque sea tendencia. La implementamos cuando resuelve un
+        problema concreto. Diseñamos sistemas inteligentes que automatizan tareas, procesan información y ayudan a tomar
+        mejores decisiones.</p>
+
+      <div class="sp-services-grid">
+        <div class="sp-service-card reveal">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Agentes de IA personalizados</h3>
+          <p class="sp-service-text">Diseñamos agentes inteligentes que automatizan tareas específicas del negocio.
+            Desde cualificación de leads hasta generación de informes automáticos.</p>
+        </div>
+
+        <div class="sp-service-card reveal reveal-delay-1">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0018 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Automatización de procesos</h3>
+          <p class="sp-service-text">Conectamos sistemas, eliminamos tareas manuales y creamos flujos de trabajo
+            inteligentes que funcionan 24/7.</p>
+        </div>
+
+        <div class="sp-service-card reveal">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Cerebros digitales empresariales</h3>
+          <p class="sp-service-text">Sistemas de IA que centralizan el conocimiento de la empresa y lo hacen accesible
+            para el equipo.</p>
+        </div>
+
+        <div class="sp-service-card reveal reveal-delay-1">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Integración con sistemas existentes</h3>
+          <p class="sp-service-text">Conectamos la IA con tu ERP, CRM, email y herramientas de trabajo sin romper lo que
+            ya funciona.</p>
+        </div>
+
+        <div class="sp-service-card reveal">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Análisis y reporting automatizado</h3>
+          <p class="sp-service-text">Sistemas que procesan datos, detectan patrones y generan informes de negocio sin
+            intervención manual.</p>
+        </div>
+      </div>
+
+      <div class="sp-method-cta reveal" style="margin-top:2rem">
+        <a href="/arquitectura-digital-conversion" class="btn-ghost">
+          Ver nuestra Metodología de trabajo
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 4. METODOLOGÍA ============ -->
+  <section class="sp-methodology" aria-label="Metodología">
+    <div class="container-main">
+      <div class="sp-method-layout">
+        <div class="sp-method-copy">
+          <span class="section-badge reveal">Proceso</span>
+          <h2 class="section-h2 reveal">Cómo construimos tu <span class="text-gradient-standalone">sistema de IA</span>
+          </h2>
+          <p class="sp-method-intro reveal">La IA es una herramienta. Sin una estrategia clara y una ejecución precisa,
+            no genera valor. Nuestro proceso asegura que cada sistema inteligente resuelva un problema real.</p>
+        </div>
+        <!-- Process timeline -->
+        <div class="sp-method-steps">
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">01</div>
+            <div class="sp-method-step-content">
+              <h3>Diagnóstico</h3>
+              <p>Identificamos procesos manuales con mayor impacto en el negocio.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">02</div>
+            <div class="sp-method-step-content">
+              <h3>Diseño del sistema</h3>
+              <p>Definimos la arquitectura del agente o automatización.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">03</div>
+            <div class="sp-method-step-content">
+              <h3>Desarrollo e integración</h3>
+              <p>Implementamos y conectamos con tus sistemas actuales.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">04</div>
+            <div class="sp-method-step-content">
+              <h3>Validación</h3>
+              <p>Probamos el sistema en tu entorno real.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">05</div>
+            <div class="sp-method-step-content">
+              <h3>Monitorización</h3>
+              <p>Optimizamos continuamente el rendimiento del sistema.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sp-method-cta reveal">
+        <a href="/arquitectura-digital-conversion" class="btn-ghost">
+          Ver proceso completo: Arquitectura Digital de Conversión
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT MARQUEE ============ -->
+  <div class="sp-marquee" aria-hidden="true">
+    <div class="sp-marquee-track">
+      <span>IA generativa para empresas</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Automatización inteligente</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Agentes 24/7</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Integración con ERP CRM</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Procesos sin fricción</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>IA generativa para empresas</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Automatización inteligente</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Agentes 24/7</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Integración con ERP CRM</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Procesos sin fricción</span>
+      <span class="sp-marquee-sep">&bull;</span>
+    </div>
+  </div>
+
+  <!-- ============ 5. PROYECTOS RELACIONADOS (TP.casos) ============ -->
+  <div id="tp-casos"></div>
+
+  <!-- ============ 6. SERVICIOS RELACIONADOS ============ -->
+  <section class="sp-related" aria-label="Servicios relacionados">
+    <div class="container-main">
+      <span class="section-badge reveal">Servicios complementarios</span>
+      <h2 class="section-h2 reveal">Servicios que suelen acompañar este proyecto</h2>
+      <p class="sp-related-intro reveal">La IA es más potente cuando está integrada en una estrategia digital completa.
+        Por eso este servicio suele convivir con otros bloques de trabajo.</p>
+
+      <div class="sp-related-grid">
+        <a href="/servicios/consultoria-digital-barcelona" class="sp-related-card reveal">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </div>
+          <h3>Consultoría digital</h3>
+          <p>Antes de implementar IA, es vital definir la arquitectura digital que la soporte.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/desarrollo-web-a-medida-barcelona" class="sp-related-card reveal reveal-delay-1">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+            </svg>
+          </div>
+          <h3>Desarrollo web a medida</h3>
+          <p>Construimos interfaces inteligentes que aprovechan la potencia de los agentes de IA.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/diseno-ux-ui-barcelona" class="sp-related-card reveal reveal-delay-2">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+            </svg>
+          </div>
+          <h3>Diseño UX/UI</h3>
+          <p>El diseño es crucial para que los usuarios adopten y confíen en los sistemas de IA.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS (TP.testimonios) ============ -->
+  <div id="tp-testimonios"></div>
+
+  <!-- ============ 7. OPINIÓN EXPERTA ============ -->
+  <section class="sp-expert" aria-label="Opinión experta">
+    <div class="container-main">
+      <div class="sp-expert-layout reveal">
+        <div class="sp-expert-quote">
+          <span class="section-badge">Opinión experta</span>
+          <h2 class="sp-expert-h2">La IA no sustituye equipos. Elimina tareas que nunca deberían haber sido manuales
+          </h2>
+          <p>Cuando un sistema inteligente gestiona lo repetitivo, el equipo puede centrarse en lo que realmente genera
+            valor para el negocio. Ese es el impacto real de la IA generativa.</p>
+          <p>En proyectos de IA, nuestro trabajo empieza entendiendo qué procesos tienen más impacto en el negocio. La
+            tecnología viene después.</p>
+        </div>
+        <div class="sp-expert-author">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="sp-expert-avatar" width="80" height="80"
+            loading="lazy">
+          <div>
+            <div class="sp-expert-name">Jordi Expósito</div>
+            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
+            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener"
+              class="sp-expert-linkedin">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path
+                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+              Ver en LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. FAQ ============ -->
+  <section id="faq" class="sp-faq" aria-label="Preguntas frecuentes sobre IA Generativa">
+    <div class="container-main">
+      <div class="faq-layout">
+        <div class="reveal">
+          <span class="section-badge reveal">FAQ</span>
+          <h2 class="section-h2 reveal">Preguntas frecuentes</h2>
+        </div>
+        <div class="faq-list reveal reveal-delay-1">
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Qué tipo de empresas pueden beneficiarse de la IA
+              generativa?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>La IA generativa puede aplicarse en cualquier empresa que tenga procesos repetitivos, grandes
+                  volúmenes de información o interacción frecuente con clientes.</p>
+                <p>Sectores como e-commerce, SaaS, servicios profesionales, logística o atención al cliente suelen
+                  obtener beneficios inmediatos automatizando tareas, analizando datos o asistiendo a los equipos.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿La IA generativa puede integrarse con nuestros sistemas
+              actuales?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Sí. La mayoría de proyectos de IA generativa se integran con sistemas existentes como CRM, ERP, bases
+                  de datos, plataformas de soporte o herramientas internas.</p>
+                <p>El objetivo no es crear herramientas aisladas, sino conectar la IA con el ecosistema digital del
+                  negocio para automatizar procesos reales.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Cuánto tarda en implementarse un proyecto de IA?<svg
+                class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Depende del alcance y de la complejidad de los sistemas que se integran.</p>
+                <p>Muchos proyectos comienzan con un prototipo o caso de uso concreto que puede desarrollarse en pocas
+                  semanas. A partir de ahí se puede escalar la solución a otros procesos del negocio.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Qué diferencia hay entre automatización tradicional e IA
+              generativa?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>La automatización tradicional sigue reglas fijas.</p>
+                <p>La IA generativa, en cambio, puede interpretar lenguaje, generar contenido, analizar información y
+                  tomar decisiones asistidas por datos.</p>
+                <p>Esto permite automatizar procesos más complejos que antes requerían intervención humana.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Qué procesos de una empresa se pueden automatizar con
+              IA?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>La IA generativa puede aplicarse a muchos procesos, por ejemplo:</p>
+                <ul class="faq-ul-list">
+                  <li>Atención al cliente</li>
+                  <li>Generación de respuestas y documentación</li>
+                  <li>Análisis de datos internos</li>
+                  <li>Automatización de emails y soporte</li>
+                  <li>Generación de contenido o informes</li>
+                  <li>Asistencia a equipos comerciales</li>
+                </ul>
+                <p>El primer paso suele ser identificar dónde existe más trabajo manual o repetitivo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Es necesario tener muchos datos para usar IA
+              generativa?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>No siempre. Muchos casos de uso pueden construirse utilizando modelos existentes combinados con la
+                  información interna de la empresa.</p>
+                <p>Cuando la IA se conecta con bases de datos, documentos o sistemas del negocio, puede trabajar sobre
+                  ese conocimiento para ofrecer respuestas y automatizar procesos.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿La IA generativa puede trabajar con información interna
+              de la empresa?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Sí. Es posible conectar la IA con documentos, bases de datos o herramientas internas para que pueda
+                  consultar esa información y generar respuestas o acciones basadas en el contexto del negocio.</p>
+                <p>Esto permite crear asistentes internos o herramientas de soporte para los equipos.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿La IA generativa sustituye a los equipos humanos?<svg
+                class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>No. En la mayoría de casos la IA funciona como una herramienta de apoyo para los equipos.</p>
+                <p>El objetivo es eliminar tareas repetitivas y liberar tiempo para que las personas se centren en
+                  decisiones estratégicas o tareas de mayor valor.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Qué tipo de proyectos de IA generativa se pueden
+              desarrollar?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Algunos ejemplos comunes:</p>
+                <ul class="faq-ul-list">
+                  <li>Asistentes internos para equipos</li>
+                  <li>Automatización de soporte al cliente</li>
+                  <li>Análisis y resumen de documentos</li>
+                  <li>Generación automática de contenido</li>
+                  <li>Sistemas de recomendación o ayuda a ventas</li>
+                  <li>Automatización de procesos operativos</li>
+                </ul>
+                <p>Cada proyecto se adapta a las necesidades concretas del negocio.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Cómo se empieza un proyecto de IA en una empresa?<svg
+                class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>El primer paso suele ser identificar un caso de uso claro donde la IA pueda generar impacto rápido.
+                </p>
+                <p>A partir de ahí se desarrolla un prototipo o piloto que permita validar la solución antes de
+                  escalarla al resto de la organización.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL + FORM ============ -->
+  <section id="cierre" aria-label="Iniciar proyecto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy reveal">
+          <span class="section-badge reveal">Siguiente paso</span>
+          <h2 class="cierre-h2">¿Tienes un <span class="text-gradient-standalone">reto similar</span>?</h2>
+          <p class="cierre-sub">El proceso empieza con 5 preguntas y en menos de 24h tienes una
+            valoración.<br><br>Cuéntanos qué estás construyendo.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="form-gradient-accent"></div>
+          <div class="cierre-form-inner">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-nombre">Nombre</label>
+                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="f-email">Email</label>
+                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-tel">Teléfono</label>
+                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
+                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false"
+                  aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
+                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Rango aproximado</div>
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                  </div>
+                </div>
+                <input type="hidden" id="f-presupuesto" name="budget" value="" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
+              <textarea id="f-mensaje" class="input" rows="4"
+                placeholder="Describe brevemente tu proyecto o el problema que buscas resolver con IA..."></textarea>
+            </div>
+            <label class="checkbox-row" for="f-privacidad">
+              <input type="checkbox" id="f-privacidad" required />
+              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
+                  Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+            </label>
+            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn"
+              style="width:100%;justify-content:center;">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <p class="form-note">Sin compromiso. Respuesta en menos de 24h.</p>
+            <div class="form-divider"
+              style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+            </div>
+            <a href="/iniciar-proyecto" class="btn-secondary" style="width:100%;justify-content:center;">
+              Formulario completo (Presupuesto en 24h)
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    TP.navbar('ia-generativa');
+    TP.casos();
+    TP.testimonios();
+    TP.footer();
+    TP.initJS();
+  </script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js" defer></script>
+</body>
+
+</html>

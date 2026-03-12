@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosotros | Tres Puntos — Agencia UX/UI y Arquitectura Digital Barcelona</title>
+  <meta name="description"
+    content="Somos Tres Puntos, una agencia especializada en UX/UI y arquitectura digital de conversión en Barcelona. +13 años construyendo plataformas que funcionan." />
+  
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/nosotros/" />
+  <meta property="og:title" content="Nosotros | Tres Puntos — Agencia UX/UI Barcelona" />
+  <meta property="og:description"
+    content="Somos Tres Puntos, una agencia especializada en UX/UI y arquitectura digital de conversión en Barcelona. +13 años construyendo plataformas que funcionan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/nosotros" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tres Puntos Comunicación",
+      "url": "https://www.trespuntoscomunicacion.es/",
+      "description": "Agencia especializada en UX/UI y arquitectura digital de conversión en Barcelona",
+      "foundingDate": "2011",
+      "foundingLocation": "Barcelona",
+      "areaServed": {
+        "@type": "City",
+        "name": "Barcelona"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ES",
+        "addressLocality": "Barcelona"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/trespuntoscomunicacion/"
+      ]
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ Page-specific: Nosotros ═══ */
+
+    /* ── 1. IDENTITY SECTION ── */
+    .nosotros-identity {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .nosotros-identity-content {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .nosotros-identity h2 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .nosotros-identity p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .nosotros-highlight {
+      padding: 1.5rem;
+      background: var(--bg-surface);
+      border-left: 3px solid var(--mint);
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      color: var(--mint);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* ── 2. HOW WE WORK ── */
+    .nosotros-methodology {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .nosotros-methodology h2 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-family: var(--font-display);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: var(--text-primary);
+    }
+
+    .nosotros-method-intro {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .nosotros-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .nosotros-step {
+      padding: 1.5rem 1rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-md);
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+
+    .nosotros-step:hover {
+      border-color: var(--mint);
+      background: rgba(93, 255, 191, 0.02);
+      transform: translateY(-2px);
+    }
+
+    .nosotros-step-icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(93, 255, 191, 0.08);
+      border-radius: var(--radius-md);
+      color: var(--mint);
+    }
+
+    .nosotros-step-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .nosotros-step-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    @media (min-width: 768px) {
+      .nosotros-steps {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    .nosotros-method-cta {
+      text-align: center;
+    }
+
+    .nosotros-method-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: all var(--transition-base);
+    }
+
+    .nosotros-method-cta a:hover {
+      border-color: var(--mint);
+      color: var(--mint);
+      background: rgba(93, 255, 191, 0.03);
+    }
+
+    /* ── 3. TEAM SECTION ── */
+    .nosotros-team {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .nosotros-team h2 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-family: var(--font-display);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-align: center;
+      color: var(--text-primary);
+    }
+
+    .nosotros-team-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .nosotros-team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .nosotros-member {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all var(--transition-base);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nosotros-member:hover {
+      border-color: var(--mint);
+      box-shadow: 0 8px 24px rgba(93, 255, 191, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .nosotros-member-avatar {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--bg-subtle), rgba(93, 255, 191, 0.05));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .nosotros-member-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .nosotros-member-info {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nosotros-member-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+      font-family: var(--font-display);
+    }
+
+    .nosotros-member-role {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--mint);
+      margin-bottom: 1rem;
+    }
+
+    .nosotros-member-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .nosotros-member-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-default);
+      border-radius: 50%;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all var(--transition-base);
+    }
+
+    .nosotros-member-social a:hover {
+      background: var(--mint);
+      border-color: var(--mint);
+      color: var(--bg-primary);
+    }
+
+    /* ── 4. TECH STACK ── */
+    .nosotros-tech {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .nosotros-tech h2 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-family: var(--font-display);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: var(--text-primary);
+    }
+
+    .nosotros-tech-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .nosotros-tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .nosotros-tech-item {
+      padding: 1.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 100px;
+      transition: all var(--transition-base);
+    }
+
+    .nosotros-tech-item:hover {
+      border-color: var(--mint);
+      background: rgba(93, 255, 191, 0.02);
+      transform: scale(1.05);
+    }
+
+    .nosotros-tech-logo img,
+    .nosotros-tech-logo svg {
+      max-width: 48px;
+      max-height: 48px;
+      object-fit: contain;
+      opacity: 0.7;
+      transition: opacity var(--transition-base), transform var(--transition-base);
+    }
+
+    .nosotros-tech-item:hover .nosotros-tech-logo img,
+    .nosotros-tech-item:hover .nosotros-tech-logo svg {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .nosotros-tech-name {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── 5. VALUES ── */
+    .nosotros-values {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .nosotros-values h2 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-family: var(--font-display);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--text-primary);
+    }
+
+    .nosotros-values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .nosotros-value {
+      padding: 2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-base);
+    }
+
+    .nosotros-value:hover {
+      border-color: var(--mint);
+      box-shadow: 0 8px 24px rgba(93, 255, 191, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .nosotros-value-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: rgba(93, 255, 191, 0.08);
+      border-radius: var(--radius-md);
+      color: var(--mint);
+      margin-bottom: 1rem;
+    }
+
+    .nosotros-value h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      font-family: var(--font-display);
+    }
+
+    .nosotros-value p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nosotros-identity,
+      .nosotros-methodology,
+      .nosotros-team,
+      .nosotros-tech,
+      .nosotros-values {
+        padding: 2rem 0;
+      }
+
+      .nosotros-tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .nosotros-team-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nosotros-team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar placeholder -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="sp-hero" aria-label="Nosotros - Tres Puntos">
+    <div class="container-main">
+      <div class="sp-hero-layout">
+        <div class="sp-hero-copy">
+          <span class="section-badge reveal">Nosotros</span>
+          <h1 class="sp-hero-h1 reveal"><span class="text-gradient-standalone">Agencia UX/UI y arquitectura digital</span> en Barcelona</h1>
+          <p class="sp-hero-sub reveal">Tres Puntos es una agencia especializada en UX/UI y arquitectura digital de conversión. Diseñamos y construimos plataformas digitales pensadas para generar negocio: webs corporativas, plataformas B2B y e-commerce donde la experiencia de usuario y la arquitectura técnica trabajan juntas para convertir tráfico en clientes.</p>
+          <div class="sp-hero-ctas reveal">
+            <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/casos-de-negocio" class="btn-ghost">
+              Ver casos de éxito
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Visual companion -->
+        <div class="sp-hero-visual reveal">
+          <div class="sp-browser-mockup">
+            <div class="sp-browser-bar">
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-url">trespuntoscomunicacion.es</span>
+            </div>
+            <div class="sp-browser-content" style="padding:2rem;text-align:center;">
+              <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--mint);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;">+13 años</div>
+              <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--text-primary);margin-bottom:0.5rem;">Arquitectura digital</div>
+              <div style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:1.5rem;">de conversión</div>
+              <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;">
+                <div style="text-align:center;">
+                  <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:var(--mint);">+150</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">Proyectos</div>
+                </div>
+                <div style="text-align:center;">
+                  <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:var(--mint);">5</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">Especialistas</div>
+                </div>
+                <div style="text-align:center;">
+                  <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:var(--mint);">98%</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">Satisfacción</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. IDENTITY ============ -->
+  <section class="nosotros-identity">
+    <div class="container-main">
+      <div class="nosotros-identity-content reveal">
+        <h2>No vendemos páginas web. Construimos experiencias digitales que funcionan y escalan.</h2>
+        <p>Nuestro enfoque combina UX/UI estratégico, arquitectura digital y desarrollo web a medida. Todo con un objetivo claro: que la plataforma convierta.</p>
+        <div class="nosotros-highlight">
+          <strong>+13 años sellando fugas de conversión.</strong> SaaS, B2B, e-commerce y plataformas complejas.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. HOW WE WORK ============ -->
+  <section class="nosotros-methodology">
+    <div class="container-main">
+      <h2 class="reveal">Cómo trabajamos</h2>
+      <p class="nosotros-method-intro reveal">Nuestro enfoque se basa en la Arquitectura Digital de Conversión, una metodología que integra estrategia, diseño UX/UI y desarrollo técnico en un solo flujo que genera resultados medibles.</p>
+
+      <div class="nosotros-steps">
+        <div class="nosotros-step reveal">
+          <div class="nosotros-step-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <div class="nosotros-step-label">Paso 1</div>
+          <div class="nosotros-step-name">Diagnóstico</div>
+        </div>
+        <div class="nosotros-step reveal reveal-delay-1">
+          <div class="nosotros-step-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2"/></svg>
+          </div>
+          <div class="nosotros-step-label">Paso 2</div>
+          <div class="nosotros-step-name">Estrategia</div>
+        </div>
+        <div class="nosotros-step reveal reveal-delay-2">
+          <div class="nosotros-step-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <div class="nosotros-step-label">Paso 3</div>
+          <div class="nosotros-step-name">Diseño UX/UI</div>
+        </div>
+        <div class="nosotros-step reveal reveal-delay-3">
+          <div class="nosotros-step-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+          </div>
+          <div class="nosotros-step-label">Paso 4</div>
+          <div class="nosotros-step-name">Desarrollo</div>
+        </div>
+        <div class="nosotros-step reveal reveal-delay-4">
+          <div class="nosotros-step-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+          </div>
+          <div class="nosotros-step-label">Paso 5</div>
+          <div class="nosotros-step-name">Validación</div>
+        </div>
+      </div>
+
+      <div class="nosotros-method-cta reveal">
+        <a href="/arquitectura-digital-conversion">
+          Ver metodología completa
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. TEAM ============ -->
+  <section class="nosotros-team">
+    <div class="container-main">
+      <span class="section-badge reveal">Equipo</span>
+      <h2 class="reveal">Quién está detrás</h2>
+      <p class="nosotros-team-intro reveal">Multidisciplinar por diseño. Sin departamentos artificiales, sin intermediarios innecesarios. Cada persona del equipo toca proyecto.</p>
+
+      <div class="nosotros-team-grid">
+
+        <!-- Jordi -->
+        <div class="nosotros-member reveal">
+          <div class="nosotros-member-avatar">
+            <img src="/nosotros/Jordi.webp" alt="Jordi Expósito" loading="lazy" />
+          </div>
+          <div class="nosotros-member-info">
+            <h3 class="nosotros-member-name">Jordi Expósito</h3>
+            <p class="nosotros-member-role">Digital Project Lead + UX/UI Designer Senior</p>
+            <p class="nosotros-member-desc">Lidera la estrategia digital, la dirección creativa y la arquitectura de conversión de cada proyecto. Conecta negocio, diseño y tecnología desde el primer día.</p>
+            <div class="nosotros-member-social">
+              <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.39v-1.2h-2.5v8.5h2.5v-4.34c0-.77.62-1.4 1.4-1.4a1.4 1.4 0 0 1 1.4 1.4v4.34h2.5M6.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m-1 15h2v-8.5h-2v8.5Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dani -->
+        <div class="nosotros-member reveal reveal-delay-1">
+          <div class="nosotros-member-avatar">
+            <img src="/nosotros/Dani.webp" alt="Dani" loading="lazy" />
+          </div>
+          <div class="nosotros-member-info">
+            <h3 class="nosotros-member-name">Dani</h3>
+            <p class="nosotros-member-role">Project Manager</p>
+            <p class="nosotros-member-desc">Coordina timings, equipos y entregas. Se asegura de que cada proyecto avance con orden, sin sorpresas y cumpliendo plazos. El puente entre cliente y equipo técnico.</p>
+          </div>
+        </div>
+
+        <!-- Alberto -->
+        <div class="nosotros-member reveal reveal-delay-2">
+          <div class="nosotros-member-avatar">
+            <img src="/nosotros/Alberto.webp" alt="Alberto" loading="lazy" />
+          </div>
+          <div class="nosotros-member-info">
+            <h3 class="nosotros-member-name">Alberto</h3>
+            <p class="nosotros-member-role">Full Stack Developer</p>
+            <p class="nosotros-member-desc">Construye la arquitectura técnica de cada proyecto. Desde el front-end hasta APIs e integraciones, se encarga de que todo funcione, escale y se mantenga limpio.</p>
+          </div>
+        </div>
+
+        <!-- Judith -->
+        <div class="nosotros-member reveal reveal-delay-3">
+          <div class="nosotros-member-avatar">
+            <img src="/nosotros/Judith.webp" alt="Judith" loading="lazy" />
+          </div>
+          <div class="nosotros-member-info">
+            <h3 class="nosotros-member-name">Judith</h3>
+            <p class="nosotros-member-role">UX/UI Designer</p>
+            <p class="nosotros-member-desc">Diseña interfaces claras, coherentes y orientadas a conversión. Trabaja cada pantalla con criterio funcional, no solo visual. Figma es su campo de batalla.</p>
+          </div>
+        </div>
+
+        <!-- Manuel -->
+        <div class="nosotros-member reveal reveal-delay-4">
+          <div class="nosotros-member-avatar">
+            <img src="/nosotros/Manuel.webp" alt="Manuel" loading="lazy" />
+          </div>
+          <div class="nosotros-member-info">
+            <h3 class="nosotros-member-name">Manuel</h3>
+            <p class="nosotros-member-role">Especialista en automatizaciones y agentes</p>
+            <p class="nosotros-member-desc">Diseña y conecta flujos automáticos con n8n, agentes IA y APIs. Hace que los sistemas trabajen solos donde antes había procesos manuales repetitivos.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. TECH STACK ============ -->
+  <section class="nosotros-tech">
+    <div class="container-main">
+      <span class="section-badge reveal">Stack</span>
+      <h2 class="reveal">Nuestro stack tecnológico</h2>
+      <p class="nosotros-tech-intro reveal">Trabajamos con las herramientas más actuales y fiables del mercado para garantizar proyectos escalables, mantenibles y de alto rendimiento.</p>
+
+      <div class="nosotros-tech-grid">
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/figma.svg" alt="Figma" loading="lazy" /></div>
+          <span class="nosotros-tech-name">Figma</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/react.svg" alt="React" loading="lazy" /></div>
+          <span class="nosotros-tech-name">React</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/angular.svg" alt="Angular" loading="lazy" /></div>
+          <span class="nosotros-tech-name">Angular</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/wordpress.svg" alt="WordPress" loading="lazy" /></div>
+          <span class="nosotros-tech-name">WordPress</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/laravel.svg" alt="Laravel" loading="lazy" /></div>
+          <span class="nosotros-tech-name">Laravel</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/n8n.svg" alt="n8n" loading="lazy" /></div>
+          <span class="nosotros-tech-name">n8n</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/chatgpt.svg" alt="ChatGPT" loading="lazy" /></div>
+          <span class="nosotros-tech-name">ChatGPT</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/javascript.svg" alt="JavaScript" loading="lazy" /></div>
+          <span class="nosotros-tech-name">JavaScript</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/css3.svg" alt="CSS3" loading="lazy" /></div>
+          <span class="nosotros-tech-name">CSS3</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/cursor.svg" alt="Cursor" loading="lazy" /></div>
+          <span class="nosotros-tech-name">Cursor</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/typescript.svg" alt="TypeScript" loading="lazy" /></div>
+          <span class="nosotros-tech-name">TypeScript</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/nextjs.svg" alt="Next.js" loading="lazy" /></div>
+          <span class="nosotros-tech-name">Next.js</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/vercel.svg" alt="Vercel" loading="lazy" /></div>
+          <span class="nosotros-tech-name">Vercel</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/make.svg" alt="Make" loading="lazy" /></div>
+          <span class="nosotros-tech-name">Make</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. VALUES ============ -->
+  <section class="nosotros-values">
+    <div class="container-main">
+      <span class="section-badge reveal">ADN</span>
+      <h2 class="reveal">Nuestros valores</h2>
+      <div class="nosotros-values-grid">
+        <div class="nosotros-value reveal">
+          <div class="nosotros-value-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+          </div>
+          <h3>Enfoque a negocio</h3>
+          <p>Cada decisión técnica conecta con un impacto económico. Diseñamos y desarrollamos pensando en ROI, no solo en features bonitas.</p>
+        </div>
+        <div class="nosotros-value reveal reveal-delay-1">
+          <div class="nosotros-value-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+          </div>
+          <h3>Rebeldía elegante</h3>
+          <p>Cuestionamos malas decisiones técnicas con respeto y argumentos. Si algo no funciona, lo decimos. Si hay una mejor forma, la proponemos.</p>
+        </div>
+        <div class="nosotros-value reveal reveal-delay-2">
+          <div class="nosotros-value-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"/></svg>
+          </div>
+          <h3>Anti-cliché</h3>
+          <p>Sin lenguaje vacío, solo impacto medible. No creemos en "revolucionario" ni "disruptivo". Creemos en resultados concretos.</p>
+        </div>
+        <div class="nosotros-value reveal reveal-delay-3">
+          <div class="nosotros-value-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3>Claridad</h3>
+          <p>Si no se entiende, no sirve. Explicamos nuestra estrategia, nuestro diseño y nuestro código de forma clara. Sin tecnicismos innecesarios.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS ============ -->
+  <div id="tp-testimonios"></div>
+
+  <!-- ============ 9. FINAL CTA ============ -->
+  <section class="sp-expert" aria-label="Contacto">
+    <div class="container-main">
+      <div class="sp-expert-layout reveal">
+        <div class="sp-expert-quote">
+          <span class="section-badge">Hablemos</span>
+          <h2 class="sp-expert-h2">Si tienes un proyecto digital que necesita orden, estrategia y ejecución, podemos ayudarte.</h2>
+          <p>No vendemos humo ni hacemos promesas vacías. Te escuchamos, analizamos tu caso y te decimos con honestidad qué necesitas y cómo podemos resolverlo.</p>
+          <div style="margin-top:1.5rem;">
+            <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="sp-expert-author">
+          <img src="/nosotros/Jordi.webp" alt="Jordi Expósito" class="sp-expert-avatar" width="80" height="80" loading="lazy">
+          <div>
+            <div class="sp-expert-name">Jordi Expósito</div>
+            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
+            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener" class="sp-expert-linkedin">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+              Ver en LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10. FOOTER ============ -->
+  <div id="tp-footer"></div>
+
+  <!-- Scripts -->
+  <script src="/js/components.js" defer></script>
+  <script>
+    TP.navbar('nosotros');
+    TP.testimonios();
+    TP.footer();
+    TP.initJS();
+  </script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js" defer></script>
+</body>
+
+</html>

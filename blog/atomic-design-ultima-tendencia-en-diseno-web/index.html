@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atomic Design, última tendencia en diseño web | Blog | Tres Puntos</title>
+  <meta name="description" content="¿Qué es Atomic Design? Atomic Design es un modo de diseñar aplicaciones y sitios web, comenzando desde lo más particular para poder cambiar de forma..." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/atomic-design-ultima-tendencia-en-diseno-web" />
+  <meta property="og:title" content="Atomic Design, última tendencia en diseño web" />
+  <meta property="og:description" content="¿Qué es Atomic Design? Atomic Design es un modo de diseñar aplicaciones y sitios web, comenzando desde lo más particular para poder cambiar de forma..." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/blog/atomic-design-ultima-tendencia-en-diseno-web" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/blog/atomic-design-ultima-tendencia-en-diseno-web-og.jpg" />
+  <meta property="article:published_time" content="2025-07-02" />
+  <meta property="article:modified_time" content="2025-07-02" />
+  <meta property="article:author" content="Jordi Expósito" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Atomic Design, última tendencia en diseño web",
+      "description": "¿Qué es Atomic Design? Atomic Design es un modo de diseñar aplicaciones y sitios web, comenzando desde lo más particular para poder cambiar de forma...",
+      "image": "https://www.trespuntoscomunicacion.es/img/blog/atomic-design-ultima-tendencia-en-diseno-web-og.jpg",
+      "datePublished": "2025-07-02",
+      "dateModified": "2025-07-02",
+      "author": {
+        "@type": "Person",
+        "name": "Jordi Expósito"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.trespuntoscomunicacion.es/img/logo.svg"
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ Blog Post Page Styles ═══ */
+
+    /* ── Article Header ── */
+    .article-header {
+      padding: 3rem 1.5rem;
+      border-bottom: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .article-header {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-header-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 0.375rem 0.875rem;
+      margin-bottom: 1.5rem;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mint);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 1.5rem 0;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 768px) {
+      .article-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .article-meta-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .article-meta-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--mint);
+      font-size: 0.75rem;
+    }
+
+    .article-meta-time {
+      color: var(--text-secondary);
+    }
+
+    /* ── Article Body ── */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .article-body {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-content {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 2rem 0 1rem 0;
+      color: var(--text-primary);
+    }
+
+    .article-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 700;
+      margin: 1.75rem 0 0.875rem 0;
+      color: var(--text-primary);
+    }
+
+    .article-content p {
+      margin: 0 0 1rem 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .article-content em {
+      color: var(--text-secondary);
+    }
+
+    .article-content a {
+      color: var(--mint);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(93, 255, 191, 0.3);
+    }
+
+    .article-content a:hover {
+      border-bottom-color: var(--mint);
+    }
+
+    .article-content blockquote {
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      background: rgba(93, 255, 191, 0.05);
+      border-left: 3px solid var(--mint);
+      border-radius: 4px;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .article-content code {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      background: rgba(93, 255, 191, 0.08);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      color: var(--mint);
+    }
+
+    .article-content pre {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .article-content pre code {
+      background: none;
+      padding: 0;
+      color: var(--mint);
+    }
+
+    .article-content img {
+      max-width: 100%;
+      height: auto;
+      margin: 2rem 0;
+      border-radius: 8px;
+      border: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    /* ── Article Footer/Divider ── */
+    .article-footer-divider {
+      max-width: 760px;
+      margin: 3rem auto;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(93, 255, 191, 0.2), transparent);
+    }
+
+    /* ── Related Articles ── */
+    .related-articles {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .related-articles {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .related-articles-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 2rem 0;
+      color: var(--text-primary);
+    }
+
+    .related-articles-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .related-articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .related-articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .related-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: var(--mint);
+      background: rgba(93, 255, 191, 0.03);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(93, 255, 191, 0.12);
+    }
+
+    .related-card-cat {
+      display: inline-block;
+      padding: 0.375rem 0.875rem;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mint);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+
+    .related-card-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--text-primary);
+      flex-grow: 1;
+    }
+
+    .related-card-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--mint);
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .related-card:hover .related-card-link {
+      gap: 0.75rem;
+    }
+
+    .related-card-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── CTA Section ── */
+    .article-cta {
+      background: linear-gradient(135deg, rgba(93, 255, 191, 0.05) 0%, rgba(93, 255, 191, 0.02) 100%);
+      border-top: 1px solid rgba(93, 255, 191, 0.1);
+      border-bottom: 1px solid rgba(93, 255, 191, 0.1);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .article-cta {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-cta h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 1.5rem 0;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 768px) {
+      .article-cta h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .article-cta-btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      background: var(--mint);
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-base);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .article-cta-btn:hover {
+      background: var(--mint-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(93, 255, 191, 0.3);
+    }
+
+    /* ── Breadcrumb Navigation ── */
+    .article-breadcrumb {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 0 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    @media (min-width: 768px) {
+      .article-breadcrumb {
+        padding: 1rem 2rem 0 2rem;
+      }
+    }
+
+    .article-breadcrumb a {
+      color: var(--mint);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .article-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .article-breadcrumb-sep {
+      margin: 0 0.5rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+  <div id="tp-navbar"></div>
+
+  <!-- Breadcrumb -->
+  <div class="article-breadcrumb">
+    <a href="/">Inicio</a>
+    <span class="article-breadcrumb-sep">/</span>
+    <a href="/blog">Blog</a>
+    <span class="article-breadcrumb-sep">/</span>
+    <span>Atomic Design, última tendencia en diseño web</span>
+  </div>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-wrapper">
+      <div class="article-category">Desarrollo Web</div>
+      <h1 class="article-title">Atomic Design, última tendencia en diseño web</h1>
+      <div class="article-meta">
+        <div class="article-meta-author">
+          <div class="article-meta-avatar">JE</div>
+          <div>
+            <div style="font-weight: 600; color: var(--text-primary);">Jordi Expósito</div>
+            <div class="article-meta-time">2 de julio de 2025</div>
+          </div>
+        </div>
+        <div class="article-meta-item">
+          <span style="color: var(--mint);">•</span>
+          <span class="article-meta-time">4 min de lectura</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <main class="article-body">
+    <article class="article-content">
+      <h2>¿Qué es Atomic Design?</h2>
+
+<p>Atomic Design es un modo de diseñar aplicaciones y sitios web, comenzando desde lo más particular para poder cambiar de forma flexible y rápida en lo general, manteniendo la consistencia a lo largo de todo el sistema. En cierto modo, trabaja de forma parecida a frameworks como bootstrap o knockout, pero en vez de utilizar uno estándar que se adaptará mejor o peor a nuestras necesidades, nos da un marco de trabajo para crear el nuestro propio.</p>
+
+<h2>Origen de los componentes Web</h2>
+
+<p>El concepto de componente no es algo reciente, ya surgió hace unos años y los principales navegadores comenzaron a discutir acerca de ello a finales de los 90. El problema de siempre es que los navegadores han implementado sus funcionalidades de una forma totalmente distinta, hasta que poco a poco los estándares han ido moldeando estos problemas llegando hoy en día a un estándar del concepto de componente: <em>Web Components</em> (https://www.webcomponents.org)</p>
+
+<h2>Atomic Web Design</h2>
+
+<p>El concepto de <em><strong>Atomic Web Design</strong></em> nace de un artículo de Brad Frost <em><strong>(lectura muy recomendada)</strong></em>, en el que explica el diseño de una interfaz web descomponiendo en unidades más pequeñas, como él denomina átomos, y reutilizando estos componentes a través de la composición para generar elementos más grandes y potentes que compongan todo el diseño. En su propuesta Brad habla de <em><strong>5 grados de componentes:</strong></em> Átomos, Moléculas, Organismos, Templates y Páginas. Brad Forst defiende que no se deben diseñar páginas, si no sistemas de componentes. Os dejo una charla donde Brad profundiza en estos puntos: Si usas Angular, React o Vue, ¿no te suena este concepto? Componentes reutilizables con su propio estado y propiedades heredadas que trabajando en conjunto conforman una aplicación. Si durante todo el desarrollo de una aplicación tenemos este pensamiento: <em><strong>¿Por qué no comenzar la componentización desde el comienzo del diseño web?</strong></em> Brad defiende crear una guía de estilos usando Pattern Lab, una herramienta construida para ello. Un ejemplo donde se puede ver todos los pasos de estos componentes es: http://demo.patternlab.io/ donde se definen los elementos básicos de la marca: colores, fuentes tipo gráficas, inputs, iconos, animaciones hasta generar moléculas y organismos que componen la distintas composiciones del diseño generando páginas.</p>
+
+<h2>¿Qué ventajas obtenemos con la componentización?</h2>
+
+<p>El empleo de componentes aporta una serie de características muy potentes uses en el ámbito que los uses:</p>
+
+<ul>
+  <li><em>Autocontenidos y encapsulados.</em></li>
+  <li><em>Independientes.</em></li>
+  <li><em>Reutilizables.</em></li>
+  <li><em>Faciles de Testear.</em></li>
+  <li><em>Facilitan el principio de Única responsabilidad.</em></li>
+</ul>
+
+<p><strong>Átomos</strong></p>
+
+<p>Los átomos son la unidad básica en el Atomic Design, y son las mínimas unidades indivisibles que tienen sentido por sí mismas. Ejemplo de estos serían la tipografía, el color, los botones, imágenes, tablas, campos de formulario y hablando a nivel de código entrarían las etiquetas html de img, p, headings, button, input y table. Tener todos estos pequeños átomos nos permite tener un sistema que nos de una <strong>visión global del aspecto gráfico del mismo,</strong> además facilita el trabajo en niveles más complejos y funcionan como referentes para después construir nuevos componentes.</p>
+
+<p><strong>Moléculas</strong></p>
+
+<p>Como en química, las moléculas son las agrupaciones de átomos que al estar unidos adquieren nuevas características y significados y que <strong>funcionan como una unidad.</strong>Hablando a nivel de diseño web corresponderían a un menú de navegación, una tabla o una caja de búsqueda. Con las moléculas nos aseguramos que existe una coherencia gráfica, estructural y conceptual en todos lo componentes que construyamos de nuestra web. Además esto implica que debemos construir <strong>elementos pensados para ser reutilizados en diferentes contextos.</strong></p>
+
+<p><strong>Organismos</strong></p>
+
+<p>Es el conjunto de moléculas y átomos, unidos para crear una sección más compleja de la interfaz. Algunos ejemplos son las cabeceras (logo + menú + buscador) o las parrillas de productos (misma ficha para presentar diferente información repetida con un nombre, descripción, precio, foto…). Es posible que nuestros clientes no estén interesados en lo que ven por ahora, pero a partir de aquí la interfaz comienza a cobrar sentido.</p>
+
+<p><strong>Plantillas</strong></p>
+
+<p>Estas consisten en grupos de organismos colocados de manera conjunta para formar páginas. En este momento comenzamos a ver la <strong>coherencia del contenido y el diseño,</strong>junto a temas de estructura como la retícula. La función principal de estas plantillas es dar contexto a las pequeñas unidades, jerarquizarlos, dar orden a la lectura y disponer los contenidos. En definitiva comenzar a crear lo que conocemos como <strong>wireframes</strong></p>
+
+<p><strong>Páginas</strong></p>
+
+<p>Estas reemplazan a las estructuras o contenidos simulados con contenidos reales para dotar de significado y carácter el producto final. Son los sujetos con<strong> mayor nivel de fidelidad.</strong> Estas también permiten simular los diferentes estados de un mismo contenido como titulares más largos o más cortos, o carritos de la compra con 1 elemento o con 20. Representan el paso de prueba y <strong>control de calidad del sistema</strong> y de su efectividad y permiten ajustar deficiencias en los componentes anteriores para mejorar el conjunto total. Una vez visto y entendidas todas las partes que componen Atomic Design y cómo funciona, podemos resumir sus principales características en:</p>
+
+<p><strong>Escalabilidad:</strong> Se adapta a cualquier dispositivo.</p>
+
+<p><strong>Actualizable:</strong> És más fácil realizar una actualización a nivel de diseño.</p>
+
+<p><strong>Mantenimiento:</strong> Hacer un pequeño cambio es muy sencillo.</p>
+
+<p><strong>Reutilizable y re-aprovechable:</strong> Cada pequeño elemento es creado para adaptarse a diferentes contextos.</p>
+    </article>
+  </main>
+
+  <!-- Divider -->
+  <div class="article-footer-divider"></div>
+
+  <!-- Related Articles -->
+  <section class="related-articles">
+    <h2 class="related-articles-title">Artículos relacionados</h2>
+    <div class="related-articles-grid">
+      <!-- RELATED ARTICLES PLACEHOLDER -->
+      <!-- Add 3 related article cards here -->
+      <a href="/blog/experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Experiencia de usuario: 10 heurísticas de Nielsen para tu web</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Las leyes de UX: el manual invisible del diseño centrado en el usuario</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/figma-make-da-vida-a-tus-prototipos-con-magia-y-ux-ui" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Figma Make: da vida a tus prototipos con magia y UX/UI</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+      <!-- END RELATED ARTICLES PLACEHOLDER -->
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="article-cta">
+    <h2>¿Tu plataforma necesita más que un artículo?</h2>
+    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Conversemos sobre cómo podemos ayudarte a escalar tu negocio digital.</p>
+    <a href="/iniciar-proyecto" class="article-cta-btn">Iniciar proyecto</a>
+  </section>
+
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    // Initialize navbar and footer
+    TP.navbar('blog');
+    TP.footer();
+    TP.initJS();
+  </script>
+</body>
+
+</html>

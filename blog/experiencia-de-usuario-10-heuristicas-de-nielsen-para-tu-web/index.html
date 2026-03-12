@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiencia de usuario: 10 heurísticas de Nielsen para tu web | Blog | Tres Puntos</title>
+  <meta name="description" content="Descubre cómo las 10 heurísticas de usabilidad de Nielsen revolucionan tu experiencia de usuario. Tips frescos desde Barcelona para tu estudio creativo digital." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web" />
+  <meta property="og:title" content="Experiencia de usuario: 10 heurísticas de Nielsen para tu web" />
+  <meta property="og:description" content="Descubre cómo las 10 heurísticas de usabilidad de Nielsen revolucionan tu experiencia de usuario. Tips frescos desde Barcelona para tu estudio creativo digital." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/blog/experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/blog/experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web-og.jpg" />
+  <meta property="article:published_time" content="2024-09-25" />
+  <meta property="article:modified_time" content="2024-09-25" />
+  <meta property="article:author" content="Jordi Expósito" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Experiencia de usuario: 10 heurísticas de Nielsen para tu web",
+      "description": "Descubre cómo las 10 heurísticas de usabilidad de Nielsen revolucionan tu experiencia de usuario. Tips frescos desde Barcelona para tu estudio creativo digital.",
+      "image": "https://www.trespuntoscomunicacion.es/img/blog/experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web-og.jpg",
+      "datePublished": "2024-09-25",
+      "dateModified": "2024-09-25",
+      "author": {
+        "@type": "Person",
+        "name": "Jordi Expósito"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.trespuntoscomunicacion.es/img/logo.svg"
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ Blog Post Page Styles ═══ */
+
+    /* ── Article Header ── */
+    .article-header {
+      padding: 3rem 1.5rem;
+      border-bottom: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .article-header {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-header-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 0.375rem 0.875rem;
+      margin-bottom: 1.5rem;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mint);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 1.5rem 0;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 768px) {
+      .article-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .article-meta-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .article-meta-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--mint);
+      font-size: 0.75rem;
+    }
+
+    .article-meta-time {
+      color: var(--text-secondary);
+    }
+
+    /* ── Article Body ── */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .article-body {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-content {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 2rem 0 1rem 0;
+      color: var(--text-primary);
+    }
+
+    .article-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 700;
+      margin: 1.75rem 0 0.875rem 0;
+      color: var(--text-primary);
+    }
+
+    .article-content p {
+      margin: 0 0 1rem 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .article-content em {
+      color: var(--text-secondary);
+    }
+
+    .article-content a {
+      color: var(--mint);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(93, 255, 191, 0.3);
+    }
+
+    .article-content a:hover {
+      border-bottom-color: var(--mint);
+    }
+
+    .article-content blockquote {
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      background: rgba(93, 255, 191, 0.05);
+      border-left: 3px solid var(--mint);
+      border-radius: 4px;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .article-content code {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      background: rgba(93, 255, 191, 0.08);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      color: var(--mint);
+    }
+
+    .article-content pre {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .article-content pre code {
+      background: none;
+      padding: 0;
+      color: var(--mint);
+    }
+
+    .article-content img {
+      max-width: 100%;
+      height: auto;
+      margin: 2rem 0;
+      border-radius: 8px;
+      border: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    /* ── Article Footer/Divider ── */
+    .article-footer-divider {
+      max-width: 760px;
+      margin: 3rem auto;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(93, 255, 191, 0.2), transparent);
+    }
+
+    /* ── Related Articles ── */
+    .related-articles {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .related-articles {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .related-articles-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 2rem 0;
+      color: var(--text-primary);
+    }
+
+    .related-articles-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .related-articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .related-articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .related-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: var(--mint);
+      background: rgba(93, 255, 191, 0.03);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(93, 255, 191, 0.12);
+    }
+
+    .related-card-cat {
+      display: inline-block;
+      padding: 0.375rem 0.875rem;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mint);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+
+    .related-card-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--text-primary);
+      flex-grow: 1;
+    }
+
+    .related-card-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--mint);
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .related-card:hover .related-card-link {
+      gap: 0.75rem;
+    }
+
+    .related-card-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── CTA Section ── */
+    .article-cta {
+      background: linear-gradient(135deg, rgba(93, 255, 191, 0.05) 0%, rgba(93, 255, 191, 0.02) 100%);
+      border-top: 1px solid rgba(93, 255, 191, 0.1);
+      border-bottom: 1px solid rgba(93, 255, 191, 0.1);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .article-cta {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-cta h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 1.5rem 0;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 768px) {
+      .article-cta h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .article-cta-btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      background: var(--mint);
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-base);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .article-cta-btn:hover {
+      background: var(--mint-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(93, 255, 191, 0.3);
+    }
+
+    /* ── Breadcrumb Navigation ── */
+    .article-breadcrumb {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 0 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    @media (min-width: 768px) {
+      .article-breadcrumb {
+        padding: 1rem 2rem 0 2rem;
+      }
+    }
+
+    .article-breadcrumb a {
+      color: var(--mint);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .article-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .article-breadcrumb-sep {
+      margin: 0 0.5rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+  <div id="tp-navbar"></div>
+
+  <!-- Breadcrumb -->
+  <div class="article-breadcrumb">
+    <a href="/">Inicio</a>
+    <span class="article-breadcrumb-sep">/</span>
+    <a href="/blog">Blog</a>
+    <span class="article-breadcrumb-sep">/</span>
+    <span>Experiencia de usuario: 10 heurísticas de Nielsen para tu web</span>
+  </div>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-wrapper">
+      <div class="article-category">Desarrollo Web</div>
+      <h1 class="article-title">Experiencia de usuario: 10 heurísticas de Nielsen para tu web</h1>
+      <div class="article-meta">
+        <div class="article-meta-author">
+          <div class="article-meta-avatar">JE</div>
+          <div>
+            <div style="font-weight: 600; color: var(--text-primary);">Jordi Expósito</div>
+            <div class="article-meta-time">25 de septiembre de 2024</div>
+          </div>
+        </div>
+        <div class="article-meta-item">
+          <span style="color: var(--mint);">•</span>
+          <span class="article-meta-time">4 min de lectura</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <main class="article-body">
+    <article class="article-content">
+      <p>En el bullicio digital de Barcelona, una <strong>agencia UX en Barcelona</strong> sabe que la <em>experiencia de usuario</em> no es un lujo: es la gasolina de tu proyecto. Basándonos en las famosas 10 heurísticas de Nielsen, te contamos de forma directa y con flow cómo aplicarlas en tu próximo <strong>diseño web Barcelona</strong>. Prepárate para trucos con garra, ejemplos de actualidad (y hasta un toque ninja) para que cada clic de tus usuarios sea una fiesta. ¡Arrancamos!</p>
+
+<h2>Cuando tu UX pierde flow (y cómo recuperarlo)</h2>
+
+<h3>1. Visibilidad del estado del sistema</h3>
+<p>¿Alguna vez un botón te dejó esperando sin saber si algo estaba pasando? Imagina la sala de espera del Mobile World Congress 2024: cargas de conferencias, pantallas que titilan… y tú sin saber si te aceptaron. Ese subidón de emoción se convierte en "¿hola? ¿alguien ahí?". Con la primera heurística, se trata de comunicar siempre qué ocurre: loaders, barras, micro-animaciones. Ejemplo real: Netflix te muestra un "Cargando episodio…" con contador. Resultado: tu mente no se aburre y espera contenta.</p>
+
+<h3>2. Coincidencia entre sistema y mundo real</h3>
+<p>Si llamas "carrito" a un mago ambulante, nadie lo entenderá. Del mismo modo, tu interfaz ha de hablar el idioma de tu audiencia. En la última actualización de iOS 18, Apple cambió "AirDrop" por "Compartir con proximidad" para evitar confusiones: ¡puntazo! Tu <strong>agencia UX/UI en Barcelona</strong> debe pensar igual: iconos intuitivos, metáforas cotidianas y cero jerga técnica.</p>
+
+<h2>Control y libertad: porque los usuarios actúan como ninja</h2>
+
+<h3>3. Control de usuario y libertad</h3>
+<p>¿Cuántas veces has ahítao un formulario y al dar "atrás" perdiste todo? Drama. Aquí la solución es clara: deshacer, rehacer, botones de "volver" visibles. Como en la suite de edición de Canva, donde cada cambio es reversible con un clic ninja.</p>
+
+<h3>4. Consistencia y estándares</h3>
+<p>Que el menú esté arriba a la izquierda es casi un acuerdo tácito global. El portal de la UE sobre usabilidad destaca que saltarse estos estándares genera confusión. En 2024, la normativa de accesibilidad web de la UE lo exige más que nunca: consistencia gráfica y de texto en cada paso.</p>
+
+<h2>Consistencia y diseño prevenido: evitando el caos creativo</h2>
+
+<h3>5. Prevención de errores</h3>
+<p>"¿Seguro que quieres borrar tu cuenta?" puede sonar a amenaza, pero es justo lo que tu usuario necesita. Esa microcopia con guiño ("¿Estás seguro, valiente?") evita clics en falso y reduce tickets de soporte.</p>
+
+<h3>6. Reconocimiento en lugar de recuerdo</h3>
+<p>Cuando buscamos una dirección, Google Maps no nos pide que recordemos la ruta alfabética de calles. En tu web, muestra menús, sugerencias y autocompletar: menos carga mental, más flow.</p>
+
+<h2>Prevención de errores y reconocimiento rápido: ¡menos drama!</h2>
+
+<h3>7. Flexibilidad y eficiencia de uso</h3>
+<p>Los power users exigen atajos, los novatos piden guías. Slack lo clava con "/comandos" y tutoriales en pantalla. Así, atiendes a ambos perfiles sin matar al resto con opciones avanzadas que no entienden.</p>
+
+<h3>8. Estética y diseño minimalista</h3>
+<p>Un diseño recargado es como un concierto de Metal con 10 guitarras: suena bien hasta que ya no cabe nadie. Spotify lo demuestra con su barra inferior limpia. Elimina elementos irrelevantes y deja brillar lo esencial.</p>
+
+<h2>## Flexibilidad, estética y ayuda: rematando tu masterpiece</h2>
+
+<h3>9. Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de errores</h3>
+<p>"Error 404: No hallado" es tan útil como un paraguas agujereado en lluvia torrencial. Mejor muestra "No encontramos tu página, pero aquí tienes estas alternativas". Ejemplo: Amazon sugiere productos similares.</p>
+
+<h3>10. Ayuda y documentación</h3>
+<p>Una guía rápida o un chatbot integrado puede salvar el día. En el último lanzamiento de ChatGPT Enterprise (mayo 2024), el asistente propone comandos útiles al primer "hola". Tu equipo de servicio de UX/UI lo integra como estandar: ayuda justa en el momento justo.</p>
+
+<h2>## Una heurística atemporal: la empatía ninja</h2>
+<p>Fuera de las 10 reglas formales, hay un mandamiento eterno: conoce a tu usuario. Como en cualquier <strong>agencia ecommerce Barcelona</strong> que se precie, ponle cara, contextos y emociones. ¿El secreto? Entrevistas, pruebas reales y empatía sin filtro. Si tú sientes lo que siente, tu interfaz hablará directo al corazón (y a la conversión).</p>
+
+<h2>Noticias de última hora</h2>
+<ul>
+  <li>Mobile World Congress 2024 apuesta por la <strong>accesibilidad web</strong> con nuevos estándares ARIA.</li>
+  <li>iOS 18 estrena "Compartir con proximidad" para usuarios menos techies.</li>
+  <li>La UE aprueba en abril de 2024 la directiva de accesibilidad digital obligatoria.</li>
+  <li>OpenAI lanza ChatGPT Enterprise con guía interactiva en pantalla.</li>
+</ul>
+
+<h2>Bloque visual / checklist UX con garra</h2>
+<ul>
+  <li>Un onboarding sin spoilers (primero lo esencial, luego el power-up).</li>
+  <li>Feedback al instante (ni dictador ni fantasma: avisa siempre).</li>
+  <li>Íconos con sentido (si no son obvios, son zombies).</li>
+  <li>Vías de escape claras (undo, cancelar y demás héroes olvidados).</li>
+  <li>Microcopy con chispa ("¿seguro?" y un emoji de guiño).</li>
+  <li>Modo clásico y avanzado: para newbies y ninjas.</li>
+</ul>
+
+<h2>Cierre y CTA</h2>
+<p>En Tres Puntos somos más que una <strong>agencia UX/UI en Barcelona</strong>; somos tu equipo de diseño UX/UI con garra. Desde desarrollo web a medida hasta tienda online, combinamos estrategia digital y <strong>diseño web Barcelona</strong> para que tu proyecto no solo funcione, sino enamore. ¿Listo para subir tu experiencia de usuario al siguiente nivel? Contáctanos y hablemos de tu UX/UI.</p>
+    </article>
+  </main>
+
+  <!-- Divider -->
+  <div class="article-footer-divider"></div>
+
+  <!-- Related Articles -->
+  <section class="related-articles">
+    <h2 class="related-articles-title">Artículos relacionados</h2>
+    <div class="related-articles-grid">
+      <!-- RELATED ARTICLES PLACEHOLDER -->
+      <!-- Add 3 related article cards here -->
+      <a href="/blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Las leyes de UX: el manual invisible del diseño centrado en el usuario</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/figma-make-da-vida-a-tus-prototipos-con-magia-y-ux-ui" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Figma Make: da vida a tus prototipos con magia y UX/UI</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/figma-make-y-la-nueva-era-ai-en-tu-agencia-ux-ui" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Figma Make y la nueva era AI en tu agencia UX/UI</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+      <!-- END RELATED ARTICLES PLACEHOLDER -->
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="article-cta">
+    <h2>¿Tu plataforma necesita más que un artículo?</h2>
+    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Conversemos sobre cómo podemos ayudarte a escalar tu negocio digital.</p>
+    <a href="/iniciar-proyecto" class="article-cta-btn">Iniciar proyecto</a>
+  </section>
+
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    // Initialize navbar and footer
+    TP.navbar('blog');
+    TP.footer();
+    TP.initJS();
+  </script>
+</body>
+
+</html>

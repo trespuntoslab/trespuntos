@@ -1,0 +1,1734 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arquitectura Digital de Conversión | Tres Puntos Barcelona</title>
+  <meta name="description" content="¿Qué es la Arquitectura Digital de Conversión? Nuestra metodología para diagnosticar pérdidas y construir plataformas que convierten." />
+  
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/arquitectura-digital-conversion/" />
+  <meta property="og:title" content="Arquitectura Digital de Conversión | Cómo trabajamos en Tres Puntos" />
+  <meta property="og:description"
+    content="Nuestra metodología de trabajo: diagnóstico, diseño UX/UI, arquitectura digital y desarrollo a medida. Así construimos plataformas que convierten." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/arquitectura-digital-conversion" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Arquitectura Digital de Conversión",
+      "description": "Metodología de trabajo para construir plataformas digitales que funcionan y generan resultados. Diagnóstico, arquitectura, diseño UX/UI, desarrollo y validación.",
+      "url": "https://www.trespuntoscomunicacion.es/arquitectura-digital-conversion"
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ Page-specific: Arquitectura Digital de Conversión — Methodology ═══ */
+
+    /* ── 1. HERO: The Strategic Blueprint (3D Animation) ── */
+    .method-system {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: radial-gradient(circle at center, rgba(93, 255, 191, 0.05) 0%, transparent 70%);
+      perspective: 1200px;
+      /* Base for 3D */
+    }
+
+    .method-perspective-wrap {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transform: rotateX(22deg) rotateY(-8deg) translateZ(0);
+      animation: blueprintEntrance 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards, blueprintFloat 6s ease-in-out infinite 1.5s;
+    }
+
+    @keyframes blueprintEntrance {
+      from {
+        opacity: 0;
+        transform: rotateX(45deg) rotateY(0) translateZ(-200px) scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: rotateX(22deg) rotateY(-8deg) translateZ(0) scale(1);
+      }
+    }
+
+    @keyframes blueprintFloat {
+
+      0%,
+      100% {
+        transform: rotateX(22deg) rotateY(-8deg) translateZ(0);
+      }
+
+      50% {
+        transform: rotateX(24deg) rotateY(-6deg) translateZ(10px);
+      }
+    }
+
+    /* Layer 1: The Floor Grid */
+    .method-floor {
+      position: absolute;
+      inset: -50%;
+      width: 200%;
+      height: 200%;
+      background-image:
+        linear-gradient(rgba(93, 255, 191, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(93, 255, 191, .08) 1px, transparent 1px);
+      background-size: 40px 40px;
+      transform: rotateX(0) translateZ(-40px);
+      opacity: 0.3;
+      mask-image: radial-gradient(circle at center, black 30%, transparent 70%);
+    }
+
+    .method-core-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(93, 255, 191, 0.15) 0%, transparent 70%);
+      transform: translate(-50%, -50%) translateZ(-20px);
+      animation: corePulse 4s infinite;
+    }
+
+    @keyframes corePulse {
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) translateZ(-20px) scale(1);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: translate(-50%, -50%) translateZ(-20px) scale(1.2);
+        opacity: 0.8;
+      }
+    }
+
+    /* Layer 2: Architecture Layers */
+    .method-architecture {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .method-connections {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: translateZ(20px);
+      filter: drop-shadow(0 0 8px rgba(93, 255, 191, 0.2));
+    }
+
+    .path-data {
+      stroke: rgba(93, 255, 191, .15);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-dasharray: 2 10;
+      animation: dashMove 10s linear infinite;
+    }
+
+    @keyframes dashMove {
+      to {
+        stroke-dashoffset: -100;
+      }
+    }
+
+    .method-nodes {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3.5rem;
+      transform: translateZ(60px);
+      z-index: 10;
+    }
+
+    .method-node {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 0.8rem;
+      background: rgba(14, 14, 14, 0.8);
+      border: 1px solid rgba(93, 255, 191, 0.4);
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--mint);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(93, 255, 191, 0.1);
+      transform-style: preserve-3d;
+      transition: transform 0.3s;
+    }
+
+    .method-node::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--mint), transparent);
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .method-node-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 12px var(--mint);
+      margin-bottom: 2px;
+    }
+
+    /* Layer 3: Particles */
+    .method-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      transform: translateZ(40px);
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--mint);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--mint);
+      opacity: 0;
+    }
+
+    .p1 {
+      animation: pFlow 3s infinite;
+      left: 15%;
+      top: 50%;
+    }
+
+    .p2 {
+      animation: pFlow 3s infinite 0.5s;
+      left: 30%;
+      top: 50%;
+    }
+
+    .p3 {
+      animation: pFlow 3s infinite 1.2s;
+      left: 45%;
+      top: 52%;
+    }
+
+    .p4 {
+      animation: pFlow 3s infinite 1.8s;
+      left: 60%;
+      top: 48%;
+    }
+
+    .p5 {
+      animation: pFlow 3s infinite 2.3s;
+      left: 75%;
+      top: 50%;
+    }
+
+    @keyframes pFlow {
+      0% {
+        transform: translateX(-50px) scale(0);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+
+      80% {
+        opacity: 1;
+        transform: translateX(100px) scale(1);
+      }
+
+      100% {
+        transform: translateX(150px) scale(0);
+        opacity: 0;
+      }
+    }
+
+    /* Layer 4: HUD Elements */
+    .method-hud {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      transform: translateZ(100px);
+    }
+
+    .hud-tag {
+      position: absolute;
+      font-family: var(--font-mono);
+      font-size: 0.5rem;
+      color: rgba(93, 255, 191, 0.6);
+      padding: 2px 4px;
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 2px;
+      animation: hudFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes hudFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: translateY(-10px);
+        opacity: 0.8;
+      }
+    }
+
+    .ht1 {
+      top: 25%;
+      left: 20%;
+      animation-delay: 0s;
+    }
+
+    .ht2 {
+      top: 65%;
+      left: 45%;
+      animation-delay: 1s;
+    }
+
+    .ht3 {
+      top: 35%;
+      left: 75%;
+      animation-delay: 2s;
+    }
+
+    .method-status-bar {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 10px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      z-index: 100;
+    }
+
+    .status-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      color: var(--text-muted);
+    }
+
+    .status-led {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 6px var(--mint);
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    /* ── 2. METHODOLOGY (STACKING CARDS) ── */
+    .sp-methodology {
+      padding: 10rem 0;
+    }
+
+    .sp-method-layout {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0;
+    }
+
+    .sp-method-copy {
+      text-align: center;
+      margin-bottom: 7rem;
+      width: 100%;
+    }
+
+    .sp-method-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding-bottom: 300px;
+      /* More scroll space for stacking */
+    }
+
+    .sp-method-card {
+      position: sticky;
+      background: #0e0e0e;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 40px;
+      padding: 3rem 3.5rem;
+      margin-bottom: 2rem;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      will-change: transform;
+      width: 100%;
+    }
+
+    .sp-method-card:hover {
+      border-color: rgba(93, 255, 191, 0.3);
+      background: #111;
+    }
+
+    /* Stacking logic with slightly more vertical separation for clarity */
+    .sp-method-card:nth-child(1) {
+      top: 60px;
+      z-index: 1;
+    }
+
+    .sp-method-card:nth-child(2) {
+      top: 100px;
+      z-index: 2;
+    }
+
+    .sp-method-card:nth-child(3) {
+      top: 140px;
+      z-index: 3;
+    }
+
+    .sp-method-card:nth-child(4) {
+      top: 180px;
+      z-index: 4;
+    }
+
+    .sp-method-card:nth-child(5) {
+      top: 220px;
+      z-index: 5;
+    }
+
+    .sp-method-card-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .sp-method-card-main {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .sp-method-card-num {
+      width: 56px;
+      height: 56px;
+      background: rgba(93, 255, 191, 0.05);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--mint);
+      margin-bottom: 1rem;
+    }
+
+    .sp-method-card-info h3 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .dot-mint {
+      width: 10px;
+      height: 10px;
+      background: var(--mint);
+      border-radius: 50%;
+      box-shadow: 0 0 15px var(--mint);
+    }
+
+    .sp-method-card-intro {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      max-width: 100%;
+    }
+
+    .sp-method-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .sp-method-list li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      padding-left: 1.5rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .sp-method-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      background: var(--mint);
+      border-radius: 50%;
+    }
+
+    .sp-method-list li strong {
+      color: #fff;
+      font-weight: 600;
+      background: rgba(93, 255, 191, 0.08);
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+
+    .sp-method-card-anim {
+      width: 100%;
+      height: 400px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+    }
+
+    .sp-method-card-footer {
+      grid-column: 1 / -1;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    @media(max-width:991px) {
+      .sp-method-card {
+        padding: 3rem;
+      }
+
+      .sp-method-card-main {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .sp-method-card-anim {
+        height: 300px;
+      }
+
+      .sp-method-card-info h3 {
+        font-size: 1.75rem;
+      }
+    }
+
+    /* ── ANIMATION COMPONENTS ── */
+
+    /* Fase 01: Audit Scanner */
+    .meth-anim-01 {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .scan-node {
+      position: absolute;
+      padding: 4px 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      color: var(--text-muted);
+      transition: all 0.4s ease;
+    }
+
+    .sn-1 {
+      top: 20%;
+      left: 15%;
+    }
+
+    .sn-2 {
+      top: 35%;
+      left: 60%;
+    }
+
+    .sn-3 {
+      top: 55%;
+      left: 25%;
+    }
+
+    .sn-4 {
+      top: 70%;
+      left: 65%;
+    }
+
+    .sn-5 {
+      top: 25%;
+      left: 40%;
+    }
+
+    .scanner-line {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--mint), transparent);
+      box-shadow: 0 0 15px var(--mint);
+      animation: scanLoop 6s infinite ease-in-out;
+      z-index: 5;
+    }
+
+    .central-conn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      padding: 6px 12px;
+      background: var(--mint);
+      color: var(--bg-main);
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 700;
+      animation: centralReveal 6s infinite;
+      z-index: 6;
+    }
+
+    @keyframes scanLoop {
+
+      0%,
+      100% {
+        top: 10%;
+        opacity: 0;
+      }
+
+      10%,
+      90% {
+        opacity: 1;
+      }
+
+      50% {
+        top: 90%;
+      }
+    }
+
+    @keyframes centralReveal {
+
+      0%,
+      40% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+      }
+
+      50%,
+      80% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+
+      90%,
+      100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+      }
+    }
+
+    /* Fase 02: UX Flow */
+    .meth-anim-02 {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .ux-mock {
+      width: 140px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      position: relative;
+      padding: 10px;
+      overflow: hidden;
+    }
+
+    .ux-wire {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ux-wire div {
+      background: rgba(255, 255, 255, 0.05);
+      animation: wirePulse 4s infinite;
+    }
+
+    .ux-flow-labels {
+      display: flex;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.5rem;
+      color: var(--mint);
+    }
+
+    .ux-label-tag {
+      padding: 2px 6px;
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 4px;
+    }
+
+    @keyframes wirePulse {
+
+      0%,
+      100% {
+        opacity: 0.3;
+      }
+
+      50% {
+        opacity: 0.8;
+        background: rgba(93, 255, 191, 0.1);
+      }
+    }
+
+    /* Fase 03: Iteration */
+    .meth-anim-03 {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .iter-screen {
+      position: absolute;
+      width: 120px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+    }
+
+    .iter-1 {
+      animation: iterStep 9s infinite;
+    }
+
+    .iter-2 {
+      animation: iterStep 9s infinite;
+      animation-delay: 3s;
+    }
+
+    .iter-3 {
+      animation: iterStep 9s infinite;
+      animation-delay: 6s;
+      border-color: var(--mint);
+      box-shadow: 0 0 20px rgba(93, 255, 191, 0.1);
+    }
+
+    @keyframes iterStep {
+
+      0%,
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+
+      5%,
+      30% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      35% {
+        opacity: 0;
+      }
+    }
+
+    /* Fase 04: Development */
+    .meth-anim-04 {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 20px;
+    }
+
+    .dev-box {
+      width: 60px;
+      height: 60px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .dev-arrow {
+      font-family: var(--font-mono);
+      color: var(--mint);
+      animation: arrowPulse 2s infinite;
+    }
+
+    .dev-tag {
+      position: absolute;
+      bottom: 30px;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      color: var(--mint);
+      opacity: 0;
+      animation: tagReveal 8s infinite;
+    }
+
+    @keyframes arrowPulse {
+
+      0%,
+      100% {
+        transform: translateX(0);
+        opacity: 0.3;
+      }
+
+      50% {
+        transform: translateX(5px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes tagReveal {
+
+      0%,
+      70% {
+        opacity: 0;
+      }
+
+      80%,
+      95% {
+        opacity: 1;
+      }
+    }
+
+    /* Fase 05: Beta Launch */
+    .meth-anim-05 {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .beta-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      opacity: 0.2;
+      transform: translateX(-10px);
+      transition: all 0.5s;
+    }
+
+    .beta-step.active {
+      opacity: 1;
+      transform: translateX(0);
+      color: #fff;
+    }
+
+    .beta-check {
+      color: var(--mint);
+    }
+
+    .launch-tag {
+      margin-top: 10px;
+      padding: 4px 12px;
+      background: var(--mint);
+      color: var(--bg-main);
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.5s;
+    }
+
+    @media (max-width: 1024px) {
+      .sp-method-card-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .sp-method-card-anim {
+        height: 180px;
+      }
+    }
+
+    /* ── 3. MARQUEE ── */
+    .sp-marquee {
+      margin: 3rem 0;
+    }
+
+    /* ── 4. RESPONSIVE FLOW ── */
+    /* ── 5. WORD CLOUD (Punto de Partida) ── */
+    .sp-problem-visual {
+      position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+    }
+
+    .word-cloud-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .cloud-word {
+      position: absolute;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.4);
+      /* Increased base opacity */
+      white-space: nowrap;
+      cursor: default;
+      transition: all 0.4s ease;
+      user-select: none;
+      text-shadow: 0 0 10px rgba(93, 255, 191, 0.05);
+    }
+
+    .cloud-word:hover {
+      color: var(--mint);
+      text-shadow: 0 0 20px var(--mint);
+      transform: scale(1.1) translateZ(50px) !important;
+      opacity: 1 !important;
+      z-index: 50;
+    }
+
+    /* Floating Animations */
+    @keyframes floatCloud {
+
+      0%,
+      100% {
+        transform: translate(0, 0) translateZ(0);
+      }
+
+      25% {
+        transform: translate(10px, -15px) translateZ(20px);
+      }
+
+      50% {
+        transform: translate(-5px, 10px) translateZ(-10px);
+      }
+
+      75% {
+        transform: translate(-12px, -5px) translateZ(15px);
+      }
+    }
+
+    .cw-1 {
+      font-size: 2.5rem;
+      top: 40%;
+      left: 20%;
+      animation: floatCloud 8s infinite ease-in-out;
+      opacity: 0.6;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .cw-2 {
+      font-size: 1.8rem;
+      top: 20%;
+      left: 50%;
+      animation: floatCloud 10s infinite reverse ease-in-out;
+      opacity: 0.4;
+    }
+
+    .cw-3 {
+      font-size: 1.5rem;
+      top: 65%;
+      left: 40%;
+      animation: floatCloud 12s infinite ease-in-out;
+      opacity: 0.35;
+    }
+
+    .cw-4 {
+      font-size: 2rem;
+      top: 30%;
+      left: 10%;
+      animation: floatCloud 9s infinite 1s ease-in-out;
+      opacity: 0.5;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .cw-5 {
+      font-size: 1.2rem;
+      top: 15%;
+      left: 20%;
+      animation: floatCloud 14s infinite ease-in-out;
+      opacity: 0.3;
+    }
+
+    .cw-6 {
+      font-size: 2.2rem;
+      top: 55%;
+      left: 60%;
+      animation: floatCloud 11s infinite 2s ease-in-out;
+      opacity: 0.55;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .cw-7 {
+      font-size: 1.4rem;
+      top: 75%;
+      left: 15%;
+      animation: floatCloud 13s infinite reverse ease-in-out;
+      opacity: 0.35;
+    }
+
+    .cw-8 {
+      font-size: 1.6rem;
+      top: 10%;
+      left: 70%;
+      animation: floatCloud 15s infinite 0.5s ease-in-out;
+      opacity: 0.4;
+    }
+
+    .cw-9 {
+      font-size: 1.9rem;
+      top: 45%;
+      left: 80%;
+      animation: floatCloud 10s infinite ease-in-out;
+      opacity: 0.5;
+    }
+
+    .cw-10 {
+      font-size: 1.1rem;
+      top: 80%;
+      left: 55%;
+      animation: floatCloud 12s infinite ease-in-out;
+      opacity: 0.3;
+    }
+
+    @media(max-width:991px) {
+      .sp-problem-visual {
+        height: 300px;
+        order: -1;
+      }
+
+      .cw-1 {
+        font-size: 1.8rem;
+      }
+
+      .cw-4 {
+        font-size: 1.5rem;
+      }
+
+      .cw-6 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media(max-width:768px) {
+      .method-perspective-wrap {
+        transform: rotateX(22deg) rotateY(-8deg) scale(0.7);
+      }
+
+      .method-nodes {
+        gap: 1rem;
+        padding: 0 1rem;
+        transform: translateZ(40px);
+      }
+
+      .method-node {
+        font-size: .5rem;
+        padding: .3rem .5rem;
+      }
+
+      .method-hud {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar placeholder -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="sp-hero" aria-label="Arquitectura Digital de Conversión">
+    <div class="container-main">
+      <div class="sp-hero-layout">
+        <div class="sp-hero-copy">
+          <span class="section-badge reveal">Metodología</span>
+          <h1 class="sp-hero-h1 reveal"><span class="text-gradient-standalone">Arquitectura Digital de
+              Conversión</span>: así construimos plataformas que funcionan</h1>
+          <p class="sp-hero-sub reveal">Nuestro objetivo no es solo diseñar una web o desarrollar una plataforma. Es
+            entender el negocio y construir una experiencia digital que funcione y genere resultados.</p>
+          <div class="sp-hero-ctas reveal">
+            <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Hero visual: process flow diagram -->
+        <div class="sp-hero-visual reveal reveal-delay-1">
+          <div class="sp-browser-mock">
+            <div class="sp-browser-topbar">
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-url">trespuntoscomunicacion.es/proceso</span>
+            </div>
+            <div class="sp-browser-body">
+              <!-- Process Flow Diagram -->
+              <div class="method-system">
+                <div class="method-perspective-wrap">
+                  <!-- Layer 1: Floor -->
+                  <div class="method-floor">
+                    <div class="method-core-glow"></div>
+                  </div>
+
+                  <!-- Layer 2: Architecture -->
+                  <div class="method-architecture">
+                    <svg class="method-connections" viewBox="0 0 700 100" preserveAspectRatio="xMidYMid meet">
+                      <path class="path-data" d="M 50,50 L 650,50" />
+                    </svg>
+
+                    <div class="method-nodes">
+                      <div class="method-node"><span class="method-node-dot"></span>Negocio</div>
+                      <div class="method-node"><span class="method-node-dot"></span>Plan</div>
+                      <div class="method-node"><span class="method-node-dot"></span>Arquitectura</div>
+                      <div class="method-node"><span class="method-node-dot"></span>UX/UI</div>
+                      <div class="method-node"><span class="method-node-dot"></span>Code</div>
+                    </div>
+
+                    <div class="method-particles">
+                      <div class="particle p1"></div>
+                      <div class="particle p2"></div>
+                      <div class="particle p3"></div>
+                      <div class="particle p4"></div>
+                      <div class="particle p5"></div>
+                    </div>
+                  </div>
+
+                  <!-- Layer 3: HUD Elements -->
+                  <div class="method-hud">
+                    <div class="hud-tag ht1">CORE_ENGINE_v2.0</div>
+                    <div class="hud-tag ht2">CNV_INDEX: 9.2%</div>
+                    <div class="hud-tag ht3">LATENCY: 0.04s</div>
+                  </div>
+                </div>
+
+                <!-- Status Bar -->
+                <div class="method-status-bar">
+                  <div class="status-item">
+                    <span class="status-led"></span>
+                    SYSTEM_ACTIVE: STABLE
+                  </div>
+                  <div class="status-item">
+                    BP_LAYER_01: ACTIVE
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="sp-float-badge reveal" id="sp-process-badge">
+            <svg width="14" height="14" fill="none" stroke="var(--mint)" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+            <span>Metodología probada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT MARQUEE ============ -->
+  <div class="sp-marquee" aria-hidden="true">
+    <div class="sp-marquee-track">
+      <span>Diagnóstico</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Arquitectura</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>UX/UI</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Desarrollo</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Validación</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Lanzamiento</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Diagnóstico</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Arquitectura</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>UX/UI</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Desarrollo</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Validación</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Lanzamiento</span>
+      <span class="sp-marquee-sep">&bull;</span>
+    </div>
+  </div>
+
+  <!-- ============ 2. PROBLEMA (PUNTO DE PARTIDA) ============ -->
+  <section class="sp-problem" aria-label="Punto de partida">
+    <div class="container-main">
+      <div class="sp-problem-layout">
+        <div class="sp-problem-copy reveal">
+          <span class="section-badge reveal">Punto de partida</span>
+          <h2 class="section-h2 reveal">Todo empieza cuando <span class="text-gradient-standalone">nos cuentas tu
+              proyecto</span></h2>
+          <p class="sp-problem-text reveal">El primer paso es completar el formulario de inicio. Esto nos permite
+            entender el tipo de empresa, si existe una plataforma actual, qué objetivos tiene el proyecto y qué
+            integraciones utiliza. No comenzamos a diseñar sin entender primero el contexto.</p>
+          <div class="sp-hero-ctas reveal" style="margin-top:1.5rem;">
+            <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
+              Iniciar proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Animation: Floating Word Cloud -->
+        <div class="sp-problem-visual reveal reveal-delay-1">
+          <div class="word-cloud-container">
+            <span class="cloud-word cw-1">ROI</span>
+            <span class="cloud-word cw-2">UX / UI</span>
+            <span class="cloud-word cw-3">Modelo de negocio</span>
+            <span class="cloud-word cw-4">Conversión</span>
+            <span class="cloud-word cw-5">Benchmark</span>
+            <span class="cloud-word cw-6">Estrategia</span>
+            <span class="cloud-word cw-7">KPIs</span>
+            <span class="cloud-word cw-8">Integraciones</span>
+            <span class="cloud-word cw-9">Optimización</span>
+            <span class="cloud-word cw-10">Escalabilidad</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. METHODOLOGY PHASES ============ -->
+  <section class="sp-methodology" aria-label="Fases de la metodología">
+    <div class="container-main">
+      <div class="sp-method-layout">
+        <div class="sp-method-copy">
+          <span class="section-badge reveal">Metodología</span>
+          <h2 class="section-h2 reveal">Nuestro proceso en <span class="text-gradient-standalone">5 fases</span></h2>
+          <p class="sp-method-intro reveal">Cada fase está diseñada para garantizar que el resultado final sea una
+            plataforma que funciona, escala y genera conversión. Aquí te explicamos en detalle cómo trabajamos.</p>
+        </div>
+
+        <div class="sp-method-cards">
+          <!-- Fase 01 -->
+          <div class="sp-method-card reveal">
+            <div class="sp-method-card-box">
+              <div class="sp-method-card-num">01</div>
+              <div class="sp-method-card-main">
+                <div class="sp-method-card-info">
+                  <h3>Entender el negocio <span class="dot-mint"></span></h3>
+                  <p class="sp-method-card-intro">Antes de diseñar, necesitamos entender el contexto completo del
+                    proyecto:</p>
+                  <ul class="sp-method-list">
+                    <li><strong>Por qué existe</strong> la empresa y cuál es su propuesta de valor</li>
+                    <li><strong>Modelo de negocio</strong> y fuentes de ingresos principales</li>
+                    <li><strong>Objetivos específicos</strong> del proyecto en términos de conversión y ROI</li>
+                    <li><strong>Estado actual</strong> de la plataforma (si existe) y qué necesita cambiar</li>
+                    <li><strong>Integraciones necesarias</strong> con sistemas ERP, CRM u otros tools</li>
+                    <li><strong>Análisis de la plataforma actual</strong> si existe: arquitectura, rendimiento, deuda
+                      técnica</li>
+                  </ul>
+                  <p class="sp-method-card-footer">Esta fase elimina suposiciones. El resultado es un documento de
+                    estrategia que alinea tecnología con objetivos de negocio.</p>
+                </div>
+                <div class="sp-method-card-anim">
+                  <div class="meth-anim-01">
+                    <div class="scanner-line"></div>
+                    <div class="central-conn">Arquitectura definida</div>
+                    <div class="scan-node sn-1">Usuarios</div>
+                    <div class="scan-node sn-2">CRM</div>
+                    <div class="scan-node sn-3">ERP</div>
+                    <div class="scan-node sn-4">Analytics</div>
+                    <div class="scan-node sn-5">Web Actual</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fase 02 -->
+          <div class="sp-method-card reveal">
+            <div class="sp-method-card-box">
+              <div class="sp-method-card-num">02</div>
+              <div class="sp-method-card-main">
+                <div class="sp-method-card-info">
+                  <h3>Diseño UX/UI <span class="dot-mint"></span></h3>
+                  <p class="sp-method-card-intro">Con la estrategia clara, diseñamos la experiencia de usuario en Figma,
+                    pantalla a pantalla:</p>
+                  <ul class="sp-method-list">
+                    <li><strong>Enfoque mobile-first</strong> que luego escalamos a desktop y tablet</li>
+                    <li><strong>Iteración continua</strong> con feedback del cliente en cada avance</li>
+                    <li><strong>Prototipo navegable</strong> que simula la experiencia real del usuario</li>
+                    <li><strong>Validación de conversión</strong> en cada paso del flujo de usuario</li>
+                    <li><strong>Design Engineer</strong> puede crear versiones interactivas funcionales si es necesario
+                    </li>
+                  </ul>
+                  <p class="sp-method-card-footer">El cliente participa activamente. No hacemos cambios a ciegas; el
+                    cliente ve y aprueba cada decisión de diseño.</p>
+                </div>
+                <div class="sp-method-card-anim">
+                  <div class="meth-anim-02">
+                    <div class="ux-mock">
+                      <div class="ux-wire">
+                        <div style="height:15px; width:40%;"></div>
+                        <div style="height:60px; width:100%;"></div>
+                        <div style="height:10px; width:80%;"></div>
+                        <div style="height:20px; width:50%; border-radius:4px;"></div>
+                      </div>
+                    </div>
+                    <div class="ux-flow-labels">
+                      <span class="ux-label-tag">Home</span>
+                      <span class="ux-label-tag">&rarr;</span>
+                      <span class="ux-label-tag">Producto</span>
+                      <span class="ux-label-tag">&rarr;</span>
+                      <span class="ux-label-tag">Acción</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fase 03 -->
+          <div class="sp-method-card reveal">
+            <div class="sp-method-card-box">
+              <div class="sp-method-card-num">03</div>
+              <div class="sp-method-card-main">
+                <div class="sp-method-card-info">
+                  <h3>Cambio sin coste <span class="dot-mint"></span></h3>
+                  <p class="sp-method-card-intro">La fase de diseño es el momento para explorar y encontrar la mejor
+                    solución sin restricciones:</p>
+                  <ul class="sp-method-list">
+                    <li><strong>Cambios gratuitos</strong> durante toda la fase de creación y diseño</li>
+                    <li><strong>Libertad de exploración</strong> sin penalizaciones económicas por iterar</li>
+                    <li><strong>Iteraciones rápidas</strong> hasta encontrar la solución óptima verificada</li>
+                    <li><strong>Validación de usabilidad</strong> antes de comprometerse con el desarrollo real</li>
+                  </ul>
+                  <p class="sp-method-card-footer">Este modelo elimina riesgos. Una vez aprobado el diseño final,
+                    conocemos exactamente qué vamos a desarrollar.</p>
+                </div>
+                <div class="sp-method-card-anim">
+                  <div class="meth-anim-03">
+                    <div class="iter-screen iter-1">Concepto</div>
+                    <div class="iter-screen iter-2">Feedback</div>
+                    <div class="iter-screen iter-3">v. Final</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fase 04 -->
+          <div class="sp-method-card reveal">
+            <div class="sp-method-card-box">
+              <div class="sp-method-card-num">04</div>
+              <div class="sp-method-card-main">
+                <div class="sp-method-card-info">
+                  <h3>Desarrollo <span class="dot-mint"></span></h3>
+                  <p class="sp-method-card-intro">Transformamos el prototipo validado en una plataforma real escalable y
+                    robusta:</p>
+                  <ul class="sp-method-list">
+                    <li><strong>Arquitectura escalable</strong> Backend robusto y Frontend optimizado</li>
+                    <li><strong>Integración de datos</strong> total con ERP, CRM y sistemas externos</li>
+                    <li><strong>Optimización de rendimiento</strong> para carga rápida y escalabilidad masiva</li>
+                    <li><strong>Testing automático</strong> para asegurar que todo funciona correctamente</li>
+                  </ul>
+                  <p class="sp-method-card-footer">Construimos plataformas sólidas donde la tecnología se adapta al
+                    negocio, y no al revés.</p>
+                </div>
+                <div class="sp-method-card-anim">
+                  <div class="meth-anim-04">
+                    <div class="dev-box" style="color:#a882ff; border-color:rgba(168,130,255,0.3)">UI</div>
+                    <div class="dev-arrow">&rarr;</div>
+                    <div class="dev-box" style="font-size:0.7rem; color:var(--mint); border-color:rgba(93,255,191,0.3)">
+                      &lt;Code/&gt;</div>
+                    <div class="dev-arrow">&rarr;</div>
+                    <div class="dev-box" style="color:#fff; border-color:rgba(255,255,255,0.3)">Live</div>
+                    <div class="dev-tag">Producción lista</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fase 05 -->
+          <div class="sp-method-card reveal" id="meth-step-05">
+            <div class="sp-method-card-box">
+              <div class="sp-method-card-num">05</div>
+              <div class="sp-method-card-main">
+                <div class="sp-method-card-info">
+                  <h3>Beta y Lanzamiento <span class="dot-mint"></span></h3>
+                  <p class="sp-method-card-intro">Aseguramos una transición transparente y libre de errores al entorno
+                    de producción:</p>
+                  <ul class="sp-method-list">
+                    <li><strong>Fase Beta controlada</strong> para revisión profunda por parte del cliente</li>
+                    <li><strong>Migración de datos</strong> segura para preservar información y SEO (301 redirects)</li>
+                    <li><strong>Lanzamiento controlado</strong> sin interrupciones ni impacto en las operaciones</li>
+                    <li><strong>Soporte post-lanzamiento</strong> acompañamiento experto en la fase crítica</li>
+                  </ul>
+                  <p class="sp-method-card-footer">Validamos que la plataforma esté activa y generando resultados desde
+                    el primer minuto.</p>
+                </div>
+                <div class="sp-method-card-anim">
+                  <div class="meth-anim-05">
+                    <div class="beta-step"><span class="beta-check">✔</span>Beta</div>
+                    <div class="beta-step"><span class="beta-check">✔</span>Testing</div>
+                    <div class="beta-step"><span class="beta-check">✔</span>Deploy</div>
+                    <div class="launch-tag">Sistema activo</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CASOS DE ÉXITO (TP.casos) ============ -->
+  <div id="tp-casos"></div>
+
+  <!-- ============ SERVICIOS RELACIONADOS ============ -->
+  <section class="sp-related" aria-label="Servicios relacionados">
+    <div class="container-main">
+      <span class="section-badge reveal">Servicios complementarios</span>
+      <h2 class="section-h2 reveal">Servicios que conforman esta metodología</h2>
+      <p class="sp-related-intro reveal">La Arquitectura Digital de Conversión es un enfoque integral que combina
+        múltiples disciplinas. Cada uno de estos servicios es un bloque específico de nuestro proceso.</p>
+
+      <div class="sp-related-grid">
+        <a href="/servicios/diseno-ux-ui-barcelona" class="sp-related-card reveal">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+            </svg>
+          </div>
+          <h3>Diseño UX/UI</h3>
+          <p>Experiencia de usuario que convierte. Diseño en Figma con iteración continua hasta encontrar la solución
+            óptima.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/desarrollo-web-a-medida-barcelona" class="sp-related-card reveal reveal-delay-1">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+            </svg>
+          </div>
+          <h3>Desarrollo web a medida</h3>
+          <p>Arquitectura digital sólida con tecnología moderna. Programación limpia, sin deuda técnica y preparada para
+            escalar.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/consultoria-digital-barcelona" class="sp-related-card reveal reveal-delay-2">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </div>
+          <h3>Consultoría digital</h3>
+          <p>Auditoría de tu arquitectura actual. Diagnóstico profundo para identificar cuellos de botella y deuda
+            técnica.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS (TP.testimonios) ============ -->
+  <div id="tp-testimonios"></div>
+
+  <!-- ============ OPINIÓN EXPERTA ============ -->
+  <section class="sp-expert" aria-label="Opinión experta">
+    <div class="container-main">
+      <div class="sp-expert-layout reveal">
+        <div class="sp-expert-quote">
+          <span class="section-badge">Opinión experta</span>
+          <h2 class="sp-expert-h2">El mayor error en proyectos digitales es empezar a construir antes de entender el
+            sistema</h2>
+          <p>Nuestra metodología existe para evitar exactamente eso. Cuando la arquitectura está clara, todo lo demás
+            encaja. El diseño fluye, el desarrollo es predecible y el lanzamiento es limpio.</p>
+          <p>Lo que diferencia una plataforma excelente de una mediocre no es cuántos features tiene. Es cuán bien
+            entiende y resuelve el problema real del usuario. Por eso entender el negocio es el primer paso, no el
+            último.</p>
+        </div>
+        <div class="sp-expert-author">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="sp-expert-avatar" width="80" height="80"
+            loading="lazy">
+          <div>
+            <div class="sp-expert-name">Jordi Expósito</div>
+            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
+            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener"
+              class="sp-expert-linkedin">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path
+                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+              Ver en LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL + FORM ============ -->
+  <section id="cierre" aria-label="Iniciar proyecto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy reveal">
+          <span class="section-badge reveal">Siguiente paso</span>
+          <h2 class="cierre-h2">¿Tienes un <span class="text-gradient-standalone">proyecto similar</span>?</h2>
+          <p class="cierre-sub">El proceso empieza con 5 preguntas en un formulario rápido. En menos de 24 horas te
+            daremos una valoración inicial de alcance y presupuesto.<br><br>Cuéntanos qué estás construyendo.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Formulario directo en 3 minutos. Sin reunión de ventas previa.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Respondemos en menos de 24h con una valoración inicial.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>El proyecto empieza con diagnóstico, no con propuesta cerrada.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Si no encajamos, te lo decimos sin rodeos.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="form-gradient-accent"></div>
+          <div class="cierre-form-inner">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-nombre">Nombre</label>
+                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="f-email">Email</label>
+                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-tel">Teléfono</label>
+                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
+                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false"
+                  aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
+                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Rango aproximado</div>
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                  </div>
+                </div>
+                <input type="hidden" id="f-presupuesto" name="budget" value="" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
+              <textarea id="f-mensaje" class="input" rows="4"
+                placeholder="Describe brevemente tu proyecto o la plataforma que quieres construir..."></textarea>
+            </div>
+            <label class="checkbox-row" for="f-privacidad">
+              <input type="checkbox" id="f-privacidad" required />
+              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
+                  Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+            </label>
+            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn"
+              style="width:100%;justify-content:center;">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <p class="form-note">Sin compromiso. Respuesta en menos de 24h.</p>
+            <div class="form-divider"
+              style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+            </div>
+            <a href="/iniciar-proyecto" class="btn-secondary" style="width:100%;justify-content:center;">
+              Formulario completo (Presupuesto en 24h)
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    TP.navbar('');
+    TP.casos();
+    TP.testimonios();
+    TP.footer();
+    TP.initJS();
+
+    /* --- Beta Launch Animation Sequence --- */
+    const betaSteps = document.querySelectorAll('.beta-step');
+    const launchTag = document.querySelector('.launch-tag');
+    const methSection = document.querySelector('#meth-step-05');
+
+    if (methSection) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateBetaSteps();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(methSection);
+    }
+
+    function animateBetaSteps() {
+      betaSteps.forEach((step, index) => {
+        setTimeout(() => {
+          step.classList.add('active');
+        }, index * 800);
+      });
+
+      setTimeout(() => {
+        if (launchTag) {
+          launchTag.style.opacity = '1';
+          launchTag.style.transform = 'scale(1)';
+        }
+      }, betaSteps.length * 800 + 500);
+    }
+  </script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js" defer></script>
+</body>
+
+</html>

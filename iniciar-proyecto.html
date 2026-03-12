@@ -1,0 +1,2558 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuéntanos tu proyecto | Tres Puntos — Arquitectura Digital de Conversión</title>
+  
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/iniciar-proyecto/" />
+  <meta name="description" content="Cuéntanos tu proyecto. Analizamos tu situación y te enviamos una propuesta estructurada en 48h." />
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --mint: #5DFFBF;
+      --mint-dim: rgba(93, 255, 191, .12);
+      --mint-border: rgba(93, 255, 191, .2);
+      --bg-base: #0E0E0E;
+      --bg-surface: #141414;
+      --bg-subtle: #191919;
+      --bg-muted: #1F1F1F;
+      --text-primary: #F5F5F5;
+      --text-secondary: #B3B3B3;
+      --text-muted: #737373;
+      --border-base: #1F1F1F;
+      --border-strong: #2A2A2A;
+      --red: #f87171;
+      --red-dim: rgba(248, 113, 113, .1);
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --radius-full: 9999px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── NOISE TEXTURE ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: .4;
+    }
+
+    /* ─── GRID BG ─── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(93, 255, 191, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(93, 255, 191, .025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── GLOW ─── */
+    .glow-orb {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(93, 255, 191, .06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      top: -150px;
+      right: -200px;
+      animation: orbFloat 8s ease-in-out infinite;
+    }
+
+    @keyframes orbFloat {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(-30px, 30px) scale(1.05);
+      }
+    }
+
+    /* ─── LAYOUT ─── */
+    .page-wrap {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── NAV ─── */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 1px solid var(--border-base);
+      background: rgba(14, 14, 14, .8);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      height: 38px;
+    }
+
+    .nav-logo svg {
+      height: 100%;
+      width: auto;
+    }
+
+    .nav-logo-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 10px rgba(93, 255, 191, .6);
+    }
+
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: .375rem;
+      font-size: .8125rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .nav-back:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-back svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* ─── MAIN CONTAINER ─── */
+    .main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      min-height: calc(100vh - 57px);
+    }
+
+    /* ─── LEFT PANEL ─── */
+    .left-panel {
+      background: var(--bg-surface);
+      border-right: 1px solid var(--border-base);
+      padding: 3.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: sticky;
+      top: 57px;
+      height: calc(100vh - 57px);
+      overflow-y: auto;
+    }
+
+    .left-top {}
+
+    .panel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .375rem;
+      background: var(--mint-dim);
+      border: 1px solid var(--mint-border);
+      border-radius: var(--radius-full);
+      padding: .3rem .75rem;
+      font-size: .6875rem;
+      font-weight: 700;
+      color: var(--mint);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+    }
+
+    .panel-badge-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--mint);
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .4;
+        transform: scale(.7)
+      }
+    }
+
+    .panel-h1 {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.75rem;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .panel-h1 span {
+      color: var(--mint);
+    }
+
+    .panel-sub {
+      font-size: .9375rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Steps list */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: .875rem 0;
+      border-bottom: 1px solid var(--border-base);
+      position: relative;
+      transition: opacity .3s;
+    }
+
+    .step-item:last-child {
+      border-bottom: none;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .6875rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      border: 1.5px solid var(--border-strong);
+      color: var(--text-muted);
+      background: var(--bg-muted);
+      transition: all .3s;
+      margin-top: .1rem;
+    }
+
+    .step-item.active .step-num {
+      background: var(--mint);
+      border-color: var(--mint);
+      color: #0e0e0e;
+      box-shadow: 0 0 16px rgba(93, 255, 191, .4);
+    }
+
+    .step-item.done .step-num {
+      background: rgba(93, 255, 191, .15);
+      border-color: rgba(93, 255, 191, .3);
+      color: var(--mint);
+    }
+
+    .step-item.done .step-num::after {
+      content: '✓';
+    }
+
+    .step-item.done .step-num span {
+      display: none;
+    }
+
+    .step-text {}
+
+    .step-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: .875rem;
+      color: var(--text-muted);
+      transition: color .3s;
+      margin-bottom: .2rem;
+    }
+
+    .step-item.active .step-title,
+    .step-item.done .step-title {
+      color: var(--text-primary);
+    }
+
+    .step-desc {
+      font-size: .75rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .step-item.active .step-desc {
+      color: var(--text-secondary);
+    }
+
+    /* Left bottom */
+    .left-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-base);
+      margin-top: 2rem;
+    }
+
+    .trust-items {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .625rem;
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    .trust-item svg {
+      width: 14px;
+      height: 14px;
+      color: var(--mint);
+      flex-shrink: 0;
+    }
+
+    /* ─── RIGHT PANEL ─── */
+    .right-panel {
+      padding: 4rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Progress bar */
+    .progress-wrap {
+      margin-bottom: 3rem;
+    }
+
+    .progress-bar-track {
+      height: 3px;
+      background: var(--border-base);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      margin-bottom: .75rem;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--mint), #4ea5ff);
+      border-radius: var(--radius-full);
+      transition: width .6s cubic-bezier(.22, 1, .36, 1);
+      box-shadow: 0 0 12px rgba(93, 255, 191, .4);
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .progress-label {
+      font-size: .6875rem;
+      color: var(--text-muted);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+    }
+
+    .progress-pct {
+      font-size: .6875rem;
+      color: var(--mint);
+      font-family: var(--font-mono);
+      font-weight: 600;
+    }
+
+    /* Step panels */
+    .form-steps {
+      position: relative;
+    }
+
+    .form-step {
+      display: none;
+      animation: stepIn .4s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .form-step.active {
+      display: block;
+    }
+
+    @keyframes stepIn {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .step-heading {
+      margin-bottom: 2.5rem;
+    }
+
+    .step-tag {
+      font-size: .6875rem;
+      font-weight: 700;
+      color: var(--mint);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      margin-bottom: .5rem;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+    }
+
+    .step-tag::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 1px;
+      background: var(--mint);
+      flex-shrink: 0;
+    }
+
+    .step-h2 {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.875rem;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: .75rem;
+    }
+
+    .step-hint {
+      font-size: .875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Form fields */
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .field-label {
+      font-size: .8125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .field-sublabel {
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      padding: .875rem 1rem;
+      font-family: var(--font-body);
+      font-size: .9375rem;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      width: 100%;
+      -webkit-appearance: none;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: rgba(93, 255, 191, .5);
+      box-shadow: 0 0 0 3px rgba(93, 255, 191, .08);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .field select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23737373' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .field select option {
+      background: #1F1F1F;
+      color: var(--text-primary);
+    }
+
+    /* Radio / Checkbox groups */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: .625rem;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: flex-start;
+      gap: .875rem;
+      padding: .875rem 1rem;
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+      position: relative;
+    }
+
+    .radio-option:hover {
+      border-color: rgba(93, 255, 191, .3);
+      background: rgba(93, 255, 191, .02);
+    }
+
+    .radio-option.selected {
+      border-color: rgba(93, 255, 191, .5);
+      background: rgba(93, 255, 191, .04);
+    }
+
+    .radio-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .radio-visual {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: .1rem;
+      transition: border-color .2s;
+    }
+
+    .radio-option.selected .radio-visual {
+      border-color: var(--mint);
+    }
+
+    .radio-visual::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--mint);
+      opacity: 0;
+      transform: scale(0);
+      transition: all .2s;
+    }
+
+    .radio-option.selected .radio-visual::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .radio-text {
+      flex: 1;
+    }
+
+    .radio-title {
+      font-weight: 600;
+      font-size: .875rem;
+      color: var(--text-primary);
+      margin-bottom: .2rem;
+    }
+
+    .radio-desc {
+      font-size: .75rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Checkbox grid */
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .625rem;
+    }
+
+    .check-option {
+      display: flex;
+      align-items: center;
+      gap: .625rem;
+      padding: .75rem .875rem;
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+      position: relative;
+    }
+
+    .check-option:hover {
+      border-color: rgba(93, 255, 191, .3);
+    }
+
+    .check-option.selected {
+      border-color: rgba(93, 255, 191, .5);
+      background: rgba(93, 255, 191, .04);
+    }
+
+    .check-option input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .check-visual {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 2px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all .2s;
+    }
+
+    .check-option.selected .check-visual {
+      background: var(--mint);
+      border-color: var(--mint);
+    }
+
+    .check-visual svg {
+      width: 10px;
+      height: 10px;
+      color: #0e0e0e;
+      opacity: 0;
+      transition: opacity .15s;
+    }
+
+    .check-option.selected .check-visual svg {
+      opacity: 1;
+    }
+
+    .check-label {
+      font-size: .8125rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .check-option.selected .check-label {
+      color: var(--text-primary);
+    }
+
+    /* Budget pills */
+    .budget-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .75rem;
+    }
+
+    .budget-option {
+      padding: 1rem;
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      text-align: center;
+      transition: all .2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .budget-option::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(93, 255, 191, .04) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    .budget-option:hover::before {
+      opacity: 1;
+    }
+
+    .budget-option:hover {
+      border-color: rgba(93, 255, 191, .3);
+    }
+
+    .budget-option.selected {
+      border-color: rgba(93, 255, 191, .5);
+      background: rgba(93, 255, 191, .04);
+    }
+
+    .budget-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .budget-amount {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.125rem;
+      color: var(--text-primary);
+      margin-bottom: .25rem;
+    }
+
+    .budget-option.selected .budget-amount {
+      color: var(--mint);
+    }
+
+    .budget-desc {
+      font-size: .6875rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Navigation buttons */
+    .form-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-base);
+    }
+
+    .btn-back {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .75rem 1.25rem;
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: .875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .btn-back:hover {
+      border-color: var(--border-strong);
+      color: var(--text-primary);
+    }
+
+    .btn-back svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .btn-next {
+      display: flex;
+      align-items: center;
+      gap: .625rem;
+      padding: .875rem 2rem;
+      background: var(--mint);
+      border: none;
+      border-radius: var(--radius-md);
+      color: #0e0e0e;
+      font-family: var(--font-heading);
+      font-size: .9375rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-next::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0);
+      transition: background .2s;
+    }
+
+    .btn-next:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 32px rgba(93, 255, 191, .3);
+    }
+
+    .btn-next:active {
+      transform: translateY(0);
+    }
+
+    .btn-next:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .btn-next svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .btn-submit {
+      display: flex;
+      align-items: center;
+      gap: .625rem;
+      padding: .875rem 2.5rem;
+      background: linear-gradient(135deg, var(--mint) 0%, #4ea5ff 100%);
+      border: none;
+      border-radius: var(--radius-md);
+      color: #0e0e0e;
+      font-family: var(--font-heading);
+      font-size: .9375rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 40px rgba(93, 255, 191, .35);
+    }
+
+    .btn-submit:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-submit svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .btn-submit.loading {
+      pointer-events: none;
+    }
+
+    .btn-submit.loading .btn-text {
+      opacity: 0;
+    }
+
+    .btn-spinner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    .btn-submit.loading .btn-spinner {
+      opacity: 1;
+    }
+
+    .btn-spinner svg {
+      width: 18px;
+      height: 18px;
+      animation: spin .8s linear infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0)
+      }
+
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    /* Error msg */
+    .field-error {
+      font-size: .75rem;
+      color: var(--red);
+      display: none;
+      align-items: center;
+      gap: .3rem;
+    }
+
+    .field-error.show {
+      display: flex;
+    }
+
+    .field-error svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    /* ─── File upload drop zone ─── */
+    .file-upload-zone {
+      border: 1.5px dashed var(--border-strong);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+      position: relative;
+    }
+
+    .file-upload-zone:hover,
+    .file-upload-zone.dragover {
+      border-color: rgba(93, 255, 191, .5);
+      background: rgba(93, 255, 191, .03);
+    }
+
+    .file-upload-zone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    .file-upload-icon {
+      width: 32px;
+      height: 32px;
+      margin: 0 auto .75rem;
+      color: var(--text-muted);
+    }
+
+    .file-upload-text {
+      font-size: .8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .file-upload-text strong {
+      color: var(--mint);
+      font-weight: 600;
+    }
+
+    .file-upload-hint {
+      font-size: .6875rem;
+      color: var(--text-muted);
+      opacity: .7;
+      margin-top: .375rem;
+    }
+
+    .file-upload-list {
+      margin-top: .75rem;
+      display: flex;
+      flex-direction: column;
+      gap: .375rem;
+    }
+
+    .file-upload-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-base);
+      border-radius: var(--radius-sm, 6px);
+      padding: .5rem .75rem;
+      font-size: .75rem;
+      color: var(--text-primary);
+    }
+
+    .file-upload-item-name {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      overflow: hidden;
+    }
+
+    .file-upload-item-name span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .file-upload-item-size {
+      font-size: .6875rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      margin-left: .5rem;
+    }
+
+    .file-upload-item-remove {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: .25rem;
+      line-height: 1;
+      font-size: 1rem;
+      transition: color .2s;
+      flex-shrink: 0;
+    }
+
+    .file-upload-item-remove:hover {
+      color: var(--red);
+    }
+
+    .field input.error,
+    .field textarea.error,
+    .field select.error {
+      border-color: rgba(248, 113, 113, .5);
+      box-shadow: 0 0 0 3px var(--red-dim);
+    }
+
+    /* ─── SUCCESS SCREEN ─── */
+    #success-screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      animation: stepIn .5s ease;
+    }
+
+    #success-screen.show {
+      display: flex;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--mint-dim);
+      border: 1px solid var(--mint-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      animation: successPop .5s cubic-bezier(.34, 1.56, .64, 1) .2s both;
+    }
+
+    @keyframes successPop {
+      from {
+        transform: scale(.5);
+        opacity: 0
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1
+      }
+    }
+
+    .success-icon svg {
+      width: 36px;
+      height: 36px;
+      color: var(--mint);
+    }
+
+    .success-h2 {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 2rem;
+      color: var(--text-primary);
+      margin-bottom: .75rem;
+    }
+
+    .success-p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 400px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .success-steps {
+      display: flex;
+      flex-direction: column;
+      gap: .875rem;
+      text-align: left;
+      max-width: 380px;
+      width: 100%;
+      margin-bottom: 2.5rem;
+    }
+
+    .success-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .success-step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: var(--mint-dim);
+      border: 1px solid var(--mint-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .6875rem;
+      font-weight: 700;
+      color: var(--mint);
+      font-family: var(--font-mono);
+      margin-top: .1rem;
+    }
+
+    .success-step-text {
+      flex: 1;
+    }
+
+    .success-step-title {
+      font-weight: 600;
+      font-size: .875rem;
+      color: var(--text-primary);
+      margin-bottom: .2rem;
+    }
+
+    .success-step-desc {
+      font-size: .75rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .875rem 2rem;
+      border: 1.5px solid var(--mint-border);
+      border-radius: var(--radius-md);
+      background: transparent;
+      color: var(--mint);
+      font-family: var(--font-heading);
+      font-size: .9375rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .btn-home:hover {
+      background: var(--mint-dim);
+    }
+
+    /* ─── BUTTONS (igual que index.html) ─── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .875rem 2rem;
+      background: var(--mint);
+      color: #0e0e0e;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: .9375rem;
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, box-shadow .2s, transform .15s;
+      box-shadow: 0 0 20px rgba(93, 255, 191, .15);
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: #49e6a8;
+      box-shadow: 0 0 30px rgba(93, 255, 191, .25);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .875rem 2rem;
+      background: transparent;
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: .9375rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-strong);
+      text-decoration: none;
+      cursor: pointer;
+      transition: color .2s, border-color .2s, transform .15s;
+      white-space: nowrap;
+    }
+
+    .btn-secondary:hover {
+      color: var(--mint);
+      border-color: rgba(93, 255, 191, .4);
+      transform: translateY(-1px);
+    }
+
+    /* btn-submit: loading state */
+    .btn-submit {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-submit:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    .btn-submit.loading {
+      pointer-events: none;
+    }
+
+    .btn-submit.loading .btn-text {
+      opacity: 0;
+    }
+
+    .btn-spinner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    .btn-submit.loading .btn-spinner {
+      opacity: 1;
+    }
+
+    .btn-spinner svg {
+      width: 18px;
+      height: 18px;
+      animation: spin .8s linear infinite;
+    }
+
+    /* ─── CUSTOM SELECT (design system) ─── */
+    .custom-select {
+      position: relative;
+      width: 100%;
+      user-select: none;
+    }
+
+    .custom-select-trigger {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: .9375rem;
+      line-height: 1.5;
+      padding: .8rem .9375rem;
+      cursor: pointer;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s, color .2s;
+      text-align: left;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .custom-select-trigger.has-value {
+      color: var(--text-primary);
+    }
+
+    .custom-select-trigger:focus,
+    .custom-select.open .custom-select-trigger {
+      border-color: rgba(93, 255, 191, .5);
+      box-shadow: 0 0 0 3px rgba(93, 255, 191, .07);
+    }
+
+    .custom-select-value {
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .custom-select-chevron {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      display: block;
+      color: var(--text-muted);
+      transition: transform .2s, color .2s;
+    }
+
+    .custom-select-chevron polyline {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .custom-select.open .custom-select-chevron {
+      transform: rotate(180deg);
+      color: var(--mint);
+    }
+
+    .custom-select-panel {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      background: #111111;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: .25rem;
+      z-index: 200;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, .7), 0 4px 12px rgba(0, 0, 0, .4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      opacity: 0;
+      transform: translateY(-6px) scale(.98);
+      pointer-events: none;
+      transition: opacity .2s, transform .25s cubic-bezier(.34, 1.56, .64, 1);
+      transform-origin: top center;
+    }
+
+    .custom-select.open .custom-select-panel {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .custom-select-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      padding: .625rem .875rem;
+      border-radius: var(--radius-sm);
+      font-size: .875rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+
+    .custom-select-option:hover {
+      background: rgba(93, 255, 191, .06);
+      color: var(--text-primary);
+    }
+
+    .custom-select-option.selected {
+      color: var(--mint);
+      background: rgba(93, 255, 191, .08);
+    }
+
+    .custom-select-option.selected::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 8px rgba(93, 255, 191, .6);
+      flex-shrink: 0;
+    }
+
+    .custom-select-placeholder {
+      padding: .5rem .875rem;
+      font-size: .6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-base);
+      margin-bottom: .25rem;
+    }
+
+    /* ─── SAVE TOAST ─── */
+    .save-toast {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(16px);
+      background: var(--bg-surface);
+      border: 1px solid var(--mint-border);
+      border-radius: var(--radius-full);
+      padding: .45rem 1.125rem;
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: .7rem;
+      color: var(--mint);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      opacity: 0;
+      transition: all .3s;
+      pointer-events: none;
+      z-index: 999;
+      white-space: nowrap;
+    }
+
+    .save-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .save-toast-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--mint);
+      animation: pulse-dot 1.5s infinite;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      .right-panel {
+        padding: 3rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .left-panel {
+        position: static;
+        height: auto;
+        padding: 2rem 1.5rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-base);
+      }
+
+      .right-panel {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+
+      .checkbox-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .budget-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .nav {
+        padding: 1rem 1.25rem;
+      }
+
+      .right-panel {
+        padding: 2rem 1.25rem;
+      }
+
+      .step-h2 {
+        font-size: 1.5rem;
+      }
+
+      .budget-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="glow-orb"></div>
+
+  <div class="page-wrap">
+
+    <!-- NAV -->
+    <nav class="nav">
+      <a href="/" class="nav-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="46" viewBox="0 0 261.303 99.928"
+          aria-label="Tres Puntos Comunicación">
+          <g transform="translate(-143.8 -26.1)">
+            <path
+              d="M243.558,44.827a30.774,30.774,0,0,1,23.994,11.412,61.579,61.579,0,0,1,9.364-17.264,49.651,49.651,0,0,0-66.716,0,61.58,61.58,0,0,1,9.364,17.264,31.238,31.238,0,0,1,23.994-11.412Z"
+              transform="translate(30.748 0)" fill="#5dffbf" />
+            <path
+              d="M355.213,26.1a49.114,49.114,0,0,0-33.358,12.875,45.236,45.236,0,0,0-7.023,7.9,49.619,49.619,0,0,0-9.364,28.969,31.1,31.1,0,0,1-31.017,31.163A30.774,30.774,0,0,1,250.457,95.6a31.275,31.275,0,0,1-7.023-19.751,49.618,49.618,0,0,0-9.364-28.969,45.233,45.233,0,0,0-7.023-7.9A49.114,49.114,0,0,0,193.691,26.1a49.891,49.891,0,0,0,0,99.781,49.114,49.114,0,0,0,33.358-12.875,61.579,61.579,0,0,1-9.364-17.264,30.876,30.876,0,1,1,7.023-19.459,49.618,49.618,0,0,0,9.364,28.969,45.231,45.231,0,0,0,7.023,7.9,49.651,49.651,0,0,0,66.716,0,45.232,45.232,0,0,0,7.023-7.9A49.619,49.619,0,0,0,324.2,76.283a31.1,31.1,0,1,1,7.023,19.459,61.579,61.579,0,0,1-9.364,17.264,49.113,49.113,0,0,0,33.358,12.875,49.891,49.891,0,1,0,0-99.781Z"
+              transform="translate(0 0)" fill="#5dffbf" />
+            <circle cx="16.24" cy="16.24" r="16.24" transform="translate(177.158 59.751)" fill="#f8f8f8" />
+            <circle cx="16.24" cy="16.24" r="16.24" transform="translate(258.065 59.751)" fill="#f8f8f8" />
+            <circle cx="16.24" cy="16.24" r="16.24" transform="translate(338.973 59.751)" fill="#f8f8f8" />
+          </g>
+        </svg>
+      </a>
+      <a href="/" class="nav-back">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        Volver
+      </a>
+    </nav>
+
+    <!-- MAIN GRID -->
+    <div class="main">
+
+      <!-- LEFT PANEL -->
+      <aside class="left-panel">
+        <div class="left-top">
+          <div class="panel-badge">
+            <span class="panel-badge-dot"></span>
+            Presupuesto en 48h
+          </div>
+          <h1 class="panel-h1">Construimos lo que<br><span>tu negocio necesita</span></h1>
+          <p class="panel-sub">Cuéntanos tu situación. Analizamos el encaje estratégico y te enviamos una propuesta
+            estructurada.</p>
+
+          <div class="steps-list" id="steps-nav">
+            <div class="step-item active" data-step="1">
+              <div class="step-num"><span>1</span></div>
+              <div class="step-text">
+                <div class="step-title">Contacto</div>
+                <div class="step-desc">Nombre, email y empresa</div>
+                <div class="step-saved"><span class="step-saved-dot"></span>Guardado</div>
+              </div>
+            </div>
+            <div class="step-item" data-step="2">
+              <div class="step-num"><span>2</span></div>
+              <div class="step-text">
+                <div class="step-title">Tu negocio</div>
+                <div class="step-desc">Modelo, URL y facturación</div>
+                <div class="step-saved"><span class="step-saved-dot"></span>Guardado</div>
+              </div>
+            </div>
+            <div class="step-item" data-step="3">
+              <div class="step-num"><span>3</span></div>
+              <div class="step-text">
+                <div class="step-title">La situación</div>
+                <div class="step-desc">¿Rediseño o proyecto nuevo?</div>
+                <div class="step-saved"><span class="step-saved-dot"></span>Guardado</div>
+              </div>
+            </div>
+            <div class="step-item" data-step="4">
+              <div class="step-num"><span>4</span></div>
+              <div class="step-text">
+                <div class="step-title">Contexto técnico</div>
+                <div class="step-desc">Stack e integraciones</div>
+                <div class="step-saved"><span class="step-saved-dot"></span>Guardado</div>
+              </div>
+            </div>
+            <div class="step-item" data-step="5">
+              <div class="step-num"><span>5</span></div>
+              <div class="step-text">
+                <div class="step-title">El proyecto</div>
+                <div class="step-desc">Qué construir y presupuesto</div>
+                <div class="step-saved"><span class="step-saved-dot"></span>Guardado</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="left-bottom">
+          <div class="trust-items">
+            <div class="trust-item">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Respuesta en menos de 48h
+            </div>
+            <div class="trust-item">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path
+                  d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+              Sin compromisos. Sin spam.
+            </div>
+            <div class="trust-item">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path
+                  d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" />
+              </svg>
+              13 años de proyectos reales
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT PANEL -->
+      <main class="right-panel">
+
+        <!-- PROGRESS -->
+        <div class="progress-wrap" id="progress-wrap">
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="progress-fill" style="width:20%"></div>
+          </div>
+          <div class="progress-meta">
+            <span class="progress-label" id="progress-label">Paso 1 de 5</span>
+            <span class="progress-pct" id="progress-pct">20%</span>
+          </div>
+        </div>
+
+        <!-- FORM STEPS -->
+        <div class="form-steps" id="form-steps">
+
+          <!-- ════════════════════════════════════════════════════════
+             STEP 1 — CONTACTO · genera lead_id inmediato
+             Captura name/email/phone/job_title/channel
+             ════════════════════════════════════════════════════════ -->
+          <div class="form-step active" id="step-1">
+            <div class="step-heading">
+              <div class="step-tag">Paso 01 · Contacto</div>
+              <h2 class="step-h2">¿Con quién<br>hablamos?</h2>
+              <p class="step-hint">Dos minutos. Sin rodeos. Cuéntanos qué construyes y lo analizamos.</p>
+            </div>
+            <div class="field-group">
+              <div class="field-row">
+                <div class="field">
+                  <label class="field-label" for="s1-name">Nombre *</label>
+                  <input type="text" id="s1-name" placeholder="Tu nombre" autocomplete="given-name">
+                  <div class="field-error" id="err-name"><svg fill="none" stroke="currentColor" stroke-width="2"
+                      viewBox="0 0 24 24">
+                      <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                    </svg>Indica tu nombre</div>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="s1-company">Empresa *</label>
+                  <input type="text" id="s1-company" placeholder="Nombre de tu empresa" autocomplete="organization">
+                  <div class="field-error" id="err-company"><svg fill="none" stroke="currentColor" stroke-width="2"
+                      viewBox="0 0 24 24">
+                      <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                    </svg>Indica tu empresa</div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field-label" for="s1-website">Web actual</label>
+                <input type="url" id="s1-website" placeholder="https://tuempresa.com" autocomplete="url">
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label class="field-label" for="s1-email">Email de trabajo *</label>
+                  <input type="email" id="s1-email" placeholder="tu@empresa.com" autocomplete="email">
+                  <div class="field-error" id="err-email"><svg fill="none" stroke="currentColor" stroke-width="2"
+                      viewBox="0 0 24 24">
+                      <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                    </svg>Introduce un email válido</div>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="s1-phone">Teléfono *</label>
+                  <input type="tel" id="s1-phone" placeholder="600 000 000" autocomplete="tel">
+                  <div class="field-error" id="err-phone"><svg fill="none" stroke="currentColor" stroke-width="2"
+                      viewBox="0 0 24 24">
+                      <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                    </svg>Introduce un teléfono</div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field-label">Cargo</label>
+                <div class="custom-select" id="s1-jobtitle" role="combobox" aria-expanded="false"
+                  aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Selecciona tu cargo">
+                    <span class="custom-select-value">Selecciona tu rol</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Cargo</div>
+                    <div class="custom-select-option" role="option" data-value="founder-ceo">Founder / CEO</div>
+                    <div class="custom-select-option" role="option" data-value="director-marketing">Director/a de
+                      Marketing</div>
+                    <div class="custom-select-option" role="option" data-value="director-tecnologia">Director/a de
+                      Tecnología</div>
+                    <div class="custom-select-option" role="option" data-value="director-ecommerce">Director/a de
+                      E-commerce</div>
+                    <div class="custom-select-option" role="option" data-value="responsable-digital">Responsable Digital
+                    </div>
+                    <div class="custom-select-option" role="option" data-value="gerente">Gerente</div>
+                    <div class="custom-select-option" role="option" data-value="otro">Otro</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="form-nav">
+              <div></div>
+              <button class="btn-primary" onclick="goNext(1)">
+                Siguiente paso
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ════════════════════════════════════════════════════════
+             STEP 2 — TU PROYECTO
+             project_type + project_origin + main_goal
+             Bifurca la lógica del Step 3 (condicional)
+             ════════════════════════════════════════════════════════ -->
+          <div class="form-step" id="step-2">
+            <div class="step-heading">
+              <div class="step-tag">Paso 02 · Tu proyecto</div>
+              <h2 class="step-h2">¿Qué tipo de<br>proyecto es?</h2>
+              <p class="step-hint">Define el alcance. El formulario se adapta según tu respuesta.</p>
+            </div>
+            <div class="field-group">
+              <div class="field">
+                <label class="field-label">Tipo de proyecto *</label>
+                <div class="radio-group" id="project-type-group">
+                  <label class="radio-option" data-group="project_type" data-value="web-corporativa">
+                    <input type="radio" name="project_type" value="web-corporativa">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">Web corporativa / landing</div>
+                      <div class="radio-desc">Captación, branding, generación de leads B2B</div>
+                    </div>
+                  </label>
+                  <label class="radio-option" data-group="project_type" data-value="ecommerce">
+                    <input type="radio" name="project_type" value="ecommerce">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">Tienda online (E-commerce)</div>
+                      <div class="radio-desc">B2C o B2B — catálogo, carrito, pasarela de pago</div>
+                    </div>
+                  </label>
+                  <label class="radio-option" data-group="project_type" data-value="saas">
+                    <input type="radio" name="project_type" value="saas">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">Plataforma / SaaS</div>
+                      <div class="radio-desc">Producto digital con usuarios, roles y funcionalidades</div>
+                    </div>
+                  </label>
+                  <label class="radio-option" data-group="project_type" data-value="app">
+                    <input type="radio" name="project_type" value="app">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">App / Desarrollo a medida</div>
+                      <div class="radio-desc">Lógica de negocio específica, API, integraciones complejas</div>
+                    </div>
+                  </label>
+                </div>
+                <div class="field-error" id="err-project_type"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>Selecciona el tipo de proyecto</div>
+              </div>
+              <div class="field">
+                <label class="field-label">Estado del proyecto *</label>
+                <div class="radio-group">
+                  <label class="radio-option" data-group="project_origin" data-value="new">
+                    <input type="radio" name="project_origin" value="new">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">Proyecto nuevo</div>
+                      <div class="radio-desc">Sin plataforma actual — construimos desde cero</div>
+                    </div>
+                  </label>
+                  <label class="radio-option" data-group="project_origin" data-value="existing">
+                    <input type="radio" name="project_origin" value="existing">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">Tengo plataforma y quiero mejorarla</div>
+                      <div class="radio-desc">Rediseño, migración, refactorización o mejora de conversión</div>
+                    </div>
+                  </label>
+                </div>
+                <div class="field-error" id="err-project_origin"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>Selecciona el estado del proyecto</div>
+              </div>
+              <div class="field" id="s2-url-field">
+                <label class="field-label" for="s2-url">URL actual <span
+                    style="color:var(--text-muted);font-weight:400;">(si tienes plataforma)</span></label>
+                <input type="url" id="s2-url" placeholder="https://tuempresa.com">
+              </div>
+              <div class="field">
+                <label class="field-label" for="s2-goal">Objetivo principal *</label>
+                <div class="custom-select" id="s2-goal" role="combobox" aria-expanded="false" aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Objetivo principal">
+                    <span class="custom-select-value">¿Qué quieres conseguir?</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" width="16" height="16">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Objetivo principal</div>
+                    <div class="custom-select-option" role="option" data-value="aumentar-ventas">Aumentar ventas online
+                    </div>
+                    <div class="custom-select-option" role="option" data-value="captacion-leads">Captación de leads B2B
+                    </div>
+                    <div class="custom-select-option" role="option" data-value="reducir-friccion">Reducir fricción y
+                      abandono</div>
+                    <div class="custom-select-option" role="option" data-value="lanzar-producto">Lanzar producto o
+                      servicio nuevo</div>
+                    <div class="custom-select-option" role="option" data-value="escalar-plataforma">Escalar plataforma
+                      existente</div>
+                    <div class="custom-select-option" role="option" data-value="digitalizar-proceso">Digitalizar proceso
+                      de negocio</div>
+                    <div class="custom-select-option" role="option" data-value="otro">Otro</div>
+                  </div>
+                </div>
+                <div class="field-error" id="err-goal"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>Selecciona el objetivo principal</div>
+              </div>
+            </div>
+            <div class="form-nav">
+              <button class="btn-secondary" onclick="goPrev(2)"><svg fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                </svg>Anterior</button>
+              <button class="btn-primary" onclick="goNext(2)">Siguiente paso <svg fill="none" stroke="currentColor"
+                  stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg></button>
+            </div>
+          </div>
+
+          <!-- ════════════════════════════════════════════════════════
+             STEP 3 — DETALLE DEL PROYECTO (condicional)
+             Muestra secciones distintas según project_type
+             ════════════════════════════════════════════════════════ -->
+          <div class="form-step" id="step-3">
+            <div class="step-heading">
+              <div class="step-tag">Paso 03 · Detalle del proyecto</div>
+              <h2 class="step-h2" id="s3-heading">Cuéntanos<br>más</h2>
+              <p class="step-hint" id="s3-hint">Describe la situación con el mayor detalle posible.</p>
+            </div>
+            <div class="field-group">
+
+              <!-- SITUACIÓN GENERAL (siempre visible) -->
+              <div class="field">
+                <label class="field-label" for="s3-situation">Describe la situación *</label>
+                <textarea id="s3-situation" style="min-height:100px;"
+                  placeholder="Qué está fallando, qué quieres construir o qué objetivo concreto buscas..."></textarea>
+                <div class="field-error" id="err-situation"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>Cuéntanos la situación (mínimo 20 caracteres)</div>
+              </div>
+
+              <!-- ARCHIVO ADJUNTO (opcional) -->
+              <div class="field">
+                <label class="field-label">Adjunta documentación (opcional)</label>
+                <div class="file-upload-zone" id="s3-upload-zone">
+                  <input type="file" id="s3-file" accept=".pdf,.doc,.docx" multiple>
+                  <svg class="file-upload-icon" fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.338-2.32 3.75 3.75 0 013.572 5.345A3.745 3.745 0 0118 19.5H6.75z"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <div class="file-upload-text">
+                    <strong>Haz clic o arrastra</strong> para subir archivos
+                  </div>
+                  <div class="file-upload-hint">PDF o Word · Máx. 10 MB por archivo · Máx. 3 archivos</div>
+                </div>
+                <div class="file-upload-list" id="s3-file-list"></div>
+                <div class="field-error" id="err-file"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>Archivo no válido. Solo PDF o Word, máx. 10 MB.</div>
+              </div>
+
+              <!-- ── BLOQUE WEB CORPORATIVA ── -->
+              <div class="conditional-block" id="block-web-corporativa" style="display:none;">
+                <div class="cond-divider">Detalles de la web</div>
+                <div class="field">
+                  <label class="field-label">Número de páginas estimadas</label>
+                  <div class="radio-group">
+                    <label class="radio-option" data-group="corp_pages" data-value="menos-10">
+                      <input type="radio" name="corp_pages_range" value="menos-10">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">Menos de 10 páginas</div>
+                        <div class="radio-desc">Landing, servicios, contacto, sobre nosotros</div>
+                      </div>
+                    </label>
+                    <label class="radio-option" data-group="corp_pages" data-value="10-30">
+                      <input type="radio" name="corp_pages_range" value="10-30">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">10 – 30 páginas</div>
+                        <div class="radio-desc">Web completa con secciones de producto o servicio</div>
+                      </div>
+                    </label>
+                    <label class="radio-option" data-group="corp_pages" data-value="mas-30">
+                      <input type="radio" name="corp_pages_range" value="mas-30">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">Más de 30 páginas</div>
+                        <div class="radio-desc">Portal, multiidioma o arquitectura de contenido compleja</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="field-row" style="margin-top:.75rem;">
+                  <div class="field">
+                    <label class="field-label">¿Necesita blog?</label>
+                    <div class="radio-group">
+                      <label class="radio-option" data-group="needs_blog" data-value="si"><input type="radio"
+                          name="needs_blog" value="si">
+                        <div class="radio-visual"></div>
+                        <div class="radio-text">
+                          <div class="radio-title">Sí</div>
+                        </div>
+                      </label>
+                      <label class="radio-option" data-group="needs_blog" data-value="no"><input type="radio"
+                          name="needs_blog" value="no">
+                        <div class="radio-visual"></div>
+                        <div class="radio-text">
+                          <div class="radio-title">No</div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="field" id="s3-existing-blog-wrap" style="display:none;">
+                    <label class="field-label">¿Tiene blog existente?</label>
+                    <div class="radio-group">
+                      <label class="radio-option" data-group="existing_blog" data-value="si"><input type="radio"
+                          name="existing_blog" value="si">
+                        <div class="radio-visual"></div>
+                        <div class="radio-text">
+                          <div class="radio-title">Sí, hay que migrarlo</div>
+                        </div>
+                      </label>
+                      <label class="radio-option" data-group="existing_blog" data-value="no"><input type="radio"
+                          name="existing_blog" value="no">
+                        <div class="radio-visual"></div>
+                        <div class="radio-text">
+                          <div class="radio-title">No</div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ── BLOQUE E-COMMERCE ── -->
+              <div class="conditional-block" id="block-ecommerce" style="display:none;">
+                <div class="cond-divider">Detalles de la tienda</div>
+                <div class="field">
+                  <label class="field-label">Tipo de catálogo</label>
+                  <div class="radio-group">
+                    <label class="radio-option" data-group="product_type" data-value="fisico"><input type="radio"
+                        name="product_type" value="fisico">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">Producto físico</div>
+                        <div class="radio-desc">Inventario, logística, envíos</div>
+                      </div>
+                    </label>
+                    <label class="radio-option" data-group="product_type" data-value="digital"><input type="radio"
+                        name="product_type" value="digital">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">Producto digital</div>
+                        <div class="radio-desc">Descargas, licencias, suscripciones</div>
+                      </div>
+                    </label>
+                    <label class="radio-option" data-group="product_type" data-value="mixto"><input type="radio"
+                        name="product_type" value="mixto">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">Mixto</div>
+                        <div class="radio-desc">Combinación de ambos</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="field-row" style="margin-top:.75rem;">
+                  <div class="field">
+                    <label class="field-label">Pasarela de pago</label>
+                    <select id="s3-payment">
+                      <option value="">Selecciona</option>
+                      <option value="stripe">Stripe</option>
+                      <option value="redsys">Redsys / banco</option>
+                      <option value="paypal">PayPal</option>
+                      <option value="bizum">Bizum</option>
+                      <option value="multiple">Múltiples</option>
+                      <option value="sin-definir">Sin definir</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label class="field-label">¿Necesita CRM?</label>
+                    <div class="radio-group">
+                      <label class="radio-option" data-group="needs_crm" data-value="si"><input type="radio"
+                          name="needs_crm" value="si">
+                        <div class="radio-visual"></div>
+                        <div class="radio-text">
+                          <div class="radio-title">Sí</div>
+                        </div>
+                      </label>
+                      <label class="radio-option" data-group="needs_crm" data-value="no"><input type="radio"
+                          name="needs_crm" value="no">
+                        <div class="radio-visual"></div>
+                        <div class="radio-text">
+                          <div class="radio-title">No / Sin definir</div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="field" id="s3-crm-name-wrap" style="display:none;">
+                  <label class="field-label" for="s3-crm-name">¿Qué CRM?</label>
+                  <input type="text" id="s3-crm-name" placeholder="Ej: Salesforce, HubSpot, Pipedrive...">
+                </div>
+              </div>
+
+              <!-- ── BLOQUE SAAS / PLATAFORMA ── -->
+              <div class="conditional-block" id="block-saas" style="display:none;">
+                <div class="cond-divider">Detalles de la plataforma</div>
+                <div class="field">
+                  <label class="field-label">Tipo de plataforma</label>
+                  <div class="radio-group">
+                    <label class="radio-option" data-group="saas_type" data-value="b2b"><input type="radio"
+                        name="saas_type" value="b2b">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">B2B</div>
+                        <div class="radio-desc">Clientes empresa, acceso por organización</div>
+                      </div>
+                    </label>
+                    <label class="radio-option" data-group="saas_type" data-value="b2c"><input type="radio"
+                        name="saas_type" value="b2c">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">B2C</div>
+                        <div class="radio-desc">Usuarios individuales, volumen alto</div>
+                      </div>
+                    </label>
+                    <label class="radio-option" data-group="saas_type" data-value="marketplace"><input type="radio"
+                        name="saas_type" value="marketplace">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">Marketplace</div>
+                        <div class="radio-desc">Conecta oferta y demanda</div>
+                      </div>
+                    </label>
+                    <label class="radio-option" data-group="saas_type" data-value="interno"><input type="radio"
+                        name="saas_type" value="interno">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">Herramienta interna</div>
+                        <div class="radio-desc">Uso del equipo, backoffice, operaciones</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="field" style="margin-top:.75rem;">
+                  <label class="field-label" for="s3-saas-features">Funcionalidades principales</label>
+                  <textarea id="s3-saas-features" style="min-height:80px;"
+                    placeholder="Ej: panel de usuario, roles, dashboard analytics, notificaciones, API pública..."></textarea>
+                </div>
+              </div>
+
+              <!-- ── BLOQUE APP / MEDIDA ── -->
+              <div class="conditional-block" id="block-app" style="display:none;">
+                <div class="cond-divider">Tipo de desarrollo</div>
+                <div class="field">
+                  <label class="field-label">Enfoque técnico</label>
+                  <div class="radio-group">
+                    <label class="radio-option" data-group="app_type" data-value="web-app"><input type="radio"
+                        name="app_type" value="web-app">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">Web app</div>
+                        <div class="radio-desc">Acceso por navegador, responsive</div>
+                      </div>
+                    </label>
+                    <label class="radio-option" data-group="app_type" data-value="api-integracion"><input type="radio"
+                        name="app_type" value="api-integracion">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">API / Integración</div>
+                        <div class="radio-desc">Conectar sistemas, automatizar flujos de datos</div>
+                      </div>
+                    </label>
+                    <label class="radio-option" data-group="app_type" data-value="headless"><input type="radio"
+                        name="app_type" value="headless">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">Arquitectura headless</div>
+                        <div class="radio-desc">Frontend desacoplado de backend o CMS</div>
+                      </div>
+                    </label>
+                    <label class="radio-option" data-group="app_type" data-value="otro"><input type="radio"
+                        name="app_type" value="otro">
+                      <div class="radio-visual"></div>
+                      <div class="radio-text">
+                        <div class="radio-title">Otro / Sin definir</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="form-nav">
+              <button class="btn-secondary" onclick="goPrev(3)"><svg fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                </svg>Anterior</button>
+              <button class="btn-primary" onclick="goNext(3)">Siguiente paso <svg fill="none" stroke="currentColor"
+                  stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg></button>
+            </div>
+          </div>
+
+          <!-- ════════════════════════════════════════════════════════
+             STEP 4 — CONTEXTO TÉCNICO
+             Stack, integraciones, SEO, automatización
+             ════════════════════════════════════════════════════════ -->
+          <div class="form-step" id="step-4">
+            <div class="step-heading">
+              <div class="step-tag">Paso 04 · Contexto técnico</div>
+              <h2 class="step-h2">Stack e<br>integraciones</h2>
+              <p class="step-hint">Cuanto más sepamos de tu entorno técnico, más precisa será la propuesta.</p>
+            </div>
+            <div class="field-group">
+              <div class="field">
+                <label class="field-label">Tecnología actual <span style="color:var(--text-muted);font-weight:400;">(si
+                    existe)</span></label>
+                <div class="custom-select" id="s4-tech" role="combobox" aria-expanded="false" aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Tecnología actual">
+                    <span class="custom-select-value">Selecciona plataforma</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" width="16" height="16">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Tecnología actual</div>
+                    <div class="custom-select-option" role="option" data-value="wordpress">WordPress / WooCommerce</div>
+                    <div class="custom-select-option" role="option" data-value="prestashop">PrestaShop</div>
+                    <div class="custom-select-option" role="option" data-value="shopify">Shopify</div>
+                    <div class="custom-select-option" role="option" data-value="magento">Magento / Adobe Commerce</div>
+                    <div class="custom-select-option" role="option" data-value="nextjs-react">Next.js / React</div>
+                    <div class="custom-select-option" role="option" data-value="custom">Desarrollo a medida</div>
+                    <div class="custom-select-option" role="option" data-value="otro">Otra / No sé</div>
+                    <div class="custom-select-option" role="option" data-value="ninguna">Sin plataforma actual</div>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field-label">Integraciones necesarias</label>
+                <p class="field-sublabel" style="margin-bottom:.5rem;">Selecciona todas las que apliquen</p>
+                <div class="checkbox-grid">
+                  <label class="check-option" data-value="erp"><input type="checkbox" name="integrations" value="erp">
+                    <div class="check-visual"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M4.5 12.75l6 6 9-13.5" />
+                      </svg></div><span class="check-label">ERP</span>
+                  </label>
+                  <label class="check-option" data-value="crm"><input type="checkbox" name="integrations" value="crm">
+                    <div class="check-visual"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M4.5 12.75l6 6 9-13.5" />
+                      </svg></div><span class="check-label">CRM</span>
+                  </label>
+                  <label class="check-option" data-value="pago"><input type="checkbox" name="integrations" value="pago">
+                    <div class="check-visual"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M4.5 12.75l6 6 9-13.5" />
+                      </svg></div><span class="check-label">Pasarela de pago</span>
+                  </label>
+                  <label class="check-option" data-value="logistica"><input type="checkbox" name="integrations"
+                      value="logistica">
+                    <div class="check-visual"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M4.5 12.75l6 6 9-13.5" />
+                      </svg></div><span class="check-label">Logística / 3PL</span>
+                  </label>
+                  <label class="check-option" data-value="marketing"><input type="checkbox" name="integrations"
+                      value="marketing">
+                    <div class="check-visual"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M4.5 12.75l6 6 9-13.5" />
+                      </svg></div><span class="check-label">Marketing / Analytics</span>
+                  </label>
+                  <label class="check-option" data-value="ia"><input type="checkbox" name="integrations" value="ia">
+                    <div class="check-visual"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M4.5 12.75l6 6 9-13.5" />
+                      </svg></div><span class="check-label">IA / LLM</span>
+                  </label>
+                  <label class="check-option" data-value="api-custom"><input type="checkbox" name="integrations"
+                      value="api-custom">
+                    <div class="check-visual"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M4.5 12.75l6 6 9-13.5" />
+                      </svg></div><span class="check-label">API propia</span>
+                  </label>
+                  <label class="check-option" data-value="sso"><input type="checkbox" name="integrations" value="sso">
+                    <div class="check-visual"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <path d="M4.5 12.75l6 6 9-13.5" />
+                      </svg></div><span class="check-label">SSO / Auth</span>
+                  </label>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field-label" for="s4-integrations-other">Otras integraciones <span
+                    style="color:var(--text-muted);font-weight:400;">(opcional)</span></label>
+                <input type="text" id="s4-integrations-other" placeholder="Ej: Salesforce, SAP, Zendesk, Klaviyo...">
+              </div>
+              <div class="field">
+                <label class="field-label">¿Tienes agencia SEO activa?</label>
+                <div class="radio-group" style="flex-direction:row;gap:.5rem;">
+                  <label class="radio-option" data-group="has_seo" data-value="si" style="flex:1;"><input type="radio"
+                      name="has_seo_agency" value="si">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">Sí</div>
+                    </div>
+                  </label>
+                  <label class="radio-option" data-group="has_seo" data-value="no" style="flex:1;"><input type="radio"
+                      name="has_seo_agency" value="no">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">No</div>
+                    </div>
+                  </label>
+                  <label class="radio-option" data-group="has_seo" data-value="interno" style="flex:1;"><input
+                      type="radio" name="has_seo_agency" value="interno">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">Equipo interno</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field-label">¿Necesitas automatización de procesos?</label>
+                <div class="radio-group" style="flex-direction:row;gap:.5rem;">
+                  <label class="radio-option" data-group="needs_automation" data-value="si" style="flex:1;"><input
+                      type="radio" name="needs_automation" value="si">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">Sí</div>
+                    </div>
+                  </label>
+                  <label class="radio-option" data-group="needs_automation" data-value="no" style="flex:1;"><input
+                      type="radio" name="needs_automation" value="no">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">No / Sin definir</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="field" id="s4-automation-wrap" style="display:none;">
+                <label class="field-label" for="s4-automation-desc">Describe qué proceso quieres automatizar</label>
+                <textarea id="s4-automation-desc" style="min-height:80px;"
+                  placeholder="Ej: cualificación de leads, generación de documentos, sincronización de inventario con ERP..."></textarea>
+              </div>
+            </div>
+            <div class="form-nav">
+              <button class="btn-secondary" onclick="goPrev(4)"><svg fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                </svg>Anterior</button>
+              <button class="btn-primary" onclick="goNext(4)">Siguiente paso <svg fill="none" stroke="currentColor"
+                  stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg></button>
+            </div>
+          </div>
+
+          <!-- ════════════════════════════════════════════════════════
+             STEP 5 — ALCANCE Y PRESUPUESTO · cierra el lead
+             budget_range + start_timeline + additional_comments
+             ════════════════════════════════════════════════════════ -->
+          <div class="form-step" id="step-5">
+            <div class="step-heading">
+              <div class="step-tag">Paso 05 · Alcance y presupuesto</div>
+              <h2 class="step-h2">¿Cuándo y con<br>qué presupuesto?</h2>
+              <p class="step-hint">Sin compromiso. Esta información nos ayuda a dimensionar bien la propuesta.</p>
+            </div>
+            <div class="field-group">
+              <div class="field">
+                <label class="field-label">Rango de inversión aproximado *</label>
+                <div class="budget-grid">
+                  <label class="budget-option" data-group="budget" data-value="5k-10k"><input type="radio" name="budget"
+                      value="5k-10k">
+                    <div class="budget-amount">5K – 10K€</div>
+                    <div class="budget-desc">Web corporativa o landing de captación</div>
+                  </label>
+                  <label class="budget-option" data-group="budget" data-value="10k-15k"><input type="radio"
+                      name="budget" value="10k-15k">
+                    <div class="budget-amount">10K – 15K€</div>
+                    <div class="budget-desc">Web compleja o e-commerce inicial</div>
+                  </label>
+                  <label class="budget-option" data-group="budget" data-value="15k-20k"><input type="radio"
+                      name="budget" value="15k-20k">
+                    <div class="budget-amount">15K – 20K€</div>
+                    <div class="budget-desc">E-commerce avanzado o plataforma B2B</div>
+                  </label>
+                  <label class="budget-option" data-group="budget" data-value="mas-20k"><input type="radio"
+                      name="budget" value="mas-20k">
+                    <div class="budget-amount">+20K€</div>
+                    <div class="budget-desc">Plataforma compleja o integración enterprise</div>
+                  </label>
+                </div>
+                <div class="field-error" id="err-budget"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>Selecciona un rango de inversión</div>
+              </div>
+              <div class="field">
+                <label class="field-label">¿Cuándo quieres empezar? *</label>
+                <div class="radio-group">
+                  <label class="radio-option" data-group="start_timeline" data-value="inmediato">
+                    <input type="radio" name="start_timeline" value="inmediato">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">Lo antes posible</div>
+                      <div class="radio-desc">Tenemos presupuesto y estamos listos para arrancar</div>
+                    </div>
+                  </label>
+                  <label class="radio-option" data-group="start_timeline" data-value="1-2-meses">
+                    <input type="radio" name="start_timeline" value="1-2-meses">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">En 1 – 2 meses</div>
+                      <div class="radio-desc">Necesito tiempo para preparar la decisión</div>
+                    </div>
+                  </label>
+                  <label class="radio-option" data-group="start_timeline" data-value="3-6-meses">
+                    <input type="radio" name="start_timeline" value="3-6-meses">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">En 3 – 6 meses</div>
+                      <div class="radio-desc">Planificación a medio plazo, sin urgencia</div>
+                    </div>
+                  </label>
+                  <label class="radio-option" data-group="start_timeline" data-value="explorando">
+                    <input type="radio" name="start_timeline" value="explorando">
+                    <div class="radio-visual"></div>
+                    <div class="radio-text">
+                      <div class="radio-title">Solo explorando opciones</div>
+                      <div class="radio-desc">Sin fecha definida todavía</div>
+                    </div>
+                  </label>
+                </div>
+                <div class="field-error" id="err-timeline"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>Indica cuándo quieres empezar</div>
+              </div>
+              <div class="field">
+                <label class="field-label" for="s5-comments">Comentarios adicionales <span
+                    style="color:var(--text-muted);font-weight:400;">(opcional)</span></label>
+                <textarea id="s5-comments" style="min-height:90px;"
+                  placeholder="Cualquier cosa que quieras añadir: contexto, limitaciones técnicas, referencias, requisitos específicos..."></textarea>
+              </div>
+            </div>
+            <div class="form-nav">
+              <button class="btn-secondary" onclick="goPrev(5)"><svg fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                </svg>Anterior</button>
+              <button class="btn-primary btn-submit" id="submit-btn" onclick="submitForm()">
+                <span class="btn-text" style="display:flex;align-items:center;gap:.625rem;">
+                  Enviar proyecto
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path
+                      d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                  </svg>
+                </span>
+                <div class="btn-spinner"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path
+                      d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                  </svg></div>
+              </button>
+            </div>
+            <div id="submit-error"
+              style="display:none;margin-top:1rem;padding:.75rem 1rem;background:var(--red-dim);border:1px solid rgba(248,113,113,.2);border-radius:var(--radius-md);font-size:.8125rem;color:var(--red);">
+            </div>
+          </div>
+
+        </div><!-- /form-steps -->
+
+        <!-- SUCCESS SCREEN -->
+        <div id="success-screen">
+          <div class="success-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h2 class="success-h2">Proyecto recibido</h2>
+          <p class="success-p">Hemos recibido toda la información. Analizamos el encaje y te contactamos en menos de
+            48h.</p>
+          <div class="success-steps">
+            <div class="success-step">
+              <div class="success-step-num">1</div>
+              <div class="success-step-text">
+                <div class="success-step-title">Análisis del formulario</div>
+                <div class="success-step-desc">Revisamos la información y evaluamos el encaje estratégico con nuestro
+                  equipo.</div>
+              </div>
+            </div>
+            <div class="success-step">
+              <div class="success-step-num">2</div>
+              <div class="success-step-text">
+                <div class="success-step-title">Sesión de 45 minutos</div>
+                <div class="success-step-desc">Una llamada para profundizar en tu proyecto antes de preparar la
+                  propuesta.</div>
+              </div>
+            </div>
+            <div class="success-step">
+              <div class="success-step-num">3</div>
+              <div class="success-step-text">
+                <div class="success-step-title">Documento funcional + propuesta</div>
+                <div class="success-step-desc">Un documento completo con arquitectura, funcionalidades y estimación de
+                  alcance.</div>
+              </div>
+            </div>
+          </div>
+          <a href="/" class="btn-home">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+            </svg>
+            Volver al inicio
+          </a>
+        </div>
+
+      </main>
+    </div><!-- /main -->
+  </div><!-- /page-wrap -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/form-multistep.js" defer></script>
+  <script src="/js/supabase-forms.js" defer></script>
+
+  <!-- Pre-fill from localStorage (si viene de formulario previo) -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('tp_lead');
+        if (!saved) return;
+        var lead = JSON.parse(saved);
+        // Solo pre-rellenar si los datos tienen menos de 24h
+        if (Date.now() - (lead.timestamp || 0) > 86400000) {
+          localStorage.removeItem('tp_lead');
+          return;
+        }
+        // Mapear campos del lead a campos del Step 1
+        var map = {
+          's1-name': lead.nombre,
+          's1-email': lead.email,
+          's1-phone': lead.telefono,
+          's1-company': lead.empresa,
+          's1-website': lead.web_actual
+        };
+        Object.keys(map).forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el && map[id]) el.value = map[id];
+        });
+        // Pre-rellenar s3-situation con el mensaje si existe
+        if (lead.mensaje) {
+          var sit = document.getElementById('s3-situation');
+          if (sit) sit.value = lead.mensaje;
+        }
+        console.info('Pre-fill: datos cargados desde formulario anterior');
+      } catch (e) {
+        console.warn('Pre-fill error:', e);
+      }
+    })();
+  </script>
+
+  <div class="save-toast" id="save-toast"><span class="save-toast-dot"></span><span id="save-toast-msg">Datos
+      guardados</span></div>
+</body>
+
+</html>

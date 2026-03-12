@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La deuda de arquitectura UX en plataformas B2B modernas | Blog | Tres Puntos</title>
+  <meta name="description" content="Interfaces B2B lentas, rígidas y costosas suelen ocultar deuda de arquitectura UX. Analizamos su impacto técnico y cómo resolverla con diseño y desarrollo escalable." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas" />
+  <meta property="og:title" content="La deuda de arquitectura UX en plataformas B2B modernas" />
+  <meta property="og:description" content="Interfaces B2B lentas, rígidas y costosas suelen ocultar deuda de arquitectura UX. Analizamos su impacto técnico y cómo resolverla con diseño y desarrollo escalable." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/blog/la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/blog/la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas-og.jpg" />
+  <meta property="article:published_time" content="2025-08-27" />
+  <meta property="article:modified_time" content="2025-08-27" />
+  <meta property="article:author" content="Jordi Expósito" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "La deuda de arquitectura UX en plataformas B2B modernas",
+      "description": "Interfaces B2B lentas, rígidas y costosas suelen ocultar deuda de arquitectura UX. Analizamos su impacto técnico y cómo resolverla con diseño y desarrollo escalable.",
+      "image": "https://www.trespuntoscomunicacion.es/img/blog/la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas-og.jpg",
+      "datePublished": "2025-08-27",
+      "dateModified": "2025-08-27",
+      "author": {
+        "@type": "Person",
+        "name": "Jordi Expósito"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.trespuntoscomunicacion.es/img/logo.svg"
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ Blog Post Page Styles ═══ */
+
+    /* ── Article Header ── */
+    .article-header {
+      padding: 3rem 1.5rem;
+      border-bottom: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .article-header {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-header-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 0.375rem 0.875rem;
+      margin-bottom: 1.5rem;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mint);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 1.5rem 0;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 768px) {
+      .article-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .article-meta-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .article-meta-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--mint);
+      font-size: 0.75rem;
+    }
+
+    .article-meta-time {
+      color: var(--text-secondary);
+    }
+
+    /* ── Article Body ── */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .article-body {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-content {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 2rem 0 1rem 0;
+      color: var(--text-primary);
+    }
+
+    .article-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 700;
+      margin: 1.75rem 0 0.875rem 0;
+      color: var(--text-primary);
+    }
+
+    .article-content p {
+      margin: 0 0 1rem 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .article-content em {
+      color: var(--text-secondary);
+    }
+
+    .article-content a {
+      color: var(--mint);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(93, 255, 191, 0.3);
+    }
+
+    .article-content a:hover {
+      border-bottom-color: var(--mint);
+    }
+
+    .article-content blockquote {
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      background: rgba(93, 255, 191, 0.05);
+      border-left: 3px solid var(--mint);
+      border-radius: 4px;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .article-content code {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      background: rgba(93, 255, 191, 0.08);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      color: var(--mint);
+    }
+
+    .article-content pre {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .article-content pre code {
+      background: none;
+      padding: 0;
+      color: var(--mint);
+    }
+
+    .article-content img {
+      max-width: 100%;
+      height: auto;
+      margin: 2rem 0;
+      border-radius: 8px;
+      border: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    /* ── Article Footer/Divider ── */
+    .article-footer-divider {
+      max-width: 760px;
+      margin: 3rem auto;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(93, 255, 191, 0.2), transparent);
+    }
+
+    /* ── Related Articles ── */
+    .related-articles {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .related-articles {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .related-articles-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 2rem 0;
+      color: var(--text-primary);
+    }
+
+    .related-articles-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .related-articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .related-articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .related-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: var(--mint);
+      background: rgba(93, 255, 191, 0.03);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(93, 255, 191, 0.12);
+    }
+
+    .related-card-cat {
+      display: inline-block;
+      padding: 0.375rem 0.875rem;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mint);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+
+    .related-card-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--text-primary);
+      flex-grow: 1;
+    }
+
+    .related-card-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--mint);
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .related-card:hover .related-card-link {
+      gap: 0.75rem;
+    }
+
+    .related-card-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── CTA Section ── */
+    .article-cta {
+      background: linear-gradient(135deg, rgba(93, 255, 191, 0.05) 0%, rgba(93, 255, 191, 0.02) 100%);
+      border-top: 1px solid rgba(93, 255, 191, 0.1);
+      border-bottom: 1px solid rgba(93, 255, 191, 0.1);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .article-cta {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-cta h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 1.5rem 0;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 768px) {
+      .article-cta h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .article-cta-btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      background: var(--mint);
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-base);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .article-cta-btn:hover {
+      background: var(--mint-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(93, 255, 191, 0.3);
+    }
+
+    /* ── Breadcrumb Navigation ── */
+    .article-breadcrumb {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 0 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    @media (min-width: 768px) {
+      .article-breadcrumb {
+        padding: 1rem 2rem 0 2rem;
+      }
+    }
+
+    .article-breadcrumb a {
+      color: var(--mint);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .article-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .article-breadcrumb-sep {
+      margin: 0 0.5rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+  <div id="tp-navbar"></div>
+
+  <!-- Breadcrumb -->
+  <div class="article-breadcrumb">
+    <a href="/">Inicio</a>
+    <span class="article-breadcrumb-sep">/</span>
+    <a href="/blog">Blog</a>
+    <span class="article-breadcrumb-sep">/</span>
+    <span>La deuda de arquitectura UX en plataformas B2B modernas</span>
+  </div>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-wrapper">
+      <div class="article-category">Desarrollo Web</div>
+      <h1 class="article-title">La deuda de arquitectura UX en plataformas B2B modernas</h1>
+      <div class="article-meta">
+        <div class="article-meta-author">
+          <div class="article-meta-avatar">JE</div>
+          <div>
+            <div style="font-weight: 600; color: var(--text-primary);">Jordi Expósito</div>
+            <div class="article-meta-time">27 de agosto de 2025</div>
+          </div>
+        </div>
+        <div class="article-meta-item">
+          <span style="color: var(--mint);">•</span>
+          <span class="article-meta-time">6 min de lectura</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <main class="article-body">
+    <article class="article-content">
+      <p>Muchas plataformas B2B fallan por razones que no aparecen en los dashboards financieros ni en los informes de marketing. La causa suele estar en una capa invisible: la arquitectura de la experiencia de usuario. Interfaces construidas sobre decisiones técnicas apresuradas, sistemas de diseño inconsistentes o infraestructuras rígidas generan lo que denominamos <strong>deuda de arquitectura UX</strong>. Esta deuda no es estética. Es estructural. Cada flujo redundante, cada componente duplicado o cada interacción que requiere demasiada latencia incrementa el coste operativo del software. En entornos corporativos, donde miles de acciones se ejecutan diariamente, incluso pequeñas ineficiencias se convierten en pérdidas económicas acumuladas. En mis 12 años auditando proyectos como Senior Strategist en Tres Puntos, he observado un patrón recurrente: muchas empresas invierten grandes presupuestos en rediseños visuales sin abordar el problema real. La raíz del problema casi siempre reside en la infraestructura del producto digital, no en la capa estética. En Tres Puntos, Agencia de UX/UI y Desarrollo web, abordamos el ecosistema digital como una arquitectura tecnológica completa donde diseño, código y rendimiento forman un único sistema operativo.</p>
+
+<h2>Qué es realmente la deuda de arquitectura UX</h2>
+
+<p>La deuda técnica suele asociarse al código. Sin embargo, existe una variante igual de crítica: la deuda de arquitectura UX. Aparece cuando las decisiones de diseño e interacción se toman sin considerar la escalabilidad futura del producto. En plataformas B2B complejas —como SaaS, ERPs o herramientas de gestión empresarial— la experiencia de usuario no es simplemente navegación. Es infraestructura operativa. Los usuarios pasan horas dentro del producto ejecutando tareas repetitivas, analizando datos o gestionando procesos críticos. Cuando la arquitectura UX es deficiente aparecen síntomas claros:</p>
+
+<ul>
+  <li>Flujos de trabajo innecesariamente largos.</li>
+  <li>Duplicación de componentes de interfaz.</li>
+  <li>Inconsistencias entre módulos del sistema.</li>
+  <li>Dependencias rígidas entre frontend y backend.</li>
+  <li>Incremento del tiempo de desarrollo para cambios menores.</li>
+</ul>
+
+<p>Con el tiempo, estas fricciones generan una plataforma difícil de mantener y aún más difícil de escalar.</p>
+
+<h2>El coste real de una arquitectura UX mal diseñada</h2>
+
+<p>Uno de los errores más comunes en proyectos digitales es evaluar la UX únicamente en términos de estética o branding. Sin embargo, en plataformas B2B la experiencia de usuario está directamente vinculada a la eficiencia operativa. Un dashboard que requiere cinco pasos para ejecutar una tarea que podría resolverse en dos no solo genera frustración: multiplica el tiempo de trabajo del usuario. Imaginemos un SaaS utilizado por un equipo de ventas con 200 empleados. Si cada empleado pierde 30 segundos adicionales por tarea debido a fricciones de interfaz, la pérdida acumulada puede superar cientos de horas mensuales de productividad. La arquitectura UX tiene impacto directo en:</p>
+
+<ul>
+  <li>Productividad del usuario corporativo.</li>
+  <li>Costes de mantenimiento del software.</li>
+  <li>Tiempo de desarrollo de nuevas funcionalidades.</li>
+  <li>Adopción del producto por parte de los equipos.</li>
+  <li>Retención del cliente en modelos SaaS.</li>
+</ul>
+
+<p>Por eso el diseño de interfaz no puede separarse de la ingeniería del producto. El diseño UX/UI debe integrarse desde el inicio en la arquitectura del sistema.</p>
+
+<h2>El problema de los sistemas de diseño fragmentados</h2>
+
+<p>Otro origen frecuente de deuda de arquitectura UX es la ausencia de un sistema de diseño sólido. Muchas empresas desarrollan interfaces a lo largo de los años mediante equipos distintos, frameworks diferentes y decisiones visuales poco coordinadas. El resultado suele ser un ecosistema digital con múltiples estilos, comportamientos inconsistentes y componentes que funcionan de forma diferente dependiendo del módulo del software. Esto genera dos problemas principales. El primero es cognitivo: el usuario necesita reaprender la interfaz constantemente. El segundo es técnico: el equipo de desarrollo mantiene múltiples variantes de componentes que deberían ser únicos. Cuando abordamos proyectos de diseño web para productos complejos, una de las primeras tareas es establecer una biblioteca de componentes normalizada basada en design tokens y patrones de interacción claros. Esto permite reducir drásticamente la complejidad del frontend y mejorar la consistencia del producto.</p>
+
+<h3>Tip Pro Técnico: Auditoría de Componentes Fantasma</h3>
+
+<p>En auditorías de plataformas SaaS encontramos con frecuencia lo que denominamos <strong>componentes fantasma</strong>: variaciones mínimas del mismo elemento UI creadas en diferentes momentos del proyecto. Analizar el repositorio de frontend para detectar duplicidades y consolidarlas en un único componente puede reducir hasta un 30% la complejidad del código y acelerar significativamente el desarrollo de nuevas funcionalidades.</p>
+
+<h2>La dependencia rígida entre frontend y backend</h2>
+
+<p>Una de las causas más profundas de deuda arquitectónica es el acoplamiento excesivo entre la interfaz y la lógica del servidor. En plataformas monolíticas tradicionales, cualquier cambio en la experiencia de usuario requiere modificar también partes del backend. Esto ralentiza la evolución del producto y aumenta el riesgo de errores en producción. Las arquitecturas modernas están migrando hacia modelos desacoplados donde el frontend consume datos mediante APIs robustas. Este enfoque permite evolucionar la interfaz sin comprometer la estabilidad del núcleo del sistema. En proyectos de desarrollo web a medida implementamos arquitecturas donde el frontend actúa como una capa independiente optimizada para rendimiento, accesibilidad y escalabilidad. Este modelo reduce la latencia de interacción y permite iterar en UX de forma mucho más rápida.</p>
+
+<h2>Escalabilidad organizacional y arquitectura modular</h2>
+
+<p>Cuando un producto digital crece, también lo hacen los equipos que lo mantienen. En muchas plataformas B2B el frontend se convierte en un cuello de botella porque todos los desarrolladores trabajan sobre el mismo código base. La arquitectura modular resuelve este problema dividiendo el sistema en unidades independientes que pueden evolucionar de forma autónoma. Esto no solo mejora la escalabilidad técnica, también facilita la organización de equipos de producto. Un equipo puede encargarse del módulo de analítica mientras otro desarrolla el sistema de facturación o el panel de administración. Desde la perspectiva de UX, este enfoque requiere una arquitectura de componentes extremadamente clara para evitar inconsistencias entre módulos.</p>
+
+<h2>El papel de la auditoría UX en plataformas complejas</h2>
+
+<p>Muchas empresas detectan los síntomas de la deuda de arquitectura UX demasiado tarde. El software ya está en producción, los usuarios dependen del sistema y cualquier cambio estructural parece arriesgado. La solución no pasa por rediseñar todo desde cero. La estrategia más eficaz consiste en realizar una auditoría profunda de la plataforma para identificar los puntos de fricción más críticos. En este tipo de análisis evaluamos tres dimensiones clave:</p>
+
+<ul>
+  <li>Arquitectura de información.</li>
+  <li>Rendimiento de interacción.</li>
+  <li>Estructura del sistema de componentes.</li>
+</ul>
+
+<p>A partir de estos datos se puede diseñar un plan de refactorización progresiva que reduzca la deuda arquitectónica sin interrumpir las operaciones del negocio. Si tu plataforma presenta síntomas claros de fricción operativa, puedes solicitar una evaluación técnica desde nuestra página de contacto.</p>
+
+<h2>Refactorización progresiva: modernizar sin romper el sistema</h2>
+
+<p>Uno de los mayores temores de los responsables tecnológicos es tener que reconstruir la plataforma desde cero. En la mayoría de casos este enfoque es innecesario y económicamente ineficiente. Las plataformas maduras pueden evolucionar mediante procesos de refactorización progresiva. Esto implica identificar los módulos con mayor impacto en la experiencia del usuario y rediseñarlos primero. Gradualmente, la nueva arquitectura va reemplazando las partes más antiguas del sistema hasta que la deuda técnica queda completamente eliminada. Este enfoque permite mejorar la experiencia de usuario sin poner en riesgo la estabilidad del producto.</p>
+
+<h2>Arquitectura UX como ventaja competitiva</h2>
+
+<p>En el mercado SaaS actual, muchas empresas compiten ofreciendo funcionalidades similares. La diferencia real suele encontrarse en la eficiencia de la experiencia de uso. Un producto que permite ejecutar tareas complejas en menos tiempo genera una ventaja competitiva directa. La arquitectura UX no debe entenderse como una capa decorativa del software, sino como una infraestructura estratégica. Las organizaciones que invierten en sistemas de diseño sólidos, arquitecturas desacopladas y flujos optimizados consiguen productos más escalables, equipos de desarrollo más eficientes y usuarios mucho más satisfechos. Si tu plataforma necesita evolucionar hacia una arquitectura digital más robusta, te invito a explorar todos nuestros servicios especializados en diseño, arquitectura UX y desarrollo de plataformas escalables. Conecta conmigo en LinkedIn</p>
+    </article>
+  </main>
+
+  <!-- Divider -->
+  <div class="article-footer-divider"></div>
+
+  <!-- Related Articles -->
+  <section class="related-articles">
+    <h2 class="related-articles-title">Artículos relacionados</h2>
+    <div class="related-articles-grid">
+      <!-- RELATED ARTICLES PLACEHOLDER -->
+      <!-- Add 3 related article cards here -->
+      <a href="/blog/experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Experiencia de usuario: 10 heurísticas de Nielsen para tu web</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Las leyes de UX: el manual invisible del diseño centrado en el usuario</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/figma-make-da-vida-a-tus-prototipos-con-magia-y-ux-ui" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Figma Make: da vida a tus prototipos con magia y UX/UI</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+      <!-- END RELATED ARTICLES PLACEHOLDER -->
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="article-cta">
+    <h2>¿Tu plataforma necesita más que un artículo?</h2>
+    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Conversemos sobre cómo podemos ayudarte a escalar tu negocio digital.</p>
+    <a href="/iniciar-proyecto" class="article-cta-btn">Iniciar proyecto</a>
+  </section>
+
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    // Initialize navbar and footer
+    TP.navbar('blog');
+    TP.footer();
+    TP.initJS();
+  </script>
+</body>
+
+</html>

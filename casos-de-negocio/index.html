@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casos de Negocio | Tres Puntos — Proyectos Web Realizados</title>
+  <meta name="description" content="Casos de éxito en UX/UI, desarrollo web y arquitectura digital. Proyectos realizados para empresas que necesitaban convertir más." />
+  
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/casos-de-negocio/" />
+  <meta property="og:title" content="Casos de Negocio | Tres Puntos" />
+  <meta property="og:description"
+    content="E-commerces y plataformas B2B que pasaron de tener cuellos de botella a tener sistemas que escalan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/casos-de-negocio" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Exitbcn",
+          "description": "De una tienda física premium a un e-commerce que cierra compras en dos clics. Eliminamos fricción sin perder posicionamiento de marca.",
+          "url": "https://www.trespuntoscomunicacion.es/casos-de-negocio/exitbcn"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Gibobs",
+          "description": "Transformamos la percepción de las hipotecas. Una plataforma que explica en lugar de vender, ganando confianza donde solo había desconfianza.",
+          "url": "https://www.trespuntoscomunicacion.es/casos-de-negocio/gibobs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Nomade Rent",
+          "description": "El primer configurador de alquileres de camper. La industria no lo tenía, así que lo construimos desde cero.",
+          "url": "https://www.trespuntoscomunicacion.es/casos-de-negocio/nomade-rent"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Nomade Vans",
+          "description": "Permite a usuarios diseñar su camper ideal antes de comprar. Un configurador que convierte browsing en decisión.",
+          "url": "https://www.trespuntoscomunicacion.es/casos-de-negocio/nomadevans"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Penguin Aula",
+          "description": "40K libros conectados con 50K profesores. Construimos el puente entre editoriales y aulas en digital.",
+          "url": "https://www.trespuntoscomunicacion.es/casos-de-negocio/penguinaula"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Talent Search People",
+          "description": "El talento no tiene fronteras. Conectamos profesionales internacionales con oportunidades en tiempo real.",
+          "url": "https://www.trespuntoscomunicacion.es/casos-de-negocio/tsp"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Tu solución hipotecaria",
+          "description": "Las hipotecas dejan de ser un misterio. Comparador inteligente que empodera a usuarios a tomar decisiones informadas.",
+          "url": "https://www.trespuntoscomunicacion.es/casos-de-negocio/tusolucionhipotecaria"
+        },
+
+      ]
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ CASOS HUB: Grid Layout ═══ */
+    .casos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .casos-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-base);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .casos-card:hover {
+      border-color: var(--mint);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(93, 255, 191, 0.08);
+    }
+
+    .casos-card-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .casos-card-sector {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .casos-card-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      color: var(--text-primary);
+    }
+
+    .casos-card-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      flex-grow: 1;
+    }
+
+    .casos-card-services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .casos-card-service-tag {
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      background: rgba(93, 255, 191, 0.08);
+      color: var(--mint);
+      border-radius: 4px;
+      border: 1px solid rgba(93, 255, 191, 0.2);
+    }
+
+    .casos-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: var(--mint);
+      transition: all var(--transition-base);
+    }
+
+    .casos-card:hover .casos-card-cta {
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 768px) {
+      .casos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .casos-card {
+        padding: 1.5rem;
+      }
+
+      .casos-card-name {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar placeholder -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="sp-hero" aria-label="Casos de negocio">
+    <div class="container-main">
+      <div class="sp-hero-layout">
+        <div class="sp-hero-copy">
+          <span class="section-badge reveal">Casos de negocio</span>
+          <h1 class="sp-hero-h1 reveal">Proyectos donde la <span class="text-gradient-standalone">arquitectura digital marca la diferencia</span></h1>
+          <p class="sp-hero-sub reveal">Algunos proyectos requieren algo más que un rediseño visual. Necesitan replantear la arquitectura completa del sistema.</p>
+          <div class="sp-hero-ctas reveal">
+            <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. CASOS GRID ============ -->
+  <section aria-label="Casos de estudio">
+    <div class="container-main">
+      <div class="casos-grid">
+        <!-- EXITBCN -->
+        <a href="/casos-de-negocio/exitbcn" class="casos-card reveal ">
+          <div class="casos-card-header">
+            <div class="casos-card-sector">Diseño web</div>
+            <h2 class="casos-card-name">Exitbcn</h2>
+            <p class="casos-card-description">De una tienda física premium a un e-commerce que cierra compras en dos clics. Eliminamos fricción sin perder posicionamiento de marca.</p>
+          </div>
+          <div class="casos-card-services">
+            <span class="casos-card-service-tag">Diseño web</span>
+            <span class="casos-card-service-tag">UI/UX</span>
+            <span class="casos-card-service-tag">UX Research</span>
+          </div>
+          <div class="casos-card-cta">
+            Ver caso
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        <!-- GIBOBS -->
+        <a href="/casos-de-negocio/gibobs" class="casos-card reveal reveal-delay-1">
+          <div class="casos-card-header">
+            <div class="casos-card-sector">Desarrollo web</div>
+            <h2 class="casos-card-name">Gibobs</h2>
+            <p class="casos-card-description">Transformamos la percepción de las hipotecas. Una plataforma que explica en lugar de vender, ganando confianza donde solo había desconfianza.</p>
+          </div>
+          <div class="casos-card-services">
+            <span class="casos-card-service-tag">Desarrollo web</span>
+            <span class="casos-card-service-tag">UI/UX</span>
+          </div>
+          <div class="casos-card-cta">
+            Ver caso
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        <!-- NOMADE RENT -->
+        <a href="/casos-de-negocio/nomade-rent" class="casos-card reveal reveal-delay-2">
+          <div class="casos-card-header">
+            <div class="casos-card-sector">Diseño web</div>
+            <h2 class="casos-card-name">Nomade Rent</h2>
+            <p class="casos-card-description">El primer configurador de alquileres de camper. La industria no lo tenía, así que lo construimos desde cero.</p>
+          </div>
+          <div class="casos-card-services">
+            <span class="casos-card-service-tag">Diseño web</span>
+            <span class="casos-card-service-tag">UI/UX</span>
+            <span class="casos-card-service-tag">UX Research</span>
+          </div>
+          <div class="casos-card-cta">
+            Ver caso
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        <!-- NOMADE VANS -->
+        <a href="/casos-de-negocio/nomadevans" class="casos-card reveal reveal-delay-0">
+          <div class="casos-card-header">
+            <div class="casos-card-sector">Diseño web</div>
+            <h2 class="casos-card-name">Nomade Vans</h2>
+            <p class="casos-card-description">Permite a usuarios diseñar su camper ideal antes de comprar. Un configurador que convierte browsing en decisión.</p>
+          </div>
+          <div class="casos-card-services">
+            <span class="casos-card-service-tag">Diseño web</span>
+            <span class="casos-card-service-tag">UI/UX</span>
+            <span class="casos-card-service-tag">UX Research</span>
+          </div>
+          <div class="casos-card-cta">
+            Ver caso
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        <!-- PENGUIN AULA -->
+        <a href="/casos-de-negocio/penguinaula" class="casos-card reveal reveal-delay-1">
+          <div class="casos-card-header">
+            <div class="casos-card-sector">Desarrollo web</div>
+            <h2 class="casos-card-name">Penguin Aula</h2>
+            <p class="casos-card-description">40K libros conectados con 50K profesores. Construimos el puente entre editoriales y aulas en digital.</p>
+          </div>
+          <div class="casos-card-services">
+            <span class="casos-card-service-tag">Desarrollo web</span>
+            <span class="casos-card-service-tag">Diseño web</span>
+            <span class="casos-card-service-tag">UI/UX</span>
+          </div>
+          <div class="casos-card-cta">
+            Ver caso
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        <!-- TALENT SEARCH PEOPLE -->
+        <a href="/casos-de-negocio/tsp" class="casos-card reveal reveal-delay-2">
+          <div class="casos-card-header">
+            <div class="casos-card-sector">Desarrollo web</div>
+            <h2 class="casos-card-name">Talent Search People</h2>
+            <p class="casos-card-description">El talento no tiene fronteras. Conectamos profesionales internacionales con oportunidades en tiempo real.</p>
+          </div>
+          <div class="casos-card-services">
+            <span class="casos-card-service-tag">Desarrollo web</span>
+            <span class="casos-card-service-tag">Diseño web</span>
+            <span class="casos-card-service-tag">UI/UX</span>
+          </div>
+          <div class="casos-card-cta">
+            Ver caso
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        <!-- TU SOLUCIÓN HIPOTECARIA -->
+        <a href="/casos-de-negocio/tusolucionhipotecaria" class="casos-card reveal reveal-delay-0">
+          <div class="casos-card-header">
+            <div class="casos-card-sector">Desarrollo web</div>
+            <h2 class="casos-card-name">Tu solución hipotecaria</h2>
+            <p class="casos-card-description">Las hipotecas dejan de ser un misterio. Comparador inteligente que empodera a usuarios a tomar decisiones informadas.</p>
+          </div>
+          <div class="casos-card-services">
+            <span class="casos-card-service-tag">Desarrollo web</span>
+            <span class="casos-card-service-tag">UI/UX</span>
+          </div>
+          <div class="casos-card-cta">
+            Ver caso
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS (TP.testimonios) ============ -->
+  <div id="tp-testimonios"></div>
+
+  <!-- ============ CTA FINAL + FORM ============ -->
+  <section id="cierre" aria-label="Iniciar proyecto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy reveal">
+          <span class="section-badge reveal">Siguiente paso</span>
+          <h2 class="cierre-h2">¿Tienes un <span class="text-gradient-standalone">reto similar</span>?</h2>
+          <p class="cierre-sub">El proceso empieza con 5 preguntas y en menos de 24h tienes una valoración.<br><br>Cuéntanos qué estás construyendo.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="form-gradient-accent"></div>
+          <div class="cierre-form-inner">
+            <form method="POST" action="https://www.trespuntoscomunicacion.es/form" class="tp-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="label label-required" for="f-nombre">Nombre</label>
+                  <input id="f-nombre" name="nombre" type="text" class="input" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="label label-required" for="f-email">Email</label>
+                  <input id="f-email" name="email" type="email" class="input" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="label label-required" for="f-empresa">Empresa</label>
+                  <input id="f-empresa" name="empresa" type="text" class="input" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="label label-required" for="f-mensaje">Cuéntanos tu proyecto</label>
+                  <textarea id="f-mensaje" name="mensaje" class="input input-textarea" required></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn-primary btn-block">Enviar propuesta</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    TP.navbar('casos-de-negocio');
+    TP.testimonios();
+    TP.footer();
+    TP.initJS();
+  </script>
+  <script src="/js/supabase-forms.js" defer></script>
+</body>
+
+</html>

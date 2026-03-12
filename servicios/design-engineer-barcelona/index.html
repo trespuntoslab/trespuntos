@@ -1,0 +1,1825 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Engineer Barcelona | Tres Puntos</title>
+  <meta name="description" content="Diseño y desarrollo frontend integrados. Design Engineers que crean interfaces y las implementan con calidad técnica desde el primer día." />
+  
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/servicios/design-engineer-barcelona/" />
+  <meta property="og:title" content="Frontend y UI exacto | Design Engineer Barcelona · Tres Puntos" />
+  <meta property="og:description"
+    content="Convertimos tu diseño de Figma en web sin perder fidelidad. Frontend experto en Barcelona para plataformas estables, código limpio y alta conversión." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/servicios/design-engineer-barcelona" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Design Engineer Barcelona",
+      "description": "Convertimos tu diseño de Figma en web sin perder fidelidad. Frontend experto en Barcelona para plataformas estables, código limpio y alta conversión.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "url": "https://www.trespuntoscomunicacion.es/"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Barcelona"
+      },
+      "serviceType": "Design Engineering & Frontend Development"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿En qué se diferencia un design engineer de un frontend developer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un desarrollador frontend tradicional suele enfocarse puramente en la lógica y los datos. Un design engineer entiende los fundamentos de UX/UI, asegurando que la interfaz visual y sus interacciones pasen de Figma a código nativo sin perder calidad ni conversión."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué hace exactamente un design engineer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Une el diseño UX/UI con el desarrollo frontend experto. Garantiza que la visión de negocio diseñada en Figma se convierta en una plataforma rápida, medible y rentable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué falla la implementación del diseño web tradicional?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Porque suele enfocarse solo en lo visual o solo en el código. Nosotros construimos un puente técnico robusto para evitar la pérdida de fidelidad UI y la deuda técnica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tarda un proyecto de implementación frontend?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de la complejidad de la arquitectura actual y las fricciones financieras detectadas en la fase de diagnóstico."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ══════════════════════════════════════
+       DE- prefix: Design Engineer page-specific
+       ══════════════════════════════════════ */
+
+    /* ── 1. HERO: Figma → Code → Production flow ── */
+    .de-flow {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    /* Central Component Transformed */
+    .de-comp-center {
+      position: relative;
+      width: 200px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .de-state {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+    }
+
+    .de-state-figma {
+      animation: deStateFigma 7.5s infinite;
+    }
+
+    .de-state-code {
+      animation: deStateCode 7.5s infinite;
+    }
+
+    .de-state-prod {
+      animation: deStateProd 7.5s infinite;
+    }
+
+    /* Figma Box */
+    .de-figma-box {
+      width: 160px;
+      height: 48px;
+      border: 1px dashed rgba(168, 130, 255, 0.6);
+      border-radius: 8px;
+      background: rgba(168, 130, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      position: relative;
+    }
+
+    .de-figma-box::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      border: 1px solid rgba(168, 130, 255, 0.2);
+      border-radius: 12px;
+    }
+
+    .de-figma-box::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 4px;
+      height: 4px;
+      border: 1px solid rgba(168, 130, 255, 0.8);
+      background: #000;
+      box-shadow: 164px 0 0 rgba(168, 130, 255, 0.8), 164px 52px 0 rgba(168, 130, 255, 0.8), 0 52px 0 rgba(168, 130, 255, 0.8);
+    }
+
+    .de-figma-line {
+      height: 4px;
+      background: rgba(168, 130, 255, 0.3);
+      border-radius: 2px;
+    }
+
+    .de-figma-line.short {
+      width: 40%;
+    }
+
+    .de-figma-line.long {
+      width: 60%;
+    }
+
+    /* Code Box */
+    .de-code-block {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--mint);
+      background: rgba(93, 255, 191, 0.05);
+      border: 1px solid rgba(93, 255, 191, 0.3);
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(93, 255, 191, 0.1);
+    }
+
+    .de-code-tag {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .de-code-attr {
+      color: rgba(93, 255, 191, 0.7);
+    }
+
+    /* Prod Button */
+    .de-prod-button {
+      padding: 0.75rem 2rem;
+      background: rgba(78, 165, 255, 0.1);
+      border: 1px solid rgba(78, 165, 255, 0.5);
+      border-radius: 99px;
+      color: #4ea5ff;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 0 30px rgba(78, 165, 255, 0.2), inset 0 0 10px rgba(78, 165, 255, 0.1);
+      letter-spacing: 0.5px;
+    }
+
+    /* Dynamic Labels */
+    .de-dynamic-labels {
+      position: relative;
+      height: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .de-lbl {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0;
+    }
+
+    .de-lbl strong {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .de-lbl span {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .de-lbl-figma strong {
+      color: #a882ff;
+      background: rgba(168, 130, 255, 0.1);
+      border: 1px solid rgba(168, 130, 255, 0.3);
+    }
+
+    .de-lbl-code strong {
+      color: #5dffbf;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.3);
+    }
+
+    .de-lbl-prod strong {
+      color: #4ea5ff;
+      background: rgba(78, 165, 255, 0.1);
+      border: 1px solid rgba(78, 165, 255, 0.3);
+    }
+
+    .de-lbl-figma {
+      animation: deStateFigma 7.5s infinite;
+    }
+
+    .de-lbl-code {
+      animation: deStateCode 7.5s infinite;
+    }
+
+    .de-lbl-prod {
+      animation: deStateProd 7.5s infinite;
+    }
+
+    /* Keyframes for states */
+    @keyframes deStateFigma {
+
+      0%,
+      3%,
+      28% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+
+      32% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+        filter: blur(2px);
+      }
+
+      96% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+        filter: blur(2px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes deStateCode {
+
+      0%,
+      28% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+        filter: blur(2px);
+      }
+
+      32%,
+      61% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+
+      65%,
+      100% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+        filter: blur(2px);
+      }
+    }
+
+    @keyframes deStateProd {
+
+      0%,
+      61% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+        filter: blur(2px);
+      }
+
+      65%,
+      94% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+
+      98%,
+      100% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+        filter: blur(2px);
+      }
+    }
+
+    /* Micro indicators */
+    .de-micro-inds {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .de-ind {
+      position: absolute;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      opacity: 0;
+      letter-spacing: 0.05em;
+    }
+
+    .de-ind-1 {
+      top: 25%;
+      left: 15%;
+      color: #a882ff;
+      border: 1px dashed rgba(168, 130, 255, 0.4);
+      background: rgba(168, 130, 255, 0.05);
+      animation: deInd1 7.5s infinite;
+    }
+
+    .de-ind-2 {
+      top: 25%;
+      right: 15%;
+      color: #5dffbf;
+      border: 1px dashed rgba(93, 255, 191, 0.4);
+      background: rgba(93, 255, 191, 0.05);
+      animation: deInd2 7.5s infinite;
+    }
+
+    .de-ind-3 {
+      top: 55%;
+      left: 15%;
+      color: #4ea5ff;
+      border: 1px dashed rgba(78, 165, 255, 0.4);
+      background: rgba(78, 165, 255, 0.05);
+      animation: deInd3 7.5s infinite;
+    }
+
+    @keyframes deInd1 {
+
+      0%,
+      5% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      10%,
+      25% {
+        opacity: 0.8;
+        transform: translateY(0);
+      }
+
+      30%,
+      100% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes deInd2 {
+
+      0%,
+      36% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      41%,
+      56% {
+        opacity: 0.8;
+        transform: translateY(0);
+      }
+
+      61%,
+      100% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes deInd3 {
+
+      0%,
+      68% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      73%,
+      90% {
+        opacity: 0.8;
+        transform: translateY(0);
+      }
+
+      95%,
+      100% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Floating indicator */
+    .de-indicator {
+      position: absolute;
+      bottom: 12px;
+      right: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: .5rem;
+      color: var(--mint);
+      opacity: .7
+    }
+
+    .de-indicator-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--mint);
+      animation: deDotPulse 2s ease infinite
+    }
+
+    @keyframes deDotPulse {
+
+      0%,
+      100% {
+        opacity: .4
+      }
+
+      50% {
+        opacity: 1
+      }
+    }
+
+    /* ── 2. BROWSER MOCKUP: Figma layers → UI components ── */
+    .de-browser-wrap {
+      margin-top: 1.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem 2rem;
+      grid-column: 1/-1;
+      transition: border-color var(--transition-base);
+      overflow: hidden
+    }
+
+    .de-browser-wrap:hover {
+      border-color: rgba(93, 255, 191, .3)
+    }
+
+    .de-browser-title {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: .65rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--text-muted);
+      margin-bottom: 2rem
+    }
+
+    .de-transform {
+      position: relative;
+      max-width: 580px;
+      margin: 0 auto;
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      justify-content: center
+    }
+
+    .de-transform-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem
+    }
+
+    .de-transform-label {
+      font-family: var(--font-mono);
+      font-size: .5rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      text-align: center;
+      margin-bottom: .5rem
+    }
+
+    .de-transform-label-figma {
+      color: rgba(168, 130, 255, .8)
+    }
+
+    .de-transform-label-code {
+      color: var(--mint)
+    }
+
+    /* Figma layer items */
+    .de-layer {
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-family: var(--font-mono);
+      font-size: .45rem;
+      gap: 8px;
+      border: 1px solid rgba(168, 130, 255, .15);
+      background: rgba(168, 130, 255, 0.04);
+      color: rgba(168, 130, 255, .7);
+      transition: all 0.4s ease;
+      animation: deRowPulse 8s infinite;
+    }
+
+    .de-layer-icon {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      border: 1px solid rgba(168, 130, 255, .2);
+      flex-shrink: 0
+    }
+
+    /* Code component items */
+    .de-component {
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-family: var(--font-mono);
+      font-size: .45rem;
+      gap: 8px;
+      border: 1px solid rgba(93, 255, 191, .15);
+      background: rgba(93, 255, 191, 0.04);
+      color: rgba(93, 255, 191, .7);
+      transition: all 0.4s ease;
+      animation: deRowPulse 8s infinite;
+    }
+
+    /* Sequential animation for rows */
+    .de-transform-col .de-layer:nth-child(2),
+    .de-transform-col:last-child .de-component:nth-child(2) {
+      animation-delay: 0s;
+    }
+
+    .de-transform-col .de-layer:nth-child(3),
+    .de-transform-col:last-child .de-component:nth-child(3) {
+      animation-delay: 2s;
+    }
+
+    .de-transform-col .de-layer:nth-child(4),
+    .de-transform-col:last-child .de-component:nth-child(4) {
+      animation-delay: 4s;
+    }
+
+    .de-transform-col .de-layer:nth-child(5),
+    .de-transform-col:last-child .de-component:nth-child(5) {
+      animation-delay: 6s;
+    }
+
+    @keyframes deRowPulse {
+
+      0%,
+      20%,
+      100% {
+        background: rgba(255, 255, 255, 0.02);
+        border-color: rgba(255, 255, 255, 0.05);
+        transform: translateX(0);
+      }
+
+      5%,
+      15% {
+        background: rgba(93, 255, 191, 0.08);
+        border-color: rgba(93, 255, 191, 0.3);
+        transform: translateX(5px);
+        color: #fff;
+      }
+    }
+
+    .de-component-tag {
+      color: rgba(93, 255, 191, .5);
+      font-size: .4rem
+    }
+
+    /* Arrow */
+    .de-transform-arrow {
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--mint);
+      opacity: .2;
+      animation: deArrowPulse 8s infinite;
+    }
+
+    @keyframes deArrowPulse {
+
+      0%,
+      20%,
+      100% {
+        opacity: 0.1;
+        transform: scale(1);
+      }
+
+      5%,
+      15% {
+        opacity: 0.8;
+        transform: scale(1.2);
+      }
+    }
+
+    .de-browser-caption {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      color: var(--text-muted);
+      opacity: .6;
+      margin-top: 1.5rem
+    }
+
+    /* Methodology Fix: Ensure line is behind numbers and glowing correctly */
+    .sp-method-num {
+      position: relative;
+      z-index: 2;
+      background: #0d0d0d !important;
+      transition: all 0.6s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .sp-method-num.active {
+      background: linear-gradient(135deg, #00f2ff 0%, #0072ff 100%) !important;
+      border-color: rgba(0, 242, 255, 0.4) !important;
+      color: #fff !important;
+      box-shadow: 0 0 25px rgba(0, 242, 255, 0.4), 0 0 10px rgba(0, 114, 255, 0.2) !important;
+      transform: scale(1.1);
+    }
+
+    /* ── 4. FIT (ENCAJE) ANIMATION ── */
+    #fit-evolution .fit-viz-track::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--fit-progress, 0%);
+      background: linear-gradient(to bottom, var(--mint), #4ea5ff);
+      transition: height 1s ease-out;
+      box-shadow: 0 0 15px var(--mint);
+    }
+
+    .fit-node {
+      opacity: 0.2;
+      transition: all 0.6s ease;
+      transform: translateX(-5px);
+    }
+
+    .fit-node.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fit-node.active .fit-node-dot {
+      background: var(--mint);
+      box-shadow: 0 0 15px var(--mint);
+      border-color: #fff;
+      transform: scale(1.2);
+    }
+
+    .fit-node.active span {
+      color: var(--mint);
+      font-weight: 600;
+    }
+
+    /* ── 3. PROBLEM ANIMATION: Figma → Manual → UI Inconsistent → System ── */
+    .prob-anim-container {
+      margin-top: 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .prob-state {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    /* Stages animation loop - 15s total */
+    .prob-state-1 {
+      animation: probLoop1 18s infinite;
+    }
+
+    .prob-state-2 {
+      animation: probLoop2 18s infinite;
+    }
+
+    .prob-state-3 {
+      animation: probLoop3 18s infinite;
+    }
+
+    .prob-state-4 {
+      animation: probLoop4 18s infinite;
+    }
+
+    .prob-state-5 {
+      animation: probLoop5 18s infinite;
+    }
+
+    @keyframes probLoop1 {
+
+      0%,
+      18% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      20%,
+      100% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    @keyframes probLoop2 {
+
+      0%,
+      20% {
+        opacity: 0;
+        transform: scale(1.05);
+      }
+
+      22%,
+      38% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      40%,
+      100% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    @keyframes probLoop3 {
+
+      0%,
+      40% {
+        opacity: 0;
+        transform: scale(1.05);
+      }
+
+      42%,
+      58% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      60%,
+      100% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    @keyframes probLoop4 {
+
+      0%,
+      60% {
+        opacity: 0;
+        transform: scale(1.05);
+      }
+
+      62%,
+      78% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      80%,
+      100% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    @keyframes probLoop5 {
+
+      0%,
+      80% {
+        opacity: 0;
+        transform: scale(1.05);
+      }
+
+      82%,
+      98% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    /* Figma Stage */
+    .prob-fig-box {
+      width: 100px;
+      height: 40px;
+      border: 1px solid #a882ff;
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .prob-fig-box::after {
+      content: 'FIGMA';
+      position: absolute;
+      top: -18px;
+      left: 0;
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: #a882ff;
+    }
+
+    /* Manual Stage (Broken UI) */
+    .prob-manual-ui {
+      display: flex;
+      gap: 10px;
+    }
+
+    .prob-item-broken {
+      width: 40px;
+      height: 20px;
+      background: rgba(248, 113, 113, 0.2);
+      border: 1px solid #f87171;
+      transform: rotate(2deg);
+      margin-top: 5px;
+    }
+
+    /* Inconsistent Stage */
+    .prob-inc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .prob-inc-box {
+      width: 60px;
+      height: 15px;
+      background: #333;
+    }
+
+    .prob-inc-box:nth-child(2) {
+      transform: translateX(8px);
+      background: #444;
+    }
+
+    /* System Stage */
+    .prob-sys-grid {
+      display: flex;
+      gap: 8px;
+    }
+
+    .prob-token {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 10px var(--mint);
+    }
+
+    /* Pixel Perfect Stage */
+    .prob-pp-flow {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--mint);
+    }
+
+    .prob-state span {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      margin-top: 1rem;
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    @media(max-width:768px) {
+      .de-browser-wrap {
+        padding: 1.5rem 1rem 1.25rem
+      }
+
+      .de-transform {
+        flex-direction: column;
+        gap: 1rem
+      }
+
+      .de-transform-arrow {
+        transform: rotate(90deg)
+      }
+
+      .de-flow svg {
+        font-size: 7px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      .de-pulse,
+      .de-indicator-dot,
+      .de-marquee-track,
+      .prob-state {
+        animation: none !important;
+        opacity: 1 !important;
+        position: relative !important;
+      }
+
+      .de-marquee-track {
+        overflow: hidden
+      }
+    }
+
+    @media(max-width:768px) {
+      .de-browser-wrap {
+        padding: 1.5rem 1rem 1.25rem
+      }
+
+      .de-transform {
+        flex-direction: column;
+        gap: 1rem
+      }
+
+      .de-transform-arrow {
+        transform: rotate(90deg)
+      }
+
+      .de-flow svg {
+        font-size: 7px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      .de-pulse,
+      .de-indicator-dot,
+      .de-marquee-track {
+        animation: none !important
+      }
+
+      .de-marquee-track {
+        overflow: hidden
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="sp-hero" aria-label="Design Engineer Barcelona">
+    <div class="container-main sp-hero-layout">
+      <div class="sp-hero-copy">
+        <span class="section-badge reveal">Design Engineer Barcelona</span>
+        <h1 class="sp-hero-h1 reveal">
+          <span class="text-gradient-standalone">Design engineer en Barcelona</span> para que tu diseño llegue intacto a
+          producción
+        </h1>
+        <p class="sp-hero-sub reveal">Traducimos tu UX/UI a código nativo sin fricciones. Aseguramos que el diseño de
+          Figma no se rompa al pasar a producción para proteger tu conversión.</p>
+        <div class="sp-hero-ctas reveal">
+          <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
+            Cuéntanos tu proyecto
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="/arquitectura-digital-conversion" class="btn-ghost">
+            Ver metodología
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="sp-hero-visual reveal reveal-delay-1">
+        <div class="sp-browser-mock">
+          <div class="sp-browser-bar">
+            <span class="sp-dot sp-dot-r"></span>
+            <span class="sp-dot sp-dot-y"></span>
+            <span class="sp-dot sp-dot-g"></span>
+            <div class="sp-browser-url"><span>figma → código → producción</span></div>
+          </div>
+          <div class="sp-browser-body">
+            <!-- Figma → Code → Production flow -->
+            <div class="de-flow">
+              <!-- Central Component Column -->
+              <div class="de-comp-center">
+
+                <!-- State 1: Figma -->
+                <div class="de-state de-state-figma">
+                  <div class="de-figma-box">
+                    <div class="de-figma-line long"></div>
+                    <div class="de-figma-line short"></div>
+                  </div>
+                </div>
+
+                <!-- State 2: Code -->
+                <div class="de-state de-state-code">
+                  <div class="de-code-block">
+                    <span class="de-code-tag">&lt;</span><span class="de-code-attr">Button</span> <span
+                      class="de-code-attr">variant</span>="primary" <span class="de-code-tag">/&gt;</span>
+                  </div>
+                </div>
+
+                <!-- State 3: Production -->
+                <div class="de-state de-state-prod">
+                  <div class="de-prod-button">Confirmar pedido</div>
+                </div>
+
+              </div>
+
+              <!-- Labels swapping BELOW the component -->
+              <div class="de-dynamic-labels">
+                <div class="de-lbl de-lbl-figma">
+                  <strong>FIGMA</strong>
+                  <span>Diseño listo</span>
+                </div>
+                <div class="de-lbl de-lbl-code">
+                  <strong>CÓDIGO</strong>
+                  <span>Implementación</span>
+                </div>
+                <div class="de-lbl de-lbl-prod">
+                  <strong>PRODUCCIÓN</strong>
+                  <span>Deploy OK</span>
+                </div>
+              </div>
+
+              <!-- Micro Indicators Layer -->
+              <div class="de-micro-inds">
+                <div class="de-ind de-ind-1">design tokens</div>
+                <div class="de-ind de-ind-2">components</div>
+                <div class="de-ind de-ind-3">responsive</div>
+              </div>
+              <div class="de-indicator">
+                <span class="de-indicator-dot"></span>
+                Pipeline activo
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. PROBLEMA ============ -->
+  <section class="sp-problem" aria-label="El problema">
+    <div class="container-main sp-problem-layout">
+      <div class="sp-problem-copy">
+        <span class="section-badge reveal">El problema</span>
+        <h2 class="section-h2 reveal">El problema no es el diseño. <br>Es cuando el diseño se <span
+            class="text-gradient-standalone">interpreta en código</span></h2>
+        <p class="sp-problem-text reveal">Muchos equipos diseñan en Figma y desarrollan después. En ese salto aparecen
+          inconsistencias, animaciones mal implementadas y componentes que ya no coinciden con el diseño original.</p>
+        <p class="sp-problem-text reveal" style="margin-top: 1rem;">El resultado son interfaces que parecen correctas,
+          pero no funcionan como deberían.</p>
+
+        <!-- NEW ANIMATION UNDER LEFT TEXT -->
+        <div class="prob-anim-container reveal">
+          <div class="prob-state prob-state-1">
+            <div class="prob-fig-box"></div>
+            <span>Diseño original</span>
+          </div>
+          <div class="prob-state prob-state-2">
+            <div class="prob-manual-ui">
+              <div class="prob-item-broken"></div>
+              <div class="prob-item-broken" style="transform: rotate(-3deg); margin-left: 5px;"></div>
+            </div>
+            <span>Implementación manual</span>
+          </div>
+          <div class="prob-state prob-state-3">
+            <div class="prob-inc-grid">
+              <div class="prob-inc-box"></div>
+              <div class="prob-inc-box"></div>
+              <div class="prob-inc-box" style="width: 40px;"></div>
+              <div class="prob-inc-box" style="transform: scale(1.2);"></div>
+            </div>
+            <span>UI inconsistente</span>
+          </div>
+          <div class="prob-state prob-state-4">
+            <div class="prob-sys-grid">
+              <div class="prob-token"></div>
+              <div class="prob-token" style="opacity: 0.6;"></div>
+              <div class="prob-token" style="opacity: 0.3;"></div>
+            </div>
+            <span>Sistema de componentes</span>
+          </div>
+          <div class="prob-state prob-state-5">
+            <div class="prob-pp-flow">
+              Figma &rarr; Código &rarr; Producción
+            </div>
+            <span style="color: var(--mint); opacity: 1;">PIXEL PERFECT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sp-signals">
+        <h3 class="sp-signals-title reveal"
+          style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-main);">
+          Síntomas de un diseño que se rompe en producción</h3>
+
+        <div class="sp-signal-card reveal">
+          <div class="sp-signal-icon">
+            <svg width="16" height="16" fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+          </div>
+          <div class="sp-signal-content">
+            <strong>El diseño final no coincide con Figma</strong>
+            <span>Pequeños cambios en espaciado, tipografía o interacción rompen la consistencia visual.</span>
+          </div>
+        </div>
+        <div class="sp-signal-card reveal">
+          <div class="sp-signal-icon">
+            <svg width="16" height="16" fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+          </div>
+          <div class="sp-signal-content">
+            <strong>Animaciones y microinteracciones desaparecen</strong>
+            <span>Lo que se diseñó como experiencia se convierte en una interfaz estática.</span>
+          </div>
+        </div>
+        <div class="sp-signal-card reveal">
+          <div class="sp-signal-icon">
+            <svg width="16" height="16" fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+          </div>
+          <div class="sp-signal-content">
+            <strong>Componentes inconsistentes</strong>
+            <span>Cada pantalla se implementa diferente porque no existe un sistema de componentes claro.</span>
+          </div>
+        </div>
+        <div class="sp-signal-card reveal">
+          <div class="sp-signal-icon">
+            <svg width="16" height="16" fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+          </div>
+          <div class="sp-signal-content">
+            <strong>Frontend difícil de mantener</strong>
+            <span>Sin una arquitectura de componentes clara, cada cambio rompe otras partes del sistema.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM MARQUEE ============ -->
+  <div class="sp-marquee" aria-hidden="true">
+    <div class="sp-marquee-track">
+      <span>Las webs bonitas no pagan facturas</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>El diseño sin negocio es decoración</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Figma lo aguanta todo, la producción no</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Las webs bonitas no pagan facturas</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>El diseño sin negocio es decoración</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Figma lo aguanta todo, la producción no</span>
+      <span class="sp-marquee-sep">&bull;</span>
+    </div>
+  </div>
+
+  <!-- ============ 3. SERVICIOS ============ -->
+  <section class="sp-services" aria-label="Qué incluye el servicio">
+    <div class="container-main">
+      <span class="section-badge reveal">Servicio</span>
+      <h2 class="section-h2 reveal">Qué incluye el servicio de <span class="text-gradient-standalone">design
+          engineer</span></h2>
+      <p class="sp-services-intro reveal">Construimos sistemas sólidos pensados para generar negocio. Trabajamos para
+        que cada decisión técnica tenga un impacto económico positivo.</p>
+
+      <div class="sp-services-grid">
+        <div class="sp-service-card reveal">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M9.53 15.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Convertir diseño Figma en web</h3>
+          <p class="sp-service-text">Precisión técnica que protege la inversión realizada en UX/UI. Tu diseño llega a
+            producción exactamente como fue concebido.</p>
+        </div>
+
+        <div class="sp-service-card reveal reveal-delay-1">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Desarrollo frontend experto</h3>
+          <p class="sp-service-text">Código nativo diseñado para soportar picos de tráfico sin caídas. Performance y
+            estabilidad como base de todo.</p>
+        </div>
+
+        <div class="sp-service-card reveal">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L12 12.75 6.429 9.75m11.142 0l4.179 2.25L12 17.25 2.25 12l4.179-2.25m11.142 0L12 12.75" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Arquitectura frontend escalable</h3>
+          <p class="sp-service-text">Componentes reutilizables preparados para crecer con tu producto y reducir costes
+            futuros. Sin deuda técnica.</p>
+        </div>
+
+        <div class="sp-service-card reveal reveal-delay-1">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Optimización de rendimiento</h3>
+          <p class="sp-service-text">Interfaces rápidas que eliminan fricción y mejoran la conversión. Cada milisegundo
+            cuenta.</p>
+        </div>
+
+        <!-- Browser Mockup: Figma → Code transformation -->
+        <div class="de-browser-wrap reveal">
+          <p class="de-browser-title">De Figma a código sin perder fidelidad</p>
+          <div class="de-transform">
+            <div class="de-transform-col">
+              <p class="de-transform-label de-transform-label-figma">Capas en Figma</p>
+              <div class="de-layer">
+                <div class="de-layer-icon"></div>Hero / Banner
+              </div>
+              <div class="de-layer">
+                <div class="de-layer-icon"></div>Card / Producto
+              </div>
+              <div class="de-layer">
+                <div class="de-layer-icon"></div>Nav / Sidebar
+              </div>
+              <div class="de-layer">
+                <div class="de-layer-icon"></div>Form / Checkout
+              </div>
+            </div>
+            <div class="de-transform-arrow">&rarr;</div>
+            <div class="de-transform-col">
+              <p class="de-transform-label de-transform-label-code">Componentes en código</p>
+              <div class="de-component"><span class="de-component-tag">&lt;/&gt;</span> HeroBanner.tsx</div>
+              <div class="de-component"><span class="de-component-tag">&lt;/&gt;</span> ProductCard.tsx</div>
+              <div class="de-component"><span class="de-component-tag">&lt;/&gt;</span> Navigation.tsx</div>
+              <div class="de-component"><span class="de-component-tag">&lt;/&gt;</span> CheckoutForm.tsx</div>
+            </div>
+          </div>
+          <p class="de-browser-caption">Cada capa de diseño se traduce en un componente optimizado, testeado y listo
+            para producción</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. METODOLOGÍA ============ -->
+  <section class="sp-methodology" aria-label="Metodología">
+    <div class="container-main">
+      <div class="sp-method-layout">
+        <div class="sp-method-copy">
+          <span class="section-badge reveal">Proceso</span>
+          <h2 class="section-h2 reveal">Cómo trabajamos tu <span class="text-gradient-standalone">arquitectura
+              digital</span></h2>
+          <p class="sp-method-intro reveal">Nuestro enfoque combina UX/UI estratégico y arquitectura digital. Descubre a
+            fondo nuestra metodología de trabajo.</p>
+        </div>
+        <div class="sp-method-steps">
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">01</div>
+            <div class="sp-method-step-content">
+              <h3>Diagnóstico</h3>
+              <p>Analizamos la plataforma actual, el diseño existente y los cuellos de botella técnicos.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">02</div>
+            <div class="sp-method-step-content">
+              <h3>Estrategia</h3>
+              <p>Definimos la arquitectura frontend y el plan de implementación alineado con los objetivos de negocio.
+              </p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">03</div>
+            <div class="sp-method-step-content">
+              <h3>Diseño / Arquitectura</h3>
+              <p>Construimos el sistema de componentes y la estructura técnica que soportará el diseño.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">04</div>
+            <div class="sp-method-step-content">
+              <h3>Implementación</h3>
+              <p>Traducimos cada capa de Figma a código nativo con fidelidad pixel-perfect.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">05</div>
+            <div class="sp-method-step-content">
+              <h3>Validación</h3>
+              <p>Testeamos rendimiento, accesibilidad y fidelidad visual antes del lanzamiento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sp-method-cta reveal">
+        <a href="/arquitectura-digital-conversion" class="btn-ghost">
+          Ver proceso completo: Arquitectura Digital de Conversión
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. TIPOS DE PROYECTO ============ -->
+  <section class="sp-fit" aria-label="Cuándo tiene sentido">
+    <div class="container-main">
+      <span class="section-badge reveal">Encaje</span>
+      <h2 class="section-h2 reveal">Cuándo necesitas un design engineer</h2>
+      <p class="sp-fit-intro reveal">No todos los proyectos necesitan un design engineer. Pero cuando el diseño se
+        pierde al pasar a código, hay señales claras.</p>
+
+      <div class="sp-fit-layout">
+        <div class="sp-fit-content">
+          <div class="sp-fit-grid">
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Pérdida de fidelidad visual</h3>
+              <p>Plataformas donde el diseño de Figma no se refleja en la web final debido a una desconexión entre
+                diseño y frontend.</p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Experiencias interactivas</h3>
+              <p>Proyectos con animaciones e interacciones complejas que requieren implementación experta para no
+                penalizar el rendimiento.</p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Equipos desconectados</h3>
+              <p>Entornos donde los equipos de diseño y desarrollo trabajan en silos, generando fricción, retrasos y
+                deuda técnica.</p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Productos escalables</h3>
+              <p>SaaS y plataformas digitales que necesitan escalar su interfaz sin acumular componentes inconsistentes.
+              </p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Rediseños críticos</h3>
+              <p>Rediseños completos donde la fidelidad de la interfaz es crítica y va directamente ligada a la
+                conversión.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visualization Column -->
+        <div class="sp-fit-viz-column reveal" id="fit-evolution">
+          <div class="fit-viz-container">
+            <div class="fit-viz-track"></div>
+            <div class="fit-viz-nodes">
+              <div class="fit-node">
+                <div class="fit-node-dot"></div>
+                <span>Diseño en Figma</span>
+              </div>
+              <div class="fit-node">
+                <div class="fit-node-dot"></div>
+                <span>Fricción en desarrollo</span>
+              </div>
+              <div class="fit-node">
+                <div class="fit-node-dot"></div>
+                <span>Auditoría UI/UX</span>
+              </div>
+              <div class="fit-node">
+                <div class="fit-node-dot"></div>
+                <span>Sistemas de diseño</span>
+              </div>
+              <div class="fit-node last">
+                <div class="fit-node-dot"></div>
+                <span>Producción 1:1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT MARQUEE ============ -->
+  <div class="sp-marquee" aria-hidden="true">
+    <div class="sp-marquee-track">
+      <span>Design engineer</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Figma a código</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Frontend experto</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Pixel-perfect</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Arquitectura frontend</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Design engineer</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Figma a código</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Frontend experto</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Pixel-perfect</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Arquitectura frontend</span>
+      <span class="sp-marquee-sep">&bull;</span>
+    </div>
+  </div>
+
+  <!-- ============ CASOS (TP.casos) ============ -->
+  <div id="tp-casos"></div>
+
+  <!-- ============ SERVICIOS RELACIONADOS ============ -->
+  <section class="sp-related" aria-label="Servicios relacionados">
+    <div class="container-main">
+      <span class="section-badge reveal">Servicios complementarios</span>
+      <h2 class="section-h2 reveal">Servicios que suelen acompañar este proyecto</h2>
+      <p class="sp-related-intro reveal">El frontend funciona mejor cuando el diseño, la arquitectura y la estrategia
+        técnica van alineados desde el principio.</p>
+
+      <div class="sp-related-grid">
+        <a href="/servicios/diseno-ux-ui-barcelona" class="sp-related-card reveal">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M9.53 15.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+            </svg>
+          </div>
+          <h3>Diseño UX/UI</h3>
+          <p>Cuando el proyecto necesita diseño estratégico antes de la implementación.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/desarrollo-web-a-medida-barcelona" class="sp-related-card reveal reveal-delay-1">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+            </svg>
+          </div>
+          <h3>Desarrollo web a medida</h3>
+          <p>Para arquitecturas técnicas más complejas que van más allá del frontend.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/consultoria-digital-barcelona" class="sp-related-card reveal reveal-delay-2">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
+            </svg>
+          </div>
+          <h3>Consultoría digital</h3>
+          <p>Para analizar plataformas existentes y detectar cuellos de botella técnicos.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS (TP.testimonios) ============ -->
+  <div id="tp-testimonios"></div>
+
+  <!-- ============ OPINIÓN EXPERTA ============ -->
+  <section class="sp-expert" aria-label="Opinión experta">
+    <div class="container-main">
+      <div class="sp-expert-layout reveal">
+        <div class="sp-expert-quote">
+          <span class="section-badge">Opinión experta</span>
+          <h2 class="sp-expert-h2">El mayor cuello de botella en los proyectos es la desconexión entre diseño y
+            desarrollo.</h2>
+          <p>Un design engineer elimina esa fricción técnica. Aseguramos que la arquitectura frontend respete la
+            experiencia de usuario y escale el negocio.</p>
+        </div>
+        <div class="sp-expert-author">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="sp-expert-avatar" width="80" height="80"
+            loading="lazy">
+          <div>
+            <div class="sp-expert-name">Jordi Expósito</div>
+            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
+            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener"
+              class="sp-expert-linkedin">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path
+                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+              Ver en LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="sp-faq" aria-label="Preguntas frecuentes sobre design engineering">
+    <div class="container-main">
+      <div class="faq-layout">
+        <div class="reveal">
+          <span class="section-badge reveal">FAQ</span>
+          <h2 class="section-h2 reveal">Preguntas frecuentes sobre design engineering</h2>
+        </div>
+        <div class="faq-list reveal reveal-delay-1">
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿En qué se diferencia un design engineer de un frontend
+              developer?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Un desarrollador frontend tradicional suele enfocarse puramente en la lógica
+                y los datos. Un design engineer entiende los fundamentos de UX/UI, asegurando que la interfaz visual y
+                sus interacciones pasen de Figma a código nativo sin perder calidad ni conversión.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Qué hace exactamente un design engineer?<svg
+                class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Une el diseño UX/UI con el desarrollo frontend experto. Garantiza que la
+                visión de negocio diseñada en Figma se convierta en una plataforma rápida, medible y rentable.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Por qué falla la implementación del diseño web
+              tradicional?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Porque suele enfocarse solo en lo visual o solo en el código. Nosotros
+                construimos un puente técnico robusto para evitar la pérdida de fidelidad UI y la deuda técnica.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Cuánto tarda un proyecto de implementación frontend?<svg
+                class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Depende de la complejidad de la arquitectura actual y las fricciones
+                financieras detectadas en la fase de diagnóstico.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL + FORM ============ -->
+  <section id="cierre" aria-label="Iniciar proyecto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy reveal">
+          <span class="section-badge reveal">Siguiente paso</span>
+          <h2 class="cierre-h2">¿Tu diseño se pierde al pasar a <span
+              class="text-gradient-standalone">producción</span>?</h2>
+          <p class="cierre-sub">Si tu diseño de Figma no se refleja en la web final, el problema no es el diseño. Es la
+            implementación.<br><br>El proceso empieza con 5 preguntas y en menos de 24h tienes una valoración.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="form-gradient-accent"></div>
+          <div class="cierre-form-inner">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-nombre">Nombre</label>
+                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="f-email">Email</label>
+                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-tel">Teléfono</label>
+                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
+                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false"
+                  aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
+                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Rango aproximado</div>
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                  </div>
+                </div>
+                <input type="hidden" id="f-presupuesto" name="budget" value="" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
+              <textarea id="f-mensaje" class="input" rows="4"
+                placeholder="Describe brevemente tu proyecto o los problemas que percibes en la implementación frontend..."></textarea>
+            </div>
+            <label class="checkbox-row" for="f-privacidad">
+              <input type="checkbox" id="f-privacidad" required />
+              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
+                  Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+            </label>
+            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn"
+              style="width:100%;justify-content:center;">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <p class="form-note">Sin compromiso. Respuesta en menos de 24h.</p>
+            <div class="form-divider"
+              style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+            </div>
+            <a href="/iniciar-proyecto" class="btn-secondary" style="width:100%;justify-content:center;">
+              Formulario completo (Presupuesto en 24h)
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="tp-footer"></div>
+
+  <script>
+    // Fit Evolution Sequential Animation
+    (function () {
+      const container = document.getElementById('fit-evolution');
+      if (!container) return;
+
+      const nodes = container.querySelectorAll('.fit-node');
+      let fired = false;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !fired) {
+            fired = true;
+            nodes.forEach((node, i) => {
+              setTimeout(() => {
+                node.classList.add('active');
+                const progress = ((i + 1) / nodes.length) * 100;
+                container.querySelector('.fit-viz-track').style.setProperty('--fit-progress', progress + '%');
+              }, i * 600);
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(container);
+    })();
+  </script>
+  <script src="/js/components.js" defer></script>
+  <script>
+    TP.navbar('design-engineer');
+    TP.casos();
+    TP.testimonios();
+    TP.footer();
+    TP.initJS();
+  </script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js" defer></script>
+</body>
+
+</html>

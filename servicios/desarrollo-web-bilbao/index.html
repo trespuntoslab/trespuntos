@@ -1,0 +1,2135 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desarrollo Web a Medida Bilbao | Tres Puntos</title>
+  <meta name="description" content="Plataformas web hechas específicamente para tu empresa, sin limitaciones de plantillas estándar. Construimos sistemas potentes y escalables listos para tu crecimiento." />
+  
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/servicios/desarrollo-web-bilbao/" />
+  <meta property="og:title" content="Desarrollo Web a Medida Bilbao | Plataformas digitales para empresas de alto rendimiento" />
+  <meta property="og:description"
+    content="Construimos plataformas digitales sólidas y eficientes para empresas de Bilbao que necesitan tecnología sin compromisos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/servicios/desarrollo-web-bilbao" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Desarrollo Web a Medida Bilbao",
+      "description": "Desarrollo web personalizado en Bilbao para negocios que requieren plataformas robustas, de máximo rendimiento y con capacidad escalable garantizada.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "url": "https://www.trespuntoscomunicacion.es/"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Bilbao"
+      },
+      "serviceType": "Desarrollo Web a Medida"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo digitalizamos la manufactura en Bilbao?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con plataformas IoT que conectan máquinas, sensores, y sistemas ERP. Monitorización en tiempo real, predictive maintenance, y datos accionables para optimizar producción. Transformación digital de la fábrica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué beneficio tiene una plataforma B2B para cooperativas industriales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un portal donde tus socios pueden hacer pedidos, ver disponibilidad, gestionar facturas, y trackear entregas. Reduce fricción operativa, elimina emails, y mejora transparencia entre miembros de la cooperativa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo integramos IoT y sensores industriales en una plataforma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Conectando tus sensores y máquinas a través de APIs. Los datos llegan en tiempo real a tu plataforma, donde se procesan, se almacenan, y se visualizan en dashboards. Alertas automáticas si hay anomalías."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es el ROI positivo en una plataforma de automatización industrial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Una plataforma que detecta automáticamente defectos, optimiza tiempos de producción, o reduce paradas no planificadas puede retornar en 12-18 meses. Plus: mejora de calidad y seguridad laboral."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tarda desarrollar un sistema IoT y ERP integrado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un sistema integrado con monitorización IoT, ERP, y dashboards analíticos típicamente tarda 5-8 meses. Incluye instalación de sensores, integración de sistemas legacy, desarrollo, testing exhaustivo, y training del equipo."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ Page-specific: Desarrollo Web — Animated Visuals ═══ */
+
+    /* ── 1. HERO: Code to Platform Animation ── */
+    .sp-hero-visual {
+      position: relative;
+      perspective: 1000px;
+    }
+
+    .hero-anim-container {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      background: transparent;
+      border-radius: 16px;
+      border: none;
+      overflow: visible;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tech-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(93, 255, 191, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(93, 255, 191, 0.03) 1px, transparent 1px);
+      background-size: 30px 30px;
+      z-index: 1;
+    }
+
+    /* Main Browser */
+    .anim-browser {
+      position: relative;
+      width: 90%;
+      height: 85%;
+      background: #0d1117;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transform: translateX(-60px);
+    }
+
+    .browser-bar {
+      height: 32px;
+      background: #161b22;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 8px;
+    }
+
+    .browser-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .browser-dot:nth-child(1) {
+      background: #ff5f56;
+    }
+
+    .browser-dot:nth-child(2) {
+      background: #ffbd2e;
+    }
+
+    .browser-dot:nth-child(3) {
+      background: #27c93f;
+    }
+
+    .browser-url {
+      flex: 1;
+      height: 20px;
+      background: #0d1117;
+      border-radius: 4px;
+      margin: 0 20px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      color: var(--text-muted);
+    }
+
+    .browser-main {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    /* Editor Side */
+    .editor-pane {
+      width: 45%;
+      background: #0d1117;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      color: #8b949e;
+    }
+
+    .code-line {
+      display: flex;
+      white-space: pre;
+    }
+
+    .code-tag {
+      color: #7ee787;
+    }
+
+    .code-attr {
+      color: #d2a8ff;
+    }
+
+    .code-val {
+      color: #a5d6ff;
+    }
+
+    .code-keyword {
+      color: #ff7b72;
+    }
+
+    .code-func {
+      color: #d2a8ff;
+    }
+
+    /* Cursor */
+    .cursor {
+      width: 6px;
+      height: 14px;
+      background: var(--mint);
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    /* Preview Side */
+    .preview-pane {
+      flex: 1;
+      background: #0d1117;
+      position: relative;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .ui-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: #0d1117;
+      transform: scale(1);
+    }
+
+    /* Mobile Mockup */
+    .anim-mobile {
+      position: absolute;
+      right: 2%;
+      bottom: 50%;
+      transform: translateY(50%);
+      width: 180px;
+      height: 360px;
+      background: #0d1117;
+      border-radius: 24px;
+      border: 6px solid #161b22;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      z-index: 5;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-header {
+      height: 20px;
+      background: #0d1117;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mobile-notch {
+      width: 50px;
+      height: 5px;
+      background: #161b22;
+      border-radius: 3px;
+    }
+
+    .mobile-content {
+      flex: 1;
+      background: #0d1117;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* UI Components - DARK THEME */
+    .ui-nav {
+      height: 20px;
+      background: #161b22;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      gap: 5px;
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    .ui-logo {
+      width: 15px;
+      height: 10px;
+      background: var(--mint);
+      border-radius: 2px;
+    }
+
+    .ui-item {
+      width: 20px;
+      height: 4px;
+      background: #30363d;
+      border-radius: 2px;
+    }
+
+    .ui-hero {
+      height: 70px;
+      background: #0d1117;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .ui-title {
+      width: 80%;
+      height: 10px;
+      background: #fff;
+      border-radius: 5px;
+    }
+
+    .ui-subtitle {
+      width: 50%;
+      height: 5px;
+      background: #8b949e;
+      border-radius: 3px;
+    }
+
+    .ui-btn {
+      width: 40px;
+      height: 14px;
+      background: var(--mint);
+      border-radius: 4px;
+    }
+
+    .ui-cards {
+      padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .ui-card {
+      height: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: #161b22;
+    }
+
+    .ui-card-sq {
+      width: 100%;
+      height: 25px;
+      background: #30363d;
+      border-radius: 4px;
+    }
+
+    .ui-card-ln {
+      width: 80%;
+      height: 4px;
+      background: #21262d;
+      border-radius: 2px;
+    }
+
+    /* Mobile specific UI tweaks */
+    .anim-mobile .ui-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .anim-mobile .ui-hero {
+      height: 80px;
+    }
+
+    /* Active Animation Classes */
+    .ui-visible {
+      opacity: 1;
+      transform: translate(0) scale(1);
+      transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    /* Floating Tags */
+    .anim-tag {
+      position: absolute;
+      padding: 4px 8px;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.3);
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--mint);
+      z-index: 10;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.4s ease;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .anim-tag::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      background: var(--mint);
+      border-radius: 50%;
+      box-shadow: 0 0 5px var(--mint);
+    }
+
+    .tag-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tag-fe {
+      top: 20%;
+      left: 35%;
+    }
+
+    .tag-api {
+      top: 40%;
+      right: 25%;
+    }
+
+    .tag-db {
+      bottom: 25%;
+      left: 25%;
+    }
+
+    .tag-res {
+      bottom: 15%;
+      right: 15%;
+    }
+
+    /* SVG Connector Lines */
+    .anim-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .anim-line {
+      stroke: rgba(93, 255, 191, 0.2);
+      stroke-width: 1;
+      stroke-dasharray: 4;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .line-active {
+      opacity: 1;
+      animation: dash 10s linear infinite;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -100;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-anim-container {
+        height: 320px;
+      }
+
+      .anim-browser {
+        width: 95%;
+        transform: translateX(0);
+      }
+
+      .anim-mobile {
+        display: none;
+      }
+
+      .editor-pane {
+        display: none;
+      }
+
+      .preview-pane {
+        width: 100%;
+      }
+    }
+
+    .dev-fl-label {
+      font-family: var(--font-mono);
+      font-size: .55rem;
+      fill: var(--text-muted)
+    }
+
+    /* ── 4. PROBLEM BOTTLENECK: Inline Viz ── */
+    .bottleneck-viz {
+      position: relative;
+      width: 100%;
+      height: 120px;
+      margin-top: 2rem;
+      background: rgba(10, 15, 20, 0.4);
+      border: 1px solid rgba(93, 255, 191, 0.05);
+      border-radius: 12px;
+      overflow: hidden;
+      font-family: var(--font-mono);
+    }
+
+    .bottleneck-viz .grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(93, 255, 191, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(93, 255, 191, 0.02) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .viz-labels {
+      position: absolute;
+      top: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      font-size: 9px;
+      color: rgba(93, 255, 191, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .viz-server {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 40px;
+      background: #161b22;
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      z-index: 5;
+      transition: all 0.5s ease;
+    }
+
+    .viz-server .led {
+      width: 8px;
+      height: 2px;
+      background: var(--mint);
+      border-radius: 1px;
+      box-shadow: 0 0 5px var(--mint);
+    }
+
+    .viz-server .label {
+      font-size: 8px;
+      color: var(--mint);
+    }
+
+    .viz-db {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7px;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .viz-request {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: var(--mint);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--mint);
+      opacity: 0;
+      top: 50%;
+      left: -10px;
+      margin-top: -3px;
+    }
+
+    .viz-status-tag {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f87171;
+      color: #000;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 2px;
+      font-size: 8px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    /* States */
+    .viz-server.overload {
+      border-color: #f87171;
+      box-shadow: 0 0 15px rgba(248, 113, 113, 0.2);
+    }
+
+    .viz-server.overload .led {
+      background: #f87171;
+      box-shadow: 0 0 5px #f87171;
+    }
+
+    .viz-server.overload .label {
+      color: #f87171;
+    }
+
+    .viz-server.overload .viz-status-tag {
+      opacity: 1;
+    }
+
+    @keyframes req-flow {
+      0% {
+        left: 0%;
+        opacity: 0;
+        transform: scale(0.5);
+      }
+
+      10% {
+        opacity: 0.8;
+        transform: scale(1);
+      }
+
+      40% {
+        left: 45%;
+      }
+
+      50% {
+        left: 45%;
+      }
+
+      100% {
+        left: 45%;
+        opacity: 0;
+      }
+    }
+
+    @keyframes req-stuck {
+      0% {
+        left: 35%;
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0.8;
+      }
+
+      80% {
+        opacity: 0.8;
+      }
+
+      100% {
+        left: 45%;
+        opacity: 0;
+      }
+    }
+
+    @keyframes req-pass {
+      0% {
+        left: 55%;
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.6;
+      }
+
+      90% {
+        opacity: 0.6;
+      }
+
+      100% {
+        left: 95%;
+        opacity: 0;
+      }
+    }
+
+    .dev-fl-label-red {
+      fill: #f87171
+    }
+
+    .dev-fl-label-green {
+      fill: var(--mint)
+    }
+
+    @keyframes devFlowIn {
+      0% {
+        cx: 40;
+        opacity: 0
+      }
+
+      10% {
+        opacity: .8
+      }
+
+      40% {
+        cx: 220;
+        opacity: .8
+      }
+
+      50% {
+        cx: 240;
+        opacity: .2
+      }
+
+      100% {
+        cx: 240;
+        opacity: 0
+      }
+    }
+
+    @keyframes devFlowStuck {
+
+      0%,
+      100% {
+        cx: 270;
+        opacity: .7;
+        r: 3
+      }
+
+      50% {
+        cx: 276;
+        opacity: 1;
+        r: 4
+      }
+    }
+
+    @keyframes devFlowOut {
+      0% {
+        cx: 320;
+        opacity: 0
+      }
+
+      10% {
+        opacity: .3
+      }
+
+      90% {
+        opacity: .3
+      }
+
+      100% {
+        cx: 560;
+        opacity: 0
+      }
+    }
+
+    /* Bottleneck OPENS on scroll */
+    .dev-bottleneck.visible .dev-pipe-neck {
+      stroke: rgba(93, 255, 191, .08);
+      stroke-width: 28
+    }
+
+    .dev-bottleneck.visible .dev-fl-dot-stuck {
+      fill: var(--mint);
+      animation: devFlowThrough 2s linear infinite
+    }
+
+    .dev-bottleneck.visible .dev-fl-dot-out {
+      fill: var(--mint);
+      opacity: .6
+    }
+
+    .dev-bottleneck.visible .dev-fl-label-red {
+      fill: var(--mint);
+      transition: fill .8s
+    }
+
+    @keyframes devFlowThrough {
+      0% {
+        cx: 240;
+        opacity: 0
+      }
+
+      10% {
+        opacity: .8
+      }
+
+      90% {
+        opacity: .8
+      }
+
+      100% {
+        cx: 560;
+        opacity: 0
+      }
+    }
+
+
+    /* ── 5. SERVICES RESTRUCTURE ── */
+    .sp-services-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .sp-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .sp-service-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      transition: all var(--transition-base);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: 100%;
+    }
+
+    .sp-service-card:hover {
+      border-color: rgba(93, 255, 191, 0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .sp-service-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(93, 255, 191, 0.05);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mint);
+    }
+
+    .sp-service-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .sp-service-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .sp-service-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Architecture Visualization (Right Column) */
+    .arch-viz-column {
+      position: sticky;
+      top: 100px;
+    }
+
+    .arch-viz-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1.2;
+      background: rgba(10, 15, 20, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .arch-viz-wrap .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 2px 2px, rgba(93, 255, 191, 0.05) 1px, transparent 0);
+      background-size: 30px 30px;
+    }
+
+    .arch-viz-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .arch-line {
+      stroke: rgba(93, 255, 191, 0.1);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+    }
+
+    .arch-line-flow {
+      stroke: var(--mint);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-dasharray: 4 20;
+      opacity: 0;
+    }
+
+    .arch-viz-wrap.visible .arch-line {
+      animation: drawLine 2s ease-out forwards;
+    }
+
+    .arch-viz-wrap.visible .arch-line-flow {
+      animation: flowLine 4s linear infinite;
+      animation-delay: 2s;
+    }
+
+    @keyframes drawLine {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes flowLine {
+      0% {
+        stroke-dashoffset: 100;
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0.5;
+      }
+
+      80% {
+        opacity: 0.5;
+      }
+
+      100% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+      }
+    }
+
+    .arch-node {
+      position: absolute;
+      padding: 0.5rem 0.8rem;
+      background: rgba(22, 27, 34, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      z-index: 2;
+      transition: all 0.5s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .arch-node-main {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0.8rem 1.25rem;
+      background: rgba(93, 255, 191, 0.05);
+      border: 1.5px solid rgba(93, 255, 191, 0.3);
+      color: var(--mint);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 30px rgba(93, 255, 191, 0.1);
+    }
+
+    .arch-viz-wrap.visible .arch-node:not(.arch-node-main) {
+      animation: glowNode 4s infinite alternate;
+      animation-delay: 2.5s;
+    }
+
+    @keyframes glowNode {
+      from {
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: none;
+      }
+
+      to {
+        border-color: rgba(93, 255, 191, 0.3);
+        box-shadow: 0 0 15px rgba(93, 255, 191, 0.1);
+        color: #fff;
+      }
+    }
+
+    /* Satellite positions */
+    .node-erp {
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .node-crm {
+      top: 35%;
+      left: 10%;
+    }
+
+    .node-pago {
+      top: 35%;
+      right: 10%;
+    }
+
+    .node-log {
+      bottom: 35%;
+      left: 10%;
+    }
+
+    .node-email {
+      bottom: 35%;
+      right: 10%;
+    }
+
+    .node-stats {
+      bottom: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 1024px) {
+      .sp-services-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .sp-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .arch-viz-column {
+        position: static;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sp-services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:768px) {
+      .dev-node {
+        font-size: .5rem;
+        padding: .25rem .5rem
+      }
+
+      .dev-n-be {
+        left: 5%
+      }
+
+      .dev-n-db {
+        right: 5%
+      }
+
+      .dev-net-wrap {
+        padding: 1.5rem 1rem 1.25rem
+      }
+
+      .dev-net {
+        height: 220px;
+        max-width: 340px
+      }
+
+      .dev-sat-node {
+        font-size: .5rem;
+        padding: .2rem .4rem
+      }
+
+      .dev-hub-node {
+        font-size: .55rem;
+        padding: .4rem .7rem
+      }
+
+      .dev-flow-wrap {
+        max-width: 100%
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar placeholder -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="sp-hero" aria-label="Desarrollo Web a Medida Bilbao">
+    <div class="container-main">
+      <div class="sp-hero-layout">
+        <div class="sp-hero-copy">
+          <span class="section-badge reveal">Desarrollo Web a Medida Bilbao</span>
+          <h1 class="sp-hero-h1 reveal"><span class="text-gradient-standalone">Desarrollo web a medida en Bilbao</span> para plataformas digitales que exigen rendimiento y solidez</h1>
+          <p class="sp-hero-sub reveal">Diseñamos plataformas digitales para empresas cuya salud depende de su infraestructura tecnológica. Cuando el negocio comienza a despegar, las soluciones genéricas y plantillas predefinidas quedan obsoletas al instante.</p>
+          <p class="sp-hero-detail reveal">El rendimiento decae bajo presión. Los conectores entre sistemas fallan. El producto se ve limitado por restricciones técnicas. Nuestra misión es construir infraestructuras digitales sólidas, rápidas e infinitamente escalables. Sistemas concebidos para respaldar el crecimiento de tu negocio año tras año sin restricciones.</p>
+          <div class="sp-hero-ctas reveal">
+            <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="/arquitectura-digital-conversion" class="btn-ghost">
+              Conoce nuestra metodología
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Hero visual: system architecture mockup -->
+        <div class="sp-hero-visual reveal reveal-delay-1">
+          <div class="hero-anim-container">
+            <div class="tech-grid"></div>
+
+            <!-- Browser Mockup -->
+            <div class="anim-browser">
+              <div class="browser-bar">
+                <div class="browser-dot"></div>
+                <div class="browser-dot"></div>
+                <div class="browser-dot"></div>
+                <div class="browser-url">platform.trespuntos.io</div>
+              </div>
+              <div class="browser-main">
+                <!-- Editor -->
+                <div class="editor-pane" id="editor-content">
+                  <div class="code-line"><span class="code-tag">&lt;div</span> <span
+                      class="code-attr">class=</span><span class="code-val">"hero"</span><span
+                      class="code-tag">&gt;</span></div>
+                  <div class="code-line"> <span class="code-tag">&lt;h1&gt;</span>Smart Scale<span
+                      class="code-tag">&lt;/h1&gt;</span></div>
+                  <div class="code-line"> <span class="code-tag">&lt;button</span> <span
+                      class="code-attr">class=</span><span class="code-val">"primary"</span><span
+                      class="code-tag">&gt;</span>Join<span class="code-tag">&lt;/button&gt;</span></div>
+                  <div class="code-line"><span class="code-tag">&lt;/div&gt;</span></div>
+                  <div class="code-line"></div>
+                  <div class="code-line"><span class="code-keyword">function</span> <span
+                      class="code-func">initSystem</span>() {</div>
+                  <div class="code-line"> <span class="code-func">renderUI</span>();</div>
+                  <div class="code-line"> <span class="code-func">connectAPI</span>();</div>
+                  <div class="code-line">}</div>
+                  <span class="cursor"></span>
+                </div>
+                <!-- Preview -->
+                <div class="preview-pane">
+                  <div class="ui-container">
+                    <div class="ui-nav" id="anim-ui-nav">
+                      <div class="ui-logo"></div>
+                      <div class="ui-item"></div>
+                      <div class="ui-item"></div>
+                    </div>
+                    <div class="ui-hero" id="anim-ui-hero">
+                      <div class="ui-title"></div>
+                      <div class="ui-subtitle"></div>
+                      <div class="ui-btn"></div>
+                    </div>
+                    <div class="ui-cards" id="anim-ui-cards">
+                      <div class="ui-card">
+                        <div class="ui-card-sq"></div>
+                        <div class="ui-card-ln"></div>
+                      </div>
+                      <div class="ui-card">
+                        <div class="ui-card-sq"></div>
+                        <div class="ui-card-ln"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile Mockup -->
+            <div class="anim-mobile">
+              <div class="mobile-header">
+                <div class="mobile-notch"></div>
+              </div>
+              <div class="mobile-content">
+                <div class="ui-nav" id="mob-ui-nav">
+                  <div class="ui-logo"></div>
+                  <div class="ui-item"></div>
+                </div>
+                <div class="ui-hero" id="mob-ui-hero">
+                  <div class="ui-title"></div>
+                  <div class="ui-subtitle"></div>
+                  <div class="ui-btn"></div>
+                </div>
+                <div class="ui-cards" id="mob-ui-cards">
+                  <div class="ui-card">
+                    <div class="ui-card-sq"></div>
+                    <div class="ui-card-ln"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="anim-tag tag-fe" id="tag-fe">Frontend</div>
+            <div class="anim-tag tag-api" id="tag-api">API Layer</div>
+            <div class="anim-tag tag-db" id="tag-db">Database</div>
+            <div class="anim-tag tag-res" id="tag-res">Responsive</div>
+
+            <!-- Connector Lines -->
+            <svg class="anim-lines" viewBox="0 0 500 400">
+              <path class="anim-line" id="line-1" d="M150,100 L200,80" fill="none" />
+              <path class="anim-line" id="line-2" d="M350,150 L400,180" fill="none" />
+              <path class="anim-line" id="line-3" d="M150,300 L200,320" fill="none" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. PROBLEMA ============ -->
+  <section class="sp-problem" aria-label="El problema">
+    <div class="container-main">
+      <div class="sp-problem-layout">
+        <div class="sp-problem-copy reveal">
+          <span class="section-badge reveal">El problema</span>
+          <h2 class="section-h2 reveal">La industria conectada que <span
+              class="text-gradient-standalone">sigue funcionando de forma desconectada</span></h2>
+          <p class="sp-problem-text reveal">En Bilbao, las industrias tienen sistemas legacy, máquinas con datos sin procesar, y procesos manuales que tardan horas. Un defecto en producción no se ve hasta el final. El ERP no sincroniza con la web. Las cooperativas pierden tiempo en email y llamadas. El resultado: ineficiencia, errores costosos, y oportunidades perdidas.</p>
+
+          <!-- Bottleneck Animation -->
+          <div class="bottleneck-viz reveal" id="bottleneck-viz">
+            <div class="grid"></div>
+            <div class="viz-labels">
+              <span>Usuarios</span>
+              <span>Servidor</span>
+              <span>DB</span>
+            </div>
+            <div class="viz-server" id="viz-server">
+              <div class="viz-status-tag" id="viz-status">OVERLOAD</div>
+              <div class="led"></div>
+              <div class="label">CPU</div>
+            </div>
+            <div class="viz-db">DATABASE</div>
+            <div id="viz-req-container"></div>
+          </div>
+        </div>
+        <!-- Friction signals as animated cards -->
+        <div class="sp-signals reveal reveal-delay-1">
+          <div class="sp-signals-title">Las señales de una arquitectura web débil suelen ser claras</div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Máquinas desconectadas sin visibilidad</strong>
+              <span>No ves en tiempo real qué está pasando. Los problemas se descubren al final de la línea.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>ERP y web sin sincronización</strong>
+              <span>Doble data entry, inconsistencias, y pérdida de información entre sistemas.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Procesos manuales de orden a entrega</strong>
+              <span>Una orden tarda 3 días en procesarse porque requiere trabajo manual en múltiples sistemas.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Sistemas cooperativos ineficientes</strong>
+              <span>Los miembros de la cooperativa usan email y llamadas. Falta transparencia y trazabilidad.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Supply chain sin visibility</strong>
+              <span>No sabes dónde está tu materia prima. Los proveedores y distribuidores están desconectados.</span>
+            </div>
+          </div>
+          <div class="sp-signal-bottom">La transformación digital industrial requiere conectar, no solo presencia online. Diseñamos ecosistemas donde máquinas, procesos, y personas están sincronizados.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. QUÉ INCLUYE ============ -->
+  <section class="sp-services" aria-label="Qué incluye el servicio">
+    <div class="container-main">
+      <span class="section-badge reveal">Servicio</span>
+      <h2 class="section-h2 reveal">Qué incluye nuestro desarrollo web a medida en Bilbao</h2>
+      <p class="sp-services-intro reveal">Para la industria vasca, diseñamos ecosistemas digitales complejos. IoT integrado, ERP sincronizado, plataformas B2B para cooperativas, y automatización que reduce costes. La transformación digital es más que una web: es conectar toda tu operación.</p>
+
+
+      <div class="sp-services-layout">
+        <!-- Grid of 6 cards -->
+        <div class="sp-services-grid">
+          <div class="sp-service-card reveal">
+            <div class="sp-service-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path
+                  d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
+              </svg>
+            </div>
+            <h3 class="sp-service-title">Plataforma IoT y monitorización industrial</h3>
+            <p class="sp-service-text">Conecta sensores, máquinas, y dispositivos. Visualiza datos en tiempo real, detecta anomalías automáticamente, y activa alertas o acciones preventivas.</p>
+          </div>
+
+          <div class="sp-service-card reveal reveal-delay-1">
+            <div class="sp-service-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path
+                  d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+            </div>
+            <h3 class="sp-service-title">ERP integrado y sincronizado</h3>
+            <p class="sp-service-text">Tu ERP conectado con producción, ventas, y logística. Un único dato sincronizado en todos los sistemas. Sin errores de consistencia.</p>
+          </div>
+
+          <div class="sp-service-card reveal reveal-delay-2">
+            <div class="sp-service-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+              </svg>
+            </div>
+            <h3 class="sp-service-title">Portal B2B para cooperativas y redes</h3>
+            <p class="sp-service-text">Plataforma donde tus socios ven pedidos, disponibilidad, facturas, y tracking. Automatiza comunicación, mejora transparencia, y reduce fricción operativa.</p>
+          </div>
+
+          <div class="sp-service-card reveal">
+            <div class="sp-service-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg>
+            </div>
+            <h3 class="sp-service-title">Automatización de procesos y workflows</h3>
+            <p class="sp-service-text">Orden a entrega completamente automatizado. Aprovisionamiento automático, picking guiado, facturación sin fricción. Lo que tardaba horas, ahora toma minutos.</p>
+          </div>
+
+          <div class="sp-service-card reveal reveal-delay-1">
+            <div class="sp-service-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path d="M2.25 18L9 11.25l4.5 4.5L21.75 7.5M21.75 7.5V12m0-4.5H17.25" />
+              </svg>
+            </div>
+            <h3 class="sp-service-title">Supply chain visibility</h3>
+            <p class="sp-service-text">Traza materia prima desde proveedor hasta producto final. Visibility real-time de inventario en múltiples ubicaciones. Predictive analytics para demanda.</p>
+          </div>
+
+          <div class="sp-service-card reveal reveal-delay-2">
+            <div class="sp-service-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+              </svg>
+            </div>
+            <h3 class="sp-service-title">Dashboards analíticos y BI industrial</h3>
+            <p class="sp-service-text">KPIs de producción, calidad, eficiencia, y costes en tiempo real. Análisis predictivo para optimización. Decisiones basadas en datos, no en intuición.</p>
+          </div>
+        </div>
+
+        <!-- Architecture Visualization -->
+        <div class="arch-viz-column reveal">
+          <div class="arch-viz-wrap" id="arch-viz">
+            <div class="grid-bg"></div>
+            <svg class="arch-viz-svg" viewBox="0 0 400 480">
+              <!-- Lines from center to satellites -->
+              <!-- ERP (top) -->
+              <path class="arch-line" d="M200,240 L200,72" />
+              <path class="arch-line-flow" d="M200,240 L200,72" />
+              <!-- CRM (mid-left) -->
+              <path class="arch-line" d="M200,240 L40,168" />
+              <path class="arch-line-flow" d="M200,240 L40,168" />
+              <!-- Pago (mid-right) -->
+              <path class="arch-line" d="M200,240 L360,168" />
+              <path class="arch-line-flow" d="M200,240 L360,168" />
+              <!-- Log (bot-left) -->
+              <path class="arch-line" d="M200,240 L40,312" />
+              <path class="arch-line-flow" d="M200,240 L40,312" />
+              <!-- Email (bot-right) -->
+              <path class="arch-line" d="M200,240 L360,312" />
+              <path class="arch-line-flow" d="M200,240 L360,312" />
+              <!-- Stats (bottom) -->
+              <path class="arch-line" d="M200,240 L200,408" />
+              <path class="arch-line-flow" d="M200,240 L200,408" />
+            </svg>
+
+            <div class="arch-node arch-node-main">LA PLATAFORMA</div>
+            <div class="arch-node node-erp">ERP</div>
+            <div class="arch-node node-crm">CRM</div>
+            <div class="arch-node node-pago">Pasarela de pago</div>
+            <div class="arch-node node-log">Logística</div>
+            <div class="arch-node node-email">Email Marketing</div>
+            <div class="arch-node node-stats">Analytics</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 4. METODOLOGÍA ============ -->
+  <section class="sp-methodology" aria-label="Metodología">
+    <div class="container-main">
+      <div class="sp-method-layout">
+        <div class="sp-method-copy">
+          <span class="section-badge reveal">Proceso</span>
+          <h2 class="section-h2 reveal">Cómo trabajamos para que la plataforma tenga <span
+              class="text-gradient-standalone">impacto real</span></h2>
+          <p class="sp-method-intro reveal">Aplicamos nuestra metodología de Arquitectura Digital de Conversión en todos
+            los proyectos. Este proceso evita uno de los errores más habituales en proyectos digitales: empezar a
+            programar antes de entender el sistema.</p>
+        </div>
+        <!-- Process timeline -->
+        <div class="sp-method-steps">
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">01</div>
+            <div class="sp-method-step-content">
+              <h3>Diagnóstico del negocio</h3>
+              <p>Analizamos el punto de partida, la plataforma actual y los objetivos del proyecto.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">02</div>
+            <div class="sp-method-step-content">
+              <h3>Definición de la arquitectura</h3>
+              <p>Diseñamos cómo debe funcionar la plataforma para que pueda escalar sin romperse.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">03</div>
+            <div class="sp-method-step-content">
+              <h3>Diseño UX/UI completo</h3>
+              <p>Construimos la experiencia de usuario con foco en claridad, conversión y consistencia.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">04</div>
+            <div class="sp-method-step-content">
+              <h3>Desarrollo técnico</h3>
+              <p>Programamos la plataforma con una base sólida, modular y preparada para integraciones.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">05</div>
+            <div class="sp-method-step-content">
+              <h3>Validación y lanzamiento</h3>
+              <p>Testeamos, optimizamos rendimiento y lanzamos con garantía de estabilidad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sp-method-cta reveal">
+        <a href="/arquitectura-digital-conversion" class="btn-ghost">
+          Ver proceso completo: Arquitectura Digital de Conversión
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. CUÁNDO TIENE SENTIDO (FIT) ============ -->
+  <section class="sp-fit" aria-label="Cuándo tiene sentido">
+    <div class="container-main">
+      <span class="section-badge reveal">Encaje</span>
+      <h2 class="section-h2 reveal">Cuándo necesitas transformación digital en Bilbao</h2>
+      <p class="sp-fit-intro reveal">Cuando tu industria necesita conectar máquinas, automatizar procesos, y sincronizar sistemas. Cuando estás en manufactura, energía, o diriges una red de cooperativas.</p>
+
+      <div class="sp-fit-layout">
+        <div class="sp-fit-content">
+          <div class="sp-fit-grid">
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Tienes máquinas que generan datos</h3>
+              <p>Pero esos datos no se procesan. Necesitas IoT, sensores, y una plataforma que los visualice y automatice acciones.</p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Diriges una cooperativa o red industrial</h3>
+              <p>Tus socios necesitan un portal para coordinarse sin emails. Pedidos, facturas, tracking centralizado.</p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Tu ERP no habla con tu web o logística</h3>
+              <p>Necesitas sincronización automática. Un único dato en múltiples sistemas, sin manual data entry.</p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Quieres eliminar procesos manuales</h3>
+              <p>Orden a entrega tarda 3 días con trabajo manual. Necesitas automatización end-to-end.</p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>No tienes visibilidad de tu supply chain</h3>
+              <p>Necesitas trazar materia prima, WIP, y producto final. Real-time tracking desde proveedor a cliente.</p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Operas en energía o sectores regulados</h3>
+              <p>Necesitas cumplimiento, trazabilidad, y auditoría integrada en tu plataforma digital.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visualization Column -->
+        <div class="sp-fit-viz-column reveal" id="fit-evolution">
+          <div class="fit-viz-container">
+            <div class="fit-viz-track"></div>
+            <div class="fit-viz-nodes">
+              <div class="fit-node">
+                <div class="fit-node-dot"></div>
+                <span>Web simple</span>
+              </div>
+              <div class="fit-node">
+                <div class="fit-node-dot"></div>
+                <span>CMS</span>
+              </div>
+              <div class="fit-node">
+                <div class="fit-node-dot"></div>
+                <span>E-commerce</span>
+              </div>
+              <div class="fit-node">
+                <div class="fit-node-dot"></div>
+                <span>Plataforma digital</span>
+              </div>
+              <div class="fit-node last">
+                <div class="fit-node-dot"></div>
+                <span>Arquitectura a medida</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT MARQUEE ============ -->
+  <div class="sp-marquee" aria-hidden="true">
+    <div class="sp-marquee-track">
+      <span>Desarrollo web a medida</span><span class="sp-marquee-sep">&bull;</span><span>Arquitecturas digitales de alto rendimiento</span><span class="sp-marquee-sep">&bull;</span><span>Integraciones ERP y CRM empresariales</span><span class="sp-marquee-sep">&bull;</span><span>Plataformas digitales robustas</span><span class="sp-marquee-sep">&bull;</span><span>Escalabilidad y fiabilidad</span><span class="sp-marquee-sep">&bull;</span><span>Desarrollo web a medida</span><span class="sp-marquee-sep">&bull;</span><span>Arquitecturas digitales de alto rendimiento</span><span class="sp-marquee-sep">&bull;</span><span>Integraciones ERP y CRM empresariales</span><span class="sp-marquee-sep">&bull;</span><span>Plataformas digitales robustas</span><span class="sp-marquee-sep">&bull;</span><span>Escalabilidad y fiabilidad</span>
+      <span class="sp-marquee-sep">&bull;</span>
+    </div>
+  </div>
+
+  <!-- ============ 6. PROYECTOS RELACIONADOS (TP.casos) ============ -->
+  <div id="tp-casos"></div>
+
+  <!-- ============ 7. SERVICIOS RELACIONADOS ============ -->
+  <section class="sp-related" aria-label="Servicios relacionados">
+    <div class="container-main">
+      <span class="section-badge reveal">Servicios complementarios</span>
+      <h2 class="section-h2 reveal">Servicios que suelen acompañar este proyecto</h2>
+      <p class="sp-related-intro reveal">El desarrollo técnico funciona mejor cuando está conectado con decisiones
+        estratégicas y de experiencia de usuario. Por eso este servicio suele convivir con otros bloques de trabajo.</p>
+
+      <div class="sp-related-grid">
+        <a href="/servicios/consultoria-digital-bilbao" class="sp-related-card reveal">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
+            </svg>
+          </div>
+          <h3>Consultoría digital</h3>
+          <p>Muchas empresas empiezan con un diagnóstico de arquitectura digital antes de construir su plataforma.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/diseno-ux-ui-bilbao" class="sp-related-card reveal reveal-delay-1">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+            </svg>
+          </div>
+          <h3>Diseño UX/UI</h3>
+          <p>El desarrollo técnico siempre debe partir de una experiencia de usuario bien diseñada.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/design-engineer-bilbao" class="sp-related-card reveal reveal-delay-2">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085" />
+            </svg>
+          </div>
+          <h3>Design Engineer</h3>
+          <p>Cuando el reto es convertir el diseño en una interfaz real sin perder fidelidad ni rendimiento.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS (TP.testimonios) ============ -->
+  <div id="tp-testimonios"></div>
+
+  <!-- ============ 8. OPINIÓN EXPERTA ============ -->
+  <section class="sp-expert" aria-label="Opinión experta">
+    <div class="container-main">
+      <div class="sp-expert-layout reveal">
+        <div class="sp-expert-quote">
+          <span class="section-badge">Opinión experta</span>
+          <h2 class="sp-expert-h2">El desarrollo a medida tiene sentido cuando el sistema digital forma parte del modelo
+            de negocio</h2>
+          <p>Cuando una empresa nos pide desarrollo web a medida casi siempre existe un problema estructural detrás.
+            Puede ser una plataforma que no escala, integraciones mal resueltas o decisiones tecnológicas apresuradas.
+          </p>
+          <p>En esos casos la arquitectura técnica no es solo código. Es una decisión estratégica que define si el
+            negocio puede escalar o si terminará bloqueado.</p>
+        </div>
+        <div class="sp-expert-author">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="sp-expert-avatar" width="80" height="80"
+            loading="lazy">
+          <div>
+            <div class="sp-expert-name">Jordi Expósito</div>
+            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
+            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener"
+              class="sp-expert-linkedin">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path
+                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+              Ver en LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. FAQ ============ -->
+  <section id="faq" class="sp-faq" aria-label="Preguntas frecuentes sobre desarrollo web a medida">
+    <div class="container-main">
+      <div class="faq-layout">
+        <div class="reveal">
+          <span class="section-badge reveal">FAQ</span>
+          <h2 class="section-h2 reveal">Preguntas habituales sobre desarrollo web a medida en Bilbao</h2>
+        </div>
+        <div class="faq-list reveal reveal-delay-1">
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Cómo digitalizamos la manufactura en Bilbao?<svg
+                class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Con plataformas IoT que conectan máquinas, sensores, y sistemas ERP. Monitorización en tiempo real, predictive maintenance, y datos accionables para optimizar producción. Transformación digital de la fábrica.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Qué beneficio tiene una plataforma B2B para cooperativas industriales?<svg
+                class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Un portal donde tus socios pueden hacer pedidos, ver disponibilidad, gestionar facturas, y trackear entregas. Reduce fricción operativa, elimina emails, y mejora transparencia entre miembros de la cooperativa.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Cómo integramos IoT y sensores industriales en una plataforma?<svg
+                class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Conectando tus sensores y máquinas a través de APIs. Los datos llegan en tiempo real a tu plataforma, donde se procesan, se almacenan, y se visualizan en dashboards. Alertas automáticas si hay anomalías.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Es el ROI positivo en una plataforma de automatización industrial?<svg
+                class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Sí. Una plataforma que detecta automáticamente defectos, optimiza tiempos de producción, o reduce paradas no planificadas puede retornar en 12-18 meses. Plus: mejora de calidad y seguridad laboral.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Cuánto tarda desarrollar un sistema IoT y ERP integrado?<svg
+                class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Un sistema integrado con monitorización IoT, ERP, y dashboards analíticos típicamente tarda 5-8 meses. Incluye instalación de sensores, integración de sistemas legacy, desarrollo, testing exhaustivo, y training del equipo.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL + FORM ============ -->
+  <section id="cierre" aria-label="Iniciar proyecto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy reveal">
+          <span class="section-badge reveal">Siguiente paso</span>
+          <h2 class="cierre-h2">¿Tu infraestructura actual se ha convertido en una <span
+              class="text-gradient-standalone">limitación</span>?</h2>
+          <p class="cierre-sub">Si tu plataforma actual frena el negocio, requieres replantear su arquitectura fundamental. El proceso analítico inicial consta de cinco elementos clave y en poco más de un día obtienes diagnóstico inicial.<br><br>Cuéntanos en qué está enfocado tu proyecto.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="form-gradient-accent"></div>
+          <div class="cierre-form-inner">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-nombre">Nombre</label>
+                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="f-email">Email</label>
+                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-tel">Teléfono</label>
+                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
+                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false"
+                  aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
+                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Rango aproximado</div>
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                  </div>
+                </div>
+                <input type="hidden" id="f-presupuesto" name="budget" value="" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
+              <textarea id="f-mensaje" class="input" rows="4"
+                placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
+            </div>
+            <label class="checkbox-row" for="f-privacidad">
+              <input type="checkbox" id="f-privacidad" required />
+              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
+                  Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+            </label>
+            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn"
+              style="width:100%;justify-content:center;">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <p class="form-note">Sin compromiso. Respuesta en menos de 24h.</p>
+            <div class="form-divider"
+              style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+            </div>
+            <a href="/iniciar-proyecto" class="btn-secondary" style="width:100%;justify-content:center;">
+              Formulario completo (Presupuesto en 24h)
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    TP.navbar('desarrollo-web');
+    TP.casos();
+    TP.testimonios();
+    TP.footer();
+    TP.initJS();
+  </script>
+  <script src="/js/service-page.js" defer></script>
+  <script>
+
+    /* ── Architecture Visualization Observer ── */
+    (function () {
+      const viz = document.getElementById('arch-viz');
+      if (!viz) return;
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          viz.classList.add('visible');
+          observer.unobserve(viz);
+        }
+      }, { threshold: 0.2 });
+      observer.observe(viz);
+    })();
+  </script>
+  <script>
+    /* HERO ANIMATION LOOP */
+    (function () {
+      const editor = document.getElementById('editor-content');
+      const lines = editor.querySelectorAll('.code-line');
+      const cursor = editor.querySelector('.cursor');
+
+      const uiComps = {
+        nav: [document.getElementById('anim-ui-nav'), document.getElementById('mob-ui-nav')],
+        hero: [document.getElementById('anim-ui-hero'), document.getElementById('mob-ui-hero')],
+        cards: [document.getElementById('anim-ui-cards'), document.getElementById('mob-ui-cards')]
+      };
+
+      const tags = {
+        fe: document.getElementById('tag-fe'),
+        api: document.getElementById('tag-api'),
+        db: document.getElementById('tag-db'),
+        res: document.getElementById('tag-res')
+      };
+
+      const linesPath = [
+        document.getElementById('line-1'),
+        document.getElementById('line-2'),
+        document.getElementById('line-3')
+      ];
+
+      // Pre-save full text
+      lines.forEach(l => {
+        l.dataset.fullText = l.innerHTML;
+      });
+
+      function resetAnim() {
+        lines.forEach(l => {
+          l.style.display = 'none';
+          l.innerHTML = '';
+        });
+        Object.values(uiComps).flat().forEach(c => {
+          if (c) c.classList.remove('ui-visible');
+        });
+        Object.values(tags).forEach(t => {
+          if (t) t.classList.remove('tag-active');
+        });
+        linesPath.forEach(lp => {
+          if (lp) lp.classList.remove('line-active');
+        });
+        if (cursor) cursor.style.display = 'inline-block';
+      }
+
+      async function typeLine(lineIdx) {
+        return new Promise(resolve => {
+          const line = lines[lineIdx];
+          line.style.display = 'flex';
+          const fullText = line.dataset.fullText;
+
+          setTimeout(() => {
+            line.innerHTML = fullText;
+            resolve();
+          }, 300);
+        });
+      }
+
+      let isRunning = true;
+      async function startSequence() {
+        if (!isRunning) return;
+        resetAnim();
+
+        await new Promise(r => setTimeout(r, 800));
+
+        // Sequence
+        if (lines[0]) await typeLine(0);
+        if (lines[1]) await typeLine(1);
+        if (lines[2]) await typeLine(2);
+        if (lines[3]) await typeLine(3);
+
+        uiComps.nav.forEach(c => c && c.classList.add('ui-visible'));
+        await new Promise(r => setTimeout(r, 400));
+        uiComps.hero.forEach(c => c && c.classList.add('ui-visible'));
+        if (tags.fe) tags.fe.classList.add('tag-active');
+
+        if (lines[4]) await typeLine(4);
+        if (lines[5]) await typeLine(5);
+        if (lines[6]) await typeLine(6);
+        if (lines[7]) await typeLine(7);
+        if (lines[8]) await typeLine(8);
+
+        uiComps.cards.forEach(c => c && c.classList.add('ui-visible'));
+        if (tags.api) tags.api.classList.add('tag-active');
+        if (tags.db) tags.db.classList.add('tag-active');
+        if (tags.res) tags.res.classList.add('tag-active');
+
+        linesPath.forEach(lp => lp && lp.classList.add('line-active'));
+
+        await new Promise(r => setTimeout(r, 5000));
+        if (isRunning) startSequence();
+      }
+
+      startSequence();
+    })();
+
+    /* ── Bottleneck Animation Logic ── */
+    (function () {
+      const container = document.getElementById('viz-req-container');
+      const server = document.getElementById('viz-server');
+      const status = document.getElementById('viz-status');
+      if (!container || !server) return;
+
+      function createRequest(type) {
+        const req = document.createElement('div');
+        req.className = 'viz-request';
+        // Randomize Y position slightly for more organic feel
+        req.style.top = (50 + (Math.random() * 20 - 10)) + '%';
+
+        if (type === 'pass') {
+          req.style.animation = 'req-pass 1.2s linear forwards';
+          req.style.background = '#5dffbf';
+          req.style.boxShadow = '0 0 8px #5dffbf';
+        } else if (type === 'stuck') {
+          req.style.animation = 'req-stuck 2s cubic-bezier(0.1, 0.7, 1.0, 0.1) forwards';
+          req.style.background = '#f87171';
+          req.style.boxShadow = '0 0 8px #f87171';
+        } else {
+          req.style.animation = 'req-flow 1s ease-in forwards';
+        }
+
+        container.appendChild(req);
+        setTimeout(() => req.remove(), 2500);
+      }
+
+      let cycle = 0;
+      function loop() {
+        cycle++;
+
+        // Phase 1: Normal (0-2s)
+        if (cycle < 10) {
+          createRequest('normal');
+          server.classList.remove('overload');
+        }
+        // Phase 2: Building Queue (2-4s)
+        else if (cycle < 20) {
+          createRequest('stuck');
+          if (cycle % 2 === 0) createRequest('normal');
+        }
+        // Phase 3: Overload (4-7s)
+        else if (cycle < 35) {
+          server.classList.add('overload');
+          // Lots of requests stuck
+          createRequest('stuck');
+          createRequest('stuck');
+          // Only a few pass
+          if (cycle % 6 === 0) createRequest('pass');
+        }
+        // Phase 4: Resetting (7-8s)
+        else if (cycle > 40) {
+          cycle = 0;
+        }
+
+        setTimeout(loop, 200);
+      }
+
+      // Start only when visible for performance
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) loop();
+      }, { threshold: 0.1 });
+
+      observer.observe(document.getElementById('bottleneck-viz'));
+    })();
+
+    /* ── Methodology Loop Animation ── */
+    (function () {
+      const steps = document.querySelectorAll('.sp-method-step');
+      const container = document.querySelector('.sp-method-steps');
+      if (!steps.length || !container) return;
+
+      let currentStep = 0;
+      const totalSteps = steps.length;
+      let timer = null;
+
+      function updateMethodology() {
+        // 1. Remove active state from all steps
+        steps.forEach(s => {
+          s.classList.remove('active');
+          const num = s.querySelector('.sp-method-num');
+          if (num) num.classList.remove('active');
+        });
+
+        // 2. Light up only the CURRENT step
+        steps[currentStep].classList.add('active');
+        const num = steps[currentStep].querySelector('.sp-method-num');
+        if (num) num.classList.add('active');
+
+        currentStep++;
+
+        // 3. Set next trigger
+        if (currentStep >= totalSteps) {
+          timer = setTimeout(() => {
+            currentStep = 0;
+            updateMethodology();
+          }, 2000);
+        } else {
+          timer = setTimeout(updateMethodology, 2000);
+        }
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          updateMethodology();
+          observer.unobserve(container);
+        }
+      }, { threshold: 0.2 });
+
+      observer.observe(container);
+    })();
+
+    /* ── Fit/Evolution Animation Trigger ── */
+    (function () {
+      const viz = document.getElementById('fit-evolution');
+      if (!viz) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          viz.classList.add('active');
+          observer.unobserve(viz);
+        }
+      }, { threshold: 0.3 });
+
+      observer.observe(viz);
+    })();
+  </script>
+  <script src="/js/supabase-forms.js" defer></script>
+</body>
+
+</html>

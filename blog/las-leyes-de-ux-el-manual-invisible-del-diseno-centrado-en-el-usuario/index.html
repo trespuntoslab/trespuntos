@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Las leyes de UX: el manual invisible del diseño centrado en el usuario | Blog | Tres Puntos</title>
+  <meta name="description" content="Descubre cómo la IA potencia la experiencia de usuario y revoluciona tu diseño web. Tres Puntos, la agencia UX/UI en Barcelona que marca la diferencia." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario" />
+  <meta property="og:title" content="Las leyes de UX: el manual invisible del diseño centrado en el usuario" />
+  <meta property="og:description" content="Descubre cómo la IA potencia la experiencia de usuario y revoluciona tu diseño web. Tres Puntos, la agencia UX/UI en Barcelona que marca la diferencia." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario-og.jpg" />
+  <meta property="article:published_time" content="2024-10-09" />
+  <meta property="article:modified_time" content="2024-10-09" />
+  <meta property="article:author" content="Jordi Expósito" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Las leyes de UX: el manual invisible del diseño centrado en el usuario",
+      "description": "Descubre cómo la IA potencia la experiencia de usuario y revoluciona tu diseño web. Tres Puntos, la agencia UX/UI en Barcelona que marca la diferencia.",
+      "image": "https://www.trespuntoscomunicacion.es/img/blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario-og.jpg",
+      "datePublished": "2024-10-09",
+      "dateModified": "2024-10-09",
+      "author": {
+        "@type": "Person",
+        "name": "Jordi Expósito"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.trespuntoscomunicacion.es/img/logo.svg"
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ Blog Post Page Styles ═══ */
+
+    /* ── Article Header ── */
+    .article-header {
+      padding: 3rem 1.5rem;
+      border-bottom: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .article-header {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-header-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 0.375rem 0.875rem;
+      margin-bottom: 1.5rem;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mint);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 1.5rem 0;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 768px) {
+      .article-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .article-meta-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .article-meta-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--mint);
+      font-size: 0.75rem;
+    }
+
+    .article-meta-time {
+      color: var(--text-secondary);
+    }
+
+    /* ── Article Body ── */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .article-body {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-content {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 2rem 0 1rem 0;
+      color: var(--text-primary);
+    }
+
+    .article-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 700;
+      margin: 1.75rem 0 0.875rem 0;
+      color: var(--text-primary);
+    }
+
+    .article-content p {
+      margin: 0 0 1rem 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .article-content em {
+      color: var(--text-secondary);
+    }
+
+    .article-content a {
+      color: var(--mint);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(93, 255, 191, 0.3);
+    }
+
+    .article-content a:hover {
+      border-bottom-color: var(--mint);
+    }
+
+    .article-content blockquote {
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      background: rgba(93, 255, 191, 0.05);
+      border-left: 3px solid var(--mint);
+      border-radius: 4px;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .article-content code {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      background: rgba(93, 255, 191, 0.08);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      color: var(--mint);
+    }
+
+    .article-content pre {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .article-content pre code {
+      background: none;
+      padding: 0;
+      color: var(--mint);
+    }
+
+    .article-content img {
+      max-width: 100%;
+      height: auto;
+      margin: 2rem 0;
+      border-radius: 8px;
+      border: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    /* ── Article Footer/Divider ── */
+    .article-footer-divider {
+      max-width: 760px;
+      margin: 3rem auto;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(93, 255, 191, 0.2), transparent);
+    }
+
+    /* ── Related Articles ── */
+    .related-articles {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .related-articles {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .related-articles-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 2rem 0;
+      color: var(--text-primary);
+    }
+
+    .related-articles-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .related-articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .related-articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .related-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: var(--mint);
+      background: rgba(93, 255, 191, 0.03);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(93, 255, 191, 0.12);
+    }
+
+    .related-card-cat {
+      display: inline-block;
+      padding: 0.375rem 0.875rem;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mint);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+
+    .related-card-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--text-primary);
+      flex-grow: 1;
+    }
+
+    .related-card-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--mint);
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .related-card:hover .related-card-link {
+      gap: 0.75rem;
+    }
+
+    .related-card-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── CTA Section ── */
+    .article-cta {
+      background: linear-gradient(135deg, rgba(93, 255, 191, 0.05) 0%, rgba(93, 255, 191, 0.02) 100%);
+      border-top: 1px solid rgba(93, 255, 191, 0.1);
+      border-bottom: 1px solid rgba(93, 255, 191, 0.1);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .article-cta {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-cta h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 1.5rem 0;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 768px) {
+      .article-cta h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .article-cta-btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      background: var(--mint);
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-base);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .article-cta-btn:hover {
+      background: var(--mint-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(93, 255, 191, 0.3);
+    }
+
+    /* ── Breadcrumb Navigation ── */
+    .article-breadcrumb {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 0 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    @media (min-width: 768px) {
+      .article-breadcrumb {
+        padding: 1rem 2rem 0 2rem;
+      }
+    }
+
+    .article-breadcrumb a {
+      color: var(--mint);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .article-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .article-breadcrumb-sep {
+      margin: 0 0.5rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+  <div id="tp-navbar"></div>
+
+  <!-- Breadcrumb -->
+  <div class="article-breadcrumb">
+    <a href="/">Inicio</a>
+    <span class="article-breadcrumb-sep">/</span>
+    <a href="/blog">Blog</a>
+    <span class="article-breadcrumb-sep">/</span>
+    <span>Las leyes de UX: el manual invisible del diseño centrado en el usuario</span>
+  </div>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-wrapper">
+      <div class="article-category">Desarrollo Web</div>
+      <h1 class="article-title">Las leyes de UX: el manual invisible del diseño centrado en el usuario</h1>
+      <div class="article-meta">
+        <div class="article-meta-author">
+          <div class="article-meta-avatar">JE</div>
+          <div>
+            <div style="font-weight: 600; color: var(--text-primary);">Jordi Expósito</div>
+            <div class="article-meta-time">9 de octubre de 2024</div>
+          </div>
+        </div>
+        <div class="article-meta-item">
+          <span style="color: var(--mint);">•</span>
+          <span class="article-meta-time">4 min de lectura</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <main class="article-body">
+    <article class="article-content">
+      <p><strong>Metadescripción SEO:</strong> Guía completa con las 15 leyes más relevantes de UX. Aprende cómo aplicarlas en diseño UX/UI y mejora la experiencia de usuario con ejemplos reales y consejos prácticos.</p>
+
+<h2>Diseñar es entender cómo pensamos</h2>
+<p>En <strong>Tres Puntos Comunicación</strong>, como <strong>agencia UX/UI en Barcelona</strong>, sabemos que un buen diseño no solo se ve bien: se siente bien. Las <strong>Leyes de UX</strong> explican por qué ciertos patrones, estructuras y microinteracciones funcionan mejor que otros. Y lo hacen apoyándose en la <strong>psicología cognitiva</strong> y el comportamiento humano. Esta guía recoge las 15 leyes más influyentes del <strong>diseño de experiencia de usuario</strong>, con explicaciones claras, ejemplos actuales y su aplicación práctica para profesionales del diseño, desarrollo o marketing digital.</p>
+
+<h2>1. Ley de Hick</h2>
+<p><strong>Definición:</strong> Cuantas más opciones tiene una persona, más tiempo tarda en decidir. <strong>Fundamento psicológico:</strong> Nuestro cerebro busca eficiencia. Un exceso de alternativas genera ansiedad y parálisis por análisis. <strong>Aplicación UX/UI:</strong> simplifica menús, reduce pasos en flujos de registro o checkout, y muestra solo la información esencial. <strong>Ejemplo:</strong> Netflix limita las sugerencias visibles para evitar saturar al usuario. <em>Insight de agencia UX/UI:</em> en diseño digital, menos siempre comunica más.</p>
+
+<h2>2. Ley de Fitts</h2>
+<p><strong>Definición:</strong> El tiempo necesario para alcanzar un objetivo depende del tamaño y la distancia del elemento. <strong>Fundamento psicológico:</strong> El cerebro coordina visión y movimiento; los objetivos grandes y cercanos se alcanzan más rápido. <strong>Aplicación UX/UI:</strong> botones grandes, márgenes amplios y CTA accesibles (especialmente en móvil). <strong>Ejemplo:</strong> los botones inferiores de Instagram están situados en la "zona del pulgar".</p>
+
+<h2>## 3. Ley de Jakob</h2>
+<p><strong>Definición:</strong> Los usuarios prefieren que tu sitio funcione igual que los que ya conocen. <strong>Aplicación UX/UI:</strong> respeta los patrones comunes (carrito arriba, navegación estándar, formularios familiares). <strong>Ejemplo:</strong> todos los e-commerce mantienen la misma estructura base porque el usuario ya la domina. <em>Insight UX:</em> la innovación debe aportar valor, no confusión.</p>
+
+<h2>4. Ley de Miller</h2>
+<p><strong>Definición:</strong> La memoria a corto plazo solo puede retener entre 5 y 9 elementos. <strong>Aplicación UX/UI:</strong> agrupa, jerarquiza y usa navegación por pasos. <strong>Ejemplo:</strong> los procesos de reserva de Booking están divididos en tres fases: búsqueda, selección y pago.</p>
+
+<h2>## 5. Ley de Tesler</h2>
+<p><strong>Definición:</strong> La complejidad no desaparece, solo se redistribuye. <strong>Fundamento:</strong> si simplificas la interfaz, el sistema o el diseñador asumen la carga. <strong>Aplicación UX/UI:</strong> automatiza tareas, prellena formularios, anticipa opciones. <strong>Ejemplo:</strong> el autocompletado de direcciones en Google Maps elimina fricción sin pedir más esfuerzo al usuario.</p>
+
+<h2>## 6. Ley de Doherty</h2>
+<p><strong>Definición:</strong> La productividad aumenta cuando el sistema y el usuario interactúan a la misma velocidad. <strong>Aplicación UX/UI:</strong> microinteracciones, tiempos de carga cortos y feedback inmediato. <strong>Ejemplo:</strong> animaciones de "guardado" o confirmación instantánea como en Figma o Notion.</p>
+
+<h2>## 7. Ley de la Pregnancia</h2>
+<p><strong>Definición:</strong> Las personas perciben las formas más simples posibles. <strong>Fundamento psicológico:</strong> el cerebro busca orden y simplicidad visual. <strong>Aplicación UX/UI:</strong> usa jerarquía, espacios y diseño limpio para facilitar el reconocimiento. <strong>Ejemplo:</strong> Apple basa su diseño en la simplicidad perceptual: nada sobra, todo guía.</p>
+
+<h2>8. Ley de Similitud</h2>
+<p><strong>Definición:</strong> Los elementos que se parecen se perciben como parte de un mismo grupo. <strong>Aplicación UX/UI:</strong> usa colores, iconos o estilos coherentes para reforzar relaciones visuales. <strong>Ejemplo:</strong> los botones de acciones similares en Gmail comparten color y forma.</p>
+
+<h2>9. Ley de Proximidad</h2>
+<p><strong>Definición:</strong> Los elementos cercanos se perciben relacionados. <strong>Aplicación UX/UI:</strong> usa el espaciado como herramienta de significado. <strong>Ejemplo:</strong> campos de formulario agrupados por sección en lugar de listados caóticos.</p>
+
+<h2>10. Efecto de Von Restorff</h2>
+<p><strong>Definición:</strong> El elemento que destaca se recuerda más fácilmente. <strong>Aplicación UX/UI:</strong> resalta la acción principal con contraste visual o movimiento. <strong>Ejemplo:</strong> el botón "Comprar ahora" de Amazon sobresale respecto a otros elementos.</p>
+
+<h2>11. Efecto Zeigarnik</h2>
+<p><strong>Definición:</strong> Recordamos mejor las tareas inacabadas. <strong>Aplicación UX/UI:</strong> muestra progreso o recordatorios visuales. <strong>Ejemplo:</strong> LinkedIn anima a completar el perfil mostrando un avance del 80%.</p>
+
+<h2>12. Ley de Postel</h2>
+<p><strong>Definición:</strong> Sé flexible con lo que recibes, estricto con lo que devuelves. <strong>Aplicación UX/UI:</strong> permite errores razonables del usuario (por ejemplo, formatos de fecha o teléfono). <strong>Ejemplo:</strong> los formularios de Google aceptan múltiples formatos válidos.</p>
+
+<h2>13. Ley de Pareto (80/20)</h2>
+<p><strong>Definición:</strong> El 80% de los resultados proviene del 20% de las funciones. <strong>Aplicación UX/UI:</strong> enfoca el diseño en las funcionalidades más usadas. <strong>Ejemplo:</strong> en Instagram, cámara y feed representan el 80% del uso real.</p>
+
+<h2>14. Ley de Aesthetic-Usability</h2>
+<p><strong>Definición:</strong> Los usuarios perciben los sistemas estéticamente agradables como más fáciles de usar. <strong>Aplicación UX/UI:</strong> cuida la estética visual: color, tipografía, consistencia. <strong>Ejemplo:</strong> la interfaz de Notion combina simplicidad estética y funcionalidad inmediata.</p>
+
+<h2>15. Ley de Ockham</h2>
+<p><strong>Definición:</strong> Entre varias soluciones, la más simple suele ser la correcta. <strong>Aplicación UX/UI:</strong> elimina elementos innecesarios, reduce pasos y deja respirar el diseño. <strong>Ejemplo:</strong> el proceso de "Sign up with Google" es la navaja de Ockham en acción.</p>
+
+<h2>Conclusión</h2>
+<p>Estas leyes son la base del <strong>diseño UX/UI moderno</strong>. Conectan la mente humana con la interfaz digital, ayudando a crear experiencias fluidas, intuitivas y memorables. En <strong>Tres Puntos Comunicación</strong>, <strong>agencia de diseño UX/UI en Barcelona</strong>, aplicamos estas leyes para transformar productos digitales en experiencias que realmente funcionan.</p>
+
+<h2>¿Quieres aplicar estas leyes en tu proyecto?</h2>
+<p>En Tres Puntos Comunicación te ayudamos a construir productos digitales intuitivos, visualmente potentes y basados en comportamiento real de usuario. Desde prototipos hasta diseño de interfaces completas, cada decisión se apoya en los principios de usabilidad más sólidos. Descubre cómo aplicamos estas leyes en Tres Puntos Comunicación →</p>
+    </article>
+  </main>
+
+  <!-- Divider -->
+  <div class="article-footer-divider"></div>
+
+  <!-- Related Articles -->
+  <section class="related-articles">
+    <h2 class="related-articles-title">Artículos relacionados</h2>
+    <div class="related-articles-grid">
+      <!-- RELATED ARTICLES PLACEHOLDER -->
+      <!-- Add 3 related article cards here -->
+      <a href="/blog/experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Experiencia de usuario: 10 heurísticas de Nielsen para tu web</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/figma-make-da-vida-a-tus-prototipos-con-magia-y-ux-ui" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Figma Make: da vida a tus prototipos con magia y UX/UI</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/figma-make-y-la-nueva-era-ai-en-tu-agencia-ux-ui" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Figma Make y la nueva era AI en tu agencia UX/UI</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+      <!-- END RELATED ARTICLES PLACEHOLDER -->
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="article-cta">
+    <h2>¿Tu plataforma necesita más que un artículo?</h2>
+    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Conversemos sobre cómo podemos ayudarte a escalar tu negocio digital.</p>
+    <a href="/iniciar-proyecto" class="article-cta-btn">Iniciar proyecto</a>
+  </section>
+
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    // Initialize navbar and footer
+    TP.navbar('blog');
+    TP.footer();
+    TP.initJS();
+  </script>
+</body>
+
+</html>

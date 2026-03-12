@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Labs Stitch desata tu creatividad UX/UI | Blog | Tres Puntos</title>
+  <meta name="description" content="Descubre cómo evitar iconos confusos y mejorar la experiencia de usuario en tu diseño web en Barcelona con ejemplos y consejos." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/google-labs-stitch-desata-tu-creatividad-ux-ui" />
+  <meta property="og:title" content="Google Labs Stitch desata tu creatividad UX/UI" />
+  <meta property="og:description" content="Descubre cómo evitar iconos confusos y mejorar la experiencia de usuario en tu diseño web en Barcelona con ejemplos y consejos." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/blog/google-labs-stitch-desata-tu-creatividad-ux-ui" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/blog/google-labs-stitch-desata-tu-creatividad-ux-ui-og.jpg" />
+  <meta property="article:published_time" content="2024-12-04" />
+  <meta property="article:modified_time" content="2024-12-04" />
+  <meta property="article:author" content="Jordi Expósito" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Google Labs Stitch desata tu creatividad UX/UI",
+      "description": "Descubre cómo evitar iconos confusos y mejorar la experiencia de usuario en tu diseño web en Barcelona con ejemplos y consejos.",
+      "image": "https://www.trespuntoscomunicacion.es/img/blog/google-labs-stitch-desata-tu-creatividad-ux-ui-og.jpg",
+      "datePublished": "2024-12-04",
+      "dateModified": "2024-12-04",
+      "author": {
+        "@type": "Person",
+        "name": "Jordi Expósito"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.trespuntoscomunicacion.es/img/logo.svg"
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ Blog Post Page Styles ═══ */
+
+    /* ── Article Header ── */
+    .article-header {
+      padding: 3rem 1.5rem;
+      border-bottom: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .article-header {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-header-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 0.375rem 0.875rem;
+      margin-bottom: 1.5rem;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mint);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 1.5rem 0;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 768px) {
+      .article-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .article-meta-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .article-meta-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--mint);
+      font-size: 0.75rem;
+    }
+
+    .article-meta-time {
+      color: var(--text-secondary);
+    }
+
+    /* ── Article Body ── */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .article-body {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-content {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 2rem 0 1rem 0;
+      color: var(--text-primary);
+    }
+
+    .article-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 700;
+      margin: 1.75rem 0 0.875rem 0;
+      color: var(--text-primary);
+    }
+
+    .article-content p {
+      margin: 0 0 1rem 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .article-content em {
+      color: var(--text-secondary);
+    }
+
+    .article-content a {
+      color: var(--mint);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(93, 255, 191, 0.3);
+    }
+
+    .article-content a:hover {
+      border-bottom-color: var(--mint);
+    }
+
+    .article-content blockquote {
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      background: rgba(93, 255, 191, 0.05);
+      border-left: 3px solid var(--mint);
+      border-radius: 4px;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .article-content code {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      background: rgba(93, 255, 191, 0.08);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      color: var(--mint);
+    }
+
+    .article-content pre {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .article-content pre code {
+      background: none;
+      padding: 0;
+      color: var(--mint);
+    }
+
+    .article-content img {
+      max-width: 100%;
+      height: auto;
+      margin: 2rem 0;
+      border-radius: 8px;
+      border: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    /* ── Article Footer/Divider ── */
+    .article-footer-divider {
+      max-width: 760px;
+      margin: 3rem auto;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(93, 255, 191, 0.2), transparent);
+    }
+
+    /* ── Related Articles ── */
+    .related-articles {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid rgba(93, 255, 191, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .related-articles {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .related-articles-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 2rem 0;
+      color: var(--text-primary);
+    }
+
+    .related-articles-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .related-articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .related-articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .related-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+      border-color: var(--mint);
+      background: rgba(93, 255, 191, 0.03);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(93, 255, 191, 0.12);
+    }
+
+    .related-card-cat {
+      display: inline-block;
+      padding: 0.375rem 0.875rem;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mint);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+
+    .related-card-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--text-primary);
+      flex-grow: 1;
+    }
+
+    .related-card-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--mint);
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .related-card:hover .related-card-link {
+      gap: 0.75rem;
+    }
+
+    .related-card-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── CTA Section ── */
+    .article-cta {
+      background: linear-gradient(135deg, rgba(93, 255, 191, 0.05) 0%, rgba(93, 255, 191, 0.02) 100%);
+      border-top: 1px solid rgba(93, 255, 191, 0.1);
+      border-bottom: 1px solid rgba(93, 255, 191, 0.1);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .article-cta {
+        padding: 4rem 2rem;
+      }
+    }
+
+    .article-cta h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 1.5rem 0;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 768px) {
+      .article-cta h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .article-cta-btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      background: var(--mint);
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-base);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .article-cta-btn:hover {
+      background: var(--mint-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(93, 255, 191, 0.3);
+    }
+
+    /* ── Breadcrumb Navigation ── */
+    .article-breadcrumb {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 0 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    @media (min-width: 768px) {
+      .article-breadcrumb {
+        padding: 1rem 2rem 0 2rem;
+      }
+    }
+
+    .article-breadcrumb a {
+      color: var(--mint);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .article-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .article-breadcrumb-sep {
+      margin: 0 0.5rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+  <div id="tp-navbar"></div>
+
+  <!-- Breadcrumb -->
+  <div class="article-breadcrumb">
+    <a href="/">Inicio</a>
+    <span class="article-breadcrumb-sep">/</span>
+    <a href="/blog">Blog</a>
+    <span class="article-breadcrumb-sep">/</span>
+    <span>Google Labs Stitch desata tu creatividad UX/UI</span>
+  </div>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-wrapper">
+      <div class="article-category">Desarrollo Web</div>
+      <h1 class="article-title">Google Labs Stitch desata tu creatividad UX/UI</h1>
+      <div class="article-meta">
+        <div class="article-meta-author">
+          <div class="article-meta-avatar">JE</div>
+          <div>
+            <div style="font-weight: 600; color: var(--text-primary);">Jordi Expósito</div>
+            <div class="article-meta-time">4 de diciembre de 2024</div>
+          </div>
+        </div>
+        <div class="article-meta-item">
+          <span style="color: var(--mint);">•</span>
+          <span class="article-meta-time">4 min de lectura</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <main class="article-body">
+    <article class="article-content">
+      <p>Si eres fan del flow entre diseño y desarrollo, prepárate: Google Labs Stitch acaba de aterrizar y promete cambiar las reglas del juego. En Tres Puntos, como <strong>agencia UX/UI en Barcelona</strong>, hemos probado sus funciones y flipamos con la forma de combinar prototipado visual, código real y colaboraciones en tiempo real. ¿Quieres saber por qué Stitch puede ser tu próximo as bajo la manga para proyectos de <em>diseño web Barcelona</em> y <em>desarrollo web Barcelona</em>? Sigue leyendo este artículo con garra y microcopy que no te dejará pestañear.</p>
+
+<h2>Cuando tu UX pierde flow (y Stitch viene al rescate)</h2>
+<p>¿Te ha pasado que tu diseñador envía un Figma y tu dev se queda pillado traduciendo cada componente? Ese momento incómodo en el que el "pixel perfect" se convierte en un "pixel maybe". Con Stitch, olvídate de puentes rotos: puedes dibujar botones en pantallas y obtener el HTML/CSS/JS listo para importar. Imagina a tu <strong>equipo de diseño UX/UI</strong> trabajando codo a codo con desarrolladores, sin cuellos de botella ni GIFs de "¿estás mortalmente perdido?". Un ejemplo real: en un proyecto de tienda online (hemos testeado con una shop de moda indie), el cambio de color en un hover tardó 5 minutos en pasar de Sketch a React. Menos drama, más resultado.</p>
+
+<h2>El boom de la integración diseño–código según Google Labs</h2>
+<p>Stitch se suma a la fiebre del "igual-dibujo-igual-código" junto a herramientas como Framer y Anima. Pero Google ha metido dos upgrades: 1) AI que adapta componentes a tu sistema de diseño; 2) Live preview colaborativo con comentarios al estilo Slack integrado. ¿La clave? Menos emails "Adjunto PSD final_v5_revisado_FINAL2.psd" y más commits en GitHub con notas dentro de Stickers digitales.</p>
+
+<h3>Noticia actual #1: ChatGPT en tu editor de código</h3>
+<p>A principios de mes, OpenAI lanzó un plugin oficial de ChatGPT para VS Code que sugiere snippets de CSS basados en tu wireframe. Stitch ya ha anunciado compatibilidad y promete autocompletar estilos con microcopy incluido ("hover suave como mantequilla").</p>
+
+<h3>Noticia actual #2: Apple Vision Pro y la nueva frontera de interfaces</h3>
+<p>Mientras probamos Stitch, Apple presentaba Vision Pro. Este auricular XR redefine cómo pensamos la interacción. Nuestra reflexión: si en 3D necesitas un Stitch para generar layouts, ¿habrá un Stitch XR mañana? La <strong>experiencia de usuario</strong> evoluciona y nuestra <em>agencia ecommerce Barcelona</em> ya pisa el acelerador en pruebas inmersivas.</p>
+
+<h3>Noticia actual #3: Figma lanza librerías de diseño variables</h3>
+<p>Figma presentó estilos variables, pero no genera código nativo. Ahí entra Stitch: recoge variables globales y las traduce a tokens de diseño en tu framework React o Vue. Un win para proyectos de <em>usuario central</em> y <em>accesibilidad web</em>.</p>
+
+<h3>Noticia actual #4: Nielsen Norman Group actualiza su guía de usabilidad</h3>
+<p>La autoridad en usabilidad acaba de revisar heurísticos UX. Comentan que las herramientas híbridas aceleran el testing con usuarios reales. Nuestro tip: prueba tus diseños exportados con Stitch en tests A/B y reduce la fricción.</p>
+
+<h2>¿Qué significa esto para tu experiencia de usuario?</h2>
+<p>Con Stitch, el prototipo deja de ser un vídeo embebido y se convierte en algo vivo: interacción real, feedback instantáneo y un loop de mejora continua. Tu <strong>experiencia de usuario</strong> gana coherencia y consistencia. Y si cuidas ese detalle, fidelizas al usuario como se merece.</p>
+
+<h2>Comparativas creativas: Stitch vs. tus ex-herramientas</h2>
+<p>• Framer: potente en animaciones, pero code-first. Stitch: design-first y code-friendly. • Anima: exporta componentes, pero sin IA. Stitch: autogenera variantes y sugiere microcopy. • Storybook: perfecto para librerías, pero no para bocetar. Stitch: sketch + storybook en uno.</p>
+
+<p>Resultado: menos herramientas, más flow.</p>
+
+<h2>Un toque atemporal: los principios de diseño que nunca fallan</h2>
+<p>Más allá de la magia tecnológica, recordemos los fundamentos: proximidad, jerarquía, consistencia y feedback. El buen diseño vive y respira con las personas. Sea un sitio de <strong>diseño web Barcelona</strong> o una plataforma global, estos principios atemporales no caducan. Como dice el <em>Nielsen Norman Group</em>, "el diseño centrado en el usuario es un viaje, no un destino".</p>
+
+<h2>Cómo integrarlo en tu estrategia digital con garra</h2>
+<p>1) Define tu sistema de diseño: tipografías, colores, interacción. 2) Importa tu librería a Stitch y deja que la IA sugiera componentes. 3) Testea con usuarios reales y ajusta live sin puntear CSS a mano. 4) Exporta módulos limpios para tu <em>desarrollo web a medida</em>. 5) Mide, optimiza y repite.</p>
+
+<p>Resultado: proyecto veloz, consistente y muy "wow" para tu cliente final.</p>
+
+<h2>Checklist mortal de Tres Puntos para un proyecto con Stitch (y sin drama)</h2>
+<ul>
+  <li>Un moderador con mano izquierda (ni dictador ni fantasma).</li>
+  <li>Librería de diseños homologada (adiós al "¿qué versión era?").</li>
+  <li>Un repositorio aquí (UX/UI en Barcelona) y otro allí (desarrollo web a medida).</li>
+  <li>Test A/B antes y después de exportar con Stitch.</li>
+  <li>Comentarios claros: "este botón necesita más padding, no philosophie".</li>
+  <li>Un plan de accesibilidad web para no dejar a nadie fuera del loop.</li>
+  <li>Integración con tu tienda online Barcelona sin líos de dependencies.</li>
+</ul>
+
+<h2>¿Listos para darle stitch-azo a tu próximo proyecto?</h2>
+<p>En Tres Puntos, la <strong>agencia UX en Barcelona</strong> que no se arruga, ya hemos incorporado Stitch a nuestro arsenal de <em>diseño UX/UI</em> y <em>desarrollo web Barcelona</em>. Si quieres un proyecto ágil, con flow y sin pérdidas de tiempo, ponte en contacto y hagamos magia juntos. Ver casos de éxito o habla con nosotros hoy mismo.</p>
+    </article>
+  </main>
+
+  <!-- Divider -->
+  <div class="article-footer-divider"></div>
+
+  <!-- Related Articles -->
+  <section class="related-articles">
+    <h2 class="related-articles-title">Artículos relacionados</h2>
+    <div class="related-articles-grid">
+      <!-- RELATED ARTICLES PLACEHOLDER -->
+      <!-- Add 3 related article cards here -->
+      <a href="/blog/experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Experiencia de usuario: 10 heurísticas de Nielsen para tu web</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Las leyes de UX: el manual invisible del diseño centrado en el usuario</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/figma-make-da-vida-a-tus-prototipos-con-magia-y-ux-ui" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">Figma Make: da vida a tus prototipos con magia y UX/UI</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+      <!-- END RELATED ARTICLES PLACEHOLDER -->
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="article-cta">
+    <h2>¿Tu plataforma necesita más que un artículo?</h2>
+    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Conversemos sobre cómo podemos ayudarte a escalar tu negocio digital.</p>
+    <a href="/iniciar-proyecto" class="article-cta-btn">Iniciar proyecto</a>
+  </section>
+
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    // Initialize navbar and footer
+    TP.navbar('blog');
+    TP.footer();
+    TP.initJS();
+  </script>
+</body>
+
+</html>

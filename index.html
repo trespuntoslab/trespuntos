@@ -1,0 +1,1786 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agencia UX/UI Barcelona | Arquitectura Digital de Conversión · Tres Puntos</title>
+  <meta name="description"
+    content="Agencia de UX/UI y desarrollo web en Barcelona con 13 años construyendo plataformas que convierten. Desarrollo a medida, e-commerce y Design Engineering para empresas que no pueden perder tráfico." />
+  
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/" />
+  <meta property="og:title" content="Agencia UX/UI y Desarrollo Web Barcelona | Tres Puntos" />
+  <meta property="og:description"
+    content="No hacemos webs presenciales. Construimos Arquitectura Digital de Conversión: ecosistemas donde cada euro de captación tiene un destino claro." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+      "name": "Tres Puntos Comunicación",
+      "url": "https://www.trespuntoscomunicacion.es/",
+      "logo": "https://www.trespuntoscomunicacion.es/img/logos/tp-logo.svg",
+      "description": "Agencia UX/UI y desarrollo web en Barcelona especializada en Arquitectura Digital de Conversión.",
+      "foundingDate": "2011",
+      "priceRange": "€€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Barcelona",
+        "addressLocality": "Barcelona",
+        "addressRegion": "Catalunya",
+        "postalCode": "08000",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "41.3874",
+        "longitude": "2.1686"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://www.trespuntoscomunicacion.es/contacto/",
+        "availableLanguage": ["Spanish", "Catalan", "English"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/trespuntoscomunicacion"
+      ],
+      "areaServed": [
+        {"@type": "City", "name": "Barcelona"},
+        {"@type": "City", "name": "Madrid"},
+        {"@type": "City", "name": "Sevilla"},
+        {"@type": "City", "name": "Bilbao"}
+      ],
+      "knowsAbout": ["UX Design", "UI Design", "Web Development", "E-commerce", "Digital Strategy", "AI for Business"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diseño UX/UI"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Desarrollo Web a Medida"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Tienda Online a Medida"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Consultoría Digital"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Design Engineering"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "IA para Empresas"}}
+        ]
+      }
+    }
+    </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es la Arquitectura Digital de Conversión?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es nuestro modelo de trabajo: antes de diseñar o desarrollar, diagnosticamos dónde pierde dinero tu plataforma. El UX/UI retiene al usuario y el desarrollo a medida elimina cada fisura técnica antes de que cueste euros en conversión perdida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo mejora el ROI un buen diseño UX/UI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El UX elimina fricción en el funnel. Cada segundo de carga extra, cada paso innecesario en el checkout y cada elemento de interfaz que genera confusión tiene un coste directo en conversión medible. Un buen diseño UX no es estética: es reducción de abandono."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por dónde se empieza a trabajar con Tres Puntos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Por el formulario en /iniciar-proyecto. Nos cuentas el contexto de tu proyecto, lo analizamos y te respondemos en menos de 48h. Si tienes una plataforma existente con problemas, empezamos con análisis técnico. Si es un proyecto nuevo, empezamos con arquitectura de información."
+          }
+        }
+      ]
+    }
+    </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+</head>
+
+<body>
+  <!-- ============ NAVBAR (componente reutilizable) ============ -->
+  <div id="tp-navbar"></div>
+
+  <main>
+
+    <!-- ============ B1 — HERO ============ -->
+    <section id="hero" aria-label="Presentación">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="container-main hero-content">
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <div class="hero-tag">Arquitectura Digital · Barcelona</div>
+            <h1 class="hero-h1" id="hero-h1">
+              <span class="text-gradient">
+                <span class="word">Agencia</span>
+                <span class="word">&nbsp;UX/UI</span>
+                <span class="word">&nbsp;en</span>
+                <span class="word">&nbsp;Barcelona</span>
+              </span>
+              <span class="word">&nbsp;para</span>
+              <span class="word">&nbsp;empresas</span>
+              <span class="word">&nbsp;que</span>
+              <span class="word">&nbsp;necesitan</span>
+              <span class="word">&nbsp;convertir</span>
+              <span class="word">&nbsp;más</span>
+            </h1>
+            <p class="hero-subtitle">
+              Diseñamos y construimos plataformas digitales donde la experiencia de usuario, la arquitectura técnica y
+              el desarrollo web trabajan juntos para generar negocio. No hacemos webs decorativas. <strong>Construimos
+                sistemas digitales pensados para convertir tráfico en clientes.</strong>
+            </p>
+            <div class="hero-ctas">
+              <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
+                Cuéntanos tu proyecto
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="/arquitectura-digital-conversion" class="btn-secondary magnetic-btn">Conoce nuestra
+                metodología</a>
+            </div>
+            <div class="hero-metrics" aria-label="Datos clave">
+              <div class="hero-metric-item">
+                <span class="hero-metric-value" data-count="13" data-prefix="+">+13</span>
+                <span class="hero-metric-label">años sellando fugas de conversión</span>
+              </div>
+              <div class="hero-metric-sep" aria-hidden="true"></div>
+              <div class="hero-metric-item">
+                <span class="hero-metric-value">SaaS · B2B</span>
+                <span class="hero-metric-label">e-commerce y plataformas complejas</span>
+              </div>
+              <div class="hero-metric-sep" aria-hidden="true"></div>
+              <div class="hero-metric-item">
+                <span class="hero-metric-value">Barcelona</span>
+                <span class="hero-metric-label">con alcance global</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone mockup -->
+          <div class="hero-phone-wrapper" aria-hidden="true">
+            <div class="hero-aura"></div>
+            <div class="hero-phone">
+              <div class="hero-phone-notch"></div>
+              <div class="hero-phone-screen">
+                <div class="phone-el phone-navbar">
+                  <div class="phone-navbar-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="10" viewBox="0 0 261.303 99.928">
+                      <g transform="translate(-143.8 -26.1)">
+                        <path
+                          d="M243.558,44.827a30.774,30.774,0,0,1,23.994,11.412,61.579,61.579,0,0,1,9.364-17.264,49.651,49.651,0,0,0-66.716,0,61.58,61.58,0,0,1,9.364,17.264,31.238,31.238,0,0,1,23.994-11.412Z"
+                          transform="translate(30.748 0)" fill="#5dffbf" />
+                        <path
+                          d="M355.213,26.1a49.114,49.114,0,0,0-33.358,12.875,45.236,45.236,0,0,0-7.023,7.9,49.619,49.619,0,0,0-9.364,28.969,31.1,31.1,0,0,1-31.017,31.163A30.774,30.774,0,0,1,250.457,95.6a31.275,31.275,0,0,1-7.023-19.751,49.618,49.618,0,0,0-9.364-28.969,45.233,45.233,0,0,0-7.023-7.9A49.114,49.114,0,0,0,193.691,26.1a49.891,49.891,0,0,0,0,99.781,49.114,49.114,0,0,0,33.358-12.875,61.579,61.579,0,0,1-9.364-17.264,30.876,30.876,0,1,1,7.023-19.459,49.618,49.618,0,0,0,9.364,28.969,45.231,45.231,0,0,0,7.023,7.9,49.651,49.651,0,0,0,66.716,0,45.232,45.232,0,0,0,7.023-7.9A49.619,49.619,0,0,0,324.2,76.283a31.1,31.1,0,1,1,7.023,19.459,61.579,61.579,0,0,1-9.364,17.264,49.113,49.113,0,0,0,33.358,12.875,49.891,49.891,0,1,0,0-99.781Z"
+                          transform="translate(0 0)" fill="#5dffbf" />
+                        <circle cx="16.24" cy="16.24" r="16.24" transform="translate(177.158 59.751)" fill="#f8f8f8" />
+                        <circle cx="16.24" cy="16.24" r="16.24" transform="translate(258.065 59.751)" fill="#f8f8f8" />
+                        <circle cx="16.24" cy="16.24" r="16.24" transform="translate(338.973 59.751)" fill="#f8f8f8" />
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="phone-navbar-hamburger">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="phone-el phone-hero-img">
+                  <div class="phone-hero-img-content">
+                    <div class="phone-hero-img-line"></div>
+                    <div class="phone-hero-img-line"></div>
+                    <div class="phone-hero-img-line" style="width:35%"></div>
+                  </div>
+                </div>
+                <div class="phone-el phone-cta-row">
+                  <div class="phone-cta-btn phone-cta-btn--primary">Ver proyectos</div>
+                  <div class="phone-cta-btn phone-cta-btn--secondary">Contacto</div>
+                </div>
+                <div class="phone-el phone-cards">
+                  <div class="phone-card">
+                    <div class="phone-card-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5z" />
+                      </svg></div>
+                    <div class="phone-card-line"></div>
+                    <div class="phone-card-line"></div>
+                  </div>
+                  <div class="phone-card">
+                    <div class="phone-card-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg></div>
+                    <div class="phone-card-line"></div>
+                    <div class="phone-card-line"></div>
+                  </div>
+                </div>
+                <div class="phone-el phone-metrics">
+                  <div class="phone-metric-item"><span class="phone-metric-value">+28%</span><span
+                      class="phone-metric-label">conversión</span></div>
+                  <div class="phone-metric-sep"></div>
+                  <div class="phone-metric-item"><span class="phone-metric-value">-42%</span><span
+                      class="phone-metric-label">fricción</span></div>
+                  <div class="phone-metric-sep"></div>
+                  <div class="phone-metric-item"><span class="phone-metric-value">96</span><span
+                      class="phone-metric-label">CSAT</span></div>
+                </div>
+                <div class="phone-el phone-bottom-nav">
+                  <div class="phone-bottom-nav-item active">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1" />
+                    </svg>
+                    <span>Home</span>
+                  </div>
+                  <div class="phone-bottom-nav-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-width="2"
+                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                    <span>Servicios</span>
+                  </div>
+                  <div class="phone-bottom-nav-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-width="2"
+                        d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                    </svg>
+                    <span>Contacto</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Callouts -->
+            <div class="phone-callout c1 show">
+              <div class="phone-callout-dot"></div>
+              <div class="phone-callout-line"></div>
+              <div class="phone-callout-bubble"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>Navegación intuitiva</div>
+            </div>
+            <div class="phone-callout c2 show">
+              <div class="phone-callout-dot"></div>
+              <div class="phone-callout-line"></div>
+              <div class="phone-callout-bubble"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Jerarquía visual</div>
+            </div>
+            <div class="phone-callout c3 show">
+              <div class="phone-callout-dot"></div>
+              <div class="phone-callout-line"></div>
+              <div class="phone-callout-bubble"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5" />
+                </svg>Call to action claro</div>
+            </div>
+            <div class="phone-callout c4 show">
+              <div class="phone-callout-dot"></div>
+              <div class="phone-callout-line"></div>
+              <div class="phone-callout-bubble"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5z" />
+                </svg>Contenido escaneable</div>
+            </div>
+            <div class="phone-callout c5 show">
+              <div class="phone-callout-dot"></div>
+              <div class="phone-callout-line"></div>
+              <div class="phone-callout-bubble"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2z" />
+                </svg>Datos que convencen</div>
+            </div>
+            <div class="phone-callout c6 show">
+              <div class="phone-callout-dot"></div>
+              <div class="phone-callout-line"></div>
+              <div class="phone-callout-bubble"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-width="2"
+                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>Acceso rápido</div>
+            </div>
+            <!-- Orbit -->
+            <div class="orbit-ring" aria-hidden="true">
+              <div class="orbit-bubble ob1"><img src="img/logos/Figma_Symbol_0.svg" alt="Figma" loading="lazy" /></div>
+              <div class="orbit-bubble ob2"><img src="img/logos/React-icon.svg" alt="React" loading="lazy" /></div>
+              <div class="orbit-bubble ob3"><img src="img/logos/N8n.io_Symbol_0.svg" alt="N8n" loading="lazy" /></div>
+              <div class="orbit-bubble ob4"><img src="img/logos/chatgpt.svg" alt="ChatGPT" class="chatgpt-white-logo" loading="lazy" />
+              </div>
+              <div class="orbit-bubble ob5"><img src="img/logos/google-logo.svg"
+                  alt="Google" /></div>
+              <div class="orbit-bubble ob6"><img src="img/logos/wordpress.svg" alt="WordPress" loading="lazy" /></div>
+              <div class="orbit-bubble ob7"><img src="img/logos/angular-icon-svgrepo-com.svg" alt="Angular" loading="lazy" /></div>
+              <div class="orbit-bubble ob8"><img src="img/logos/laravel-svgrepo-com.svg" alt="Laravel" loading="lazy" /></div>
+              <div class="orbit-bubble ob9"><img src="img/logos/css-3.svg" alt="CSS3" loading="lazy" /></div>
+              <div class="orbit-bubble ob10"><img src="img/logos/javascript-logo-svgrepo-com.svg" alt="JavaScript" loading="lazy" />
+              </div>
+            </div>
+            <div class="hero-phone-label">Especialización en UX/UI</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo strip -->
+    <div id="logos" aria-label="Stack tecnológico">
+      <div class="container-main">
+        <div class="logos-inner">
+          <span class="logo-strip-label">Stack técnico</span>
+          <div class="logo-strip-tech">
+            <span class="logo-strip-item">React</span>
+            <span class="logo-strip-item">Next.js</span>
+            <span class="logo-strip-item">Angular</span>
+            <span class="logo-strip-item">Figma</span>
+            <span class="logo-strip-item">Node.js</span>
+            <span class="logo-strip-item">Laravel</span>
+            <span class="logo-strip-item">WordPress</span>
+            <span class="logo-strip-item">WooCommerce</span>
+            <span class="logo-strip-item">Headless CMS</span>
+            <span class="logo-strip-item">TypeScript</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marquee -->
+    <div class="marquee-section" aria-hidden="true">
+      <div class="marquee-track" id="marquee-track">
+        <div class="marquee-item"><span class="marquee-text">Las webs bonitas <span class="hl">no pagan
+              facturas.</span></span><span class="marquee-sep">✦</span></div>
+        <div class="marquee-item"><span class="marquee-text">El diseño sin <span class="hl">negocio es
+              decoración.</span></span><span class="marquee-sep">✦</span></div>
+        <div class="marquee-item"><span class="marquee-text">Una plataforma <span class="hl">lenta pierde
+              clientes.</span></span><span class="marquee-sep">✦</span></div>
+        <div class="marquee-item"><span class="marquee-text">La conversión empieza <span class="hl">en la
+              arquitectura.</span></span><span class="marquee-sep">✦</span></div>
+        <div class="marquee-item"><span class="marquee-text">Las webs bonitas <span class="hl">no pagan
+              facturas.</span></span><span class="marquee-sep">✦</span></div>
+        <div class="marquee-item"><span class="marquee-text">El diseño sin <span class="hl">negocio es
+              decoración.</span></span><span class="marquee-sep">✦</span></div>
+        <div class="marquee-item"><span class="marquee-text">Una plataforma <span class="hl">lenta pierde
+              clientes.</span></span><span class="marquee-sep">✦</span></div>
+        <div class="marquee-item"><span class="marquee-text">La conversión empieza <span class="hl">en la
+              arquitectura.</span></span><span class="marquee-sep">✦</span></div>
+      </div>
+    </div>
+    </div>
+
+    <!-- ============ B2 — SERVICIOS STACK ============ -->
+    <section id="propuesta" aria-label="Servicios">
+      <div class="container-main">
+        <div class="propuesta-header reveal">
+          <span class="section-badge reveal">Servicios</span>
+          <h2 class="section-h2 reveal">Servicios que construyen<br />plataformas que funcionan.</h2>
+          <p class="section-sub"></p>
+        </div>
+        <div class="servicios-stack">
+
+          <!-- 1. Desarrollo Web -->
+          <div class="servicio-item reveal">
+            <div class="servicio-body">
+              <div class="servicio-header">
+                <div class="servicio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                  </svg></div>
+                <div class="servicio-tag">Web a medida</div>
+              </div>
+              <div class="servicio-title">Desarrollo Web a Medida</div>
+              <p class="servicio-desc">Construimos plataformas digitales sin las limitaciones de las plantillas o CMS
+                genéricos.</p>
+              <ul class="servicio-bullets">
+                <li>Arquitectura técnica sólida, integraciones y rendimiento optimizado.</li>
+              </ul>
+              <a href="/servicios/desarrollo-web-a-medida-barcelona" class="btn-ghost">Saber más <svg width="14"
+                  height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            </div>
+            <div class="servicio-visual" id="sv-web">
+              <div style="padding:1.5rem;height:100%;display:flex;flex-direction:column;">
+                <div
+                  style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem;">
+                  Arquitectura Headless</div>
+                <div class="sv-arch" id="sv-arch-web">
+                  <div class="sv-node sv-node--top" id="sv-nd-cdn">CDN Global</div>
+                  <div class="sv-arrow" id="sv-ar-1">
+                    <div class="sv-arrow-line"></div>
+                    <div class="sv-arrow-dot"></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;">
+                    <div class="sv-node sv-node--mid" id="sv-nd-nxt">Next.js</div>
+                    <div class="sv-node sv-node--mid" id="sv-nd-api">API Layer</div>
+                  </div>
+                  <div class="sv-arrow" id="sv-ar-2">
+                    <div class="sv-arrow-line"></div>
+                    <div class="sv-arrow-dot"></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4rem;">
+                    <div class="sv-node sv-node--bot" id="sv-nd-cms">CMS</div>
+                    <div class="sv-node sv-node--bot" id="sv-nd-crm">CRM</div>
+                    <div class="sv-node sv-node--bot" id="sv-nd-erp">ERP</div>
+                  </div>
+                </div>
+                <div class="sv-badge" id="sv-perf-badge" style="margin-top:auto;">
+                  <span class="deploy-dot"></span>Tiempo de carga: <strong>0.8s</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. E-commerce -->
+          <div class="servicio-item reveal">
+            <div class="servicio-body">
+              <div class="servicio-header">
+                <div class="servicio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                  </svg></div>
+                <div class="servicio-tag">Consultoría</div>
+              </div>
+              <div class="servicio-title">Consultoría de arquitectura digital</div>
+              <p class="servicio-desc">Diseñamos experiencias digitales pensadas para guiar al usuario hacia la acción.
+              </p>
+              <ul class="servicio-bullets">
+                <li>Investigación de usuarios, arquitectura de información, prototipado y sistemas de diseño.</li>
+              </ul>
+              <a href="/servicios/consultoria-digital-barcelona" class="btn-ghost">Saber más <svg width="14" height="14"
+                  fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            </div>
+            <div class="servicio-visual" id="sv-ecom">
+              <div style="padding:1.5rem;height:100%;display:flex;flex-direction:column;">
+                <div
+                  style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem;">
+                  Funnel de compra optimizado</div>
+                <div id="sv-ecom-steps" class="sv-funnel-vis">
+                  <div class="sv-funnel-row">
+                    <span class="sv-fl">Producto visto</span>
+                    <div class="sv-fbar-wrap">
+                      <div class="sv-fbar sv-fbar--mint" data-w="100" style="width:0%"></div>
+                    </div>
+                    <span class="sv-fpct">100%</span>
+                  </div>
+                  <div class="sv-funnel-row">
+                    <span class="sv-fl">Add to cart</span>
+                    <div class="sv-fbar-wrap">
+                      <div class="sv-fbar sv-fbar--mint" data-w="68" style="width:0%"></div>
+                    </div>
+                    <span class="sv-fpct">68%</span>
+                  </div>
+                  <div class="sv-funnel-row sv-funnel-row--issue">
+                    <span class="sv-fl" style="color:#f87171">⚡ Checkout lento</span>
+                    <div class="sv-fbar-wrap">
+                      <div class="sv-fbar sv-fbar--red" data-w="30" style="width:0%"></div>
+                    </div>
+                    <span class="sv-fpct" style="color:#f87171">−30%</span>
+                  </div>
+                  <div class="sv-funnel-row sv-funnel-row--ok" id="sv-ecom-final">
+                    <span class="sv-fl" style="color:var(--mint)" id="sv-ecom-final-label">Optimizando…</span>
+                    <div class="sv-fbar-wrap">
+                      <div class="sv-fbar sv-fbar--mint" id="sv-ecom-final-bar" style="width:0%"></div>
+                    </div>
+                    <span class="sv-fpct" style="color:var(--mint)" id="sv-ecom-final-pct">—</span>
+                  </div>
+                </div>
+                <div class="sv-badge" style="margin-top:auto;" id="sv-ecom-badge">
+                  <span class="deploy-dot"></span><span id="sv-ecom-badge-txt">Checkout optimizado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. UX/UI -->
+          <div class="servicio-item reveal">
+            <div class="servicio-body">
+              <div class="servicio-header">
+                <div class="servicio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+                  </svg></div>
+                <div class="servicio-tag">Diseño</div>
+              </div>
+              <div class="servicio-title">Diseño UX/UI</div>
+              <p class="servicio-desc">Analizamos plataformas existentes para detectar cuellos de botella técnicos o de
+                conversión. Decisiones tecnológicas basadas en impacto de negocio.</p>
+
+              <a href="/servicios/diseno-ux-ui-barcelona" class="btn-ghost">Saber más <svg width="14" height="14"
+                  fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            </div>
+            <div class="servicio-visual" id="sv-ux" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem;">
+              <!-- STAT 88% -->
+              <div id="sv-ux-stat"
+                style="background:var(--bg-surface);border:1px solid var(--border-base);border-radius:10px;padding:1rem;opacity:0;transform:translateY(8px);transition:all .5s ease;">
+                <div
+                  style="font-family:var(--font-heading);font-size:2.25rem;font-weight:800;color:var(--mint);line-height:1;"
+                  id="sv-ux-pct">88<span style="font-size:1.25rem;">%</span></div>
+                <div style="font-size:.65rem;color:var(--text-secondary);line-height:1.5;margin-top:.35rem;">de usuarios
+                  no vuelven tras una <strong style="color:var(--text-primary);">mala UX</strong></div>
+              </div>
+              <!-- FUNNEL UX -->
+              <div id="sv-ux-funnel" style="display:flex;flex-direction:column;gap:0;flex:1;">
+                <div class="sv-funnel-row" style="border-radius:6px 6px 0 0;">
+                  <span class="sv-fl">Visitas</span>
+                  <div class="sv-fbar-wrap">
+                    <div class="sv-fbar sv-fbar--mint" data-w="100" style="width:0%"></div>
+                  </div>
+                  <span class="sv-fpct">100%</span>
+                </div>
+                <div class="sv-funnel-row" style="border-top:none;">
+                  <span class="sv-fl">Llegan al producto</span>
+                  <div class="sv-fbar-wrap">
+                    <div class="sv-fbar sv-fbar--mint" data-w="60" style="width:0%"></div>
+                  </div>
+                  <span class="sv-fpct">60%</span>
+                </div>
+                <div class="sv-funnel-row sv-funnel-row--issue" style="border-top:none;">
+                  <span class="sv-fl" style="color:#f87171">⚡ Fricción de interfaz</span>
+                  <div class="sv-fbar-wrap">
+                    <div class="sv-fbar sv-fbar--red" data-w="35" style="width:0%"></div>
+                  </div>
+                  <span class="sv-fpct" style="color:#f87171">-35%</span>
+                </div>
+                <div class="sv-funnel-row" style="border-top:none;">
+                  <span class="sv-fl">Inician checkout</span>
+                  <div class="sv-fbar-wrap">
+                    <div class="sv-fbar sv-fbar--mint" data-w="25" style="width:0%"></div>
+                  </div>
+                  <span class="sv-fpct">25%</span>
+                </div>
+                <div class="sv-funnel-row sv-funnel-row--issue" style="border-top:none;">
+                  <span class="sv-fl" style="color:#f87171">⚡ Abandono en pago</span>
+                  <div class="sv-fbar-wrap">
+                    <div class="sv-fbar sv-fbar--red" data-w="18" style="width:0%"></div>
+                  </div>
+                  <span class="sv-fpct" style="color:#f87171">-18%</span>
+                </div>
+                <div class="sv-funnel-row sv-funnel-row--ok" style="border-top:none;border-radius:0 0 6px 6px;">
+                  <span class="sv-fl" style="color:var(--mint);">Conversión real</span>
+                  <div class="sv-fbar-wrap">
+                    <div class="sv-fbar sv-fbar--mint" data-w="7" style="width:0%"></div>
+                  </div>
+                  <span class="sv-fpct" style="color:var(--mint);">7%</span>
+                </div>
+              </div>
+              <div class="sv-badge" id="sv-ux-badge" style="opacity:0;">
+                <span class="deploy-dot"></span>Con ADC: <strong>conversión +2.3x</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Design Engineer -->
+          <div class="servicio-item reveal">
+            <div class="servicio-body">
+              <div class="servicio-header">
+                <div class="servicio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+                  </svg></div>
+                <div class="servicio-tag">Automatización</div>
+              </div>
+              <div class="servicio-title">IA generativa para empresas</div>
+              <p class="servicio-desc">Diseñamos automatizaciones y agentes de inteligencia artificial para reducir
+                trabajo manual y acelerar procesos.</p>
+
+              <a href="/servicios/ia-generativa-empresas" class="btn-ghost">Saber más <svg width="14" height="14"
+                  fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            </div>
+            <div class="servicio-visual de-visual" id="sv-de">
+              <div class="de-split">
+                <!-- LEFT: Figma -->
+                <div class="de-panel">
+                  <div class="de-panel-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 5.5A3.5 3.5 0 018.5 2H12v7H8.5A3.5 3.5 0 015 5.5z" />
+                      <path d="M12 2h3.5a3.5 3.5 0 110 7H12V2z" />
+                      <path d="M12 12.5a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z" />
+                      <path d="M5 19.5A3.5 3.5 0 018.5 16H12v3.5a3.5 3.5 0 01-7 0z" />
+                      <path d="M5 12.5A3.5 3.5 0 018.5 9H12v7H8.5A3.5 3.5 0 015 12.5z" />
+                    </svg>
+                    Figma Workspace
+                  </div>
+                  <div class="figma-frame" id="f-box-1">
+                    <div class="figma-component-label">Component / Button</div>
+                    <div class="figma-preview-btn">Primary</div>
+                    <div class="figma-props">
+                      <div class="figma-prop-row"><span>--color-primary</span><span class="figma-prop-val">■
+                          #5DFFBF</span></div>
+                      <div class="figma-prop-row"><span>--radius-lg</span><span class="figma-prop-val">24px</span></div>
+                      <div class="figma-prop-row"><span>variant</span><span class="figma-prop-val">primary</span></div>
+                    </div>
+                    <div class="figma-cursor"></div>
+                  </div>
+                  <div class="figma-sync-arrow">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path
+                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    Syncing tokens
+                  </div>
+                </div>
+                <!-- RIGHT: Code -->
+                <div class="de-panel">
+                  <div class="de-panel-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                    Production Code
+                  </div>
+                  <div class="code-window">
+                    <div class="code-titlebar">
+                      <div class="code-dot"></div>
+                      <div class="code-dot"></div>
+                      <div class="code-dot"></div>
+                    </div>
+                    <div id="code-typing-area"></div>
+                  </div>
+                  <div class="deploy-badge">
+                    <div class="deploy-dot"></div>v2.4.0 deployed
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. IA Operativa -->
+          <div class="servicio-item reveal" style="display:none;">
+            <div class="servicio-body">
+              <div class="servicio-header">
+                <div class="servicio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M5.25 12h-.75m15 0h-.75M5.25 15.75H4.5m15 0h-.75M8.25 21v-1.5m7.5 1.5v-1.5M12 9a3 3 0 100 6 3 3 0 000-6zM15.75 3v1.5m-7.5 16.5v1.5" />
+                  </svg></div>
+                <div class="servicio-tag">Automatización</div>
+              </div>
+              <div class="servicio-title">IA Operativa</div>
+              <p class="servicio-desc">La IA que no automatiza procesos concretos no es una inversión, es un coste de
+                experimentación. Integramos flujos de trabajo inteligentes en tu plataforma: desde cualificación de
+                leads hasta generación de contenido y atención automatizada con contexto real.</p>
+              <ul class="servicio-bullets">
+                <li>Automatizaciones con n8n y Make conectadas a tu CRM, ERP y plataformas de comunicación</li>
+                <li>Agentes de IA con contexto de negocio: no respuestas genéricas, lógica de tu operativa</li>
+                <li>Cualificación automática de leads integrada con el pipeline de ventas existente</li>
+              </ul>
+              <a href="/servicios/ia-generativa-empresas" class="btn-ghost">Saber más <svg width="14" height="14"
+                  fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            </div>
+            <div class="servicio-visual sv-ia-visual" id="sv-ia">
+              <div style="width:85%;display:flex;flex-direction:column;gap:1rem;">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;position:relative;">
+                  <div
+                    style="display:flex;flex-direction:column;gap:.75rem;flex:1;z-index:2;font-size:.55rem;font-family:var(--font-mono);letter-spacing:.05em;text-transform:uppercase;">
+                    <div class="sv-node" id="io-in-1"
+                      style="opacity:.2;transform:translateX(-10px);transition:all .4s ease;">Formulario</div>
+                    <div class="sv-node" id="io-in-2"
+                      style="opacity:.2;transform:translateX(-10px);transition:all .4s ease;transition-delay:.05s">CRM
+                      Lead</div>
+                    <div class="sv-node" id="io-in-3"
+                      style="opacity:.2;transform:translateX(-10px);transition:all .4s ease;transition-delay:.1s">
+                      Webhook</div>
+                  </div>
+                  <div class="sv-node" id="io-core"
+                    style="opacity:.2;transform:scale(.95);transition:all .5s ease;background:rgba(93,255,191,.06);border-color:rgba(93,255,191,.2);padding:.75rem 1rem;font-size:.65rem;flex-shrink:0;">
+                    IA Core</div>
+                  <div
+                    style="display:flex;flex-direction:column;gap:.75rem;flex:1;z-index:2;font-size:.55rem;font-family:var(--font-mono);letter-spacing:.05em;text-transform:uppercase;">
+                    <div class="sv-node sv-node--bot" id="io-out-1"
+                      style="background:#5dffbf;color:#000;border:none;opacity:.2;transform:translateX(10px);transition:all .4s ease;box-shadow:none;">
+                      Decisiones</div>
+                    <div class="sv-node sv-node--bot" id="io-out-2"
+                      style="background:#5dffbf;color:#000;border:none;opacity:.2;transform:translateX(10px);transition:all .4s ease;transition-delay:.1s;box-shadow:none;">
+                      Contenido</div>
+                  </div>
+                  <svg viewBox="0 0 100 100" preserveAspectRatio="none"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;">
+                    <path id="io-path-1" d="M 28 25 Q 40 25 50 50" fill="none" stroke="var(--mint)" stroke-width="1.5"
+                      stroke-dasharray="2" opacity="0" vector-effect="non-scaling-stroke"
+                      style="transition:opacity .4s" />
+                    <path id="io-path-2" d="M 28 50 L 50 50" fill="none" stroke="var(--mint)" stroke-width="1.5"
+                      stroke-dasharray="2" opacity="0" vector-effect="non-scaling-stroke"
+                      style="transition:opacity .4s" />
+                    <path id="io-path-3" d="M 28 75 Q 40 75 50 50" fill="none" stroke="var(--mint)" stroke-width="1.5"
+                      stroke-dasharray="2" opacity="0" vector-effect="non-scaling-stroke"
+                      style="transition:opacity .4s" />
+                    <path id="io-path-4" d="M 50 50 Q 60 50 72 35" fill="none" stroke="var(--mint)" stroke-width="1.5"
+                      stroke-dasharray="2" opacity="0" vector-effect="non-scaling-stroke"
+                      style="transition:opacity .4s" />
+                    <path id="io-path-5" d="M 50 50 Q 60 50 72 65" fill="none" stroke="var(--mint)" stroke-width="1.5"
+                      stroke-dasharray="2" opacity="0" vector-effect="non-scaling-stroke"
+                      style="transition:opacity .4s" />
+                  </svg>
+                </div>
+                <div class="sv-badge" id="sv-io-badge"
+                  style="margin-top:auto;opacity:0;transform:translateY(10px);transition:all .5s ease;">
+                  <span class="deploy-dot"></span>Capa inteligente <strong>Activa</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Auditoría -->
+          <div class="servicio-item reveal" style="display:none;">
+            <div class="servicio-body">
+              <div class="servicio-header">
+                <div class="servicio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z" />
+                  </svg></div>
+                <div class="servicio-tag">Diagnóstico</div>
+              </div>
+              <div class="servicio-title">Auditoría de Arquitectura Digital</div>
+              <p class="servicio-desc">Antes de proponer soluciones, diagnosticamos el problema real. La auditoría
+                identifica dónde pierde dinero tu plataforma: fricciones técnicas, cuellos de botella en el funnel y
+                problemas de rendimiento con su consecuencia financiera cuantificada.</p>
+              <ul class="servicio-bullets">
+                <li>Análisis técnico completo: rendimiento, arquitectura, integraciones y seguridad</li>
+                <li>Mapa de fricciones UX con impacto en conversión identificado y cuantificado</li>
+                <li>Documento funcional con prioridades de acción ordenadas por ROI estimado</li>
+              </ul>
+              <a href="/arquitectura-digital-conversion" class="btn-ghost">Saber más <svg width="14" height="14"
+                  fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            </div>
+            <div class="friction-visual" style="margin:1.5rem;border-radius:var(--radius-lg);">
+              <div class="friction-visual-header">Diagnóstico de arquitectura — ejemplo</div>
+              <div class="friction-item">
+                <div class="friction-status error"></div>
+                <div class="friction-label"><strong>LCP &gt; 4.2s en mobile</strong>Imágenes sin lazy load + bloqueo de
+                  render en cabecera.<div class="friction-impact">+18% abandono en primera visita estimado</div>
+                </div>
+              </div>
+              <div class="friction-item">
+                <div class="friction-status warn"></div>
+                <div class="friction-label"><strong>Checkout: 6 pasos innecesarios</strong>Campos que no aportan valor
+                  al proceso de compra.<div class="friction-impact">Cada paso extra reduce conversión un 8–12%</div>
+                </div>
+              </div>
+              <div class="friction-item">
+                <div class="friction-status error"></div>
+                <div class="friction-label"><strong>Sin invalidación de caché</strong>La plataforma no escala bajo
+                  tráfico de campaña.<div class="friction-impact">Caídas confirmadas en picos de 5x tráfico habitual
+                  </div>
+                </div>
+              </div>
+              <div class="friction-item">
+                <div class="friction-status ok"></div>
+                <div class="friction-label"><strong>SEO técnico</strong>Estructura de URLs y metadatos correctos.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ B3 — ARQUITECTURA / METODOLOGÍA ============ -->
+    <section id="arquitectura" aria-label="Metodología">
+      <div class="container-main">
+        <div class="arquitectura-layout">
+          <div class="arquitectura-copy reveal">
+            <span class="section-badge reveal">Fricciones</span>
+            <h2 class="section-h2 reveal">Fricciones digitales que frenan el crecimiento.</h2>
+            <p>Muchas empresas tienen tráfico. Pero su plataforma no está preparada para convertirlo en negocio.</p>
+            <p>Los problemas suelen repetirse:<br>- Interfaces confusas → los usuarios no entienden qué hacer<br>-
+              Arquitecturas técnicas frágiles → la plataforma no escala<br>- Procesos manuales → el equipo pierde tiempo
+              operativo<br>- Integraciones mal diseñadas → los datos no fluyen entre sistemas</p>
+            <p><strong>El resultado es siempre el mismo.<br>Una plataforma que no convierte todo lo que podría.</strong>
+            </p>
+            <div class="arquitectura-links">
+              <a href="/arquitectura-digital-conversion" class="arquitectura-link">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Cómo funciona nuestra Arquitectura Digital diseñada para convertir
+              </a>
+              <a href="/iniciar-proyecto" class="arquitectura-link">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+                Cuéntanos tu proyecto — analizamos y respondemos en menos de 48h
+              </a>
+            </div>
+          </div>
+          <div class="friction-visual reveal reveal-delay-2">
+            <div class="friction-visual-header">Diagnóstico de arquitectura — ejemplo</div>
+            <div class="friction-item">
+              <div class="friction-status error"></div>
+              <div class="friction-label"><strong>LCP &gt; 4.2s en mobile</strong>Imágenes sin lazy load + bloqueo de
+                render.<div class="friction-impact">+18% abandono en primera visita</div>
+              </div>
+            </div>
+            <div class="friction-item">
+              <div class="friction-status warn"></div>
+              <div class="friction-label"><strong>Checkout: 6 pasos innecesarios</strong>Campos redundantes en el flujo
+                de compra.<div class="friction-impact">Cada paso extra: –8–12% conversión</div>
+              </div>
+            </div>
+            <div class="friction-item">
+              <div class="friction-status error"></div>
+              <div class="friction-label"><strong>Sin caché distribuido</strong>La plataforma cae en picos de campaña.
+                <div class="friction-impact">Pérdida directa de ventas en Black Friday</div>
+              </div>
+            </div>
+            <div class="friction-item">
+              <div class="friction-status warn"></div>
+              <div class="friction-label"><strong>Integraciones parcheadas</strong>Webhooks que fallan semanalmente sin
+                alertas.<div class="friction-impact">Pérdida de leads sin registro</div>
+              </div>
+            </div>
+            <div class="friction-item">
+              <div class="friction-status ok"></div>
+              <div class="friction-label"><strong>SEO técnico</strong>Estructura de URLs y metadatos correctos.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ B3.5 — UX/UI ROI ============ -->
+    <section id="uxui-block" aria-label="Diseño UX/UI y ROI">
+      <div class="container-main">
+        <div class="uxui-layout">
+          <!-- LEFT: copy + funnel -->
+          <div class="uxui-copy reveal">
+            <span class="section-badge">UX/UI & ROI</span>
+            <h2 class="section-h2 reveal">Arquitectura digital diseñada para convertir.</h2>
+            <p style="font-size:.9375rem;color:var(--text-secondary);line-height:1.75;margin-bottom:1.5rem;">En Tres
+              Puntos combinamos tres disciplinas que normalmente trabajan separadas: UX/UI estratégico, arquitectura
+              digital y desarrollo web a medida. Cuando estas tres capas se diseñan juntas, la plataforma se convierte
+              en una infraestructura digital preparada para crecer. Nuestro trabajo consiste en eliminar fricciones que
+              afectan a la conversión, la escalabilidad y la eficiencia.</p>
+            <!-- 88% stat -->
+            <div class="uxui-stat reveal">
+              <div class="uxui-stat-number">3x<span style="font-size:1rem;"></span></div>
+              <p class="uxui-stat-text">Con una arquitectura correcta, la plataforma puede soportar campañas e
+                integraciones complejas <strong>sin romperse</strong>.</p>
+            </div>
+            <!-- Funnel -->
+            <div class="uxui-funnel-wrap">
+              <div class="uxui-funnel-label">Funnel real sin optimización UX</div>
+              <div id="uxui-funnel">
+                <div class="uxui-funnel-row">
+                  <span class="uxui-funnel-step">Visitas</span>
+                  <div class="uxui-funnel-track">
+                    <div class="uxui-funnel-bar" style="background:var(--mint);" data-w="100"></div>
+                  </div>
+                  <span class="uxui-funnel-pct">100%</span>
+                </div>
+                <div class="uxui-funnel-row">
+                  <span class="uxui-funnel-step">Llegan al producto</span>
+                  <div class="uxui-funnel-track">
+                    <div class="uxui-funnel-bar" style="background:var(--mint);" data-w="60"></div>
+                  </div>
+                  <span class="uxui-funnel-pct">60%</span>
+                </div>
+                <div class="uxui-funnel-row">
+                  <span class="uxui-funnel-step" style="color:#f87171;">⚡ Fricción</span>
+                  <div class="uxui-funnel-track">
+                    <div class="uxui-funnel-bar" style="background:rgba(248,113,113,.5);" data-w="35"></div>
+                  </div>
+                  <span class="uxui-funnel-pct" style="color:#f87171;">-35%</span>
+                </div>
+                <div class="uxui-funnel-row">
+                  <span class="uxui-funnel-step">Inician checkout</span>
+                  <div class="uxui-funnel-track">
+                    <div class="uxui-funnel-bar" style="background:var(--mint);" data-w="25"></div>
+                  </div>
+                  <span class="uxui-funnel-pct">25%</span>
+                </div>
+                <div class="uxui-funnel-row">
+                  <span class="uxui-funnel-step" style="color:#f87171;">⚡ Abandono</span>
+                  <div class="uxui-funnel-track">
+                    <div class="uxui-funnel-bar" style="background:rgba(248,113,113,.5);" data-w="18"></div>
+                  </div>
+                  <span class="uxui-funnel-pct" style="color:#f87171;">-18%</span>
+                </div>
+                <div class="uxui-funnel-row">
+                  <span class="uxui-funnel-step" style="color:var(--mint);">Conversión real</span>
+                  <div class="uxui-funnel-track">
+                    <div class="uxui-funnel-bar" style="background:var(--mint);" data-w="7"></div>
+                  </div>
+                  <span class="uxui-funnel-pct" style="color:var(--mint);">7%</span>
+                </div>
+              </div>
+            </div>
+            <a href="/servicios/diseno-ux-ui-barcelona" class="btn-ghost">Ver el servicio de UX/UI completo <svg
+                width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg></a>
+          </div>
+          <!-- RIGHT: benefits grid -->
+          <div class="uxui-benefits reveal reveal-delay-1">
+            <div
+              style="font-size:.65rem;font-weight:700;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.5rem;">
+              Beneficios de la <span style="color:var(--mint);">Ingeniería UX</span></div>
+            <div class="uxui-grid">
+              <div class="uxui-card reveal">
+                <div class="uxui-card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                  </svg></div>
+                <div class="uxui-card-title">Maximización de conversiones B2B</div>
+                <p class="uxui-card-text">Optimizamos flujos de usuario complejos para reducir la fricción cognitiva. Un
+                  onboarding técnico sin bloqueos se traduce en aumento del LTV y tasas de conversión medibles en el
+                  siguiente ciclo.</p>
+              </div>
+              <div class="uxui-card reveal reveal-delay-1">
+                <div class="uxui-card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                  </svg></div>
+                <div class="uxui-card-title">Contención de deuda técnica</div>
+                <p class="uxui-card-text">Sistemas de diseño modulares y componentes listos para producción. Menos
+                  iteraciones entre diseño y código significa costes de desarrollo más eficientes en cada release.</p>
+              </div>
+              <div class="uxui-card reveal">
+                <div class="uxui-card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                  </svg></div>
+                <div class="uxui-card-title">Retención y engagement activo</div>
+                <p class="uxui-card-text">Interfaces de interacción que permiten la operación ágil. Plataformas donde
+                  tus usuarios profesionales trabajan con confianza, no con tolerancia.</p>
+              </div>
+              <div class="uxui-card reveal reveal-delay-1">
+                <div class="uxui-card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg></div>
+                <div class="uxui-card-title">Retorno de inversión estructural</div>
+                <p class="uxui-card-text">Una inversión en UX bien ejecutada amortiza de forma exponencial. Alineamos tu
+                  interfaz con los objetivos de negocio que afectan directamente al ROI a largo plazo.</p>
+              </div>
+              <div class="uxui-card reveal">
+                <div class="uxui-card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                  </svg></div>
+                <div class="uxui-card-title">Posicionamiento de marca premium</div>
+                <p class="uxui-card-text">Supera las restricciones visuales de tu industria. Una capa estética coherente
+                  posiciona la calidad de tu producto ante inversores y clientes que toman decisiones en 8 segundos.</p>
+              </div>
+              <div class="uxui-card reveal reveal-delay-1">
+                <div class="uxui-card-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3" />
+                  </svg></div>
+                <div class="uxui-card-title">Inclusión y normativa AA/AAA</div>
+                <p class="uxui-card-text">Interfaces construidas sobre estándares de accesibilidad. No es solo un
+                  requerimiento ético: ninguna cuenta corporativa queda excluida por una barrera de interfaz.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRINCHERA — CREDIBILIDAD ============ -->
+    <section id="trinchera" aria-label="Datos de experiencia">
+      <div class="container-main">
+        <div class="trinchera-grid reveal">
+          <div class="trinchera-item">
+            <div class="trinchera-tag">Experiencia</div>
+            <div class="trinchera-number"><span class="trinchera-accent">+</span><span data-count="13">13</span></div>
+            <div class="trinchera-label">años diagnosticando y construyendo plataformas digitales</div>
+            <div class="trinchera-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M4.5 12.75l6 6 9-13.5" />
+              </svg>Desde 2011</div>
+          </div>
+          <div class="trinchera-item">
+            <div class="trinchera-tag">Proyectos</div>
+            <div class="trinchera-number"><span class="trinchera-accent">+</span><span data-count="80">80</span></div>
+            <div class="trinchera-label">proyectos de desarrollo y diseño a medida ejecutados</div>
+            <div class="trinchera-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M4.5 12.75l6 6 9-13.5" />
+              </svg>0 templates</div>
+          </div>
+          <div class="trinchera-item">
+            <div class="trinchera-tag">Disciplinas</div>
+            <div class="trinchera-number"><span>4</span></div>
+            <div class="trinchera-label">UX · UI · Desarrollo · Design Engineering bajo un mismo equipo</div>
+            <div class="trinchera-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M4.5 12.75l6 6 9-13.5" />
+              </svg>Sin silos</div>
+          </div>
+          <div class="trinchera-item">
+            <div class="trinchera-tag">Google Reviews</div>
+            <div class="trinchera-number"><span>5.0</span></div>
+            <div class="trinchera-stars">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+            <div class="trinchera-label">valoración media · 6 reseñas verificadas</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ B4 — CASOS ============ -->
+    <section id="casos" aria-label="Casos de negocio">
+      <div class="container-main">
+        <div class="casos-header reveal">
+          <div>
+            <span class="section-badge reveal">Casos de negocio</span>
+            <h2 class="section-h2 reveal">Casos donde la arquitectura digital marca la diferencia.</h2>
+            <p class="section-sub" style="margin-top:1rem;">Algunos proyectos requieren algo más que un rediseño visual.
+              Necesitan replantear la arquitectura completa del sistema.</p>
+          </div>
+          <a href="/casos-de-negocio" class="btn-ghost">Ver todos los casos <svg width="16" height="16" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></a>
+        </div>
+        <div class="casos-grid">
+          <a href="/casos-de-negocio/exitbcn" class="caso-card reveal">
+            <div class="caso-sector">E-commerce especializado</div>
+            <div class="caso-problem">ExitBCN</div>
+            <p class="caso-solution">Optimización UX y arquitectura para un e‑commerce especializado.</p>
+            <div class="caso-impact">
+              <div class="caso-impact-label">Solución ejecutada</div>
+              <div class="caso-impact-text">Rediseño completo del flujo de solicitud basado en datos de comportamiento. Arquitectura de información reestructurada y prototipado validado con usuarios reales antes de desarrollo.</div>
+            </div>
+            <svg class="caso-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="/casos-de-negocio/penguinaula" class="caso-card reveal reveal-delay-1">
+            <div class="caso-sector">Editorial · Portal educativo</div>
+            <div class="caso-problem">Penguin Aula</div>
+            <p class="caso-solution">Rediseño UX de plataforma educativa para mejorar la experiencia de uso.</p>
+            <div class="caso-impact">
+              <div class="caso-impact-label">Solución ejecutada</div>
+              <div class="caso-impact-text">Rediseño UX completo y arquitectura técnica optimizada. Rendimiento validado bajo carga antes del lanzamiento. Cero incidencias en el primer inicio de curso tras el rediseño.</div>
+            </div>
+            <svg class="caso-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIOS ============ -->
+    <section id="testimonios" aria-labelledby="testimonios-heading">
+      <div class="container-main">
+        <div class="testimonios-header reveal">
+          <div class="section-badge">Clientes</div>
+          <h2 id="testimonios-heading" class="section-h2">Los que <span
+              style="background:var(--gradient-brand);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:aurora 8s ease infinite;display:inline;">ya
+              escalaron</span><br />hablan por nosotros</h2>
+          <p class="section-sub">Directivos que tenían un cuello de botella tecnológico. Ahora tienen una plataforma que
+            trabaja para ellos.</p>
+          <div class="google-rating" aria-label="Valoración 5 estrellas en Google">
+            <div class="google-logo">
+              <div class="google-g">G</div>Google
+            </div>
+            <div class="stars" aria-hidden="true"><span class="star">★</span><span class="star">★</span><span
+                class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            <span class="rating-text">5.0</span>
+          </div>
+        </div>
+        <div class="carousel-viewport reveal" id="carousel-wrapper">
+          <div class="carousel-track" id="carousel-track">
+
+            <!-- 1. Zimconnection -->
+            <article class="testimonio-card featured">
+              <span class="quote-mark">"</span>
+              <div class="card-stars"><span class="card-star">★</span><span class="card-star">★</span><span
+                  class="card-star">★</span><span class="card-star">★</span><span class="card-star">★</span></div>
+              <p class="testimonio-text">Estamos encantados con el trabajo de Tres Puntos. Nos han creado la página web y el resultado ha <em>superado nuestras expectativas</em>. Desde el primer día, Jordi y Dani nos trataron genial, siempre atentos a lo que necesitábamos y dispuestos a ayudar en todo momento. El proceso fue muy fácil y fluido, nos explicaron todo con claridad y cumplieron con los plazos sin problema. La web ha quedado espectacular, justo como la imaginábamos. Sin duda, una agencia 100% recomendable.</p>
+              <div class="testimonio-author">
+                <div class="author-avatar">GA</div>
+                <div>
+                  <div class="author-name">Giulia Acchioni Mena</div>
+                  <div class="author-company">Zimconnections</div>
+                  <div class="author-verified"><span class="verified"><span class="verified-icon">✓</span> Reseña verificada en Google</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2. Capilclinic -->
+            <article class="testimonio-card">
+              <span class="quote-mark">"</span>
+              <div class="card-stars"><span class="card-star">★</span><span class="card-star">★</span><span
+                  class="card-star">★</span><span class="card-star">★</span><span class="card-star">★</span></div>
+              <p class="testimonio-text">Quiero agradecer a todo el equipo de Tres Puntos por el excelente trabajo realizado en el rediseño de nuestra web. <em>El resultado ha superado con creces nuestras expectativas.</em> Mención especial para Jose Expósito, que desde el primer minuto transmitió confianza, profesionalidad y un enfoque impecable. Ha sido un verdadero placer trabajar con él y con todo el equipo. ¡Repetiríamos sin dudarlo!</p>
+              <div class="testimonio-author">
+                <div class="author-avatar">PV</div>
+                <div>
+                  <div class="author-name">Pau Vilanova</div>
+                  <div class="author-company">Capilclinic</div>
+                  <div class="author-verified"><span class="verified"><span class="verified-icon">✓</span> Reseña verificada en Google</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3. Diferentidea -->
+            <article class="testimonio-card">
+              <span class="quote-mark">"</span>
+              <div class="card-stars"><span class="card-star">★</span><span class="card-star">★</span><span
+                  class="card-star">★</span><span class="card-star">★</span><span class="card-star">★</span></div>
+              <p class="testimonio-text">Pocas veces uno recibe un servicio que supera sus expectativas. Para mí así fue con el equipo de Tres Puntos. <em>Se involucran del todo en el proyecto, escuchan tus necesidades, las evalúan y lo hacen suyo.</em> Cuidan cada detalle en busca de la perfección. Una vez terminado el proyecto nos hicieron seguimiento y nos ayudaron a perfeccionar algunos detalles. Si estás pensando en trabajar con Tres Puntos, ni lo dudes.</p>
+              <div class="testimonio-author">
+                <div class="author-avatar">RR</div>
+                <div>
+                  <div class="author-name">Raul Rabassa</div>
+                  <div class="author-company">Diferentidea</div>
+                  <div class="author-verified"><span class="verified"><span class="verified-icon">✓</span> Reseña verificada en Google</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4. Engreskat -->
+            <article class="testimonio-card">
+              <span class="quote-mark">"</span>
+              <div class="card-stars"><span class="card-star">★</span><span class="card-star">★</span><span
+                  class="card-star">★</span><span class="card-star">★</span><span class="card-star">★</span></div>
+              <p class="testimonio-text">El personal de Tres Puntos nos han llevado los dos proyectos que tenemos. <em>Quedamos tan contentas con el primero que no tuvimos ninguna duda en encargarles la segunda página web.</em> No solo quedamos encantadas con los diseños y la profesionalidad, sino que te asesoran en muchos campos que desconoces. Siempre resuelven tus dudas al momento y te acompañan durante y después del proceso. Sin duda los mejores.</p>
+              <div class="testimonio-author">
+                <div class="author-avatar">EJ</div>
+                <div>
+                  <div class="author-name">Esther Jiménez García</div>
+                  <div class="author-company">Engreskat</div>
+                  <div class="author-verified"><span class="verified"><span class="verified-icon">✓</span> Reseña verificada en Google</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 5. Absolute Properties -->
+            <article class="testimonio-card">
+              <span class="quote-mark">"</span>
+              <div class="card-stars"><span class="card-star">★</span><span class="card-star">★</span><span
+                  class="card-star">★</span><span class="card-star">★</span><span class="card-star">★</span></div>
+              <p class="testimonio-text">Trabajar con Tres Puntos es sinónimo de calidad y atención personalizada. <em>La relación calidad-precio es excelente, puesto que el proceso de trabajo y el resultado final así lo reflejan.</em> Con ellos hemos trabajado nuestra nueva página web y estamos encantados con los resultados. ¡Muchas gracias por todo!</p>
+              <div class="testimonio-author">
+                <div class="author-avatar">AP</div>
+                <div>
+                  <div class="author-name">ABSOLUTE PROPERTIES</div>
+                  <div class="author-company">Real Estate, S.A.</div>
+                  <div class="author-verified"><span class="verified"><span class="verified-icon">✓</span> Reseña verificada en Google</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 6. gibobs -->
+            <article class="testimonio-card">
+              <span class="quote-mark">"</span>
+              <div class="card-stars"><span class="card-star">★</span><span class="card-star">★</span><span
+                  class="card-star">★</span><span class="card-star">★</span><span class="card-star">★</span></div>
+              <p class="testimonio-text">Contar con Jordi y su equipo ha sido <em>la mejor decisión que pude tomar</em>. Cumplen con creces las expectativas, son rápidos y se adaptan a cualquier situación por compleja que sea. Tienen una solución para todo. Su nivel de calidad es máximo y además son encantadores. Los recomiendo al 100%.</p>
+              <div class="testimonio-author">
+                <div class="author-avatar">GF</div>
+                <div>
+                  <div class="author-name">Gonzalo Fernández de la Mora</div>
+                  <div class="author-company">gibobs</div>
+                  <div class="author-verified"><span class="verified"><span class="verified-icon">✓</span> Reseña verificada en Google</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 7. Tu solución hipotecaria -->
+            <article class="testimonio-card">
+              <span class="quote-mark">"</span>
+              <div class="card-stars"><span class="card-star">★</span><span class="card-star">★</span><span
+                  class="card-star">★</span><span class="card-star">★</span><span class="card-star">★</span></div>
+              <p class="testimonio-text">No puedo recomendar más el servicio y atención de esta agencia. <em>Alta profesionalidad que no se limita a escuchar al cliente, sino que también aportan y enriquecen el proyecto.</em> Cumplen plazos, atienden al momento, son serios y transparentes en todo el proceso. Muy recomendado y espero seguir trabajando con ellos.</p>
+              <div class="testimonio-author">
+                <div class="author-avatar">TS</div>
+                <div>
+                  <div class="author-name">Tu Solución Hipotecaria</div>
+                  <div class="author-company">Servicios financieros</div>
+                  <div class="author-verified"><span class="verified"><span class="verified-icon">✓</span> Reseña verificada en Google</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 8. ExitBCN -->
+            <article class="testimonio-card">
+              <span class="quote-mark">"</span>
+              <div class="card-stars"><span class="card-star">★</span><span class="card-star">★</span><span
+                  class="card-star">★</span><span class="card-star">★</span><span class="card-star">★</span></div>
+              <p class="testimonio-text">Pedimos presupuesto para una página web y <em>se implicó muchísimo en el proyecto</em>. El resultado ha sido excelente, muy atento y dedicado. No te deja tirado con las mil cosas que salen. Lo recomiendo 100x100.</p>
+              <div class="testimonio-author">
+                <div class="author-avatar">RA</div>
+                <div>
+                  <div class="author-name">Raul Aznar</div>
+                  <div class="author-company">ExitBCN</div>
+                  <div class="author-verified"><span class="verified"><span class="verified-icon">✓</span> Reseña verificada en Google</span></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 9. Adrián Rodríguez -->
+            <article class="testimonio-card">
+              <span class="quote-mark">"</span>
+              <div class="card-stars"><span class="card-star">★</span><span class="card-star">★</span><span
+                  class="card-star">★</span><span class="card-star">★</span><span class="card-star">★</span></div>
+              <p class="testimonio-text">Hemos contactado con Tres Puntos por recomendación de unos amigos del sector informático y <em>estamos muy contentos con el trato recibido por parte de Jordi</em>, por su trabajo, seriedad y rapidez en respuesta a cualquier tipo de duda. Por los trabajos realizados y referencias, seguro que no nos defrauda.</p>
+              <div class="testimonio-author">
+                <div class="author-avatar">AR</div>
+                <div>
+                  <div class="author-name">Adrián Rodríguez</div>
+                  <div class="author-company">Cliente particular</div>
+                  <div class="author-verified"><span class="verified"><span class="verified-icon">✓</span> Reseña verificada en Google</span></div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+        <!-- Controles -->
+        <div class="carousel-controls">
+          <div class="carousel-dots" id="carousel-dots"></div>
+          <div class="carousel-btns">
+            <button class="carousel-btn" id="carousel-prev" aria-label="Anterior">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="carousel-btn" id="carousel-next" aria-label="Siguiente">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="testimonios-footer">
+            <p class="testimonios-footer-text"><strong>9 reseñas verificadas en Google.</strong> Directivos que tenían
+              un problema técnico real y decidieron resolverlo.</p>
+            <a href="/iniciar-proyecto" class="btn-ghost">Cuéntanos tu proyecto <svg width="14" height="14"
+                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg></a>
+          </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESO ============ -->
+    <section id="proceso" aria-label="Proceso de trabajo">
+      <div class="container-main">
+        <div class="proceso-layout">
+          <div class="reveal">
+            <span class="section-badge reveal">Proceso</span>
+            <h2 class="section-h2 reveal">Cinco pasos entre tu proyecto y una plataforma que convierte.</h2>
+            <p class="section-sub" style="margin-top:1rem;">Sin reuniones de ventas. Sin propuestas genéricas. Con un
+              documento funcional que define el alcance antes de empezar.</p>
+            <div class="proceso-steps-list">
+              <div class="proceso-step reveal">
+                <div class="proceso-step-bubble"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                  </svg></div>
+                <div>
+                  <div class="proceso-step-num">01</div>
+                  <div class="proceso-step-title">Cuéntanos el contexto</div>
+                  <p class="proceso-step-desc">Formulario de 5 pasos: tipo de proyecto, tecnología actual, objetivos,
+                    plazos y contexto de negocio. Sin llamada previa. Sin vendedor intermediario.</p>
+                  <span class="proceso-step-badge"><svg width="9" height="9" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5">
+                      <path d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>3 minutos</span>
+                </div>
+              </div>
+              <div class="proceso-step reveal">
+                <div class="proceso-step-bubble"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                  </svg></div>
+                <div>
+                  <div class="proceso-step-num">02</div>
+                  <div class="proceso-step-title">Analizamos y respondemos en 48h</div>
+                  <p class="proceso-step-desc">Revisamos el contexto, identificamos si tu proyecto encaja con lo que
+                    hacemos y, si encaja, enviamos una primera valoración de alcance. Si no encaja, te lo decimos sin
+                    rodeos.</p>
+                  <span class="proceso-step-badge"><svg width="9" height="9" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5">
+                      <path d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>Sin reunión previa</span>
+                </div>
+              </div>
+              <div class="proceso-step reveal">
+                <div class="proceso-step-bubble"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z" />
+                  </svg></div>
+                <div>
+                  <div class="proceso-step-num">03</div>
+                  <div class="proceso-step-title">Diagnóstico técnico de tu plataforma</div>
+                  <p class="proceso-step-desc">Para proyectos de rediseño: análisis técnico de la plataforma actual con
+                    mapa de fricciones y consecuencia financiera de cada problema identificado. Para proyectos nuevos:
+                    arquitectura de información y benchmark competitivo.</p>
+                  <span class="proceso-step-badge"><svg width="9" height="9" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5">
+                      <path d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>5–7 días hábiles</span>
+                </div>
+              </div>
+              <div class="proceso-step reveal">
+                <div class="proceso-step-bubble"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                  </svg></div>
+                <div>
+                  <div class="proceso-step-num">04</div>
+                  <div class="proceso-step-title">Documento funcional y propuesta</div>
+                  <p class="proceso-step-desc">El documento que define el proyecto: objetivos medibles, audiencia,
+                    sitemap, funcionalidades, integraciones y estimación de alcance. La propuesta económica es
+                    consecuencia del documento, no al revés.</p>
+                  <span class="proceso-step-badge"><svg width="9" height="9" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5">
+                      <path d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>Alcance cerrado</span>
+                </div>
+              </div>
+              <div class="proceso-step reveal">
+                <div class="proceso-step-bubble"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                  </svg></div>
+                <div>
+                  <div class="proceso-step-num">05</div>
+                  <div class="proceso-step-title">Proyecto aprobado — arrancamos</div>
+                  <p class="proceso-step-desc">Con el documento funcional validado y el alcance cerrado, iniciamos. El
+                    documento se convierte en la hoja de ruta técnica. Sin sorpresas de alcance, sin cambios absorbidos
+                    en silencio.</p>
+                  <span class="proceso-step-badge" style="color:var(--mint);border-color:rgba(93,255,191,.3);"><svg
+                      width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>Inicio formal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sticky CTA -->
+          <div class="reveal reveal-delay-1" style="position:sticky;top:7rem;">
+            <div
+              style="background:var(--bg-surface);border:1px solid var(--border-strong);border-radius:var(--radius-2xl);padding:2.5rem;">
+              <div
+                style="width:48px;height:48px;border-radius:50%;background:rgba(93,255,191,.08);border:1px solid rgba(93,255,191,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;">
+                <svg width="20" height="20" fill="none" stroke="var(--mint)" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path
+                    d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                </svg>
+              </div>
+              <h3
+                style="font-family:var(--font-heading);font-weight:800;font-size:1.2rem;color:var(--text-primary);line-height:1.25;margin-bottom:.875rem;">
+                Empieza aquí.<br />Sin reunión previa.</h3>
+              <p style="font-size:.875rem;color:var(--text-muted);line-height:1.7;margin-bottom:2rem;">Completa el
+                formulario con el contexto de tu proyecto. Lo analizamos y te respondemos en menos de 48h. Si no encaja
+                con lo que hacemos, te lo decimos sin rodeos.</p>
+              <div style="display:flex;flex-direction:column;gap:.875rem;margin-bottom:1.75rem;">
+                <div style="display:flex;align-items:center;gap:.75rem;font-size:.8125rem;color:var(--text-muted);">
+                  <svg width="14" height="14" fill="none" stroke="var(--mint)" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  Sin compromiso ni presupuesto previo
+                </div>
+                <div style="display:flex;align-items:center;gap:.75rem;font-size:.8125rem;color:var(--text-muted);">
+                  <svg width="14" height="14" fill="none" stroke="var(--mint)" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  Respuesta en menos de 48h laborables
+                </div>
+                <div style="display:flex;align-items:center;gap:.75rem;font-size:.8125rem;color:var(--text-muted);">
+                  <svg width="14" height="14" fill="none" stroke="var(--mint)" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  Si no encajamos, te lo decimos
+                </div>
+              </div>
+              <a href="/iniciar-proyecto" class="btn-secondary magnetic-btn"
+                style="width:100%;justify-content:center;">
+                Formulario detallado (Respuesta 48h)
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <p
+                style="margin-top:1rem;font-size:.75rem;color:var(--text-muted);text-align:center;font-family:var(--font-mono);letter-spacing:.04em;">
+                3 min · Sin reunión previa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" aria-label="Preguntas frecuentes">
+      <div class="container-main">
+        <div class="faq-layout">
+          <div class="reveal">
+            <span class="section-badge reveal">FAQ</span>
+            <h2 class="section-h2 reveal">Las preguntas que tienes antes de decidir.</h2>
+            <p class="section-sub" style="margin-top:1rem;">Las respondemos sin evasivas porque un lead bien informado
+              es un proyecto bien encajado.</p>
+          </div>
+          <div class="faq-list reveal reveal-delay-1">
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">¿Qué es la Arquitectura Digital de Conversión?<svg
+                  class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Es nuestro modelo de trabajo: antes de diseñar o desarrollar,
+                  diagnosticamos dónde pierde dinero tu plataforma. El UX/UI retiene al usuario y el desarrollo a medida
+                  elimina cada fisura técnica. El diseño es siempre la consecuencia del diagnóstico, nunca el punto de
+                  partida.</div>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">¿Cómo mejora el ROI un buen diseño UX/UI?<svg
+                  class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">El UX elimina fricción en el funnel. Cada segundo de carga extra, cada
+                  paso innecesario en el checkout y cada elemento que genera confusión tiene un coste directo en
+                  conversión medible. Un buen diseño UX no es estética: es reducción de abandono y aumento de ingresos.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">¿Por dónde se empieza a trabajar con Tres Puntos?<svg
+                  class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Por el formulario en /iniciar-proyecto. Nos cuentas el contexto de tu
+                  proyecto en 3 minutos. Lo analizamos y respondemos en menos de 48h. Si tienes una plataforma existente
+                  con problemas, empezamos con diagnóstico técnico. Si es un proyecto nuevo, empezamos con arquitectura
+                  de información.</div>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">¿Trabajáis fuera de Barcelona?<svg class="faq-icon"
+                  fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Sí. El proceso es 100% remoto. Tenemos proyectos en Madrid, Valencia,
+                  Bilbao y con empresas europeas. La ubicación no es un criterio de trabajo. El criterio es que exista
+                  un problema técnico real que resolver con impacto en negocio.</div>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">¿Cuándo tiene sentido el servicio de Design
+                Engineering?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Cuando tu equipo de diseño y tu equipo de desarrollo producen resultados
+                  distintos: el prototipo y el producto final no son lo mismo. O cuando los cambios de diseño generan
+                  deuda técnica de forma sistemática. Si tienes un design system complejo o animaciones de
+                  microinteracción que no se pueden hacer con plantillas, ese es nuestro terreno.</div>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">¿Qué incluye la auditoría de arquitectura digital?<svg
+                  class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Un documento funcional con la arquitectura actual mapeada, fricciones
+                  técnicas identificadas con su consecuencia financiera y prioridades de acción ordenadas por impacto en
+                  conversión. No un informe genérico: la base sobre la que se construye el proyecto si decidimos
+                  trabajar juntos.</div>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-question" aria-expanded="false">¿Usáis templates o todo es a medida?<svg
+                  class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Todo a medida. Los templates tienen su lugar cuando el objetivo es
+                  presencia mínima. Nuestros proyectos tienen objetivos de conversión, rendimiento y escala que los
+                  templates no pueden cumplir. Cero shortcuts que generen deuda técnica en 18 meses.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ B5 — CIERRE ============ -->
+    <section id="cierre" aria-label="Iniciar proyecto">
+      <div class="container-main">
+        <div class="cierre-layout">
+          <div class="cierre-copy reveal">
+            <span class="section-badge reveal">Siguiente paso</span>
+            <h2 class="cierre-h2">¿Tu plataforma está preparada para crecer?</h2>
+            <p class="cierre-sub">Muchas empresas descubren demasiado tarde que su plataforma no escala. <br><br>Cuando
+              llegan campañas, tráfico o nuevas integraciones aparecen los problemas. La arquitectura digital correcta
+              se diseña antes de que el negocio lo necesite. <br><br>Si estás planteando rediseñar tu plataforma,
+              construir un sistema desde cero o resolver cuellos de botella técnicos, el primer paso es entender el
+              proyecto. Cuéntanos qué necesitas construir.</p>
+            <div class="cierre-reasons">
+              <div class="cierre-reason">
+                <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                    viewBox="0 0 24 24">
+                    <path d="M4.5 12.75l6 6 9-13.5" />
+                  </svg></div><span>Sin reunión de ventas previa. Formulario de 5 pasos en 3 minutos.</span>
+              </div>
+              <div class="cierre-reason">
+                <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                    viewBox="0 0 24 24">
+                    <path d="M4.5 12.75l6 6 9-13.5" />
+                  </svg></div><span>Respondemos en menos de 48h laborables con una valoración de alcance real.</span>
+              </div>
+              <div class="cierre-reason">
+                <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                    viewBox="0 0 24 24">
+                    <path d="M4.5 12.75l6 6 9-13.5" />
+                  </svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+              </div>
+              <div class="cierre-reason">
+                <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                    viewBox="0 0 24 24">
+                    <path d="M4.5 12.75l6 6 9-13.5" />
+                  </svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
+              </div>
+            </div>
+          </div>
+          <div class="cierre-form-col reveal reveal-delay-1">
+            <div class="form-gradient-accent"></div>
+            <div class="cierre-form-inner">
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="label label-required" for="f-nombre">Nombre</label>
+                  <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
+                </div>
+                <div class="form-field">
+                  <label class="label label-required" for="f-email">Email</label>
+                  <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="label label-required" for="f-tel">Teléfono</label>
+                  <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
+                </div>
+                <div class="form-field">
+                  <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
+                  <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false"
+                    aria-haspopup="listbox">
+                    <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado"
+                      id="cs-trigger">
+                      <span class="custom-select-value" id="cs-label">Selecciona rango</span>
+                      <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </button>
+                    <div class="custom-select-panel" role="listbox">
+                      <div class="custom-select-placeholder">Rango aproximado</div>
+                      <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
+                      <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
+                      <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
+                      <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                    </div>
+                  </div>
+                  <input type="hidden" id="f-presupuesto" name="budget" value="" />
+                </div>
+              </div>
+              <div class="form-field">
+                <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
+                <textarea id="f-mensaje" class="input" rows="4"
+                  placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
+              </div>
+              <label class="checkbox-row" for="f-privacidad">
+                <input type="checkbox" id="f-privacidad" required />
+                <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
+                    Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+              </label>
+              <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn"
+                style="width:100%;justify-content:center;">
+                Cuéntanos tu proyecto
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+              <p class="form-note">Sin compromiso. Respuesta en menos de 48h laborables.</p>
+
+              <div class="form-divider"
+                style="display:flex; align-items:center; text-align:center; margin:1.5rem 0; color:var(--text-muted); font-size:0.875rem;">
+                <div style="flex:1; border-top:1px solid var(--border-base);"></div>
+                <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
+                <div style="flex:1; border-top:1px solid var(--border-base);"></div>
+              </div>
+
+              <a href="/iniciar-proyecto" class="btn-secondary" style="width:100%;justify-content:center;">
+                Formulario completo (Presupuesto en 48h)
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer>
+      <div class="container-main">
+        <!-- Big Reveal CTA -->
+        <div class="footer-big-cta">
+          <a href="/iniciar-proyecto" class="footer-big-cta-link">Cuéntanos tu proyecto</a>
+          <div class="footer-big-cta-sub">Hablemos de Conversión</div>
+        </div>
+
+        <div class="footer-grid">
+          <!-- Col 1: Brand -->
+          <div class="footer-col-brand">
+            <div class="footer-logo">
+              <svg xmlns="http://www.w3.org/2000/svg" width="160" height="62" viewBox="0 0 261.303 99.928"
+                aria-label="Tres Puntos Comunicación">
+                <g transform="translate(-143.8 -26.1)">
+                  <path
+                    d="M243.558,44.827a30.774,30.774,0,0,1,23.994,11.412,61.579,61.579,0,0,1,9.364-17.264,49.651,49.651,0,0,0-66.716,0,61.58,61.58,0,0,1,9.364,17.264,31.238,31.238,0,0,1,23.994-11.412Z"
+                    transform="translate(30.748 0)" fill="#5dffbf" />
+                  <path
+                    d="M355.213,26.1a49.114,49.114,0,0,0-33.358,12.875,45.236,45.236,0,0,0-7.023,7.9,49.619,49.619,0,0,0-9.364,28.969,31.1,31.1,0,0,1-31.017,31.163A30.774,30.774,0,0,1,250.457,95.6a31.275,31.275,0,0,1-7.023-19.751,49.618,49.618,0,0,0-9.364-28.969,45.233,45.233,0,0,0-7.023-7.9A49.114,49.114,0,0,0,193.691,26.1a49.891,49.891,0,0,0,0,99.781,49.114,49.114,0,0,0,33.358-12.875,61.579,61.579,0,0,1-9.364-17.264,30.876,30.876,0,1,1,7.023-19.459,49.618,49.618,0,0,0,9.364,28.969,45.231,45.231,0,0,0,7.023,7.9,49.651,49.651,0,0,0,66.716,0,45.232,45.232,0,0,0,7.023-7.9A49.619,49.619,0,0,0,324.2,76.283a31.1,31.1,0,1,1,7.023,19.459,61.579,61.579,0,0,1-9.364,17.264,49.113,49.113,0,0,0,33.358,12.875,49.891,49.891,0,1,0,0-99.781Z"
+                    transform="translate(0 0)" fill="#5dffbf" />
+                  <circle cx="16.24" cy="16.24" r="16.24" transform="translate(177.158 59.751)" fill="#f8f8f8" />
+                  <circle cx="16.24" cy="16.24" r="16.24" transform="translate(258.065 59.751)" fill="#f8f8f8" />
+                  <circle cx="16.24" cy="16.24" r="16.24" transform="translate(338.973 59.751)" fill="#f8f8f8" />
+                </g>
+              </svg>
+            </div>
+            <p class="footer-brand-text">Desde 2011 construyendo Arquitectura Digital de Conversión en Barcelona. No
+              hacemos webs, creamos activos.</p>
+            <div class="footer-status">
+              <div class="status-item">
+                <span class="status-dot"></span>
+                <span>CREANDO...</span>
+              </div>
+              <div class="status-item">
+                <span id="footer-time">BCN 00:26</span>
+              </div>
+              <div class="status-item">
+                <span>ESTADO: CONECTADOS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Qué hacemos (SEO Priority) -->
+          <div class="footer-col" role="navigation" aria-label="Servicios Principales">
+            <h4 class="footer-h4">Qué hacemos</h4>
+            <nav class="footer-links">
+              <a href="/arquitectura-digital-conversion">Arquitectura Digital (ADC)</a>
+              <a href="/servicios/diseno-ux-ui-barcelona">Estrategia UX/UI</a>
+              <a href="/servicios/desarrollo-web-a-medida-barcelona">Desarrollo Web</a>
+              <a href="/servicios/ia-generativa-empresas">IA & Automatización</a>
+              <a href="/servicios/design-engineer-barcelona">Design Engineering</a>
+            </nav>
+          </div>
+
+          <!-- Col 3: Agencia -->
+          <div class="footer-col" role="navigation" aria-label="Sobre la Agencia">
+            <h4 class="footer-h4">Agencia</h4>
+            <nav class="footer-links">
+              <a href="/nosotros">Nosotros</a>
+              <a href="/casos-de-negocio">Casos de Negocio</a>
+              <a href="/blog">Blog Técnico</a>
+              <a href="/iniciar-proyecto">Hablemos</a>
+            </nav>
+          </div>
+
+          <!-- Col 4: Ubicación Global -->
+          <div class="footer-col">
+            <h4 class="footer-h4">Ubicación</h4>
+            <p style="font-size: .8125rem; color: var(--text-muted); line-height: 1.6;">El mundo es nuestra
+              ubicación.<br>Conectados desde Barcelona.</p>
+            <div class="footer-social" style="margin-top: 1rem;">
+              <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-family:var(--font-mono);color:var(--text-muted);text-decoration:none;transition:color .2s;">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Point Map Background & Animated Particles -->
+        <div class="footer-map-container">
+          <div class="dot-grid"></div>
+          <div class="world-dot"></div>
+          <div class="world-dot"></div>
+          <div class="world-dot"></div>
+          <div class="world-dot"></div>
+        </div>
+        <div class="footer-bg-animation" id="footer-particles"></div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">© 2025 Tres Puntos · Made with precision in Barcelona.</p>
+          <div class="footer-bottom-links">
+            <a href="/aviso-legal">Legal</a>
+            <a href="/politica-privacidad">Privacidad</a>
+            <a href="/politica-cookies">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  <script src="/js/components.js" defer></script>
+  <script>TP.navbar();</script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js" defer></script>
+  <script>TP.initJS();</script>
+</body>
+
+</html>

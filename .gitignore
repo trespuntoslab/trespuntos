@@ -1,0 +1,28 @@
+# Claude Code config (contiene tokens)
+.mcp.json
+.claude/
+
+# Documentacion interna
+master/
+ai-marketing-claude/
+n8n-workflow-doc-funcional.json
+n8n-flujo-rediseno.md
+PIPELINE-LEADS-RESUMEN.md
+contexto.rtf
+dashboard-leads.jsx
+generate-blogs.sh
+supabase-schema.sql
+*.docx
+
+# Duplicado raiz (el bueno esta en /js/)
+/components.js
+
+# Guia interna n8n
+n8n-implementacion-guia.html
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backups
+*.bak

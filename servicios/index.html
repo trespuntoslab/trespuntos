@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios de Desarrollo Web y UX/UI Barcelona · Tres Puntos</title>
+  <meta name="description"
+    content="Servicios de diseño UX/UI, desarrollo web a medida, consultoría digital, e-commerce y IA generativa en Barcelona para empresas que necesitan convertir más." />
+  
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/servicios/" />
+  <meta property="og:title" content="Servicios | Arquitectura Digital de Conversión · Tres Puntos" />
+  <meta property="og:description"
+    content="Servicios de diseño UX/UI, desarrollo web a medida, consultoría digital, e-commerce y IA generativa en Barcelona para empresas que necesitan convertir más." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/servicios/" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Servicios de Arquitectura Digital",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Consultoría de Arquitectura Digital",
+          "url": "https://www.trespuntoscomunicacion.es/servicios/consultoria-digital-barcelona",
+          "description": "Analizamos plataformas existentes para detectar cuellos de botella técnicos o de conversión."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Diseño UX/UI",
+          "url": "https://www.trespuntoscomunicacion.es/servicios/diseno-ux-ui-barcelona",
+          "description": "Diseñamos experiencias digitales pensadas para guiar al usuario hacia la acción."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Desarrollo Web a Medida",
+          "url": "https://www.trespuntoscomunicacion.es/servicios/desarrollo-web-a-medida-barcelona",
+          "description": "Construimos plataformas digitales sin las limitaciones de las plantillas o CMS genéricos."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Tienda Online a Medida",
+          "url": "https://www.trespuntoscomunicacion.es/servicios/tienda-online-barcelona",
+          "description": "Plataformas e-commerce preparadas para convertir tráfico en ventas y escalar."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Design Engineer",
+          "url": "https://www.trespuntoscomunicacion.es/servicios/design-engineer-barcelona",
+          "description": "Traducimos tu diseño de Figma a código nativo sin perder fidelidad ni rendimiento."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "IA Generativa para Empresas",
+          "url": "https://www.trespuntoscomunicacion.es/servicios/ia-generativa-empresas",
+          "description": "Automatizaciones y agentes de inteligencia artificial para reducir trabajo manual."
+        }
+      ]
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ═══ Services Hub Page - Specific Styles ═══ */
+
+    /* Services Grid Layout */
+    .services-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .services-hub-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .services-hub-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+      }
+    }
+
+    /* Service Card */
+    .service-card-hub {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-base);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      color: inherit;
+      transition: all var(--transition-base);
+      gap: 1rem;
+    }
+
+    .service-card-hub:hover {
+      border-color: var(--mint);
+      background: rgba(93, 255, 191, 0.02);
+      transform: translateY(-2px);
+    }
+
+    .service-card-hub-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(93, 255, 191, 0.08);
+      border: 1px solid rgba(93, 255, 191, 0.2);
+      border-radius: var(--radius-md);
+      color: var(--mint);
+      transition: all var(--transition-base);
+    }
+
+    .service-card-hub:hover .service-card-hub-icon {
+      background: rgba(93, 255, 191, 0.15);
+      border-color: var(--mint);
+    }
+
+    .service-card-hub-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 1.5;
+      fill: none;
+      stroke: currentColor;
+    }
+
+    .service-card-hub-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin: 0.5rem 0 0 0;
+    }
+
+    .service-card-hub-description {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    .service-card-hub-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-base);
+      margin-bottom: 0;
+    }
+
+    .service-card-hub-keyword {
+      display: inline-block;
+      padding: 0.3rem 0.7rem;
+      background: rgba(93, 255, 191, 0.06);
+      border: 1px solid rgba(93, 255, 191, 0.15);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: var(--mint);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
+    .service-card-hub:hover .service-card-hub-keyword {
+      background: rgba(93, 255, 191, 0.12);
+      border-color: var(--mint);
+    }
+
+    /* Methodology Section */
+    .services-methodology {
+      margin-top: 5rem;
+      padding: 3rem 2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-base);
+      border-radius: var(--radius-lg);
+      text-align: center;
+    }
+
+    .services-methodology h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .services-methodology-text {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .services-methodology-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--mint);
+      font-weight: 600;
+      transition: all var(--transition-base);
+    }
+
+    .services-methodology-cta:hover {
+      gap: 0.75rem;
+    }
+
+    .services-methodology-cta svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    /* Animation classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: revealIn 0.6s ease-out forwards;
+    }
+
+    .reveal-delay-1 {
+      animation-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      animation-delay: 0.2s;
+    }
+
+    @keyframes revealIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .services-methodology {
+        padding: 2rem 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .services-methodology h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar placeholder -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="sp-hero" aria-label="Servicios de Arquitectura Digital">
+    <div class="container-main">
+      <div class="sp-hero-layout">
+        <div class="sp-hero-copy">
+          <span class="section-badge reveal">Servicios</span>
+          <h1 class="sp-hero-h1 reveal"><span class="text-gradient-standalone">Servicios de arquitectura digital y desarrollo web</span> en Barcelona</h1>
+          <p class="sp-hero-sub reveal">Combinamos UX/UI estratégico, arquitectura digital y desarrollo a medida para construir plataformas que convierten tráfico en clientes.</p>
+          <div class="sp-hero-ctas reveal">
+            <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. SERVICES GRID ============ -->
+  <section class="sp-services" aria-label="Servicios disponibles">
+    <div class="container-main">
+      <div class="services-hub-grid">
+        <!-- Service 1: Consultoría Digital -->
+        <a href="/servicios/consultoria-digital-barcelona" class="service-card-hub reveal">
+          <div class="service-card-hub-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+          </div>
+          <h2 class="service-card-hub-title">Consultoría de Arquitectura Digital</h2>
+          <p class="service-card-hub-description">Analizamos plataformas existentes para detectar cuellos de botella técnicos o de conversión.</p>
+          <div class="service-card-hub-keywords">
+            <span class="service-card-hub-keyword">Auditoría técnica</span>
+            <span class="service-card-hub-keyword">Escalabilidad</span>
+            <span class="service-card-hub-keyword">Diagnóstico</span>
+          </div>
+        </a>
+
+        <!-- Service 2: Diseño UX/UI -->
+        <a href="/servicios/diseno-ux-ui-barcelona" class="service-card-hub reveal" style="animation-delay: 0.05s;">
+          <div class="service-card-hub-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14.828 14.828a4 4 0 01-5.656 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-4a1 1 0 11-2 0 1 1 0 012 0zm0 6a1 1 0 11-2 0 1 1 0 012 0z"/></svg>
+          </div>
+          <h2 class="service-card-hub-title">Diseño UX/UI</h2>
+          <p class="service-card-hub-description">Diseñamos experiencias digitales pensadas para guiar al usuario hacia la acción.</p>
+          <div class="service-card-hub-keywords">
+            <span class="service-card-hub-keyword">Experiencia usuario</span>
+            <span class="service-card-hub-keyword">Interfaz</span>
+            <span class="service-card-hub-keyword">Conversión</span>
+          </div>
+        </a>
+
+        <!-- Service 3: Desarrollo Web a Medida -->
+        <a href="/servicios/desarrollo-web-a-medida-barcelona" class="service-card-hub reveal" style="animation-delay: 0.1s;">
+          <div class="service-card-hub-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.25 6.75L22.5 12m0 0l-5.25 5.25M22.5 12H3.75M3.75 6.75L9 12m0 0l-5.25 5.25"/></svg>
+          </div>
+          <h2 class="service-card-hub-title">Desarrollo Web a Medida</h2>
+          <p class="service-card-hub-description">Construimos plataformas digitales sin las limitaciones de las plantillas o CMS genéricos.</p>
+          <div class="service-card-hub-keywords">
+            <span class="service-card-hub-keyword">Backend</span>
+            <span class="service-card-hub-keyword">Frontend</span>
+            <span class="service-card-hub-keyword">API</span>
+          </div>
+        </a>
+
+        <!-- Service 4: Tienda Online a Medida -->
+        <a href="/servicios/tienda-online-barcelona" class="service-card-hub reveal" style="animation-delay: 0.15s;">
+          <div class="service-card-hub-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M2.25 3h1.386c.622 0 1.151.432 1.318 1.042l2.477 13.081a3 3 0 003.186 2.575h9.322a3 3 0 003.186-2.575l2.477-13.081c.167-.61.696-1.042 1.318-1.042H21.75M6.375 18c-.621 0-1.125.504-1.125 1.125S5.754 20.25 6.375 20.25s1.125-.504 1.125-1.125S6.996 18 6.375 18zm9.75 0c-.621 0-1.125.504-1.125 1.125s.504 1.125 1.125 1.125 1.125-.504 1.125-1.125S16.746 18 16.125 18M9.75 9h.008v.008H9.75V9zm0 2.25h.008v.008H9.75v-.008zm0 2.25h.008v.008H9.75v-.008zm2.25-4.5h.008v.008h-.008V9zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H14.25V9zm0 2.25h.008v.008H14.25v-.008zm0 2.25h.008v.008H14.25v-.008z"/></svg>
+          </div>
+          <h2 class="service-card-hub-title">Tienda Online a Medida</h2>
+          <p class="service-card-hub-description">Plataformas e-commerce preparadas para convertir tráfico en ventas y escalar.</p>
+          <div class="service-card-hub-keywords">
+            <span class="service-card-hub-keyword">E-commerce</span>
+            <span class="service-card-hub-keyword">Ventas</span>
+            <span class="service-card-hub-keyword">Pagos</span>
+          </div>
+        </a>
+
+        <!-- Service 5: Design Engineer -->
+        <a href="/servicios/design-engineer-barcelona" class="service-card-hub reveal" style="animation-delay: 0.2s;">
+          <div class="service-card-hub-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14.25 6.087c0-.355.186-.676.461-.841A6.52 6.52 0 0021 12a6.52 6.52 0 01-6.289 6.843c-.275-.165-.461-.486-.461-.841V6.087zm0 0A6.5 6.5 0 105.848 7.375"/></svg>
+          </div>
+          <h2 class="service-card-hub-title">Design Engineer</h2>
+          <p class="service-card-hub-description">Traducimos tu diseño de Figma a código nativo sin perder fidelidad ni rendimiento.</p>
+          <div class="service-card-hub-keywords">
+            <span class="service-card-hub-keyword">Figma a código</span>
+            <span class="service-card-hub-keyword">Fidelidad</span>
+            <span class="service-card-hub-keyword">Rendimiento</span>
+          </div>
+        </a>
+
+        <!-- Service 6: IA Generativa -->
+        <a href="/servicios/ia-generativa-empresas" class="service-card-hub reveal" style="animation-delay: 0.25s;">
+          <div class="service-card-hub-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+          </div>
+          <h2 class="service-card-hub-title">IA Generativa para Empresas</h2>
+          <p class="service-card-hub-description">Automatizaciones y agentes de inteligencia artificial para reducir trabajo manual.</p>
+          <div class="service-card-hub-keywords">
+            <span class="service-card-hub-keyword">Automatización</span>
+            <span class="service-card-hub-keyword">IA</span>
+            <span class="service-card-hub-keyword">Agentes</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. METHODOLOGY SECTION ============ -->
+  <section aria-label="Metodología" class="reveal">
+    <div class="container-main">
+      <div class="services-methodology">
+        <h2>Todos los proyectos siguen nuestra metodología</h2>
+        <p class="services-methodology-text">Arquitectura Digital de Conversión: un enfoque que combina decisiones técnicas estratégicas con objetivos de negocio para construir plataformas que no solo funcionan, sino que generan resultados medibles.</p>
+        <a href="/arquitectura-digital-conversion" class="services-methodology-cta">
+          Ver metodología
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. CASOS (TP.casos) ============ -->
+  <div id="tp-casos"></div>
+
+  <!-- ============ 5. TESTIMONIOS (TP.testimonios) ============ -->
+  <div id="tp-testimonios"></div>
+
+  <!-- ============ 6. CTA FINAL ============ -->
+  <section id="cierre" aria-label="Iniciar proyecto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy reveal">
+          <span class="section-badge reveal">Siguiente paso</span>
+          <h2 class="cierre-h2">¿Necesitas ayuda con tu <span class="text-gradient-standalone">proyecto digital</span>?</h2>
+          <p class="cierre-sub">El proceso empieza con 5 preguntas y en menos de 24h tienes una valoración.<br><br>Cuéntanos qué estás construyendo.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="form-gradient-accent"></div>
+          <div class="cierre-form-inner">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-nombre">Nombre</label>
+                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="f-email">Email</label>
+                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-tel">Teléfono</label>
+                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
+                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
+                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Rango aproximado</div>
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                  </div>
+                </div>
+                <input type="hidden" id="f-presupuesto" name="budget" value="" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="label" for="f-mensaje">¿En cuál de nuestros servicios estás interesado?</label>
+              <textarea id="f-mensaje" class="input" rows="4" placeholder="Describe brevemente qué tipo de proyecto tienes en mente..."></textarea>
+            </div>
+            <label class="checkbox-row" for="f-privacidad">
+              <input type="checkbox" id="f-privacidad" required />
+              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+            </label>
+            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn" style="width:100%;justify-content:center;">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p class="form-note">Sin compromiso. Respuesta en menos de 24h.</p>
+            <div class="form-divider" style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+            </div>
+            <a href="/iniciar-proyecto" class="btn-secondary" style="width:100%;justify-content:center;">
+              Formulario completo (Presupuesto en 24h)
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js" defer></script>
+  <script>
+    TP.navbar('');
+    TP.casos();
+    TP.testimonios();
+    TP.footer();
+    TP.initJS();
+  </script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js" defer></script>
+</body>
+
+</html>
