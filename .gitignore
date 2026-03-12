@@ -2,6 +2,13 @@
 .mcp.json
 .claude/
 
+# Auditorias y documentacion interna (no subir a produccion)
+AUDITORIA-PRE-LANZAMIENTO.md
+SEO-AUDIT.md
+SEO-AUDIT-COMPLETED.md
+SEO-CHANGES-SUMMARY.txt
+blog/_template.html
+
 # Documentacion interna
 master/
 ai-marketing-claude/
