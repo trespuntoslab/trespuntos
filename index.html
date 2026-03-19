@@ -116,7 +116,7 @@
           "name": "¿Por dónde se empieza a trabajar con Tres Puntos?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Por el formulario en /iniciar-proyecto. Nos cuentas el contexto de tu proyecto, lo analizamos y te respondemos en menos de 48h. Si tienes una plataforma existente con problemas, empezamos con análisis técnico. Si es un proyecto nuevo, empezamos con arquitectura de información."
+            "text": "Por el formulario en /contacto/. Nos cuentas el contexto de tu proyecto, lo analizamos y te respondemos en menos de 48h. Si tienes una plataforma existente con problemas, empezamos con análisis técnico. Si es un proyecto nuevo, empezamos con arquitectura de información."
           }
         }
       ]
@@ -166,7 +166,7 @@
                 sistemas digitales pensados para convertir tráfico en clientes.</strong>
             </p>
             <div class="hero-ctas">
-              <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
+              <a href="/contacto/" class="btn-primary magnetic-btn">
                 Cuéntanos tu proyecto
                 <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7" />
@@ -401,7 +401,60 @@
         </div>
         <div class="servicios-stack">
 
-          <!-- 1. Desarrollo Web -->
+          <!-- 1. Diseño UX/UI (POSICIÓN 1) -->
+          <div class="servicio-item reveal">
+            <div class="servicio-body">
+              <div class="servicio-header">
+                <div class="servicio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+                  </svg></div>
+                <div class="servicio-tag">Estrategia & Diseño</div>
+              </div>
+              <div class="servicio-title">Diseño UX/UI de Alta Conversión</div>
+              <p class="servicio-desc">No diseñamos "pantallas bonitas". Diseñamos embudos de venta fluidos basados en data y psicología del usuario.</p>
+              <ul class="servicio-bullets">
+                <li>Arquitectura de información orientada a objetivos de negocio.</li>
+                <li>Prototipado de alta fidelidad y sistemas de diseño escalables.</li>
+                <li>Validación de flujos para eliminar puntos de abandono críticos.</li>
+              </ul>
+              <a href="/servicios/diseno-ux-ui-barcelona" class="btn-ghost">Saber más <svg width="14" height="14"
+                  fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            </div>
+            <div class="servicio-visual" id="sv-ux-blueprint">
+              <div class="ux-blueprint-container">
+                <!-- Blueprint Grid -->
+                <div class="ux-grid-overlay"></div>
+                
+                <!-- Wireframe Layer -->
+                <div class="ux-layer ux-wireframe">
+                  <div class="ux-wf-box"></div>
+                  <div class="ux-wf-circle"></div>
+                  <div class="ux-wf-line"></div>
+                </div>
+
+                <!-- High-Fi Layer -->
+                <div class="ux-layer ux-highfi">
+                  <div class="ux-ui-card">
+                    <div class="ux-ui-avatar"></div>
+                    <div class="ux-ui-text-sm"></div>
+                    <div class="ux-ui-text-lg"></div>
+                    <div class="ux-ui-btn">Aceptar</div>
+                  </div>
+                </div>
+
+                <div class="ux-floating-stat" id="sv-ux-stat">
+                  <div class="ux-stat-val">88%</div>
+                  <div class="ux-stat-lbl">Mejora en retención</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Desarrollo Web -->
           <div class="servicio-item reveal">
             <div class="servicio-body">
               <div class="servicio-header">
@@ -424,9 +477,9 @@
                 </svg></a>
             </div>
             <div class="servicio-visual" id="sv-web">
-              <div style="padding:1.5rem;height:100%;display:flex;flex-direction:column;">
+              <div style="height:100%;display:flex;flex-direction:column;width:100%;justify-content:center;">
                 <div
-                  style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem;">
+                  style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:2rem;text-align:center;">
                   Arquitectura Headless</div>
                 <div class="sv-arch" id="sv-arch-web">
                   <div class="sv-node sv-node--top" id="sv-nd-cdn">CDN Global</div>
@@ -478,9 +531,9 @@
                 </svg></a>
             </div>
             <div class="servicio-visual" id="sv-ecom">
-              <div style="padding:1.5rem;height:100%;display:flex;flex-direction:column;">
+              <div style="height:100%;display:flex;flex-direction:column;width:100%;justify-content:center;">
                 <div
-                  style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem;">
+                  style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:2rem;text-align:center;">
                   Funnel de compra optimizado</div>
                 <div id="sv-ecom-steps" class="sv-funnel-vis">
                   <div class="sv-funnel-row">
@@ -519,86 +572,7 @@
             </div>
           </div>
 
-          <!-- 3. UX/UI -->
-          <div class="servicio-item reveal">
-            <div class="servicio-body">
-              <div class="servicio-header">
-                <div class="servicio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5"
-                    viewBox="0 0 24 24">
-                    <path
-                      d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
-                  </svg></div>
-                <div class="servicio-tag">Diseño</div>
-              </div>
-              <div class="servicio-title">Diseño UX/UI</div>
-              <p class="servicio-desc">Analizamos plataformas existentes para detectar cuellos de botella técnicos o de
-                conversión. Decisiones tecnológicas basadas en impacto de negocio.</p>
 
-              <a href="/servicios/diseno-ux-ui-barcelona" class="btn-ghost">Saber más <svg width="14" height="14"
-                  fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg></a>
-            </div>
-            <div class="servicio-visual" id="sv-ux" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem;">
-              <!-- STAT 88% -->
-              <div id="sv-ux-stat"
-                style="background:var(--bg-surface);border:1px solid var(--border-base);border-radius:10px;padding:1rem;opacity:0;transform:translateY(8px);transition:all .5s ease;">
-                <div
-                  style="font-family:var(--font-heading);font-size:2.25rem;font-weight:800;color:var(--mint);line-height:1;"
-                  id="sv-ux-pct">88<span style="font-size:1.25rem;">%</span></div>
-                <div style="font-size:.65rem;color:var(--text-secondary);line-height:1.5;margin-top:.35rem;">de usuarios
-                  no vuelven tras una <strong style="color:var(--text-primary);">mala UX</strong></div>
-              </div>
-              <!-- FUNNEL UX -->
-              <div id="sv-ux-funnel" style="display:flex;flex-direction:column;gap:0;flex:1;">
-                <div class="sv-funnel-row" style="border-radius:6px 6px 0 0;">
-                  <span class="sv-fl">Visitas</span>
-                  <div class="sv-fbar-wrap">
-                    <div class="sv-fbar sv-fbar--mint" data-w="100" style="width:0%"></div>
-                  </div>
-                  <span class="sv-fpct">100%</span>
-                </div>
-                <div class="sv-funnel-row" style="border-top:none;">
-                  <span class="sv-fl">Llegan al producto</span>
-                  <div class="sv-fbar-wrap">
-                    <div class="sv-fbar sv-fbar--mint" data-w="60" style="width:0%"></div>
-                  </div>
-                  <span class="sv-fpct">60%</span>
-                </div>
-                <div class="sv-funnel-row sv-funnel-row--issue" style="border-top:none;">
-                  <span class="sv-fl" style="color:#f87171">⚡ Fricción de interfaz</span>
-                  <div class="sv-fbar-wrap">
-                    <div class="sv-fbar sv-fbar--red" data-w="35" style="width:0%"></div>
-                  </div>
-                  <span class="sv-fpct" style="color:#f87171">-35%</span>
-                </div>
-                <div class="sv-funnel-row" style="border-top:none;">
-                  <span class="sv-fl">Inician checkout</span>
-                  <div class="sv-fbar-wrap">
-                    <div class="sv-fbar sv-fbar--mint" data-w="25" style="width:0%"></div>
-                  </div>
-                  <span class="sv-fpct">25%</span>
-                </div>
-                <div class="sv-funnel-row sv-funnel-row--issue" style="border-top:none;">
-                  <span class="sv-fl" style="color:#f87171">⚡ Abandono en pago</span>
-                  <div class="sv-fbar-wrap">
-                    <div class="sv-fbar sv-fbar--red" data-w="18" style="width:0%"></div>
-                  </div>
-                  <span class="sv-fpct" style="color:#f87171">-18%</span>
-                </div>
-                <div class="sv-funnel-row sv-funnel-row--ok" style="border-top:none;border-radius:0 0 6px 6px;">
-                  <span class="sv-fl" style="color:var(--mint);">Conversión real</span>
-                  <div class="sv-fbar-wrap">
-                    <div class="sv-fbar sv-fbar--mint" data-w="7" style="width:0%"></div>
-                  </div>
-                  <span class="sv-fpct" style="color:var(--mint);">7%</span>
-                </div>
-              </div>
-              <div class="sv-badge" id="sv-ux-badge" style="opacity:0;">
-                <span class="deploy-dot"></span>Con ADC: <strong>conversión +2.3x</strong>
-              </div>
-            </div>
-          </div>
 
           <!-- 4. Design Engineer -->
           <div class="servicio-item reveal">
@@ -703,7 +677,7 @@
                 </svg></a>
             </div>
             <div class="servicio-visual sv-ia-visual" id="sv-ia">
-              <div style="width:85%;display:flex;flex-direction:column;gap:1rem;">
+              <div style="width:100%;display:flex;flex-direction:column;gap:1.5rem;justify-content:center;">
                 <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;position:relative;">
                   <div
                     style="display:flex;flex-direction:column;gap:.75rem;flex:1;z-index:2;font-size:.55rem;font-family:var(--font-mono);letter-spacing:.05em;text-transform:uppercase;">
@@ -831,7 +805,7 @@
                 </svg>
                 Cómo funciona nuestra Arquitectura Digital diseñada para convertir
               </a>
-              <a href="/iniciar-proyecto" class="arquitectura-link">
+              <a href="/contacto/" class="arquitectura-link">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -1120,6 +1094,19 @@
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
+          <a href="/casos-de-negocio/tsp" class="caso-card reveal reveal-delay-2">
+            <div class="caso-sector">Consultoría RRHH · Recruitment</div>
+            <div class="caso-problem">Talent Search People</div>
+            <p class="caso-solution">Rediseño estratégico y optimización de conversión para consultora líder.</p>
+            <div class="caso-impact">
+              <div class="caso-impact-label">Solución ejecutada</div>
+              <div class="caso-impact-text">Reemplazo de arquitectura legacy por una plataforma Headless de alto rendimiento. Mejora del flujo de segmentación de candidatos y reducción drástica de la tasa de rebote.</div>
+            </div>
+            <svg class="caso-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
@@ -1307,7 +1294,7 @@
         <div class="testimonios-footer">
             <p class="testimonios-footer-text"><strong>9 reseñas verificadas en Google.</strong> Directivos que tenían
               un problema técnico real y decidieron resolverlo.</p>
-            <a href="/iniciar-proyecto" class="btn-ghost">Cuéntanos tu proyecto <svg width="14" height="14"
+            <a href="/contacto/" class="btn-ghost">Cuéntanos tu proyecto <svg width="14" height="14"
                 fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg></a>
@@ -1453,7 +1440,7 @@
                   Si no encajamos, te lo decimos
                 </div>
               </div>
-              <a href="/iniciar-proyecto" class="btn-secondary magnetic-btn"
+              <a href="/contacto/" class="btn-secondary magnetic-btn"
                 style="width:100%;justify-content:center;">
                 Formulario detallado (Respuesta 48h)
                 <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -1510,7 +1497,7 @@
                   <path d="M12 4.5v15m7.5-7.5h-15" />
                 </svg></button>
               <div class="faq-answer">
-                <div class="faq-answer-inner">Por el formulario en /iniciar-proyecto. Nos cuentas el contexto de tu
+                <div class="faq-answer-inner">Por el formulario en /contacto/. Nos cuentas el contexto de tu
                   proyecto en 3 minutos. Lo analizamos y respondemos en menos de 48h. Si tienes una plataforma existente
                   con problemas, empezamos con diagnóstico técnico. Si es un proyecto nuevo, empezamos con arquitectura
                   de información.</div>
@@ -1653,7 +1640,7 @@
                 <textarea id="f-mensaje" class="input" rows="4"
                   placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
               </div>
-              <label class="checkbox-row" for="f-privacidad">
+              <label class="checkbox-row" for="f-privacidad" style="margin-top:1rem;">
                 <input type="checkbox" id="f-privacidad" required />
                 <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
                     Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
@@ -1667,18 +1654,15 @@
               </button>
               <p class="form-note">Sin compromiso. Respuesta en menos de 48h laborables.</p>
 
-              <div class="form-divider"
-                style="display:flex; align-items:center; text-align:center; margin:1.5rem 0; color:var(--text-muted); font-size:0.875rem;">
-                <div style="flex:1; border-top:1px solid var(--border-base);"></div>
-                <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
-                <div style="flex:1; border-top:1px solid var(--border-base);"></div>
-              </div>
-
-              <a href="/iniciar-proyecto" class="btn-secondary" style="width:100%;justify-content:center;">
-                Formulario completo (Presupuesto en 48h)
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+              <a href="/form-v3/form-step1.html" style="display:flex;align-items:center;gap:.875rem;margin-top:1.25rem;padding:.875rem 1rem;border:1px dashed var(--border-strong,#2A2A2A);border-radius:12px;background:rgba(93,255,191,.02);text-decoration:none;transition:all .25s;" onmouseover="this.style.borderColor='rgba(93,255,191,.25)';this.style.background='rgba(93,255,191,.04)'" onmouseout="this.style.borderColor='';this.style.background='rgba(93,255,191,.02)'">
+                <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(93,255,191,.12);display:flex;align-items:center;justify-content:center;color:var(--mint);">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:.125rem;">
+                  <span style="font-size:.8125rem;font-weight:600;color:var(--text-primary);">¿Tu proyecto es urgente?</span>
+                  <span style="font-size:.6875rem;color:var(--text-muted);line-height:1.5;">Cuéntanos más detalles y te enviamos una propuesta completa en 48h.</span>
+                </div>
+                <svg style="flex-shrink:0;color:var(--text-muted);" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             </div>
           </div>
@@ -1691,7 +1675,7 @@
       <div class="container-main">
         <!-- Big Reveal CTA -->
         <div class="footer-big-cta">
-          <a href="/iniciar-proyecto" class="footer-big-cta-link">Cuéntanos tu proyecto</a>
+          <a href="/contacto/" class="footer-big-cta-link">Cuéntanos tu proyecto</a>
           <div class="footer-big-cta-sub">Hablemos de Conversión</div>
         </div>
 
@@ -1732,7 +1716,7 @@
 
           <!-- Col 2: Qué hacemos (SEO Priority) -->
           <div class="footer-col" role="navigation" aria-label="Servicios Principales">
-            <h4 class="footer-h4">Qué hacemos</h4>
+            <h3 class="footer-h4">Qué hacemos</h4>
             <nav class="footer-links">
               <a href="/arquitectura-digital-conversion">Arquitectura Digital (ADC)</a>
               <a href="/servicios/diseno-ux-ui-barcelona">Estrategia UX/UI</a>
@@ -1744,18 +1728,18 @@
 
           <!-- Col 3: Agencia -->
           <div class="footer-col" role="navigation" aria-label="Sobre la Agencia">
-            <h4 class="footer-h4">Agencia</h4>
+            <h3 class="footer-h4">Agencia</h4>
             <nav class="footer-links">
               <a href="/nosotros">Nosotros</a>
               <a href="/casos-de-negocio">Casos de Negocio</a>
               <a href="/blog">Blog Técnico</a>
-              <a href="/iniciar-proyecto">Hablemos</a>
+              <a href="/contacto/">Hablemos</a>
             </nav>
           </div>
 
           <!-- Col 4: Ubicación Global -->
           <div class="footer-col">
-            <h4 class="footer-h4">Ubicación</h4>
+            <h3 class="footer-h4">Ubicación</h4>
             <p style="font-size: .8125rem; color: var(--text-muted); line-height: 1.6;">El mundo es nuestra
               ubicación.<br>Conectados desde Barcelona.</p>
             <div class="footer-social" style="margin-top: 1rem;">

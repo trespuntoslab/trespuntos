@@ -246,7 +246,7 @@
           Tus datos ya pre-rellenados — solo 3 minutos
         </li>
       </ul>
-      <a href="/iniciar-proyecto" class="btn-briefing" id="btn-go-briefing">
+      <a href="/form-v3/form-step2.html" class="btn-briefing" id="btn-go-briefing">
         Completar briefing
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -267,6 +267,21 @@
   <script>TP.navbar();</script>
   <script src="/js/main.js" defer></script>
   <script>TP.initJS();</script>
+  <script>
+    // Pre-fill briefing URL with lead data saved by supabase-forms.js
+    (function() {
+      try {
+        var saved = JSON.parse(localStorage.getItem('tp_lead') || '{}');
+        var btn = document.getElementById('btn-go-briefing');
+        if (!btn) return;
+        var params = [];
+        if (saved.email)    params.push('email='    + encodeURIComponent(saved.email));
+        if (saved.nombre)   params.push('nombre='   + encodeURIComponent(saved.nombre));
+        if (saved.telefono) params.push('telefono=' + encodeURIComponent(saved.telefono));
+        if (params.length)  btn.href = '/form-v3/form-step2.html#' + params.join('&');
+      } catch(e) {}
+    })();
+  </script>
 </body>
 
 </html>

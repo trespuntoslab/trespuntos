@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Unir el pensamiento Lean Startup con Diseño: LEAN DESIGN | Blog | Tres Puntos</title>
   <meta name="description" content="Unir el pensamiento Lean Startup con Diseño ¿Quien hoy en día no ha escuchado o aplicado el pensamiento Lean Startup en sus proyectos? En Tres Puntos..." />
-  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/unir-el-pensamiento-lean-startup-con-diseno-lean-design" />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/unir-el-pensamiento-lean-startup-con-diseno-lean-design/" />
   <meta property="og:title" content="Unir el pensamiento Lean Startup con Diseño: LEAN DESIGN" />
   <meta property="og:description" content="Unir el pensamiento Lean Startup con Diseño ¿Quien hoy en día no ha escuchado o aplicado el pensamiento Lean Startup en sus proyectos? En Tres Puntos..." />
   <meta property="og:type" content="article" />
@@ -556,16 +556,94 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="article-cta">
-    <h2>¿Tu plataforma necesita más que un artículo?</h2>
-    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Conversemos sobre cómo podemos ayudarte a escalar tu negocio digital.</p>
-    <a href="/iniciar-proyecto" class="article-cta-btn">Iniciar proyecto</a>
+<!-- ============ FORMULARIO SIMPLE ============ -->
+  <section id="cierre" aria-label="Formulario de contacto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy">
+          <span class="section-badge reveal">Hablemos</span>
+          <h2 class="cierre-h2 reveal">¿Tu plataforma necesita más que un artículo?</h2>
+          <p class="cierre-sub reveal">Cuéntanos tu situación y te respondemos en menos de 48h con una primera valoración.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Respondemos en menos de 48h con una primera valoración.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="form-gradient-accent"></div>
+          <div class="cierre-form-inner">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-nombre">Nombre</label>
+                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="f-email">Email</label>
+                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-tel">Teléfono</label>
+                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
+                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
+                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Rango aproximado</div>
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                  </div>
+                </div>
+                <input type="hidden" id="f-presupuesto" name="budget" value="" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
+              <textarea id="f-mensaje" class="input" rows="4" placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
+            </div>
+            <label class="checkbox-row" for="f-privacidad">
+              <input type="checkbox" id="f-privacidad" required />
+              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+            </label>
+            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn" style="width:100%;justify-content:center;">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p class="form-note">Sin compromiso. Respuesta en menos de 48h laborables.</p>
+            <div class="form-divider" style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+            </div>
+            <a href="/form-v3/form-step1.html" class="btn-secondary" style="width:100%;justify-content:center;">
+              Briefing completo (Presupuesto en 48h)
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <div id="tp-footer"></div>
 
   <script src="/js/components.js"></script>
+  <script src="/js/supabase-forms.js" defer></script>
   <script>
     // Initialize navbar and footer
     TP.navbar('blog');

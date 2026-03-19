@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-ERX855WTHN');
   </script>
@@ -18,10 +18,12 @@
   <meta name="theme-color" content="#5dffbf">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Talent Search People — Caso de Negocio | Tres Puntos</title>
-  <meta name="description" content="Talent Search People: portal de recruitment internacional rediseñado. Descubre cómo Tres Puntos transformó la búsqueda de talento en experiencia candidato centrada, con arquitectura escalable y UX optimizada para multinacionales." />
-  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/casos-de-negocio/tsp" />
+  <meta name="description"
+    content="Rediseño UX completo y arquitectura digital para Talent Search People. Transformamos un portal de recruitment genérico en una plataforma que conecta talento con oportunidades sin fricción." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/casos-de-negocio/tsp/" />
   <meta property="og:title" content="Talent Search People — Caso de Negocio | Tres Puntos" />
-  <meta property="og:description" content="Talent Search People es una consultoría internacional de selección de personal y recursos humanos nacida en 2006 con el objetivo de encontrar talento y convertirlo en oportunidad." />
+  <meta property="og:description"
+    content="Cómo rediseñamos la plataforma de recruitment internacional de Talent Search People para conectar talento con oportunidades sin fricción." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.trespuntoscomunicacion.es/casos-de-negocio/tsp" />
   <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg" />
@@ -31,21 +33,65 @@
   <meta property="og:site_name" content="Tres Puntos Comunicación" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Talent Search People — Caso de Negocio | Tres Puntos" />
-  <meta name="twitter:description" content="Talent Search People es una consultoría internacional de selección de personal y recursos humanos nacida en 2006 con el objetivo de encontrar talento y convertirlo en oportunidad." />
+  <meta name="twitter:description"
+    content="Cómo rediseñamos la plataforma de recruitment internacional de Talent Search People para conectar talento con oportunidades sin fricción." />
   <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg" />
 
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "CreativeWork",
-      "name": "Talent Search People",
-      "description": "Talent Search People: portal de recruitment internacional rediseñado. Descubre cómo Tres Puntos transformó la búsqueda de talento en experiencia candidato centrada, con arquitectura escalable y UX optimizada para multinacionales.",
+      "name": "Talent Search People — Caso de Negocio",
+      "description": "Rediseño UX y arquitectura digital para Talent Search People. Portal de recruitment internacional con matching inteligente y experiencia candidato optimizada.",
       "author": {
         "@type": "Organization",
-        "name": "Tres Puntos Comunicación"
+        "name": "Tres Puntos Comunicación",
+        "url": "https://www.trespuntoscomunicacion.es"
       },
-      "datePublished": "septiembre 17, 2020",
-      "dateModified": "2026-03-11"
+      "datePublished": "2020-09-17",
+      "dateModified": "2026-03-12"
+    }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué tipo de proyecto fue el de Talent Search People?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fue un proyecto integral de arquitectura digital que abarcó investigación UX, rediseño de la plataforma web, definición de recorridos de usuario diferenciados y desarrollo frontend optimizado para conversión y captación de talento internacional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué tecnología o enfoque se utilizó?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El enfoque combinó investigación profunda de usuarios, arquitectura de información, diseño UX/UI y desarrollo con HTML5, PHP y JavaScript. Se priorizó un diseño responsive mobile-first con arquitectura escalable para múltiples mercados."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto duró el proyecto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El proyecto se desarrolló en 9 meses, incluyendo discovery, diseño iterativo, desarrollo técnico y un proceso de refinamiento continuo con el equipo de TSP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué resultados se obtuvieron?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se logró una plataforma diferenciada en el mercado de recruitment, con recorridos claros para candidatos, empresas y recruiters, soporte multiidioma, más de 400 ofertas activas gestionadas, y un sistema de matching que reduce el ruido en los procesos de selección."
+          }
+        }
+      ]
     }
   </script>
 
@@ -58,617 +104,575 @@
   <link rel="stylesheet" href="/css/design-system.css" />
   <link rel="stylesheet" href="/css/components.css" />
   <link rel="stylesheet" href="/css/service-page.css" />
-
-  <style>
-    /* ═══ CASE STUDY: Header & Layout ═══ */
-    .case-header {
-      padding: 4rem 0 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-header-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .case-header-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .case-sector {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-    }
-
-    .case-name {
-      font-size: 2.5rem;
-      font-weight: 800;
-      font-family: var(--font-display);
-      line-height: 1.1;
-      color: var(--text-primary);
-    }
-
-    .case-services {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .case-brief {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--text-primary);
-      padding: 1.5rem;
-      background: rgba(93, 255, 191, 0.04);
-      border-left: 3px solid var(--mint);
-      border-radius: 4px;
-    }
-
-    .case-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      padding: 2rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-    }
-
-    .case-meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .case-meta-label {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-    }
-
-    .case-meta-value {
-      font-size: 0.95rem;
-      color: var(--text-primary);
-    }
-
-    /* Case Overview Grid */
-    .case-overview-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .case-overview-item {
-      padding: 2rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      transition: all var(--transition-base);
-    }
-
-    .case-overview-item:hover {
-      border-color: var(--mint);
-      background: rgba(93, 255, 191, 0.02);
-    }
-
-    .case-overview-label {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-    }
-
-    .case-overview-text {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--text-primary);
-    }
-
-    /* Case sections */
-    .case-section {
-      padding: 3rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-section:last-child {
-      border-bottom: none;
-    }
-
-    .case-section-header {
-      margin-bottom: 2rem;
-    }
-
-    .case-section h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 1rem;
-    }
-
-    .case-section-intro {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--text-secondary);
-      max-width: 700px;
-    }
-
-    .case-section-content {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      max-width: 900px;
-      margin-top: 1.5rem;
-    }
-
-    .case-section-content p {
-      margin-bottom: 1rem;
-    }
-
-    .case-section-content p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Stats section */
-    .case-stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .case-stat-card {
-      padding: 2rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      text-align: center;
-      transition: all var(--transition-base);
-    }
-
-    .case-stat-card:hover {
-      border-color: var(--mint);
-      background: rgba(93, 255, 191, 0.02);
-    }
-
-    .case-stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--mint);
-      margin-bottom: 0.5rem;
-    }
-
-    .case-stat-label {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
-
-    
-    /* ═══ DEVICE MOCKUPS (CSS-Only) ═══ */
-    .device-mockups-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
-      margin: 3rem 0;
-      align-items: center;
-    }
-
-    .device-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 500px;
-    }
-
-    /* MacBook Pro Frame */
-    .macbook-frame {
-      width: 100%;
-      max-width: 600px;
-      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-      border-radius: 12px 12px 24px 24px;
-      padding: 12px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      position: relative;
-    }
-
-    .macbook-frame::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 30%;
-      height: 8px;
-      background: linear-gradient(to bottom, #333, #222);
-      border-radius: 0 0 12px 12px;
-      z-index: 10;
-    }
-
-    .macbook-screen {
-      background: linear-gradient(135deg, #5dffbf 0%, #3dd5a6 100%);
-      border-radius: 8px;
-      padding: 0;
-      aspect-ratio: 16 / 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .macbook-screen iframe,
-    .macbook-screen img {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .macbook-keyboard {
-      height: 8px;
-      background: linear-gradient(to bottom, #333, #222);
-      border-radius: 0 0 8px 8px;
-      margin-top: 2px;
-    }
-
-    /* iPhone Frame */
-    .iphone-frame {
-      width: 100%;
-      max-width: 280px;
-      background: #000;
-      border-radius: 40px;
-      padding: 12px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      position: relative;
-    }
-
-    .iphone-frame::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 35%;
-      height: 28px;
-      background: #000;
-      border-radius: 0 0 24px 24px;
-      z-index: 20;
-    }
-
-    .iphone-screen {
-      background: linear-gradient(135deg, #5dffbf 0%, #3dd5a6 100%);
-      border-radius: 35px;
-      padding: 0;
-      aspect-ratio: 9 / 20;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .iphone-screen iframe,
-    .iphone-screen img {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* iPad Frame */
-    .ipad-frame {
-      width: 100%;
-      max-width: 500px;
-      background: #333;
-      border-radius: 20px;
-      padding: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      position: relative;
-    }
-
-    .ipad-frame::after {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40%;
-      height: 8px;
-      background: #111;
-      border-radius: 8px;
-    }
-
-    .ipad-screen {
-      background: linear-gradient(135deg, #5dffbf 0%, #3dd5a6 100%);
-      border-radius: 12px;
-      padding: 0;
-      aspect-ratio: 4 / 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .ipad-screen iframe,
-    .ipad-screen img {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    @media (max-width: 768px) {
-      .device-mockups-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .macbook-frame {
-        max-width: 100%;
-      }
-
-      .device-wrapper {
-        min-height: 300px;
-      }
-    }
-
-
-    @media (max-width: 768px) {
-      .case-header-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .case-name {
-        font-size: 1.8rem;
-      }
-
-      .case-section {
-        padding: 2rem 0;
-      }
-
-      .case-section h2 {
-        font-size: 1.4rem;
-      }
-
-      .case-overview-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .device-mockups-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/case-study.css" />
 </head>
 
 <body>
-  <!-- Navbar placeholder -->
+  <!-- Navbar -->
   <div id="tp-navbar"></div>
 
-  <!-- ============ CASE HEADER ============ -->
-  <section class="case-header" aria-label="Información del caso">
+  <!-- ════════════════════════════════════════════════════════
+       1. HERO — Full Viewport
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-hero cs-hero-full cs-reveal-fade" style="background-image: url('/img/casos/tsp/real/banner-home-new.jpg');" aria-label="Caso de negocio Talent Search People">
     <div class="container-main">
-      <div class="case-header-content">
-        <div class="case-header-copy reveal">
-          <div class="case-sector">Caso de negocio</div>
-          <h1 class="case-name">Talent Search People</h1>
-          <div class="case-services">
-            <strong>Servicios:</strong> Desarrollo web, Diseño web, UI/UX, UX Research
+      <div class="cs-hero-copy">
+        <div class="cs-hero-badge cs-hero-anim cs-hero-anim-1">
+          <span class="cs-hero-sector">Recruitment & HR Tech</span>
+        </div>
+        
+        <h1 class="cs-hero-h1 cs-hero-anim cs-hero-anim-2">
+          Rediseñando el reclutamiento digital.
+          <span class="cs-highlight">Talent Search People</span>
+        </h1>
+        
+        <p class="cs-hero-brief cs-hero-anim cs-hero-anim-3">
+          Transformación integral de la experiencia de usuario para uno de los portales de empleo líderes en el mercado europeo.
+        </p>
+
+        <div class="cs-hero-tags cs-hero-anim cs-hero-anim-4">
+          <span class="cs-hero-tag">UX Research</span>
+          <span class="cs-hero-tag">UI Design</span>
+          <span class="cs-hero-tag">Design System</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator (Stage-In Style) -->
+    <div class="cs-scroll-indicator cs-hero-anim cs-hero-anim-5">
+      <div class="cs-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       2. HERO VISUAL — Cinematic Mockup
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-surface cs-padding-xl cs-hero-visual-full" aria-label="Vista principal del proyecto">
+    <div class="container-main">
+      <div class="cs-hero-visual-inner cs-reveal-scale">
+        <div class="cs-browser">
+          <div class="cs-browser-bar">
+            <span class="cs-browser-dot"></span>
+            <span class="cs-browser-dot"></span>
+            <span class="cs-browser-dot"></span>
+            <span class="cs-browser-url">talentsearchpeople.com</span>
           </div>
-          <div class="case-brief">
-            Talent Search People es un puente entre talento global y oportunidades empresariales. Diseñamos un portal donde candidatos y recruiters convergen sin fricción, con herramientas de matching inteligentes y experiencia candidato centrada en valores y desarrollo profesional.
+          <div class="cs-browser-screen">
+            <img src="/img/casos/tsp/real/screenshot-home-new.png"
+              alt="Rediseño de la página principal de Talent Search People"
+              width="1920" height="1080" loading="eager" />
           </div>
         </div>
-        <div class="case-meta reveal reveal-delay-1">
+        <div class="cs-browser-base"></div>
 
-          <div class="case-meta-item">
-            <div class="case-meta-label">Cliente</div>
-            <div class="case-meta-value">Talent Search People</div>
+        <div class="cs-phone-float">
+          <div class="cs-phone-float-notch"></div>
+          <div class="cs-phone-float-screen">
+            <img src="/img/casos/tsp/real/screenshot-mobile-home-new.png"
+              alt="Vista móvil del portal de Talent Search People"
+              width="280" height="590" loading="eager" />
           </div>
-          <div class="case-meta-item">
-            <div class="case-meta-label">Industria</div>
-            <div class="case-meta-value">Recursos Humanos / Recruitment</div>
-          </div>
-          <div class="case-meta-item">
-            <div class="case-meta-label">Tecnología</div>
-            <div class="case-meta-value">HTML5, PHP, Javascript</div>
-          </div>
-          <div class="case-meta-item">
-            <div class="case-meta-label">Sitio web</div>
-            <div class="case-meta-value"><a href="https://talentsearchpeople.com" target="_blank" rel="noopener" style="color: var(--mint); text-decoration: none;">talentsearchpeople.com</a></div>
-          </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PROJECT OVERVIEW ============ -->
-  <section class="case-section" aria-label="Descripción del proyecto">
+  <!-- ════════════════════════════════════════════════════════
+       3. PROJECT OVERVIEW — Metadata + Narrative
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-overview" aria-label="Resumen del proyecto">
     <div class="container-main">
-      <div class="case-section-header reveal">
-        <h2>Descripción del proyecto</h2>
-      </div>
-
-      <div class="case-overview-grid">
-        <div class="case-overview-item reveal">
-          <div class="case-overview-label">Reto</div>
-          <div class="case-overview-text">TSP opera internacionalmente con 70+ profesionales, pero su portal de empleo era genérico y no reflejaba su propuesta única: búsqueda de talento alineado con valores, mentoría, y desarrollo de carrera. Candidatos no entendían diferencia respecto competidores. Empresas no veían cómo TSP agregaba valor más allá de "buscar y colocar".</div>
-        </div>
-        <div class="case-overview-item reveal">
-          <div class="case-overview-label">Estrategia</div>
-          <div class="case-overview-text">Investigación profunda sobre motivaciones de candidatos, mapeo de propuesta de valor TSP versus mercado, definición de arquitectura candidato-empresa-recruiter, y estrategia omnicanal (web + email + seguimiento personalizado).</div>
-        </div>
-        <div class="case-overview-item reveal">
-          <div class="case-overview-label">Diseño</div>
-          <div class="case-overview-text">Portal responsive con busqueda avanzada, perfiles candidato narrativos, dashboard personalizado para recruiters, sistema de matching inteligente, integración de comunicaciones, y experiencia mobile optimizada para candidatos en movimiento.</div>
-        </div>
-      </div>
-
-      <div class="case-section-content reveal">
-        <p>Talent Search People nació en 2006 con una visión clara: el recruitment no es solo "llenar posiciones", es encontrar alineamiento entre talento y propósito. Con equipos en múltiples países y especialización en ejecutivos e internacionales, TSP necesitaba un portal que reflejara esa excelencia y diferenciación. El anterior era corporativo y frío.</p>
-        <p>Investigamos profundamente: candidatos buscaban no solo salario, sino empresas que invirtieran en desarrollo. Empresas buscaban talento cultural, no solo skills. Recruiters de TSP necesitaban herramientas para ver el cuadro completo: perfiles, interacciones, resultados. El portal debía ser conversación, no catálogo.</p>
-        <p>Diseñamos un ecosistema donde candidatos comparten narrativas profesionales (no solo CVs), empresas publican oportunidades con contexto de equipo y cultura, y recruiters facilitan matching inteligente. Cada perfil cuenta una historia. Cada vacante explica por qué importa. El proceso es acompañamiento, no transacción.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ DEVICE MOCKUPS ============ -->
-
-  <!-- ============ DEVICE MOCKUPS ============ -->
-  <section class="case-section" aria-label="Visualización del proyecto">
-    <div class="container-main">
-      <div class="case-section-header reveal">
-        <h2>Visualización del proyecto</h2>
-        <p class="case-section-intro">Aquí puedes ver cómo se ve la plataforma en diferentes dispositivos.</p>
-      </div>
-
-      <div class="device-mockups-grid">
-        <div class="device-wrapper reveal">
-          <div class="macbook-frame">
-            <div class="macbook-screen" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); position: relative;">
-              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 20px; text-align: center;">
-                <div style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: #5dffbf; margin-bottom: 8px;">Talent Search People</div>
-                <div style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 16px;">talentsearchpeople.com</div>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
-                  <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Búsqueda avanzada</span>
-                  <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Matching inteligente</span>
-                  <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Acompañamiento</span>
-                </div>
-              </div>
-            </div>
-            <div class="macbook-keyboard"></div>
+      <div class="cs-overview-grid">
+        <div class="cs-overview-narrative cs-reveal">
+          <h2>Conectar el talento con la oportunidad requiere una arquitectura que reduzca el ruido</h2>
+          <div class="cs-overview-text">
+            <p>Talent Search People (TSP) no es solo un portal de empleo; es una consultora estratégica con más de 70 expertos y oficinas en Barcelona y Madrid. Su reto era trasladar esa capacidad humana a una plataforma digital que ordenara la complejidad de miles de ofertas y perfiles internacionales.</p>
+            <p>Construimos una experiencia basada en la claridad estructural, eliminando la fricción en la navegación y unificando la presencia visual de la marca para candidatos y empresas.</p>
           </div>
         </div>
 
-        <div class="device-wrapper reveal reveal-delay-1">
-          <div class="iphone-frame">
-            <div class="iphone-screen" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); position: relative;">
-              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 16px; text-align: center;">
-                <div style="font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: #5dffbf; margin-bottom: 6px;">TSP Portal</div>
-                <div style="font-size: 0.65rem; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Talent en movimiento</div>
-                <div style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;">
-                  <span style="font-size: 0.55rem; padding: 3px 8px; border: 1px solid rgba(93,255,191,0.3); border-radius: 16px; color: rgba(93,255,191,0.7);">Perfiles narrativos</span>
-                  <span style="font-size: 0.55rem; padding: 3px 8px; border: 1px solid rgba(93,255,191,0.3); border-radius: 16px; color: rgba(93,255,191,0.7);">Candidatos + Empresas</span>
-                </div>
-              </div>
+        <div class="cs-overview-meta cs-reveal cs-reveal-delay-1">
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Cliente</div>
+            <div class="cs-meta-value">Talent Search People</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Año</div>
+            <div class="cs-meta-value">2024</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Sector</div>
+            <div class="cs-meta-value">B2B / Recruitment / HR Tech</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Ubicación</div>
+            <div class="cs-meta-value">Barcelona · Madrid · Internacional</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Servicios</div>
+            <div class="cs-meta-value">
+              <span class="cs-hero-tag">UX/UI</span>
+              <span class="cs-hero-tag">Arquitectura</span>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============ DETAILED CONTENT ============ -->
-  <section class="case-section" aria-label="Detalle del proyecto">
-    <div class="container-main">
-      <div class="case-section-header reveal">
-        <h2>Desarrollo del proyecto</h2>
-      </div>
-      <div class="case-section-content reveal">
-        <p>Comenzamos con sesiones intensivas de descubrimiento con recruiters de TSP, candidatos, y empresas clientes. El insight clave: el recruitment es relación humana mediada por tecnología. Los portales genéricos fallan porque tratan talento como commodity. TSP necesitaba plataforma que honrara la complejidad: contexto cultural, valores, potencial de desarrollo.</p>
-        <p>Arquitectura del portal: módulo candidato donde perfiles incluyen narrativa (no solo skills), experiencia laboral como viaje profesional, y alignment con valores. Módulo empresa donde vacantes tienen contexto: equipo, cultura, oportunidades de crecimiento. Módulo recruiter con dashboard que muestra todo el pipeline: perfiles visto, interacciones, estado de procesos, feedback. Matching inteligente sugiere candidatos basado no solo en keywords, sino en trajectory y valores.</p>
-        <p>Desarrollamos con PHP y JavaScript para máxima escalabilidad global. UI/UX optimizado para múltiples perfiles (candidatos en móvil, recruiters en desktop, empresas en ambos). Sistema de notificaciones personalizadas sin spam: candidatos notificados cuando hay match real, no ofertas masivas. Integración de comunicaciones (email, chat) dentro de la plataforma, reduciendo fricción.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ STATS SECTION ============ -->
-  <section class="case-section" aria-label="Métricas del proyecto">
-    <div class="container-main">
-      <div class="case-stats-grid">
-        <div class="case-stat-card reveal">
-          <div class="case-stat-number">3</div>
-          <div class="case-stat-label">Roles de usuario principales</div>
-        </div>
-        <div class="case-stat-card reveal">
-          <div class="case-stat-number">70+</div>
-          <div class="case-stat-label">Profesionales en el equipo</div>
-        </div>
-        <div class="case-stat-card reveal">
-          <div class="case-stat-number">100%</div>
-          <div class="case-stat-label">Multiidioma y responsive</div>
-        </div>
-        <div class="case-stat-card reveal">
-          <div class="case-stat-number">9</div>
-          <div class="case-stat-label">Meses de desarrollo escalado</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FINAL THOUGHTS ============ -->
-  <section class="case-section" aria-label="Conclusiones">
-    <div class="container-main">
-      <div class="case-section-header reveal">
-        <h2>Resultado</h2>
-      </div>
-      <div class="case-section-content reveal">
-        <p>Talent Search People ahora posee un portal que refleja su propuesta única: recruitment como acompañamiento, no como transacción. Candidatos ven oportunidades alineadas con sus valores y potencial. Empresas encuentran talento que encaja culturalmente. Recruiters tienen herramientas para facilitar matching inteligente y seguimiento personalizado.</p>
-        <p>El impacto es estratégico: diferenciación clara vs. portales genéricos, mejor retención de candidatos (ven oportunidades relevantes), y aceleración de procesos (matching reduce ruido). TSP demostró que en recruitment, la tecnología debe amplificar la humanidad, no reemplazarla. El portal es facilitador de relaciones, no automatizador de búsqueda.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ EXPERT OPINION ============ -->
-  <section class="sp-expert" aria-label="Opinión experta">
-    <div class="container-main">
-      <div class="sp-expert-layout reveal">
-        <div class="sp-expert-quote">
-          <span class="section-badge">Opinión experta</span>
-          <h2 class="sp-expert-h2">Recruitment es relación humana. La tecnología debe amplificar esa relación, nunca reemplazarla</h2>
-          <p>TSP fue una oportunidad de reivindicar qué significa verdadero talent matching. Muchos portales optimizan para volumen: máximas aplicaciones, máximas vacantes. TSP optimiza para alineamiento: candidatos que encuentran empresas que aman, empresas que encuentran talento culturalmente alineado, recruiters que facilitan conexiones reales. El resultado es portal que se siente humano porque refleja valores TSP. No es casualidad. Es arquitectura inteligente de la experiencia.</p>
-        </div>
-        <div class="sp-expert-author">
-          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="sp-expert-avatar" width="80" height="80" loading="lazy">
-          <div>
-            <div class="sp-expert-name">Jordi Expósito</div>
-            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
-            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener" class="sp-expert-linkedin">
-              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
-              Ver en LinkedIn
-            </a>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Visitar</div>
+            <div class="cs-meta-value">
+              <a href="https://talentsearchpeople.com" target="_blank" rel="noopener">talentsearchpeople.com &#8599;</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ TESTIMONIOS (TP.testimonios) ============ -->
-  <div id="tp-testimonios"></div>
+  <!-- ════════════════════════════════════════════════════════
+       4. EL RETO — Challenge Section
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-challenge cs-padding-xl" aria-label="El reto del proyecto">
+    <div class="container-main">
+      <div class="cs-challenge-layout">
+        <div class="cs-challenge-copy cs-reveal">
+          <span class="section-badge">El reto</span>
+          <h2>Un portal que no reflejaba la excelencia del servicio</h2>
+          <div class="cs-body-text">
+            <p>TSP opera en un mercado donde muchos portales de empleo son intercambiables. El problema no era la falta de tráfico, sino lo que ocurría cuando un usuario aterrizaba en la web: la diferenciación de TSP se perdía entre secciones genéricas.</p>
+            <p>Los candidatos no entendían por qué TSP era diferente y las empresas no veían el valor añadido de la consultora sobre un portal estándar. Identificamos la necesidad de una arquitectura que segmentara recorridos y comunicara valor desde el primer contacto.</p>
+          </div>
+        </div>
 
-  <!-- ============ CTA FINAL + FORM ============ -->
+        <div class="cs-signals cs-reveal cs-reveal-delay-1">
+          <div class="cs-signals-title">Señales de fricción detectadas</div>
+          <div class="cs-signal-item">
+            <div class="cs-signal-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="cs-signal-text">
+              <strong>Arquitectura confusa</strong>
+              <span>Dificultad para encontrar ofertas o servicios en menos de 3 clics.</span>
+            </div>
+          </div>
+          <div class="cs-signal-item">
+            <div class="cs-signal-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="cs-signal-text">
+              <strong>Propuesta invisible</strong>
+              <span>La especialización en valores no se comunicaba en el journey digital.</span>
+            </div>
+          </div>
+          <div class="cs-signal-item">
+            <div class="cs-signal-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="cs-signal-text">
+              <strong>Sin segmentación</strong>
+              <span>Candidatos y empresas compartían la misma experiencia indiferenciada.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       5. FULL-BLEED IMAGE — Before / After
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-padding-xl" aria-label="Transformación visual">
+    <div class="container-main">
+      <div class="cs-fullbleed cs-reveal-scale">
+        <img src="/img/casos/tsp/real/screenshot-home-new.png"
+          alt="Comparativa visual del rediseño"
+          loading="lazy" />
+        <div class="cs-fullbleed-caption">
+          <h3>Evolución de producto</h3>
+          <p>De un listado genérico a una plataforma de valor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       6. EL ENFOQUE — Approach / Process
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-approach" aria-label="Nuestro enfoque">
+    <div class="container-main">
+      <div class="cs-approach-header cs-reveal">
+        <span class="section-badge">El proceso</span>
+        <h2 class="cs-section h2">De la investigación al despliegue</h2>
+        <p class="cs-section-intro">Construimos sobre certeza, no sobre suposiciones. Cada fase valida la anterior.</p>
+      </div>
+
+      <div class="cs-approach-steps">
+        <!-- Step 01 -->
+        <div class="cs-step">
+          <div class="cs-step-content cs-reveal">
+            <div class="cs-step-number">01</div>
+            <div class="cs-step-label">Discovery</div>
+            <h3>Entender el journey real</h3>
+            <p class="cs-step-text">Entrevistamos a consultores, candidatos y empresas para detectar dónde se rompía la comunicación. Identificamos que el acompañamiento humano de TSP —su mayor activo— era invisible online.</p>
+          </div>
+          <div class="cs-step-visual cs-reveal cs-reveal-delay-1">
+            <img src="/img/casos/tsp/real/ux-workshop-new.png" alt="Workshop de UX Research" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Step 02 -->
+        <div class="cs-step">
+          <div class="cs-step-content cs-reveal">
+            <div class="cs-step-number">02</div>
+            <div class="cs-step-label">Arquitectura</div>
+            <h3>Segmentación de recorridos</h3>
+            <p class="cs-step-text">Diseñamos una experiencia dual que bifurca el funnel desde el inicio. El candidato encuentra comunidad y apoyo; la empresa encuentra agilidad y especialización.</p>
+          </div>
+          <div class="cs-step-visual cs-reveal cs-reveal-delay-1">
+            <img src="/img/casos/tsp/real/wireframes-new.png" alt="Prototipado de arquitectura" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       7. VISUAL SHOWCASE — Screens
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-surface cs-padding-xl cs-showcase" aria-label="El proyecto en pantalla">
+    <div class="container-main">
+      <div class="cs-showcase-header cs-reveal">
+        <span class="section-badge">Visual Showcase</span>
+        <h2>Una interfaz para cada usuario</h2>
+        <p class="cs-section-intro">Nada es decorativo: cada píxel tiene una función en el recorrido de conversión.</p>
+      </div>
+
+      <!-- Two-up comparison on colored background -->
+      <div class="cs-showcase-duo">
+        <div class="cs-reveal">
+          <div class="cs-browser">
+            <div class="cs-browser-bar">
+              <span class="cs-browser-dot"></span>
+              <span class="cs-browser-dot"></span>
+              <span class="cs-browser-dot"></span>
+            </div>
+            <div class="cs-browser-screen">
+              <img src="/img/casos/tsp/real/screenshot-home-new.png" alt="Homepage" width="960" height="600" loading="lazy" />
+            </div>
+          </div>
+          <div class="cs-browser-base"></div>
+          <p class="cs-showcase-label">Portal Público — Captación e Imagen</p>
+        </div>
+        <div class="cs-reveal cs-reveal-delay-1">
+          <div class="cs-browser">
+            <div class="cs-browser-bar">
+              <span class="cs-browser-dot"></span>
+              <span class="cs-browser-dot"></span>
+              <span class="cs-browser-dot"></span>
+            </div>
+            <div class="cs-browser-screen">
+              <img src="/img/casos/tsp/real/screenshot-jobs-new.png" alt="Listado de Ofertas" width="960" height="600" loading="lazy" />
+            </div>
+          </div>
+          <div class="cs-browser-base"></div>
+          <p class="cs-showcase-label">Recruiter Dashboard — Pipeline</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-feature-block cs-bg-subtle cs-padding-xl" aria-label="Analítica avanzada">
+    <div class="container-main">
+      <div class="cs-showcase-single cs-reveal-scale">
+        <div class="cs-browser">
+          <div class="cs-browser-bar">
+            <span class="cs-browser-dot"></span>
+            <span class="cs-browser-dot"></span>
+            <span class="cs-browser-dot"></span>
+          </div>
+          <div class="cs-browser-screen">
+            <img src="/img/casos/tsp/real/results-impact-new.png" alt="Impacto y métricas" width="1920" height="1080" loading="lazy" />
+          </div>
+        </div>
+        <div class="cs-browser-base"></div>
+        <p class="cs-showcase-label">Analytics — Control total del funnel</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       9. RESULTADOS / IMPACTO
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-results cs-padding-xl" aria-label="Resultados del proyecto">
+    <div class="container-main">
+      <div class="cs-results-header cs-reveal">
+        <span class="section-badge">Resultados</span>
+        <h2>Impacto en el ecosistema digital de recrutement</h2>
+      </div>
+
+      <div class="cs-stats-grid" id="cs-stats">
+        <div class="cs-stat-card cs-reveal">
+          <div class="cs-stat-number" data-target="400" data-suffix="+">0</div>
+          <div class="cs-stat-label">Ofertas gestionadas</div>
+        </div>
+        <div class="cs-stat-card cs-reveal cs-reveal-delay-1">
+          <div class="cs-stat-number" data-target="70" data-suffix="+">0</div>
+          <div class="cs-stat-label">Consultores expertos</div>
+        </div>
+        <div class="cs-stat-card cs-reveal cs-reveal-delay-2">
+          <div class="cs-stat-number" data-target="3" data-suffix="">0</div>
+          <div class="cs-stat-label">Funnels diferenciados</div>
+        </div>
+        <div class="cs-stat-card cs-reveal cs-reveal-delay-3">
+          <div class="cs-stat-number" data-target="20" data-suffix="">0</div>
+          <div class="cs-stat-label">Años de expertise</div>
+        </div>
+      </div>
+
+      <div class="cs-results-narrative cs-reveal">
+        <p>Talent Search People ahora cuenta con una arquitectura que escala. El matching inteligente y la segmentación de tráfico han reducido el ruido en los procesos, acelerando la conexión entre el talento internacional y las empresas líderes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       10. EXPERT QUOTE
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-quote cs-padding-xl" aria-label="Opinión experta">
+    <div class="container-main">
+      <div class="cs-quote-inner cs-reveal">
+        <div class="cs-quote-mark">&ldquo;</div>
+        <blockquote>La tecnología debe amplificar la relación humana, nunca reemplazarla.</blockquote>
+        <p class="cs-quote-body">El reto con Talent Search People era construir una arquitectura capaz de ordenar la complejidad de un servicio internacional con una propuesta basada en valores.</p>
+        <div class="cs-quote-author">
+          <div class="cs-quote-avatar-placeholder"><i class="fas fa-user-circle"></i></div>
+          <div class="cs-quote-author-info">
+            <div class="cs-quote-name">Jordi Expósito</div>
+            <div class="cs-quote-role">UX/UI &amp; Digital Architecture</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       11. GALLERY — Immersive Grid
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-gallery" aria-label="Galería del proyecto">
+    <div class="container-main">
+      <div class="cs-gallery-header cs-reveal">
+        <span class="section-badge">Galería</span>
+        <h2>Detalle de la plataforma</h2>
+      </div>
+
+      <div class="cs-gallery-mosaic">
+        <div class="cs-gallery-item cs-gallery-item--tall cs-reveal">
+          <img src="/img/casos/tsp/real/screenshot-mobile-home-new.png"
+            alt="Experiencia móvil completa del portal de recruitment"
+            loading="lazy" style="object-position: top;" />
+          <div class="cs-gallery-item-caption">
+            <h4>Mobile Experience</h4>
+            <p>Interfaz optimizada para búsqueda de empleo en movimiento</p>
+          </div>
+        </div>
+        <div class="cs-gallery-item cs-reveal cs-reveal-delay-1">
+          <img src="/img/casos/tsp/real/screenshot-jobs-new.png"
+            alt="Dashboard de gestión con pipeline visual de candidatos"
+            loading="lazy" />
+          <div class="cs-gallery-item-caption">
+            <h4>Recruiter Dashboard</h4>
+            <p>Pipeline de selección centralizado</p>
+          </div>
+        </div>
+        <div class="cs-gallery-item cs-reveal cs-reveal-delay-2">
+          <img src="/img/casos/tsp/real/screenshot-empresas-new.png"
+            alt="Analítica avanzada con KPIs de captación"
+            loading="lazy" />
+          <div class="cs-gallery-item-caption">
+            <h4>Analytics</h4>
+            <p>KPIs de captación y métricas de rendimiento</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       12. SERVICIOS APLICADOS
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-services cs-padding-xl" aria-label="Servicios aplicados">
+    <div class="container-main">
+      <div class="cs-services-header cs-reveal">
+        <span class="section-badge">Servicios aplicados</span>
+        <h2>Capacidades que hicieron posible este proyecto</h2>
+      </div>
+
+      <div class="cs-services-grid">
+        <a href="/servicios/diseno-ux-ui-barcelona" class="cs-service-link cs-reveal">
+          <div class="cs-service-link-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+            </svg>
+          </div>
+          <h3>Diseño UX/UI</h3>
+          <p>Investigación de usuario, arquitectura de información, wireframes, diseño visual y prototipado interactivo para tres perfiles de usuario diferenciados.</p>
+          <div class="cs-service-link-cta">
+            Ver servicio
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="/servicios/desarrollo-web-a-medida-barcelona" class="cs-service-link cs-reveal cs-reveal-delay-1">
+          <div class="cs-service-link-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+            </svg>
+          </div>
+          <h3>Desarrollo Web a Medida</h3>
+          <p>Desarrollo frontend y backend con HTML5, PHP y JavaScript, optimizado para rendimiento, escalabilidad y soporte multiidioma.</p>
+          <div class="cs-service-link-cta">
+            Ver servicio
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="/servicios/consultoria-digital-barcelona" class="cs-service-link cs-reveal cs-reveal-delay-2">
+          <div class="cs-service-link-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
+            </svg>
+          </div>
+          <h3>Consultoría Digital</h3>
+          <p>Diagnóstico de plataforma, definición de arquitectura de conversión y estrategia omnicanal para el canal de recruitment digital.</p>
+          <div class="cs-service-link-cta">
+            Ver servicio
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       13. FAQ
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-faq cs-padding-xl" aria-label="Preguntas frecuentes">
+    <div class="container-main">
+      <div class="cs-faq-header cs-reveal">
+        <span class="section-badge">FAQ</span>
+        <h2>Preguntas frecuentes sobre este proyecto</h2>
+      </div>
+
+      <div class="cs-faq-list">
+        <div class="cs-faq-item cs-reveal">
+          <button class="cs-faq-question" aria-expanded="false">
+            ¿Qué tipo de proyecto fue el de Talent Search People?
+            <svg class="cs-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="cs-faq-answer">
+            <div class="cs-faq-answer-inner">
+              Fue un proyecto integral de arquitectura digital que abarcó investigación de usuarios, rediseño UX/UI completo, definición de recorridos diferenciados para candidatos, empresas y recruiters, y desarrollo frontend optimizado para conversión y captación de talento internacional.
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-faq-item cs-reveal cs-reveal-delay-1">
+          <button class="cs-faq-question" aria-expanded="false">
+            ¿Qué tecnología o enfoque se utilizó?
+            <svg class="cs-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="cs-faq-answer">
+            <div class="cs-faq-answer-inner">
+              El enfoque combinó investigación profunda de usuarios, arquitectura de información, diseño UX/UI iterativo y desarrollo con HTML5, PHP y JavaScript. Se priorizó un diseño responsive mobile-first con arquitectura escalable para soportar múltiples mercados e idiomas.
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-faq-item cs-reveal cs-reveal-delay-2">
+          <button class="cs-faq-question" aria-expanded="false">
+            ¿Cuánto duró el proyecto?
+            <svg class="cs-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="cs-faq-answer">
+            <div class="cs-faq-answer-inner">
+              El proyecto se completó en 9 meses, incluyendo las fases de discovery e investigación, diseño iterativo con validación de usuarios, desarrollo técnico y un proceso de refinamiento continuo con el equipo de TSP.
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-faq-item cs-reveal cs-reveal-delay-3">
+          <button class="cs-faq-question" aria-expanded="false">
+            ¿Qué resultados se obtuvieron?
+            <svg class="cs-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="cs-faq-answer">
+            <div class="cs-faq-answer-inner">
+              Se logró una plataforma diferenciada en el mercado de recruitment, con recorridos claros para tres perfiles de usuario, soporte multiidioma, gestión de más de 400 ofertas activas, y un sistema de matching inteligente que reduce el ruido en los procesos de selección y acelera la conexión talento-oportunidad.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       14. TESTIMONIOS
+       ════════════════════════════════════════════════════════ -->
+  
+
+  <!-- ════════════════════════════════════════════════════════
+       15. CTA FINAL + FORMULARIO
+       ════════════════════════════════════════════════════════ -->
   <section id="cierre" aria-label="Iniciar proyecto">
     <div class="container-main">
       <div class="cierre-layout">
         <div class="cierre-copy reveal">
           <span class="section-badge reveal">Siguiente paso</span>
           <h2 class="cierre-h2">¿Tienes un <span class="text-gradient-standalone">reto similar</span>?</h2>
-          <p class="cierre-sub">El proceso empieza con 5 preguntas y en menos de 24h tienes una valoración.<br><br>Cuéntanos qué estás construyendo.</p>
+          <p class="cierre-sub">El proceso empieza con 5 preguntas y en menos de 24h tienes una
+            valoración.<br><br>Cuéntanos qué estás construyendo.</p>
           <div class="cierre-reasons">
             <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
             </div>
             <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
             </div>
             <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
             </div>
             <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
             </div>
           </div>
         </div>
@@ -703,10 +707,10 @@
                   </button>
                   <div class="custom-select-panel" role="listbox">
                     <div class="custom-select-placeholder">Rango aproximado</div>
-                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
-                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
-                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
-                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K&euro;</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K&euro;</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K&euro;</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K&euro;</div>
                   </div>
                 </div>
                 <input type="hidden" id="f-presupuesto" name="budget" value="" />
@@ -717,7 +721,7 @@
               <textarea id="f-mensaje" class="input" rows="4"
                 placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
             </div>
-            <label class="checkbox-row" for="f-privacidad">
+            <label class="checkbox-row" for="f-privacidad" style="margin-top:1rem;">
               <input type="checkbox" id="f-privacidad" required />
               <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
                   Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
@@ -729,37 +733,181 @@
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </button>
-            <p class="form-note">Sin compromiso. Respuesta en menos de 48h laborales.</p>
-            <div class="form-divider"
-              style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
-              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
-              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
-              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
-            </div>
-            <a href="/iniciar-proyecto" class="btn-secondary" style="width:100%;justify-content:center;">
-              Formulario completo (Presupuesto en 48h)
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+            <p class="form-note">Sin compromiso. Respuesta en menos de 48h laborables.</p>
+            <a href="/form-v3/form-step1.html" style="display:flex;align-items:center;gap:.875rem;margin-top:1.25rem;padding:.875rem 1rem;border:1px dashed var(--border-strong,#2A2A2A);border-radius:12px;background:rgba(93,255,191,.02);text-decoration:none;transition:all .25s;" onmouseover="this.style.borderColor='rgba(93,255,191,.25)';this.style.background='rgba(93,255,191,.04)'" onmouseout="this.style.borderColor='';this.style.background='rgba(93,255,191,.02)'">
+                <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(93,255,191,.12);display:flex;align-items:center;justify-content:center;color:var(--mint);">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:.125rem;">
+                  <span style="font-size:.8125rem;font-weight:600;color:var(--text-primary);">¿Tu proyecto es urgente?</span>
+                  <span style="font-size:.6875rem;color:var(--text-muted);line-height:1.5;">Cuéntanos más detalles y te enviamos una propuesta completa en 48h.</span>
+                </div>
+                <svg style="flex-shrink:0;color:var(--text-muted);" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer placeholder -->
+  <!-- Footer -->
   <div id="tp-footer"></div>
 
   <script src="/js/components.js"></script>
   <script>
     TP.navbar('casos-de-negocio');
-    TP.testimonios();
     TP.footer();
     TP.initJS();
   </script>
   <script src="/js/service-page.js" defer></script>
   <script src="/js/supabase-forms.js" defer></script>
+
+  <!-- ═══ CASE STUDY v2 — ANIMATIONS ═══ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── 1. Scroll Reveal — IntersectionObserver ── */
+      var revealEls = document.querySelectorAll('.cs-reveal, .cs-reveal-scale, .cs-reveal-left, .cs-reveal-right');
+      if (revealEls.length) {
+        /* Immediately reveal elements already in viewport on load */
+        requestAnimationFrame(function () {
+          revealEls.forEach(function (el) {
+            var rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              el.classList.add('visible');
+            }
+          });
+        });
+        /* Observe remaining hidden elements for scroll reveal */
+        var revealObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              revealObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) {
+          if (!el.classList.contains('visible')) revealObs.observe(el);
+        });
+      }
+
+      /* ── 2. FAQ Accordion ── */
+      document.querySelectorAll('.cs-faq-question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.parentElement;
+          var isOpen = item.classList.contains('open');
+          document.querySelectorAll('.cs-faq-item.open').forEach(function (i) { i.classList.remove('open'); });
+          if (!isOpen) item.classList.add('open');
+          btn.setAttribute('aria-expanded', String(!isOpen));
+        });
+      });
+
+      /* ── 3. Signal Card Stagger Animation ── */
+      var signalsBlock = document.querySelector('.cs-signals');
+      if (signalsBlock) {
+        var sigObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('in-view');
+              sigObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.25 });
+        sigObs.observe(signalsBlock);
+      }
+
+      /* ── 4. Count-Up Animation for Stats ── */
+      var statsGrid = document.getElementById('cs-stats');
+      if (statsGrid) {
+        var countFired = false;
+        var countObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting && !countFired) {
+              countFired = true;
+              var cards = statsGrid.querySelectorAll('.cs-stat-card');
+              cards.forEach(function (card, i) {
+                setTimeout(function () {
+                  card.classList.add('counted');
+                  var numEl = card.querySelector('.cs-stat-number');
+                  var target = parseInt(numEl.getAttribute('data-target'), 10);
+                  var suffix = numEl.getAttribute('data-suffix') || '';
+                  var duration = 2000;
+                  var startTime = null;
+
+                  function animate(ts) {
+                    if (!startTime) startTime = ts;
+                    var progress = Math.min((ts - startTime) / duration, 1);
+                    var eased = 1 - Math.pow(1 - progress, 4); // easeOutQuart
+                    var current = Math.round(eased * target);
+                    numEl.textContent = current + suffix;
+                    if (progress < 1) requestAnimationFrame(animate);
+                    else numEl.textContent = target + suffix;
+                  }
+                  requestAnimationFrame(animate);
+                }, i * 200);
+              });
+              countObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        countObs.observe(statsGrid);
+      }
+
+      /* ── 5. Parallax Tilt on Hero Browser Mockup ── */
+      var heroBrowser = document.querySelector('.cs-hero-visual-inner .cs-browser');
+      var heroVisualFull = document.querySelector('.cs-hero-visual-full');
+      if (heroBrowser && heroVisualFull && window.innerWidth > 1024) {
+        heroVisualFull.addEventListener('mousemove', function (e) {
+          var rect = heroVisualFull.getBoundingClientRect();
+          var x = (e.clientX - rect.left) / rect.width - 0.5;
+          var y = (e.clientY - rect.top) / rect.height - 0.5;
+          heroBrowser.style.transform = 'perspective(1200px) rotateY(' + (x * 4) + 'deg) rotateX(' + (-y * 3) + 'deg)';
+        });
+        heroVisualFull.addEventListener('mouseleave', function () {
+          heroBrowser.style.transition = 'transform .8s cubic-bezier(.22,1,.36,1)';
+          heroBrowser.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg)';
+          setTimeout(function () { heroBrowser.style.transition = ''; }, 800);
+        });
+      }
+
+      /* ── 6. Scan Line on Showcase Browsers ── */
+      var showcaseBrowsers = document.querySelectorAll('.cs-showcase .cs-browser-screen');
+      showcaseBrowsers.forEach(function (screen) {
+        var scanLine = document.createElement('div');
+        scanLine.className = 'cs-scan-line';
+        screen.style.position = 'relative';
+        screen.appendChild(scanLine);
+
+        var scanObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              setTimeout(function () {
+                scanLine.style.opacity = '0.4';
+                scanLine.style.transition = 'left 3s cubic-bezier(.25,.46,.45,.94), opacity .3s';
+                scanLine.style.left = '100%';
+                setTimeout(function () { scanLine.style.opacity = '0'; }, 3000);
+              }, 400);
+              scanObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        scanObs.observe(screen);
+      });
+
+      /* ── 7. Smooth parallax on scroll for floating phone ── */
+      var phoneFloat = document.querySelector('.cs-phone-float');
+      if (phoneFloat && window.innerWidth > 768) {
+        window.addEventListener('scroll', function () {
+          var scrolled = window.pageYOffset;
+          var rate = scrolled * 0.08;
+          phoneFloat.style.transform = 'translateY(' + (-rate) + 'px)';
+        }, { passive: true });
+      }
+
+    })();
+  </script>
 </body>
 
 </html>

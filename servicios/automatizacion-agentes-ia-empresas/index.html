@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#5dffbf">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA para empresas | Automatizaci&oacute;n y agentes inteligentes &middot; Tres Puntos</title>
+  <meta name="description" content="Automatizamos procesos y creamos agentes IA para empresas que quieren eliminar tareas manuales y escalar operaciones." />
+
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/servicios/automatizacion-agentes-ia-empresas/" />
+  <meta property="og:title" content="IA para empresas | Automatizaci&oacute;n y agentes inteligentes" />
+  <meta property="og:description"
+    content="Dise&ntilde;amos automatizaciones y agentes IA que eliminan trabajo manual y conectan sistemas de empresa." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/servicios/automatizacion-agentes-ia-empresas" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Tres Puntos Comunicaci&oacute;n" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IA para empresas | Automatizaci&oacute;n y agentes inteligentes" />
+  <meta name="twitter:description" content="Dise&ntilde;amos automatizaciones y agentes IA que eliminan trabajo manual y conectan sistemas de empresa." />
+  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Automatizaciones y Agentes IA para Empresas",
+      "description": "Automatizamos procesos y creamos agentes IA para empresas que quieren eliminar tareas manuales y escalar operaciones.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicaci\u00f3n",
+        "url": "https://www.trespuntoscomunicacion.es/"
+      },
+      "serviceType": "Automatizaci\u00f3n y Agentes IA"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "\u00bfQu\u00e9 tipo de procesos se pueden automatizar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pr\u00e1cticamente cualquier proceso digital. Gesti\u00f3n de leads, reporting, integraciones entre sistemas, tareas administrativas o flujos internos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "\u00bfQu\u00e9 herramientas se utilizan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dependiendo del proyecto utilizamos herramientas como n8n, Make, APIs empresariales y modelos de inteligencia artificial. La arquitectura se dise\u00f1a siempre en funci\u00f3n del negocio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "\u00bfCu\u00e1nto tarda un proyecto de automatizaci\u00f3n?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de la complejidad del sistema. Las primeras automatizaciones pueden estar funcionando en pocas semanas."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* Page-specific: Automatizaciones y Agentes IA — Automation Flow Animation */
+
+    /* Hero: Automation Flow Diagram */
+    .auto-workflow {
+      position: absolute;
+      inset: 0;
+      overflow: hidden
+    }
+
+    .auto-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(93, 255, 191, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(93, 255, 191, .04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0;
+      animation: autoFade .8s .3s forwards
+    }
+
+    .auto-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%
+    }
+
+    .auto-line {
+      stroke: var(--line-color, rgba(93, 255, 191, .18));
+      stroke-width: 1.5;
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      animation: autoDraw 1.2s ease-out forwards
+    }
+
+    .auto-line:nth-child(1) { animation-delay: .5s }
+    .auto-line:nth-child(2) { animation-delay: .7s }
+    .auto-line:nth-child(3) { animation-delay: .9s }
+    .auto-line:nth-child(4) { animation-delay: 1.1s }
+    .auto-line:nth-child(5) { animation-delay: 1.3s }
+
+    .auto-pulse-line {
+      stroke: var(--pulse-color, var(--mint));
+      stroke-width: 1.5;
+      stroke-dasharray: 4 20;
+      opacity: 0;
+      animation: autoPulseIn .3s 1.8s forwards, autoTravel 3s 1.8s linear infinite
+    }
+
+    .auto-pulse-line:nth-child(7) { animation-delay: 2s, 2s }
+    .auto-pulse-line:nth-child(8) { animation-delay: 2.1s, 2.1s }
+    .auto-pulse-line:nth-child(9) { animation-delay: 2.3s, 2.3s }
+    .auto-pulse-line:nth-child(10) { animation-delay: 2.5s, 2.5s }
+
+    .auto-node {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .35rem .7rem;
+      background: var(--bg-color, rgba(93, 255, 191, .06));
+      border: 1px solid var(--border-color, rgba(93, 255, 191, .2));
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      letter-spacing: .03em;
+      color: var(--text-color, rgba(93, 255, 191, .9));
+      white-space: nowrap;
+      opacity: 0;
+      transform: scale(.85);
+      z-index: 2
+    }
+
+    .auto-node-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--dot-color, var(--mint));
+      box-shadow: 0 0 8px var(--glow-color, rgba(93, 255, 191, .5))
+    }
+
+    .auto-n-trigger {
+      top: 8%;
+      left: 12%;
+      animation: autoNodeIn .5s .6s ease-out forwards
+    }
+
+    .auto-n-agent {
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(.85);
+      animation: autoNodeC .5s .4s ease-out forwards;
+      padding: .5rem .9rem;
+      font-size: .65rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(2px);
+    }
+
+    .auto-n-agent svg {
+      width: 24px;
+      height: 24px;
+      stroke: #fff;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+    }
+
+    .auto-n-n8n {
+      top: 8%;
+      right: 12%;
+      animation: autoNodeIn .5s .8s ease-out forwards
+    }
+
+    .auto-n-crm {
+      bottom: 18%;
+      left: 8%;
+      animation: autoNodeIn .5s 1s ease-out forwards
+    }
+
+    .auto-n-lead {
+      bottom: 18%;
+      right: 8%;
+      animation: autoNodeIn .5s 1.2s ease-out forwards
+    }
+
+    .auto-n-api {
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%) scale(.85);
+      animation: autoNodeCX .5s 1.4s ease-out forwards
+    }
+
+    .auto-status {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--font-mono);
+      font-size: .55rem;
+      color: var(--mint);
+      opacity: 0;
+      animation: autoFade .4s 2.4s forwards
+    }
+
+    .auto-status-led {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 8px var(--mint);
+      animation: autoLed 2s 2.4s infinite
+    }
+
+    @keyframes autoFade { to { opacity: 1 } }
+    @keyframes autoNodeIn { to { opacity: 1; transform: scale(1) } }
+    @keyframes autoNodeC { to { opacity: 1; transform: translate(-50%, -50%) scale(1) } }
+    @keyframes autoNodeCX { to { opacity: 1; transform: translateX(-50%) scale(1) } }
+    @keyframes autoDraw { to { stroke-dashoffset: 0 } }
+    @keyframes autoPulseIn { to { opacity: .5 } }
+    @keyframes autoTravel { to { stroke-dashoffset: -48 } }
+    @keyframes autoLed { 0%, 100% { opacity: 1 } 50% { opacity: .3 } }
+
+    @media(max-width:768px) {
+      .auto-node {
+        font-size: .5rem;
+        padding: .25rem .5rem
+      }
+      .auto-n-crm { left: 5% }
+      .auto-n-lead { right: 5% }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar placeholder -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="sp-hero" aria-label="Automatizaciones y Agentes IA para Empresas">
+    <div class="container-main">
+      <div class="sp-hero-layout">
+        <div class="sp-hero-copy">
+          <span class="section-badge reveal">Automatizaciones y Agentes IA</span>
+          <h1 class="sp-hero-h1 reveal"><span class="text-gradient-standalone">IA para empresas:</span> automatizaciones y agentes inteligentes para escalar operaciones</h1>
+          <p class="sp-hero-sub reveal">Construimos automatizaciones y agentes IA que eliminan trabajo manual en tu empresa.</p>
+          <div class="sp-hero-detail reveal">
+            <p>Leads que se cualifican solos.<br>
+            Procesos internos que se ejecutan sin intervenci&oacute;n.<br>
+            Equipos que dejan de perder tiempo en tareas repetitivas.</p>
+            <p>La inteligencia artificial no es solo un chatbot.<br>
+            Bien aplicada se convierte en una infraestructura operativa para el negocio.</p>
+          </div>
+          <div class="sp-hero-ctas reveal">
+            <a href="/contacto/" class="btn-primary magnetic-btn">
+              Cu&eacute;ntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="/arquitectura-digital-conversion" class="btn-ghost">
+              Conoce nuestra metodolog&iacute;a
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Hero visual: Automation flow diagram -->
+        <div class="sp-hero-visual reveal reveal-delay-1">
+          <div class="sp-browser-mock">
+            <div class="sp-browser-topbar">
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-url">automatizacion.empresa.com/agentes</span>
+            </div>
+            <div class="sp-browser-body">
+              <!-- Automation Flow Diagram -->
+              <div class="auto-workflow">
+                <div class="auto-grid-bg"></div>
+                <svg class="auto-lines" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
+                  <!-- Connection lines from center to nodes -->
+                  <line class="auto-line" x1="200" y1="130" x2="70" y2="40" style="--line-color: rgba(56, 189, 248, .18);" />
+                  <line class="auto-line" x1="200" y1="130" x2="330" y2="40" style="--line-color: rgba(167, 139, 250, .18);" />
+                  <line class="auto-line" x1="200" y1="130" x2="55" y2="200" style="--line-color: rgba(251, 113, 133, .18);" />
+                  <line class="auto-line" x1="200" y1="130" x2="345" y2="200" style="--line-color: rgba(250, 204, 21, .18);" />
+                  <line class="auto-line" x1="200" y1="130" x2="200" y2="240" style="--line-color: rgba(93, 255, 191, .18);" />
+                  <!-- Data flow pulses -->
+                  <line class="auto-pulse-line" x1="200" y1="130" x2="70" y2="40" style="--pulse-color: #38bdf8;" />
+                  <line class="auto-pulse-line" x1="200" y1="130" x2="330" y2="40" style="--pulse-color: #a78bfa;" />
+                  <line class="auto-pulse-line" x1="200" y1="130" x2="55" y2="200" style="--pulse-color: #fb7185;" />
+                  <line class="auto-pulse-line" x1="200" y1="130" x2="345" y2="200" style="--pulse-color: #facc15;" />
+                  <line class="auto-pulse-line" x1="200" y1="130" x2="200" y2="240" style="--pulse-color: var(--mint);" />
+                </svg>
+                <!-- Central Agent Node -->
+                <div class="auto-n-agent">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+                  </svg>
+                </div>
+                <!-- Surrounding nodes -->
+                <div class="auto-node auto-n-trigger" style="--bg-color: rgba(56, 189, 248, .06); --border-color: rgba(56, 189, 248, .2); --text-color: rgba(56, 189, 248, .9); --dot-color: #38bdf8; --glow-color: rgba(56, 189, 248, .5);">
+                  <span class="auto-node-dot"></span>Trigger
+                </div>
+                <div class="auto-node auto-n-n8n" style="--bg-color: rgba(167, 139, 250, .06); --border-color: rgba(167, 139, 250, .2); --text-color: rgba(167, 139, 250, .9); --dot-color: #a78bfa; --glow-color: rgba(167, 139, 250, .5);">
+                  <span class="auto-node-dot"></span>n8n
+                </div>
+                <div class="auto-node auto-n-crm" style="--bg-color: rgba(251, 113, 133, .06); --border-color: rgba(251, 113, 133, .2); --text-color: rgba(251, 113, 133, .9); --dot-color: #fb7185; --glow-color: rgba(251, 113, 133, .5);">
+                  <span class="auto-node-dot"></span>CRM
+                </div>
+                <div class="auto-node auto-n-lead" style="--bg-color: rgba(250, 204, 21, .06); --border-color: rgba(250, 204, 21, .2); --text-color: rgba(250, 204, 21, .9); --dot-color: #facc15; --glow-color: rgba(250, 204, 21, .5);">
+                  <span class="auto-node-dot"></span>Leads
+                </div>
+                <div class="auto-node auto-n-api">
+                  <span class="auto-node-dot"></span>API
+                </div>
+                <div class="auto-status"><span class="auto-status-led"></span>Agentes activos</div>
+              </div>
+            </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="sp-float-badge reveal">
+            <svg width="14" height="14" fill="none" stroke="var(--mint)" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+            <span>Automatizaci&oacute;n 24/7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT MARQUEE ============ -->
+  <div class="sp-marquee" aria-hidden="true">
+    <div class="sp-marquee-track">
+      <span>Automatizaci&oacute;n inteligente</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Agentes IA</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Flujos autom&aacute;ticos</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Leads cualificados</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Procesos sin fricci&oacute;n</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Automatizaci&oacute;n inteligente</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Agentes IA</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Flujos autom&aacute;ticos</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Leads cualificados</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Procesos sin fricci&oacute;n</span>
+      <span class="sp-marquee-sep">&bull;</span>
+    </div>
+  </div>
+
+  <!-- ============ 2. EL PROBLEMA ============ -->
+  <section class="sp-problem" aria-label="El problema">
+    <div class="container-main">
+      <div class="sp-problem-layout">
+        <div class="sp-problem-copy reveal">
+          <span class="section-badge reveal">El problema</span>
+          <h2 class="section-h2 reveal">La mayor&iacute;a de empresas siguen funcionando con <span class="text-gradient-standalone">procesos manuales</span></h2>
+          <p class="sp-problem-text reveal">Esto genera fricci&oacute;n operativa constante.</p>
+          <p class="sp-problem-text reveal">Cada una de estas fricciones tiene un coste. Tiempo del equipo. Errores humanos. Oportunidades de negocio perdidas.</p>
+          <p class="sp-problem-text reveal">Cuando el volumen crece, el sistema empieza a romperse.</p>
+        </div>
+        <!-- Friction signals -->
+        <div class="sp-signals reveal reveal-delay-1">
+          <div class="sp-signals-title">Se&ntilde;ales de fricci&oacute;n operativa</div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Leads sin cualificar</strong>
+              <span>Leads que llegan pero nadie cualifica correctamente.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Datos copiados entre sistemas</strong>
+              <span>Equipos que copian datos manualmente entre herramientas.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Procesos dependientes de personas</strong>
+              <span>Procesos internos que dependen de personas espec&iacute;ficas.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Informaci&oacute;n dispersa</strong>
+              <span>Informaci&oacute;n repartida entre herramientas sin conexi&oacute;n.</span>
+            </div>
+          </div>
+          <div class="sp-signal-bottom">Cada una de estas fricciones tiene un coste directo en tiempo, errores y oportunidades perdidas.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. QU&Eacute; HACEMOS ============ -->
+  <section class="sp-services" aria-label="Qu&eacute; hacemos">
+    <div class="container-main">
+      <span class="section-badge reveal">Qu&eacute; hacemos</span>
+      <h2 class="section-h2 reveal">Automatizaciones y agentes IA personalizados que <span class="text-gradient-standalone">conectan tus herramientas</span></h2>
+      <p class="sp-services-intro reveal">Eliminamos tareas manuales y creamos flujos de trabajo autom&aacute;ticos. Trabajamos con arquitecturas modernas basadas en n8n, Make, APIs empresariales, LLMs y sistemas de agentes.</p>
+
+      <div class="sp-services-grid">
+        <div class="sp-service-card reveal">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Automatizaci&oacute;n de flujos de trabajo</h3>
+          <p class="sp-service-text">Creamos flujos autom&aacute;ticos que conectan herramientas de empresa: sincronizaci&oacute;n CRM, gesti&oacute;n autom&aacute;tica de leads, generaci&oacute;n de informes, integraciones entre sistemas y automatizaci&oacute;n de marketing. El resultado es una arquitectura donde la informaci&oacute;n fluye sola.</p>
+        </div>
+
+        <div class="sp-service-card reveal reveal-delay-1">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Automatizaci&oacute;n de leads cualificados</h3>
+          <p class="sp-service-text">Construimos sistemas que capturan leads desde web o campa&ntilde;as, analizan el perfil, cualifican la oportunidad y asignan el lead al equipo correcto. El equipo comercial trabaja solo con oportunidades reales.</p>
+        </div>
+
+        <div class="sp-service-card reveal">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Agentes IA personalizados</h3>
+          <p class="sp-service-text">Agentes de soporte interno, asistentes para equipos comerciales, agentes que analizan informaci&oacute;n de negocio y sistemas que generan propuestas o informes. Se integran con CRM, bases de datos y herramientas internas. Se convierten en un miembro m&aacute;s del equipo.</p>
+        </div>
+
+        <div class="sp-service-card reveal reveal-delay-1">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Integraci&oacute;n con sistemas existentes</h3>
+          <p class="sp-service-text">Conectamos las automatizaciones y agentes con las herramientas que ya usas. n8n, Make, APIs empresariales y LLMs para construir sistemas que capturan leads, cualifican oportunidades, ejecutan procesos y generan informaci&oacute;n para el equipo.</p>
+        </div>
+      </div>
+
+      <div class="sp-method-cta reveal" style="margin-top:2rem">
+        <a href="/arquitectura-digital-conversion" class="btn-ghost">
+          Ver nuestra Metodolog&iacute;a de trabajo
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 4. C&Oacute;MO TRABAJAMOS ============ -->
+  <section class="sp-methodology" aria-label="C&oacute;mo trabajamos">
+    <div class="container-main">
+      <div class="sp-method-layout">
+        <div class="sp-method-copy">
+          <span class="section-badge reveal">Proceso</span>
+          <h2 class="section-h2 reveal">C&oacute;mo construimos tu <span class="text-gradient-standalone">sistema de automatizaci&oacute;n</span></h2>
+          <p class="sp-method-intro reveal">Nuestro enfoque sigue la metodolog&iacute;a de Arquitectura Digital de Conversi&oacute;n. El proceso es siempre el mismo.</p>
+        </div>
+        <!-- Process timeline -->
+        <div class="sp-method-steps">
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">01</div>
+            <div class="sp-method-step-content">
+              <h3>Diagn&oacute;stico de procesos</h3>
+              <p>Analizamos c&oacute;mo funciona actualmente la empresa. Detectamos tareas manuales, cuellos de botella y sistemas desconectados.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">02</div>
+            <div class="sp-method-step-content">
+              <h3>Dise&ntilde;o de arquitectura de automatizaci&oacute;n</h3>
+              <p>Definimos qu&eacute; procesos deben automatizarse. Dise&ntilde;amos la arquitectura del sistema.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">03</div>
+            <div class="sp-method-step-content">
+              <h3>Construcci&oacute;n de automatizaciones y agentes</h3>
+              <p>Construimos los flujos y los conectamos con las herramientas existentes.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">04</div>
+            <div class="sp-method-step-content">
+              <h3>Validaci&oacute;n y optimizaci&oacute;n</h3>
+              <p>Probamos el sistema con el equipo para asegurar que funciona correctamente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sp-method-cta reveal">
+        <a href="/arquitectura-digital-conversion" class="btn-ghost">
+          Ver proceso completo: Arquitectura Digital de Conversi&oacute;n
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT MARQUEE ============ -->
+  <div class="sp-marquee" aria-hidden="true">
+    <div class="sp-marquee-track">
+      <span>IA para empresas</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Automatizaci&oacute;n con inteligencia artificial</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Agentes IA empresa</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Automatizaci&oacute;n procesos empresa</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>IA para empresas</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Automatizaci&oacute;n con inteligencia artificial</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Agentes IA empresa</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Automatizaci&oacute;n procesos empresa</span>
+      <span class="sp-marquee-sep">&bull;</span>
+    </div>
+  </div>
+
+  <!-- ============ 5. PROYECTOS RELACIONADOS (TP.casos) ============ -->
+  <div id="tp-casos"></div>
+
+  <!-- ============ 6. SERVICIOS RELACIONADOS ============ -->
+  <section class="sp-related" aria-label="Servicios relacionados">
+    <div class="container-main">
+      <span class="section-badge reveal">Servicios complementarios</span>
+      <h2 class="section-h2 reveal">Servicios que suelen acompa&ntilde;ar este proyecto</h2>
+      <p class="sp-related-intro reveal">La automatizaci&oacute;n es m&aacute;s potente cuando est&aacute; integrada en una estrategia digital completa.</p>
+
+      <div class="sp-related-grid">
+        <a href="/servicios/desarrollo-web-a-medida-barcelona" class="sp-related-card reveal">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+            </svg>
+          </div>
+          <h3>Desarrollo web a medida</h3>
+          <p>Construimos interfaces que aprovechan la potencia de las automatizaciones y agentes IA.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/consultoria-digital-barcelona" class="sp-related-card reveal reveal-delay-1">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </div>
+          <h3>Consultor&iacute;a digital</h3>
+          <p>Antes de automatizar, es vital definir la arquitectura digital que soporte el sistema.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/ia-generativa-empresas" class="sp-related-card reveal reveal-delay-2">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+            </svg>
+          </div>
+          <h3>IA generativa para empresas</h3>
+          <p>Integraci&oacute;n de modelos de lenguaje y cerebros digitales para el negocio.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- ============ 7. COMENTARIO DEL EXPERTO ============ -->
+  <section class="sp-expert" aria-label="Comentario del experto">
+    <div class="container-main">
+      <div class="sp-expert-layout reveal">
+        <div class="sp-expert-quote">
+          <span class="section-badge">Comentario del experto</span>
+          <h2 class="sp-expert-h2">La mayor&iacute;a de empresas piensa en IA como un chatbot</h2>
+          <p>Pero el verdadero impacto aparece cuando la inteligencia artificial se integra en los procesos del negocio.</p>
+          <p>Cuando los sistemas hablan entre s&iacute;. Cuando los datos fluyen. Cuando las tareas repetitivas desaparecen.</p>
+          <p>En ese momento la IA deja de ser una herramienta y pasa a ser infraestructura operativa.</p>
+        </div>
+        <div class="sp-expert-author">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Exp&oacute;sito" class="sp-expert-avatar" width="80" height="80" loading="lazy">
+          <div>
+            <div class="sp-expert-name">Jordi Exp&oacute;sito</div>
+            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
+            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener" class="sp-expert-linkedin">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+              Ver en LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. FAQ ============ -->
+  <section id="faq" class="sp-faq" aria-label="Preguntas frecuentes sobre Automatizaciones y Agentes IA">
+    <div class="container-main">
+      <div class="faq-layout">
+        <div class="reveal">
+          <span class="section-badge reveal">FAQ</span>
+          <h2 class="section-h2 reveal">Preguntas frecuentes</h2>
+        </div>
+        <div class="faq-list reveal reveal-delay-1">
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">&iquest;Qu&eacute; tipo de procesos se pueden automatizar?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Pr&aacute;cticamente cualquier proceso digital.</p>
+                <p>Gesti&oacute;n de leads, reporting, integraciones entre sistemas, tareas administrativas o flujos internos.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">&iquest;Qu&eacute; herramientas se utilizan?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Dependiendo del proyecto utilizamos herramientas como n8n, Make, APIs empresariales y modelos de inteligencia artificial.</p>
+                <p>La arquitectura se dise&ntilde;a siempre en funci&oacute;n del negocio.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">&iquest;Cu&aacute;nto tarda un proyecto de automatizaci&oacute;n?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Depende de la complejidad del sistema.</p>
+                <p>Las primeras automatizaciones pueden estar funcionando en pocas semanas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL + FORM ============ -->
+  <section id="cierre" aria-label="Iniciar proyecto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy reveal">
+          <span class="section-badge reveal">Siguiente paso</span>
+          <h2 class="cierre-h2">&iquest;Tienes procesos que <span class="text-gradient-standalone">podr&iacute;an funcionar solos</span>?</h2>
+          <p class="cierre-sub">Muchas empresas descubren que el mayor cuello de botella no es el mercado. Es su propio sistema interno.<br><br>Si tu equipo est&aacute; perdiendo tiempo en tareas manuales, probablemente existe una arquitectura mejor.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Sin reuni&oacute;n de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Respondemos en menos de 24h con una primera valoraci&oacute;n de alcance.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>El proyecto empieza con diagn&oacute;stico, no con propuesta econ&oacute;mica gen&eacute;rica.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="form-gradient-accent"></div>
+          <div class="cierre-form-inner">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-nombre">Nombre</label>
+                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="f-email">Email</label>
+                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-tel">Tel&eacute;fono</label>
+                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
+                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
+                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Rango aproximado</div>
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5K &ndash; 10K&euro;</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10K &ndash; 15K&euro;</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15K &ndash; 20K&euro;</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K&euro;</div>
+                  </div>
+                </div>
+                <input type="hidden" id="f-presupuesto" name="budget" value="" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="label" for="f-mensaje">Cu&eacute;ntanos tu situaci&oacute;n</label>
+              <textarea id="f-mensaje" class="input" rows="4" placeholder="Describe brevemente los procesos que te gustar&iacute;a automatizar..."></textarea>
+            </div>
+            <label class="checkbox-row" for="f-privacidad" style="margin-top:1rem;">
+              <input type="checkbox" id="f-privacidad" required />
+              <span class="checkbox-label">He le&iacute;do y acepto la <a href="/politica-privacidad">Pol&iacute;tica de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+            </label>
+            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn" style="width:100%;justify-content:center;">
+              Cu&eacute;ntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <p class="form-note">Sin compromiso. Respuesta en menos de 24h.</p>
+            <div class="form-divider" style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+            </div>
+            <a href="/contacto/" class="btn-secondary" style="width:100%;justify-content:center;">
+              Formulario completo (Presupuesto en 24h)
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js"></script>
+  <script>
+    TP.navbar('automatizacion-ia');
+    TP.casos();
+    TP.footer();
+    TP.initJS();
+  </script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#5dffbf">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briefing del proyecto | Tres Puntos</title>
+  <meta name="description" content="Cuéntanos los detalles de tu proyecto. Servicios, plazos y todo lo que necesitamos para prepararte una propuesta.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <style>
+    /* ─── NOISE + GRID ─── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0; opacity: .4;
+    }
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(93,255,191,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(93,255,191,.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none; z-index: 0;
+    }
+
+    .glow-orb {
+      position: fixed; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(93,255,191,.06) 0%, transparent 70%);
+      pointer-events: none; z-index: 0; top: -150px; right: -200px;
+      animation: orbFloat 8s ease-in-out infinite;
+    }
+    @keyframes orbFloat {
+      0%,100% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(-30px,30px) scale(1.05); }
+    }
+
+    /* Override custom cursor from design-system.css — use native cursor */
+    body, body * { cursor: auto !important; }
+    a, button, label, .check-option, .radio-option, .radio-card, .file-upload-zone { cursor: pointer !important; }
+
+    .page-wrap { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* ─── NAV ─── */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 1px solid var(--border-base);
+      background: rgba(14,14,14,.8); backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; height: 38px; }
+    .nav-logo svg { height: 100%; width: auto; }
+    .nav-back {
+      display: flex; align-items: center; gap: .375rem;
+      font-size: .8125rem; color: var(--text-muted); text-decoration: none; transition: color .2s;
+    }
+    .nav-back:hover { color: var(--text-primary); }
+    .nav-back svg { width: 14px; height: 14px; }
+
+    /* ─── MAIN GRID ─── */
+    .main {
+      flex: 1; display: grid; grid-template-columns: 420px 1fr;
+      min-height: calc(100vh - 57px);
+    }
+
+    /* ─── LEFT PANEL ─── */
+    .left-panel {
+      background: var(--bg-surface); border-right: 1px solid var(--border-base);
+      padding: 3.5rem 3rem;
+      display: flex; flex-direction: column; justify-content: space-between;
+      position: sticky; top: 57px; height: calc(100vh - 57px); overflow-y: auto;
+    }
+    .panel-badge {
+      display: inline-flex; align-items: center; gap: .375rem;
+      background: rgba(93,255,191,.08); border: 1px solid rgba(93,255,191,.2);
+      border-radius: var(--radius-full); padding: .3rem .75rem;
+      font-size: .6875rem; font-weight: 700; color: var(--mint);
+      letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1.75rem;
+    }
+    .panel-badge-dot {
+      width: 5px; height: 5px; border-radius: 50%; background: var(--mint);
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+
+    .panel-h1 {
+      font-family: var(--font-heading); font-weight: 800; font-size: 1.75rem;
+      line-height: 1.2; color: var(--text-primary); margin-bottom: 1rem;
+    }
+    .panel-h1 span { color: var(--mint); }
+    .panel-sub { font-size: .9375rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2.5rem; }
+
+    .steps-list { display: flex; flex-direction: column; }
+    .step-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: .875rem 0; border-bottom: 1px solid var(--border-base); transition: opacity .3s;
+    }
+    .step-item:last-child { border-bottom: none; }
+    .step-num {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6875rem; font-weight: 700; font-family: var(--font-mono);
+      border: 1.5px solid var(--border-strong); color: var(--text-muted);
+      background: var(--bg-muted); transition: all .3s; margin-top: .1rem;
+    }
+    .step-item.active .step-num {
+      background: var(--mint); border-color: var(--mint); color: #0e0e0e;
+      box-shadow: 0 0 16px rgba(93,255,191,.4);
+    }
+    .step-item.done .step-num {
+      background: rgba(93,255,191,.15); border-color: rgba(93,255,191,.3); color: var(--mint);
+    }
+    .step-title {
+      font-family: var(--font-heading); font-weight: 700; font-size: .875rem;
+      color: var(--text-muted); transition: color .3s; margin-bottom: .2rem;
+    }
+    .step-item.active .step-title { color: var(--text-primary); }
+    .step-item.done .step-title { color: var(--text-secondary); }
+    .step-desc { font-size: .75rem; color: var(--text-muted); line-height: 1.5; }
+    .step-item.active .step-desc { color: var(--text-secondary); }
+
+    .left-bottom { padding-top: 2rem; border-top: 1px solid var(--border-base); margin-top: 2rem; }
+    .trust-items { display: flex; flex-direction: column; gap: .75rem; }
+    .trust-item {
+      display: flex; align-items: center; gap: .625rem;
+      font-size: .75rem; color: var(--text-muted);
+    }
+    .trust-item svg { width: 14px; height: 14px; color: var(--mint); flex-shrink: 0; }
+
+    /* ─── RIGHT PANEL ─── */
+    .right-panel {
+      padding: 3rem 5rem 4rem;
+      max-width: 720px; width: 100%; margin: 0 auto;
+    }
+
+    .progress-wrap { margin-bottom: 2.5rem; }
+    .progress-bar-track {
+      height: 3px; background: var(--border-base); border-radius: var(--radius-full);
+      overflow: hidden; margin-bottom: .75rem;
+    }
+    .progress-bar-fill {
+      height: 100%; background: linear-gradient(90deg, var(--mint), #4ea5ff);
+      border-radius: var(--radius-full); transition: width .6s cubic-bezier(.22,1,.36,1);
+      box-shadow: 0 0 12px rgba(93,255,191,.4);
+    }
+    .progress-meta { display: flex; justify-content: space-between; align-items: center; }
+    .progress-label {
+      font-size: .6875rem; color: var(--text-muted); letter-spacing: .06em;
+      text-transform: uppercase; font-family: var(--font-mono);
+    }
+    .progress-pct { font-size: .6875rem; color: var(--mint); font-family: var(--font-mono); font-weight: 600; }
+
+    .step-tag {
+      font-size: .6875rem; font-weight: 700; color: var(--mint); letter-spacing: .1em;
+      text-transform: uppercase; font-family: var(--font-mono); margin-bottom: .5rem;
+      display: flex; align-items: center; gap: .35rem;
+    }
+    .step-tag::before {
+      content: ''; display: inline-block; width: 16px; height: 1px;
+      background: var(--mint); flex-shrink: 0;
+    }
+    .step-h2 {
+      font-family: var(--font-heading); font-weight: 800; font-size: 1.875rem;
+      line-height: 1.2; color: var(--text-primary); margin-bottom: .75rem;
+    }
+    .step-hint { font-size: .875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2.5rem; }
+
+    /* ─── Form fields ─── */
+    .field-group { display: flex; flex-direction: column; gap: 2rem; }
+    .field { display: flex; flex-direction: column; gap: .5rem; }
+    .field-label { font-size: .8125rem; font-weight: 600; color: var(--text-primary); }
+    .field-label .optional { color: var(--text-muted); font-weight: 400; }
+    .field input[type="text"],
+    .field input[type="url"],
+    .field select,
+    .field textarea {
+      background: var(--bg-subtle); border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-md); padding: .875rem 1rem;
+      font-family: var(--font-body); font-size: .9375rem; color: var(--text-primary);
+      outline: none; transition: border-color .2s, box-shadow .2s; width: 100%;
+    }
+    .field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23888' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+    .field input::placeholder, .field textarea::placeholder { color: var(--text-muted); }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: rgba(93,255,191,.5); box-shadow: 0 0 0 3px rgba(93,255,191,.08); }
+    .field textarea { resize: vertical; min-height: 100px; font-family: var(--font-body); }
+    .textarea { background: var(--bg-subtle); border: 1.5px solid var(--border-strong); border-radius: var(--radius-md); padding: .875rem 1rem; font-family: var(--font-body); font-size: .9375rem; color: var(--text-primary); outline: none; transition: border-color .2s, box-shadow .2s; width: 100%; resize: vertical; min-height: 80px; }
+    .textarea:focus { border-color: rgba(93,255,191,.5); box-shadow: 0 0 0 3px rgba(93,255,191,.08); }
+    .textarea::placeholder { color: var(--text-muted); }
+
+    /* ─── Service cards (multi-select) — compact horizontal ─── */
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+    .check-option { display: flex; align-items: center; gap: .75rem; padding: .75rem 1rem; border: 1.5px solid var(--border-base); border-radius: var(--radius-md); cursor: pointer; transition: all .2s; background: var(--bg-subtle); position: relative; }
+    .check-option:hover { border-color: rgba(93,255,191,.3); background: rgba(93,255,191,.04); }
+    .check-option.selected { border-color: rgba(93,255,191,.5); background: rgba(93,255,191,.08); }
+    .check-option input[type="checkbox"] { position: absolute; opacity: 0; pointer-events: none; }
+    .check-text { display: flex; align-items: center; gap: .625rem; flex: 1; min-width: 0; }
+    .check-icon { width: 32px; height: 32px; min-width: 32px; background: rgba(255,255,255,.05); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .check-icon svg { width: 16px; height: 16px; color: var(--text-muted); }
+    .check-option.selected .check-icon { background: rgba(93,255,191,.15); }
+    .check-option.selected .check-icon svg { color: var(--mint); }
+    .check-title { font-size: .875rem; font-weight: 600; color: var(--text-secondary); line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .check-option.selected .check-title { color: var(--text-primary); }
+    .check-visual { width: 18px; height: 18px; min-width: 18px; border-radius: 5px; border: 1.5px solid var(--border-strong); display: flex; align-items: center; justify-content: center; transition: all .2s; margin-left: auto; flex-shrink: 0; }
+    .check-option.selected .check-visual { background: var(--mint); border-color: var(--mint); }
+    .check-visual svg { width: 10px; height: 10px; color: #0e0e0e; opacity: 0; transition: opacity .1s; }
+    .check-option.selected .check-visual svg { opacity: 1; }
+
+    /* ─── Radio cards — compact horizontal ─── */
+    .radio-card { display: flex; align-items: center; gap: .75rem; padding: .75rem 1rem; border: 1.5px solid var(--border-base); border-radius: var(--radius-md); cursor: pointer; transition: all .2s; background: var(--bg-subtle); }
+    .radio-card:hover { border-color: rgba(93,255,191,.3); background: rgba(93,255,191,.04); }
+    .radio-card.selected { border-color: rgba(93,255,191,.5); background: rgba(93,255,191,.08); }
+    .radio-card input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+    .radio-card-text { display: flex; align-items: center; gap: .625rem; flex: 1; }
+    .radio-card-icon { width: 32px; height: 32px; min-width: 32px; background: rgba(255,255,255,.05); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .radio-card-icon svg { width: 16px; height: 16px; color: var(--text-muted); }
+    .radio-card.selected .radio-card-icon { background: rgba(93,255,191,.15); }
+    .radio-card.selected .radio-card-icon svg { color: var(--mint); }
+    .radio-card-title { font-size: .875rem; font-weight: 600; color: var(--text-secondary); }
+    .radio-card.selected .radio-card-title { color: var(--text-primary); }
+    .radio-dot { width: 18px; height: 18px; min-width: 18px; border-radius: 50%; border: 1.5px solid var(--border-strong); margin-left: auto; flex-shrink: 0; transition: all .2s; display: flex; align-items: center; justify-content: center; }
+    .radio-dot::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--mint); opacity: 0; transition: opacity .2s; }
+    .radio-card.selected .radio-dot { border-color: var(--mint); }
+    .radio-card.selected .radio-dot::after { opacity: 1; }
+
+    /* ─── Toggle (2-col binary choice) ─── */
+    .toggle-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+
+    /* ─── Timeline cards (single-select, 4-col) ─── */
+    .timeline-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
+    .radio-option {
+      padding: 1rem .75rem; border: 1.5px solid var(--border-strong); border-radius: var(--radius-md);
+      cursor: pointer; text-align: center; transition: all .2s; position: relative; overflow: hidden;
+    }
+    .radio-option::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(93,255,191,.04) 0%, transparent 60%);
+      opacity: 0; transition: opacity .2s;
+    }
+    .radio-option:hover::before { opacity: 1; }
+    .radio-option:hover { border-color: rgba(93,255,191,.3); }
+    .radio-option.selected { border-color: rgba(93,255,191,.5); background: rgba(93,255,191,.04); }
+    .radio-option input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+    .radio-icon {
+      width: 28px; height: 28px; margin: 0 auto .375rem;
+      display: flex; align-items: center; justify-content: center; position: relative;
+    }
+    .radio-icon svg { width: 20px; height: 20px; color: var(--text-muted); transition: color .25s; }
+    .radio-option.selected .radio-icon svg { color: var(--mint); }
+    .radio-label {
+      font-family: var(--font-heading); font-weight: 700; font-size: .8125rem;
+      color: var(--text-primary); position: relative;
+    }
+    .radio-option.selected .radio-label { color: var(--mint); }
+
+    /* ─── Budget pills ─── */
+    .budget-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
+    .budget-pill {
+      padding: .875rem .5rem; border: 1.5px solid var(--border-strong); border-radius: var(--radius-md);
+      cursor: pointer; text-align: center; transition: all .2s; position: relative;
+    }
+    .budget-pill:hover { border-color: rgba(93,255,191,.3); }
+    .budget-pill.selected { border-color: rgba(93,255,191,.5); background: rgba(93,255,191,.08); }
+    .budget-pill input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+    .budget-pill-label {
+      font-family: var(--font-heading); font-weight: 700; font-size: .875rem;
+      color: var(--text-primary); display: block;
+    }
+    .budget-pill.selected .budget-pill-label { color: var(--mint); }
+
+    /* ─── Objective cards (2-col radio grid) ─── */
+    .objective-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+
+    /* ─── File upload ─── */
+    .file-upload-zone {
+      padding: 1.75rem; border: 1.5px dashed var(--border-strong);
+      border-radius: var(--radius-md); background: rgba(93,255,191,.02);
+      cursor: pointer; transition: all .2s; text-align: center;
+    }
+    .file-upload-zone:hover { border-color: rgba(93,255,191,.3); background: rgba(93,255,191,.04); }
+    .file-upload-zone.dragover { border-color: var(--mint); background: rgba(93,255,191,.06); box-shadow: 0 0 20px rgba(93,255,191,.1); }
+    .file-upload-zone input[type="file"] { display: none; }
+    .file-upload-icon { margin-bottom: .5rem; }
+    .file-upload-icon svg { width: 28px; height: 28px; color: var(--text-muted); }
+    .file-upload-text { font-size: .8125rem; color: var(--text-secondary); line-height: 1.5; }
+    .file-upload-text strong { color: var(--text-primary); }
+    .file-upload-hint { font-size: .6875rem; color: var(--text-muted); margin-top: .375rem; }
+    .file-list { display: flex; flex-direction: column; gap: .5rem; margin-top: .75rem; }
+    .file-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .625rem .875rem; background: var(--bg-subtle);
+      border: 1px solid var(--border-strong); border-radius: var(--radius-md);
+    }
+    .file-item-info { display: flex; flex-direction: column; gap: .125rem; }
+    .file-item-name { font-size: .8125rem; color: var(--text-primary); word-break: break-all; }
+    .file-item-size { font-size: .6875rem; color: var(--text-muted); }
+    .file-remove {
+      background: none; border: none; color: var(--text-muted); cursor: pointer;
+      font-size: 1.125rem; padding: .25rem; display: flex; transition: color .2s;
+    }
+    .file-remove:hover { color: #f87171; }
+
+    /* Honeypot */
+    .ohnohoney { opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1; }
+
+    /* ─── Form nav ─── */
+    .form-nav {
+      display: flex; justify-content: flex-end; align-items: center;
+      margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-base);
+    }
+
+    @keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+    @keyframes shakeField { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-6px)} 40%,80%{transform:translateX(6px)} }
+
+    /* UX: Smooth entrance */
+    .field-group { animation: fadeUp .5s ease both; }
+    @keyframes fadeUp { 0%{transform:translateY(16px);opacity:0} 100%{transform:translateY(0);opacity:1} }
+
+    /* UX: Card selection pulse */
+    .check-option.selected, .radio-option.selected, .radio-card.selected,
+    .budget-pill.selected { animation: selectPop .3s ease; }
+    @keyframes selectPop { 0%{transform:scale(1)} 50%{transform:scale(1.02)} 100%{transform:scale(1)} }
+
+    /* UX: Submit button glow */
+    .btn-primary { position: relative; overflow: hidden; }
+    .btn-primary::after {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, rgba(93,255,191,.3), transparent 50%);
+      opacity: 0; transition: opacity .3s; border-radius: inherit;
+    }
+    .btn-primary:hover::after { opacity: 1; }
+
+    /* ─── Section divider ─── */
+    .section-divider {
+      display: flex; align-items: center; gap: 1rem;
+      font-size: .6875rem; font-weight: 700; color: var(--text-muted);
+      letter-spacing: .08em; text-transform: uppercase; font-family: var(--font-mono);
+    }
+    .section-divider::before, .section-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border-base);
+    }
+
+    /* ─── Sub-step navigator ─── */
+    .substep-nav { margin-bottom: 2rem; }
+    .substep-track { position: relative; padding: 0 1rem; }
+    .substep-line { position: absolute; top: 50%; left: calc(1rem + 14px); right: calc(1rem + 14px); height: 2px; background: var(--border-base); transform: translateY(-50%); }
+    .substep-line-fill { height: 100%; background: var(--mint); width: 0%; transition: width .4s ease; }
+    .substep-dots { display: flex; justify-content: space-between; position: relative; }
+    .substep-dot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border-strong); background: var(--bg-surface); display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 700; color: var(--text-muted); transition: all .3s; cursor: default; }
+    .substep-dot.active { border-color: var(--mint); color: var(--mint); background: rgba(93,255,191,.1); }
+    .substep-dot.done { border-color: var(--mint); background: var(--mint); color: #0e0e0e; }
+    .substep-labels { display: flex; justify-content: space-between; margin-top: .5rem; padding: 0 0; }
+    .substep-labels span { font-size: .6875rem; color: var(--text-muted); font-weight: 600; letter-spacing: .05em; text-transform: uppercase; width: 28px; text-align: center; }
+
+    /* ─── Sub-step panels ─── */
+    .substep-panel { display: block; }
+    .substep-panel.hidden { display: none; }
+
+    /* ─── Sub-step navigation buttons ─── */
+    .substep-btn-next { display: flex; align-items: center; gap: .5rem; background: var(--mint); color: #0e0e0e; font-weight: 700; font-size: .9375rem; border: none; padding: .875rem 2rem; border-radius: var(--radius-full); cursor: pointer; margin-top: 2rem; width: 100%; justify-content: center; transition: opacity .2s; }
+    .substep-btn-next:hover { opacity: .9; }
+    .substep-btn-back { background: none; border: 1px solid var(--border-base); color: var(--text-muted); font-size: .875rem; padding: .625rem 1.25rem; border-radius: var(--radius-full); cursor: pointer; margin-top: .75rem; width: 100%; transition: all .2s; }
+    .substep-btn-back:hover { border-color: var(--border-strong); color: var(--text-primary); }
+
+    /* ─── Custom select ─── */
+    .custom-select { position: relative; width: 100%; user-select: none; }
+    .custom-select-trigger { -webkit-appearance: none; appearance: none; width: 100%; background: var(--bg-subtle); border: 1.5px solid var(--border-strong); border-radius: var(--radius-md); padding: .75rem 1rem; font-family: inherit; font-size: .9375rem; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: .5rem; outline: none; transition: border-color .2s, box-shadow .2s; text-align: left; }
+    .custom-select-trigger.has-value { color: var(--text-primary); }
+    .custom-select.open .custom-select-trigger { border-color: rgba(93,255,191,.5); box-shadow: 0 0 0 3px rgba(93,255,191,.07); }
+    .custom-select-value { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .custom-select-chevron { flex-shrink: 0; width: 16px; height: 16px; color: var(--text-muted); transition: transform .2s, color .2s; }
+    .custom-select.open .custom-select-chevron { transform: rotate(180deg); color: var(--mint); }
+    .custom-select-panel { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-md); padding: .375rem; z-index: 200; box-shadow: 0 8px 32px rgba(0,0,0,.4); opacity: 0; transform: translateY(-6px) scale(.98); pointer-events: none; transition: opacity .15s, transform .15s; transform-origin: top center; }
+    .custom-select.open .custom-select-panel { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+    .custom-select-option { display: flex; align-items: center; justify-content: space-between; padding: .625rem .875rem; border-radius: var(--radius-sm); font-size: .875rem; color: var(--text-secondary); cursor: pointer; transition: background .15s, color .15s; }
+    .custom-select-option:hover { background: rgba(93,255,191,.06); color: var(--text-primary); }
+    .custom-select-option.selected { color: var(--mint); background: rgba(93,255,191,.08); }
+    .custom-select-option.selected::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--mint); flex-shrink: 0; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .main { grid-template-columns: 1fr; }
+      .left-panel {
+        position: static; height: auto; padding: 2rem 1.5rem;
+        border-right: none; border-bottom: 1px solid var(--border-base);
+      }
+      .right-panel { padding: 2.5rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .timeline-grid { grid-template-columns: repeat(2, 1fr); }
+      .budget-grid { grid-template-columns: repeat(2, 1fr); }
+      .objective-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 540px) {
+      .nav { padding: 1rem 1.25rem; }
+      .right-panel { padding: 2rem 1.25rem; }
+      .step-h2 { font-size: 1.5rem; }
+      .timeline-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .toggle-grid { grid-template-columns: 1fr; }
+      .budget-grid { grid-template-columns: repeat(2, 1fr); }
+      .objective-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Tres Puntos Comunicación">
+</head>
+
+<body>
+  <div class="glow-orb"></div>
+  <div class="page-wrap">
+
+    <!-- NAV -->
+    <nav class="nav">
+      <a href="/" class="nav-logo" aria-label="Tres Puntos — Inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="46" viewBox="0 0 261.303 99.928" aria-hidden="true">
+          <g transform="translate(-143.8 -26.1)">
+            <path d="M243.558,44.827a30.774,30.774,0,0,1,23.994,11.412,61.579,61.579,0,0,1,9.364-17.264,49.651,49.651,0,0,0-66.716,0,61.58,61.58,0,0,1,9.364,17.264,31.238,31.238,0,0,1,23.994-11.412Z" transform="translate(30.748 0)" fill="#5dffbf"/>
+            <path d="M355.213,26.1a49.114,49.114,0,0,0-33.358,12.875,45.236,45.236,0,0,0-7.023,7.9,49.619,49.619,0,0,0-9.364,28.969,31.1,31.1,0,0,1-31.017,31.163A30.774,30.774,0,0,1,250.457,95.6a31.275,31.275,0,0,1-7.023-19.751,49.618,49.618,0,0,0-9.364-28.969,45.233,45.233,0,0,0-7.023-7.9A49.114,49.114,0,0,0,193.691,26.1a49.891,49.891,0,0,0,0,99.781,49.114,49.114,0,0,0,33.358-12.875,61.579,61.579,0,0,1-9.364-17.264,30.876,30.876,0,1,1,7.023-19.459,49.618,49.618,0,0,0,9.364,28.969,45.231,45.231,0,0,0,7.023,7.9,49.651,49.651,0,0,0,66.716,0,45.232,45.232,0,0,0,7.023-7.9A49.619,49.619,0,0,0,324.2,76.283a31.1,31.1,0,1,1,7.023,19.459,61.579,61.579,0,0,1-9.364,17.264,49.113,49.113,0,0,0,33.358,12.875,49.891,49.891,0,1,0,0-99.781Z" transform="translate(0 0)" fill="#5dffbf"/>
+            <circle cx="16.24" cy="16.24" r="16.24" transform="translate(177.158 59.751)" fill="#f8f8f8"/>
+            <circle cx="16.24" cy="16.24" r="16.24" transform="translate(258.065 59.751)" fill="#f8f8f8"/>
+            <circle cx="16.24" cy="16.24" r="16.24" transform="translate(338.973 59.751)" fill="#f8f8f8"/>
+          </g>
+        </svg>
+      </a>
+      <a href="/" class="nav-back">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Volver
+      </a>
+    </nav>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- LEFT PANEL -->
+      <aside class="left-panel">
+        <div class="left-top">
+          <div class="panel-badge"><span class="panel-badge-dot"></span>Paso 2 — Briefing</div>
+          <h1 class="panel-h1">Cuéntanos tu<br><span>proyecto</span></h1>
+          <p class="panel-sub">Necesitamos conocer más detalles sobre lo que tienes en mente para prepararte una propuesta personalizada.</p>
+
+          <div class="steps-list">
+            <div class="step-item done">
+              <div class="step-num">✓</div>
+              <div class="step-text">
+                <div class="step-title">Datos de contacto</div>
+                <div class="step-desc">Recibido</div>
+              </div>
+            </div>
+            <div class="step-item active">
+              <div class="step-num">2</div>
+              <div class="step-text">
+                <div class="step-title">Briefing del proyecto</div>
+                <div class="step-desc">Servicios, plazos y detalles</div>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div class="step-text">
+                <div class="step-title">Analizamos tu caso</div>
+                <div class="step-desc">Nuestro equipo revisa tu proyecto</div>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">4</div>
+              <div class="step-text">
+                <div class="step-title">Te contactamos</div>
+                <div class="step-desc">Propuesta personalizada en &lt;48h</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="left-bottom">
+          <div class="trust-items">
+            <div class="trust-item">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Cuéntanos lo que puedas — más info, mejor propuesta
+            </div>
+            <div class="trust-item">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+              Cuanta más info, mejor propuesta
+            </div>
+            <div class="trust-item">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+              Tus datos están seguros
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT PANEL -->
+      <main class="right-panel">
+
+        <div class="progress-wrap">
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+          </div>
+          <div class="progress-meta">
+            <span class="progress-label">Paso 2 — Briefing</span>
+            <span class="progress-pct" id="progress-pct">0%</span>
+          </div>
+        </div>
+
+        <div class="step-tag">Briefing</div>
+        <h2 class="step-h2">Cuéntanos los<br>detalles</h2>
+        <p class="step-hint">Todos los campos con asterisco son obligatorios. Cuanta más información, mejor propuesta.</p>
+
+        <!-- Sub-step navigator -->
+        <div class="substep-nav">
+          <div class="substep-track">
+            <div class="substep-line"><div class="substep-line-fill" id="substep-line-fill"></div></div>
+            <div class="substep-dots">
+              <div class="substep-dot active" data-step="1"><span>1</span></div>
+              <div class="substep-dot" data-step="2"><span>2</span></div>
+              <div class="substep-dot" data-step="3"><span>3</span></div>
+              <div class="substep-dot" data-step="4"><span>4</span></div>
+            </div>
+          </div>
+          <div class="substep-labels">
+            <span>Servicios</span><span>Proyecto</span><span>Situación</span><span>Presupuesto</span>
+          </div>
+        </div>
+
+        <form id="form-step2" novalidate enctype="multipart/form-data">
+          <!-- Honeypot -->
+          <div class="ohnohoney">
+            <input type="text" name="website_url" id="hp_field" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- ═══ SUB-STEP 1: Servicios ═══ -->
+          <div class="substep-panel" id="substep-1">
+            <div class="field-group">
+
+              <!-- Servicios -->
+              <div class="field">
+                <label class="field-label">¿Qué servicios necesitas? *</label>
+                <div class="services-grid" role="group" aria-label="Servicios">
+                  <label class="check-option">
+                    <input type="checkbox" name="servicios" value="Consultoría Arquitectura Digital">
+                    <div class="check-text">
+                      <div class="check-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+                      </div>
+                      <div class="check-title">Consultoría Digital</div>
+                    </div>
+                    <div class="check-visual">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="servicios" value="Diseño UX/UI">
+                    <div class="check-text">
+                      <div class="check-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>
+                      </div>
+                      <div class="check-title">Diseño UX/UI</div>
+                    </div>
+                    <div class="check-visual">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="servicios" value="Desarrollo Web a Medida">
+                    <div class="check-text">
+                      <div class="check-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+                      </div>
+                      <div class="check-title">Desarrollo Web</div>
+                    </div>
+                    <div class="check-visual">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="servicios" value="Tienda Online a Medida">
+                    <div class="check-text">
+                      <div class="check-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+                      </div>
+                      <div class="check-title">Tienda Online</div>
+                    </div>
+                    <div class="check-visual">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="servicios" value="IA Generativa">
+                    <div class="check-text">
+                      <div class="check-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>
+                      </div>
+                      <div class="check-title">IA Generativa</div>
+                    </div>
+                    <div class="check-visual">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="servicios" value="Design Engineer">
+                    <div class="check-text">
+                      <div class="check-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M11.42 15.17l-5.1-3.06a1.5 1.5 0 010-2.58l5.1-3.06a1.5 1.5 0 012.08.54l2.62 4.37a1.5 1.5 0 01-.54 2.08l-4.37 2.62a1.5 1.5 0 01-2.08-.54z"/></svg>
+                      </div>
+                      <div class="check-title">Design Engineer</div>
+                    </div>
+                    <div class="check-visual">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Tipo de proyecto -->
+              <div class="field">
+                <label class="field-label">¿Qué tipo de proyecto es? *</label>
+                <div class="services-grid" role="radiogroup" aria-label="Tipo de proyecto">
+                  <label class="radio-card">
+                    <input type="radio" name="tipo_proyecto" value="Web corporativa / Landing">
+                    <div class="radio-card-text">
+                      <div class="radio-card-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253M3 12a8.959 8.959 0 01.284-2.253"/></svg>
+                      </div>
+                      <div class="radio-card-title">Web corporativa / Landing</div>
+                    </div>
+                    <div class="radio-dot"></div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="tipo_proyecto" value="E-commerce">
+                    <div class="radio-card-text">
+                      <div class="radio-card-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272"/></svg>
+                      </div>
+                      <div class="radio-card-title">E-commerce</div>
+                    </div>
+                    <div class="radio-dot"></div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="tipo_proyecto" value="Plataforma / SaaS">
+                    <div class="radio-card-text">
+                      <div class="radio-card-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z"/></svg>
+                      </div>
+                      <div class="radio-card-title">Plataforma / SaaS</div>
+                    </div>
+                    <div class="radio-dot"></div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="tipo_proyecto" value="App a medida">
+                    <div class="radio-card-text">
+                      <div class="radio-card-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
+                      </div>
+                      <div class="radio-card-title">App a medida</div>
+                    </div>
+                    <div class="radio-dot"></div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Nuevo o existente -->
+              <div class="field">
+                <label class="field-label">¿Es un proyecto nuevo o quieres mejorar algo existente?</label>
+                <div class="toggle-grid" role="radiogroup">
+                  <label class="radio-option">
+                    <input type="radio" name="es_nuevo" value="Nuevo proyecto">
+                    <div class="radio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 4.5v15m7.5-7.5h-15"/></svg></div>
+                    <div class="radio-label">Nuevo proyecto</div>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="es_nuevo" value="Mejorar existente">
+                    <div class="radio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/></svg></div>
+                    <div class="radio-label">Mejorar lo existente</div>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <button class="substep-btn-next" data-from="1" type="button">
+              Continuar
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </button>
+          </div>
+
+          <!-- ═══ SUB-STEP 2: Proyecto ═══ -->
+          <div class="substep-panel hidden" id="substep-2">
+            <div class="field-group">
+
+              <!-- Objetivo principal -->
+              <div class="field">
+                <label class="field-label">¿Cuál es el objetivo principal? *</label>
+                <div class="objective-grid" role="radiogroup">
+                  <label class="radio-card">
+                    <input type="radio" name="objetivo_principal" value="Generar ventas">
+                    <div class="radio-card-text">
+                      <div class="radio-card-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+                      </div>
+                      <div class="radio-card-title">Generar ventas</div>
+                    </div>
+                    <div class="radio-dot"></div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="objetivo_principal" value="Captar leads">
+                    <div class="radio-card-text">
+                      <div class="radio-card-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+                      </div>
+                      <div class="radio-card-title">Captar leads</div>
+                    </div>
+                    <div class="radio-dot"></div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="objetivo_principal" value="Lanzar producto/servicio">
+                    <div class="radio-card-text">
+                      <div class="radio-card-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+                      </div>
+                      <div class="radio-card-title">Lanzar producto / servicio</div>
+                    </div>
+                    <div class="radio-dot"></div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="objetivo_principal" value="Escalar negocio">
+                    <div class="radio-card-text">
+                      <div class="radio-card-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
+                      </div>
+                      <div class="radio-card-title">Escalar negocio</div>
+                    </div>
+                    <div class="radio-dot"></div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="objetivo_principal" value="Digitalizar procesos">
+                    <div class="radio-card-text">
+                      <div class="radio-card-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z"/></svg>
+                      </div>
+                      <div class="radio-card-title">Digitalizar procesos</div>
+                    </div>
+                    <div class="radio-dot"></div>
+                  </label>
+                  <label class="radio-card" id="objetivo-otro-card">
+                    <input type="radio" name="objetivo_principal" value="Otro">
+                    <div class="radio-card-text">
+                      <div class="radio-card-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                      </div>
+                      <div class="radio-card-title">Otro</div>
+                    </div>
+                    <div class="radio-dot"></div>
+                  </label>
+                </div>
+                <div id="objetivo-otro-wrap" style="display:none;margin-top:.75rem;">
+                  <textarea id="f-objetivo-otro" class="textarea" placeholder="Describe el objetivo principal de tu proyecto..." rows="3"></textarea>
+                </div>
+              </div>
+
+              <!-- Público objetivo -->
+              <div class="field">
+                <label class="field-label" for="f-publico">¿A quién va dirigido? *</label>
+                <textarea id="f-publico" name="publico_objetivo" placeholder="Describe tu cliente ideal: sector, tamaño de empresa, perfil de usuario... (B2B, B2C, etc.)"></textarea>
+              </div>
+
+            </div>
+
+            <button class="substep-btn-next" data-from="2" type="button">
+              Continuar
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </button>
+            <button class="substep-btn-back" data-to="1" type="button">← Volver</button>
+          </div>
+
+          <!-- ═══ SUB-STEP 3: Situación ═══ -->
+          <div class="substep-panel hidden" id="substep-3">
+            <div class="field-group">
+
+              <!-- Situación actual -->
+              <div class="field">
+                <label class="field-label" for="f-descripcion">Cuéntanos tu situación actual *</label>
+                <textarea id="f-descripcion" name="situacion_actual" placeholder="¿Qué tienes ahora? ¿Qué problema quieres resolver o qué oportunidad quieres aprovechar? Cuéntanos con detalle..."></textarea>
+              </div>
+
+              <!-- Qué no funciona -->
+              <div class="field">
+                <label class="field-label" for="f-no-funciona">¿Qué no está funcionando?</label>
+                <textarea id="f-no-funciona" name="que_no_funciona" placeholder="Problemas de tu web o solución actual que quieres corregir..."></textarea>
+              </div>
+
+              <!-- Competidores / referencias -->
+              <div class="field">
+                <label class="field-label" for="f-competidores">Competidores o referencias</label>
+                <textarea id="f-competidores" name="competidores" placeholder="2-3 webs que te gusten o que sean referentes en tu sector..."></textarea>
+              </div>
+
+            </div>
+
+            <button class="substep-btn-next" data-from="3" type="button">
+              Continuar
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </button>
+            <button class="substep-btn-back" data-to="2" type="button">← Volver</button>
+          </div>
+
+          <!-- ═══ SUB-STEP 4: Presupuesto ═══ -->
+          <div class="substep-panel hidden" id="substep-4">
+            <div class="field-group">
+
+              <!-- Web actual -->
+              <div class="field">
+                <label class="field-label" for="f-web">¿Tienes web actual?</label>
+                <input type="url" id="f-web" name="web_actual" placeholder="https://tuempresa.com">
+              </div>
+
+              <!-- Stack actual — custom select -->
+              <div class="field">
+                <label class="field-label">Tecnología que usas actualmente</label>
+                <div class="custom-select" id="cs-stack" role="combobox" aria-expanded="false" aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Selecciona tecnología">
+                    <span class="custom-select-value">Selecciona una opción...</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-option" role="option" data-value="WordPress">WordPress</div>
+                    <div class="custom-select-option" role="option" data-value="Shopify">Shopify</div>
+                    <div class="custom-select-option" role="option" data-value="Prestashop">Prestashop</div>
+                    <div class="custom-select-option" role="option" data-value="Custom / A medida">Custom / A medida</div>
+                    <div class="custom-select-option" role="option" data-value="No tengo web">No tengo web</div>
+                    <div class="custom-select-option" role="option" data-value="Otro">Otro</div>
+                  </div>
+                </div>
+                <input type="hidden" id="f-stack" name="stack_actual">
+              </div>
+
+              <!-- Presupuesto -->
+              <div class="field">
+                <label class="field-label">¿Con qué presupuesto orientativo cuentas? *</label>
+                <div class="budget-grid" role="radiogroup" aria-label="Presupuesto">
+                  <label class="budget-pill">
+                    <input type="radio" name="presupuesto" value="5K-10K€">
+                    <span class="budget-pill-label">5K–10K€</span>
+                  </label>
+                  <label class="budget-pill">
+                    <input type="radio" name="presupuesto" value="10K-15K€">
+                    <span class="budget-pill-label">10K–15K€</span>
+                  </label>
+                  <label class="budget-pill">
+                    <input type="radio" name="presupuesto" value="15K-20K€">
+                    <span class="budget-pill-label">15K–20K€</span>
+                  </label>
+                  <label class="budget-pill">
+                    <input type="radio" name="presupuesto" value="+20K€">
+                    <span class="budget-pill-label">+20K€</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Timeline -->
+              <div class="field">
+                <label class="field-label">¿Cuándo necesitas tenerlo listo? *</label>
+                <div class="timeline-grid" role="radiogroup" aria-label="Plazo del proyecto">
+                  <label class="radio-option">
+                    <input type="radio" name="timeline" value="Lo antes posible">
+                    <div class="radio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg></div>
+                    <div class="radio-label">Urgente</div>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="timeline" value="1-2 meses">
+                    <div class="radio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg></div>
+                    <div class="radio-label">1–2 meses</div>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="timeline" value="3-6 meses">
+                    <div class="radio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <div class="radio-label">3–6 meses</div>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="timeline" value="Estoy explorando">
+                    <div class="radio-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg></div>
+                    <div class="radio-label">Explorando</div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Comentarios adicionales -->
+              <div class="field">
+                <label class="field-label" for="f-comentarios">¿Algo más que quieras contarnos?</label>
+                <textarea id="f-comentarios" name="comentarios" placeholder="Cualquier detalle adicional que nos ayude a entender mejor tu proyecto..."></textarea>
+              </div>
+
+              <!-- File upload -->
+              <div class="field">
+                <label class="field-label">Adjunta archivos (máx. 3 archivos, 10MB c/u)</label>
+                <div class="file-upload-zone" id="file-zone">
+                  <input type="file" id="file-input" name="archivos" multiple accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.zip,.fig,.sketch,.xd">
+                  <div class="file-upload-icon">
+                    <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"/></svg>
+                  </div>
+                  <div class="file-upload-text"><strong>Arrastra archivos aquí</strong> o haz clic para seleccionar</div>
+                  <div class="file-upload-hint">PDF, DOC, DOCX, PNG, JPG, ZIP, FIG, SKETCH, XD</div>
+                </div>
+                <div class="file-list" id="file-list"></div>
+              </div>
+
+            </div>
+
+            <div class="form-nav">
+              <button type="submit" class="btn-primary" id="submit-btn">
+                Enviar briefing
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </button>
+            </div>
+            <button class="substep-btn-back" data-to="3" type="button">← Volver</button>
+          </div>
+
+        </form>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    'use strict';
+
+    var loadTime = Date.now();
+
+    // Get email from URL hash (server strips query params during clean URL rewrite)
+    var hash = window.location.hash.substring(1);
+    var params = new URLSearchParams(hash);
+    // Fallback to query string for direct access
+    if (!params.get('email')) {
+      params = new URLSearchParams(window.location.search);
+    }
+    var userEmail = params.get('email') || '';
+    var userName = params.get('nombre') || '';
+
+    // Warn if accessed without email (direct access without step 1)
+    if (!userEmail) {
+      var banner = document.createElement('div');
+      banner.style.cssText = 'background:rgba(255,180,50,.1);border:1px solid rgba(255,180,50,.3);border-radius:8px;padding:.75rem 1rem;margin-bottom:1.5rem;font-size:.8125rem;color:#ffb432;display:flex;align-items:center;gap:.5rem;';
+      banner.innerHTML = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg> Completa primero el <a href="/form-v3/form-step1.html" style="color:#ffb432;text-decoration:underline;">paso 1</a> para que podamos asociar tu briefing.';
+      var rightPanel = document.querySelector('.right-panel');
+      rightPanel.insertBefore(banner, rightPanel.firstChild);
+    }
+
+    // ─── MULTI-SELECT CARDS (servicios) ───
+    document.querySelectorAll('.check-option').forEach(function(opt) {
+      opt.addEventListener('click', function(e) {
+        e.preventDefault();
+        var cb = opt.querySelector('input[type="checkbox"]');
+        cb.checked = !cb.checked;
+        opt.classList.toggle('selected', cb.checked);
+        updateProgress();
+      });
+    });
+
+    // ─── SINGLE-SELECT RADIO CARDS (tipo proyecto, objetivo_principal) ───
+    document.querySelectorAll('.radio-card').forEach(function(opt) {
+      opt.addEventListener('click', function(e) {
+        e.preventDefault();
+        var name = opt.querySelector('input[type="radio"]').name;
+        document.querySelectorAll('.radio-card input[name="' + name + '"]').forEach(function(r) {
+          r.closest('.radio-card').classList.remove('selected');
+          r.checked = false;
+        });
+        opt.classList.add('selected');
+        opt.querySelector('input[type="radio"]').checked = true;
+        updateProgress();
+        // Trigger objetivo otro visibility
+        var r = opt.querySelector('input[type="radio"]');
+        if (r.name === 'objetivo_principal') {
+          var wrap = document.getElementById('objetivo-otro-wrap');
+          wrap.style.display = (r.value === 'Otro') ? 'block' : 'none';
+        }
+      });
+    });
+
+    // ─── SINGLE-SELECT RADIO OPTIONS (es_nuevo, timeline) ───
+    document.querySelectorAll('.radio-option').forEach(function(opt) {
+      opt.addEventListener('click', function(e) {
+        e.preventDefault();
+        var name = opt.querySelector('input[type="radio"]').name;
+        document.querySelectorAll('.radio-option input[name="' + name + '"]').forEach(function(r) {
+          r.closest('.radio-option').classList.remove('selected');
+          r.checked = false;
+        });
+        opt.classList.add('selected');
+        opt.querySelector('input[type="radio"]').checked = true;
+        updateProgress();
+      });
+    });
+
+    // ─── BUDGET PILLS ───
+    document.querySelectorAll('.budget-pill').forEach(function(opt) {
+      opt.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.budget-pill').forEach(function(o) {
+          o.classList.remove('selected');
+          o.querySelector('input[type="radio"]').checked = false;
+        });
+        opt.classList.add('selected');
+        opt.querySelector('input[type="radio"]').checked = true;
+        updateProgress();
+      });
+    });
+
+    // ─── FILE UPLOAD ───
+    var uploadedFiles = [];
+    var fileZone = document.getElementById('file-zone');
+    var fileInput = document.getElementById('file-input');
+    var fileListEl = document.getElementById('file-list');
+
+    fileZone.addEventListener('click', function() { fileInput.click(); });
+    fileZone.addEventListener('dragover', function(e) {
+      e.preventDefault();
+      fileZone.classList.add('dragover');
+    });
+    fileZone.addEventListener('dragleave', function() {
+      fileZone.classList.remove('dragover');
+    });
+    fileZone.addEventListener('drop', function(e) {
+      e.preventDefault();
+      fileZone.classList.remove('dragover');
+      handleFiles(e.dataTransfer.files);
+    });
+    fileInput.addEventListener('change', function() {
+      handleFiles(fileInput.files);
+    });
+
+    function handleFiles(files) {
+      var maxFiles = 3;
+      var maxSize = 10 * 1024 * 1024;
+      var allowed = ['.pdf','.doc','.docx','.png','.jpg','.jpeg','.zip','.fig','.sketch','.xd'];
+
+      for (var i = 0; i < files.length; i++) {
+        if (uploadedFiles.length >= maxFiles) {
+          alert('Máximo ' + maxFiles + ' archivos permitidos');
+          break;
+        }
+        var file = files[i];
+        if (file.size > maxSize) {
+          alert('El archivo "' + file.name + '" supera 10MB');
+          continue;
+        }
+        var ext = '.' + file.name.split('.').pop().toLowerCase();
+        if (allowed.indexOf(ext) === -1) {
+          alert('Tipo de archivo no permitido: ' + file.name);
+          continue;
+        }
+        uploadedFiles.push(file);
+      }
+      renderFileList();
+      updateProgress();
+    }
+
+    function renderFileList() {
+      fileListEl.innerHTML = '';
+      uploadedFiles.forEach(function(file, idx) {
+        var size = (file.size / 1024 / 1024).toFixed(2);
+        var item = document.createElement('div');
+        item.className = 'file-item';
+        item.innerHTML =
+          '<div class="file-item-info">' +
+            '<div class="file-item-name">' + file.name + '</div>' +
+            '<div class="file-item-size">' + size + ' MB</div>' +
+          '</div>' +
+          '<button type="button" class="file-remove" data-idx="' + idx + '" title="Eliminar">×</button>';
+        fileListEl.appendChild(item);
+      });
+      fileListEl.querySelectorAll('.file-remove').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var idx = parseInt(btn.getAttribute('data-idx'));
+          uploadedFiles.splice(idx, 1);
+          renderFileList();
+          fileInput.value = '';
+          updateProgress();
+        });
+      });
+    }
+
+    // ─── PROGRESS ───
+    function countFilledFields() {
+      var filled = 0;
+      var total = 6;
+      if (document.querySelectorAll('.check-option input:checked').length > 0) filled++;
+      if (document.querySelector('input[name="tipo_proyecto"]:checked')) filled++;
+      if (document.querySelector('input[name="objetivo_principal"]:checked')) filled++;
+      if (document.getElementById('f-publico') && document.getElementById('f-publico').value.trim()) filled++;
+      if (document.getElementById('f-descripcion') && document.getElementById('f-descripcion').value.trim()) filled++;
+      if (document.querySelector('input[name="presupuesto"]:checked') && document.querySelector('input[name="timeline"]:checked')) filled++;
+      return Math.round((filled / total) * 100);
+    }
+
+    function updateProgress() {
+      var filled = countFilledFields();
+      document.getElementById('progress-fill').style.width = filled + '%';
+      document.getElementById('progress-pct').textContent = filled + '%';
+    }
+
+    document.getElementById('f-descripcion').addEventListener('input', updateProgress);
+    document.getElementById('f-publico').addEventListener('input', updateProgress);
+
+    // ─── SUB-STEP NAVIGATION ───
+    var currentSubstep = 1;
+    var totalSubsteps = 4;
+
+    function goToSubstep(n) {
+      document.querySelectorAll('.substep-panel').forEach(function(p) { p.classList.add('hidden'); });
+      document.getElementById('substep-' + n).classList.remove('hidden');
+
+      document.querySelectorAll('.substep-dot').forEach(function(d) {
+        var s = parseInt(d.getAttribute('data-step'));
+        d.classList.remove('active', 'done');
+        if (s < n) d.classList.add('done');
+        else if (s === n) d.classList.add('active');
+      });
+
+      var pct = ((n - 1) / (totalSubsteps - 1)) * 100;
+      document.getElementById('substep-line-fill').style.width = pct + '%';
+
+      updateProgress();
+
+      currentSubstep = n;
+      window.scrollTo(0, 0);
+    }
+
+    function validateSubstep(n) {
+      var valid = true;
+      if (n === 1) {
+        if (document.querySelectorAll('.check-option input:checked').length === 0) {
+          var grid = document.querySelector('#substep-1 .services-grid');
+          grid.style.outline = '1.5px solid rgba(248,113,113,.5)';
+          grid.style.borderRadius = '12px';
+          setTimeout(function() { grid.style.outline = ''; }, 2000);
+          valid = false;
+        }
+        if (!document.querySelector('input[name="tipo_proyecto"]:checked')) valid = false;
+      }
+      if (n === 2) {
+        if (!document.querySelector('input[name="objetivo_principal"]:checked')) valid = false;
+        if (!document.getElementById('f-publico').value.trim()) valid = false;
+      }
+      if (n === 3) {
+        if (!document.getElementById('f-descripcion').value.trim()) valid = false;
+      }
+      if (n === 4) {
+        if (!document.querySelector('input[name="presupuesto"]:checked')) valid = false;
+        if (!document.querySelector('input[name="timeline"]:checked')) valid = false;
+      }
+      return valid;
+    }
+
+    document.querySelectorAll('.substep-btn-next').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var step = parseInt(btn.getAttribute('data-from'));
+        if (validateSubstep(step)) {
+          goToSubstep(step + 1);
+        } else {
+          btn.style.animation = 'shakeField .4s';
+          setTimeout(function() { btn.style.animation = ''; }, 500);
+        }
+      });
+    });
+
+    document.querySelectorAll('.substep-btn-back').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var step = parseInt(btn.getAttribute('data-to'));
+        goToSubstep(step);
+      });
+    });
+
+    // Init
+    goToSubstep(1);
+
+    // ─── CUSTOM SELECT (stack) ───
+    var csStack = document.getElementById('cs-stack');
+    var csStackInput = document.getElementById('f-stack');
+    csStack.querySelector('.custom-select-trigger').addEventListener('click', function() {
+      csStack.classList.toggle('open');
+    });
+    csStack.querySelectorAll('.custom-select-option').forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        csStack.querySelectorAll('.custom-select-option').forEach(function(o) { o.classList.remove('selected'); });
+        opt.classList.add('selected');
+        csStack.querySelector('.custom-select-value').textContent = opt.textContent.trim();
+        csStack.querySelector('.custom-select-trigger').classList.add('has-value');
+        csStackInput.value = opt.getAttribute('data-value');
+        csStack.classList.remove('open');
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!csStack.contains(e.target)) csStack.classList.remove('open');
+    });
+
+    // ─── SUPABASE CONFIG ───
+    var SUPABASE_URL = 'https://supabase.trespuntos-lab.com';
+    var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzI4ODY3MTIsImV4cCI6MTg5MzQ1NjAwMCwicm9sZSI6ImFub24iLCJpc3MiOiJzdXBhYmFzZSJ9.NDx9JJTm9nMDlFBDh-QxkVeu7QJWeM2ajvirlyjxFLM';
+    var SUPABASE_SCHEMA = 'trespuntos';
+
+    function supabaseInsert(table, data) {
+      return fetch(SUPABASE_URL + '/rest/v1/' + table, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+          'Content-Profile': SUPABASE_SCHEMA,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(data)
+      });
+    }
+
+    // ─── SUBMIT ───
+    document.getElementById('form-step2').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Anti-spam
+      if (document.getElementById('hp_field').value) return;
+      if (Date.now() - loadTime < 3000) return;
+
+      var btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.setAttribute('aria-busy', 'true');
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin .8s linear infinite"><path d="M12 2v4m0 12v4m-7.07-3.93l2.83-2.83m8.48-8.48l2.83-2.83M2 12h4m12 0h4m-3.93 7.07l-2.83-2.83M7.76 7.76L4.93 4.93"/></svg> Enviando\u2026';
+      btn.style.opacity = '0.7';
+
+      var formData = new FormData();
+      formData.append('email', userEmail);
+      formData.append('nombre', userName);
+      formData.append('tipo', 'step2-briefing-v3');
+      formData.append('timestamp', new Date().toISOString());
+
+      // Servicios
+      var servicios = [];
+      document.querySelectorAll('.check-option input:checked').forEach(function(cb) {
+        servicios.push(cb.value);
+      });
+      formData.append('servicios', JSON.stringify(servicios));
+
+      // Tipo proyecto
+      var tipoEl = document.querySelector('input[name="tipo_proyecto"]:checked');
+      formData.append('tipo_proyecto', tipoEl ? tipoEl.value : '');
+
+      // Nuevo o existente
+      var esNuevoEl = document.querySelector('input[name="es_nuevo"]:checked');
+      formData.append('es_nuevo', esNuevoEl ? esNuevoEl.value : '');
+
+      // Objetivo principal
+      var objetivoEl = document.querySelector('input[name="objetivo_principal"]:checked');
+      formData.append('objetivo_principal', objetivoEl ? objetivoEl.value : '');
+
+      // Objetivo otro
+      var objetivoOtro = document.getElementById('f-objetivo-otro');
+      if (objetivoOtro) formData.append('objetivo_principal_otro', objetivoOtro.value.trim());
+
+      // Público objetivo
+      formData.append('publico_objetivo', document.getElementById('f-publico').value.trim());
+
+      // Situación actual
+      formData.append('situacion_actual', document.getElementById('f-descripcion').value.trim());
+
+      // Qué no funciona
+      formData.append('que_no_funciona', document.getElementById('f-no-funciona').value.trim());
+
+      // Competidores
+      formData.append('competidores', document.getElementById('f-competidores').value.trim());
+
+      // Web actual
+      formData.append('web_actual', document.getElementById('f-web').value.trim());
+
+      // Stack actual
+      formData.append('stack_actual', document.getElementById('f-stack').value);
+
+      // Presupuesto
+      var presupuestoEl = document.querySelector('input[name="presupuesto"]:checked');
+      formData.append('presupuesto', presupuestoEl ? presupuestoEl.value : '');
+
+      // Timeline
+      var timelineEl = document.querySelector('input[name="timeline"]:checked');
+      formData.append('timeline', timelineEl ? timelineEl.value : '');
+
+      // Comentarios
+      formData.append('comentarios', document.getElementById('f-comentarios').value.trim());
+
+      // Archivos
+      uploadedFiles.forEach(function(file) {
+        formData.append('archivos', file);
+      });
+
+      // Meta
+      formData.append('pagina_origen', window.location.pathname);
+      formData.append('pagina_referrer', document.referrer || '(directo)');
+
+      // ─── SAVE TO SUPABASE (parallel, non-blocking) ───
+      var supabaseData = {
+        tipo: 'step2-briefing-v3',
+        nombre: userName,
+        email: userEmail,
+        servicios: JSON.stringify(servicios),
+        tipo_proyecto: tipoEl ? tipoEl.value : '',
+        es_nuevo: esNuevoEl ? esNuevoEl.value : '',
+        objetivo_principal: objetivoEl ? objetivoEl.value : '',
+        publico_objetivo: document.getElementById('f-publico').value.trim(),
+        situacion_actual: document.getElementById('f-descripcion').value.trim(),
+        que_no_funciona: document.getElementById('f-no-funciona').value.trim(),
+        competidores: document.getElementById('f-competidores').value.trim(),
+        web_actual: document.getElementById('f-web').value.trim(),
+        stack_actual: document.getElementById('f-stack').value,
+        presupuesto: presupuestoEl ? presupuestoEl.value : '',
+        timeline: timelineEl ? timelineEl.value : '',
+        comentarios: document.getElementById('f-comentarios').value.trim(),
+        pagina_origen: window.location.pathname
+      };
+      supabaseInsert('web_contactos', supabaseData).catch(function(err) {
+        console.warn('Supabase save (non-blocking):', err);
+      });
+
+      fetch('https://n8n.trespuntos-lab.com/webhook/briefing-v3', {
+        method: 'POST',
+        body: formData
+      })
+      .then(function(res) {
+        if (res.ok) {
+          btn.innerHTML = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg> Enviado';
+          btn.style.background = 'rgba(93,255,191,.15)';
+          btn.style.borderColor = 'rgba(93,255,191,.3)';
+          btn.style.color = 'var(--mint)';
+          btn.style.opacity = '1';
+          setTimeout(function() {
+            var redirectUrl = '/form-v3/briefing-enviado.html#email=' + encodeURIComponent(userEmail);
+            if (userName) redirectUrl += '&nombre=' + encodeURIComponent(userName);
+            window.location.href = redirectUrl;
+          }, 800);
+        } else { throw new Error('HTTP ' + res.status); }
+      })
+      .catch(function(err) {
+        console.error('Error:', err);
+        btn.disabled = false;
+        btn.removeAttribute('aria-busy');
+        btn.innerHTML = 'Error — inténtalo de nuevo';
+        btn.style.background = 'rgba(255,80,80,.15)';
+        btn.style.borderColor = 'rgba(255,80,80,.3)';
+        btn.style.color = '#ff5050';
+        btn.style.opacity = '1';
+
+        var navEl = document.querySelector('.form-nav');
+        if (!document.getElementById('skip-link')) {
+          var skipLink = document.createElement('a');
+          skipLink.id = 'skip-link';
+          var skipUrl = '/form-v3/briefing-enviado.html#email=' + encodeURIComponent(userEmail);
+          if (userName) skipUrl += '&nombre=' + encodeURIComponent(userName);
+          skipLink.href = skipUrl;
+          skipLink.textContent = 'Continuar de todos modos \u2192';
+          skipLink.style.cssText = 'display:block;text-align:center;margin-top:1rem;font-size:.8125rem;color:var(--text-muted);text-decoration:underline;transition:color .2s;';
+          skipLink.addEventListener('mouseenter', function(){ skipLink.style.color='var(--text-primary)'; });
+          skipLink.addEventListener('mouseleave', function(){ skipLink.style.color='var(--text-muted)'; });
+          navEl.parentNode.insertBefore(skipLink, navEl.nextSibling);
+        }
+
+        setTimeout(function() {
+          btn.innerHTML = 'Enviar briefing <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>';
+          btn.style.background = ''; btn.style.borderColor = ''; btn.style.color = ''; btn.style.opacity = '';
+        }, 3000);
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

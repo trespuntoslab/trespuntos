@@ -98,6 +98,36 @@
     # WordPress categories & authors
     RewriteRule ^category/(.*)$ /blog/ [R=301,L]
     RewriteRule ^author/(.*)$ /nosotros/ [R=301,L]
+
+    # --- Páginas antiguas (producción WordPress) ---
+    RewriteRule ^trespuntos/?$ /nosotros/ [R=301,L]
+    RewriteRule ^contacto-trespuntos/?$ /contacto/ [R=301,L]
+    RewriteRule ^cuentanos/?$ /contacto/ [R=301,L]
+    RewriteRule ^politica-de-privacidad/?$ /politica-privacidad/ [R=301,L]
+
+    # --- Works → Casos de negocio (específico antes de wildcard) ---
+    RewriteRule ^works/cuentanos-tu-proyecto/?$ /contacto/ [R=301,L]
+    RewriteRule ^works/(.+)/?$ /casos-de-negocio/ [R=301,L]
+    RewriteRule ^works/?$ /casos-de-negocio/ [R=301,L]
+
+    # --- Blog posts con fecha (WordPress date-based URLs) ---
+    RewriteRule ^2018/03/07/la-experiencia-usuario-diseno-interfaz-pagina-web/?$ /blog/la-experiencia-de-usuario-y-el-diseno-de-interfaz-en-tu-pagina-web/ [R=301,L]
+    RewriteRule ^2017/06/24/elaborado-con-amor/?$ /blog/blog-diseno-web-elaborado-con-amor/ [R=301,L]
+    RewriteRule ^2017/06/28/pack-emprendedores/?$ /blog/ [R=301,L]
+    RewriteRule ^2017/06/24/valientes-emprendedores/?$ /blog/ [R=301,L]
+
+    # --- Catch-all: cualquier URL con fecha WordPress ---
+    RewriteRule ^\d{4}/\d{2}/\d{2}/(.*)$ /blog/ [R=301,L]
+
+    # --- Tags WordPress ---
+    RewriteRule ^tag/(.*)$ /blog/ [R=301,L]
+
+    # --- Bergedorfer (contenido huérfano WordPress) ---
+    RewriteRule ^bergedorfer-(.*)$ /blog/ [R=301,L]
+
+    # --- WordPress feeds ---
+    RewriteRule ^feed(/.*)?$ /blog/ [R=301,L]
+    RewriteRule ^comments/feed(/.*)?$ /blog/ [R=301,L]
 </IfModule>
 
 # ── Security Headers ─────────────────────────────────────────

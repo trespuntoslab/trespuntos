@@ -117,13 +117,54 @@
       animation: fadeSlideUp 0.7s 0.35s forwards;
     }
 
-    .contact-title .text-mint {
-      color: var(--mint);
+    .contact-title .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: wordReveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    .contact-title .word:nth-child(1) { animation-delay: 0.35s; }
+    .contact-title .word:nth-child(2) { animation-delay: 0.45s; }
+    .contact-title .word:nth-child(3) { animation-delay: 0.55s; }
+    .contact-title .word:nth-child(4) { animation-delay: 0.65s; }
+    .contact-title .word:nth-child(5) { animation-delay: 0.75s; }
+    .contact-title .word:nth-child(6) { animation-delay: 0.85s; }
+
+    @keyframes wordReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-title .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: wordReveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    .contact-title .word:nth-child(1) { animation-delay: 0.35s; }
+    .contact-title .word:nth-child(2) { animation-delay: 0.45s; }
+    .contact-title .word:nth-child(3) { animation-delay: 0.55s; }
+    .contact-title .word:nth-child(4) { animation-delay: 0.65s; }
+    .contact-title .word:nth-child(5) { animation-delay: 0.75s; }
+    .contact-title .word:nth-child(6) { animation-delay: 0.85s; }
+
+    @keyframes wordReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-title .text-gradient-standalone {
       position: relative;
       display: inline-block;
     }
 
-    .contact-title .text-mint::after {
+    .contact-title .text-gradient-standalone::after {
       content: '';
       position: absolute;
       bottom: 2px;
@@ -136,70 +177,58 @@
     }
 
     .contact-subtitle {
-      font-size: 1.1rem;
-      line-height: 1.7;
+      font-size: 1.15rem;
+      line-height: 1.6;
       color: var(--text-secondary);
-      max-width: 480px;
-      margin-bottom: 3rem;
+      max-width: 440px;
+      margin-bottom: 2rem;
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeSlideUp 0.6s 0.5s forwards;
+      animation: fadeSlideUp 0.6s 0.6s forwards;
     }
 
-    /* Contact info inline */
-    .contact-info-inline {
+    /* Contact info blocks */
+    .contact-info-blocks {
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeSlideUp 0.6s 0.65s forwards;
+      animation: fadeSlideUp 0.6s 0.8s forwards;
+      margin-top: 0.5rem;
     }
 
-    .contact-info-row {
+    .contact-info-item {
       display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.75rem 1rem;
-      background: rgba(93, 255, 191, 0.04);
-      border: 1px solid rgba(93, 255, 191, 0.08);
-      border-radius: var(--radius-lg);
-      transition: all 0.3s ease;
+      flex-direction: column;
+      gap: 0.35rem;
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 2px solid rgba(93, 255, 191, 0.15);
+      transition: border-color 0.3s ease;
     }
 
-    .contact-info-row:hover {
-      border-color: rgba(93, 255, 191, 0.25);
-      background: rgba(93, 255, 191, 0.06);
-      transform: translateX(6px);
+    .contact-info-item:hover {
+      border-left-color: var(--mint);
     }
 
-    .contact-info-row svg {
-      flex-shrink: 0;
-      color: var(--mint);
-      opacity: 0.7;
-    }
-
-    .contact-info-row .info-label {
+    .contact-info-item .ci-label {
       font-family: var(--font-mono);
       font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.05em;
       color: var(--text-muted);
-      margin-right: 0.5rem;
     }
 
-    .contact-info-row .info-value {
-      font-size: 0.95rem;
-      color: var(--text-primary);
-    }
-
-    .contact-info-row a {
+    .contact-info-item .ci-value {
+      font-size: 1.15rem;
+      font-weight: 500;
       color: var(--text-primary);
       text-decoration: none;
-      transition: color 0.2s;
+      transition: color 0.25s ease;
     }
 
-    .contact-info-row a:hover {
+    .contact-info-item a.ci-value:hover {
       color: var(--mint);
     }
 
@@ -230,6 +259,11 @@
       animation: formAppear 0.8s 0.4s forwards;
     }
 
+    @keyframes lineShimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
     .contact-form-card::before {
       content: '';
       position: absolute;
@@ -237,7 +271,16 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--mint), rgba(93, 255, 191, 0.2), transparent);
+      background: linear-gradient(90deg,
+        transparent 0%,
+        #5dffbf 20%,
+        #4ea5ff 45%,
+        #c084fc 65%,
+        #5dffbf 80%,
+        transparent 100%
+      );
+      background-size: 200% 100%;
+      animation: lineShimmer 10s linear infinite;
     }
 
     .form-card-header {
@@ -248,8 +291,11 @@
       font-size: 1.35rem;
       font-weight: 700;
       font-family: var(--font-heading);
-      color: var(--text-primary);
       margin-bottom: 0.35rem;
+      background: linear-gradient(45deg, #5dffbf 0%, #4ea5ff 35%, #c084fc 70%, #5dffbf 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .form-card-sub {
@@ -527,7 +573,7 @@
         margin-right: auto;
       }
 
-      .contact-info-inline {
+      .contact-info-blocks {
         align-items: center;
       }
 
@@ -564,6 +610,140 @@
 
       .orb-1, .orb-2, .orb-3 { display: none; }
     }
+
+    /* ─── BRIEFING BANNER ─── */
+    .briefing-banner {
+      display: flex;
+      align-items: center;
+      gap: .875rem;
+      margin-top: 1.25rem;
+      padding: .875rem 1rem;
+      border: 1px dashed var(--border-strong, #2A2A2A);
+      border-radius: var(--radius-md, 12px);
+      background: rgba(93, 255, 191, .02);
+      text-decoration: none;
+      transition: all .25s;
+    }
+
+    .briefing-banner:hover {
+      border-color: rgba(93, 255, 191, .25);
+      background: rgba(93, 255, 191, .04);
+    }
+
+    .briefing-banner-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--mint-dim, rgba(93, 255, 191, .12));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mint);
+    }
+
+    .briefing-banner-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: .125rem;
+    }
+
+    .briefing-banner-title {
+      font-size: .8125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .briefing-banner-desc {
+      font-size: .6875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .briefing-banner-arrow {
+      flex-shrink: 0;
+      color: var(--text-muted);
+      transition: transform .2s, color .2s;
+    }
+
+    .briefing-banner:hover .briefing-banner-arrow {
+      color: var(--mint);
+      transform: translateX(2px);
+    }
+
+    /* ─── CUSTOM SELECT ─── */
+    .custom-select { position: relative; width: 100%; user-select: none; }
+    .custom-select-trigger {
+      -webkit-appearance: none; appearance: none; width: 100%;
+      background: var(--bg-subtle, #1a1a1a); border: 1.5px solid var(--border-strong, #2a2a2a);
+      border-radius: var(--radius-md, 10px); padding: .75rem 1rem;
+      font-family: inherit; font-size: .9375rem; color: var(--text-muted);
+      cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+      outline: none; transition: border-color .2s, box-shadow .2s; text-align: left;
+    }
+    .custom-select-trigger.has-value { color: var(--text-primary); }
+    .custom-select-trigger:focus,
+    .custom-select.open .custom-select-trigger {
+      border-color: rgba(93,255,191,.5); box-shadow: 0 0 0 3px rgba(93,255,191,.07);
+    }
+    .custom-select-value { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .custom-select-chevron {
+      flex-shrink: 0; width: 16px; height: 16px; color: var(--text-muted);
+      transition: transform .2s, color .2s;
+    }
+    .custom-select-chevron polyline { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .custom-select.open .custom-select-chevron { transform: rotate(180deg); color: var(--mint); }
+    .custom-select-panel {
+      position: absolute; top: calc(100% + 6px); left: 0; right: 0;
+      background: var(--bg-surface, #161616); border: 1px solid var(--border-strong, #2a2a2a);
+      border-radius: var(--radius-md, 10px); padding: .375rem;
+      z-index: 200; box-shadow: 0 8px 32px rgba(0,0,0,.4);
+      opacity: 0; transform: translateY(-6px) scale(.98); pointer-events: none;
+      transition: opacity .15s, transform .15s; transform-origin: top center;
+    }
+    .custom-select.open .custom-select-panel { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+    .custom-select-option {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .625rem .875rem; border-radius: var(--radius-sm, 6px);
+      font-size: .875rem; color: var(--text-secondary); cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+    .custom-select-option:hover { background: rgba(93,255,191,.06); color: var(--text-primary); }
+    .custom-select-option.selected { color: var(--mint); background: rgba(93,255,191,.08); }
+    .custom-select-option.selected::after {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--mint); flex-shrink: 0;
+    }
+
+    /* ─── UNIFORM LABEL COLOR ─── */
+    .contact-form-card .label { color: var(--text-primary); }
+
+    /* ─── SERVICE CARDS ─── */
+    .services-section { margin-top: 1rem; }
+    .services-label { font-size: .8125rem; font-weight: 600; color: var(--text-primary); margin-bottom: .5rem; display: block; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: .375rem;
+    }
+    .service-card {
+      display: flex; align-items: center; gap: .375rem;
+      padding: .3125rem .625rem; border: none; background: rgba(255,255,255,.05);
+      border-radius: 20px; cursor: pointer;
+      transition: all .15s; user-select: none;
+    }
+    .service-card:hover { background: rgba(255,255,255,.09); }
+    .service-card.selected { background: rgba(93,255,191,.1); }
+    .service-card-check {
+      width: 12px; height: 12px; min-width: 12px; border-radius: 3px;
+      border: 1px solid rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center; transition: all .15s; flex-shrink: 0;
+    }
+    .service-card.selected .service-card-check { background: var(--mint); border-color: var(--mint); }
+    .service-card-check svg { width: 8px; height: 8px; color: #0e0e0e; opacity: 0; transition: opacity .1s; }
+    .service-card.selected .service-card-check svg { opacity: 1; }
+    .service-card-label { font-size: .75rem; font-weight: 500; color: var(--text-secondary); line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .service-card.selected .service-card-label { color: var(--text-primary); }
+
   </style>
 </head>
 
@@ -597,29 +777,32 @@
         </div>
 
         <h1 class="contact-title">
-          Hablemos de tu<br/>
-          <span class="text-mint">próximo proyecto</span>
+          <span class="word">Construyamos</span>
+          <span class="word">&nbsp;el</span><br/>
+          <span class="text-gradient">
+            <span class="word">futuro</span>
+            <span class="word">&nbsp;de</span>
+            <span class="word">&nbsp;tu</span>
+            <span class="word">&nbsp;producto</span>
+          </span>
         </h1>
 
         <p class="contact-subtitle">
-          Cada conversación empieza con una idea. Nosotros la transformamos en una experiencia digital que convierte.
+          UX/UI y Arquitectura Digital para empresas que no se conforman con lo estándar.
         </p>
 
-        <div class="contact-info-inline">
-          <div class="contact-info-row">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span class="info-label">BCN</span>
-            <span class="info-value">Paseig de Sant Joan, 7 · 08010</span>
+        <div class="contact-info-blocks">
+          <div class="contact-info-item">
+            <div class="ci-label">Email</div>
+            <a href="mailto:hola@trespuntoscomunicacion.es" class="ci-value">hola@trespuntoscomunicacion.es</a>
           </div>
-          <div class="contact-info-row">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span class="info-label">Tel</span>
-            <a href="tel:+34932176017" class="info-value">+34 932 17 60 17</a>
+          <div class="contact-info-item">
+            <div class="ci-label">Teléfono / WhatsApp</div>
+            <a href="tel:+34930117733" class="ci-value">+34 930 117 733</a>
           </div>
-          <div class="contact-info-row">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 4-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 4"/></svg>
-            <span class="info-label">Email</span>
-            <a href="mailto:hola@trespuntos.es" class="info-value">hola@trespuntos.es</a>
+          <div class="contact-info-item">
+            <div class="ci-label">Sede</div>
+            <span class="ci-value">Emitiendo desde Barcelona para todo el mundo</span>
           </div>
         </div>
       </div>
@@ -627,22 +810,26 @@
 
     <!-- Right: Form -->
     <div class="contact-right">
-      <div class="contact-form-wrap">
+      <div style="display:flex;flex-direction:column;width:100%;max-width:500px;">
+      <div class="contact-form-wrap" style="max-width:none;">
         <div class="contact-form-card">
           <div class="form-card-header">
-            <div class="form-card-title">Cuéntanos tu proyecto</div>
-            <div class="form-card-sub">Respuesta en menos de 48h laborables</div>
+            <div class="form-card-title">Inicia el proyecto</div>
+            <div class="form-card-sub">En menos de 48h laborables tendrás una primera respuesta personalizada.</div>
           </div>
 
           <form>
+            <!-- Honeypot anti-spam -->
+            <input type="text" name="hp_field" id="hp_field" style="position:absolute;left:-9999px;opacity:0;height:0;" tabindex="-1" autocomplete="off" />
+
             <div class="form-row">
               <div class="form-field">
                 <label class="label label-required" for="f-nombre">Nombre</label>
-                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" required />
+                <input id="f-nombre" type="text" class="input" placeholder="¿Cómo te llamas?" autocomplete="name" required />
                 <span class="field-error" id="err-nombre"></span>
               </div>
               <div class="form-field">
-                <label class="label label-required" for="f-email">Email</label>
+                <label class="label label-required" for="f-email">Email de empresa</label>
                 <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
                 <span class="field-error" id="err-email"></span>
               </div>
@@ -651,40 +838,75 @@
             <div class="form-row">
               <div class="form-field">
                 <label class="label label-required" for="f-tel">Teléfono</label>
-                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" required minlength="9" />
+                <input id="f-tel" type="tel" class="input" placeholder="Tu teléfono" autocomplete="tel" required minlength="9" />
                 <span class="field-error" id="err-tel"></span>
               </div>
               <div class="form-field">
-                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
-                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false"
-                  aria-haspopup="listbox">
-                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
-                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
-                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="2.5">
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
+                <label class="label label-required">Inversión estimada</label>
+                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Inversión estimada">
+                  <button type="button" class="custom-select-trigger" aria-label="Selecciona rango de inversión" aria-controls="cs-presupuesto-panel">
+                    <span class="custom-select-value">Rango de inversión</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
                   </button>
-                  <div class="custom-select-panel" role="listbox">
-                    <div class="custom-select-placeholder">Rango aproximado</div>
-                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
-                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
-                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
-                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                  <div class="custom-select-panel" role="listbox" id="cs-presupuesto-panel" aria-label="Opciones de presupuesto">
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5.000 € – 10.000 €</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10.000 € – 15.000 €</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15.000 € – 20.000 €</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+ 20.000 €</div>
                   </div>
                 </div>
-                <input type="hidden" id="f-presupuesto" name="budget" value="" />
+                <input type="hidden" id="f-presupuesto" name="presupuesto" />
                 <span class="field-error" id="err-presupuesto"></span>
               </div>
             </div>
 
-            <div class="form-field">
-              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
-              <textarea id="f-mensaje" class="input" rows="3"
-                placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
+            <!-- Servicios multi-select -->
+            <div class="services-section">
+              <span class="services-label" id="services-label">¿En qué te podemos ayudar?</span>
+              <div class="services-grid" id="services-grid" role="group" aria-labelledby="services-label">
+                <div class="service-card" data-value="Diseño UX/UI" role="checkbox" aria-checked="false" tabindex="0">
+                  <div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                  <span class="service-card-label">Diseño UX/UI</span>
+                </div>
+                <div class="service-card" data-value="Desarrollo Web" role="checkbox" aria-checked="false" tabindex="0">
+                  <div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                  <span class="service-card-label">Desarrollo Web</span>
+                </div>
+                <div class="service-card" data-value="Tienda Online" role="checkbox" aria-checked="false" tabindex="0">
+                  <div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                  <span class="service-card-label">Tienda Online</span>
+                </div>
+                <div class="service-card" data-value="IA y Automatización" role="checkbox" aria-checked="false" tabindex="0">
+                  <div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                  <span class="service-card-label">IA y Automatización</span>
+                </div>
+                <div class="service-card" data-value="Consultoría Digital" role="checkbox" aria-checked="false" tabindex="0">
+                  <div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                  <span class="service-card-label">Consultoría Digital</span>
+                </div>
+                <div class="service-card" data-value="Design Engineer" role="checkbox" aria-checked="false" tabindex="0">
+                  <div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                  <span class="service-card-label">Design Engineer</span>
+                </div>
+              </div>
+              <input type="hidden" id="f-servicios" name="servicio" />
             </div>
 
-            <label class="checkbox-row" id="privacy-row" for="f-privacidad">
+            <div class="form-field" style="margin-top:1.25rem;">
+              <label class="label" for="f-mensaje">Cuéntanos qué está pasando</label>
+              <textarea id="f-mensaje" class="input" rows="3"
+                placeholder="Describe brevemente el proyecto. Qué quieres construir, qué problema tienes o qué no está funcionando en tu plataforma actual."></textarea>
+            </div>
+
+            <!-- Hidden tracking fields -->
+            <input type="hidden" id="f-pagina-origen" name="pagina_origen" />
+            <input type="hidden" id="f-utm-source" name="utm_source" />
+            <input type="hidden" id="f-utm-medium" name="utm_medium" />
+            <input type="hidden" id="f-utm-campaign" name="utm_campaign" />
+            <input type="hidden" id="f-referrer" name="referrer" />
+            <input type="hidden" id="f-timestamp" name="timestamp" />
+
+            <label class="checkbox-row" id="privacy-row" for="f-privacidad" style="margin-top:1rem;">
               <input type="checkbox" id="f-privacidad" required />
               <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
                   Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
@@ -699,22 +921,22 @@
               </svg>
             </button>
 
-            <p class="form-note">Sin compromiso. Respuesta en menos de 24h.</p>
-
-            <div class="form-divider" style="display:flex;align-items:center;gap:1rem;margin:1.25rem 0;">
-              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
-              <span style="font-size:0.8rem;color:var(--text-muted);">O si prefieres ir al detalle</span>
-              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
-            </div>
-
-            <a href="/iniciar-proyecto" class="btn-secondary" style="width:100%;justify-content:center;">
-              Formulario completo (Presupuesto en 48h)
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
           </form>
         </div>
+      </div>
+      <a href="/form-v3/form-step1.html" class="briefing-banner" style="margin-top:.75rem;">
+        <div class="briefing-banner-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+        </div>
+        <div class="briefing-banner-text">
+          <span class="briefing-banner-title">¿Tu proyecto es urgente?</span>
+          <span class="briefing-banner-desc">Cuéntanos más detalles y te enviamos una propuesta completa en 48h.</span>
+        </div>
+        <svg class="briefing-banner-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
       </div>
     </div>
   </section>
@@ -738,7 +960,7 @@
           </div>
           <div>
             <div class="contact-bottom-label">Ubicación</div>
-            <div class="contact-bottom-value">Barcelona, España</div>
+            <div class="contact-bottom-value">Físicamente en Barcelona,<br>digitalmente en todas partes.</div>
           </div>
         </div>
         <div class="contact-bottom-item">
@@ -779,16 +1001,16 @@
       if (!btn) return;
 
       var fields = {
-        nombre: { el: document.getElementById('f-nombre'), err: document.getElementById('err-nombre') },
-        email:  { el: document.getElementById('f-email'),  err: document.getElementById('err-email') },
-        tel:    { el: document.getElementById('f-tel'),     err: document.getElementById('err-tel') },
+        nombre:      { el: document.getElementById('f-nombre'),      err: document.getElementById('err-nombre') },
+        email:       { el: document.getElementById('f-email'),       err: document.getElementById('err-email') },
+        tel:         { el: document.getElementById('f-tel'),         err: document.getElementById('err-tel') },
         presupuesto: { el: document.getElementById('f-presupuesto'), err: document.getElementById('err-presupuesto') },
         privacidad:  { el: document.getElementById('f-privacidad'),  err: document.getElementById('err-privacidad') }
       };
 
-      var selectWrap = document.getElementById('cs-presupuesto');
       var privacyRow = document.getElementById('privacy-row');
       var userTriedSubmit = false;
+      var formLoadTime = Date.now();
 
       // ── Validators ──
       function validateNombre() {
@@ -808,14 +1030,8 @@
       function validateTel() {
         var v = (fields.tel.el.value || '').replace(/[\s\-\(\)\+]/g, '');
         if (!v) return 'Introduce tu teléfono';
-        if (v.length < 9) return 'El teléfono debe tener mínimo 9 dígitos';
         if (!/^\d+$/.test(v)) return 'Solo dígitos, sin letras';
-        return '';
-      }
-
-      function validatePresupuesto() {
-        var v = (fields.presupuesto.el.value || '').trim();
-        if (!v) return 'Selecciona un rango de presupuesto';
+        if (v.length !== 9) return 'El teléfono debe tener 9 dígitos';
         return '';
       }
 
@@ -824,12 +1040,18 @@
         return '';
       }
 
+      function validatePresupuesto() {
+        var v = document.getElementById('f-presupuesto') ? document.getElementById('f-presupuesto').value : '';
+        if (!v) return 'Selecciona un rango de presupuesto';
+        return '';
+      }
+
       var validators = {
-        nombre: validateNombre,
-        email: validateEmail,
-        tel: validateTel,
+        nombre:      validateNombre,
+        email:       validateEmail,
+        tel:         validateTel,
         presupuesto: validatePresupuesto,
-        privacidad: validatePrivacidad
+        privacidad:  validatePrivacidad
       };
 
       // ── Show/hide errors ──
@@ -839,9 +1061,7 @@
           f.err.textContent = msg;
           f.err.classList.toggle('visible', !!msg);
         }
-        if (key === 'presupuesto') {
-          if (selectWrap) selectWrap.classList.toggle('select-error', !!msg);
-        } else if (key === 'privacidad') {
+        if (key === 'privacidad') {
           if (privacyRow) privacyRow.classList.toggle('checkbox-error', !!msg);
         } else {
           if (f.el) {
@@ -905,35 +1125,82 @@
         this.value = this.value.replace(/[^0-9\s\-\(\)\+]/g, '');
       });
 
-      // Listen to custom select changes
-      var selectObserver = new MutationObserver(function () {
-        if (userTriedSubmit) {
-          var msg = validators.presupuesto();
-          showError('presupuesto', msg);
-        }
-        updateBtn();
-      });
-      selectObserver.observe(fields.presupuesto.el, { attributes: true, attributeFilter: ['value'] });
+      // ── Custom Select: Presupuesto ──
+      (function() {
+        var cs = document.getElementById('cs-presupuesto');
+        var hidden = document.getElementById('f-presupuesto');
+        if (!cs || !hidden) return;
+        var trigger = cs.querySelector('.custom-select-trigger');
+        var valueEl = cs.querySelector('.custom-select-value');
+        var panel = cs.querySelector('.custom-select-panel');
+        var options = cs.querySelectorAll('.custom-select-option');
 
-      // Listen for change event dispatched by custom select
-      fields.presupuesto.el.addEventListener('change', function () {
-        if (userTriedSubmit) {
-          showError('presupuesto', validators.presupuesto());
-        }
-        updateBtn();
-      });
+        function openSelect() { cs.classList.add('open'); cs.setAttribute('aria-expanded','true'); }
+        function closeSelect() { cs.classList.remove('open'); cs.setAttribute('aria-expanded','false'); }
 
-      // Also observe via click on options
-      document.querySelectorAll('#cs-presupuesto .custom-select-option').forEach(function (opt) {
-        opt.addEventListener('click', function () {
-          setTimeout(function () {
-            if (userTriedSubmit) {
-              showError('presupuesto', validators.presupuesto());
-            }
-            updateBtn();
-          }, 50);
+        trigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          cs.classList.contains('open') ? closeSelect() : openSelect();
         });
-      });
+
+        options.forEach(function(opt) {
+          opt.addEventListener('click', function() {
+            options.forEach(function(o) { o.classList.remove('selected'); });
+            opt.classList.add('selected');
+            var val = opt.getAttribute('data-value');
+            hidden.value = val;
+            valueEl.textContent = opt.textContent.trim();
+            trigger.classList.add('has-value');
+            closeSelect();
+            if (userTriedSubmit) showError('presupuesto', validators.presupuesto());
+            updateBtn();
+          });
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!cs.contains(e.target)) closeSelect();
+        });
+
+        // Keyboard navigation for custom select
+        trigger.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            openSelect();
+            var first = panel.querySelector('.custom-select-option');
+            if (first) first.focus();
+          }
+        });
+        options.forEach(function(opt, idx) {
+          opt.setAttribute('tabindex', '-1');
+          opt.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); opt.click(); trigger.focus(); }
+            if (e.key === 'ArrowDown') { e.preventDefault(); var next = options[idx + 1]; if (next) next.focus(); }
+            if (e.key === 'ArrowUp') { e.preventDefault(); var prev = options[idx - 1]; if (prev) prev.focus(); else trigger.focus(); }
+            if (e.key === 'Escape') { closeSelect(); trigger.focus(); }
+          });
+        });
+      })();
+
+      // ── Services multi-select (click + keyboard) ──
+      (function() {
+        var cards = document.querySelectorAll('#services-grid .service-card');
+        var hidden = document.getElementById('f-servicios');
+        function toggleCard(card) {
+          card.classList.toggle('selected');
+          card.setAttribute('aria-checked', card.classList.contains('selected') ? 'true' : 'false');
+          var selected = [];
+          cards.forEach(function(c) {
+            if (c.classList.contains('selected')) selected.push(c.getAttribute('data-value'));
+          });
+          hidden.value = selected.join(', ');
+        }
+        cards.forEach(function(card) {
+          card.addEventListener('click', function() { toggleCard(card); });
+          card.addEventListener('keydown', function(e) {
+            if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggleCard(card); }
+          });
+        });
+      })();
 
       // Privacy checkbox
       fields.privacidad.el.addEventListener('change', function () {
@@ -957,9 +1224,7 @@
             var msg = validators[key]();
             if (msg) {
               var target;
-              if (key === 'presupuesto') {
-                target = selectWrap;
-              } else if (key === 'privacidad') {
+              if (key === 'privacidad') {
                 target = privacyRow;
               } else {
                 target = fields[key].el;
@@ -976,10 +1241,7 @@
           // Focus first invalid
           if (result.firstInvalid) {
             var fk = result.firstInvalid;
-            if (fk === 'presupuesto') {
-              var trigger = document.getElementById('cs-trigger');
-              if (trigger) trigger.focus();
-            } else if (fk === 'privacidad') {
+            if (fk === 'privacidad') {
               fields.privacidad.el.focus();
             } else {
               fields[fk].el.focus();
@@ -991,8 +1253,33 @@
         userTriedSubmit = true;
       });
 
+      // ── Anti-spam: timestamp check ──
+      btn.addEventListener('click', function (e) {
+        if (Date.now() - formLoadTime < 3000) {
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
+      }, true);
+
+      // ── Populate hidden tracking fields ──
+      var params = new URLSearchParams(window.location.search);
+      var pOrigen = document.getElementById('f-pagina-origen');
+      if (pOrigen) pOrigen.value = window.location.pathname;
+      var utmS = document.getElementById('f-utm-source');
+      if (utmS) utmS.value = params.get('utm_source') || '';
+      var utmM = document.getElementById('f-utm-medium');
+      if (utmM) utmM.value = params.get('utm_medium') || '';
+      var utmC = document.getElementById('f-utm-campaign');
+      if (utmC) utmC.value = params.get('utm_campaign') || '';
+      var ref = document.getElementById('f-referrer');
+      if (ref) ref.value = document.referrer || '';
+      var ts = document.getElementById('f-timestamp');
+      if (ts) ts.value = new Date().toISOString();
+
       // Initial state
       updateBtn();
+
     })();
   </script>
 

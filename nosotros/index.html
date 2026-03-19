@@ -78,160 +78,544 @@
   <style>
     /* ═══ Page-specific: Nosotros ═══ */
 
+    /* ── 0. HERO ANIMATION: Convergence ── */
+    .ecosystem-wrapper {
+      padding: 0 !important;
+      background: rgba(10, 10, 10, 0.2);
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .ecosystem-animation {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .eco-svg-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .eco-path {
+      stroke: rgba(255, 255, 255, 0.05);
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    .eco-pulse-dot {
+      fill: var(--mint);
+      filter: blur(1px) drop-shadow(0 0 5px var(--mint));
+    }
+
+    .eco-pulse-dot.dot-blue { fill: #38bdf8; filter: blur(1px) drop-shadow(0 0 5px #38bdf8); }
+    .eco-pulse-dot.dot-purple { fill: #c084fc; filter: blur(1px) drop-shadow(0 0 5px #c084fc); }
+
+    .eco-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .eco-logo-orb {
+      width: 64px;
+      height: 64px;
+      background: var(--bg-surface);
+      border: 2px solid var(--mint);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mint);
+      box-shadow: 0 0 40px rgba(93, 255, 191, 0.2);
+      animation: orbPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes orbPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(93, 255, 191, 0.3); }
+      50% { transform: scale(1.08); box-shadow: 0 0 60px rgba(93, 255, 191, 0.6); }
+    }
+
+    .eco-center-label {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.8;
+    }
+
+    .eco-node {
+      position: absolute;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 10px 14px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .eco-node:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--mint);
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    .node-strategy { top: 40px; left: 50%; transform: translateX(-50%); }
+    .node-design { bottom: 50px; right: 40px; }
+    .node-tech { bottom: 50px; left: 40px; }
+
+    .eco-node-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mint);
+    }
+
+    .eco-node span {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .eco-widget {
+      position: absolute;
+      z-index: 8;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      padding: 8px 12px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      animation: widgetFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes widgetFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .stat-projects { top: 120px; right: 20px; animation-delay: 0s; }
+    .stat-exp { top: 120px; left: 20px; animation-delay: 2.5s; }
+    .stat-satisfaction { bottom: 20px; left: 50%; transform: translateX(-50%); animation-delay: 1.2s; }
+
+    .eco-widget-val {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--mint);
+    }
+
+    .eco-widget-txt {
+      font-size: 0.55rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .eco-float-item {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, rgba(93, 255, 191, 0.03), transparent);
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      border-radius: 6px;
+      z-index: 2;
+    }
+
+    .fi-1 { top: 15%; left: 10%; animation: floatAround 12s linear infinite; }
+    .fi-2 { top: 55%; right: 10%; animation: floatAround 14s linear infinite reverse; }
+    .fi-3 { bottom: 25%; left: 35%; animation: floatAround 18s linear infinite; }
+
+    @keyframes floatAround {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(15px, -15px) rotate(5deg); }
+      66% { transform: translate(-8px, 8px) rotate(-5deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+
+    @media (max-width: 1024px) {
+      .ecosystem-wrapper { height: 340px; }
+      .node-design { right: 20px; }
+      .node-tech { left: 20px; }
+      .stat-projects, .stat-exp { display: none; }
+    }
+
     /* ── 1. IDENTITY SECTION ── */
     .nosotros-identity {
-      padding: 3rem 0;
+      padding: 6rem 0;
       border-bottom: 1px solid var(--border-default);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nosotros-identity::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(93, 255, 191, 0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+      animation: floatSmooth 20s infinite alternate;
+    }
+
+    @keyframes floatSmooth {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-30px, 40px) scale(1.1); }
     }
 
     .nosotros-identity-content {
-      max-width: 680px;
+      max-width: 800px;
       margin: 0 auto;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .nosotros-identity h2 {
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      font-family: var(--font-display);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
+      font-size: clamp(2.2rem, 7vw, 3.5rem);
+      font-family: var(--font-heading);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 2rem;
       color: var(--text-primary);
     }
 
     .nosotros-identity p {
-      font-size: 1rem;
+      font-size: 1.25rem;
       color: var(--text-secondary);
       line-height: 1.6;
-      margin-bottom: 1.5rem;
+      margin-bottom: 3rem;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .nosotros-highlight {
-      padding: 1.5rem;
-      background: var(--bg-surface);
-      border-left: 3px solid var(--mint);
-      border-radius: var(--radius-md);
-      font-size: 0.95rem;
+    /* ── Timeline Styles ── */
+    .nosotros-timeline-container {
+      max-width: 900px;
+      margin: 4rem auto 0;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .timeline-track {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 2px;
+      position: relative;
+      margin: 4rem 0;
+    }
+
+    .timeline-progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--mint), #38bdf8);
+      border-radius: inherit;
+      box-shadow: 0 0 20px rgba(93, 255, 191, 0.4);
+      animation: fillTimeline 3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fillTimeline {
+      to { width: 100%; }
+    }
+
+    .timeline-node {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+    }
+
+    .node-dot {
+      width: 16px;
+      height: 16px;
+      background: var(--bg-primary);
+      border: 3px solid var(--border-strong);
+      border-radius: 50%;
+      margin-bottom: 12px;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .timeline-node.active .node-dot {
+      border-color: var(--mint);
+      box-shadow: 0 0 15px var(--mint);
+      background: var(--mint);
+    }
+
+    .node-year {
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
       color: var(--mint);
-      font-weight: 500;
-      line-height: 1.6;
+      font-weight: 700;
+      opacity: 0;
+      animation: fadeIn 0.5s ease forwards;
     }
 
-    /* ── 2. HOW WE WORK ── */
+    .node-content {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      opacity: 0;
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .node-content strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .node-content span {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      display: block;
+    }
+
+    .n-1 { animation-delay: 0.8s; }
+    .n-2 { animation-delay: 1.8s; }
+    .n-3 { animation-delay: 2.8s; }
+
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes fadeInUp { 
+      from { opacity: 0; transform: translate(-50%, 10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    @media (max-width: 768px) {
+      .timeline-track { height: 300px; width: 4px; margin: 2rem auto; }
+      .timeline-progress { width: 100%; height: 0; background: linear-gradient(180deg, var(--mint), #38bdf8); }
+      @keyframes fillTimeline { to { height: 100%; } }
+      .timeline-node { left: 50% !important; transform: translate(-50%, -50%); }
+      .node-content { left: 40px; transform: none; top: -10px; text-align: left; width: 140px; }
+      .node-year { left: -40px; transform: none; top: -5px; }
+      @keyframes fadeInUp { 
+        from { opacity: 0; transform: translateX(10px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+    }
+
+    .nosotros-method-cta {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .nosotros-method-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.25rem 2.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--mint);
+      border-radius: 100px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--mint);
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 0 0 rgba(93, 255, 191, 0);
+    }
+
+    .nosotros-method-cta a:hover {
+      background: var(--mint);
+      color: var(--bg-primary);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(93, 255, 191, 0.2), 0 0 20px rgba(93, 255, 191, 0.1);
+    }
+
+    .nosotros-method-cta a svg {
+      transition: transform 0.3s ease;
+    }
+
+    .nosotros-method-cta a:hover svg {
+      transform: translateX(5px);
+    }
+
+    /* ── 2. HOW WE WORK (Creative Overlap) ── */
     .nosotros-methodology {
-      padding: 3rem 0;
+      padding: 8rem 0;
       border-bottom: 1px solid var(--border-default);
+      position: relative;
+      background: linear-gradient(to bottom, transparent, rgba(93, 255, 191, 0.02));
     }
 
     .nosotros-methodology h2 {
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      font-family: var(--font-display);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-family: var(--font-heading);
+      font-weight: 800;
+      margin-bottom: 1rem;
       text-align: center;
       color: var(--text-primary);
     }
 
     .nosotros-method-intro {
       text-align: center;
-      max-width: 680px;
-      margin: 0 auto 2.5rem;
-      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto 5rem;
+      font-size: 1.1rem;
       color: var(--text-secondary);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .nosotros-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+      padding-bottom: 6rem;
     }
 
     .nosotros-step {
-      padding: 1.5rem 1rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-md);
-      text-align: center;
-      transition: all var(--transition-base);
+      width: 220px;
+      min-height: 240px;
+      padding: 3rem 1.5rem 2rem;
+      background: rgba(20, 20, 20, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-xl);
+      text-align: left;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      z-index: 2;
+      backdrop-filter: blur(12px);
+      overflow: hidden;
     }
 
+    /* Overlapping markers / "Something below" */
+    .nosotros-step::before {
+      content: attr(data-step);
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-family: var(--font-heading);
+      font-size: 8rem;
+      font-weight: 900;
+      color: rgba(93, 255, 191, 0.03);
+      z-index: 0;
+      line-height: 1;
+      pointer-events: none;
+      transition: all 0.4s ease;
+    }
+
+    /* Alternating layout for organic feel */
+    .nosotros-step:nth-child(even) { margin-top: 4rem; }
+    .nosotros-step:nth-child(odd) { margin-top: 0; }
+    .nosotros-step:not(:first-child) { margin-left: -2.5rem; }
+
     .nosotros-step:hover {
-      border-color: var(--mint);
-      background: rgba(93, 255, 191, 0.02);
-      transform: translateY(-2px);
+      border-color: rgba(93, 255, 191, 0.4);
+      background: rgba(25, 25, 25, 0.8);
+      transform: translateY(-25px) rotate(1deg);
+      z-index: 10;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 20px rgba(93, 255, 191, 0.05);
+    }
+
+    .nosotros-step:hover::before {
+      color: rgba(93, 255, 191, 0.08);
+      transform: scale(1.1) translate(-10px, 10px);
     }
 
     .nosotros-step-icon {
-      width: 40px;
-      height: 40px;
-      margin: 0 auto 0.75rem;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(93, 255, 191, 0.08);
-      border-radius: var(--radius-md);
+      background: rgba(93, 255, 191, 0.05);
+      border: 1px solid rgba(93, 255, 191, 0.15);
+      border-radius: 12px;
       color: var(--mint);
+      position: relative;
+      z-index: 1;
     }
-
+    
     .nosotros-step-label {
       font-family: var(--font-mono);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
+      color: var(--mint);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
+      letter-spacing: 0.1em;
       margin-bottom: 0.5rem;
+      opacity: 0.8;
     }
 
     .nosotros-step-name {
-      font-size: 0.95rem;
-      font-weight: 600;
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
       color: var(--text-primary);
-      line-height: 1.4;
+      line-height: 1.2;
     }
 
-    @media (min-width: 768px) {
-      .nosotros-steps {
-        grid-template-columns: repeat(5, 1fr);
-      }
+    @media (max-width: 1024px) {
+      .nosotros-steps { gap: 2rem; padding-bottom: 2rem; }
+      .nosotros-step:not(:first-child) { margin-left: 0; }
+      .nosotros-step:nth-child(even) { margin-top: 0; }
+      .nosotros-step { width: calc(50% - 1rem); min-width: 280px; }
     }
-
-    .nosotros-method-cta {
-      text-align: center;
-    }
-
-    .nosotros-method-cta a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-md);
-      font-size: 0.95rem;
-      color: var(--text-primary);
-      text-decoration: none;
-      transition: all var(--transition-base);
-    }
-
-    .nosotros-method-cta a:hover {
-      border-color: var(--mint);
-      color: var(--mint);
-      background: rgba(93, 255, 191, 0.03);
+    
+    @media (max-width: 640px) {
+      .nosotros-step { width: 100%; min-width: unset; }
     }
 
     /* ── 3. TEAM SECTION ── */
     .nosotros-team {
-      padding: 4rem 0;
+      padding: 6rem 0;
       border-bottom: 1px solid var(--border-default);
     }
 
     .nosotros-team h2 {
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      font-family: var(--font-display);
-      font-weight: 700;
-      margin-bottom: 0.75rem;
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-family: var(--font-heading);
+      font-weight: 800;
+      margin-bottom: 1rem;
       text-align: center;
       color: var(--text-primary);
     }
@@ -239,10 +623,128 @@
     .nosotros-team-intro {
       text-align: center;
       max-width: 600px;
-      margin: 0 auto 2.5rem;
-      font-size: 1rem;
+      margin: 0 auto 4rem;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .nosotros-team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .nosotros-member {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .nosotros-member:hover {
+      transform: translateY(-8px);
+      border-color: var(--mint);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .nosotros-member-avatar {
+      aspect-ratio: 1/1.2;
+      overflow: hidden;
+      background: var(--bg-muted);
+      position: relative;
+    }
+
+    .nosotros-member-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      filter: grayscale(0.4);
+    }
+
+    .nosotros-member:hover .nosotros-member-avatar img {
+      transform: scale(1.05);
+      filter: grayscale(0);
+    }
+
+    .nosotros-member-info {
+      padding: 2rem;
+    }
+
+    .nosotros-member-name {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .nosotros-member-role {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--mint);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .nosotros-member-desc {
+      font-size: 0.95rem;
       color: var(--text-secondary);
       line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .nosotros-member-social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nosotros-member-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: all var(--transition-base);
+    }
+
+    .nosotros-member-social a:hover {
+      background: var(--mint);
+      border-color: var(--mint);
+      color: var(--bg-primary);
+    }
+
+    /* ── 4. TECH STACK ── */
+    .nosotros-tech {
+      padding: 6rem 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .nosotros-tech h2 {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-family: var(--font-heading);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: var(--text-primary);
+    }
+
+    .nosotros-tech-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
     }
 
     .nosotros-team-grid {
@@ -282,6 +784,11 @@
       height: 100%;
       object-fit: cover;
       object-position: top center;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nosotros-member:hover .nosotros-member-avatar img {
+      transform: scale(1.05);
     }
 
     .nosotros-member-info {
@@ -292,19 +799,19 @@
     }
 
     .nosotros-member-name {
-      font-size: 1.1rem;
-      font-weight: 700;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 800;
       color: var(--text-primary);
       margin-bottom: 0.25rem;
-      font-family: var(--font-display);
     }
 
     .nosotros-member-role {
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
       color: var(--mint);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       margin-bottom: 1rem;
     }
 
@@ -343,9 +850,9 @@
     }
 
     .nosotros-tech h2 {
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      font-family: var(--font-display);
-      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-family: var(--font-heading);
+      font-weight: 800;
       margin-bottom: 1rem;
       text-align: center;
       color: var(--text-primary);
@@ -361,51 +868,69 @@
 
     .nosotros-tech-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
       gap: 1.5rem;
+      justify-items: center;
     }
 
     .nosotros-tech-item {
-      padding: 1.5rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-md);
+      width: 110px;
+      height: 110px;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-lg);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      min-height: 100px;
-      transition: all var(--transition-base);
+      gap: 0.75rem;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
     }
 
     .nosotros-tech-item:hover {
       border-color: var(--mint);
-      background: rgba(93, 255, 191, 0.02);
-      transform: scale(1.05);
+      background: rgba(93, 255, 191, 0.03);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 15px rgba(93, 255, 191, 0.05);
     }
 
-    .nosotros-tech-logo img,
-    .nosotros-tech-logo svg {
-      max-width: 48px;
-      max-height: 48px;
+    .nosotros-tech-logo {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nosotros-tech-logo img {
+      width: 44px;
+      height: 44px;
       object-fit: contain;
-      opacity: 0.7;
-      transition: opacity var(--transition-base), transform var(--transition-base);
+      filter: grayscale(1) brightness(1.2);
+      opacity: 0.5;
+      transition: all 0.4s ease;
     }
 
-    .nosotros-tech-item:hover .nosotros-tech-logo img,
-    .nosotros-tech-item:hover .nosotros-tech-logo svg {
+    .nosotros-tech-item:hover .nosotros-tech-logo img {
+      filter: grayscale(0) brightness(1);
       opacity: 1;
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
 
     .nosotros-tech-name {
       font-family: var(--font-mono);
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.1em;
+      transition: color 0.3s ease;
+    }
+
+    .nosotros-tech-item:hover .nosotros-tech-name {
+      color: var(--mint);
     }
 
     /* ── 5. VALUES ── */
@@ -415,9 +940,9 @@
     }
 
     .nosotros-values h2 {
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      font-family: var(--font-display);
-      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-family: var(--font-heading);
+      font-weight: 800;
       margin-bottom: 2rem;
       text-align: center;
       color: var(--text-primary);
@@ -456,11 +981,11 @@
     }
 
     .nosotros-value h3 {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--text-primary);
       margin-bottom: 0.75rem;
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
     }
 
     .nosotros-value p {
@@ -510,7 +1035,7 @@
           <h1 class="sp-hero-h1 reveal"><span class="text-gradient-standalone">Agencia UX/UI y arquitectura digital</span> en Barcelona</h1>
           <p class="sp-hero-sub reveal">Tres Puntos es una agencia especializada en UX/UI y arquitectura digital de conversión. Diseñamos y construimos plataformas digitales pensadas para generar negocio: webs corporativas, plataformas B2B y e-commerce donde la experiencia de usuario y la arquitectura técnica trabajan juntas para convertir tráfico en clientes.</p>
           <div class="sp-hero-ctas reveal">
-            <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
+            <a href="/contacto/" class="btn-primary magnetic-btn">
               Cuéntanos tu proyecto
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
@@ -520,31 +1045,83 @@
             </a>
           </div>
         </div>
-        <!-- Visual companion -->
+        <!-- Visual companion: Dynamic Ecosystem -->
         <div class="sp-hero-visual reveal">
           <div class="sp-browser-mockup">
             <div class="sp-browser-bar">
               <span class="sp-browser-dot"></span>
               <span class="sp-browser-dot"></span>
               <span class="sp-browser-dot"></span>
-              <span class="sp-browser-url">trespuntoscomunicacion.es</span>
+              <span class="sp-browser-url">trespuntoscomunicacion.es/nosotros</span>
             </div>
-            <div class="sp-browser-content" style="padding:2rem;text-align:center;">
-              <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--mint);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;">+13 años</div>
-              <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--text-primary);margin-bottom:0.5rem;">Arquitectura digital</div>
-              <div style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:1.5rem;">de conversión</div>
-              <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;">
-                <div style="text-align:center;">
-                  <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:var(--mint);">+150</div>
-                  <div style="font-size:0.75rem;color:var(--text-muted);">Proyectos</div>
+            <div class="sp-browser-content ecosystem-wrapper">
+              <div class="ecosystem-animation">
+                <!-- Floating Elements -->
+                <div class="eco-float-item fi-1"></div>
+                <div class="eco-float-item fi-2"></div>
+                <div class="eco-float-item fi-3"></div>
+
+                <!-- SVG Connections -->
+                <svg class="eco-svg-lines" viewBox="0 0 400 380" preserveAspectRatio="xMidYMid slice">
+                  <path class="eco-path" d="M200,190 L200,80" />
+                  <path class="eco-path" d="M200,190 L320,280" />
+                  <path class="eco-path" d="M200,190 L80,280" />
+                  
+                  <circle class="eco-pulse-dot" r="3">
+                    <animateMotion dur="3s" repeatCount="indefinite" path="M200,80 L200,190" />
+                  </circle>
+                  <circle class="eco-pulse-dot dot-blue" r="3">
+                    <animateMotion dur="4s" repeatCount="indefinite" path="M320,280 L200,190" />
+                  </circle>
+                  <circle class="eco-pulse-dot dot-purple" r="3">
+                    <animateMotion dur="5s" repeatCount="indefinite" path="M80,280 L200,190" />
+                  </circle>
+                </svg>
+
+                <!-- Central Node -->
+                <div class="eco-center">
+                    <div class="eco-logo-orb">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <span class="eco-center-label">Tres Puntos</span>
                 </div>
-                <div style="text-align:center;">
-                  <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:var(--mint);">5</div>
-                  <div style="font-size:0.75rem;color:var(--text-muted);">Especialistas</div>
+
+                <!-- Pillar Nodes -->
+                <div class="eco-node node-strategy">
+                    <div class="eco-node-icon">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19V5l12 7-12 7z"/></svg>
+                    </div>
+                    <span>Estrategia</span>
                 </div>
-                <div style="text-align:center;">
-                  <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:var(--mint);">98%</div>
-                  <div style="font-size:0.75rem;color:var(--text-muted);">Satisfacción</div>
+                
+                <div class="eco-node node-design">
+                    <div class="eco-node-icon">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
+                    </div>
+                    <span>Diseño UX/UI</span>
+                </div>
+
+                <div class="eco-node node-tech">
+                    <div class="eco-node-icon">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+                    </div>
+                    <span>Tecnología</span>
+                </div>
+
+                <!-- Dynamic Stats Widgets -->
+                <div class="eco-widget stat-projects">
+                    <span class="eco-widget-val">+150</span>
+                    <span class="eco-widget-txt">Proyectos</span>
+                </div>
+                <div class="eco-widget stat-exp">
+                    <span class="eco-widget-val">+13</span>
+                    <span class="eco-widget-txt">Años</span>
+                </div>
+                <div class="eco-widget stat-satisfaction">
+                    <span class="eco-widget-val">98%</span>
+                    <span class="eco-widget-txt">Satisfacción</span>
                 </div>
               </div>
             </div>
@@ -556,12 +1133,59 @@
 
   <!-- ============ 2. IDENTITY ============ -->
   <section class="nosotros-identity">
+    <!-- Moving background element -->
+    <div style="position:absolute; inset:0; pointer-events:none; z-index:0; overflow: hidden;">
+        <!-- Digital Grid -->
+        <div style="position: absolute; inset: 0; background-image: radial-gradient(var(--mint) 1px, transparent 1px); background-size: 40px 40px; opacity: 0.03;"></div>
+        
+        <!-- Animated Blobs -->
+        <svg style="width:100%; height:100%; opacity:0.15; filter: blur(60px);" viewBox="0 0 1000 1000">
+            <circle cx="200" cy="200" r="150" fill="var(--mint)">
+                <animate attributeName="cx" dur="20s" values="200;800;200" repeatCount="indefinite" />
+                <animate attributeName="cy" dur="25s" values="200;500;200" repeatCount="indefinite" />
+            </circle>
+            <circle cx="800" cy="800" r="180" fill="#38bdf8">
+                <animate attributeName="cx" dur="22s" values="800;300;800" repeatCount="indefinite" />
+                <animate attributeName="cy" dur="18s" values="800;200;800" repeatCount="indefinite" />
+            </circle>
+        </svg>
+    </div>
     <div class="container-main">
       <div class="nosotros-identity-content reveal">
-        <h2>No vendemos páginas web. Construimos experiencias digitales que funcionan y escalan.</h2>
+        <h2>No vendemos páginas web. Construimos <span class="text-gradient-standalone">experiencias digitales</span> que funcionan y escalan.</h2>
         <p>Nuestro enfoque combina UX/UI estratégico, arquitectura digital y desarrollo web a medida. Todo con un objetivo claro: que la plataforma convierta.</p>
-        <div class="nosotros-highlight">
-          <strong>+13 años sellando fugas de conversión.</strong> SaaS, B2B, e-commerce y plataformas complejas.
+        <!-- Animated Timeline -->
+        <div class="nosotros-timeline-container">
+          <div class="timeline-track">
+            <div class="timeline-progress"></div>
+            
+            <div class="timeline-node n-1 active" style="left: 0%;">
+              <div class="node-dot"></div>
+              <span class="node-year">2012</span>
+              <div class="node-content">
+                <strong>Agencia Marketing</strong>
+                <span>Inicios enfocados en branding y estrategia digital.</span>
+              </div>
+            </div>
+            
+            <div class="timeline-node n-2 active" style="left: 50%;">
+              <div class="node-dot"></div>
+              <span class="node-year">2017</span>
+              <div class="node-content">
+                <strong>UX/UI Specialists</strong>
+                <span>8 años liderando el diseño de producto y conversión.</span>
+              </div>
+            </div>
+            
+            <div class="timeline-node n-3 active" style="left: 100%;">
+              <div class="node-dot"></div>
+              <span class="node-year">2024</span>
+              <div class="node-content">
+                <strong>IA + Automation</strong>
+                <span>Integrando inteligencia artificial para escalar resultados.</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -574,40 +1198,40 @@
       <p class="nosotros-method-intro reveal">Nuestro enfoque se basa en la Arquitectura Digital de Conversión, una metodología que integra estrategia, diseño UX/UI y desarrollo técnico en un solo flujo que genera resultados medibles.</p>
 
       <div class="nosotros-steps">
-        <div class="nosotros-step reveal">
+        <div class="nosotros-step reveal" data-step="01">
           <div class="nosotros-step-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
           </div>
           <div class="nosotros-step-label">Paso 1</div>
-          <div class="nosotros-step-name">Diagnóstico</div>
+          <div class="nosotros-step-name">Diagnóstico Profundo</div>
         </div>
-        <div class="nosotros-step reveal reveal-delay-1">
+        <div class="nosotros-step reveal reveal-delay-1" data-step="02">
           <div class="nosotros-step-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2"/></svg>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2"/></svg>
           </div>
           <div class="nosotros-step-label">Paso 2</div>
-          <div class="nosotros-step-name">Estrategia</div>
+          <div class="nosotros-step-name">Estrategia de Conversión</div>
         </div>
-        <div class="nosotros-step reveal reveal-delay-2">
+        <div class="nosotros-step reveal reveal-delay-2" data-step="03">
           <div class="nosotros-step-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
           </div>
           <div class="nosotros-step-label">Paso 3</div>
-          <div class="nosotros-step-name">Diseño UX/UI</div>
+          <div class="nosotros-step-name">Diseño de Experiencia</div>
         </div>
-        <div class="nosotros-step reveal reveal-delay-3">
+        <div class="nosotros-step reveal reveal-delay-3" data-step="04">
           <div class="nosotros-step-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
           </div>
           <div class="nosotros-step-label">Paso 4</div>
-          <div class="nosotros-step-name">Desarrollo</div>
+          <div class="nosotros-step-name">Desarrollo Tecnológico</div>
         </div>
-        <div class="nosotros-step reveal reveal-delay-4">
+        <div class="nosotros-step reveal reveal-delay-4" data-step="05">
           <div class="nosotros-step-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
           </div>
           <div class="nosotros-step-label">Paso 5</div>
-          <div class="nosotros-step-name">Validación</div>
+          <div class="nosotros-step-name">Validación y Optimización</div>
         </div>
       </div>
 
@@ -629,27 +1253,32 @@
 
       <div class="nosotros-team-grid">
 
-        <!-- Jordi -->
-        <div class="nosotros-member reveal">
+        <!-- Cooper -->
+        <div class="nosotros-member reveal member-cooper">
           <div class="nosotros-member-avatar">
-            <img src="/nosotros/Jordi.webp" alt="Jordi Expósito" loading="lazy" />
+            <img src="/img/cooper.webp" alt="Cooper" loading="lazy" />
           </div>
           <div class="nosotros-member-info">
-            <h3 class="nosotros-member-name">Jordi Expósito</h3>
+            <h3 class="nosotros-member-name">Cooper</h3>
+            <p class="nosotros-member-role">Chief Happiness Officer & The Real Boss</p>
+            <p class="nosotros-member-desc">Encargado de la supervisión de pausas creativas, control de estrés y gestión de caricias. Es quien realmente toma las decisiones importantes en la oficina.</p>
+          </div>
+        </div>
+
+        <!-- Jordi -->
+        <div class="nosotros-member reveal reveal-delay-1">
+          <div class="nosotros-member-avatar">
+            <img src="/nosotros/Jordi.webp" alt="Jordi" loading="lazy" />
+          </div>
+          <div class="nosotros-member-info">
+            <h3 class="nosotros-member-name">Jordi</h3>
             <p class="nosotros-member-role">Digital Project Lead + UX/UI Designer Senior</p>
             <p class="nosotros-member-desc">Lidera la estrategia digital, la dirección creativa y la arquitectura de conversión de cada proyecto. Conecta negocio, diseño y tecnología desde el primer día.</p>
-            <div class="nosotros-member-social">
-              <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.39v-1.2h-2.5v8.5h2.5v-4.34c0-.77.62-1.4 1.4-1.4a1.4 1.4 0 0 1 1.4 1.4v4.34h2.5M6.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m-1 15h2v-8.5h-2v8.5Z"/>
-                </svg>
-              </a>
-            </div>
           </div>
         </div>
 
         <!-- Dani -->
-        <div class="nosotros-member reveal reveal-delay-1">
+        <div class="nosotros-member reveal reveal-delay-2">
           <div class="nosotros-member-avatar">
             <img src="/nosotros/Dani.webp" alt="Dani" loading="lazy" />
           </div>
@@ -661,7 +1290,7 @@
         </div>
 
         <!-- Alberto -->
-        <div class="nosotros-member reveal reveal-delay-2">
+        <div class="nosotros-member reveal reveal-delay-3">
           <div class="nosotros-member-avatar">
             <img src="/nosotros/Alberto.webp" alt="Alberto" loading="lazy" />
           </div>
@@ -673,7 +1302,7 @@
         </div>
 
         <!-- Judith -->
-        <div class="nosotros-member reveal reveal-delay-3">
+        <div class="nosotros-member reveal reveal-delay-4">
           <div class="nosotros-member-avatar">
             <img src="/nosotros/Judith.webp" alt="Judith" loading="lazy" />
           </div>
@@ -685,7 +1314,7 @@
         </div>
 
         <!-- Manuel -->
-        <div class="nosotros-member reveal reveal-delay-4">
+        <div class="nosotros-member reveal reveal-delay-5">
           <div class="nosotros-member-avatar">
             <img src="/nosotros/Manuel.webp" alt="Manuel" loading="lazy" />
           </div>
@@ -717,52 +1346,52 @@
           <span class="nosotros-tech-name">React</span>
         </div>
         <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/nextjs-icon.svg" alt="Next.js" loading="lazy" /></div>
+          <span class="nosotros-tech-name">Next.js</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
           <div class="nosotros-tech-logo"><img src="/img/logos/angular.svg" alt="Angular" loading="lazy" /></div>
           <span class="nosotros-tech-name">Angular</span>
-        </div>
-        <div class="nosotros-tech-item reveal">
-          <div class="nosotros-tech-logo"><img src="/img/logos/wordpress.svg" alt="WordPress" loading="lazy" /></div>
-          <span class="nosotros-tech-name">WordPress</span>
-        </div>
-        <div class="nosotros-tech-item reveal">
-          <div class="nosotros-tech-logo"><img src="/img/logos/laravel.svg" alt="Laravel" loading="lazy" /></div>
-          <span class="nosotros-tech-name">Laravel</span>
-        </div>
-        <div class="nosotros-tech-item reveal">
-          <div class="nosotros-tech-logo"><img src="/img/logos/n8n.svg" alt="n8n" loading="lazy" /></div>
-          <span class="nosotros-tech-name">n8n</span>
-        </div>
-        <div class="nosotros-tech-item reveal">
-          <div class="nosotros-tech-logo"><img src="/img/logos/chatgpt.svg" alt="ChatGPT" loading="lazy" /></div>
-          <span class="nosotros-tech-name">ChatGPT</span>
-        </div>
-        <div class="nosotros-tech-item reveal">
-          <div class="nosotros-tech-logo"><img src="/img/logos/javascript.svg" alt="JavaScript" loading="lazy" /></div>
-          <span class="nosotros-tech-name">JavaScript</span>
-        </div>
-        <div class="nosotros-tech-item reveal">
-          <div class="nosotros-tech-logo"><img src="/img/logos/css3.svg" alt="CSS3" loading="lazy" /></div>
-          <span class="nosotros-tech-name">CSS3</span>
-        </div>
-        <div class="nosotros-tech-item reveal">
-          <div class="nosotros-tech-logo"><img src="/img/logos/cursor.svg" alt="Cursor" loading="lazy" /></div>
-          <span class="nosotros-tech-name">Cursor</span>
         </div>
         <div class="nosotros-tech-item reveal">
           <div class="nosotros-tech-logo"><img src="/img/logos/typescript.svg" alt="TypeScript" loading="lazy" /></div>
           <span class="nosotros-tech-name">TypeScript</span>
         </div>
         <div class="nosotros-tech-item reveal">
-          <div class="nosotros-tech-logo"><img src="/img/logos/nextjs.svg" alt="Next.js" loading="lazy" /></div>
-          <span class="nosotros-tech-name">Next.js</span>
+          <div class="nosotros-tech-logo"><img src="/img/logos/laravel.svg" alt="Laravel" loading="lazy" /></div>
+          <span class="nosotros-tech-name">Laravel</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/wordpress.svg" alt="WordPress" loading="lazy" /></div>
+          <span class="nosotros-tech-name">WordPress</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/n8n.svg" alt="n8n" loading="lazy" /></div>
+          <span class="nosotros-tech-name">n8n</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/make.svg" alt="Make" loading="lazy" /></div>
+          <span class="nosotros-tech-name">Make</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/chatgpt.svg" alt="ChatGPT" loading="lazy" /></div>
+          <span class="nosotros-tech-name">AI</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/cursor.svg" alt="Cursor" loading="lazy" /></div>
+          <span class="nosotros-tech-name">Cursor</span>
         </div>
         <div class="nosotros-tech-item reveal">
           <div class="nosotros-tech-logo"><img src="/img/logos/vercel.svg" alt="Vercel" loading="lazy" /></div>
           <span class="nosotros-tech-name">Vercel</span>
         </div>
         <div class="nosotros-tech-item reveal">
-          <div class="nosotros-tech-logo"><img src="/img/logos/make.svg" alt="Make" loading="lazy" /></div>
-          <span class="nosotros-tech-name">Make</span>
+          <div class="nosotros-tech-logo"><img src="/img/logos/javascript.svg" alt="JavaScript" loading="lazy" /></div>
+          <span class="nosotros-tech-name">JS</span>
+        </div>
+        <div class="nosotros-tech-item reveal">
+          <div class="nosotros-tech-logo"><img src="/img/logos/css3.svg" alt="CSS3" loading="lazy" /></div>
+          <span class="nosotros-tech-name">CSS3</span>
         </div>
       </div>
     </div>
@@ -809,29 +1438,83 @@
   <!-- ============ TESTIMONIOS ============ -->
   <div id="tp-testimonios"></div>
 
-  <!-- ============ 9. FINAL CTA ============ -->
-  <section class="sp-expert" aria-label="Contacto">
+  <!-- ============ 9. FORMULARIO SIMPLE ============ -->
+  <section id="cierre" aria-label="Formulario de contacto">
     <div class="container-main">
-      <div class="sp-expert-layout reveal">
-        <div class="sp-expert-quote">
-          <span class="section-badge">Hablemos</span>
-          <h2 class="sp-expert-h2">Si tienes un proyecto digital que necesita orden, estrategia y ejecución, podemos ayudarte.</h2>
-          <p>No vendemos humo ni hacemos promesas vacías. Te escuchamos, analizamos tu caso y te decimos con honestidad qué necesitas y cómo podemos resolverlo.</p>
-          <div style="margin-top:1.5rem;">
-            <a href="/iniciar-proyecto" class="btn-primary magnetic-btn">
-              Cuéntanos tu proyecto
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+      <div class="cierre-layout">
+        <div class="cierre-copy">
+          <span class="section-badge reveal">Hablemos</span>
+          <h2 class="cierre-h2 reveal">Si tienes un proyecto digital que necesita orden, estrategia y ejecución, podemos ayudarte.</h2>
+          <p class="cierre-sub reveal">No vendemos humo ni hacemos promesas vacías. Te escuchamos, analizamos tu caso y te decimos con honestidad qué necesitas.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Respondemos en menos de 48h con una primera valoración.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
           </div>
         </div>
-        <div class="sp-expert-author">
-          <img src="/nosotros/Jordi.webp" alt="Jordi Expósito" class="sp-expert-avatar" width="80" height="80" loading="lazy">
-          <div>
-            <div class="sp-expert-name">Jordi Expósito</div>
-            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
-            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener" class="sp-expert-linkedin">
-              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
-              Ver en LinkedIn
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="form-gradient-accent"></div>
+          <div class="cierre-form-inner">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-nombre">Nombre</label>
+                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="f-email">Email</label>
+                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="label label-required" for="f-tel">Teléfono</label>
+                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
+                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox">
+                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
+                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
+                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <div class="custom-select-panel" role="listbox">
+                    <div class="custom-select-placeholder">Rango aproximado</div>
+                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
+                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
+                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
+                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
+                  </div>
+                </div>
+                <input type="hidden" id="f-presupuesto" name="budget" value="" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
+              <textarea id="f-mensaje" class="input" rows="4" placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
+            </div>
+            <label class="checkbox-row" for="f-privacidad">
+              <input type="checkbox" id="f-privacidad" required />
+              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+            </label>
+            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn" style="width:100%;justify-content:center;">
+              Cuéntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p class="form-note">Sin compromiso. Respuesta en menos de 48h laborables.</p>
+            <div class="form-divider" style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
+              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
+            </div>
+            <a href="/form-v3/form-step1.html" class="btn-secondary" style="width:100%;justify-content:center;">
+              Briefing completo (Presupuesto en 48h)
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
         </div>

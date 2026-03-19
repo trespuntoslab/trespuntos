@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#5dffbf">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briefing enviado | Tres Puntos</title>
+  <meta name="description" content="Tu briefing ha sido recibido. Nuestro equipo está analizando tu proyecto.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <style>
+    /* Noise + Grid */
+    body::before {
+      content:''; position:fixed; inset:0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events:none; z-index:0; opacity:.4;
+    }
+    body::after {
+      content:''; position:fixed; inset:0;
+      background-image: linear-gradient(rgba(93,255,191,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(93,255,191,.025) 1px, transparent 1px);
+      background-size:60px 60px; pointer-events:none; z-index:0;
+    }
+    .glow-orb {
+      position:fixed; width:600px; height:600px; border-radius:50%;
+      background:radial-gradient(circle,rgba(93,255,191,.06) 0%,transparent 70%);
+      pointer-events:none; z-index:0; top:-150px; right:-200px;
+      animation:orbFloat 8s ease-in-out infinite;
+    }
+    @keyframes orbFloat { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-30px,30px) scale(1.05)} }
+
+    /* Override custom cursor from design-system.css — use native cursor */
+    body, body * { cursor: auto !important; }
+    a, button, label { cursor: pointer !important; }
+
+    .page-wrap { position:relative; z-index:1; min-height:100vh; display:flex; flex-direction:column; }
+
+    /* Nav */
+    .nav {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:1.25rem 2.5rem; border-bottom:1px solid var(--border-base);
+      background:rgba(14,14,14,.8); backdrop-filter:blur(12px);
+      position:sticky; top:0; z-index:100;
+    }
+    .nav-logo { display:flex; align-items:center; text-decoration:none; height:38px; }
+    .nav-logo svg { height:100%; width:auto; }
+    .nav-back {
+      display:flex; align-items:center; gap:.375rem;
+      font-size:.8125rem; color:var(--text-muted); text-decoration:none; transition:color .2s;
+    }
+    .nav-back:hover { color:var(--text-primary); }
+    .nav-back svg { width:14px; height:14px; }
+
+    /* Layout */
+    .main {
+      flex:1; display:grid; grid-template-columns:420px 1fr;
+      min-height:calc(100vh - 57px);
+    }
+
+    /* Left */
+    .left-panel {
+      background:var(--bg-surface); border-right:1px solid var(--border-base);
+      padding:3.5rem 3rem; display:flex; flex-direction:column; justify-content:space-between;
+      position:sticky; top:57px; height:calc(100vh - 57px); overflow-y:auto;
+    }
+    .panel-badge {
+      display:inline-flex; align-items:center; gap:.375rem;
+      background:rgba(93,255,191,.08); border:1px solid rgba(93,255,191,.2);
+      border-radius:var(--radius-full); padding:.3rem .75rem;
+      font-size:.6875rem; font-weight:700; color:var(--mint);
+      letter-spacing:.08em; text-transform:uppercase; margin-bottom:1.75rem;
+    }
+    .panel-badge-dot { width:5px; height:5px; border-radius:50%; background:var(--mint); animation:pulse-dot 2s infinite; }
+    @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+    .panel-h1 { font-family:var(--font-heading); font-weight:800; font-size:1.75rem; line-height:1.2; color:var(--text-primary); margin-bottom:1rem; }
+    .panel-h1 span { color:var(--mint); }
+    .panel-sub { font-size:.9375rem; color:var(--text-secondary); line-height:1.7; }
+
+    .left-bottom { padding-top:2rem; border-top:1px solid var(--border-base); margin-top:2rem; }
+    .trust-items { display:flex; flex-direction:column; gap:.75rem; }
+    .trust-item {
+      display:flex; align-items:center; gap:.625rem;
+      font-size:.75rem; color:var(--text-muted);
+    }
+    .trust-item svg { width:14px; height:14px; color:var(--mint); flex-shrink:0; }
+
+    /* Right */
+    .right-panel {
+      padding:4rem 5rem; display:flex; flex-direction:column; justify-content:center;
+      max-width:640px; width:100%; margin:0 auto;
+    }
+
+    /* Success icon */
+    .success-icon {
+      width:72px; height:72px; border-radius:50%;
+      background:rgba(93,255,191,.1); border:1.5px solid rgba(93,255,191,.3);
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:1.75rem; animation:popIn .5s cubic-bezier(.34,1.56,.64,1);
+    }
+    .success-icon svg { width:36px; height:36px; color:var(--mint); }
+    @keyframes popIn { 0%{transform:scale(0);opacity:0} 100%{transform:scale(1);opacity:1} }
+
+    .success-tag {
+      font-size:.6875rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+      color:var(--mint); font-family:var(--font-mono); margin-bottom:.5rem;
+      display:flex; align-items:center; gap:.35rem;
+    }
+    .success-tag::before { content:''; width:16px; height:1px; background:var(--mint); }
+    .success-h2 {
+      font-family:var(--font-heading); font-weight:800; font-size:1.875rem;
+      line-height:1.2; color:var(--text-primary); margin-bottom:.75rem;
+    }
+    .success-desc {
+      font-size:.9375rem; color:var(--text-secondary); line-height:1.7; margin-bottom:2.5rem;
+    }
+    .success-desc strong { color:var(--text-primary); font-weight:600; }
+
+    /* Steps Card */
+    .steps-card {
+      background:var(--bg-subtle); border:1.5px solid var(--border-strong);
+      border-radius:var(--radius-xl); padding:1.75rem; margin-bottom:1.5rem;
+      animation:fadeUp .6s ease .2s both;
+    }
+    @keyframes fadeUp { 0%{transform:translateY(20px);opacity:0} 100%{transform:translateY(0);opacity:1} }
+    .steps-card-title {
+      font-size:.6875rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+      color:var(--mint); font-family:var(--font-mono); margin-bottom:1.25rem;
+    }
+    .step-row {
+      display:flex; align-items:flex-start; gap:.875rem;
+      padding:.75rem 0; border-bottom:1px solid var(--border-base);
+    }
+    .step-row:last-child { border-bottom:none; }
+    .step-dot {
+      width:28px; height:28px; min-width:28px; border-radius:50%;
+      border:1.5px solid var(--border-strong); display:flex; align-items:center;
+      justify-content:center; font-size:.6875rem; font-weight:700;
+      color:var(--text-muted); font-family:var(--font-mono); margin-top:.1rem;
+    }
+    .step-dot.done {
+      border-color:rgba(93,255,191,.3); color:var(--mint); background:rgba(93,255,191,.08);
+    }
+    .step-dot.active {
+      background:var(--mint); border-color:var(--mint); color:#0e0e0e;
+      box-shadow:0 0 16px rgba(93,255,191,.4);
+      animation:pulse-glow 2s ease-in-out infinite;
+    }
+    @keyframes pulse-glow {
+      0%,100%{ box-shadow:0 0 16px rgba(93,255,191,.4); }
+      50%{ box-shadow:0 0 24px rgba(93,255,191,.6); }
+    }
+    .step-info h4 { font-size:.875rem; font-weight:600; color:var(--text-primary); margin-bottom:.15rem; }
+    .step-row:not(.done-row):not(.active-row) .step-info h4 { color:var(--text-muted); }
+    .step-info p { font-size:.75rem; color:var(--text-muted); line-height:1.4; }
+    .done-row .step-info p { color:var(--text-secondary); }
+    .active-row .step-info h4 { color:var(--text-primary); }
+    .active-row .step-info p { color:var(--text-secondary); }
+
+    /* Info card */
+    .info-card {
+      background:var(--bg-subtle); border:1.5px solid var(--border-strong);
+      border-radius:var(--radius-xl); padding:1.5rem; margin-bottom:1.5rem;
+      display:flex; align-items:flex-start; gap:1rem;
+      animation:fadeUp .6s ease .35s both;
+    }
+    .info-card-icon {
+      width:36px; height:36px; min-width:36px; border-radius:var(--radius-md);
+      background:rgba(93,255,191,.08); border:1px solid rgba(93,255,191,.15);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .info-card-icon svg { width:18px; height:18px; color:var(--mint); }
+    .info-card-text h4 { font-size:.875rem; font-weight:600; color:var(--text-primary); margin-bottom:.25rem; }
+    .info-card-text p { font-size:.8125rem; color:var(--text-secondary); line-height:1.6; }
+
+    .btn-home-link {
+      display:inline-flex; align-items:center; gap:.375rem;
+      margin-top:1rem; font-size:.8125rem; color:var(--text-muted);
+      text-decoration:none; transition:color .2s;
+      animation:fadeUp .6s ease .5s both;
+    }
+    .btn-home-link:hover { color:var(--text-primary); }
+    .btn-home-link svg { width:14px; height:14px; }
+
+    /* UX: Stagger animations */
+    .success-icon { animation: popIn .5s cubic-bezier(.34,1.56,.64,1); }
+    .success-tag { animation: fadeUp .5s ease .15s both; }
+    .success-h2 { animation: fadeUp .5s ease .2s both; }
+    .success-desc { animation: fadeUp .5s ease .25s both; }
+
+    /* Responsive */
+    @media (max-width:900px) {
+      .main { grid-template-columns:1fr; }
+      .left-panel { position:static; height:auto; padding:2rem 1.5rem; border-right:none; border-bottom:1px solid var(--border-base); }
+      .right-panel { padding:2.5rem 1.5rem; }
+    }
+    @media (max-width:540px) {
+      .nav { padding:1rem 1.25rem; }
+      .right-panel { padding:2rem 1.25rem; }
+      .success-h2 { font-size:1.5rem; }
+    }
+  </style>
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Tres Puntos Comunicación">
+</head>
+
+<body>
+  <div class="glow-orb"></div>
+  <div class="page-wrap">
+
+    <nav class="nav">
+      <a href="/" class="nav-logo" aria-label="Tres Puntos — Inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="46" viewBox="0 0 261.303 99.928" aria-hidden="true">
+          <g transform="translate(-143.8 -26.1)">
+            <path d="M243.558,44.827a30.774,30.774,0,0,1,23.994,11.412,61.579,61.579,0,0,1,9.364-17.264,49.651,49.651,0,0,0-66.716,0,61.58,61.58,0,0,1,9.364,17.264,31.238,31.238,0,0,1,23.994-11.412Z" transform="translate(30.748 0)" fill="#5dffbf"/>
+            <path d="M355.213,26.1a49.114,49.114,0,0,0-33.358,12.875,45.236,45.236,0,0,0-7.023,7.9,49.619,49.619,0,0,0-9.364,28.969,31.1,31.1,0,0,1-31.017,31.163A30.774,30.774,0,0,1,250.457,95.6a31.275,31.275,0,0,1-7.023-19.751,49.618,49.618,0,0,0-9.364-28.969,45.233,45.233,0,0,0-7.023-7.9A49.114,49.114,0,0,0,193.691,26.1a49.891,49.891,0,0,0,0,99.781,49.114,49.114,0,0,0,33.358-12.875,61.579,61.579,0,0,1-9.364-17.264,30.876,30.876,0,1,1,7.023-19.459,49.618,49.618,0,0,0,9.364,28.969,45.231,45.231,0,0,0,7.023,7.9,49.651,49.651,0,0,0,66.716,0,45.232,45.232,0,0,0,7.023-7.9A49.619,49.619,0,0,0,324.2,76.283a31.1,31.1,0,1,1,7.023,19.459,61.579,61.579,0,0,1-9.364,17.264,49.113,49.113,0,0,0,33.358,12.875,49.891,49.891,0,1,0,0-99.781Z" transform="translate(0 0)" fill="#5dffbf"/>
+            <circle cx="16.24" cy="16.24" r="16.24" transform="translate(177.158 59.751)" fill="#f8f8f8"/>
+            <circle cx="16.24" cy="16.24" r="16.24" transform="translate(258.065 59.751)" fill="#f8f8f8"/>
+            <circle cx="16.24" cy="16.24" r="16.24" transform="translate(338.973 59.751)" fill="#f8f8f8"/>
+          </g>
+        </svg>
+      </a>
+      <a href="/" class="nav-back">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Volver
+      </a>
+    </nav>
+
+    <div class="main">
+      <aside class="left-panel">
+        <div>
+          <div class="panel-badge"><span class="panel-badge-dot"></span>Briefing completo</div>
+          <h1 class="panel-h1">Todo <span>listo</span></h1>
+          <p class="panel-sub">Tu proyecto está en nuestras manos. Nuestro equipo ya está trabajando en tu análisis personalizado.</p>
+        </div>
+        <div class="left-bottom">
+          <div class="trust-items">
+            <div class="trust-item">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Respuesta en menos de 48h
+            </div>
+            <div class="trust-item">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+              Sin compromisos. Sin spam.
+            </div>
+            <div class="trust-item">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/></svg>
+              13 años de proyectos reales
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="right-panel">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+
+        <div class="success-tag">Briefing recibido</div>
+        <h2 class="success-h2">¡Briefing enviado!</h2>
+        <p class="success-desc">
+          Nuestro equipo está <strong>analizando tu proyecto en este momento</strong>.<br>
+          Te contactaremos pronto con los próximos pasos y una propuesta personalizada.
+        </p>
+
+        <div class="steps-card">
+          <div class="steps-card-title">Estado de tu solicitud</div>
+          <div class="step-row done-row">
+            <div class="step-dot done">✓</div>
+            <div class="step-info"><h4>Datos de contacto</h4><p>Recibido correctamente</p></div>
+          </div>
+          <div class="step-row done-row">
+            <div class="step-dot done">✓</div>
+            <div class="step-info"><h4>Briefing del proyecto</h4><p>Recibido correctamente</p></div>
+          </div>
+          <div class="step-row active-row">
+            <div class="step-dot active">3</div>
+            <div class="step-info"><h4>Análisis en curso</h4><p>Nuestro equipo está revisando tu caso</p></div>
+          </div>
+          <div class="step-row">
+            <div class="step-dot">4</div>
+            <div class="step-info"><h4>Te contactamos</h4><p>Con una propuesta personalizada</p></div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          </div>
+          <div class="info-card-text">
+            <h4>Revisa tu email</h4>
+            <p>Te hemos enviado un email de confirmación con los detalles de tu solicitud. Comprueba también la carpeta de spam.</p>
+          </div>
+        </div>
+
+        <a href="/" class="btn-home-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Volver al inicio
+        </a>
+      </main>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    // Parse hash fragment (server strips query params during clean URL rewrite)
+    var hash = window.location.hash.substring(1);
+    var params = new URLSearchParams(hash);
+    // Fallback to query string for direct access
+    if (!params.get('nombre') && !params.get('email')) {
+      params = new URLSearchParams(window.location.search);
+    }
+    var email = params.get('email');
+    var nombre = params.get('nombre');
+
+    if (nombre) {
+      var firstName = nombre.split(' ')[0];
+      document.querySelector('.success-h2').textContent = '¡Briefing enviado, ' + firstName + '!';
+    }
+  })();
+  </script>
+</body>
+</html>
