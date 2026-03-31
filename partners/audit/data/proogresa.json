@@ -1,0 +1,129 @@
+{
+  "agencia": "Proogresa",
+  "web": "proogresa.es",
+  "_score": 7.6,
+  "_nombre": "Joan",
+  "_icp": "Performance",
+  "lighthouse": {
+    "desktop": { "performance": 100, "accessibility": 88, "bestPractices": 96, "seo": 100 },
+    "mobile": { "performance": 100, "accessibility": 89, "bestPractices": 96, "seo": 100 }
+  },
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Conversión",
+          "titulo": "Propuesta de valor genérica que no diferencia de otras agencias",
+          "detalle": "'Potenciamos tu empresa con soluciones integrales' es un claim que podría ser de cualquier agencia. <strong>Un visitante que llega a la home no entiende en 3 segundos por qué elegir Proogresa</strong>. Especialización sectorial, resultados concretos o un dato diferenciador deberían liderar el mensaje."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Accesibilidad",
+          "titulo": "Validación de teléfono demasiado restrictiva en formularios",
+          "detalle": "El formulario exige entre 7 y 15 dígitos para el teléfono. <strong>Los usuarios con prefijos internacionales o formatos no estándar abandonan el formulario</strong>. Un campo de texto libre con validación suave convertiría mejor."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Navegación",
+          "titulo": "Múltiples CTAs con gradientes compiten por atención",
+          "detalle": "Los botones de acción usan gradientes llamativos (#FF8A00 a #FF004F), lo cual es efectivo para un CTA, pero <strong>cuando hay varios en la misma pantalla, ninguno destaca como la acción principal</strong>. Jerarquizar: uno primario, el resto secundarios."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Confianza",
+          "titulo": "Casos de éxito sin métricas cuantificables",
+          "detalle": "La sección de portfolio muestra proyectos visualmente pero <strong>sin datos de impacto (tráfico, conversiones, ROI)</strong>. Para un decisor B2B, un número concreto vale más que diez capturas de pantalla."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Imagen de marca",
+          "titulo": "Diseño moderno con gradientes y glassmorphism — era 2024",
+          "detalle": "Proogresa usa un sistema visual contemporáneo con gradientes cálidos, cards con efecto glassmorphism y animaciones de scroll. <strong>Transmite profesionalidad y está a la altura de agencias de su segmento</strong>. El estilo es actual pero podría beneficiarse de más identidad propia."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Credibilidad",
+          "titulo": "WordPress + Elementor bien ejecutado pero reconocible como template",
+          "detalle": "El stack Astra + Elementor permite un resultado rápido y visual, pero <strong>un ojo entrenado (como el de un cliente potencial técnico) identifica patrones de page builder</strong>. Para proyectos de alto valor, una web a medida transmite más autoridad."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Diferenciación",
+          "titulo": "GTranslate como solución multiidioma pierde oportunidad de personalización",
+          "detalle": "El widget de GTranslate traduce automáticamente pero <strong>no permite adaptar el mensaje por mercado</strong>. Una versión en inglés nativa con copy adaptado al mercado internacional convertiría significativamente mejor."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 8.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Rich results",
+          "titulo": "Schema markup completo — Organization, WebPage, BreadcrumbList",
+          "detalle": "Proogresa tiene <strong>3 tipos de schema implementados, lo que supera a la mayoría de agencias del sector</strong>. Buena base técnica para rich results. Oportunidad de añadir FAQPage en la home y LocalBusiness para SEO local."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Posicionamiento",
+          "titulo": "SEO score perfecto de 100/100 en Lighthouse",
+          "detalle": "La base técnica SEO es impecable: <strong>meta tags, estructura, sitemap.xml, robots.txt — todo correcto</strong>. El margen de mejora está en contenido (blog con más profundidad) y en autoridad (estrategia de backlinks)."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Visibilidad IA",
+          "titulo": "Sin preparación para rastreadores IA ni llms.txt",
+          "detalle": "No existe llms.txt ni directivas específicas para GPTBot, ClaudeBot o PerplexityBot. <strong>Prepararse para GEO (Generative Engine Optimization) es una ventaja competitiva temprana</strong> que pocas agencias están aprovechando."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 8.5,
+      "hallazgos": [
+        {
+          "prioridad": "baja",
+          "impacto": "Rendimiento",
+          "titulo": "Performance 100/100 en desktop y mobile — score excepcional",
+          "detalle": "Proogresa logra <strong>el máximo en Performance de Lighthouse en ambos dispositivos</strong>. LCP bajo, CLS casi nulo (0.003 desktop, 0.022 mobile), Speed Index de 0.8s. LiteSpeed + buena optimización. Es el mejor rendimiento de todas las agencias analizadas."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Seguridad",
+          "titulo": "Best Practices en 96/100 — excelente base técnica",
+          "detalle": "Solo 4 puntos por debajo del máximo en Best Practices. <strong>No hay problemas graves de seguridad ni APIs deprecadas</strong>. La web está técnicamente bien mantenida."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Stack",
+          "titulo": "WordPress + Elementor + LiteSpeed — rendimiento excelente pero stack limitante",
+          "detalle": "El rendimiento actual es excepcional, pero <strong>Elementor genera markup pesado que limita la escalabilidad</strong>. Para proyectos complejos (e-commerce a medida, plataformas B2B), el stack actual puede convertirse en cuello de botella."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Reescribir la propuesta de valor de la home con datos concretos y diferenciación",
+    "detalle": "El claim actual es genérico. Sustituirlo por una propuesta que incluya un dato real (proyectos entregados, sectores, tasa de retención) y que responda a la pregunta 'por qué Proogresa y no otra agencia'.",
+    "impacto": "Diferenciación inmediata frente a competidores con claims similares. Mejora estimada del 20-30% en tiempo de permanencia y engagement en la home."
+  },
+  "resumen": [
+    "Hemos analizado proogresa.es en cuatro dimensiones: UX, UI, SEO y rendimiento técnico. La plataforma destaca por un rendimiento técnico excepcional — Performance 100/100 en Lighthouse, tanto en desktop como en mobile. Es el mejor score técnico de todas las agencias analizadas.",
+    "El punto débil es la propuesta de valor: el claim de la home es genérico y no diferencia a Proogresa del resto de agencias de marketing digital. El diseño es moderno y actual (gradientes, glassmorphism, animaciones), pero construido sobre Elementor, lo que limita la percepción de exclusividad para clientes técnicos.",
+    "<strong>Hemos identificado 13 hallazgos concretos y un quick win de implementación rápida.</strong> Prioridades: diferenciar la propuesta de valor (UX 6.5/10), capitalizar el rendimiento técnico como argumento comercial, y explorar GEO como ventaja competitiva temprana."
+  ]
+}

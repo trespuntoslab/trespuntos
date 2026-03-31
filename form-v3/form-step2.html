@@ -391,7 +391,7 @@
     .custom-select-chevron { flex-shrink: 0; width: 16px; height: 16px; color: var(--text-muted); transition: transform .2s, color .2s; }
     .custom-select.open .custom-select-chevron { transform: rotate(180deg); color: var(--mint); }
     .custom-select-panel { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-md); padding: .375rem; z-index: 200; box-shadow: 0 8px 32px rgba(0,0,0,.4); opacity: 0; transform: translateY(-6px) scale(.98); pointer-events: none; transition: opacity .15s, transform .15s; transform-origin: top center; }
-    .custom-select.open .custom-select-panel { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+    .custom-select.open .custom-select-panel { display: block !important; opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
     .custom-select-option { display: flex; align-items: center; justify-content: space-between; padding: .625rem .875rem; border-radius: var(--radius-sm); font-size: .875rem; color: var(--text-secondary); cursor: pointer; transition: background .15s, color .15s; }
     .custom-select-option:hover { background: rgba(93,255,191,.06); color: var(--text-primary); }
     .custom-select-option.selected { color: var(--mint); background: rgba(93,255,191,.08); }
@@ -1194,24 +1194,40 @@
     // Init
     goToSubstep(1);
 
-    // ─── CUSTOM SELECT (stack) ───
-    var csStack = document.getElementById('cs-stack');
-    var csStackInput = document.getElementById('f-stack');
-    csStack.querySelector('.custom-select-trigger').addEventListener('click', function() {
-      csStack.classList.toggle('open');
-    });
-    csStack.querySelectorAll('.custom-select-option').forEach(function(opt) {
-      opt.addEventListener('click', function() {
-        csStack.querySelectorAll('.custom-select-option').forEach(function(o) { o.classList.remove('selected'); });
-        opt.classList.add('selected');
-        csStack.querySelector('.custom-select-value').textContent = opt.textContent.trim();
-        csStack.querySelector('.custom-select-trigger').classList.add('has-value');
-        csStackInput.value = opt.getAttribute('data-value');
-        csStack.classList.remove('open');
-      });
-    });
+    // ─── CUSTOM SELECT (stack) — Event delegation ───
     document.addEventListener('click', function(e) {
-      if (!csStack.contains(e.target)) csStack.classList.remove('open');
+      var csStack = document.getElementById('cs-stack');
+      if (!csStack) return;
+      var trigger = csStack.querySelector('.custom-select-trigger');
+      var csStackInput = document.getElementById('f-stack');
+
+      // Click on trigger or its children
+      if (trigger && (e.target === trigger || trigger.contains(e.target))) {
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = csStack.classList.toggle('open');
+        csStack.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        return;
+      }
+
+      // Click on option
+      var option = e.target.closest('.custom-select-option');
+      if (option && csStack.contains(option)) {
+        csStack.querySelectorAll('.custom-select-option').forEach(function(o) { o.classList.remove('selected'); });
+        option.classList.add('selected');
+        csStack.querySelector('.custom-select-value').textContent = option.textContent.trim();
+        trigger.classList.add('has-value');
+        csStackInput.value = option.getAttribute('data-value');
+        csStack.classList.remove('open');
+        csStack.setAttribute('aria-expanded', 'false');
+        return;
+      }
+
+      // Click outside — close
+      if (!csStack.contains(e.target)) {
+        csStack.classList.remove('open');
+        csStack.setAttribute('aria-expanded', 'false');
+      }
     });
 
     // ─── SUPABASE CONFIG ───

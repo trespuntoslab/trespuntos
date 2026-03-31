@@ -1,0 +1,169 @@
+{
+  "agencia": "V3rtice",
+  "web": "v3rtice.com",
+  "lighthouse": {
+    "desktop": {
+      "performance": 76,
+      "accessibility": 80,
+      "bestPractices": 69,
+      "seo": 92,
+      "fcp": "0.2 s",
+      "lcp": "1.3 s",
+      "tbt": "0 ms",
+      "cls": "0.397",
+      "speedIndex": "1.7 s",
+      "tti": "1.3 s"
+    },
+    "mobile": {
+      "performance": 77,
+      "accessibility": 85,
+      "bestPractices": 73,
+      "seo": 92,
+      "fcp": "0.2 s",
+      "lcp": "1.7 s",
+      "tbt": "0 ms",
+      "cls": "0.616",
+      "speedIndex": "1.8 s",
+      "tti": "1.7 s"
+    }
+  },
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Propuesta de valor",
+          "titulo": "El hero presenta servicios pero no el beneficio para el cliente potencial",
+          "detalle": "V3rtice se define como 'agencia de comunicación que potencia tu marca', pero <strong>el mensaje no diferencia entre tipos de cliente ni articula un resultado tangible y verificable</strong>. Para una agencia con clientes como Kärcher o Barraquer, la propuesta debería ser más ambiciosa y específica desde el primer scroll."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Captación de leads",
+          "titulo": "Sin micro-conversiones intermedias para clientes que no están listos para contratar",
+          "detalle": "La web dirige directamente al formulario de contacto sin ofrecer contenido de valor intermedio (guías, checklists de comunicación, workshops). <strong>El 90% de los visitantes no están listos para contratar en su primera visita</strong>, y la web no tiene mecanismo para capturarlos antes de que se vayan."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Portfolio",
+          "titulo": "Proyectos de clientes destacados pero sin narrativa de resultados",
+          "detalle": "Los trabajos para Kärcher, Motul y Barraquer son referencias sólidas, pero <strong>se presentan como imágenes sin contexto del reto, el proceso ni el impacto medible</strong>. Una agencia que proyecta +20% de crecimiento en 2025 debería tener cases que justifiquen esa confianza."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Formulario de contacto",
+          "titulo": "Formulario de contacto genérico sin cualificación previa del cliente",
+          "detalle": "El formulario no incluye campos de cualificación como tipología de empresa, presupuesto estimado o tipo de servicio buscado. <strong>Esto hace que la agencia gestione contactos sin contexto previo</strong>, perdiendo tiempo en reuniones con prospectos no cualificados."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Coherencia visual",
+          "titulo": "Agencia de branding con web que no lidera con el ejemplo visual",
+          "detalle": "Para una agencia que vende diseño y comunicación visual, <strong>la propia web debería ser la mejor carta de presentación creativa</strong>. La ejecución es funcional pero no deja una impresión memorable: falta ese 'efecto wow' que distinga a V3rtice de cualquier otra agencia genérica."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Experiencia de scroll",
+          "titulo": "Navegación fluida pero sin momentos de sorpresa ni interacciones de marca",
+          "detalle": "El scroll es funcional y la maquetación correcta, pero <strong>no hay transiciones de entrada, parallax controlado ni micro-interacciones que demuestren la calidad creativa de la agencia</strong>. En comunicación y branding, la web misma es el mejor argumento de venta."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Tipografía y espaciado",
+          "titulo": "Sistema tipográfico sólido con oportunidades de refinamiento en jerarquía visual",
+          "detalle": "La tipografía base es legible y adecuada, pero <strong>la jerarquía visual entre secciones podría ser más expresiva para guiar la atención del lector</strong>. Algunos bloques de texto tienen densidad alta que reduce la scanneabilidad, especialmente en tablets."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Identidad de marca",
+          "titulo": "Presencia en Barcelona y Madrid pero la web no comunica la doble sede con claridad",
+          "detalle": "La web menciona ambas ciudades pero <strong>no capitaliza visualmente el posicionamiento bilocal como ventaja competitiva</strong>. Para clientes de Madrid que buscan una agencia con presencia en Barcelona (y viceversa), este diferencial debería ser más prominente."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Keywords de nicho",
+          "titulo": "Buena base SEO técnica (92/100) pero sin contenido de fondo en nichos clave",
+          "detalle": "El SEO técnico es sólido con score de 92 en Lighthouse, pero <strong>V3rtice no tiene contenido profundo para keywords transaccionales como 'agencia comunicación corporativa Barcelona' o 'partner PR empresa tecnología'</strong>. El score técnico sin contenido de nicho deja dinero sobre la mesa."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Autoridad sectorial",
+          "titulo": "14 años de experiencia y clientes de referencia sin presencia en medios del sector",
+          "detalle": "Con clientes como Kärcher, Motul y Barraquer, V3rtice tiene credenciales para posicionarse como referente del sector, pero <strong>no tiene una estrategia activa de PR digital, guest posts en medios de marketing ni apariciones en rankings de agencias</strong>. El link building está por debajo de su potencial real."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido de blog",
+          "titulo": "Blog activo pero sin estrategia de pillar content orientada a conversión",
+          "detalle": "El blog genera contenido regularmente (el artículo de crecimiento 2025 es reciente), pero <strong>no hay pillar pages que conecten los artículos en una arquitectura de contenido que capte tráfico de nicho y lo cualifique</strong>. La estrategia de contenidos necesita estructura SEO clara."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Schema markup",
+          "titulo": "Falta de datos estructurados para destacar en resultados enriquecidos de Google",
+          "detalle": "La web no utiliza schema markup de tipo Organization, LocalBusiness o Service, lo que <strong>impide que Google muestre información enriquecida (reseñas, dirección, servicios) en los resultados de búsqueda</strong>, perdiendo visibilidad frente a competidores que sí lo implementan."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "CLS crítico de 0.397 (desktop) y 0.616 (móvil): los elementos de la web 'saltan' visiblemente",
+          "detalle": "El Cumulative Layout Shift está en zona roja tanto en desktop (0.397, umbral bueno: 0.1) como en móvil (0.616), lo que significa que <strong>los elementos de la página se desplazan mientras carga, creando una experiencia de usuario frustrante y penalizando el posicionamiento en Google</strong>. Este es el problema técnico más urgente de toda la web."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Best Practices",
+          "titulo": "Best Practices de 69/100 en desktop indica APIs deprecadas o recursos no seguros",
+          "detalle": "Un score de 69 en Best Practices sugiere <strong>uso de APIs obsoletas del navegador, posibles recursos cargados por HTTP en una página HTTPS, o errores de consola no controlados</strong>. Estos problemas afectan a la experiencia de usuario avanzada y a la credibilidad técnica ante clientes del sector tech."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Accesibilidad",
+          "titulo": "Accesibilidad de 80/100 con margen de mejora para cumplir WCAG 2.1 nivel AA",
+          "detalle": "El score de accesibilidad de 80 indica <strong>problemas probables con contraste de color, atributos aria faltantes o etiquetas de formulario sin asociar correctamente</strong>. Para una agencia que trabaja con marcas consolidadas como Barraquer (sector salud), la accesibilidad no es opcional."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Rendimiento general",
+          "titulo": "Performance 76-77/100 con quick wins en optimización de imágenes y recursos",
+          "detalle": "El rendimiento general es aceptable (FCP 0.2s excelente, LCP 1.3s bueno), pero <strong>el Speed Index de 1.7s en desktop indica que hay recursos bloqueantes o imágenes sin optimización completa</strong>. Convertir imágenes a WebP y revisar el orden de carga de scripts elevaría el score a 90+."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Corregir el CLS (Cumulative Layout Shift) en homepage",
+    "detalle": "El CLS de 0.397 (desktop) y 0.616 (móvil) es el problema técnico más urgente. Se corrige reservando dimensiones fijas para imágenes y elementos multimedia antes de que carguen (atributos width/height en HTML o CSS aspect-ratio). Implementación: 1-2 horas de trabajo técnico.",
+    "impacto": "Mejora directa en Core Web Vitals de Google → mejor posicionamiento SEO. Elimina el efecto de 'salto visual' que actualmente genera una primera impresión técnica deficiente para una agencia de branding que debería brillar en todos los detalles."
+  },
+  "_score": 6.5,
+  "_nombre": "Sergio",
+  "_icp": "Branding",
+  "resumen": [
+    "V3rtice es una agencia de comunicación y branding con 14 años de trayectoria, facturación superior a 1M€ y clientes de la talla de Kärcher, Motul y Barraquer. Hemos analizado v3rtice.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad de mejora.",
+    "El análisis revela una web funcional pero con dos problemas técnicos críticos: un CLS de 0.616 en móvil (nivel rojo en Core Web Vitals de Google) y un score de Best Practices de 69/100 que indica uso de tecnología obsoleta. En la capa de negocio, la web no capitaliza el portfolio con clientes referentes ni tiene mecanismos de captación de leads intermedios.",
+    "<strong>Hemos identificado 16 hallazgos concretos, un quick win implementable en 1-2 horas y las áreas de mayor impacto para que V3rtice tenga una plataforma digital a la altura de sus clientes y de sus objetivos de crecimiento del 20% para 2025.</strong>"
+  ]
+}

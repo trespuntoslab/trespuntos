@@ -1,0 +1,349 @@
+{
+  "meta": {
+    "slug": "nomadevans",
+    "title": "Web de reservas camper | Caso Nomade Vans · Tres Puntos",
+    "description": "Cómo transformamos una web inspiracional en un sistema de reservas que convierte. UX/UI, desarrollo web a medida y arquitectura digital.",
+    "canonical": "/casos-de-negocio/nomadevans/",
+    "og": {
+      "title": "Caso Nomade Vans | De inspirar viajes a venderlos",
+      "description": "Replanteamiento digital completo: emoción + conversión para una web de alquiler de furgonetas camper.",
+      "image": "https://www.trespuntoscomunicacion.es/img/og-default.jpg"
+    },
+    "schema_type": "Article",
+    "date_published": "2024-09-15",
+    "date_modified": "2026-03-24",
+    "keywords": [
+      "web alquiler camper",
+      "ux ui turismo",
+      "desarrollo web furgonetas",
+      "configurador van",
+      "arquitectura digital reservas",
+      "nomade vans"
+    ]
+  },
+  "faq_schema": [
+    {
+      "question": "¿Qué tipo de proyecto era?",
+      "answer": "Una web de alquiler de furgonetas camper que necesitaba pasar de ser puramente inspiracional a generar reservas reales con un flujo claro y sin fricción."
+    },
+    {
+      "question": "¿Qué es el configurador de furgoneta?",
+      "answer": "Un sistema visual donde el usuario personaliza su furgoneta camper paso a paso: interior, dormitorio y sistema eléctrico, facilitando la decisión y acelerando la reserva."
+    },
+    {
+      "question": "¿Qué resultados se obtuvieron?",
+      "answer": "El usuario entiende mejor la oferta, el proceso de reserva es más directo y la web acompaña la decisión de compra. De inspirar viajes a venderlos."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero-simple",
+      "sector": "Alquiler camper · Turismo",
+      "h1": "De web inspiracional a",
+      "h1_highlight": "sistema de reservas",
+      "tags": ["UX/UI", "Desarrollo web", "Arquitectura digital"],
+      "browser_url": "nomadevans.com",
+      "browser_image": "/img/casos/nomadevans/desktop-home.webp",
+      "browser_alt": "Página principal de Nomade Vans — Alquiler de furgonetas camper"
+    },
+    {
+      "type": "overview",
+      "variant": "narrative",
+      "badge": "Contexto del proyecto",
+      "heading": "Una marca que inspira viajes pero no cierra reservas",
+      "paragraphs": [
+        "Nomade Vans opera en uno de los sectores más emocionales del turismo: el alquiler de furgonetas camper. Su marca visual era potente, sus fotos de carretera generaban deseo. Pero la web no convertía.",
+        "El reto era combinar esa emoción con un sistema de reservas claro, accesible y sin fricción. Que la decisión de reservar fuera tan fácil como imaginar el viaje."
+      ],
+      "meta": [
+        { "label": "Cliente", "value": "Nomade Vans" },
+        { "label": "Sector", "value": "Alquiler camper · Turismo" },
+        {
+          "label": "Servicios",
+          "value": null,
+          "value_tags": ["UX/UI", "Desarrollo web a medida", "Arquitectura digital"]
+        },
+        {
+          "label": "Visitar",
+          "value": "nomadevans.com ↗",
+          "url": "https://nomadevans.com"
+        }
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Inspirar está bien. Pero convertir es lo que <em>paga.</em>",
+      "sub": null,
+      "bg": "subtle",
+      "show_divider": true
+    },
+    {
+      "type": "browser-duo",
+      "bg": "surface",
+      "badge": "La web",
+      "heading": "Dos caras de la misma experiencia",
+      "browsers": [
+        {
+          "url": "nomadevans.com",
+          "image": "/img/casos/nomadevans/desktop-–-inicio.webp",
+          "alt": "Nomade Vans — Página de inicio"
+        },
+        {
+          "url": "nomadevans.com/vans",
+          "image": "/img/casos/nomadevans/desktop-–-vans.webp",
+          "alt": "Nomade Vans — Catálogo de furgonetas"
+        }
+      ]
+    },
+    {
+      "type": "challenge",
+      "badge": "El problema",
+      "heading": "Mucha emoción, poca conversión",
+      "paragraphs": [
+        "Nomade Vans tenía una web visualmente atractiva, pero no estaba pensada para vender.",
+        "El usuario se inspiraba, pero no encontraba un camino claro para reservar."
+      ],
+      "signals_title": "Señales de fricción detectadas",
+      "signals": [
+        {
+          "title": "Proceso de reserva difuso",
+          "description": "El usuario no sabía cómo ni cuándo reservar. Demasiados clics, poca claridad."
+        },
+        {
+          "title": "Información dispersa",
+          "description": "Características, precios y disponibilidad repartidos sin jerarquía."
+        },
+        {
+          "title": "Falta de estructura decisional",
+          "description": "No había un flujo que guiara de la inspiración a la reserva."
+        },
+        {
+          "title": "Web sin orientación a conversión",
+          "description": "Diseño bonito pero sin CTAs claros ni arquitectura de embudo."
+        }
+      ]
+    },
+    {
+      "type": "approach-cards",
+      "badge": "La solución",
+      "heading": "Emoción + estructura = reservas",
+      "intro": "Replanteamos la web desde cero para que la emoción del viaje conduzca naturalmente a la conversión.",
+      "cards": [
+        {
+          "number": "01",
+          "title": "Replanteamiento de enfoque",
+          "items": [
+            "De web-portfolio a sistema de reservas",
+            "Equilibrio entre aspiración y acción",
+            "Narrativa visual orientada a decidir"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Arquitectura de reserva",
+          "items": [
+            "Flujo claro de inicio a fin",
+            "Información accesible en cada paso",
+            "Eliminación de fricción en el proceso"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "UX/UI orientado a acción",
+          "items": [
+            "CTAs claros en cada sección",
+            "Jerarquía visual que guía la decisión",
+            "Configurador de van como herramienta de venta"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Desarrollo optimizado",
+          "items": [
+            "Carga rápida con imágenes de alta calidad",
+            "Interacciones fluidas y naturales",
+            "Responsive sin perder impacto visual"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "configurator-showcase",
+      "badge": "El configurador",
+      "heading": "Personaliza tu furgoneta, paso a paso",
+      "intro": "Un sistema visual donde el usuario construye su experiencia: elige interior, dormitorio y sistema eléctrico. De navegar a decidir.",
+      "steps": [
+        {
+          "label": "Interior",
+          "image": "/img/casos/nomadevans/configurador---interior.webp",
+          "alt": "Configurador Nomade Vans — Vista interior de la furgoneta",
+          "url": "nomadevans.com/configurador/interior"
+        },
+        {
+          "label": "Dormitorio",
+          "image": "/img/casos/nomadevans/configurador--dormitorio.webp",
+          "alt": "Configurador Nomade Vans — Configuración del dormitorio",
+          "url": "nomadevans.com/configurador/dormitorio"
+        },
+        {
+          "label": "Sistema eléctrico",
+          "image": "/img/casos/nomadevans/configurador--sitema-electrico-–-pro.webp",
+          "alt": "Configurador Nomade Vans — Sistema eléctrico Pro",
+          "url": "nomadevans.com/configurador/electrico"
+        }
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Pasar de inspirar viajes...<br>a <em>venderlos.</em>",
+      "sub": null,
+      "bg": null,
+      "show_divider": false
+    },
+    {
+      "type": "platform-gallery",
+      "bg": "surface",
+      "badge": "La plataforma",
+      "heading": "Cada pantalla pensada para reservar",
+      "intro": "Desktop optimizado para mostrar, convencer y convertir.",
+      "browsers": [
+        {
+          "url": "nomadevans.com",
+          "image": "/img/casos/nomadevans/2026-03-24-22.12.33.webp",
+          "alt": "Nomade Vans — Vista principal",
+          "wide": false
+        },
+        {
+          "url": "nomadevans.com/vans",
+          "image": "/img/casos/nomadevans/2026-03-24-22.13.01.webp",
+          "alt": "Nomade Vans — Catálogo de vans",
+          "wide": false
+        },
+        {
+          "url": "nomadevans.com/van",
+          "image": "/img/casos/nomadevans/2026-03-24-22.13.21.webp",
+          "alt": "Nomade Vans — Detalle de furgoneta",
+          "wide": false
+        },
+        {
+          "url": "nomadevans.com/reserva",
+          "image": "/img/casos/nomadevans/2026-03-24-22.13.34.webp",
+          "alt": "Nomade Vans — Proceso de reserva",
+          "wide": false
+        },
+        {
+          "url": "nomadevans.com/destinos",
+          "image": "/img/casos/nomadevans/2026-03-24-22.13.48.webp",
+          "alt": "Nomade Vans — Destinos recomendados",
+          "wide": false
+        },
+        {
+          "url": "nomadevans.com/experiencia",
+          "image": "/img/casos/nomadevans/2026-03-24-22.14.10.webp",
+          "alt": "Nomade Vans — La experiencia camper",
+          "wide": true
+        }
+      ]
+    },
+    {
+      "type": "browser-scroll",
+      "bg": "base",
+      "badge": "Vista completa",
+      "heading": "La home de arriba a abajo",
+      "browser_url": "nomadevans.com",
+      "image": "/img/casos/nomadevans/2026-03-24-22.19.37.webp",
+      "alt": "Vista completa de la home de Nomade Vans"
+    },
+    {
+      "type": "marquee",
+      "words": ["Reservas", "Conversión", "Experiencia", "Aventura"]
+    },
+    {
+      "type": "impact-grid",
+      "bg": "surface",
+      "badge": "El impacto",
+      "heading": "De inspirar a vender: el resultado habla solo",
+      "cards": [
+        {
+          "icon": "route",
+          "title": "Proceso de reserva claro",
+          "description": "De un flujo confuso a un sistema guiado. El usuario entiende qué puede reservar, cómo y cuándo."
+        },
+        {
+          "icon": "sparkles",
+          "title": "Experiencia que convierte",
+          "description": "La emoción del viaje sigue ahí, pero ahora acompaña a la decisión. Cada sección empuja a la acción."
+        },
+        {
+          "icon": "settings",
+          "title": "Configurador como palanca",
+          "description": "El configurador visual permite personalizar la van y funciona como herramienta de ventas, no solo como escaparate."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "quote": "En negocios emocionales, el reto no es emocionar más. Es convertir sin perder la magia.",
+      "body": "Nomade Vans tenía todo lo que un usuario necesita para soñar un viaje. Pero soñar no paga facturas. El reto era construir un sistema que mantuviera esa emoción y la canalizara hacia una reserva real.",
+      "author": "Jordi Expósito",
+      "role": "UX/UI & Digital Architecture",
+      "avatar": "/img/jordi-exposito.webp"
+    },
+    {
+      "type": "services",
+      "badge": "Servicios aplicados",
+      "heading": "Capacidades que hicieron posible este proyecto",
+      "links": [
+        {
+          "href": "/servicios/desarrollo-web-a-medida-barcelona",
+          "icon": "code",
+          "title": "Desarrollo web a medida",
+          "description": "Plataforma optimizada para carga rápida, interacciones fluidas y configurador visual integrado."
+        },
+        {
+          "href": "/servicios/diseno-ux-ui-barcelona",
+          "icon": "paintbrush",
+          "title": "Diseño UX/UI",
+          "description": "Rediseño completo con equilibrio entre emoción visual y arquitectura de conversión."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "badge": "FAQ",
+      "heading": "Preguntas frecuentes sobre este proyecto",
+      "items": [
+        {
+          "question": "¿Qué tipo de proyecto era?",
+          "answer": "Una web de alquiler de furgonetas camper que necesitaba pasar de ser puramente inspiracional a generar reservas reales. Combinamos emoción visual con arquitectura de conversión y un configurador interactivo."
+        },
+        {
+          "question": "¿Qué es el configurador de furgoneta?",
+          "answer": "Un sistema visual donde el usuario personaliza su furgoneta camper paso a paso: elige interior, dormitorio y sistema eléctrico. Facilita la decisión y acelera la reserva al hacer tangible la experiencia."
+        },
+        {
+          "question": "¿Qué resultados se obtuvieron?",
+          "answer": "El usuario entiende mejor la oferta, el proceso de reserva es más directo y la web acompaña la decisión de compra. De una web que inspiraba viajes a una que los vende."
+        }
+      ]
+    },
+    {
+      "type": "next-project",
+      "label": "Caso relacionado",
+      "title": "Penguin Aula",
+      "href": "/casos-de-negocio/penguinaula/"
+    },
+    {
+      "type": "cta-form",
+      "heading_prefix": "¿Tienes un",
+      "heading_highlight": "reto similar",
+      "sub": "Si tu web inspira pero no convierte, el problema no es de diseño.<br>Es de arquitectura.<br><br>Cuéntanos tu proyecto.",
+      "reasons": [
+        "Sin reunión de ventas previa. Formulario directo en 3 minutos.",
+        "Respondemos en menos de 24h con una primera valoración de alcance.",
+        "Si no encajamos con lo que necesitas, te lo decimos sin rodeos.",
+        "El proyecto empieza con diagnóstico, no con propuesta económica genérica."
+      ]
+    }
+  ]
+}

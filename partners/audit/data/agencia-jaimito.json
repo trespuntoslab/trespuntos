@@ -1,0 +1,157 @@
+{
+  "agencia": "Agencia Jaimito",
+  "web": "agenciajaimito.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Nicho B2B",
+          "titulo": "Posicionamiento B2B claro pero sin demostración inmediata del valor",
+          "detalle": "Agencia Jaimito se define bien como agencia de branding estratégico B2B, pero <strong>el hero no demuestra en 5 segundos qué resultado concreto obtiene un cliente B2B</strong>. Un caso de éxito visual con antes/después de marca sería mucho más persuasivo que un texto descriptivo."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Recorrido del usuario",
+          "titulo": "Navegación clara pero sin micro-conversiones intermedias",
+          "detalle": "La estructura de navegación es limpia con servicios, proyectos y about, pero <strong>no hay puntos de conversión intermedios</strong> como descargas de guías de branding, tests de salud de marca o workshops gratuitos que capturen leads que no están listos para contratar."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Portfolio",
+          "titulo": "Proyectos como Set Alliance y Coldtivate bien seleccionados pero con poco contexto estratégico",
+          "detalle": "Los cases muestran el resultado visual pero <strong>no explican el proceso estratégico, el reto del cliente ni las métricas de impacto</strong>. En branding B2B, el cliente potencial necesita entender la metodología detrás del diseño, no solo el diseño final."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Contacto",
+          "titulo": "Múltiples canales de contacto sin priorización estratégica",
+          "detalle": "Se ofrecen email y dos números de teléfono directamente, lo cual es cercano pero <strong>no canaliza el contacto hacia un formulario de cualificación</strong> que permita a la agencia entender las necesidades antes del primer contacto."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Identidad visual",
+          "titulo": "Diseño web con personalidad propia pero con margen de refinamiento",
+          "detalle": "La web tiene un carácter visual más definido que la media del sector, con <strong>una estética que refleja el posicionamiento de agencia boutique</strong>. Sin embargo, algunos detalles tipográficos y de spacing podrían pulirse para alcanzar un nivel premium consistente en todas las páginas."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Portfolio visual",
+          "titulo": "Presentación de proyectos en Behance pero integración web mejorable",
+          "detalle": "La agencia tiene un portfolio sólido en Behance, pero <strong>la presentación en su propia web no alcanza el mismo nivel de detalle visual</strong>. Los proyectos deberían tener páginas individuales con scroll storytelling que muestre el proceso completo."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Animaciones",
+          "titulo": "Experiencia de navegación fluida pero sin momentos de sorpresa visual",
+          "detalle": "Para una agencia de branding, la web debería ser <strong>una experiencia en sí misma, con transiciones memorables, micro-interacciones cuidadas y easter eggs</strong> que demuestren la creatividad del equipo y generen un efecto wow."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Dark mode",
+          "titulo": "Oportunidad de ofrecer dark mode como señal de modernidad técnica",
+          "detalle": "Implementar un <strong>toggle de dark mode bien ejecutado comunicaría atención al detalle y modernidad técnica</strong>, algo especialmente relevante cuando tu público son directores de marketing de empresas B2B que valoran la sofisticación."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 8.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Contenido SEO",
+          "titulo": "Blog con artículos sobre branding Barcelona pero sin estrategia de keywords definida",
+          "detalle": "La sección de noticias/blog tiene contenido relevante sobre branding B2B, pero <strong>no se percibe una estrategia de keywords estructurada con pillar content</strong>. Términos como \"agencia branding B2B Barcelona\" o \"rebranding empresarial\" necesitan páginas optimizadas específicas."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Visibilidad orgánica",
+          "titulo": "Baja presencia en búsquedas transaccionales de branding en Barcelona",
+          "detalle": "Para búsquedas como \"agencia de branding Barcelona\" o \"diseño de identidad corporativa\", <strong>Jaimito no aparece con la frecuencia que su calidad de trabajo merece</strong>. Falta una estrategia de contenidos y link building específica para estos términos de alta intención."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "SEO técnico",
+          "titulo": "Estructura de headings y meta tags con margen de optimización",
+          "detalle": "La jerarquía de headings en las páginas principales no siempre sigue una <strong>estructura H1-H2-H3 óptima para SEO, y las meta descriptions podrían incluir más keywords de cola larga</strong> relevantes para el sector B2B."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Link building",
+          "titulo": "Presencia en Behance y directorios pero perfil de backlinks limitado",
+          "detalle": "La agencia tiene presencia en Agency Spotter, Digital Agency Network y Behance, pero <strong>falta una estrategia activa de guest posting, colaboraciones con medios de marketing y PR digital</strong> que amplifique la autoridad del dominio."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 8.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Performance",
+          "titulo": "Rendimiento web que debería ser impecable para una agencia que vende webs corporativas",
+          "detalle": "Si Agencia Jaimito ofrece websites corporativos B2B como servicio, <strong>su propia web debe ser la mejor demostración de rendimiento</strong>. Cada segundo de carga adicional es un argumento que un potencial cliente B2B puede usar en contra."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Responsive",
+          "titulo": "Adaptación responsive correcta pero sin optimización específica para tablet",
+          "detalle": "La web se adapta bien a móvil y desktop, pero <strong>la franja de tablet (768-1024px) muestra layouts que simplemente escalan</strong> en vez de adaptarse con breakpoints específicos. En presentaciones a directivos B2B, el iPad es un dispositivo frecuente."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Optimización",
+          "titulo": "Imágenes de portfolio sin formatos modernos ni carga progresiva",
+          "detalle": "Las imágenes de proyectos de branding son el activo visual más importante de la web, pero <strong>no se sirven en formatos WebP con calidad adaptativa ni con blur-up placeholder</strong> que cree una experiencia de carga elegante."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Accesibilidad",
+          "titulo": "Textos alternativos y semántica HTML mejorables para accesibilidad",
+          "detalle": "Las imágenes de portfolio necesitan <strong>atributos alt descriptivos y la estructura HTML debería usar elementos semánticos</strong> (article, section, figure) para mejorar la accesibilidad y el SEO simultáneamente."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Páginas de caso de éxito con scroll storytelling y métricas",
+    "detalle": "Transformar cada proyecto del portfolio en una experiencia de scroll narrativa que cuente reto, proceso y resultado con métricas de impacto (aumento de leads, mejora de percepción de marca, crecimiento de engagement). Empezar con los 2 mejores proyectos.",
+    "impacto": "Diferenciación radical frente a competidores que solo muestran imágenes estáticas. Los directivos B2B valoran entender el proceso estratégico tanto como el resultado visual final."
+  },
+  "_score": 7.4,
+  "_nombre": "Alfredo",
+  "_icp": "Branding",
+  "resumen": [
+    "Agencia Jaimito opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado agenciajaimito.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. UI & Percepción (7.5/10) es el área más sólida, mientras que SEO & Visibilidad (5.5/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 75,
+      "accessibility": 80,
+      "bestPractices": 77,
+      "seo": 85
+    },
+    "mobile": {
+      "performance": 95,
+      "accessibility": 80,
+      "bestPractices": 77,
+      "seo": 85
+    }
+  }
+}

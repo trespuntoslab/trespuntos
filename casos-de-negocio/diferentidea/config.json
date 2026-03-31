@@ -1,0 +1,343 @@
+{
+  "meta": {
+    "slug": "diferentidea",
+    "title": "Caso Diferent Idea | Rediseño web orientado a conversión · Tres Puntos",
+    "description": "Cómo rediseñamos la arquitectura digital de Diferent Idea para convertir su web en una herramienta de negocio.",
+    "canonical": "/casos-de-negocio/diferentidea/",
+    "og": {
+      "title": "Caso Diferent Idea | UX/UI y arquitectura digital",
+      "description": "De web corporativa a sistema que convierte. Caso completo de Diferent Idea.",
+      "image": "https://www.trespuntoscomunicacion.es/img/og-default.jpg"
+    },
+    "schema_type": "Article",
+    "date_published": "2026-03-24",
+    "date_modified": "2026-03-24",
+    "keywords": [
+      "casos desarrollo web",
+      "rediseño web corporativa",
+      "arquitectura digital empresa",
+      "ux ui web corporativa"
+    ]
+  },
+  "faq_schema": [
+    {
+      "question": "¿Qué tipo de proyecto era?",
+      "answer": "Un rediseño integral de la web de una agencia de merchandising corporativo, orientado a mejorar la conversión y la comunicación de su propuesta de valor."
+    },
+    {
+      "question": "¿Qué se trabajó principalmente?",
+      "answer": "UX/UI, arquitectura digital y desarrollo web a medida para transformar una web escaparate en una herramienta comercial efectiva."
+    },
+    {
+      "question": "¿Qué impacto tuvo el rediseño?",
+      "answer": "La web comunica mejor la propuesta de valor, el usuario entiende antes qué ofrece Diferent Idea y el recorrido hacia la conversión es más directo."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero-split",
+      "sector": "E-commerce · Merchandising corporativo",
+      "h1": "Rediseño web orientado a",
+      "h1_highlight": "negocio y conversión",
+      "intro": "Diferent Idea es una agencia creativa especializada en regalos de empresa y merchandising corporativo.",
+      "intro_emphasis": "Su web tenía que dejar de mostrar y empezar a generar oportunidades de negocio.",
+      "meta": [
+        { "label": "Cliente", "value": "Diferent Idea" },
+        { "label": "Sector", "value": "E-commerce · Merchandising" },
+        { "label": "Servicios", "value": "UX/UI · Dev · Arquitectura" }
+      ],
+      "video_src": "/img/casos/diferentidea/desktop-recording-1.mp4",
+      "browser_url": "diferentidea.com",
+      "browser_image": "/img/casos/diferentidea/captura-de-pantalla-2026-03-24-a-las-17.57.29.webp",
+      "browser_alt": "Página principal de Diferent Idea — Regalos de empresa y merchandising"
+    },
+    {
+      "type": "statement",
+      "text": "Una web que mostraba... pero <em>no convertía.</em>",
+      "sub": "El usuario navegaba, exploraba productos, pero no avanzaba. El mensaje no estaba estructurado para guiar hacia la decisión.",
+      "bg": "subtle",
+      "show_divider": true
+    },
+    {
+      "type": "browser-fullwidth",
+      "bg": "base",
+      "browser_url": "diferentidea.com",
+      "image": "/img/casos/diferentidea/captura-de-pantalla-2026-03-24-a-las-17.57.29.webp",
+      "alt": "Home de Diferent Idea — Vista completa del hero principal"
+    },
+    {
+      "type": "overview",
+      "variant": "narrative",
+      "badge": "Contexto del proyecto",
+      "heading": "Una agencia creativa que necesitaba una web a la altura de su negocio",
+      "paragraphs": [
+        "Diferent Idea lleva años siendo referente en merchandising corporativo y regalos de empresa. Su catálogo es amplio, su servicio es diferencial y su capacidad de personalización es un activo real.",
+        "Pero su web no reflejaba ese nivel. El mensaje era poco claro, la jerarquía visual no guiaba al usuario y la experiencia no estaba pensada para convertir. El reto era rediseñar la arquitectura digital para que la web trabajara como herramienta comercial."
+      ],
+      "meta": [
+        { "label": "Cliente", "value": "Diferent Idea" },
+        { "label": "Sector", "value": "E-commerce · Merchandising corporativo" },
+        {
+          "label": "Servicios",
+          "value": null,
+          "value_tags": ["Diseño UX/UI", "Desarrollo web a medida", "Arquitectura digital"]
+        },
+        {
+          "label": "Visitar",
+          "value": "diferentidea.com ↗",
+          "url": "https://diferentidea.com"
+        }
+      ]
+    },
+    {
+      "type": "challenge",
+      "badge": "El problema",
+      "heading": "La web no estaba alineada con el nivel real del negocio",
+      "paragraphs": [
+        "Diferent Idea tenía un producto sólido y un servicio diferencial. Pero su web no lo comunicaba.",
+        "El problema no era de diseño. Era de estructura, de mensaje y de enfoque."
+      ],
+      "signals_title": "Señales de fricción detectadas",
+      "signals": [
+        {
+          "title": "Mensaje poco estructurado",
+          "description": "La propuesta de valor no se entendía en los primeros segundos. El usuario no sabía por qué elegir Diferent Idea."
+        },
+        {
+          "title": "Experiencia poco dirigida",
+          "description": "Navegación sin dirección clara. El usuario exploraba pero no avanzaba hacia la conversión."
+        },
+        {
+          "title": "Falta de enfoque en conversión",
+          "description": "Sin CTAs estratégicos, sin flujos dirigidos, sin jerarquía orientada a la decisión."
+        }
+      ]
+    },
+    {
+      "type": "browser-showcase",
+      "bg": "surface",
+      "badge": "La plataforma",
+      "heading": "Un buscador que entiende lo que necesitas",
+      "intro": "El nuevo sistema de búsqueda muestra recomendaciones, categorías y productos destacados en tiempo real.",
+      "browser_url": "diferentidea.com/buscar",
+      "content_type": "video",
+      "video_src": "/img/casos/diferentidea/desktop-recording-2.mp4",
+      "poster": "/img/casos/diferentidea/captura-de-pantalla-2026-03-24-a-las-17.57.38.webp",
+      "fallback_image": "/img/casos/diferentidea/captura-de-pantalla-2026-03-24-a-las-17.57.38.webp",
+      "fallback_alt": "Buscador inteligente de Diferent Idea con recomendaciones"
+    },
+    {
+      "type": "approach-cards",
+      "badge": "La solución",
+      "heading": "De web escaparate a herramienta comercial",
+      "intro": "Rediseñamos la experiencia completa para que cada elemento de la web trabaje a favor del negocio.",
+      "cards": [
+        {
+          "number": "01",
+          "title": "Reestructuración del mensaje",
+          "items": [
+            "Claridad en la propuesta de valor desde el primer segundo",
+            "Jerarquía visual orientada a la decisión",
+            "Comunicación directa del diferencial competitivo"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Diseño UX/UI orientado a conversión",
+          "items": [
+            "Flujos dirigidos hacia acciones clave",
+            "CTAs estratégicos en cada punto de decisión",
+            "Experiencia pensada para reducir fricción"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Desarrollo optimizado",
+          "items": [
+            "Código limpio y rendimiento optimizado",
+            "Web rápida en cualquier dispositivo",
+            "Estructura preparada para SEO y crecimiento"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "No se trataba de hacerla más bonita.<br>Se trataba de hacerla <em>más eficaz.</em>",
+      "sub": null,
+      "bg": null,
+      "show_divider": false
+    },
+    {
+      "type": "combo-layout",
+      "bg": "surface",
+      "badge": "Detalle de producto",
+      "heading": "Del catálogo a la personalización en un clic",
+      "browser_url": "diferentidea.com/producto",
+      "browser_image": "/img/casos/diferentidea/captura-de-pantalla-2026-03-24-a-las-17.58.57.webp",
+      "browser_alt": "Detalle de producto con configurador en Diferent Idea",
+      "phone_image": "/img/casos/diferentidea/img_0968.webp",
+      "phone_alt": "Detalle de producto de Diferent Idea en móvil"
+    },
+    {
+      "type": "phone-carousel",
+      "bg": "subtle",
+      "badge": "Mobile",
+      "heading": "Cada pantalla pensada para convertir",
+      "intro": "El usuario quiere encontrar, personalizar y pedir presupuesto. Sin rodeos.",
+      "phones": [
+        { "src": "/img/casos/diferentidea/img_0963.webp", "alt": "Diferent Idea — Home hero" },
+        { "src": "/img/casos/diferentidea/img_0964.webp", "alt": "Diferent Idea — Propuestas de valor" },
+        { "src": "/img/casos/diferentidea/img_0967.webp", "alt": "Diferent Idea — Top ventas" },
+        { "src": "/img/casos/diferentidea/img_0968.webp", "alt": "Diferent Idea — Detalle producto" },
+        { "src": "/img/casos/diferentidea/img_0969.webp", "alt": "Diferent Idea — Configurador" },
+        { "src": "/img/casos/diferentidea/img_0970.webp", "alt": "Diferent Idea — Menú navegación" },
+        { "src": "/img/casos/diferentidea/img_0971.webp", "alt": "Diferent Idea — Inspírame" },
+        { "src": "/img/casos/diferentidea/img_0972.webp", "alt": "Diferent Idea — Blog ferias" },
+        { "src": "/img/casos/diferentidea/img_0973.webp", "alt": "Diferent Idea — Blog eventos" },
+        { "src": "/img/casos/diferentidea/img_0974.webp", "alt": "Diferent Idea — Resumen presupuesto" }
+      ]
+    },
+    {
+      "type": "video-phones",
+      "badge": "En vivo",
+      "heading": "La experiencia real, sin filtros",
+      "intro": "Grabaciones reales de la plataforma en uso. Sin prototipos, sin maquetas.",
+      "videos": [
+        "/img/casos/diferentidea/mobile-recording-1.mp4",
+        "/img/casos/diferentidea/mobile-recording-2.mp4",
+        "/img/casos/diferentidea/mobile-recording-3.mp4"
+      ]
+    },
+    {
+      "type": "platform-gallery",
+      "bg": "surface",
+      "badge": "Visualización",
+      "heading": "La plataforma en su máxima expresión",
+      "intro": "Desktop completo, diseñado para comunicar, guiar y convertir.",
+      "browsers": [
+        {
+          "url": "diferentidea.com/buscar",
+          "image": "/img/casos/diferentidea/captura-de-pantalla-2026-03-24-a-las-17.57.38.webp",
+          "alt": "Diferent Idea — Buscador con recomendaciones",
+          "wide": false
+        },
+        {
+          "url": "diferentidea.com/categorias",
+          "image": "/img/casos/diferentidea/captura-de-pantalla-2026-03-24-a-las-17.58.31.webp",
+          "alt": "Diferent Idea — Categorías y best sellers",
+          "wide": false
+        },
+        {
+          "url": "diferentidea.com/top-ventas",
+          "image": "/img/casos/diferentidea/captura-de-pantalla-2026-03-24-a-las-17.58.48.webp",
+          "alt": "Diferent Idea — Grid de productos top ventas",
+          "wide": false
+        },
+        {
+          "url": "diferentidea.com/producto",
+          "image": "/img/casos/diferentidea/captura-de-pantalla-2026-03-24-a-las-17.58.57.webp",
+          "alt": "Diferent Idea — Detalle de producto con configurador",
+          "wide": false
+        },
+        {
+          "url": "diferentidea.com/blog",
+          "image": "/img/casos/diferentidea/captura-de-pantalla-2026-03-24-a-las-18.00.00.webp",
+          "alt": "Diferent Idea — Blog con artículos sobre merchandising",
+          "wide": true
+        }
+      ]
+    },
+    {
+      "type": "marquee",
+      "words": ["Conversión", "Claridad", "Estructura", "Negocio"]
+    },
+    {
+      "type": "impact-grid",
+      "bg": "surface",
+      "badge": "El impacto",
+      "heading": "El resultado es una web que comunica, guía y convierte",
+      "cards": [
+        {
+          "icon": "bolt",
+          "title": "Comunicación más clara",
+          "description": "La propuesta de valor se entiende en segundos. El usuario sabe qué ofrece Diferent Idea y por qué elegirla."
+        },
+        {
+          "icon": "trending-up",
+          "title": "Recorrido más directo",
+          "description": "Flujos guiados que llevan al usuario desde el descubrimiento hasta la solicitud de presupuesto sin fricción."
+        },
+        {
+          "icon": "rocket",
+          "title": "Herramienta comercial",
+          "description": "La web deja de ser un escaparate y se convierte en un activo que genera oportunidades de negocio reales."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "quote": "Muchas agencias se centran en lo visual y se olvidan de la estructura.",
+      "body": "En e-commerce, el diseño bonito no vende. Lo que vende es un mensaje claro, una jerarquía que guíe y un recorrido que elimine dudas. En Diferent Idea, el reto no era rediseñar. Era reestructurar para convertir.",
+      "author": "Jordi Expósito",
+      "role": "UX/UI & Digital Architecture",
+      "avatar": "/img/jordi-exposito.webp"
+    },
+    {
+      "type": "services",
+      "badge": "Servicios aplicados",
+      "heading": "Capacidades que hicieron posible este proyecto",
+      "links": [
+        {
+          "href": "/servicios/diseno-ux-ui-barcelona",
+          "icon": "paintbrush",
+          "title": "Diseño UX/UI",
+          "description": "Rediseño completo de la experiencia con jerarquía orientada a conversión y flujos dirigidos hacia la acción."
+        },
+        {
+          "href": "/servicios/desarrollo-web-a-medida-barcelona",
+          "icon": "code",
+          "title": "Desarrollo web a medida",
+          "description": "Código limpio, rendimiento optimizado y estructura preparada para SEO y crecimiento del catálogo."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "badge": "FAQ",
+      "heading": "Preguntas frecuentes sobre este proyecto",
+      "items": [
+        {
+          "question": "¿Qué tipo de proyecto era?",
+          "answer": "Un rediseño integral de la web de una agencia de merchandising corporativo. No se trataba de un cambio estético, sino de reestructurar la arquitectura digital para que la web generara oportunidades de negocio reales."
+        },
+        {
+          "question": "¿Qué se trabajó principalmente?",
+          "answer": "UX/UI, arquitectura digital y desarrollo web a medida. Reestructuramos el mensaje, diseñamos flujos de conversión y desarrollamos una plataforma rápida y optimizada para SEO."
+        },
+        {
+          "question": "¿Qué impacto tuvo el rediseño?",
+          "answer": "La web comunica mejor la propuesta de valor, el usuario entiende antes qué ofrece Diferent Idea y el recorrido hacia la conversión es más directo. De web escaparate a herramienta comercial."
+        }
+      ]
+    },
+    {
+      "type": "next-project",
+      "label": "Caso relacionado",
+      "title": "Nomade Rent",
+      "href": "/casos-de-negocio/nomade-rent/"
+    },
+    {
+      "type": "cta-form",
+      "heading_prefix": "Tienes un",
+      "heading_highlight": "reto similar",
+      "sub": "Si tu web comunica pero no genera negocio, el problema no es de diseño.<br>Es de estructura.<br><br>Cuéntanos tu proyecto.",
+      "reasons": [
+        "Sin reunión de ventas previa. Formulario directo en 3 minutos.",
+        "Respondemos en menos de 24h con una primera valoración de alcance.",
+        "Si no encajamos con lo que necesitas, te lo decimos sin rodeos.",
+        "El proyecto empieza con diagnóstico, no con propuesta económica genérica."
+      ]
+    }
+  ]
+}

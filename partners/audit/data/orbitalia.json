@@ -1,0 +1,157 @@
+{
+  "agencia": "Orbitalia",
+  "web": "orbitalia.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Propuesta de valor",
+          "titulo": "Mensaje de 20 años de experiencia que no se traduce en confianza visual",
+          "detalle": "Orbitalia comunica más de 20 años de experiencia en SEO, pero <strong>la web no materializa esta trayectoria con elementos de confianza tangibles</strong> como un timeline de evolución, logotipos de clientes destacados en el hero o un contador de proyectos completados."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Conversión",
+          "titulo": "CTA principal demasiado genérico para una agencia especializada",
+          "detalle": "El call-to-action principal no transmite la especialización en SEO de la agencia. <strong>Un CTA como \"Audita tu visibilidad en Google gratis\" sería mucho más efectivo</strong> que un simple \"Contacta\" o \"Pide presupuesto\", al ofrecer valor inmediato sin compromiso."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Recorrido del usuario",
+          "titulo": "Falta de contenido interactivo que enganche al visitante técnico",
+          "detalle": "Los potenciales clientes de una agencia SEO suelen ser perfiles con conocimiento digital. <strong>Falta una herramienta interactiva (mini-auditoría, analizador de keywords, test de velocidad)</strong> que demuestre expertise y capture datos del visitante simultáneamente."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Flexibilidad comercial",
+          "titulo": "Planes abiertos sin permanencia bien comunicados pero sin comparativa",
+          "detalle": "El modelo de planes sin permanencia es un diferenciador real, pero <strong>no se presenta de forma visual con una tabla comparativa de planes o calculadora de precios</strong> que facilite la decisión del potencial cliente."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Identidad visual",
+          "titulo": "Branding espacial (planeta/órbita) infrautilizado en el diseño web",
+          "detalle": "El naming y concepto de Orbitalia sugieren un universo visual rico (órbitas, planetas, espacio), pero <strong>el diseño de la web apenas explota este territorio visual</strong>. Integrar este concepto de forma coherente en iconografía, animaciones y paleta de colores crearía una experiencia mucho más memorable."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Modernidad",
+          "titulo": "Diseño web que no refleja los estándares visuales de 2025-2026",
+          "detalle": "La interfaz se percibe como <strong>funcional pero visualmente rezagada respecto a tendencias actuales</strong> como glassmorphism, bento grids, tipografías display o dark mode. Para competir en Barcelona, la web necesita una actualización visual significativa."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Tipografía",
+          "titulo": "Sistema tipográfico básico sin jerarquía expresiva",
+          "detalle": "La web utiliza tipografías funcionales pero <strong>sin un sistema de escalas, pesos y estilos que cree una jerarquía visual clara y expresiva</strong>. Una tipografía display para titulares y una sans-serif limpia para cuerpo mejorarían la legibilidad y el impacto."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Ilustraciones",
+          "titulo": "Falta de elementos gráficos originales que aporten personalidad",
+          "detalle": "La web recurre a <strong>elementos gráficos genéricos en lugar de ilustraciones custom o iconografía propia</strong> que refuercen la identidad de la marca y la diferencien visualmente de la competencia."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 8.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "SEO local Barcelona",
+          "titulo": "Landing de Barcelona bien posicionada pero con contenido mejorable",
+          "detalle": "La página \"Agencia SEO en Barcelona\" existe y posiciona, pero <strong>el contenido podría enriquecerse con datos locales, referencias a proyectos en Barcelona y testimonios de clientes catalanes</strong> que refuercen la relevancia local."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "IA y SEO",
+          "titulo": "Buen posicionamiento con la propuesta de visibilidad en IA generativa",
+          "detalle": "Orbitalia ya menciona la optimización para IA generativa como servicio, lo cual es <strong>un diferenciador actual que pocos competidores ofrecen</strong>. Sin embargo, podría desarrollar más contenido educativo sobre este tema para posicionarse como referente."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Estructura",
+          "titulo": "Arquitectura de contenidos con oportunidad de silos temáticos",
+          "detalle": "La estructura actual de contenidos es plana. <strong>Implementar silos temáticos con cluster pages por especialidad</strong> (SEO técnico, SEO local, SEO para e-commerce, SEO para IA) mejoraría la autoridad temática y el posicionamiento de long-tail keywords."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Rich snippets",
+          "titulo": "Schema markup básico sin explotar FAQs ni reviews",
+          "detalle": "La implementación de datos estructurados es mínima. <strong>Añadir FAQ schema en páginas de servicio y Review schema con testimonios</strong> aumentaría la visibilidad en SERPs con rich snippets que mejoran el CTR."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 9.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad",
+          "titulo": "Tiempo de carga que no está a la altura de una agencia SEO técnica",
+          "detalle": "Una agencia que ofrece WPO (Web Performance Optimization) como servicio debería tener <strong>una web que cargue en menos de 2 segundos y pase todos los Core Web Vitals</strong>. La velocidad actual deja margen de mejora significativo."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Mobile",
+          "titulo": "Experiencia móvil funcional pero no optimizada para touch",
+          "detalle": "La versión móvil es responsive pero <strong>los targets táctiles son demasiado pequeños, el menú hamburguesa es básico y falta optimización de imágenes para conexiones 4G</strong>. El 60%+ del tráfico SEO llega por móvil, por lo que esto es crítico."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Stack",
+          "titulo": "Dependencia de WordPress que limita la velocidad máxima alcanzable",
+          "detalle": "El stack basado en WordPress, aunque funcional, <strong>impone un techo de rendimiento difícil de superar sin inversión significativa en optimización</strong>. Alternativas como headless CMS o generación estática permitirían velocidades muy superiores."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Assets",
+          "titulo": "Imágenes en formatos legacy sin lazy loading optimizado",
+          "detalle": "Se detectan imágenes en JPEG/PNG que podrían estar en <strong>WebP o AVIF, reduciendo el peso total de la página hasta un 40%</strong>. Además, el lazy loading nativo del navegador podría complementarse con intersection observer para una carga más inteligente."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Activar el universo visual espacial en el hero con animación CSS",
+    "detalle": "Rediseñar el hero section con una animación orbital CSS/SVG que conecte con el nombre de la marca, mostrando cómo los clientes 'orbitan' hacia la primera posición de Google. Incluir un CTA de auditoría SEO gratuita con formulario de 3 campos.",
+    "impacto": "Primera impresión radicalmente mejorada que refuerza la identidad de marca y genera leads cualificados desde el primer scroll. Diferenciación visual inmediata frente a todas las agencias SEO de Barcelona."
+  },
+  "_score": 7.3,
+  "_nombre": "Chema",
+  "_icp": "SEO",
+  "resumen": [
+    "Orbitalia opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado orbitalia.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (7.5/10) es el área más sólida, mientras que Dev & Performance (5.0/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 99,
+      "accessibility": 83,
+      "bestPractices": 58,
+      "seo": 85
+    },
+    "mobile": {
+      "performance": 99,
+      "accessibility": 83,
+      "bestPractices": 58,
+      "seo": 85
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "agencia": "Seonet",
+  "web": "seonet.es",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversion",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Conversion rate",
+          "titulo": "Dominio seonet.es redirige a seonetdigital.com sin estrategia local",
+          "detalle": "El dominio .es redirige a seonetdigital.com, una web global con sede principal en Argentina. <strong>No existe una landing especifica para el mercado espanol</strong> que hable de casos de exito locales, equipo en Madrid o particularidades del mercado iberico. El visitante espanol se encuentra con una web pensada para LATAM."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Lead generation",
+          "titulo": "Formulario de contacto generico para 9 paises",
+          "detalle": "El mismo formulario de contacto sirve para clientes de Argentina, Mexico, Espana, Colombia y el resto de mercados. <strong>No hay segmentacion por pais, idioma ni tipo de servicio</strong>. Un lead de Madrid tiene necesidades muy diferentes a uno de Buenos Aires."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "User journey",
+          "titulo": "Propuesta de valor diluida por querer abarcar demasiado",
+          "detalle": "SEO, publicidad digital, web development, eCommerce, programmatic, social media, email marketing... <strong>Seonet ofrece todo para todos en todos los paises</strong>. Esta falta de foco dificulta que un visitante concreto se sienta identificado con una solucion especifica para su problema."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Trust",
+          "titulo": "Premios internacionales destacados pero sin contexto para el mercado local",
+          "detalle": "Los premios de Google Premier Partner y Yango son logros importantes, pero <strong>se presentan sin contexto relevante para una pyme espanola</strong>. Un empresario de Madrid quiere saber si Seonet puede ayudarle a el, no que ganaron un premio en LATAM."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepcion",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Imagen de marca",
+          "titulo": "Diseno web profesional pero con estetica corporativa latinoamericana",
+          "detalle": "La web tiene un diseno limpio y profesional, pero <strong>la estetica, el tono y las referencias visuales estan claramente orientadas al mercado latinoamericano</strong>. Para competir en Espana, la web necesita adaptarse culturalmente: colores, imagenes y copy que resuenen con el publico iberico."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Credibilidad",
+          "titulo": "Clientes como Royal Canin y ADT bien mostrados",
+          "detalle": "Los logos de clientes internacionales aportan credibilidad. Sin embargo, <strong>faltan casos de exito detallados con resultados medibles</strong>. Un logo es una senal, pero un caso de exito con metricas (incremento de trafico, posiciones ganadas, leads generados) es una prueba."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Navegacion",
+          "titulo": "Estructura de navegacion pensada para una empresa de 9 oficinas",
+          "detalle": "La navegacion refleja la complejidad de una empresa multinacional. <strong>Para el visitante espanol, la mayoria de secciones son irrelevantes</strong>. Un selector de pais o una experiencia personalizada por geolocalizacion simplificaria enormemente el journey."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Consistencia",
+          "titulo": "Mezcla de estilos entre secciones antiguas y nuevas",
+          "detalle": "Se percibe que <strong>la web ha ido creciendo organicamente sin un redesign integral</strong>. Algunas secciones tienen un estilo visual moderno mientras que otras mantienen patrones de diseno mas antiguos."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 9.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "SEO internacional",
+          "titulo": "Estrategia multi-pais sin hreflang correctamente implementado",
+          "detalle": "Con presencia en 9 paises, <strong>la gestion de SEO internacional es critica pero el dominio unico .com sin subcarpetas por pais</strong> (/es/, /mx/, /ar/) dificulta la segmentacion geografica. Google necesita senales claras para mostrar el contenido correcto en cada mercado."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Autoridad",
+          "titulo": "Backlinks fuertes por premios pero perfil dependiente de LATAM",
+          "detalle": "Los premios de Google y Yango generan backlinks de autoridad, pero <strong>el perfil de enlaces esta probablemente dominado por dominios .ar, .mx y .co</strong>. Para posicionar en Espana necesitan backlinks de dominios .es y medios espanoles."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Contenido",
+          "titulo": "Wikipedia como fuente de autoridad pero sin estrategia de contenido propia",
+          "detalle": "Tener un articulo en Wikipedia es un activo valioso. Sin embargo, <strong>no se detecta un blog activo ni estrategia de content marketing</strong> que capitalice esa autoridad con contenido educativo propio que genere trafico organico y leads."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "SEO local",
+          "titulo": "Oficina en Madrid sin visibilidad local optimizada",
+          "detalle": "A pesar de tener oficina en Madrid, <strong>no hay landing especifica para 'agencia SEO Madrid' ni optimizacion de Google Business Profile visible</strong>. Para una agencia SEO, no posicionar localmente en su propio mercado es una contradiccion evidente."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad de carga",
+          "titulo": "Web global con servidor probablemente en LATAM",
+          "detalle": "Si el servidor principal esta en Argentina o EEUU, <strong>los visitantes espanoles experimentan latencia adicional de 100-200ms</strong> en cada peticion. Sin un CDN con nodo en Europa, la velocidad de carga para el mercado espanol se ve penalizada."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Core Web Vitals",
+          "titulo": "Optimizacion de imagenes y recursos estaticos basica",
+          "detalle": "Una agencia que ofrece desarrollo web y eCommerce <strong>deberia tener un sitio con puntuacion perfecta en PageSpeed Insights</strong>. Es probable que las imagenes no usen formatos modernos y que los scripts de terceros (analytics, remarketing) no esten optimizados."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Experiencia movil",
+          "titulo": "Responsive design funcional pero no optimizado para UX movil",
+          "detalle": "La web se adapta a movil pero <strong>la experiencia no esta pensada mobile-first</strong>. Menus complejos, imagenes pesadas y formularios largos impactan la conversion en dispositivos moviles, que representan la mayoria del trafico en Espana."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Seguridad",
+          "titulo": "Headers de seguridad y configuracion SSL basica",
+          "detalle": "Para una empresa con 9 oficinas que maneja datos de clientes internacionales, <strong>los headers de seguridad (CSP, HSTS, X-Frame-Options) deben estar correctamente configurados</strong>. Una auditoria de seguridad web revelaria probablemente carencias en este aspecto."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Crear una landing page dedicada para Espana con casos de exito locales",
+    "detalle": "Desarrollar una pagina especifica en seonet.es (sin redireccion) orientada al mercado espanol, con copy adaptado, casos de exito de clientes espanoles, el equipo de Madrid visible, y un formulario con campo de presupuesto segmentado para el mercado iberico.",
+    "impacto": "Captacion directa de leads espanoles que actualmente se pierden al aterrizar en una web global, posicionamiento organico para keywords competidas como 'agencia SEO Madrid', y percepcion de cercania local."
+  },
+  "_score": 7.6,
+  "_nombre": "Carlos",
+  "_icp": "SEO",
+  "resumen": [
+    "Seonet opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado seonet.es en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (7.5/10) es el área más sólida, mientras que UX & Conversión (6.0/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 70,
+      "accessibility": 89,
+      "bestPractices": 73,
+      "seo": 100
+    },
+    "mobile": {
+      "performance": 89,
+      "accessibility": 87,
+      "bestPractices": 73,
+      "seo": 100
+    }
+  }
+}

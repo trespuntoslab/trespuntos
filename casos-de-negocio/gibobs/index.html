@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-ERX855WTHN');
   </script>
@@ -17,35 +17,76 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#5dffbf">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gibobs — Caso de Negocio | Tres Puntos</title>
-  <meta name="description" content="Gibobs: plataforma fintech que revoluciona el mercado hipotecario con simuladores inteligentes y comparativas de bancos. Descubre cómo Tres Puntos transformó la experiencia de financiación inmobiliaria." />
+  <title>Desarrollo plataforma fintech | Caso Gibobs · Tres Puntos</title>
+  <meta name="description"
+    content="Cómo diseñamos y desarrollamos una plataforma fintech enfocada en conversión y escalabilidad." />
   <link rel="canonical" href="https://www.trespuntoscomunicacion.es/casos-de-negocio/gibobs/" />
-  <meta property="og:title" content="Gibobs — Caso de Negocio | Tres Puntos" />
-  <meta property="og:description" content="Diseñamos la plataforma líder para conseguir tu hipoteca más barata y con un asesoramiento gratuito." />
+  <meta property="og:title" content="Caso Gibobs | Plataforma fintech optimizada para conversión" />
+  <meta property="og:description"
+    content="Arquitectura digital, UX/UI y desarrollo a medida para una plataforma fintech preparada para escalar." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.trespuntoscomunicacion.es/casos-de-negocio/gibobs" />
-  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/casos/gibobs-cover.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="Tres Puntos Comunicación" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Gibobs — Caso de Negocio | Tres Puntos" />
-  <meta name="twitter:description" content="Diseñamos la plataforma líder para conseguir tu hipoteca más barata y con un asesoramiento gratuito." />
-  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg" />
+  <meta name="twitter:title" content="Caso Gibobs | Plataforma fintech optimizada para conversión" />
+  <meta name="twitter:description"
+    content="Arquitectura digital, UX/UI y desarrollo a medida para una plataforma fintech preparada para escalar." />
+  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/casos/gibobs-cover.webp" />
 
+  <!-- Schema: Article + CaseStudy -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "CreativeWork",
-      "name": "Gibobs",
-      "description": "Gibobs: plataforma fintech que revoluciona el mercado hipotecario con simuladores inteligentes y comparativas de bancos. Descubre cómo Tres Puntos transformó la experiencia de financiación inmobiliaria.",
+      "@type": "Article",
+      "name": "Desarrollo plataforma fintech — Caso Gibobs",
+      "headline": "Plataforma fintech optimizada para conversión y escalabilidad",
+      "description": "Cómo diseñamos y desarrollamos una plataforma fintech enfocada en conversión y escalabilidad.",
       "author": {
         "@type": "Organization",
-        "name": "Tres Puntos Comunicación"
+        "name": "Tres Puntos Comunicación",
+        "url": "https://www.trespuntoscomunicacion.es"
       },
-      "datePublished": "junio 3, 2019",
-      "dateModified": "2026-03-11"
+      "datePublished": "2019-06-03",
+      "dateModified": "2026-03-22",
+      "keywords": ["desarrollo plataforma digital fintech", "ux ui fintech", "arquitectura digital fintech", "desarrollo plataforma financiera", "optimización conversión fintech"]
+    }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué tipo de proyecto era?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Una plataforma fintech enfocada en captación y conversión de usuarios interesados en hipotecas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué se trabajó principalmente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UX/UI, arquitectura digital y desarrollo a medida para optimizar el funnel de conversión."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Está pensada para escalar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. La arquitectura se diseñó para soportar crecimiento, nuevas funcionalidades e integraciones."
+          }
+        }
+      ]
     }
   </script>
 
@@ -58,704 +99,1189 @@
   <link rel="stylesheet" href="/css/design-system.css" />
   <link rel="stylesheet" href="/css/components.css" />
   <link rel="stylesheet" href="/css/service-page.css" />
-
-  <style>
-    /* ═══ CASE STUDY: Header & Layout ═══ */
-    .case-header {
-      padding: 4rem 0 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-header-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .case-header-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .case-sector {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-    }
-
-    .case-name {
-      font-size: 2.5rem;
-      font-weight: 800;
-      font-family: var(--font-display);
-      line-height: 1.1;
-      color: var(--text-primary);
-    }
-
-    .case-services {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .case-brief {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--text-primary);
-      padding: 1.5rem;
-      background: rgba(93, 255, 191, 0.04);
-      border-left: 3px solid var(--mint);
-      border-radius: 4px;
-    }
-
-    .case-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      padding: 2rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-    }
-
-    .case-meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .case-meta-label {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-    }
-
-    .case-meta-value {
-      font-size: 0.95rem;
-      color: var(--text-primary);
-    }
-
-    /* Case Overview Grid */
-    .case-overview-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .case-overview-item {
-      padding: 2rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      transition: all var(--transition-base);
-    }
-
-    .case-overview-item:hover {
-      border-color: var(--mint);
-      background: rgba(93, 255, 191, 0.02);
-    }
-
-    .case-overview-label {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-    }
-
-    .case-overview-text {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--text-primary);
-    }
-
-    /* Case sections */
-    .case-section {
-      padding: 3rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-section:last-child {
-      border-bottom: none;
-    }
-
-    .case-section-header {
-      margin-bottom: 2rem;
-    }
-
-    .case-section h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 1rem;
-    }
-
-    .case-section-intro {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--text-secondary);
-      max-width: 700px;
-    }
-
-    .case-section-content {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      max-width: 900px;
-      margin-top: 1.5rem;
-    }
-
-    .case-section-content p {
-      margin-bottom: 1rem;
-    }
-
-    .case-section-content p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Stats section */
-    .case-stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .case-stat-card {
-      padding: 2rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      text-align: center;
-      transition: all var(--transition-base);
-    }
-
-    .case-stat-card:hover {
-      border-color: var(--mint);
-      background: rgba(93, 255, 191, 0.02);
-    }
-
-    .case-stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--mint);
-      margin-bottom: 0.5rem;
-    }
-
-    .case-stat-label {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
-
-    
-    /* ═══ DEVICE MOCKUPS (CSS-Only) ═══ */
-    .device-mockups-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
-      margin: 3rem 0;
-      align-items: center;
-    }
-
-    .device-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 500px;
-    }
-
-    /* MacBook Pro Frame */
-    .macbook-frame {
-      width: 100%;
-      max-width: 600px;
-      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-      border-radius: 12px 12px 24px 24px;
-      padding: 12px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      position: relative;
-    }
-
-    .macbook-frame::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 30%;
-      height: 8px;
-      background: linear-gradient(to bottom, #333, #222);
-      border-radius: 0 0 12px 12px;
-      z-index: 10;
-    }
-
-    .macbook-screen {
-      background: linear-gradient(135deg, #5dffbf 0%, #3dd5a6 100%);
-      border-radius: 8px;
-      padding: 0;
-      aspect-ratio: 16 / 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .macbook-screen iframe,
-    .macbook-screen img {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .macbook-keyboard {
-      height: 8px;
-      background: linear-gradient(to bottom, #333, #222);
-      border-radius: 0 0 8px 8px;
-      margin-top: 2px;
-    }
-
-    /* iPhone Frame */
-    .iphone-frame {
-      width: 100%;
-      max-width: 280px;
-      background: #000;
-      border-radius: 40px;
-      padding: 12px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      position: relative;
-    }
-
-    .iphone-frame::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 35%;
-      height: 28px;
-      background: #000;
-      border-radius: 0 0 24px 24px;
-      z-index: 20;
-    }
-
-    .iphone-screen {
-      background: linear-gradient(135deg, #5dffbf 0%, #3dd5a6 100%);
-      border-radius: 35px;
-      padding: 0;
-      aspect-ratio: 9 / 20;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .iphone-screen iframe,
-    .iphone-screen img {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* iPad Frame */
-    .ipad-frame {
-      width: 100%;
-      max-width: 500px;
-      background: #333;
-      border-radius: 20px;
-      padding: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      position: relative;
-    }
-
-    .ipad-frame::after {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40%;
-      height: 8px;
-      background: #111;
-      border-radius: 8px;
-    }
-
-    .ipad-screen {
-      background: linear-gradient(135deg, #5dffbf 0%, #3dd5a6 100%);
-      border-radius: 12px;
-      padding: 0;
-      aspect-ratio: 4 / 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .ipad-screen iframe,
-    .ipad-screen img {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    @media (max-width: 768px) {
-      .device-mockups-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .macbook-frame {
-        max-width: 100%;
-      }
-
-      .device-wrapper {
-        min-height: 300px;
-      }
-    }
-
-
-    @media (max-width: 768px) {
-      .case-header-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .case-name {
-        font-size: 1.8rem;
-      }
-
-      .case-section {
-        padding: 2rem 0;
-      }
-
-      .case-section h2 {
-        font-size: 1.4rem;
-      }
-
-      .case-overview-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .device-mockups-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/case-study.css" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.trespuntoscomunicacion.es/"},{"@type":"ListItem","position":2,"name":"Casos de Negocio","item":"https://www.trespuntoscomunicacion.es/casos-de-negocio/"},{"@type":"ListItem","position":3,"name":"Gibobs"}]}
+</script>
 </head>
 
 <body>
-  <!-- Navbar placeholder -->
+  <!-- Navbar -->
   <div id="tp-navbar"></div>
 
-  <!-- ============ CASE HEADER ============ -->
-  <section class="case-header" aria-label="Información del caso">
-    <div class="container-main">
-      <div class="case-header-content">
-        <div class="case-header-copy reveal">
-          <div class="case-sector">Caso de negocio</div>
-          <h1 class="case-name">Gibobs</h1>
-          <div class="case-services">
-            <strong>Servicios:</strong> Desarrollo web, UI/UX
-          </div>
-          <div class="case-brief">
-            Transformamos la decisión hipotecaria en un proceso transparente y empoderador. Gibobs es el único simulador que combina comparativas de bancos, asesoramiento basado en datos, y una UX rediseñada para simplificar lo complejo.
-          </div>
+  <!-- ════════════════════════════════════════════════════════
+       1. HERO — Baunfire Split (text left + browser right)
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-hero-split" aria-label="Caso de negocio Gibobs">
+    <div class="cs-hero-split-grid">
+      <!-- Left: Copy -->
+      <div class="cs-hero-split-copy">
+        <div class="cs-hero-badge cs-hero-anim cs-hero-anim-1">
+          <span class="cs-hero-sector">Fintech · Comparador hipotecario</span>
         </div>
-        <div class="case-meta reveal reveal-delay-1">
 
-          <div class="case-meta-item">
-            <div class="case-meta-label">Cliente</div>
-            <div class="case-meta-value">gibobs</div>
-          </div>
-          <div class="case-meta-item">
-            <div class="case-meta-label">Industria</div>
-            <div class="case-meta-value">Fintech / Hipotecas</div>
-          </div>
-          <div class="case-meta-item">
-            <div class="case-meta-label">Tecnología</div>
-            <div class="case-meta-value">Wordpress</div>
-          </div>
-          <div class="case-meta-item">
-            <div class="case-meta-label">Sitio web</div>
-            <div class="case-meta-value"><a href="https://gibobs.com" target="_blank" rel="noopener" style="color: var(--mint); text-decoration: none;">gibobs.com</a></div>
-          </div>
+        <h1 class="cs-hero-h1 cs-hero-anim cs-hero-anim-2">
+          Plataforma fintech optimizada para
+          <span class="cs-highlight">conversión y escalabilidad</span>
+        </h1>
 
-        </div>
-      </div>
-    </div>
-  </section>
+        <p class="cs-hero-split-intro cs-hero-anim cs-hero-anim-3">
+          Diseñar una plataforma financiera no es solo una cuestión estética.
+          <em>Es una cuestión de confianza, rendimiento y conversión.</em>
+        </p>
 
-  <!-- ============ PROJECT OVERVIEW ============ -->
-  <section class="case-section" aria-label="Descripción del proyecto">
-    <div class="container-main">
-      <div class="case-section-header reveal">
-        <h2>Descripción del proyecto</h2>
-      </div>
-
-      <div class="case-overview-grid">
-        <div class="case-overview-item reveal">
-          <div class="case-overview-label">Reto</div>
-          <div class="case-overview-text">El mercado hipotecario español genera desconfianza: usuarios frustrados por la opacidad, comisiones ocultas, y asesores sin incentivos alineados. Gibobs necesitaba redefinirel pensamiento negativo con una propuesta radicalmente transparente que pusiera al usuario en el control total de su decisión.</div>
-        </div>
-        <div class="case-overview-item reveal">
-          <div class="case-overview-label">Estrategia</div>
-          <div class="case-overview-text">UX Strategy basada en Jobs-to-be-Done, investigación etnográfica con usuarios reales, mapeo de customer journey hipotecario, y definición de arquitectura de información centrada en la comparación de opciones.</div>
-        </div>
-        <div class="case-overview-item reveal">
-          <div class="case-overview-label">Diseño</div>
-          <div class="case-overview-text">Design System desde cero con 52+ componentes, 85 pantallas responsivas, mobile-first, simulador interactivo con cálculos en tiempo real, y interfaz de comparativa visual avanzada.</div>
+        <div class="cs-hero-split-meta cs-hero-anim cs-hero-anim-4">
+          <div class="cs-hero-split-meta-item">
+            <span class="cs-meta-label">Cliente</span>
+            <span class="cs-meta-value">Gibobs</span>
+          </div>
+          <div class="cs-hero-split-meta-item">
+            <span class="cs-meta-label">Sector</span>
+            <span class="cs-meta-value">Fintech</span>
+          </div>
+          <div class="cs-hero-split-meta-item">
+            <span class="cs-meta-label">Servicios</span>
+            <span class="cs-meta-value">UX/UI · Dev · Arquitectura</span>
+          </div>
         </div>
       </div>
 
-      <div class="case-section-content reveal">
-        <p>Gibobs llegó a Tres Puntos con una visión clara: democratizar el asesoramiento hipotecario. El mercado inmobiliario español necesitaba transparencia radical. Los usuarios tomaban decisiones financieras de cientos de miles de euros basadas en información incompleta, asimetría de poderes, y asesores con incentivos cuestionables.</p>
-        <p>Trabajamos directamente con clientes de Gibobs para entender sus verdaderos puntos de dolor: la comparación entre bancos era imposible, los simuladores existentes eran opacos, y la confianza era nula. La solución no era solo diseño estético, sino arquitectura de información que permitiera contrastar hipotecas lado a lado sin sesgo alguno.</p>
-        <p>El resultado fue una plataforma que convierte la complejidad en claridad. Un simulador que actualiza cálculos en tiempo real, una interfaz de comparativa que muestra todas las variables (TAE, comisiones, euribor), y un flujo de conversión que guía sin presionar. No es solo una web. Es rediseño del proceso completo de toma de decisión hipotecaria.</p>
-      </div>
-    </div>
-  </section>
+      <!-- Right: Full-height Video with floating Browser -->
+      <div class="cs-hero-split-visual cs-hero-anim cs-hero-anim-3">
+        <!-- Video Background (full-height) -->
+        <video autoplay muted loop playsinline loading="eager" class="cs-hero-video-bg">
+          <source src="/casos-de-negocio/gibobs/hero-v2.mp4" type="video/mp4" />
+        </video>
+        <div class="cs-hero-video-overlay"></div>
 
-  <!-- ============ DEVICE MOCKUPS ============ -->
-
-  <!-- ============ DEVICE MOCKUPS ============ -->
-  <section class="case-section" aria-label="Visualización del proyecto">
-    <div class="container-main">
-      <div class="case-section-header reveal">
-        <h2>Visualización del proyecto</h2>
-        <p class="case-section-intro">Aquí puedes ver cómo se ve la plataforma en diferentes dispositivos.</p>
-      </div>
-
-      <div class="device-mockups-grid">
-        <div class="device-wrapper reveal">
-          <div class="macbook-frame">
-            <div class="macbook-screen" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); position: relative;">
-              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 20px; text-align: center;">
-                <div style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: #5dffbf; margin-bottom: 8px;">Gibobs</div>
-                <div style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 16px;">gibobs.com</div>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
-                  <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Simulador hipotecario</span>
-                  <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Comparativa bancos</span>
-                  <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Conversión optimizada</span>
-                </div>
+        <!-- Browser floating on top -->
+        <div class="cs-browser-floating">
+          <div class="cs-browser">
+            <div class="cs-browser-bar">
+              <div class="cs-browser-dots">
+                <span class="cs-browser-dot red"></span>
+                <span class="cs-browser-dot yellow"></span>
+                <span class="cs-browser-dot green"></span>
               </div>
+              <span class="cs-browser-url">gibobs.com</span>
             </div>
-            <div class="macbook-keyboard"></div>
-          </div>
-        </div>
-
-        <div class="device-wrapper reveal reveal-delay-1">
-          <div class="iphone-frame">
-            <div class="iphone-screen" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); position: relative;">
-              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 16px; text-align: center;">
-                <div style="font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: #5dffbf; margin-bottom: 6px;">Gibobs Mobile</div>
-                <div style="font-size: 0.65rem; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Responsive Design</div>
-                <div style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;">
-                  <span style="font-size: 0.55rem; padding: 3px 8px; border: 1px solid rgba(93,255,191,0.3); border-radius: 16px; color: rgba(93,255,191,0.7);">Cálculos en tiempo real</span>
-                  <span style="font-size: 0.55rem; padding: 3px 8px; border: 1px solid rgba(93,255,191,0.3); border-radius: 16px; color: rgba(93,255,191,0.7);">Transparencia total</span>
-                </div>
-              </div>
+            <div class="cs-browser-screen">
+              <img src="/img/casos/gibobs/hero-home.webp"
+                alt="Página principal de Gibobs — Plataforma de comparación hipotecaria"
+                width="1920" height="1080" />
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Scroll Indicator -->
+    <div class="cs-scroll-indicator cs-hero-anim cs-hero-anim-5">
+      <div class="cs-scroll-line"></div>
+    </div>
   </section>
 
-
-  <!-- ============ DETAILED CONTENT ============ -->
-  <section class="case-section" aria-label="Detalle del proyecto">
+  <!-- ════════════════════════════════════════════════════════
+       2. STATEMENT — Gran frase de posicionamiento
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-statement cs-bg-subtle" aria-label="Contexto">
+    <div class="cs-particles">
+      <div class="cs-particle"></div>
+      <div class="cs-particle"></div>
+      <div class="cs-particle"></div>
+      <div class="cs-particle"></div>
+      <div class="cs-particle"></div>
+      <div class="cs-particle"></div>
+    </div>
     <div class="container-main">
-      <div class="case-section-header reveal">
-        <h2>Desarrollo del proyecto</h2>
-      </div>
-      <div class="case-section-content reveal">
-        <p>La fase de discovery fue intensa. Entrevistamos 40+ usuarios en diferentes etapas del proceso de compra: desde los que buscaban primera vivienda hasta inversores experimentados. Los insights fueron claros: el 85% no sabía calcular realmente el impacto de sus decisiones, y un 70% desconfiaba de los asesores por conflictos de intereses.</p>
-        <p>Diseñamos un simulador interactivo que actualiza todos los parámetros en tiempo real. El usuario desliza un valor, ve cómo cambia la cuota mensual, el total a pagar, el impacto del euribor. Cada decisión es visible en datos, no en promesas. La arquitectura de información permite comparar entre bancos con transparencia radical: mismo crédito, diferentes ofertas, sin sesgos.</p>
-        <p>Desarrollamos con metodología mobile-first y accesibilidad como requisito. Las operaciones financieras no se simplifican ignorando detalles: se clarifican mostrando cada variable. El flujo de conversión fue optimizado no para forzar ventas, sino para crear confianza. Los usuarios que usan el simulador completo tienen 3x más probabilidad de convertir.</p>
+      <div class="cs-reveal-blur">
+        <div class="cs-line-draw cs-reveal"></div>
+        <p class="cs-statement-text">
+          En fintech, cada fricción <em>reduce ingresos.</em>
+        </p>
+        <p class="cs-statement-sub">
+          Gibobs necesitaba construir una plataforma capaz de gestionar procesos complejos de captación y conversión en el sector hipotecario. El reto no era solo tecnológico. Era estructural.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ============ STATS SECTION ============ -->
-  <section class="case-section" aria-label="Métricas del proyecto">
+  <!-- ════════════════════════════════════════════════════════
+       3. FULL-WIDTH BROWSER — Vista principal de la plataforma
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-base cs-padding-xl" aria-label="Vista de la plataforma">
     <div class="container-main">
-      <div class="case-stats-grid">
-        <div class="case-stat-card reveal">
-          <div class="case-stat-number">52+</div>
-          <div class="case-stat-label">Componentes de Design System</div>
-        </div>
-        <div class="case-stat-card reveal">
-          <div class="case-stat-number">85</div>
-          <div class="case-stat-label">Pantallas responsivas diseñadas</div>
-        </div>
-        <div class="case-stat-card reveal">
-          <div class="case-stat-number">100%</div>
-          <div class="case-stat-label">Responsive, mobile-first</div>
-        </div>
-        <div class="case-stat-card reveal">
-          <div class="case-stat-number">6</div>
-          <div class="case-stat-label">Meses de desarrollo y refinamiento</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FINAL THOUGHTS ============ -->
-  <section class="case-section" aria-label="Conclusiones">
-    <div class="container-main">
-      <div class="case-section-header reveal">
-        <h2>Resultado</h2>
-      </div>
-      <div class="case-section-content reveal">
-        <p>Gibobs transformó la experiencia hipotecaria de miles de usuarios. La plataforma ahora es la referencia en transparencia del sector: usuarios pueden simular, comparar, y decidir sin fricción ni presión de ventas. La arquitectura de información y el diseño de interfaz permiten tomar decisiones financieras complejas con claridad total.</p>
-        <p>El impacto es doble: usuarios empoderados que entienden realmente sus opciones, y Gibobs como marca de confianza en un sector históricamente opaco. La UX no fue un lujo estético, sino la herramienta fundamental para democratizar el acceso a información financiera crítica.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ EXPERT OPINION ============ -->
-  <section class="sp-expert" aria-label="Opinión experta">
-    <div class="container-main">
-      <div class="sp-expert-layout reveal">
-        <div class="sp-expert-quote">
-          <span class="section-badge">Opinión experta</span>
-          <h2 class="sp-expert-h2">Gibobs demuestra que el diseño es poder político: dar transparencia al usuario es desafiar el status quo</h2>
-          <p>Este proyecto fue único porque el reto no era solo estético o técnico. Nos enfrentamos a una industria entera construida sobre asimetría de información. Gibobs necesitaba ser la antítesis: un simulador que convierte la complejidad financiera en claridad visual, donde cada número es verificable y cada decisión es del usuario. El resultado es más que una plataforma: es redefinición de cómo se toma una de las decisiones más importantes de la vida.</p>
-        </div>
-        <div class="sp-expert-author">
-          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="sp-expert-avatar" width="80" height="80" loading="lazy">
-          <div>
-            <div class="sp-expert-name">Jordi Expósito</div>
-            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
-            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener" class="sp-expert-linkedin">
-              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
-              Ver en LinkedIn
-            </a>
+      <div class="cs-browser-fullwidth cs-reveal-scale">
+        <div class="cs-browser">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">gibobs.com/simulador-hipotecas</span>
+          </div>
+          <div class="cs-browser-screen">
+            <!-- TODO: Screenshot del simulador de hipotecas -->
+            <img src="/img/casos/gibobs/simulador-hipotecas.webp"
+              alt="Simulador de hipotecas de Gibobs — Interfaz de cálculo inteligente"
+              width="1920" height="1080" loading="lazy" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  
+  <!-- ════════════════════════════════════════════════════════
+       4. OVERVIEW — Contexto del proyecto
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-overview" aria-label="Contexto del proyecto">
+    <div class="container-main">
+      <div class="cs-overview-grid">
+        <div class="cs-overview-narrative cs-reveal-left">
+          <span class="section-badge"><span class="badge-dot"></span>Contexto del proyecto</span>
+          <h2>Un comparador hipotecario con ambición de plataforma líder</h2>
+          <div class="cs-overview-text">
+            <p>Gibobs opera en uno de los mercados más complejos del sector financiero: el hipotecario. Su modelo conecta usuarios con ofertas personalizadas de múltiples entidades bancarias, combinando simulación inteligente con asesoramiento humano.</p>
+            <p>El reto era trasladar esa complejidad a una experiencia digital que transmitiera confianza, redujera la fricción y escalara con el crecimiento del negocio.</p>
+          </div>
+        </div>
 
-  <!-- ============ CTA FINAL + FORM ============ -->
+        <div class="cs-overview-meta cs-reveal-right cs-reveal-delay-1">
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Cliente</div>
+            <div class="cs-meta-value">Gibobs</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Sector</div>
+            <div class="cs-meta-value">Fintech · Comparador hipotecario</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Servicios</div>
+            <div class="cs-meta-value">
+              <div class="cs-hero-tags">
+                <span class="cs-hero-tag">Diseño UX/UI</span>
+                <span class="cs-hero-tag">Arquitectura digital</span>
+                <span class="cs-hero-tag">Desarrollo web</span>
+              </div>
+            </div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Visitar</div>
+            <div class="cs-meta-value">
+              <a href="https://gibobs.com" target="_blank" rel="noopener">gibobs.com &#8599;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       5. EL PROBLEMA — Signals de fricción
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-challenge cs-padding-xl" aria-label="El problema">
+    <div class="container-main">
+      <div class="cs-challenge-layout">
+        <div class="cs-challenge-copy cs-reveal">
+          <span class="section-badge"><span class="badge-dot"></span>El problema</span>
+          <h2>Procesos complejos que drenaban conversión</h2>
+          <div class="cs-body-text">
+            <p>Gibobs necesitaba construir una plataforma capaz de gestionar procesos complejos de captación y conversión en el sector hipotecario.</p>
+            <p>El reto no era solo tecnológico. Era estructural.</p>
+          </div>
+        </div>
+
+        <div class="cs-signals cs-stagger cs-reveal cs-reveal-delay-1">
+          <div class="cs-signals-title">Señales de fricción detectadas</div>
+          <div class="cs-signal-item">
+            <div class="cs-signal-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="cs-signal-text">
+              <strong>Procesos largos con múltiples pasos</strong>
+              <span>Abandono de usuarios en el funnel de simulación hipotecaria.</span>
+            </div>
+          </div>
+          <div class="cs-signal-item">
+            <div class="cs-signal-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="cs-signal-text">
+              <strong>Falta de claridad en la propuesta</strong>
+              <span>Pérdida de confianza al no comunicar el diferencial de Gibobs.</span>
+            </div>
+          </div>
+          <div class="cs-signal-item">
+            <div class="cs-signal-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="cs-signal-text">
+              <strong>Experiencia fragmentada</strong>
+              <span>Fricción entre simulación, comparativa y contacto con asesores.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       6. BROWSER + VIDEO — Interfaz del comparador
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-surface cs-padding-xl" aria-label="Demostración de la plataforma">
+    <div class="container-main">
+      <div class="cs-showcase-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>La plataforma</span>
+        <h2>Un comparador que genera confianza</h2>
+        <p class="cs-section-intro">La interfaz muestra ofertas de CaixaBank, BBVA, Santander y más de 20 entidades en tiempo real.</p>
+      </div>
+
+      <div class="cs-browser-fullwidth cs-reveal-scale" style="margin-top: 4rem;">
+        <div class="cs-browser">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">gibobs.com/comparador-hipotecas</span>
+          </div>
+          <div class="cs-browser-screen">
+            <!-- TODO: Screenshot o video del comparador de bancos -->
+            <div class="cs-browser-video-wrapper">
+              <video autoplay muted loop playsinline poster="/img/casos/gibobs/comparador-bancos.webp">
+                <source src="/img/casos/gibobs/comparador-demo.mp4" type="video/mp4">
+                <!-- Fallback image if no video -->
+                <img src="/img/casos/gibobs/comparador-bancos.webp"
+                  alt="Comparador hipotecario de Gibobs mostrando ofertas bancarias"
+                  width="1920" height="1080" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       7. LA SOLUCIÓN — Approach Cards
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-padding-xl" aria-label="La solución">
+    <div class="container-main">
+      <div class="cs-approach-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>La solución</span>
+        <h2 class="cs-section h2">Convertimos un proceso complejo en una experiencia guiada</h2>
+        <p class="cs-section-intro">Diseñamos una arquitectura digital centrada en simplificar la toma de decisiones del usuario.</p>
+      </div>
+
+      <div class="cs-approach-cards cs-stagger">
+        <!-- Card 1: UX/UI -->
+        <div class="cs-approach-card cs-reveal">
+          <div class="cs-approach-card-number">01</div>
+          <h3>UX/UI orientado a conversión</h3>
+          <ul class="cs-approach-card-list">
+            <li>Rediseño completo del flujo de usuario</li>
+            <li>Jerarquía clara de información</li>
+            <li>Eliminación de pasos innecesarios</li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Arquitectura -->
+        <div class="cs-approach-card cs-reveal cs-reveal-delay-1">
+          <div class="cs-approach-card-number">02</div>
+          <h3>Arquitectura digital</h3>
+          <ul class="cs-approach-card-list">
+            <li>Estructura modular para escalar funcionalidades</li>
+            <li>Organización del funnel en bloques progresivos</li>
+            <li>Preparación para integraciones externas</li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Desarrollo -->
+        <div class="cs-approach-card cs-reveal cs-reveal-delay-2">
+          <div class="cs-approach-card-number">03</div>
+          <h3>Desarrollo a medida</h3>
+          <ul class="cs-approach-card-list">
+            <li>Plataforma optimizada en rendimiento</li>
+            <li>Interacciones rápidas y sin fricción</li>
+            <li>Base preparada para crecimiento futuro</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       8. STATEMENT — No se trataba de hacer una web
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-statement" aria-label="Declaración">
+    <div class="cs-particles">
+      <div class="cs-particle"></div>
+      <div class="cs-particle"></div>
+      <div class="cs-particle"></div>
+      <div class="cs-particle"></div>
+      <div class="cs-particle"></div>
+      <div class="cs-particle"></div>
+    </div>
+    <div class="container-main">
+      <div class="cs-reveal-blur">
+        <p class="cs-statement-text">
+          No se trataba de hacer una web.<br>
+          Se trataba de construir un <em>sistema.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       9. DESKTOP + PHONE COMBO — Simulador
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-surface cs-padding-xl" aria-label="Simulador hipotecario">
+    <div class="container-main">
+      <div class="cs-showcase-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Experiencia guiada</span>
+        <h2>Del simulador a la decisión en minutos</h2>
+      </div>
+
+      <div class="cs-combo-layout cs-reveal-scale" style="margin-top: 4rem;">
+        <!-- Desktop -->
+        <div class="cs-browser">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">gibobs.com/resultado-simulacion</span>
+          </div>
+          <div class="cs-browser-screen">
+            <!-- TODO: Screenshot de resultados del simulador -->
+            <img src="/img/casos/gibobs/resultado-simulacion.webp"
+              alt="Resultados del simulador hipotecario de Gibobs"
+              width="1920" height="1080" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="cs-phone-frame">
+          <div class="cs-phone-screen">
+            <!-- TODO: Screenshot móvil del simulador -->
+            <img src="/img/casos/gibobs/mobile-simulador.webp"
+              alt="Simulador hipotecario de Gibobs en móvil"
+              loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       10. MOBILE SHOWCASE — Trio de móviles
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-subtle cs-padding-xl" aria-label="Experiencia móvil">
+    <div class="container-main">
+      <div class="cs-showcase-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Mobile</span>
+        <h2>Cada pantalla pensada para decidir</h2>
+        <p class="cs-section-intro">El usuario no quiere explorar. Quiere decidir.</p>
+      </div>
+    </div>
+
+    <div class="cs-phone-carousel-wrapper">
+      <div class="cs-phone-carousel-track">
+        <!-- Full set: original + new screenshots -->
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0918.webp" alt="Gibobs — Home" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/mobile-home.webp" alt="Gibobs — Página principal" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0920.webp" alt="Gibobs — Menú" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0921.webp" alt="Gibobs — Landing" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/mobile-comparador.webp" alt="Gibobs — Comparador" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0923.webp" alt="Gibobs — Contacto" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0924.webp" alt="Gibobs — Login" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/mobile-asesores.webp" alt="Gibobs — Asesores" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0925.webp" alt="Gibobs — Oferta hipotecaria" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0926.webp" alt="Gibobs — Comparativa" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/mobile-simulador.webp" alt="Gibobs — Simulador" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0927.webp" alt="Gibobs — Blog" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0928.webp" alt="Gibobs — Simulación" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/mobile-resultado.webp" alt="Gibobs — Resultado" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0929.webp" alt="Gibobs — Resultados" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0930.webp" alt="Gibobs — Recursos" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0931.webp" alt="Gibobs — App" loading="lazy" /></div></div>
+        <!-- Duplicate set for infinite loop -->
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0918.webp" alt="Gibobs — Home" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/mobile-home.webp" alt="Gibobs — Página principal" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0920.webp" alt="Gibobs — Menú" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0921.webp" alt="Gibobs — Landing" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/mobile-comparador.webp" alt="Gibobs — Comparador" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0923.webp" alt="Gibobs — Contacto" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0924.webp" alt="Gibobs — Login" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/mobile-asesores.webp" alt="Gibobs — Asesores" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0925.webp" alt="Gibobs — Oferta hipotecaria" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0926.webp" alt="Gibobs — Comparativa" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/mobile-simulador.webp" alt="Gibobs — Simulador" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0927.webp" alt="Gibobs — Blog" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0928.webp" alt="Gibobs — Simulación" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/mobile-resultado.webp" alt="Gibobs — Resultado" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0929.webp" alt="Gibobs — Resultados" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0930.webp" alt="Gibobs — Recursos" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/gibobs/img_0931.webp" alt="Gibobs — App" loading="lazy" /></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       10.5 MOBILE VIDEO DEMOS — Screen recordings en vivo
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-padding-xl" aria-label="Demo móvil en vivo">
+    <div class="container-main">
+      <div class="cs-showcase-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>En vivo</span>
+        <h2>La experiencia real, sin filtros</h2>
+        <p class="cs-section-intro">Grabaciones reales de la plataforma en uso. Sin prototipos, sin maquetas.</p>
+      </div>
+
+      <div class="cs-video-phones cs-reveal-scale">
+        <div class="cs-phone-frame cs-phone-frame--video">
+          <div class="cs-phone-screen">
+            <video autoplay muted loop playsinline>
+              <source src="/img/casos/gibobs/screen-recording-1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="cs-phone-frame cs-phone-frame--video">
+          <div class="cs-phone-screen">
+            <video autoplay muted loop playsinline>
+              <source src="/img/casos/gibobs/screen-recording-2.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="cs-phone-frame cs-phone-frame--video">
+          <div class="cs-phone-screen">
+            <video autoplay muted loop playsinline>
+              <source src="/casos-de-negocio/gibobs/hero.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       10.6 PLATFORM SHOWCASE — Full Experience Gallery
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-surface cs-padding-xl" aria-label="Galería de la plataforma">
+    <div class="container-main">
+      <div class="cs-showcase-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Visualización</span>
+        <h2>La plataforma en su máxima expresión</h2>
+        <p class="cs-section-intro">Desktop y mobile, diseñados como un todo coherente y eficiente.</p>
+      </div>
+
+      <div class="cs-platform-gallery">
+        <div class="cs-browser cs-reveal-scale">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">gibobs.com</span>
+          </div>
+          <div class="cs-browser-screen">
+            <img src="/img/casos/gibobs/captura-de-pantalla-2026-03-22--23.14.57.webp" alt="Plataforma Gibobs — Vista home con simulador" loading="lazy" />
+          </div>
+        </div>
+        <div class="cs-browser cs-reveal-scale">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">gibobs.com/simulador</span>
+          </div>
+          <div class="cs-browser-screen">
+            <img src="/img/casos/gibobs/captura-de-pantalla-2026-03-22--23.15.22.webp" alt="Plataforma Gibobs — Simulador hipotecario" loading="lazy" />
+          </div>
+        </div>
+        <div class="cs-browser cs-reveal-scale">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">gibobs.com/recursos</span>
+          </div>
+          <div class="cs-browser-screen">
+            <img src="/img/casos/gibobs/captura-de-pantalla-2026-03-22--23.15.58.webp" alt="Plataforma Gibobs — Recursos formativos" loading="lazy" />
+          </div>
+        </div>
+        <div class="cs-browser cs-reveal-scale">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">gibobs.com/blog</span>
+          </div>
+          <div class="cs-browser-screen">
+            <img src="/img/casos/gibobs/captura-de-pantalla-2026-03-22--23.16.21.webp" alt="Plataforma Gibobs — Blog educativo" loading="lazy" />
+          </div>
+        </div>
+        <div class="cs-browser cs-reveal-scale cs-platform-gallery--wide">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">gibobs.com/contacto</span>
+          </div>
+          <div class="cs-browser-screen">
+            <img src="/img/casos/gibobs/captura-de-pantalla-2026-03-22--23.16.35.webp" alt="Plataforma Gibobs — Contacto con asesores" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       11. MARQUEE — Frases en movimiento
+       ════════════════════════════════════════════════════════ -->
+  <div class="cs-marquee-container">
+    <div class="cs-marquee-content">
+      <span class="cs-marquee-item">Conversión</span>
+      <span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Escalabilidad</span>
+      <span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Confianza</span>
+      <span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Arquitectura</span>
+      <span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Conversión</span>
+      <span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Escalabilidad</span>
+      <span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Confianza</span>
+      <span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Arquitectura</span>
+      <span class="cs-marquee-item cs-marquee-item--accent">·</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════
+       12. EL IMPACTO — Results
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-surface cs-padding-xl" aria-label="El impacto">
+    <div class="container-main">
+      <div class="cs-approach-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>El impacto</span>
+        <h2>El resultado es una experiencia más clara, más rápida y preparada para escalar</h2>
+      </div>
+
+      <div class="cs-impact-grid cs-stagger">
+        <div class="cs-impact-card cs-reveal">
+          <div class="cs-impact-card-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <h3>Menos fricción</h3>
+          <p>Reducción de pasos en procesos complejos. De un funnel fragmentado a una experiencia fluida que guía al usuario.</p>
+        </div>
+
+        <div class="cs-impact-card cs-reveal cs-reveal-delay-1">
+          <div class="cs-impact-card-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg>
+          </div>
+          <h3>Mayor confianza</h3>
+          <p>Guía al usuario en cada decisión. La transparencia en comparativas y el acompañamiento generan percepción de seguridad.</p>
+        </div>
+
+        <div class="cs-impact-card cs-reveal cs-reveal-delay-2">
+          <div class="cs-impact-card-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+            </svg>
+          </div>
+          <h3>Preparada para escalar</h3>
+          <p>Arquitectura modular que soporta nuevas funcionalidades, integraciones bancarias y crecimiento de tráfico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       13. FULL-BLEED — Ecosistema de la plataforma
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-padding-xl" aria-label="Ecosistema">
+    <div class="container-main">
+      <div class="cs-fullbleed cs-reveal-scale">
+        <!-- TODO: Screenshot del diagrama de ecosistema o trust indicators -->
+        <img src="/img/casos/gibobs/ecosistema-plataforma.webp"
+          alt="Ecosistema de la plataforma Gibobs — Particulares, promotoras, inmobiliarias y bancos"
+          loading="lazy" />
+        <div class="cs-fullbleed-caption">
+          <h3>Ecosistema conectado</h3>
+          <p>Particulares, promotoras, inmobiliarias y bancos en una misma plataforma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       14. EXPERT QUOTE — Jordi Expósito
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-quote cs-padding-xl" aria-label="Comentario del experto">
+    <div class="container-main">
+      <div class="cs-quote-inner cs-reveal-blur">
+        <div class="cs-quote-mark">&ldquo;</div>
+        <blockquote>Cuando el proceso es complejo, la interfaz debe hacer el trabajo difícil.</blockquote>
+        <p class="cs-quote-body" style="font-size:1.1rem; color: var(--text-secondary); line-height:1.7; margin-bottom:3rem; max-width:700px; margin-left:auto; margin-right:auto;">
+          Diseñar para fintech implica entender algo clave: el usuario no quiere explorar. Quiere decidir. En Gibobs, el reto no era añadir funcionalidades. Era eliminar fricción sin perder control del proceso.
+        </p>
+        <div class="cs-quote-author">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="cs-quote-avatar" width="60" height="60" loading="lazy">
+          <div class="cs-quote-author-info">
+            <div class="cs-quote-name">Jordi Expósito</div>
+            <div class="cs-quote-role">UX/UI &amp; Digital Architecture</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       15. SHOWCASE DUO — Dos pantallas finales
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-surface cs-padding-xl cs-showcase" aria-label="Vistas de la plataforma">
+    <div class="container-main">
+      <div class="cs-showcase-duo">
+        <div class="cs-reveal">
+          <div class="cs-browser">
+            <div class="cs-browser-bar">
+              <div class="cs-browser-dots">
+                <span class="cs-browser-dot red"></span>
+                <span class="cs-browser-dot yellow"></span>
+                <span class="cs-browser-dot green"></span>
+              </div>
+              <span class="cs-browser-url">gibobs.com/asesores</span>
+            </div>
+            <div class="cs-browser-screen">
+              <!-- TODO: Screenshot sección asesores -->
+              <img src="/img/casos/gibobs/asesores-equipo.webp"
+                alt="Equipo de asesores financieros de Gibobs"
+                width="960" height="600" loading="lazy" />
+            </div>
+          </div>
+          <p class="cs-showcase-label">Equipo de asesores — Confianza humana</p>
+        </div>
+        <div class="cs-reveal cs-reveal-delay-1">
+          <div class="cs-browser">
+            <div class="cs-browser-bar">
+              <div class="cs-browser-dots">
+                <span class="cs-browser-dot red"></span>
+                <span class="cs-browser-dot yellow"></span>
+                <span class="cs-browser-dot green"></span>
+              </div>
+              <span class="cs-browser-url">gibobs.com/opiniones</span>
+            </div>
+            <div class="cs-browser-screen">
+              <!-- TODO: Screenshot sección reviews/trust -->
+              <img src="/img/casos/gibobs/social-proof.webp"
+                alt="Opiniones y valoraciones de Gibobs — 4.8 estrellas"
+                width="960" height="600" loading="lazy" />
+            </div>
+          </div>
+          <p class="cs-showcase-label">Social proof — +1.500 reseñas verificadas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       16. SERVICIOS APLICADOS
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-services cs-padding-xl" aria-label="Servicios aplicados">
+    <div class="container-main">
+      <div class="cs-services-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Servicios aplicados</span>
+        <h2>Capacidades que hicieron posible este proyecto</h2>
+      </div>
+
+      <div class="cs-services-grid">
+        <a href="/servicios/desarrollo-web-a-medida-barcelona" class="cs-service-link cs-reveal">
+          <div class="cs-service-link-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+            </svg>
+          </div>
+          <h3>Desarrollo web a medida</h3>
+          <p>Plataforma optimizada en rendimiento, con interacciones rápidas y base preparada para crecimiento futuro.</p>
+          <div class="cs-service-link-cta">
+            Ver servicio
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="/servicios/diseno-ux-ui-barcelona" class="cs-service-link cs-reveal cs-reveal-delay-1">
+          <div class="cs-service-link-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+            </svg>
+          </div>
+          <h3>Diseño UX/UI</h3>
+          <p>Rediseño completo del flujo de usuario con jerarquía clara y eliminación de pasos innecesarios.</p>
+          <div class="cs-service-link-cta">
+            Ver servicio
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="/servicios/consultoria-digital-barcelona" class="cs-service-link cs-reveal cs-reveal-delay-2">
+          <div class="cs-service-link-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
+            </svg>
+          </div>
+          <h3>Consultoría digital</h3>
+          <p>Diagnóstico de plataforma, definición de arquitectura de conversión y estrategia digital para fintech.</p>
+          <div class="cs-service-link-cta">
+            Ver servicio
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       17. FAQ
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-faq cs-padding-xl" aria-label="Preguntas frecuentes">
+    <div class="container-main">
+      <div class="cs-faq-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>FAQ</span>
+        <h2>Preguntas frecuentes sobre este proyecto</h2>
+      </div>
+
+      <div class="cs-faq-list">
+        <div class="cs-faq-item cs-reveal">
+          <button class="cs-faq-question" aria-expanded="false">
+            ¿Qué tipo de proyecto era?
+            <svg class="cs-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="cs-faq-answer">
+            <div class="cs-faq-answer-inner">
+              Una plataforma fintech enfocada en captación y conversión de usuarios interesados en hipotecas. Combinamos simulación inteligente, comparativas bancarias y asesoramiento humano en una experiencia digital unificada.
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-faq-item cs-reveal cs-reveal-delay-1">
+          <button class="cs-faq-question" aria-expanded="false">
+            ¿Qué se trabajó principalmente?
+            <svg class="cs-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="cs-faq-answer">
+            <div class="cs-faq-answer-inner">
+              UX/UI, arquitectura digital y desarrollo a medida para optimizar el funnel de conversión. Se rediseñó el flujo completo del usuario, desde la simulación inicial hasta el contacto con asesores financieros.
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-faq-item cs-reveal cs-reveal-delay-2">
+          <button class="cs-faq-question" aria-expanded="false">
+            ¿Está pensada para escalar?
+            <svg class="cs-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="cs-faq-answer">
+            <div class="cs-faq-answer-inner">
+              Sí. La arquitectura se diseñó para soportar crecimiento, nuevas funcionalidades e integraciones con entidades bancarias adicionales. La estructura modular permite añadir productos financieros sin reestructurar la plataforma.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       18. ENLACES ESTRATÉGICOS + NEXT PROJECT
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-next-project" aria-label="Siguiente proyecto">
+    <div class="container-main">
+      <div class="cs-reveal">
+        <div class="cs-next-label">Caso relacionado</div>
+        <div class="cs-next-title">
+          <a href="/casos-de-negocio/exitbcn/">ExitBCN &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       19. CTA FINAL — Formulario
+       ════════════════════════════════════════════════════════ -->
   <section id="cierre" aria-label="Iniciar proyecto">
     <div class="container-main">
       <div class="cierre-layout">
         <div class="cierre-copy reveal">
-          <span class="section-badge reveal">Siguiente paso</span>
+          <span class="section-badge reveal"><span class="badge-dot"></span>Siguiente paso</span>
           <h2 class="cierre-h2">¿Tienes un <span class="text-gradient-standalone">reto similar</span>?</h2>
-          <p class="cierre-sub">El proceso empieza con 5 preguntas y en menos de 24h tienes una valoración.<br><br>Cuéntanos qué estás construyendo.</p>
+          <p class="cierre-sub">Si tu plataforma tiene fricción, el problema no es solo de diseño.<br>Es de arquitectura.<br><br>Cuéntanos tu proyecto.</p>
           <div class="cierre-reasons">
             <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
             </div>
             <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
             </div>
             <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
             </div>
             <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
             </div>
           </div>
         </div>
-        <div class="cierre-form-col reveal reveal-delay-1">
-          <div class="form-gradient-accent"></div>
-          <div class="cierre-form-inner">
-            <div class="form-row">
-              <div class="form-field">
-                <label class="label label-required" for="f-nombre">Nombre</label>
-                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
-              </div>
-              <div class="form-field">
-                <label class="label label-required" for="f-email">Email</label>
-                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label class="label label-required" for="f-tel">Teléfono</label>
-                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
-              </div>
-              <div class="form-field">
-                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
-                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false"
-                  aria-haspopup="listbox">
-                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
-                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
-                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="2.5">
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </button>
-                  <div class="custom-select-panel" role="listbox">
-                    <div class="custom-select-placeholder">Rango aproximado</div>
-                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
-                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
-                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
-                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
-                  </div>
-                </div>
-                <input type="hidden" id="f-presupuesto" name="budget" value="" />
-              </div>
-            </div>
-            <div class="form-field">
-              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
-              <textarea id="f-mensaje" class="input" rows="4"
-                placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
-            </div>
-            <label class="checkbox-row" for="f-privacidad" style="margin-top:1rem;">
-              <input type="checkbox" id="f-privacidad" required />
-              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
-                  Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
-            </label>
-            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn"
-              style="width:100%;justify-content:center;">
-              Cuéntanos tu proyecto
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
-            <p class="form-note">Sin compromiso. Respuesta en menos de 48h laborables.</p>
-            <a href="/form-v3/form-step1.html" style="display:flex;align-items:center;gap:.875rem;margin-top:1.25rem;padding:.875rem 1rem;border:1px dashed var(--border-strong,#2A2A2A);border-radius:12px;background:rgba(93,255,191,.02);text-decoration:none;transition:all .25s;" onmouseover="this.style.borderColor='rgba(93,255,191,.25)';this.style.background='rgba(93,255,191,.04)'" onmouseout="this.style.borderColor='';this.style.background='rgba(93,255,191,.02)'">
-                <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(93,255,191,.12);display:flex;align-items:center;justify-content:center;color:var(--mint);">
-                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10"/></svg>
-                </div>
-                <div style="flex:1;display:flex;flex-direction:column;gap:.125rem;">
-                  <span style="font-size:.8125rem;font-weight:600;color:var(--text-primary);">¿Tu proyecto es urgente?</span>
-                  <span style="font-size:.6875rem;color:var(--text-muted);line-height:1.5;">Cuéntanos más detalles y te enviamos una propuesta completa en 48h.</span>
-                </div>
-                <svg style="flex-shrink:0;color:var(--text-muted);" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-          </div>
+        <div class="cierre-form-col">
+          <div class="cierre-form-inner" id="tp-cta-form">
+<div class="form-gradient-accent"></div>
+<div class="form-card-header">
+  <div class="form-card-title" style="font-size:1.25rem;font-weight:700;color:var(--mint);margin-bottom:.25rem;">Inicia el proyecto</div>
+  <div class="form-card-sub" style="font-size:.85rem;color:var(--text-muted);line-height:1.5;">En menos de 48h laborables tendrás una primera respuesta personalizada.</div>
+</div>
+<form>
+  <input type="text" name="hp_field" id="hp_field" style="position:absolute;left:-9999px;opacity:0;height:0;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+  <div class="form-row">
+    <div class="form-field">
+      <label class="label label-required" for="f-nombre">Nombre</label>
+      <input id="f-nombre" type="text" class="input" placeholder="¿Cómo te llamas?" autocomplete="name" required />
+      <span class="field-error" id="err-nombre"></span>
+    </div>
+    <div class="form-field">
+      <label class="label label-required" for="f-email">Email de empresa</label>
+      <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
+      <span class="field-error" id="err-email"></span>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-field">
+      <label class="label label-required" for="f-tel">Teléfono</label>
+      <input id="f-tel" type="tel" class="input" placeholder="Tu teléfono" autocomplete="tel" required minlength="9" />
+      <span class="field-error" id="err-tel"></span>
+    </div>
+    <div class="form-field">
+      <label class="label label-required" for="f-presupuesto">Inversión estimada</label>
+      <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Inversión estimada">
+        <button type="button" class="custom-select-trigger" aria-label="Selecciona rango de inversión" aria-controls="cs-presupuesto-panel">
+          <span class="custom-select-value">Rango de inversión</span>
+          <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="custom-select-panel" role="listbox" id="cs-presupuesto-panel" aria-label="Opciones de presupuesto">
+          <div class="custom-select-option" role="option" data-value="5k-10k">5.000 € – 10.000 €</div>
+          <div class="custom-select-option" role="option" data-value="10k-15k">10.000 € – 15.000 €</div>
+          <div class="custom-select-option" role="option" data-value="15k-20k">15.000 € – 20.000 €</div>
+          <div class="custom-select-option" role="option" data-value="mas-20k">+ 20.000 €</div>
+        </div>
+      </div>
+      <input type="hidden" id="f-presupuesto" name="presupuesto" />
+      <span class="field-error" id="err-presupuesto"></span>
+    </div>
+  </div>
+  <div class="services-section">
+    <span class="services-label" id="services-label">¿En qué te podemos ayudar?</span>
+    <div class="services-grid" id="services-grid" role="group" aria-labelledby="services-label">
+      <div class="service-card" data-value="Diseño UX/UI" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Diseño UX/UI</span></div>
+      <div class="service-card" data-value="Desarrollo Web" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Desarrollo Web</span></div>
+      <div class="service-card" data-value="Tienda Online" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Tienda Online</span></div>
+      <div class="service-card" data-value="IA y Automatización" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">IA y Automatización</span></div>
+      <div class="service-card" data-value="Consultoría Digital" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Consultoría Digital</span></div>
+      <div class="service-card" data-value="Design Engineer" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Design Engineer</span></div>
+    </div>
+    <input type="hidden" id="f-servicios" name="servicio" />
+  </div>
+  <div class="form-field" style="margin-top:1.25rem;">
+    <label class="label" for="f-mensaje">Cuéntanos qué está pasando</label>
+    <textarea id="f-mensaje" class="input" rows="3" placeholder="Describe brevemente el proyecto. Qué quieres construir, qué problema tienes o qué no está funcionando en tu plataforma actual."></textarea>
+  </div>
+  <input type="hidden" id="f-pagina-origen" name="pagina_origen" />
+  <input type="hidden" id="f-utm-source" name="utm_source" />
+  <input type="hidden" id="f-utm-medium" name="utm_medium" />
+  <input type="hidden" id="f-utm-campaign" name="utm_campaign" />
+  <input type="hidden" id="f-referrer" name="referrer" />
+  <input type="hidden" id="f-timestamp" name="timestamp" />
+  <label class="checkbox-row" id="privacy-row" for="f-privacidad" style="margin-top:1rem;">
+    <input type="checkbox" id="f-privacidad" required />
+    <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+  </label>
+  <span class="field-error" id="err-privacidad"></span>
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAACv1HyITv5ZdYE50" data-theme="dark" data-size="invisible"></div>
+  <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn btn-disabled" style="width:100%;justify-content:center;">
+    Enviar mensaje
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+</form>
+<a href="/form-v3/form-step1.html" class="briefing-banner" style="margin-top:.75rem;">
+  <div class="briefing-banner-icon">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+      <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="12" cy="12" r="10"/>
+    </svg>
+  </div>
+  <div class="briefing-banner-text">
+    <span class="briefing-banner-title">¿Tu proyecto es urgente?</span>
+    <span class="briefing-banner-desc">Cuéntanos más detalles y te enviamos una propuesta completa en 48h.</span>
+  </div>
+  <svg class="briefing-banner-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+</a>
+</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer placeholder -->
+  <!-- Footer -->
   <div id="tp-footer"></div>
 
-  <script src="/js/components.js"></script>
+  <script src="/js/components.js?v=27"></script>
   <script>
-    TP.navbar('casos-de-negocio');
-    TP.footer();
-    TP.initJS();
+    try{try{TP.navbar('casos-de-negocio');}catch(e){}}catch(e){console.warn("TP.navbar:",e);}
+    try{try{TP.footer();}catch(e){}}catch(e){console.warn("TP.footer:",e);}
+    try{try{/* ctaForm inline */;}catch(e){}}catch(e){console.warn("TP.ctaForm:",e);}
+    try{try{TP.initJS();}catch(e){}}catch(e){console.warn("TP.initJS:",e);}
   </script>
   <script src="/js/service-page.js" defer></script>
   <script src="/js/supabase-forms.js" defer></script>
+  <script src="/js/form-validation.js" defer></script>
+
+
+  <!-- ═══ CASE STUDY v2 — ANIMATIONS ═══ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── 1. Scroll Reveal — IntersectionObserver ── */
+      var revealEls = document.querySelectorAll('.cs-reveal, .cs-reveal-scale, .cs-reveal-left, .cs-reveal-right, .cs-reveal-blur, .cs-stagger, .cs-line-draw');
+      if (revealEls.length) {
+        requestAnimationFrame(function () {
+          revealEls.forEach(function (el) {
+            var rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              el.classList.add('visible');
+            }
+          });
+        });
+        var revealObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              revealObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) {
+          if (!el.classList.contains('visible')) revealObs.observe(el);
+        });
+      }
+
+      /* ── 2. FAQ Accordion ── */
+      document.querySelectorAll('.cs-faq-question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.parentElement;
+          var isOpen = item.classList.contains('open');
+          document.querySelectorAll('.cs-faq-item.open').forEach(function (i) { i.classList.remove('open'); });
+          if (!isOpen) item.classList.add('open');
+          btn.setAttribute('aria-expanded', String(!isOpen));
+        });
+      });
+
+      /* ── 3. Signal Card Stagger Animation ── */
+      var signalsBlock = document.querySelector('.cs-signals');
+      if (signalsBlock) {
+        var sigObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('in-view');
+              sigObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.25 });
+        sigObs.observe(signalsBlock);
+      }
+
+      /* ── 4. Parallax Tilt on Hero Browser ── */
+      var heroBrowser = document.querySelector('.cs-hero-split-visual .cs-browser');
+      var heroSection = document.querySelector('.cs-hero-split');
+      if (heroBrowser && heroSection && window.innerWidth > 1024) {
+        heroSection.addEventListener('mousemove', function (e) {
+          var rect = heroSection.getBoundingClientRect();
+          var x = (e.clientX - rect.left) / rect.width - 0.5;
+          var y = (e.clientY - rect.top) / rect.height - 0.5;
+          heroBrowser.style.transform = 'perspective(1200px) rotateY(' + (x * 4) + 'deg) rotateX(' + (-y * 3) + 'deg)';
+        });
+        heroSection.addEventListener('mouseleave', function () {
+          heroBrowser.style.transition = 'transform .8s cubic-bezier(.22,1,.36,1)';
+          heroBrowser.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg)';
+          setTimeout(function () { heroBrowser.style.transition = ''; }, 800);
+        });
+      }
+
+      /* ── 5. Hero Video Autoplay ── */
+      var heroVideo = document.querySelector('.cs-browser-screen-video video');
+      if (heroVideo) {
+        heroVideo.play().catch(function (err) {
+          console.log('Video autoplay prevented:', err);
+        });
+      }
+
+      /* ── 6. Scan Line on Showcase Browsers ── */
+      var showcaseBrowsers = document.querySelectorAll('.cs-showcase .cs-browser-screen');
+      showcaseBrowsers.forEach(function (screen) {
+        var scanLine = document.createElement('div');
+        scanLine.className = 'cs-scan-line';
+        screen.style.position = 'relative';
+        screen.appendChild(scanLine);
+
+        var scanObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              setTimeout(function () {
+                scanLine.style.opacity = '0.4';
+                scanLine.style.transition = 'left 3s cubic-bezier(.25,.46,.45,.94), opacity .3s';
+                scanLine.style.left = '100%';
+                setTimeout(function () { scanLine.style.opacity = '0'; }, 3000);
+              }, 400);
+              scanObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        scanObs.observe(screen);
+      });
+
+      /* ── 7. Carousel Drag Interaction ── */
+      var carouselTrack = document.querySelector('.cs-phone-carousel-track');
+      if (carouselTrack) {
+        var isDragging = false;
+        var startX = 0;
+        var currentTranslate = 0;
+        var prevTranslate = 0;
+        var prevTransform = 0;
+
+        carouselTrack.addEventListener('mousedown', function (e) {
+          isDragging = true;
+          startX = e.clientX;
+          carouselTrack.classList.add('dragging');
+          // Store current transform value before starting drag
+          prevTransform = prevTranslate;
+        });
+
+        document.addEventListener('mousemove', function (e) {
+          if (!isDragging) return;
+          var x = e.clientX;
+          currentTranslate = prevTransform + (x - startX);
+          carouselTrack.style.transform = 'translateX(' + currentTranslate + 'px)';
+        });
+
+        document.addEventListener('mouseup', function () {
+          if (isDragging) {
+            isDragging = false;
+            prevTranslate = currentTranslate;
+            carouselTrack.classList.remove('dragging');
+          }
+        });
+
+        carouselTrack.addEventListener('mouseleave', function () {
+          if (isDragging) {
+            isDragging = false;
+            prevTranslate = currentTranslate;
+            carouselTrack.classList.remove('dragging');
+          }
+        });
+      }
+
+      /* ── 8. Hero Video Parallax ── */
+      var heroVideo = document.querySelector('.cs-hero-video-bg');
+      if (heroVideo && heroVideo.closest('.cs-hero-split')) {
+        var heroSection = heroVideo.closest('.cs-hero-split');
+        var heroTop = heroSection.offsetTop;
+        var heroHeight = heroSection.offsetHeight;
+
+        window.addEventListener('scroll', function () {
+          var scrollPos = window.scrollY;
+
+          // Only apply parallax when in hero section
+          if (scrollPos < heroTop + heroHeight) {
+            var offset = (scrollPos - heroTop) * 0.25;
+            heroVideo.style.transform = 'translateY(' + offset + 'px)';
+          }
+        });
+      }
+
+    })();
+  </script>
+
+  <!-- Jordan — Agente Conversacional Tres Puntos -->
+  <script>
+  window.JordanConfig = {
+    webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
+    calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
+    avatar: '/assets/jordan/jordan-avatar.png',
+    avatarVideo: '/assets/jordan/jordan-avatar-video.mp4',
+    position: 'right',
+    rules: [
+      { pattern: '/blog/*', show: false },
+      { pattern: '/checkout/*', show: false },
+      { pattern: '/login', show: false },
+      { pattern: '/wp-admin/*', show: false },
+      { pattern: '/politica-*', show: false },
+      { pattern: '/aviso-legal', show: false },
+      { pattern: '/servicios/*', show: true, proactive: true, delay: 5 },
+      { pattern: '/contacto', show: true, proactive: true, delay: 5 },
+      { pattern: '/casos/*', show: true, proactive: true, delay: 5 },
+      { pattern: '/', show: true, proactive: true, delay: 5 },
+      { pattern: '*', show: true, proactive: true, delay: 5 }
+    ]
+  };
+  </script>
+  <script async src="/assets/jordan/jordan-widget-v5.js"></script>
+
 </body>
 
 </html>

@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "slug": "tusolucionhipotecaria",
+    "title": "Web de captación hipotecaria | Caso Tu Solución Hipotecaria · Tres Puntos",
+    "description": "Cómo transformamos una web informativa en un sistema de captación cualificada para una empresa de intermediación hipotecaria.",
+    "canonical": "/casos-de-negocio/tusolucionhipotecaria/",
+    "og": {
+      "title": "Caso Tu Solución Hipotecaria | De web informativa a sistema de captación",
+      "description": "UX/UI, arquitectura de conversión y desarrollo web a medida para transformar el tráfico en leads cualificados.",
+      "image": "https://www.trespuntoscomunicacion.es/img/og-default.jpg"
+    },
+    "schema_type": "Article",
+    "date_published": "2024-09-15",
+    "date_modified": "2026-03-24",
+    "keywords": [
+      "web captación hipotecaria",
+      "ux ui servicios financieros",
+      "arquitectura conversión leads",
+      "desarrollo web intermediación hipotecaria",
+      "diseño web asesoramiento hipotecario"
+    ]
+  },
+  "faq_schema": [
+    {
+      "question": "¿Qué problema tenía la web anterior?",
+      "answer": "La web acumulaba información sin jerarquía, los CTAs no eran claros y el recorrido del usuario era difuso. El tráfico no se convertía en leads cualificados."
+    },
+    {
+      "question": "¿Qué servicios se aplicaron?",
+      "answer": "UX/UI enfocado a confianza, arquitectura de conversión, desarrollo web a medida y reestructuración completa del mensaje comercial."
+    },
+    {
+      "question": "¿Cuál fue el resultado principal?",
+      "answer": "Una web que guía al usuario desde el primer segundo, con un mensaje claro, un proceso de contacto definido y un simulador como herramienta de captación principal."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero-simple",
+      "sector": "Servicios financieros · Intermediación hipotecaria",
+      "h1": "De web informativa a sistema de captación",
+      "h1_highlight": "cualificada",
+      "intro": "Tu Solución Hipotecaria necesitaba algo más que una web bonita.",
+      "intro_emphasis": "Necesitaba una máquina de captación.",
+      "meta": [
+        { "label": "Cliente", "value": "Tu Solución Hipotecaria" },
+        { "label": "Sector", "value": "Servicios financieros" },
+        { "label": "Servicios", "value": "UX/UI · Dev · Arquitectura" }
+      ],
+      "browser_url": "tusolucionhipotecaria.es",
+      "browser_image": "/img/casos/tusolucionhipotecaria/2026-03-24-20.41.07.webp",
+      "browser_alt": "Página principal de Tu Solución Hipotecaria — Hero con simulador hipotecario"
+    },
+    {
+      "type": "overview",
+      "variant": "narrative",
+      "badge": "Contexto del proyecto",
+      "heading": "Un asesor hipotecario que necesitaba hablar claro",
+      "paragraphs": [
+        "Tu Solución Hipotecaria es una empresa de intermediación hipotecaria que ayuda a particulares a conseguir las mejores condiciones de financiación. Su proceso combina asesoramiento personalizado con negociación directa con entidades bancarias.",
+        "El problema no era de tráfico. Era de conversión. La web anterior acumulaba información sin jerarquía, los CTAs se perdían entre bloques de texto y el usuario no entendía qué hacer ni por dónde empezar."
+      ],
+      "meta": [
+        { "label": "Cliente", "value": "Tu Solución Hipotecaria" },
+        { "label": "Sector", "value": "Servicios financieros · Intermediación hipotecaria" },
+        {
+          "label": "Servicios",
+          "value": null,
+          "value_tags": ["Diseño UX/UI", "Arquitectura digital", "Desarrollo web"]
+        },
+        {
+          "label": "Visitar",
+          "value": "tusolucionhipotecaria.es ↗",
+          "url": "https://tusolucionhipotecaria.es"
+        }
+      ]
+    },
+    {
+      "type": "browser-duo",
+      "bg": "surface",
+      "badge": "La plataforma",
+      "heading": "Simulador + web: dos experiencias, un objetivo",
+      "intro": "El simulador hipotecario como puerta de entrada. La web como sistema de confianza.",
+      "browsers": [
+        {
+          "url": "tusolucionhipotecaria.es",
+          "image": "/img/casos/tusolucionhipotecaria/2026-03-24-20.41.07.webp",
+          "alt": "Home hero con simulador hipotecario"
+        },
+        {
+          "url": "tusolucionhipotecaria.es/simulador",
+          "image": "/img/casos/tusolucionhipotecaria/2026-03-24-20.43.26.webp",
+          "alt": "Pantalla de bienvenida del simulador hipotecario"
+        }
+      ]
+    },
+    {
+      "type": "challenge",
+      "badge": "El problema",
+      "heading": "Tráfico que no se convertía en oportunidades",
+      "paragraphs": [
+        "La web anterior tenía información útil, pero no tenía estructura. El usuario llegaba, leía, y se iba sin contactar.",
+        "No había un recorrido claro ni un motivo urgente para actuar."
+      ],
+      "signals_title": "Señales de fricción detectadas",
+      "signals": [
+        {
+          "title": "Exceso de información sin jerarquía",
+          "description": "El usuario no distinguía lo importante de lo accesorio."
+        },
+        {
+          "title": "CTAs poco claros y sin urgencia",
+          "description": "Los botones de contacto se perdían entre bloques de texto genérico."
+        },
+        {
+          "title": "Recorrido difuso sin orientación",
+          "description": "No existía un camino definido desde la llegada hasta el contacto."
+        }
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Tráfico que no se convertía en <em>leads.</em>",
+      "sub": null,
+      "bg": null,
+      "show_divider": false
+    },
+    {
+      "type": "step-map",
+      "badge": "El proceso",
+      "heading": "¿Cómo se consigue la mejor hipoteca?",
+      "intro": "Cuatro pasos que el usuario entiende desde el primer segundo.",
+      "steps": [
+        { "number": "01", "title": "Simula", "description": "El usuario introduce sus datos y obtiene una primera orientación en menos de 2 minutos." },
+        { "number": "02", "title": "Estudiamos", "description": "El equipo analiza la viabilidad y busca las mejores condiciones entre entidades bancarias." },
+        { "number": "03", "title": "Negociamos", "description": "Negociación directa con bancos para conseguir condiciones que el particular no obtendría solo." },
+        { "number": "04", "title": "Firma", "description": "Acompañamiento hasta la firma ante notario. Sin sorpresas, sin letra pequeña." }
+      ]
+    },
+    {
+      "type": "approach-cards",
+      "badge": "La solución",
+      "heading": "Convertimos una web pasiva en un sistema activo de captación",
+      "intro": "Cuatro ejes de trabajo que transformaron la experiencia digital completa.",
+      "cards": [
+        {
+          "number": "01",
+          "title": "Reestructuración del mensaje",
+          "items": [
+            "Jerarquía clara de propuesta de valor",
+            "Copywriting orientado a acción",
+            "Eliminación de contenido redundante"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Arquitectura de conversión",
+          "items": [
+            "Funnel definido desde la primera visita",
+            "CTAs estratégicos en cada sección",
+            "Simulador como puerta de entrada"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Diseño UX/UI de confianza",
+          "items": [
+            "Señales de credibilidad en cada pantalla",
+            "Transparencia en el proceso",
+            "Estética financiera profesional"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Desarrollo optimizado",
+          "items": [
+            "Rendimiento y velocidad de carga",
+            "Responsive nativo sin compromisos",
+            "Integración con simulador interactivo"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "video-browser",
+      "bg": "surface",
+      "badge": "En acción",
+      "heading": "El simulador en funcionamiento",
+      "intro": "Grabación real de la experiencia desktop. Sin prototipos, sin maquetas.",
+      "browser_url": "tusolucionhipotecaria.es",
+      "video_src": "/img/casos/tusolucionhipotecaria/desktop-recording-1.mp4"
+    },
+    {
+      "type": "phone-grid",
+      "bg": "subtle",
+      "badge": "Mobile",
+      "heading": "Cada pantalla pensada para convertir",
+      "intro": "La experiencia móvil no es una adaptación. Es una versión diseñada para decidir.",
+      "phones": [
+        { "src": "/img/casos/tusolucionhipotecaria/img_0977.webp", "alt": "Home hero mobile", "label": "Home hero" },
+        { "src": "/img/casos/tusolucionhipotecaria/img_0978.webp", "alt": "Value props mobile", "label": "Propuesta de valor" },
+        { "src": "/img/casos/tusolucionhipotecaria/img_0980.webp", "alt": "Productos hipotecarios mobile", "label": "Productos" },
+        { "src": "/img/casos/tusolucionhipotecaria/img_0982.webp", "alt": "Testimonios mobile", "label": "Testimonios" },
+        { "src": "/img/casos/tusolucionhipotecaria/img_0985.webp", "alt": "Simulador welcome mobile", "label": "Simulador" },
+        { "src": "/img/casos/tusolucionhipotecaria/img_0986.webp", "alt": "Simulador step 1 mobile", "label": "Paso 1/7" }
+      ]
+    },
+    {
+      "type": "video-phones",
+      "badge": "En vivo",
+      "heading": "La experiencia real, sin filtros",
+      "intro": "Grabaciones reales del sitio en uso. Lo que ve el usuario final.",
+      "videos": [
+        "/img/casos/tusolucionhipotecaria/mobile-recording-1.mp4",
+        "/img/casos/tusolucionhipotecaria/mobile-recording-2.mp4",
+        "/img/casos/tusolucionhipotecaria/mobile-recording-3.mp4"
+      ]
+    },
+    {
+      "type": "browser-scroll",
+      "bg": "surface",
+      "badge": "Vista completa",
+      "heading": "La home de arriba a abajo",
+      "browser_url": "tusolucionhipotecaria.es",
+      "image": "/img/casos/tusolucionhipotecaria/2026-03-24-20.42.01.webp",
+      "alt": "Vista completa de la home de Tu Solución Hipotecaria"
+    },
+    {
+      "type": "statement",
+      "text": "Una web que ya no solo informa.<br>Ahora <em>convierte.</em>",
+      "sub": null,
+      "bg": "subtle",
+      "show_divider": false
+    },
+    {
+      "type": "impact-grid",
+      "bg": "surface",
+      "badge": "El impacto",
+      "heading": "El resultado es una web que trabaja para el negocio",
+      "cards": [
+        {
+          "icon": "target",
+          "title": "Captación clara",
+          "description": "El usuario entiende qué hace la empresa y cómo contactar en los primeros 5 segundos. Sin ambigüedad."
+        },
+        {
+          "icon": "shield-check",
+          "title": "Confianza transmitida",
+          "description": "Señales de credibilidad, transparencia en el proceso y estética profesional que generan seguridad."
+        },
+        {
+          "icon": "route",
+          "title": "Recorrido definido",
+          "description": "Cada sección guía al siguiente paso. Del simulador al contacto, sin desvíos ni callejones sin salida."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "quote": "En servicios financieros, si el usuario no confía en los primeros 3 segundos, se va.",
+      "body": "La web anterior tenía buena información, pero no tenía dirección. No le decía al usuario qué hacer. El trabajo fue convertir contenido pasivo en un sistema de captación activo, donde cada elemento tiene una función clara.",
+      "author": "Jordi Expósito",
+      "role": "UX/UI & Digital Architecture",
+      "avatar": "/img/jordi-exposito.webp"
+    },
+    {
+      "type": "services",
+      "badge": "Servicios aplicados",
+      "heading": "Capacidades que hicieron posible este proyecto",
+      "links": [
+        {
+          "href": "/servicios/desarrollo-web-a-medida-barcelona",
+          "icon": "code",
+          "title": "Desarrollo web a medida",
+          "description": "Web optimizada en rendimiento con simulador interactivo integrado y experiencia responsive nativa."
+        },
+        {
+          "href": "/servicios/diseno-ux-ui-barcelona",
+          "icon": "paintbrush",
+          "title": "Diseño UX/UI",
+          "description": "Diseño centrado en confianza y conversión, con jerarquía clara y recorrido definido hacia el contacto."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "badge": "FAQ",
+      "heading": "Preguntas frecuentes sobre este proyecto",
+      "items": [
+        {
+          "question": "¿Qué problema tenía la web anterior?",
+          "answer": "La web acumulaba información sin jerarquía, los CTAs no eran claros y el recorrido del usuario era difuso. El tráfico llegaba pero no se convertía en leads cualificados porque no había un camino definido hacia el contacto."
+        },
+        {
+          "question": "¿Qué servicios se aplicaron?",
+          "answer": "UX/UI enfocado a confianza, arquitectura de conversión, desarrollo web a medida y reestructuración completa del mensaje comercial. El simulador hipotecario se integró como herramienta principal de captación."
+        },
+        {
+          "question": "¿Cuál fue el resultado principal?",
+          "answer": "Una web que guía al usuario desde el primer segundo, con un mensaje claro, un proceso de contacto definido y un simulador como puerta de entrada. La web ya no solo informa: convierte."
+        }
+      ]
+    },
+    {
+      "type": "next-project",
+      "label": "Caso relacionado",
+      "title": "Gibobs",
+      "href": "/casos-de-negocio/gibobs/"
+    },
+    {
+      "type": "cta-form",
+      "heading_prefix": "¿Tienes un",
+      "heading_highlight": "reto similar",
+      "sub": "Si tu web tiene tráfico pero no genera leads, el problema no es de visitas.<br>Es de arquitectura.<br><br>Cuéntanos tu proyecto.",
+      "reasons": [
+        "Sin reunión de ventas previa. Formulario directo en 3 minutos.",
+        "Respondemos en menos de 24h con una primera valoración de alcance.",
+        "Si no encajamos con lo que necesitas, te lo decimos sin rodeos.",
+        "El proyecto empieza con diagnóstico, no con propuesta económica genérica."
+      ]
+    }
+  ]
+}

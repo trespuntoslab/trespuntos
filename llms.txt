@@ -1,0 +1,58 @@
+# Tres Puntos Comunicación
+
+> Agencia UX/UI y desarrollo web en Barcelona especializada en Arquitectura Digital de Conversión. 13 años construyendo plataformas que convierten.
+
+## Qué hacemos
+
+Tres Puntos es una agencia de diseño UX/UI y desarrollo web a medida con sede en Barcelona. No hacemos webs presenciales: construimos ecosistemas digitales donde cada euro de captación tiene un destino claro.
+
+Nuestro modelo de trabajo — la Arquitectura Digital de Conversión — parte siempre de un diagnóstico técnico antes de diseñar o desarrollar. El diseño es la consecuencia del diagnóstico, nunca el punto de partida.
+
+## Servicios
+
+- **Diseño UX/UI de Alta Conversión**: Embudos de venta fluidos basados en data y psicología del usuario. Arquitectura de información, prototipado de alta fidelidad y sistemas de diseño escalables.
+- **Desarrollo Web a Medida**: Plataformas digitales sin limitaciones de plantillas o CMS genéricos. Arquitectura técnica sólida, integraciones y rendimiento optimizado.
+- **Tienda Online a Medida**: Experiencias de compra optimizadas con checkout simplificado, fichas de producto que convierten y métricas en tiempo real.
+- **Consultoría de Arquitectura Digital**: Investigación de usuarios, arquitectura de información, prototipado y sistemas de diseño.
+- **Design Engineering**: Puente entre diseño y desarrollo cuando el prototipo y el producto final no coinciden.
+- **IA para Empresas**: Integración de inteligencia artificial para automatización de procesos, chatbots, análisis predictivo y optimización de flujos de trabajo.
+
+## Datos clave
+
+- Fundada en 2011
+- Sede: Barcelona, España
+- Operación 100% remota con proyectos en Madrid, Valencia, Bilbao y Europa
+- Idiomas: Español, Catalán, Inglés
+- Web: https://www.trespuntoscomunicacion.es/
+- LinkedIn: https://www.linkedin.com/company/trespuntoscomunicacion
+
+## Especialización
+
+- UX Design, UI Design, Web Development, E-commerce, Digital Strategy, AI for Business
+- Stack técnico: HTML/CSS/JS vanilla de alto rendimiento, arquitectura headless, integraciones API
+- Enfoque en Core Web Vitals, INP, rendimiento y conversión medible
+
+## Preguntas frecuentes
+
+### ¿Qué es la Arquitectura Digital de Conversión?
+Es el modelo de trabajo de Tres Puntos: antes de diseñar o desarrollar, se diagnostica dónde pierde dinero la plataforma. El UX/UI retiene al usuario y el desarrollo a medida elimina cada fisura técnica.
+
+### ¿Cómo mejora el ROI un buen diseño UX/UI?
+El UX elimina fricción en el funnel. Cada segundo de carga extra, cada paso innecesario en el checkout y cada elemento que genera confusión tiene un coste directo en conversión medible.
+
+### ¿Trabajáis fuera de Barcelona?
+Sí. El proceso es 100% remoto. Tres Puntos tiene proyectos en Madrid, Valencia, Bilbao y con empresas europeas.
+
+### ¿Usáis templates o todo es a medida?
+Todo a medida. Los proyectos tienen objetivos de conversión, rendimiento y escala que los templates no pueden cumplir.
+
+### ¿Qué incluye la auditoría de arquitectura digital?
+Un documento funcional con la arquitectura actual mapeada, fricciones técnicas identificadas con su consecuencia financiera y prioridades de acción ordenadas por impacto en conversión.
+
+## Contacto
+
+Para consultas sobre proyectos: https://www.trespuntoscomunicacion.es/contacto/
+
+## Blog
+
+Artículos técnicos sobre UX/UI, desarrollo web, tendencias digitales e IA: https://www.trespuntoscomunicacion.es/blog/

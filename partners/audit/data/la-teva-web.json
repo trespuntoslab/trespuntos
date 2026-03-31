@@ -1,0 +1,157 @@
+{
+  "agencia": "La Teva Web",
+  "web": "latevaweb.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Propuesta de valor",
+          "titulo": "23 años de experiencia como argumento principal sin diferenciación moderna",
+          "detalle": "La web lidera con la trayectoria de 23 años y 35 expertos, lo cual genera confianza, pero <strong>no comunica cómo esta experiencia se traduce en metodología propia o resultados superiores</strong>. El visitante necesita entender qué hace La Teva Web diferente de una agencia con 5 años de experiencia."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Segmentación",
+          "titulo": "Servicios amplios (diseño web, SEO, SEM, ecommerce) sin recorrido claro por perfil",
+          "detalle": "La oferta abarca desde diseño web hasta SEO internacional, pero <strong>no hay un flujo que dirija a cada tipo de cliente hacia su servicio ideal</strong>. Una startup que busca su primera web y una empresa que necesita SEO internacional tienen necesidades muy distintas."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Premios y reconocimientos",
+          "titulo": "Google Partner Premier y premios bien posicionados pero sin contexto visual",
+          "detalle": "Los reconocimientos como Google Partner Premier y mejor agencia SEO de España son <strong>argumentos de venta potentísimos que deberían mostrarse con más prominencia visual</strong>: badges grandes, banner de confianza y sección dedicada con explicación de cada premio."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Conversión",
+          "titulo": "Formulario de contacto genérico para todos los servicios",
+          "detalle": "Un solo formulario de contacto para servicios tan distintos como diseño web y SEO internacional <strong>no permite cualificar adecuadamente al lead ni personalizar la respuesta comercial</strong>. Formularios contextuales por servicio mejorarían la tasa de conversión."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Diseño visual",
+          "titulo": "Diseño correcto pero conservador para una agencia que ofrece diseño web",
+          "detalle": "La web cumple estándares funcionales pero <strong>visualmente no sorprende ni demuestra las capacidades de diseño que la agencia vende como servicio</strong>. Los potenciales clientes de diseño web evaluarán la propia web de la agencia como portfolio implícito."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Consistencia",
+          "titulo": "Multiidioma bien implementado pero con inconsistencias de diseño entre versiones",
+          "detalle": "La web ofrece versiones en catalán, español e inglés, lo cual es excelente para un mercado internacional, pero <strong>se detectan variaciones en longitud de textos que rompen layouts</strong> en determinadas secciones entre idiomas."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Portfolio",
+          "titulo": "Sección de trabajos realizados sin presentación visual impactante",
+          "detalle": "Los proyectos completados se muestran de forma básica cuando <strong>deberían ser el escaparate visual más cuidado de toda la web</strong>. Mockups de alta calidad, before/after interactivos y métricas de impacto elevarían enormemente la percepción."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Iconografía",
+          "titulo": "Iconos genéricos que no aportan identidad visual propia",
+          "detalle": "Se utilizan sets de iconos estándar que <strong>no tienen relación visual con la identidad de La Teva Web</strong>. Una iconografía custom con el estilo de la marca crearía una experiencia más cohesiva y memorable."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 9.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Liderazgo de contenido",
+          "titulo": "Posicionamiento SEO excelente pero contenido de blog mejorable en profundidad",
+          "detalle": "Como mejor agencia SEO de España según rankings, su propio posicionamiento es bueno, pero <strong>el blog podría ofrecer contenido más profundo y técnico</strong> que refuerce la autoridad y atraiga tráfico de profesionales del sector, no solo de potenciales clientes."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "SEO internacional",
+          "titulo": "Páginas de SEO internacional como servicio propio bien planteadas",
+          "detalle": "La estrategia de tener landing pages específicas para cada servicio (SEO Barcelona, SEO WordPress, SEO internacional) es correcta, pero <strong>algunas páginas podrían ampliar su contenido con estudios de caso específicos de cada especialidad</strong> para mejorar la conversión."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Hreflang",
+          "titulo": "Implementación multiidioma con oportunidad de optimización de hreflang",
+          "detalle": "Con versiones en catalán, español e inglés, la <strong>implementación de etiquetas hreflang y la canonicalización entre versiones</strong> deberían revisarse para asegurar que Google entiende correctamente la relación entre versiones lingüísticas."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Featured snippets",
+          "titulo": "Contenido no estructurado para capturar posición cero de Google",
+          "detalle": "Muchas de las páginas informativas podrían <strong>reestructurarse con formatos de pregunta-respuesta, listas y tablas</strong> que faciliten la aparición en featured snippets y aumenten el tráfico orgánico cualificado."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 9.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "Performance que debería ser ejemplar para la mejor agencia SEO de España",
+          "detalle": "Siendo reconocida como la mejor agencia SEO, <strong>los Core Web Vitals de su propia web deberían ser perfectos y servir como demostración práctica</strong>. Cualquier métrica fuera del rango verde de Google es una contradicción que clientes técnicos detectarán."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Optimización de assets",
+          "titulo": "Carga de recursos CSS y JS que bloquean el renderizado",
+          "detalle": "Se cargan hojas de estilo y scripts que <strong>retrasan el First Contentful Paint al no estar diferidos ni divididos por ruta</strong>. Implementar code splitting y critical CSS inline eliminaría estos bloqueantes de renderizado."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Imágenes",
+          "titulo": "Oportunidad de optimización de imágenes con formatos next-gen",
+          "detalle": "Las imágenes de la web podrían beneficiarse de <strong>conversión a WebP/AVIF con responsive srcset y lazy loading optimizado</strong>, reduciendo el peso total de la página y mejorando la experiencia en móviles."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Infraestructura",
+          "titulo": "Hosting y CDN con margen de mejora en TTFB",
+          "detalle": "El Time to First Byte podría optimizarse con <strong>un CDN más agresivo, edge caching y preconnect hints para recursos de terceros</strong>. Para una agencia con clientes internacionales, la latencia debería ser mínima desde cualquier punto del globo."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Showcase visual de premios y certificaciones con datos reales",
+    "detalle": "Crear una sección hero o banner persistente que muestre de forma visualmente impactante los premios (Mejor Agencia SEO España 2024, Google Partner Premier) con badges oficiales, cifras de clientes y un CTA de auditoría gratuita.",
+    "impacto": "Capitalización inmediata del mayor activo de la agencia (reconocimientos) para aumentar la confianza y la conversión desde el primer segundo de visita."
+  },
+  "_score": 7.9,
+  "_nombre": "Francesc",
+  "_icp": "Performance",
+  "resumen": [
+    "La Teva Web opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado latevaweb.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (8.0/10) es el área más sólida, mientras que Dev & Performance (5.5/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 81,
+      "seo": 100
+    },
+    "mobile": {
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 81,
+      "seo": 100
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "agencia": "Tu Posicionamiento Web",
+  "web": "tuposicionamientoweb.net",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Embudo de conversión",
+          "titulo": "CTAs genéricos sin propuesta de valor diferenciada",
+          "detalle": "Los call-to-action de la web utilizan textos estándar como \"Contactar\" o \"Pedir presupuesto\" sin comunicar <strong>qué obtiene el usuario al hacer clic</strong>. Falta un funnel claro que guíe al visitante desde el interés hasta la conversión, con pasos intermedios como diagnóstico gratuito o auditoría SEO express."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Recorrido del usuario",
+          "titulo": "Navegación saturada con demasiadas opciones en menú principal",
+          "detalle": "El menú principal presenta un número excesivo de enlaces sin jerarquía clara, lo que genera <strong>parálisis de elección en el usuario</strong>. Una arquitectura de información más simple con agrupaciones lógicas mejoraría la tasa de clics y reduciría la tasa de rebote."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Credibilidad",
+          "titulo": "Testimonios sin elementos de prueba social robustos",
+          "detalle": "Aunque la web incluye una sección de testimonios, estos carecen de <strong>fotos reales de los clientes, logos de empresa o métricas de resultados</strong>. Añadir datos cuantificables (porcentaje de mejora en tráfico, posiciones ganadas) daría mucha más credibilidad."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Formularios",
+          "titulo": "Formulario de contacto básico sin cualificación del lead",
+          "detalle": "El formulario estándar recoge datos mínimos sin <strong>campos de cualificación como presupuesto estimado o tipo de proyecto</strong>. Esto dificulta la priorización de leads y alarga el ciclo de ventas innecesariamente."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 4.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Imagen de marca",
+          "titulo": "Diseño visual anticuado que no transmite expertise premium",
+          "detalle": "La web utiliza un diseño que recuerda a plantillas WordPress de hace 5-6 años, con <strong>tipografías genéricas, paleta de colores plana y layouts predecibles</strong>. Para una agencia que vende posicionamiento web, el diseño de su propia web debería ser un escaparate de calidad visual."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Consistencia visual",
+          "titulo": "Falta de sistema de diseño coherente entre secciones",
+          "detalle": "Se observan <strong>inconsistencias en spacing, tamaños de tipografía y estilos de botones</strong> entre las diferentes páginas del sitio. Esto genera una percepción de falta de cuidado al detalle que puede erosionar la confianza del potencial cliente."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido visual",
+          "titulo": "Uso excesivo de imágenes de stock genéricas",
+          "detalle": "Las imágenes utilizadas son claramente de banco de imágenes, sin personalización ni tratamiento visual propio. <strong>La falta de fotografía original o ilustraciones custom</strong> resta autenticidad y dificulta la diferenciación respecto a competidores."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Microinteracciones",
+          "titulo": "Ausencia de animaciones y transiciones que aporten dinamismo",
+          "detalle": "La navegación se siente estática y plana. <strong>No hay transiciones suaves, hover effects elaborados ni scroll animations</strong> que hagan la experiencia más memorable y profesional."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 9.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Estrategia de contenido",
+          "titulo": "Blog activo pero con estructura de contenidos mejorable",
+          "detalle": "El blog tiene publicaciones sobre SEO y WordPress, pero <strong>la estructura de categorías y el interlinking entre artículos necesitan optimización</strong>. Un cluster de contenidos bien organizado por temáticas potenciaría significativamente el tráfico orgánico."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "SEO técnico",
+          "titulo": "Velocidad de carga comprometida por WordPress sin optimizar",
+          "detalle": "Como agencia SEO que publica artículos sobre velocidad web, <strong>su propio sitio WordPress muestra signos de carga lenta</strong> por falta de optimización avanzada (lazy loading, critical CSS, compresión de imágenes). Es una contradicción que puede notar cualquier potencial cliente técnico."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Autoridad local",
+          "titulo": "Oportunidad desaprovechada en SEO local",
+          "detalle": "La web no potencia suficientemente su <strong>presencia en búsquedas locales con páginas de landing específicas por ciudad o región</strong>. Crear contenido geolocalizado ampliaría su captación de clientes en zonas concretas."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Schema markup",
+          "titulo": "Datos estructurados básicos o inexistentes",
+          "detalle": "No se detectan implementaciones avanzadas de schema markup como <strong>FAQ schema, HowTo schema o LocalBusiness</strong> que mejorarían la visibilidad en los resultados de Google con rich snippets."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 8.8,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Stack tecnológico",
+          "titulo": "WordPress con exceso de plugins que lastra el rendimiento",
+          "detalle": "El sitio funciona sobre WordPress con múltiples plugins que <strong>generan peticiones HTTP innecesarias, CSS/JS no utilizado y tiempos de respuesta del servidor elevados</strong>. Una auditoría de plugins y la eliminación de los no esenciales mejoraría drásticamente el rendimiento."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "Métricas de Core Web Vitals por debajo del estándar",
+          "detalle": "Para una agencia que vende posicionamiento web, <strong>no cumplir con las métricas de Core Web Vitals de Google es una señal preocupante</strong>. LCP, FID y CLS probablemente estén fuera de los rangos óptimos, lo que afecta tanto al SEO como a la credibilidad técnica."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Código frontend",
+          "titulo": "HTML generado por page builders con exceso de markup",
+          "detalle": "El código HTML muestra las señales típicas de constructores visuales como Elementor o Divi, con <strong>divs anidados innecesarios, clases CSS redundantes y scripts inline</strong> que inflan el peso de la página y dificultan el mantenimiento."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Seguridad",
+          "titulo": "Riesgo de vulnerabilidades por dependencias WordPress desactualizadas",
+          "detalle": "Los sitios WordPress con muchos plugins son <strong>objetivos frecuentes de ataques si no se mantienen actualizados</strong>. La superficie de ataque aumenta con cada plugin adicional, requiriendo una política de actualización constante."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Rediseño del hero y formulario de contacto principal",
+    "detalle": "Sustituir el hero actual por uno con propuesta de valor clara, caso de éxito destacado y CTA con formulario de cualificación integrado. Esto mejoraría inmediatamente la primera impresión y la tasa de conversión.",
+    "impacto": "Aumento estimado del 30-40% en tasa de conversión del formulario principal y mejora inmediata de la percepción profesional de la agencia."
+  },
+  "_score": 7.0,
+  "_nombre": "Ana",
+  "_icp": "SEO",
+  "resumen": [
+    "Tu Posicionamiento Web opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado tuposicionamientoweb.net en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (7.0/10) es el área más sólida, mientras que Dev & Performance (4.0/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 87,
+      "accessibility": 66,
+      "bestPractices": 73,
+      "seo": 100
+    },
+    "mobile": {
+      "performance": 100,
+      "accessibility": 66,
+      "bestPractices": 73,
+      "seo": 100
+    }
+  }
+}

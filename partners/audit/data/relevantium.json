@@ -1,0 +1,157 @@
+{
+  "agencia": "Relevantium",
+  "web": "relevantium.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Propuesta de valor",
+          "titulo": "Mensaje de entrada que no capitaliza los 7 años de trayectoria",
+          "detalle": "Relevantium tiene clientes de largo recorrido (7+ años) con resultados medibles, pero <strong>su homepage no lidera con estos datos impactantes</strong>. El hero debería mostrar cifras reales de crecimiento orgánico (5x en tráfico) como primer elemento para captar la atención inmediata del visitante."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Segmentación",
+          "titulo": "Falta de recorridos diferenciados para PYME vs. gran empresa",
+          "detalle": "La web ofrece servicios tanto a PYMES como a grandes empresas, pero <strong>el flujo de navegación es único para ambos perfiles</strong>. Crear paths diferenciados con lenguaje, casos y precios adaptados a cada segmento mejoraría la relevancia y conversión."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Cualificación de leads",
+          "titulo": "Formulario de contacto estándar sin segmentación ni cualificación",
+          "detalle": "El formulario de contacto recoge información básica sin <strong>preguntas que permitan filtrar y priorizar leads por tamaño de empresa, presupuesto o urgencia</strong>. Un formulario inteligente con lógica condicional optimizaría el proceso comercial."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Confianza",
+          "titulo": "Reviews positivas en Sortlist no integradas en la web propia",
+          "detalle": "Relevantium tiene más de 8 reviews positivas en plataformas externas como Sortlist, pero <strong>estos testimonios no están integrados de forma prominente en su web</strong>. Incorporar widgets de reviews verificadas aumentaría la confianza del visitante."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Diseño visual",
+          "titulo": "Identidad visual que no diferencia a Relevantium de agencias similares",
+          "detalle": "El diseño de la web sigue patrones comunes del sector con <strong>paleta de colores corporativa genérica y layouts que podrían pertenecer a cualquier agencia de marketing digital</strong>. Falta un elemento visual distintivo que haga memorable la marca."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Jerarquía visual",
+          "titulo": "Páginas de servicio con estructura repetitiva sin variación visual",
+          "detalle": "Todas las páginas de servicios (SEO, SEM, social media) siguen <strong>exactamente la misma estructura y estilo visual</strong>, lo que genera monotonía. Variar los layouts por tipo de servicio daría frescura y facilitaría la diferenciación entre ofertas."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Equipo",
+          "titulo": "Sección de equipo que humaniza bien pero con ejecución visual mejorable",
+          "detalle": "La página del equipo muestra a las personas detrás de la agencia, lo cual es positivo, pero <strong>la presentación visual es básica con fotos estándar tipo carnet</strong>. Fotos más naturales y con personalidad reforzarían la conexión emocional."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Animaciones",
+          "titulo": "Experiencia de scroll plana sin elementos que guíen la atención",
+          "detalle": "La navegación vertical carece de <strong>animaciones de entrada, parallax effects o transiciones que aporten ritmo y dirijan la mirada</strong> hacia los elementos más importantes de cada sección."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 9.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Posicionamiento orgánico",
+          "titulo": "Buenos rankings pero estructura de URLs mejorable",
+          "detalle": "La agencia posiciona bien para términos relevantes, pero <strong>la estructura de URLs no sigue un patrón jerárquico óptimo</strong> que refleje la arquitectura de contenidos. URLs más descriptivas y organizadas por carpetas mejorarían la rastreabilidad."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido",
+          "titulo": "Blog con potencial de posicionamiento infrautilizado",
+          "detalle": "El contenido del blog podría ser un motor de tráfico orgánico mucho mayor si se implementara una <strong>estrategia de content clusters con pillar pages y artículos satélite interconectados</strong> que cubran cada servicio en profundidad."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "SEO local",
+          "titulo": "Presencia en Google Maps y fichas locales sin maximizar",
+          "detalle": "Con sede en Madrid (C/ Concepción Jerónima 22), <strong>la optimización de Google Business Profile y el SEO local no están explotados al máximo</strong>. Fotos actualizadas, posts regulares y gestión activa de reseñas potenciarían la visibilidad local."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Internacional",
+          "titulo": "Versión en inglés disponible pero sin estrategia SEO internacional",
+          "detalle": "La web tiene versión en inglés pero <strong>no implementa hreflang correctamente ni tiene una estrategia de contenidos específica para el mercado internacional</strong>, lo que limita la captación de clientes fuera de España."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 9.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Performance",
+          "titulo": "Peso de página elevado por imágenes sin compresión moderna",
+          "detalle": "Las imágenes de la web no utilizan formatos modernos como <strong>WebP o AVIF, ni implementan responsive images con srcset</strong>. Esto incrementa innecesariamente el peso de página y perjudica la experiencia en conexiones móviles."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Rendimiento",
+          "titulo": "Scripts de terceros que bloquean el renderizado inicial",
+          "detalle": "Se cargan scripts de analytics, chat widgets y herramientas de marketing que <strong>bloquean el hilo principal del navegador durante los primeros milisegundos críticos</strong>. Diferir o cargar estos scripts de forma asíncrona mejoraría significativamente el TTFB y el FCP."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Mantenibilidad",
+          "titulo": "Código frontend dependiente de CMS con capas de abstracción innecesarias",
+          "detalle": "La base de código muestra <strong>dependencias de themes y plugins que añaden complejidad sin beneficio real</strong>. Un frontend más ligero y modular facilitaría la iteración y reduciría la deuda técnica acumulada."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "HTTPS",
+          "titulo": "Certificado SSL correcto pero sin headers de seguridad avanzados",
+          "detalle": "El sitio usa HTTPS pero <strong>carece de headers de seguridad como Content-Security-Policy, X-Frame-Options y Strict-Transport-Security</strong> que protegerían contra ataques XSS y clickjacking."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Dashboard visual de resultados en la homepage",
+    "detalle": "Crear un componente visual que muestre en tiempo real o con datos actualizados las métricas clave de los clientes más exitosos: posiciones ganadas, incremento de tráfico y ROI. Relevantium ya tiene estos datos internamente, solo falta mostrarlos de forma atractiva.",
+    "impacto": "Diferenciación inmediata frente a competidores que solo prometen resultados sin demostrarlos. Aumento de confianza y reducción del ciclo de decisión del potencial cliente."
+  },
+  "_score": 7.8,
+  "_nombre": "Javier",
+  "_icp": "SEO",
+  "resumen": [
+    "Relevantium opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado relevantium.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (7.5/10) es el área más sólida, mientras que Dev & Performance (5.0/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 92,
+      "accessibility": 94,
+      "bestPractices": 77,
+      "seo": 100
+    },
+    "mobile": {
+      "performance": 100,
+      "accessibility": 94,
+      "bestPractices": 77,
+      "seo": 100
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "agencia": "Kanlli",
+  "web": "kanlli.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Mensaje principal",
+          "titulo": "Claim \"When Everything Flows\" evocador pero poco accionable",
+          "detalle": "El lema de Kanlli es aspiracional y suena bien, pero <strong>no comunica de forma inmediata qué hace la agencia ni por qué el visitante debería elegirla</strong>. Un claim efectivo combina emoción con beneficio concreto: algo como \"Marketing que fluye en resultados\" conectaría el branding con la propuesta de valor."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Flujo de conversión",
+          "titulo": "Formulario de contacto como único punto de conversión visible",
+          "detalle": "La web depende del formulario de contacto y el teléfono como únicos mecanismos de captación. <strong>Añadir lead magnets intermedios (diagnósticos, guías, calculadoras) capturaría al visitante en etapas tempranas del funnel</strong> cuando aún no está preparado para hablar con ventas."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Experiencia de navegación",
+          "titulo": "Estructura de servicios clara pero con recorrido largo hasta la conversión",
+          "detalle": "Los servicios están bien categorizados (estrategia, performance, comunicación, diseño) pero el usuario debe navegar mucho para encontrar lo que necesita. <strong>Un configurador interactivo de servicios o un cuestionario rápido \"cuéntanos tu reto\" acortaría el camino a la conversión</strong>."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Prueba social",
+          "titulo": "Fundada en 2006 con equipo pionero pero sin evidencia tangible",
+          "detalle": "Kanlli destaca su equipo fundador como pionero en ventas y comunicación online. <strong>Esta narrativa fundacional debería sustentarse con hitos, premios, clientes reconocibles y métricas de trayectoria</strong> que transformen una afirmación en prueba verificable."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Percepción de innovación",
+          "titulo": "Diseño que no refleja la innovación que promete la marca",
+          "detalle": "Kanlli habla de innovación, reinvención y transformación digital como valores core. <strong>La web debería ser un escaparate vivo de esa filosofía con interacciones innovadoras, diseño cutting-edge y experiencias memorables</strong>. Actualmente la percepción visual no está alineada con el discurso."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Diseño experiencial",
+          "titulo": "Sección de Experiential Design sin reflejo en la propia experiencia web",
+          "detalle": "Kanlli ofrece \"Experiential Design\" como servicio, lo cual es un diferenciador fuerte. <strong>Su propia web debería ser el mejor ejemplo de diseño experiencial: transiciones fluidas, scroll storytelling y momentos de sorpresa</strong> que demuestren la capacidad que venden."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Consistencia de marca",
+          "titulo": "Identidad visual que necesita actualización para competir en 2025",
+          "detalle": "Con casi 20 años en el mercado, la identidad visual puede haberse quedado anclada en una estética anterior. <strong>Un refresh de marca que mantenga el equity del nombre pero modernice la expresión visual</strong> (tipografía, colores, estilo fotográfico) rejuvenecería significativamente la percepción."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Motion design",
+          "titulo": "Ausencia de animaciones y microinteracciones",
+          "detalle": "La web se percibe como estática, sin movimiento que guíe la atención o genere engagement. <strong>Motion design sutil pero estratégico (parallax, reveal on scroll, hover states elaborados) es un estándar en webs de agencias premium</strong> que Kanlli no debería ignorar."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 9.2,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Contenido estratégico",
+          "titulo": "Sección de contenidos con potencial de mejora en estrategia SEO",
+          "detalle": "Kanlli tiene una sección de ideas/blog pero su impacto SEO puede no estar maximizado. <strong>Implementar una estrategia de topic clusters con pillar pages para cada vertical de servicio (performance, social, diseño) concentraría la autoridad temática</strong> y mejoraría el posicionamiento orgánico global."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "SEO on-page",
+          "titulo": "Páginas de servicio que pueden carecer de optimización profunda",
+          "detalle": "Las páginas de servicios suelen estar orientadas a presentar el servicio pero no a posicionar keywords transaccionales. <strong>Optimizar cada página de servicio para su keyword principal con contenido extenso, FAQ schema y elementos multimedia</strong> mejoraría el tráfico cualificado."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Competencia en Madrid",
+          "titulo": "Posicionamiento local en Madrid en un mercado muy competido",
+          "detalle": "Madrid es el mercado más competido de España para agencias de marketing digital. <strong>Kanlli debería reforzar su posicionamiento local con landing pages específicas para cada servicio + Madrid</strong> y una estrategia de reviews y citations locales más agresiva."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "E-commerce SEO",
+          "titulo": "Especialización en e-commerce como nicho diferenciador",
+          "detalle": "Kanlli ofrece marketing digital para e-commerce, un vertical de alto valor. <strong>Crear una pillar page exhaustiva sobre marketing digital para e-commerce con datos propios y metodología</strong> posicionaría a Kanlli como referente en este nicho específico."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 7.7,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad de carga",
+          "titulo": "Rendimiento web probablemente por debajo de los estándares actuales",
+          "detalle": "Para una agencia que vende diseño web como servicio, su propia web debe ser impecable en rendimiento. <strong>Un LCP superior a 2.5 segundos, CLS visible o TBT elevado enviaría un mensaje contradictorio</strong> a cualquier prospecto que evalúe contratar sus servicios de diseño y desarrollo."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Stack tecnológico",
+          "titulo": "Posible necesidad de modernización del stack",
+          "detalle": "Una agencia fundada en 2006 puede tener su web sobre tecnología legacy. <strong>Migrar a un framework moderno (Next.js, Nuxt, Astro) proporcionaría rendimiento superior, mejor developer experience y capacidades como ISR o edge rendering</strong> que demostrarían competencia técnica actual."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Optimización de assets",
+          "titulo": "Gestión de imágenes y recursos probablemente sin optimización moderna",
+          "detalle": "Imágenes sin comprimir, sin formatos modernos (WebP/AVIF) y sin responsive srcset son errores frecuentes. <strong>Implementar un pipeline de optimización de imágenes automático reduciría el peso de página entre un 40-60%</strong> y mejoraría drásticamente el LCP."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Seguridad y buenas prácticas",
+          "titulo": "Headers de seguridad y best practices técnicas",
+          "detalle": "Los headers HTTP de seguridad (CSP, HSTS, X-Content-Type-Options) suelen estar ausentes en webs de agencias. <strong>Implementar una configuración de seguridad completa es un quick win técnico que además mejora la puntuación de best practices en Lighthouse</strong> y demuestra rigor técnico."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Rediseñar la home con storytelling de marca y experiencia interactiva",
+    "detalle": "Crear una home que cuente la historia de Kanlli de forma inmersiva: desde sus inicios pioneros en 2006 hasta hoy, con transiciones fluidas, datos de impacto y un CTA claro que conecte el legado con la capacidad actual.",
+    "impacto": "Alineación entre el discurso de innovación y la experiencia real del visitante, elevando la percepción de marca y la tasa de conversión en un 30-40%."
+  },
+  "_score": 7.3,
+  "_nombre": "Gonzalo",
+  "_icp": "SEO",
+  "resumen": [
+    "Kanlli opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado kanlli.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (6.0/10) es el área más sólida, mientras que Dev & Performance (4.5/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 65,
+      "accessibility": 84,
+      "bestPractices": 58,
+      "seo": 92
+    },
+    "mobile": {
+      "performance": 98,
+      "accessibility": 87,
+      "bestPractices": 58,
+      "seo": 92
+    }
+  }
+}

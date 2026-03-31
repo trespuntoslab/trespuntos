@@ -1,0 +1,157 @@
+{
+  "agencia": "SEOinHouse",
+  "web": "seoinhouse.es",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversion",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Conversion rate",
+          "titulo": "Home saturada de texto sin jerarquia visual clara",
+          "detalle": "La pagina principal intenta posicionar por multiples keywords (SEO Barcelona, agencia SEO, posicionamiento web) y <strong>el resultado es una home con exceso de texto que parece escrita para Google, no para personas</strong>. El visitante necesita scroll excesivo antes de encontrar un CTA claro o entender que hace diferente a SEOinHouse."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Lead generation",
+          "titulo": "Sin mecanismo de captacion inmediata",
+          "detalle": "No se detecta un lead magnet visible, ni un formulario de auditoria gratuita en la home, ni un chat proactivo. <strong>El unico camino de conversion es encontrar el formulario de contacto</strong>, que requiere navegacion activa. Cada segundo adicional en el journey reduce la conversion."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "User journey",
+          "titulo": "Paginas de servicio por ciudad sin diferenciacion real",
+          "detalle": "Las landing pages para Barcelona, Bilbao, Girona y Madrid <strong>replican la misma estructura con ligeros cambios de texto</strong>. Google detecta este patron de contenido thin/duplicado. Cada landing local necesita contenido unico, casos de exito locales y testimonios de la zona."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Trust",
+          "titulo": "Propuesta de 'sin permanencia' bien comunicada pero sin mas diferenciadores",
+          "detalle": "El mensaje de 'sin contratos de permanencia' es un buen argumento comercial, pero <strong>es el unico diferencial claramente comunicado</strong>. Faltan otros como metodologia propia, herramientas exclusivas, o equipo especializado por sector."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepcion",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Imagen de marca",
+          "titulo": "Diseno visual que no transmite expertise tecnico",
+          "detalle": "SEOinHouse vende un servicio altamente tecnico (SEO), pero <strong>su web no refleja esa sofisticacion tecnica</strong>. El diseno es correcto pero generico, sin dashboards, visualizaciones de datos o elementos que transmitan capacidad analitica. Una agencia SEO deberia tener la web mas optimizada del mercado."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Diferenciacion",
+          "titulo": "Servicio de SEO para IA innovador pero mal presentado",
+          "detalle": "SEOinHouse ofrece un servicio de 'SEO para IA' (LLMO) para aparecer en ChatGPT, Gemini y Claude. <strong>Este servicio innovador esta enterrado en el menu sin la visibilidad que merece</strong>. Deberia ser el protagonista de la home como diferencial competitivo."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Consistencia",
+          "titulo": "Pagina de equipo con formato basico",
+          "detalle": "La seccion de equipo muestra a los profesionales pero <strong>sin especialidades claras, certificaciones o anos de experiencia por persona</strong>. En SEO, la credibilidad individual de los consultores es clave para cerrar proyectos."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Modernidad",
+          "titulo": "Ausencia de elementos visuales dinamicos",
+          "detalle": "La web es estatica y <strong>no utiliza graficos animados, contadores de resultados en tiempo real ni visualizaciones interactivas</strong> que demuestren capacidad tecnica. Un grafico animado de crecimiento de trafico organico seria mas convincente que un parrafo de texto."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 9.2,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Contenido",
+          "titulo": "Contenido SEO extenso pero con riesgo de sobreoptimizacion",
+          "detalle": "Las paginas de servicio tienen textos largos y orientados a keywords, pero <strong>la densidad de keyword y el patron de repeticion podrian acercarse a la sobreoptimizacion</strong>. Google penaliza cada vez mas el contenido escrito solo para bots vs contenido genuinamente util."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Link building",
+          "titulo": "Perfil de backlinks probablemente centrado en directorios",
+          "detalle": "Como agencia SEO, su propio perfil de enlaces deberia ser ejemplar. <strong>Es probable que el perfil de backlinks dependa demasiado de directorios de agencias</strong> y falten menciones editoriales, colaboraciones con medios y contenido linkable de alta calidad."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Innovacion SEO",
+          "titulo": "Servicio LLMO sin contenido educativo que lo respalde",
+          "detalle": "El servicio de SEO para IA es innovador pero <strong>no se sustenta con guias, estudios o articulos que posicionen a SEOinHouse como referente en este nuevo campo</strong>. Publicar contenido sobre LLMO generaria trafico cualificado y backlinks naturales."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Schema",
+          "titulo": "Datos estructurados basicos sin FAQPage ni HowTo",
+          "detalle": "Las paginas de servicio contienen preguntas frecuentes pero <strong>no implementan schema FAQPage para obtener rich snippets</strong>. Para una agencia SEO, no aprovechar estas oportunidades es un descuido visible."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 6.8,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "Performance que no predica con el ejemplo",
+          "detalle": "Una agencia SEO que no tiene Core Web Vitals en verde <strong>pierde credibilidad instantaneamente</strong>. El LCP, FID y CLS deben estar optimizados al maximo. Es probable que la carga de scripts de terceros y la falta de optimizacion de imagenes impidan scores optimos."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Velocidad",
+          "titulo": "Imagenes sin formatos de nueva generacion",
+          "detalle": "Las imagenes del sitio <strong>probablemente usan JPEG/PNG cuando WebP o AVIF reducirian el peso entre un 30-50%</strong>. Para una agencia SEO, la optimizacion de imagenes es un basico que deberia estar resuelto."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Arquitectura",
+          "titulo": "WordPress con temas y plugins que anaden peso innecesario",
+          "detalle": "Es probable que el sitio use WordPress con un tema multipurpose que <strong>carga CSS y JS para funcionalidades que no se utilizan</strong>. Un desarrollo a medida o un tema ligero personalizado reduciria dramaticamente el peso de la pagina."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Accesibilidad",
+          "titulo": "Contraste y navegacion por teclado sin auditar",
+          "detalle": "Es probable que existan <strong>problemas de contraste en textos secundarios y falta de focus visible en elementos interactivos</strong>. Aunque la accesibilidad no es el core de una agencia SEO, Google la tiene cada vez mas en cuenta."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Destacar el servicio de SEO para IA como hero principal",
+    "detalle": "Reposicionar la home con el servicio de LLMO (SEO para IA) como diferencial protagonista. Crear una landing dedicada con datos, metodologia y un caso de exito. Acompanarlo con un lead magnet tipo 'Analisis gratuito: tu visibilidad en ChatGPT y Gemini'.",
+    "impacto": "Posicionamiento como agencia innovadora en un mercado SEO saturado, captacion de leads early-adopters con alto poder adquisitivo, y generacion de contenido linkable unico."
+  },
+  "_score": 6.8,
+  "_nombre": "Miguel",
+  "_icp": "SEO",
+  "resumen": [
+    "SEOinHouse opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado seoinhouse.es en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (7.0/10) es el área más sólida, mientras que UI & Percepción (5.0/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 54,
+      "accessibility": 75,
+      "bestPractices": 100,
+      "seo": 92
+    },
+    "mobile": {
+      "performance": 83,
+      "accessibility": 75,
+      "bestPractices": 100,
+      "seo": 92
+    }
+  }
+}

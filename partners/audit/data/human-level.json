@@ -1,0 +1,157 @@
+{
+  "agencia": "Human Level",
+  "web": "humanlevel.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Autoridad del fundador",
+          "titulo": "Fernando Maciá como activo de credibilidad infrautilizado en la web",
+          "detalle": "Fernando Maciá es un referente del SEO en España, autor de best-sellers y ponente habitual. <strong>Este capital de autoridad personal debería tener más protagonismo en la home y las landing pages comerciales</strong>: vídeo del fundador, citas destacadas y enlace a sus publicaciones como prueba de expertise."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Conversión de tráfico",
+          "titulo": "Web orientada a informar pero no a convertir",
+          "detalle": "La web tiene un enfoque académico y profesional que genera confianza pero puede quedarse corta en conversión. <strong>Falta un sistema de lead magnets estratégicos (ebooks, auditorías gratuitas, webinars) que capture al visitante informado</strong> antes de que abandone la web sin dejar sus datos."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Segmentación por industria",
+          "titulo": "Página de industrias como diferenciador bien planteado pero mejorable",
+          "detalle": "Human Level tiene una sección de industrias (educación, etc.) que es un buen enfoque estratégico. <strong>Cada página sectorial debería funcionar como una landing page completa con caso de éxito, métricas y CTA específico</strong> en lugar de solo describir el servicio de forma genérica."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Satisfacción del cliente",
+          "titulo": "90% de recomendación es un dato poderoso mal explotado",
+          "detalle": "Que más del 90% de clientes recomienden Human Level es excepcional. <strong>Este dato merece un tratamiento visual destacado con testimonios reales, nombres de empresas y métricas concretas</strong> que permitan al prospecto verificar y proyectar su propio caso de éxito."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Modernidad",
+          "titulo": "Diseño profesional pero con estética que denota antigüedad",
+          "detalle": "Human Level lleva operando desde 2001 y la web transmite solidez, pero visualmente puede percibirse como una web de otra era. <strong>Una agencia con 20+ años necesita renovar su imagen digital periódicamente para demostrar que sigue a la vanguardia</strong>. El diseño actual no refleja las tendencias de 2024-2025."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Jerarquía visual",
+          "titulo": "Páginas de servicio con exceso de texto y poca variación visual",
+          "detalle": "Las páginas de SEO técnico, content marketing y servicios son informativas pero densas. <strong>Alternar texto con diagramas, flujos visuales, comparativas y elementos interactivos</strong> haría el contenido más digerible y mantendría la atención del usuario durante más tiempo."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Branding visual",
+          "titulo": "Identidad visual que podría beneficiarse de una actualización",
+          "detalle": "La marca Human Level tiene reconocimiento en el sector, pero su expresión visual puede haberse quedado conservadora. <strong>Una evolución del branding (no un cambio radical) con tipografía más contemporánea y paleta actualizada</strong> rejuvenecería la percepción sin perder el equity acumulado."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Equipo",
+          "titulo": "Sección de equipo correcta pero sin el dinamismo que aporta el vídeo",
+          "detalle": "La página de equipo muestra profesionales con fotos y roles. <strong>Añadir vídeos cortos de presentación de cada miembro clave, especialmente de Fernando Maciá, humanizaría enormemente la marca</strong> y conectaría emocionalmente con prospectos que valoran trabajar con personas, no solo con marcas."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 8.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Thought leadership",
+          "titulo": "Blog y contenido educativo como fortaleza principal",
+          "detalle": "Human Level tiene una base de contenido sólida respaldada por la autoridad de Fernando Maciá. <strong>La clave es mantener la frecuencia de publicación y evolucionar hacia formatos que generen más engagement</strong>: vídeos, podcasts y herramientas interactivas que complementen el contenido escrito."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Competencia local",
+          "titulo": "Posicionamiento geográfico en Alicante correcto pero con oportunidad nacional",
+          "detalle": "Human Level está basada en Alicante, un mercado menos competido que Barcelona o Madrid. <strong>Fortalecer el posicionamiento para búsquedas nacionales como \"mejor agencia SEO España\" ampliaría significativamente el mercado accesible</strong> más allá del ámbito local."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Datos estructurados",
+          "titulo": "Oportunidad de implementar schema de Person para el fundador",
+          "detalle": "Fernando Maciá como autor reconocido debería tener schema de tipo Person conectado con sus publicaciones. <strong>Esto mejoraría la visibilidad de los artículos en Knowledge Panel de Google y reforzaría el E-E-A-T</strong> (Experience, Expertise, Authoritativeness, Trustworthiness)."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Contenido evergreen",
+          "titulo": "Artículos históricos que pueden necesitar actualización",
+          "detalle": "Con más de 20 años de blog, es probable que existan artículos obsoletos o desactualizados. <strong>Auditar y actualizar los 50 artículos con más tráfico histórico puede generar un boost de posicionamiento significativo</strong> con un esfuerzo relativamente bajo."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 8.4,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Rendimiento",
+          "titulo": "Velocidad de carga que debe ser ejemplar para una agencia SEO senior",
+          "detalle": "Como una de las agencias SEO más veteranas de España, Human Level debería tener métricas de rendimiento intachables. <strong>Scores de Lighthouse por debajo de 90 o Core Web Vitals en amarillo/rojo serían una inconsistencia grave</strong> entre lo que predican y lo que practican."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Deuda técnica",
+          "titulo": "Posible acumulación de deuda técnica tras 20+ años",
+          "detalle": "Una web con más de dos décadas de evolución puede haber acumulado capas de código legacy. <strong>Una auditoría técnica profunda y posible reconstrucción sobre un stack moderno eliminaría deuda técnica</strong> y proporcionaría una base limpia para los próximos años."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Mobile experience",
+          "titulo": "Adaptación responsive probablemente reactiva en lugar de mobile-first",
+          "detalle": "Las webs construidas hace años suelen adaptar el diseño desktop a móvil en lugar de diseñar mobile-first. <strong>Replantear la experiencia desde mobile y escalar hacia desktop mejoraría significativamente las métricas de engagement</strong> en el dispositivo que genera la mayoría del tráfico."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Accesibilidad",
+          "titulo": "Cumplimiento de accesibilidad web como ventaja competitiva",
+          "detalle": "Con la directiva europea de accesibilidad, cumplir WCAG 2.1 AA se convierte en un requisito. <strong>Human Level podría diferenciarse siendo una de las primeras agencias SEO en tener su propia web 100% accesible</strong>, lo cual también es un factor positivo para SEO."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Poner a Fernando Maciá como hero de la home con vídeo y credenciales",
+    "detalle": "Rediseñar el hero de la home con un vídeo corto de Fernando Maciá, sus libros publicados, años de experiencia y un CTA directo a auditoría gratuita. Aprovechar la autoridad personal como principal palanca de conversión.",
+    "impacto": "Aumento inmediato de la tasa de conversión al conectar la reputación offline del fundador con la experiencia online del prospecto."
+  },
+  "_score": 7.1,
+  "_nombre": "Fernando",
+  "_icp": "SEO",
+  "resumen": [
+    "Human Level opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado humanlevel.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "La plataforma tiene una base sólida. El área más fuerte es SEO & Visibilidad (7.5/10), lo que indica criterio en la construcción. Sin embargo, Dev & Performance (5.0/10) es donde detectamos el mayor margen de mejora.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 84,
+      "accessibility": 85,
+      "bestPractices": 54,
+      "seo": 85
+    },
+    "mobile": {
+      "performance": 95,
+      "accessibility": 78,
+      "bestPractices": 54,
+      "seo": 85
+    }
+  }
+}

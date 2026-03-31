@@ -1,0 +1,269 @@
+{
+  "slug": "zimconnections",
+  "meta": {
+    "title": "Caso ZIM Connections | Web corporativa orientada a negocio · Tres Puntos",
+    "description": "Cómo rediseñamos ZIM Connections para convertir su web en una herramienta de captación más clara y eficaz.",
+    "canonical": "/casos-de-negocio/zimconnections",
+    "og": {
+      "title": "Caso ZIM Connections | UX/UI y arquitectura digital B2B",
+      "description": "De presencia corporativa a herramienta comercial. Caso completo de ZIM Connections.",
+      "image": "/img/casos/zimconnections/desktop-home.webp"
+    },
+    "schema_type": "Article",
+    "date_published": "2026-03-25",
+    "date_modified": "2026-03-25",
+    "keywords": ["web corporativa internacional", "arquitectura digital empresa b2b", "ux ui captación servicios internacionales", "eSIM", "plataforma digital", "diseño web B2B"]
+  },
+  "blocks": [
+    {
+      "type": "hero-header",
+      "sector_label": "Conectividad Internacional · eSIM",
+      "name": "ZIM Connections",
+      "services": "UX/UI, Desarrollo web a medida, Arquitectura digital",
+      "brief": "De presencia corporativa a herramienta comercial. Rediseñamos la plataforma de ZIM Connections para que su web explicara mejor su valor, generara confianza y abriera conversaciones de negocio.",
+      "meta_items": [
+        { "label": "Cliente", "value": "ZIM Connections" },
+        { "label": "Sector", "value": "Telecomunicaciones / eSIM" },
+        { "label": "Servicios", "value": "UX/UI · Desarrollo web · Arquitectura digital" },
+        { "label": "Web", "value": "zimconnections.com", "url": "https://www.zimconnections.com" }
+      ]
+    },
+    {
+      "type": "hero-browser-mockup",
+      "browser_url": "zimconnections.com",
+      "image": "/img/casos/zimconnections/desktop-home.webp",
+      "alt": "ZIM Connections — Home: Stay Connected Everywhere at All Times"
+    },
+    {
+      "type": "overview",
+      "variant": "narrative",
+      "badge": "El proyecto",
+      "heading": "Una plataforma eSIM global que necesitaba hablar el idioma del negocio",
+      "paragraphs": [
+        "ZIM Connections ofrece planes eSIM de voz y datos en más de 200 destinos. Su producto es sólido: cobertura 5G/4G, activación instantánea, sin roaming, con una app nativa y un Business Suite para empresas.",
+        "Pero la web no estaba a la altura del producto. El mensaje se dispersaba entre funcionalidades, el recorrido de usuario no guiaba hacia la acción, y la propuesta de valor quedaba enterrada bajo capas de información.",
+        "ZIM necesitaba algo más que un rediseño visual. Necesitaba una arquitectura digital que convirtiera visitas en clientes — tanto viajeros individuales como empresas con flotas de dispositivos."
+      ],
+      "meta": [
+        { "label": "Cliente", "value": "ZIM Connections" },
+        { "label": "Sector", "value": "Telecomunicaciones / eSIM" },
+        { "label": "Alcance", "value_tags": ["UX/UI", "Desarrollo Web", "Arquitectura Digital", "Conversión B2B/B2C"] },
+        { "label": "Web", "value": "zimconnections.com", "url": "https://www.zimconnections.com" }
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "La web no puede limitarse a 'estar bien'. Tiene que explicar rápido qué haces, para quién trabajas y por qué mereces confianza.",
+      "sub": "Y sobre todo, tiene que abrir conversaciones comerciales."
+    },
+    {
+      "type": "challenge",
+      "badge": "El reto",
+      "heading": "Una web que no traducía el valor real del producto",
+      "paragraphs": [
+        "La web existente tenía información, pero no dirección. El usuario llegaba, leía, pero no actuaba. El problema no era solo visual — era estratégico.",
+        "Una empresa puede tener un servicio sólido. Pero si la web no lo traduce bien, pierde oportunidades cada día."
+      ],
+      "signals_title": "Señales de fricción detectadas",
+      "signals": [
+        { "title": "Mensaje disperso", "description": "La propuesta de valor se perdía entre secciones sin jerarquía clara." },
+        { "title": "Propuesta de valor enterrada", "description": "El usuario no entendía en 5 segundos qué hacía ZIM ni por qué elegirlos." },
+        { "title": "Estructura débil", "description": "Los contenidos no seguían una lógica de conversión progresiva." },
+        { "title": "Recorrido sin dirección", "description": "No había un camino claro desde el interés hasta la acción." }
+      ]
+    },
+    {
+      "type": "showcase-duo",
+      "bg": "surface",
+      "items": [
+        {
+          "browser_url": "zimconnections.com/destinations",
+          "image": "/img/casos/zimconnections/desktop-destinations.webp",
+          "alt": "ZIM Connections — Explorar más de 200 destinos eSIM",
+          "label": "Catálogo de destinos con cards visuales y precios claros"
+        },
+        {
+          "browser_url": "zimconnections.com/esim/south-america",
+          "image": "/img/casos/zimconnections/desktop-esim-product.webp",
+          "alt": "ZIM Connections — Página de producto eSIM para Sudamérica",
+          "label": "Ficha de producto con planes, duración y activación directa"
+        }
+      ]
+    },
+    {
+      "type": "approach-cards",
+      "badge": "La solución",
+      "heading": "Arquitectura digital orientada a conversión",
+      "intro": "Rediseñamos la plataforma desde una lógica de negocio. El objetivo era claro: convertir una presencia online en una herramienta comercial útil.",
+      "cards": [
+        {
+          "number": "01",
+          "title": "Reestructuración del mensaje",
+          "items": ["Claridad en la propuesta de valor desde el primer scroll", "Organización lógica de servicios B2C y B2B", "Contenido orientado a decisión, no a información"]
+        },
+        {
+          "number": "02",
+          "title": "Diseño UX/UI de confianza",
+          "items": ["Jerarquía visual que guía la lectura", "Navegación más directa entre secciones clave", "Diseño limpio que transmite profesionalidad global"]
+        },
+        {
+          "number": "03",
+          "title": "Arquitectura de conversión",
+          "items": ["CTAs integrados en el recorrido natural", "Flujos diferenciados para viajero y empresa", "Puntos de contacto bien definidos en cada página"]
+        },
+        {
+          "number": "04",
+          "title": "Desarrollo optimizado",
+          "items": ["Estructura frontend limpia y mantenible", "Performance optimizada para carga rápida global", "Base preparada para crecimiento y SEO internacional"]
+        }
+      ]
+    },
+    {
+      "type": "browser-showcase",
+      "bg": "base",
+      "badge": "Plataforma B2B",
+      "heading": "Enterprise Connectivity: el Business Suite para empresas",
+      "intro": "ZIM no solo vende eSIMs a viajeros. Su Business Suite permite a empresas gestionar flotas de eSIMs con dashboard centralizado, analytics avanzados y activación instantánea.",
+      "browser_url": "zimconnections.com/esim-for-business",
+      "content_type": "image",
+      "image": "/img/casos/zimconnections/desktop-enterprise.webp",
+      "alt": "ZIM Connections — Enterprise Connectivity: Business Suite para gestión de eSIMs corporativas"
+    },
+    {
+      "type": "statement",
+      "bg": "surface",
+      "text": "Menos ambigüedad. Más negocio.",
+      "sub": "Cuando una empresa explica bien lo que hace y guía bien al usuario, la web deja de ser institucional."
+    },
+    {
+      "type": "video-phones",
+      "badge": "Experiencia móvil",
+      "heading": "Una experiencia nativa pensada para el viajero",
+      "intro": "Cada interacción en móvil — desde buscar destino hasta activar la eSIM — fue diseñada para resolver con claridad y velocidad.",
+      "videos": [
+        "/img/casos/zimconnections/mobile-recording-1.mp4",
+        "/img/casos/zimconnections/mobile-recording-2.mp4"
+      ]
+    },
+    {
+      "type": "phone-carousel",
+      "bg": "subtle",
+      "badge": "Diseño responsive",
+      "heading": "Cada pantalla cuenta una historia",
+      "intro": "Home, destinos, producto, precios, empresa, blog — todo el ecosistema diseñado para funcionar en cualquier dispositivo.",
+      "phones": [
+        { "src": "/img/casos/zimconnections/mobile-home.webp", "alt": "ZIM — Home móvil" },
+        { "src": "/img/casos/zimconnections/mobile-destinations.webp", "alt": "ZIM — Destinos populares" },
+        { "src": "/img/casos/zimconnections/mobile-esim-spain.webp", "alt": "ZIM — eSIM España" },
+        { "src": "/img/casos/zimconnections/mobile-pricing.webp", "alt": "ZIM — Planes y precios" },
+        { "src": "/img/casos/zimconnections/mobile-about.webp", "alt": "ZIM — Nosotros" },
+        { "src": "/img/casos/zimconnections/mobile-enterprise.webp", "alt": "ZIM — Enterprise" },
+        { "src": "/img/casos/zimconnections/mobile-business-suite.webp", "alt": "ZIM — Business Suite" },
+        { "src": "/img/casos/zimconnections/mobile-sustainability.webp", "alt": "ZIM — Sostenibilidad" },
+        { "src": "/img/casos/zimconnections/mobile-blog.webp", "alt": "ZIM — Blog" }
+      ]
+    },
+    {
+      "type": "platform-gallery",
+      "bg": "surface",
+      "badge": "Plataforma completa",
+      "heading": "Un ecosistema digital coherente",
+      "intro": "Cada sección de la web fue pensada para guiar al usuario hacia la acción correcta.",
+      "browsers": [
+        { "url": "zimconnections.com/get-started", "image": "/img/casos/zimconnections/desktop-get-started.webp", "alt": "ZIM — Cómo empezar con eSIM en 4 pasos" },
+        { "url": "zimconnections.com/destinations/search", "image": "/img/casos/zimconnections/desktop-destinations-search.webp", "alt": "ZIM — Buscador de destinos" }
+      ]
+    },
+    {
+      "type": "marquee",
+      "words": ["Conectividad", "eSIM", "Global", "B2B", "Enterprise", "Conversión", "Arquitectura Digital"]
+    },
+    {
+      "type": "stats-grid",
+      "variant": "cards",
+      "stats": [
+        { "number": "200+", "label": "Destinos con cobertura eSIM" },
+        { "number": "5G/4G", "label": "Tecnología de red soportada" },
+        { "number": "B2C + B2B", "label": "Doble vertical de negocio" },
+        { "number": "0 roaming", "label": "Sin cargos ocultos para el viajero" }
+      ]
+    },
+    {
+      "type": "impact-grid",
+      "bg": "base",
+      "badge": "El impacto",
+      "heading": "De web corporativa a plataforma de captación",
+      "cards": [
+        { "icon": "trending-up", "title": "Claridad comercial", "description": "La empresa comunica mejor su valor desde el primer scroll. El usuario entiende en segundos qué ofrece ZIM." },
+        { "icon": "bolt", "title": "Captación más directa", "description": "Los CTAs están integrados en el recorrido natural. La web acompaña mejor la conversión comercial." },
+        { "icon": "shield", "title": "Confianza B2B reforzada", "description": "El diseño transmite profesionalidad global. El Business Suite tiene su propia narrativa y flujo." },
+        { "icon": "rocket", "title": "Base para crecer", "description": "Estructura preparada para SEO internacional, nuevos destinos y expansión del catálogo de servicios." }
+      ]
+    },
+    {
+      "type": "quote",
+      "quote": "En muchas webs B2B el problema no es la falta de información. Es el exceso de información mal ordenada.",
+      "body": "Eso genera fricción. Y la fricción mata oportunidades. En ZIM Connections trabajamos algo mucho más importante que el diseño: trabajamos claridad comercial. Cuando una empresa explica bien lo que hace y guía bien al usuario, la web deja de ser institucional. Y empieza a ser una herramienta de captación.",
+      "avatar": "/img/jordi-exposito.webp",
+      "author": "Jordi Expósito",
+      "role": "UX/UI & Digital Architecture"
+    },
+    {
+      "type": "services",
+      "badge": "Servicios aplicados",
+      "heading": "Lo que hicimos en ZIM Connections",
+      "links": [
+        {
+          "icon": "paintbrush",
+          "href": "/servicios/diseno-ux-ui-barcelona",
+          "title": "Diseño UX/UI",
+          "description": "Interfaces claras que transmiten confianza y guían al usuario hacia la acción."
+        },
+        {
+          "icon": "code",
+          "href": "/servicios/desarrollo-web-a-medida-barcelona",
+          "title": "Desarrollo web a medida",
+          "description": "Frontend optimizado, rápido y preparado para escalar internacionalmente."
+        },
+        {
+          "icon": "chart",
+          "href": "/servicios/consultoria-digital-barcelona",
+          "title": "Consultoría digital",
+          "description": "Estrategia de arquitectura digital orientada a conversión B2B y B2C."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "badge": "Preguntas frecuentes",
+      "heading": "Sobre este proyecto",
+      "items": [
+        { "question": "¿Qué tipo de proyecto era?", "answer": "Una web corporativa internacional orientada a mejorar claridad, credibilidad y captación, tanto para viajeros individuales (B2C) como para empresas con flotas de dispositivos (B2B)." },
+        { "question": "¿Qué se trabajó principalmente?", "answer": "Arquitectura de contenidos, diseño UX/UI orientado a confianza, desarrollo web optimizado y una estrategia de conversión diferenciada para cada vertical de negocio." },
+        { "question": "¿Cuál era el objetivo principal?", "answer": "Transformar la web en una herramienta comercial más clara y eficaz, que explicara el valor de ZIM en segundos y guiara al usuario hacia la acción correcta." }
+      ]
+    },
+    {
+      "type": "next-project",
+      "label": "Siguiente proyecto",
+      "href": "/casos-de-negocio/exitbcn",
+      "title": "ExitBCN"
+    },
+    {
+      "type": "cta-form",
+      "heading_prefix": "Tienes un reto similar",
+      "heading_highlight": "hablamos",
+      "sub": "Si tu empresa tiene valor pero tu web no lo transmite, el problema no es el servicio. Es la estructura.",
+      "reasons": [
+        "Propuesta personalizada en menos de 48h",
+        "Arquitectura orientada a resultados de negocio",
+        "Sin plantillas — todo a medida de tu caso"
+      ]
+    }
+  ],
+  "faq_schema": [
+    { "question": "¿Qué tipo de proyecto era?", "answer": "Una web corporativa internacional orientada a mejorar claridad, credibilidad y captación, tanto para viajeros individuales (B2C) como para empresas con flotas de dispositivos (B2B)." },
+    { "question": "¿Qué se trabajó principalmente?", "answer": "Arquitectura de contenidos, diseño UX/UI orientado a confianza, desarrollo web optimizado y una estrategia de conversión diferenciada para cada vertical de negocio." },
+    { "question": "¿Cuál era el objetivo principal?", "answer": "Transformar la web en una herramienta comercial más clara y eficaz, que explicara el valor de ZIM en segundos y guiara al usuario hacia la acción correcta." }
+  ]
+}

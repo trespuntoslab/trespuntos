@@ -1,0 +1,157 @@
+{
+  "agencia": "Yumagic Social",
+  "web": "yumagicsocial.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversion",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Conversión y captación de leads",
+          "titulo": "CTAs poco visibles y sin propuesta de valor diferenciada",
+          "detalle": "Los botones de contacto y solicitud de información se pierden entre bloques de contenido y no destacan visualmente. <strong>No existe un CTA principal tipo 'Solicita tu plan personalizado' que guíe al usuario</strong> hacia la conversión. Un CTA diferenciado en el primer scroll puede incrementar la captación entre un 20-35%."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Navegación y retención",
+          "titulo": "Menú de navegación redundante y sobrecargado",
+          "detalle": "El menú principal repite secciones y genera confusión en el recorrido del usuario. <strong>La estructura duplicada de navegación aumenta la tasa de rebote</strong> al dificultar que el visitante encuentre rápidamente lo que busca. Simplificar el menú a 5-6 ítems claros mejoraría la retención."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Confianza del usuario",
+          "titulo": "Casos de éxito sin métricas de impacto ni resultados medibles",
+          "detalle": "Los casos de Disfruta & Verdura, TokyLabs y Grup Idea muestran el proyecto pero <strong>no incluyen KPIs ni resultados concretos</strong> (crecimiento de seguidores, engagement, leads generados). Para una agencia de social media, no mostrar datos es una oportunidad perdida de confianza."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Accesibilidad",
+          "titulo": "Campos ARIA sin nombres accesibles y contraste insuficiente",
+          "detalle": "Lighthouse detecta campos de entrada ARIA sin nombres accesibles y ratio de contraste insuficiente en varios textos. <strong>Esto penaliza la accesibilidad (81/100) y excluye a usuarios con diversidad funcional</strong>, además de afectar al SEO."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepcion",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Imagen de marca",
+          "titulo": "Jerarquía visual indefinida: el usuario no sabe qué leer primero",
+          "detalle": "La home presenta bloques de texto, títulos e imágenes sin una jerarquía clara de lectura. <strong>Los headings no siguen un orden semántico descendente</strong> (confirmado por Lighthouse), lo que dificulta la escaneabilidad y transmite falta de orden visual en una agencia que vende contenido."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Percepción profesional",
+          "titulo": "Repetición excesiva del logo y elementos gráficos",
+          "detalle": "El logo de Yumagic Social aparece múltiples veces en la misma página, saturando visualmente y restando sofisticación. <strong>Para una agencia audiovisual que cobra desde 400 EUR/mes, la web debe ser su mejor caso de éxito</strong> y transmitir el mismo nivel de producción que ofrece a sus clientes."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Consistencia visual",
+          "titulo": "Paleta de colores y tipografías inconsistentes entre secciones",
+          "detalle": "Se observan variaciones de color y estilos tipográficos entre la home, servicios y casos de éxito. <strong>La falta de un sistema de diseño unificado</strong> genera una percepción fragmentada que no corresponde con una marca que gestiona la imagen digital de otros negocios."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Modernidad percibida",
+          "titulo": "Ausencia total de microinteracciones y animaciones",
+          "detalle": "La web carece de transiciones suaves, hover effects o scroll animations. <strong>En 2026, una agencia de contenido audiovisual sin motion design en su propia web</strong> pierde credibilidad frente a competidores que demuestran dinamismo visual desde el primer segundo."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Captación de tráfico orgánico",
+          "titulo": "Score SEO perfecto (100) pero títulos y metas genéricos",
+          "detalle": "Lighthouse otorga un 100 en SEO técnico, pero el título de la home es genérico y no incluye keywords de cola larga como 'agencia videomarketing Barcelona' o 'social media tarifa plana'. <strong>Optimizar títulos y meta descriptions para búsquedas transaccionales</strong> puede multiplicar el CTR en Google."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Indexación y autoridad",
+          "titulo": "Enlazado interno sin estrategia entre servicios y casos de éxito",
+          "detalle": "Los casos de éxito (TokyLabs, Disfruta & Verdura, Atalanta y Abogadas) no enlazan estratégicamente a las páginas de servicio correspondientes. <strong>Un enlazado interno bien planificado distribuiría la autoridad</strong> desde los casos hacia las páginas comerciales, mejorando su posicionamiento."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "CTR en buscadores",
+          "titulo": "Snippets poco persuasivos en resultados de Google",
+          "detalle": "Las meta descriptions actuales no destacan beneficios ni diferenciales frente a otras agencias de Barcelona. <strong>Redactar descripciones con datos concretos</strong> ('Más de 8 años | Tarifa plana desde 400 EUR | Clientes como TokyLabs') atraerá más clics orgánicos."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "SEO local",
+          "titulo": "Oportunidad desaprovechada en SEO local para Barcelona",
+          "detalle": "Aunque se menciona Barcelona, no se refuerza con schema LocalBusiness, landing pages por barrio ni integración de Google Business Profile. <strong>El SEO local para 'agencia social media Barcelona' es altamente competitivo</strong> y requiere una optimización específica que actualmente no existe."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad de carga y Core Web Vitals",
+          "titulo": "Speed Index de 4.6s en desktop y 5.0s en móvil: cuello de botella crítico",
+          "detalle": "Aunque el FCP (0.4s) y LCP (0.5s desktop) son buenos, el Speed Index de 4.6s en desktop indica que el contenido visible se carga de forma desigual. <strong>Este desajuste entre métricas sugiere recursos pesados que bloquean el renderizado progresivo</strong>, penalizando la percepción de velocidad del usuario."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Seguridad y buenas prácticas",
+          "titulo": "Best Practices en 58/100: problemas graves de seguridad y configuración",
+          "detalle": "Lighthouse puntúa las Best Practices con solo 58 puntos, indicando problemas como <strong>iframes sin título, posibles mixed-content y configuraciones de seguridad deficientes</strong>. Para una agencia que gestiona datos de clientes, este score es un riesgo reputacional."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Experiencia móvil",
+          "titulo": "CLS de 0.109 en móvil: layout shifts que frustran al usuario",
+          "detalle": "El Cumulative Layout Shift de 0.109 en móvil supera el umbral recomendado de 0.1. <strong>Los elementos que se desplazan durante la carga generan clics accidentales y frustración</strong>, especialmente en una web donde el contenido audiovisual debe impactar visualmente desde el primer instante."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Mantenibilidad",
+          "titulo": "Estructura de navegación duplicada en el código fuente",
+          "detalle": "El menú aparece duplicado en el DOM, complicando el mantenimiento y generando inconsistencias. <strong>Eliminar duplicidades y componentizar la navegación</strong> facilitará futuras actualizaciones y reducirá errores."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Rediseñar el hero con CTA diferenciado y propuesta de valor en 5 segundos",
+    "detalle": "Sustituir el hero actual por un mensaje directo centrado en el resultado ('Contenido audiovisual que convierte: tu tarifa plana desde 400 EUR/mes') con un único CTA principal destacado tipo 'Solicita tu plan personalizado'. Eliminar elementos redundantes del primer scroll.",
+    "impacto": "Incremento estimado del 25-40% en tasa de conversión de la home, con mejora inmediata en la percepción profesional y reducción de la tasa de rebote."
+  },
+  "_score": 5.9,
+  "_nombre": "Dídac",
+  "_icp": "Branding",
+  "resumen": [
+    "Yumagic Social es una agencia de Barcelona fundada en 2014 por Dídac Cervera y Paula Jordan, especializada en producción audiovisual, social media y videomarketing. Su propuesta de tarifa plana desde 400 EUR/mes, combinando vídeo y gestión de redes, es diferenciadora. Hemos analizado yumagicsocial.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "El área más sólida es SEO (7.5/10) con un score técnico perfecto de 100 en Lighthouse, pero con margen de mejora en contenido y enlazado interno. Las áreas más débiles son UI (5.0/10) y Dev (5.5/10): la jerarquía visual no transmite la sofisticación que se espera de una agencia audiovisual, y el Best Practices de 58/100 en Lighthouse revela problemas de seguridad y configuración que requieren atención inmediata. La UX (5.5/10) se ve penalizada por CTAs poco visibles y una navegación redundante.",
+    "<strong>Se han identificado 16 hallazgos concretos con datos reales de Lighthouse. El quick win prioritario es rediseñar el hero y el CTA principal, lo que puede generar un incremento del 25-40% en conversión de forma inmediata y medible.</strong>"
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 91,
+      "accessibility": 81,
+      "bestPractices": 58,
+      "seo": 100
+    },
+    "mobile": {
+      "performance": 92,
+      "accessibility": 81,
+      "bestPractices": 58,
+      "seo": 100
+    }
+  }
+}

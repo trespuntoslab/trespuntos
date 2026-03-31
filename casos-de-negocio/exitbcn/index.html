@@ -24,7 +24,7 @@
   <meta property="og:description" content="Nuestro principal objetivo es ofrecer a nuestros clientes productos diferentes, además de una trato personalizado muy cercano cuando el cliente visita nuestra tienda física ubicada en Granollers (Barcelona)." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.trespuntoscomunicacion.es/casos-de-negocio/exitbcn" />
-  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/casos/exitbcn-cover.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="es_ES" />
@@ -32,7 +32,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Exitbcn — Caso de Negocio | Tres Puntos" />
   <meta name="twitter:description" content="Nuestro principal objetivo es ofrecer a nuestros clientes productos diferentes, además de una trato personalizado muy cercano cuando el cliente visita nuestra tienda física ubicada en Granollers (Barc" />
-  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg" />
+  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/casos/exitbcn-cover.webp" />
 
   <script type="application/ld+json">
     {
@@ -45,7 +45,7 @@
         "name": "Tres Puntos Comunicación"
       },
       "datePublished": "junio 4, 2020",
-      "dateModified": "2026-03-11"
+      "dateModified": "2026-03-22"
     }
   </script>
 
@@ -58,398 +58,11 @@
   <link rel="stylesheet" href="/css/design-system.css" />
   <link rel="stylesheet" href="/css/components.css" />
   <link rel="stylesheet" href="/css/service-page.css" />
-
-  <style>
-    /* ═══ CASE STUDY: Header & Layout ═══ */
-    .case-header {
-      padding: 4rem 0 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-header-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .case-header-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .case-sector {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-    }
-
-    .case-name {
-      font-size: 2.5rem;
-      font-weight: 800;
-      font-family: var(--font-display);
-      line-height: 1.1;
-      color: var(--text-primary);
-    }
-
-    .case-services {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .case-brief {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--text-primary);
-      padding: 1.5rem;
-      background: rgba(93, 255, 191, 0.04);
-      border-left: 3px solid var(--mint);
-      border-radius: 4px;
-    }
-
-    .case-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      padding: 2rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-    }
-
-    .case-meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .case-meta-label {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-    }
-
-    .case-meta-value {
-      font-size: 0.95rem;
-      color: var(--text-primary);
-    }
-
-    /* Case Overview Grid */
-    .case-overview-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .case-overview-item {
-      padding: 2rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      transition: all var(--transition-base);
-    }
-
-    .case-overview-item:hover {
-      border-color: var(--mint);
-      background: rgba(93, 255, 191, 0.02);
-    }
-
-    .case-overview-label {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-    }
-
-    .case-overview-text {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--text-primary);
-    }
-
-    /* Case sections */
-    .case-section {
-      padding: 3rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-section:last-child {
-      border-bottom: none;
-    }
-
-    .case-section-header {
-      margin-bottom: 2rem;
-    }
-
-    .case-section h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 1rem;
-    }
-
-    .case-section-intro {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--text-secondary);
-      max-width: 700px;
-    }
-
-    .case-section-content {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      max-width: 900px;
-      margin-top: 1.5rem;
-    }
-
-    .case-section-content p {
-      margin-bottom: 1rem;
-    }
-
-    .case-section-content p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Stats section */
-    .case-stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .case-stat-card {
-      padding: 2rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      text-align: center;
-      transition: all var(--transition-base);
-    }
-
-    .case-stat-card:hover {
-      border-color: var(--mint);
-      background: rgba(93, 255, 191, 0.02);
-    }
-
-    .case-stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--mint);
-      margin-bottom: 0.5rem;
-    }
-
-    .case-stat-label {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
-
-    
-    /* ═══ DEVICE MOCKUPS (CSS-Only) ═══ */
-    .device-mockups-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
-      margin: 3rem 0;
-      align-items: center;
-    }
-
-    .device-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 500px;
-    }
-
-    /* MacBook Pro Frame */
-    .macbook-frame {
-      width: 100%;
-      max-width: 600px;
-      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-      border-radius: 12px 12px 24px 24px;
-      padding: 12px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      position: relative;
-    }
-
-    .macbook-frame::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 30%;
-      height: 8px;
-      background: linear-gradient(to bottom, #333, #222);
-      border-radius: 0 0 12px 12px;
-      z-index: 10;
-    }
-
-    .macbook-screen {
-      background: linear-gradient(135deg, #5dffbf 0%, #3dd5a6 100%);
-      border-radius: 8px;
-      padding: 0;
-      aspect-ratio: 16 / 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .macbook-screen iframe,
-    .macbook-screen img {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .macbook-keyboard {
-      height: 8px;
-      background: linear-gradient(to bottom, #333, #222);
-      border-radius: 0 0 8px 8px;
-      margin-top: 2px;
-    }
-
-    /* iPhone Frame */
-    .iphone-frame {
-      width: 100%;
-      max-width: 280px;
-      background: #000;
-      border-radius: 40px;
-      padding: 12px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      position: relative;
-    }
-
-    .iphone-frame::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 35%;
-      height: 28px;
-      background: #000;
-      border-radius: 0 0 24px 24px;
-      z-index: 20;
-    }
-
-    .iphone-screen {
-      background: linear-gradient(135deg, #5dffbf 0%, #3dd5a6 100%);
-      border-radius: 35px;
-      padding: 0;
-      aspect-ratio: 9 / 20;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .iphone-screen iframe,
-    .iphone-screen img {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* iPad Frame */
-    .ipad-frame {
-      width: 100%;
-      max-width: 500px;
-      background: #333;
-      border-radius: 20px;
-      padding: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      position: relative;
-    }
-
-    .ipad-frame::after {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40%;
-      height: 8px;
-      background: #111;
-      border-radius: 8px;
-    }
-
-    .ipad-screen {
-      background: linear-gradient(135deg, #5dffbf 0%, #3dd5a6 100%);
-      border-radius: 12px;
-      padding: 0;
-      aspect-ratio: 4 / 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .ipad-screen iframe,
-    .ipad-screen img {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    @media (max-width: 768px) {
-      .device-mockups-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .macbook-frame {
-        max-width: 100%;
-      }
-
-      .device-wrapper {
-        min-height: 300px;
-      }
-    }
-
-
-    @media (max-width: 768px) {
-      .case-header-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .case-name {
-        font-size: 1.8rem;
-      }
-
-      .case-section {
-        padding: 2rem 0;
-      }
-
-      .case-section h2 {
-        font-size: 1.4rem;
-      }
-
-      .case-overview-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .device-mockups-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/case-study.css" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.trespuntoscomunicacion.es/"},{"@type":"ListItem","position":2,"name":"Casos de Negocio","item":"https://www.trespuntoscomunicacion.es/casos-de-negocio/"},{"@type":"ListItem","position":3,"name":"ExitBCN"}]}
+</script>
 </head>
 
 <body>
@@ -457,186 +70,324 @@
   <div id="tp-navbar"></div>
 
   <!-- ============ CASE HEADER ============ -->
-  <section class="case-header" aria-label="Información del caso">
+  <section class="cs-header" aria-label="Información del caso">
     <div class="container-main">
-      <div class="case-header-content">
-        <div class="case-header-copy reveal">
-          <div class="case-sector">Caso de negocio</div>
-          <h1 class="case-name">Exitbcn</h1>
-          <div class="case-services">
+      <div class="cs-header-content">
+        <div class="cs-header-copy cs-reveal-left">
+          <div class="cs-header-sector">Caso de negocio</div>
+          <h1 class="cs-header-name">Exitbcn</h1>
+          <div class="cs-header-services">
             <strong>Servicios:</strong> Diseño web, UI/UX, UX Research
           </div>
-          <div class="case-brief">
+          <div class="cs-header-brief">
             Exitbcn es moda premium con alma minorista. Diseñamos un e-commerce que replica la experiencia de compra consultiva de la tienda física, donde la atención al detalle y la curaduría de marcas es el verdadero diferencial.
           </div>
         </div>
-        <div class="case-meta reveal reveal-delay-1">
+        <div class="cs-overview-meta cs-reveal-right cs-reveal-delay-1">
 
-          <div class="case-meta-item">
-            <div class="case-meta-label">Cliente</div>
-            <div class="case-meta-value">Exitbcn</div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Cliente</div>
+            <div class="cs-meta-value">Exitbcn</div>
           </div>
-          <div class="case-meta-item">
-            <div class="case-meta-label">Industria</div>
-            <div class="case-meta-value">E-commerce / Moda</div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Industria</div>
+            <div class="cs-meta-value">E-commerce / Moda</div>
           </div>
-          <div class="case-meta-item">
-            <div class="case-meta-label">Tecnología</div>
-            <div class="case-meta-value">Wordpress</div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Tecnología</div>
+            <div class="cs-meta-value">Wordpress</div>
           </div>
-          <div class="case-meta-item">
-            <div class="case-meta-label">Sitio web</div>
-            <div class="case-meta-value"><a href="https://exitbcn.com" target="_blank" rel="noopener" style="color: var(--mint); text-decoration: none;">exitbcn.com</a></div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Sitio web</div>
+            <div class="cs-meta-value"><a href="https://exitbcn.com" target="_blank" rel="noopener" style="color: var(--mint); text-decoration: none;">exitbcn.com</a></div>
           </div>
 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HERO BROWSER MOCKUP ============ -->
+  <section class="cs-text-section" aria-label="Vista principal del proyecto" style="border-bottom: none; padding-bottom: 0;">
+    <div class="container-main">
+      <div class="cs-hero-mockup cs-reveal">
+        <div class="cs-browser">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="cs-browser-url">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              exitbcn.com
+            </div>
+          </div>
+          <div class="cs-browser-screen">
+            <img src="/img/casos/exitbcn/desktop-hero.webp" alt="Exitbcn homepage - e-commerce de moda premium" loading="lazy" width="1440" height="900" />
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ PROJECT OVERVIEW ============ -->
-  <section class="case-section" aria-label="Descripción del proyecto">
+  <section class="cs-text-section" aria-label="Descripción del proyecto">
     <div class="container-main">
-      <div class="case-section-header reveal">
-        <h2>Descripción del proyecto</h2>
+      <div class="cs-text-section-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>El proyecto</span>
+        <h2 class="section-h2">Descripción del proyecto</h2>
       </div>
 
-      <div class="case-overview-grid">
-        <div class="case-overview-item reveal">
-          <div class="case-overview-label">Reto</div>
-          <div class="case-overview-text">Exitbcn tenía un problema de omnicanalidad paradójico: su tienda física en Granollers era consultiva y cálida, pero online perdía identidad. El e-commerce genérico no reflejaba la curaduría experta, el trato personalizado, ni el DNA de marca. Necesitábamos que comprar online fuera tan intuitivo y confiable como entrar por la puerta.</div>
+      <div class="cs-overview-cards">
+        <div class="cs-overview-card cs-reveal">
+          <div class="cs-overview-card-label">Reto</div>
+          <div class="cs-overview-card-text">Exitbcn tenía un problema de omnicanalidad paradójico: su tienda física en Granollers era consultiva y cálida, pero online perdía identidad. El e-commerce genérico no reflejaba la curaduría experta, el trato personalizado, ni el DNA de marca. Necesitábamos que comprar online fuera tan intuitivo y confiable como entrar por la puerta.</div>
         </div>
-        <div class="case-overview-item reveal">
-          <div class="case-overview-label">Estrategia</div>
-          <div class="case-overview-text">Etnografía digital de shoppers premium, mapeo de customer journey omnicanal, UX research sobre decisiones de compra en moda, y estrategia de filtrado y búsqueda avanzada para simplificar sin empobrecer.</div>
+        <div class="cs-overview-card cs-reveal">
+          <div class="cs-overview-card-label">Estrategia</div>
+          <div class="cs-overview-card-text">Etnografía digital de shoppers premium, mapeo de customer journey omnicanal, UX research sobre decisiones de compra en moda, y estrategia de filtrado y búsqueda avanzada para simplificar sin empobrecer.</div>
         </div>
-        <div class="case-overview-item reveal">
-          <div class="case-overview-label">Diseño</div>
-          <div class="case-overview-text">Diseño minimalista de alto impacto, galería visual de productos con zoom 360º, sistema de filtros inteligentes, checkout de 2 pasos, integración con inventario físico, y experiencia mobile optimizada para navegación táctil.</div>
+        <div class="cs-overview-card cs-reveal">
+          <div class="cs-overview-card-label">Diseño</div>
+          <div class="cs-overview-card-text">Diseño minimalista de alto impacto, galería visual de productos con zoom 360, sistema de filtros inteligentes, checkout de 2 pasos, integración con inventario fisico, y experiencia mobile optimizada para navegación táctil.</div>
         </div>
       </div>
 
-      <div class="case-section-content reveal">
+      <div class="cs-text-content cs-reveal">
         <p>Exitbcn es más que una tienda de moda: es la curación de marcas premium con un enfoque minorista. Ubicada en Granollers, ha construido su reputación siendo el punto de referencia para fashion-forward customers que valoran la asesoría experta. Pero la tienda física tiene límites geográficos. Online, Exitbcn necesitaba escalar sin perder su esencia consultiva.</p>
         <p>El desafío era paradójico: la moda premium vive de experiencias sensoriales (tacto, luz, contexto), pero online necesita rapidez y claridad. Los shoppers de alta gama son exigentes pero no quieren fricción. Investigamos cómo diferentes perfiles (directivos, creativos, estudiantes de moda) exploraban colecciones. El insight: el 60% primero buscaba "vibes" antes de buscar productos específicos.</p>
-        <p>Diseñamos una experiencia donde las imágenes son protagonistas absoluto: galerías de 360º, zoom sin perder calidad, contexto visual (cómo lucen las prendas en movimiento). El checkout es minimalista pero completo: dos pasos, opciones de pago diversas, transparencia total en stock. La búsqueda y filtros fueron pensados no para encontrar, sino para explorar y descubrir.</p>
+        <p>Diseñamos una experiencia donde las imágenes son protagonistas absolutos: galerías de 360º, zoom sin perder cálidad, contexto visual (cómo lucen las prendas en movimiento). El checkout es minimalista pero completo: dos pasos, opciónes de pago diversas, transparencia total en stock. La búsqueda y filtros fueron pensados no para encontrar, sino para explorar y descubrir.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ DEVICE MOCKUPS ============ -->
-
-  <!-- ============ DEVICE MOCKUPS ============ -->
-  <section class="case-section" aria-label="Visualización del proyecto">
+  <!-- ============ DETAIL PHONES ============ -->
+  <section class="cs-text-section" aria-label="Plataforma en detalle">
     <div class="container-main">
-      <div class="case-section-header reveal">
-        <h2>Visualización del proyecto</h2>
-        <p class="case-section-intro">Aquí puedes ver cómo se ve la plataforma en diferentes dispositivos.</p>
+      <div class="cs-text-section-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Diseño responsive</span>
+        <h2 class="section-h2">Plataforma en detalle</h2>
+        <p class="section-sub">Cada sección del e-commerce fue diseñada para comunicar la esencia premium de la marca.</p>
       </div>
 
-      <div class="device-mockups-grid">
-        <div class="device-wrapper reveal">
-          <div class="macbook-frame">
-            <div class="macbook-screen" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); position: relative;">
-              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 20px; text-align: center;">
-                <div style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: #5dffbf; margin-bottom: 8px;">Exitbcn</div>
-                <div style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 16px;">exitbcn.com</div>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
-                  <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Galerías 360º</span>
-                  <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Checkout 2 pasos</span>
-                  <span style="font-size: 0.65rem; padding: 4px 10px; border: 1px solid rgba(93,255,191,0.3); border-radius: 20px; color: rgba(93,255,191,0.7);">Filtros avanzados</span>
-                </div>
-              </div>
-            </div>
-            <div class="macbook-keyboard"></div>
-          </div>
-        </div>
+      <div class="cs-detail-phones">
+        <div class="cs-detail-phone cs-reveal">
+          <div class="cs-phone-frame--sm">
 
-        <div class="device-wrapper reveal reveal-delay-1">
-          <div class="iphone-frame">
-            <div class="iphone-screen" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); position: relative;">
-              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 16px; text-align: center;">
-                <div style="font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: #5dffbf; margin-bottom: 6px;">Exitbcn Mobile</div>
-                <div style="font-size: 0.65rem; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Diseño táctil optimizado</div>
-                <div style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;">
-                  <span style="font-size: 0.55rem; padding: 3px 8px; border: 1px solid rgba(93,255,191,0.3); border-radius: 16px; color: rgba(93,255,191,0.7);">Compra fluida</span>
-                  <span style="font-size: 0.55rem; padding: 3px 8px; border: 1px solid rgba(93,255,191,0.3); border-radius: 16px; color: rgba(93,255,191,0.7);">Premium UX</span>
-                </div>
-              </div>
+            <div class="cs-phone-screen">
+              <img src="/img/casos/exitbcn/mobile-hero.webp" alt="Exitbcn - Homepage móvil" loading="lazy" width="390" height="844" />
             </div>
           </div>
+          <div class="cs-detail-phone-label">Homepage</div>
+        </div>
+        <div class="cs-detail-phone cs-reveal cs-reveal-delay-1">
+          <div class="cs-phone-frame--sm">
+
+            <div class="cs-phone-screen">
+              <img src="/img/casos/exitbcn/mobile-products.webp" alt="Exitbcn - Catálogo móvil" loading="lazy" width="390" height="844" />
+            </div>
+          </div>
+          <div class="cs-detail-phone-label">Catálogo</div>
+        </div>
+        <div class="cs-detail-phone cs-reveal cs-reveal-delay-2">
+          <div class="cs-phone-frame--sm">
+
+            <div class="cs-phone-screen">
+              <img src="/img/casos/exitbcn/mobile-brands.webp" alt="Exitbcn - Marcas móvil" loading="lazy" width="390" height="844" />
+            </div>
+          </div>
+          <div class="cs-detail-phone-label">Marcas</div>
+        </div>
+        <div class="cs-detail-phone cs-reveal cs-reveal-delay-3">
+          <div class="cs-phone-frame--sm">
+
+            <div class="cs-phone-screen">
+              <img src="/img/casos/exitbcn/mobile-scroll3.webp" alt="Exitbcn - Productos móvil" loading="lazy" width="390" height="844" />
+            </div>
+          </div>
+          <div class="cs-detail-phone-label">Productos</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ============ SCROLL BROWSER MOCKUP ============ -->
+  <section class="cs-text-section" aria-label="Scroll del proyecto" style="background: var(--bg-subtle); padding: 4rem 0;">
+    <div class="container-main">
+      <div class="cs-text-section-header cs-reveal" style="text-align: center;">
+        <span class="section-badge" style="margin: 0 auto 1.25rem;"><span class="badge-dot"></span>Live preview</span>
+        <h2 class="section-h2">Recorrido completo de la web</h2>
+        <p class="section-sub" style="margin: 0 auto;">Navegación fluida desde el hero hasta el footer, diseñada para convertir visitantes en compradores.</p>
+      </div>
+
+      <div class="cs-scroll-browser cs-reveal">
+        <div class="cs-browser" style="transform: none;">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="cs-browser-url">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              exitbcn.com
+            </div>
+          </div>
+          <div class="cs-scroll-viewport">
+            <img src="/img/casos/exitbcn/desktop-full.webp" alt="Recorrido completo de exitbcn.com" loading="lazy" width="1440" height="8067" />
+          </div>
+        </div>
+        <div class="cs-scroll-indicator-label">
+          <span class="cs-scroll-indicator-dot"></span>
+          Auto-scroll activo
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MOBILE CAROUSEL ============ -->
+  <section class="cs-mobile-section" aria-label="Experiencia móvil">
+    <div class="container-main">
+      <div class="cs-mobile-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Mobile-first</span>
+        <h2 class="section-h2">Experiencia móvil premium</h2>
+        <p class="section-sub" style="margin: 0 auto;">Navegación táctil optimizada para descubrir colecciones, explorar productos y comprar en dos toques.</p>
+      </div>
+    </div>
+
+    <div class="cs-mobile-track-wrapper">
+      <div class="cs-phone-carousel-track">
+        <!-- First set -->
+        <div class="cs-phone-frame--sm">
+
+          <div class="cs-phone-screen">
+            <img src="/img/casos/exitbcn/mobile-hero.webp" alt="Exitbcn mobile - Homepage" loading="lazy" width="390" height="844" />
+          </div>
+        </div>
+        <div class="cs-phone-frame--sm">
+
+          <div class="cs-phone-screen">
+            <img src="/img/casos/exitbcn/mobile-products.webp" alt="Exitbcn mobile - Productos" loading="lazy" width="390" height="844" />
+          </div>
+        </div>
+        <div class="cs-phone-frame--sm">
+
+          <div class="cs-phone-screen">
+            <img src="/img/casos/exitbcn/mobile-brands.webp" alt="Exitbcn mobile - Marcas" loading="lazy" width="390" height="844" />
+          </div>
+        </div>
+        <div class="cs-phone-frame--sm">
+
+          <div class="cs-phone-screen">
+            <img src="/img/casos/exitbcn/mobile-scroll3.webp" alt="Exitbcn mobile - Catálogo" loading="lazy" width="390" height="844" />
+          </div>
+        </div>
+        <div class="cs-phone-frame--sm">
+
+          <div class="cs-phone-screen">
+            <img src="/img/casos/exitbcn/mobile-scroll4.webp" alt="Exitbcn mobile - Footer" loading="lazy" width="390" height="844" />
+          </div>
+        </div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="cs-phone-frame--sm">
+
+          <div class="cs-phone-screen">
+            <img src="/img/casos/exitbcn/mobile-hero.webp" alt="Exitbcn mobile - Homepage" loading="lazy" width="390" height="844" />
+          </div>
+        </div>
+        <div class="cs-phone-frame--sm">
+
+          <div class="cs-phone-screen">
+            <img src="/img/casos/exitbcn/mobile-products.webp" alt="Exitbcn mobile - Productos" loading="lazy" width="390" height="844" />
+          </div>
+        </div>
+        <div class="cs-phone-frame--sm">
+
+          <div class="cs-phone-screen">
+            <img src="/img/casos/exitbcn/mobile-brands.webp" alt="Exitbcn mobile - Marcas" loading="lazy" width="390" height="844" />
+          </div>
+        </div>
+        <div class="cs-phone-frame--sm">
+
+          <div class="cs-phone-screen">
+            <img src="/img/casos/exitbcn/mobile-scroll3.webp" alt="Exitbcn mobile - Catálogo" loading="lazy" width="390" height="844" />
+          </div>
+        </div>
+        <div class="cs-phone-frame--sm">
+
+          <div class="cs-phone-screen">
+            <img src="/img/casos/exitbcn/mobile-scroll4.webp" alt="Exitbcn mobile - Footer" loading="lazy" width="390" height="844" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ============ DETAILED CONTENT ============ -->
-  <section class="case-section" aria-label="Detalle del proyecto">
+  <section class="cs-text-section" aria-label="Detalle del proyecto">
     <div class="container-main">
-      <div class="case-section-header reveal">
-        <h2>Desarrollo del proyecto</h2>
+      <div class="cs-text-section-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Proceso</span>
+        <h2 class="section-h2">Desarrollo del proyecto</h2>
       </div>
-      <div class="case-section-content reveal">
-        <p>Iniciamos con research en tienda y online. Observamos cómo los clientes físicos interactuaban con las marcas: leían etiquetas, tocaban telas, pedían asesoramiento. Online, ese comportamiento desaparecía. Los shoppers necesitaban poder evaluar calidad, composición, y estilo sin dudas. Diseñamos fichas de producto que son narrativas visuales: descripción detallada, composición, guía de tallas, imágenes en múltiples ángulos.</p>
-        <p>La navegación fue pensada como exploración, no búsqueda urgente. Creamos filtros dinámicos que no saturan sino orientan: por marca, por estilo, por presupuesto, por temporada. El algoritmo sugiere combinaciones. La galería de cada producto es cinemática: zoom sin límite, vistas 360º, detalle de detalles (botones, costuras, texturas).</p>
-        <p>El checkout fue reducido a lo esencial pero sin sacrificar confianza: dos pasos limpios, múltiples formas de pago, cálculo transparente de envíos, opción de compra sin registrarse, y confirmación con detalles claros. La integración con inventario físico fue crítica: si algo se agota en Granollers, también en web.</p>
+      <div class="cs-text-content cs-reveal">
+        <p>Iniciamos con research en tienda y online. Observamos cómo los clientes fisicos interactuaban con las marcas: leían etiquetas, tocaban telas, pedían asesoramiento. Online, ese comportamiento desaparecía. Los shoppers necesitaban poder evaluar cálidad, composición, y estilo sin dudas. Diseñamos fichas de producto que son narrativas visuales: descripción detallada, composición, guia de tallas, imágenes en múltiples ángulos.</p>
+        <p>La navegación fue pensada como exploración, no búsqueda urgente. Creamos filtros dinámicos que no saturan sino orientan: por marca, por estilo, por presupuesto, por temporada. El algoritmo sugiere combinaciones. La galeria de cada producto es cinemática: zoom sin limite, vistas 360, detalle de detalles (botones, costuras, texturas).</p>
+        <p>El checkout fue reducido a lo esencial pero sin sacrificar confianza: dos pasos limpios, múltiples formas de pago, cálculo transparente de envíos, opción de compra sin registrarse, y confirmación con detalles claros. La integración con inventario fisico fue crítica: si algo se agota en Granollers, también en web.</p>
       </div>
     </div>
   </section>
 
   <!-- ============ STATS SECTION ============ -->
-  <section class="case-section" aria-label="Métricas del proyecto">
+  <section class="cs-text-section" aria-label="Métricas del proyecto">
     <div class="container-main">
-      <div class="case-stats-grid">
-        <div class="case-stat-card reveal">
-          <div class="case-stat-number">2</div>
-          <div class="case-stat-label">Pasos en el checkout</div>
+      <div class="cs-stats-grid--cards">
+        <div class="cs-stat-card cs-reveal">
+          <div class="cs-stat-number">2</div>
+          <div class="cs-stat-label">Pasos en el checkout</div>
         </div>
-        <div class="case-stat-card reveal">
-          <div class="case-stat-number">12+</div>
-          <div class="case-stat-label">Vistas por producto</div>
+        <div class="cs-stat-card cs-reveal">
+          <div class="cs-stat-number">12+</div>
+          <div class="cs-stat-label">Vistas por producto</div>
         </div>
-        <div class="case-stat-card reveal">
-          <div class="case-stat-number">100%</div>
-          <div class="case-stat-label">Responsive design</div>
+        <div class="cs-stat-card cs-reveal">
+          <div class="cs-stat-number">100%</div>
+          <div class="cs-stat-label">Responsive design</div>
         </div>
-        <div class="case-stat-card reveal">
-          <div class="case-stat-number">4</div>
-          <div class="case-stat-label">Meses de desarrollo</div>
+        <div class="cs-stat-card cs-reveal">
+          <div class="cs-stat-number">4</div>
+          <div class="cs-stat-label">Meses de desarrollo</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ FINAL THOUGHTS ============ -->
-  <section class="case-section" aria-label="Conclusiones">
+  <section class="cs-text-section" aria-label="Conclusiones">
     <div class="container-main">
-      <div class="case-section-header reveal">
-        <h2>Resultado</h2>
+      <div class="cs-text-section-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Impacto</span>
+        <h2 class="section-h2">Resultado</h2>
       </div>
-      <div class="case-section-content reveal">
-        <p>Exitbcn ahora vende online con la misma confianza que en tienda física. El e-commerce es una extensión natural del DNA minorista, no un canal secundario. Las imágenes son galería de arte, los filtros son consultores inteligentes, el checkout es ceremonia de compra elegante. Los clientes compran sabiendo exactamente qué van a recibir.</p>
+      <div class="cs-text-content cs-reveal">
+        <p>Exitbcn ahora vende online con la misma confianza que en tienda física. El e-commerce es una extensión natural del DNA minorista, no un canal secundario. Las imágenes son galeria de arte, los filtros son consultores inteligentes, el checkout es ceremonia de compra elegante. Los clientes compran sabiendo exactamente que van a recibir.</p>
         <p>El impacto comercial es claro: la tienda física ahora es centro de distribución y experiencia, mientras que la web abre mercado nacional. La experiencia omnicanal es real: clientes compran online y recogen en tienda, o lo inverso. Exitbcn demostró que moda premium online funciona cuando cada detalle refleja el cuidado que define la marca.</p>
       </div>
     </div>
   </section>
 
   <!-- ============ EXPERT OPINION ============ -->
-  <section class="sp-expert" aria-label="Opinión experta">
+  <section class="cs-expert" aria-label="Opinión experta">
     <div class="container-main">
-      <div class="sp-expert-layout reveal">
-        <div class="sp-expert-quote">
-          <span class="section-badge">Opinión experta</span>
-          <h2 class="sp-expert-h2">Moda premium online es cuestión de narración visual y confianza. Exitbcn lo demostró</h2>
-          <p>El éxito de este proyecto fue entender que Exitbcn no es "una tienda llevada a web", sino una experiencia completamente nueva con raíces en la consultiva física. Las marcas premium necesitan que cada interacción comunique calidad y cuidado. Desde galerías de 360º hasta checkout minimalista, cada píxel cuenta la historia de una marca que entiende moda. El resultado es omnicanalidad real: tienda física y web son una sola experiencia.</p>
+      <div class="cs-expert-layout cs-reveal-blur">
+        <div class="cs-expert-quote">
+          <span class="section-badge"><span class="badge-dot"></span>Opinión experta</span>
+          <h2 class="cs-expert-h2">Moda premium online es cuestión de narración visual y confianza. Exitbcn lo demostró</h2>
+          <p>El éxito de este proyecto fue entender que Exitbcn no es "una tienda llevada a web", sino una experiencia completamente nueva con raíces en la consultiva física. Las marcas premium necesitan que cada interacción comunique cálidad y cuidado. Desde galerías de 360º hasta checkout minimalista, cada píxel cuenta la historia de una marca que entiende moda. El resultado es omnicanalidad real: tienda física y web son una sola experiencia.</p>
         </div>
-        <div class="sp-expert-author">
-          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="sp-expert-avatar" width="80" height="80" loading="lazy">
+        <div class="cs-expert-author">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="cs-expert-avatar" width="80" height="80" loading="lazy">
           <div>
-            <div class="sp-expert-name">Jordi Expósito</div>
-            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
-            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener" class="sp-expert-linkedin">
+            <div class="cs-expert-name">Jordi Expósito</div>
+            <div class="cs-expert-role">UX/UI & Digital Architecture</div>
+            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener" class="cs-expert-linkedin">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
               Ver en LinkedIn
             </a>
@@ -646,14 +397,12 @@
     </div>
   </section>
 
-  
-
   <!-- ============ CTA FINAL + FORM ============ -->
   <section id="cierre" aria-label="Iniciar proyecto">
     <div class="container-main">
       <div class="cierre-layout">
-        <div class="cierre-copy reveal">
-          <span class="section-badge reveal">Siguiente paso</span>
+        <div class="cierre-copy cs-reveal">
+          <span class="section-badge cs-reveal"><span class="badge-dot"></span>Siguiente paso</span>
           <h2 class="cierre-h2">¿Tienes un <span class="text-gradient-standalone">reto similar</span>?</h2>
           <p class="cierre-sub">El proceso empieza con 5 preguntas y en menos de 24h tienes una valoración.<br><br>Cuéntanos qué estás construyendo.</p>
           <div class="cierre-reasons">
@@ -671,75 +420,98 @@
             </div>
           </div>
         </div>
-        <div class="cierre-form-col reveal reveal-delay-1">
-          <div class="form-gradient-accent"></div>
-          <div class="cierre-form-inner">
-            <div class="form-row">
-              <div class="form-field">
-                <label class="label label-required" for="f-nombre">Nombre</label>
-                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
-              </div>
-              <div class="form-field">
-                <label class="label label-required" for="f-email">Email</label>
-                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label class="label label-required" for="f-tel">Teléfono</label>
-                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
-              </div>
-              <div class="form-field">
-                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
-                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false"
-                  aria-haspopup="listbox">
-                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
-                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
-                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="2.5">
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </button>
-                  <div class="custom-select-panel" role="listbox">
-                    <div class="custom-select-placeholder">Rango aproximado</div>
-                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
-                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
-                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
-                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
-                  </div>
-                </div>
-                <input type="hidden" id="f-presupuesto" name="budget" value="" />
-              </div>
-            </div>
-            <div class="form-field">
-              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
-              <textarea id="f-mensaje" class="input" rows="4"
-                placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
-            </div>
-            <label class="checkbox-row" for="f-privacidad" style="margin-top:1rem;">
-              <input type="checkbox" id="f-privacidad" required />
-              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
-                  Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
-            </label>
-            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn"
-              style="width:100%;justify-content:center;">
-              Cuéntanos tu proyecto
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
-            <p class="form-note">Sin compromiso. Respuesta en menos de 48h laborables.</p>
-            <a href="/form-v3/form-step1.html" style="display:flex;align-items:center;gap:.875rem;margin-top:1.25rem;padding:.875rem 1rem;border:1px dashed var(--border-strong,#2A2A2A);border-radius:12px;background:rgba(93,255,191,.02);text-decoration:none;transition:all .25s;" onmouseover="this.style.borderColor='rgba(93,255,191,.25)';this.style.background='rgba(93,255,191,.04)'" onmouseout="this.style.borderColor='';this.style.background='rgba(93,255,191,.02)'">
-                <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(93,255,191,.12);display:flex;align-items:center;justify-content:center;color:var(--mint);">
-                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10"/></svg>
-                </div>
-                <div style="flex:1;display:flex;flex-direction:column;gap:.125rem;">
-                  <span style="font-size:.8125rem;font-weight:600;color:var(--text-primary);">¿Tu proyecto es urgente?</span>
-                  <span style="font-size:.6875rem;color:var(--text-muted);line-height:1.5;">Cuéntanos más detalles y te enviamos una propuesta completa en 48h.</span>
-                </div>
-                <svg style="flex-shrink:0;color:var(--text-muted);" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-          </div>
+        <div class="cierre-form-col">
+          <div class="cierre-form-inner" id="tp-cta-form">
+<div class="form-gradient-accent"></div>
+<div class="form-card-header">
+  <div class="form-card-title" style="font-size:1.25rem;font-weight:700;color:var(--mint);margin-bottom:.25rem;">Inicia el proyecto</div>
+  <div class="form-card-sub" style="font-size:.85rem;color:var(--text-muted);line-height:1.5;">En menos de 48h laborables tendrás una primera respuesta personalizada.</div>
+</div>
+<form>
+  <input type="text" name="hp_field" id="hp_field" style="position:absolute;left:-9999px;opacity:0;height:0;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+  <div class="form-row">
+    <div class="form-field">
+      <label class="label label-required" for="f-nombre">Nombre</label>
+      <input id="f-nombre" type="text" class="input" placeholder="¿Cómo te llamas?" autocomplete="name" required />
+      <span class="field-error" id="err-nombre"></span>
+    </div>
+    <div class="form-field">
+      <label class="label label-required" for="f-email">Email de empresa</label>
+      <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
+      <span class="field-error" id="err-email"></span>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-field">
+      <label class="label label-required" for="f-tel">Teléfono</label>
+      <input id="f-tel" type="tel" class="input" placeholder="Tu teléfono" autocomplete="tel" required minlength="9" />
+      <span class="field-error" id="err-tel"></span>
+    </div>
+    <div class="form-field">
+      <label class="label label-required" for="f-presupuesto">Inversión estimada</label>
+      <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Inversión estimada">
+        <button type="button" class="custom-select-trigger" aria-label="Selecciona rango de inversión" aria-controls="cs-presupuesto-panel">
+          <span class="custom-select-value">Rango de inversión</span>
+          <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="custom-select-panel" role="listbox" id="cs-presupuesto-panel" aria-label="Opciones de presupuesto">
+          <div class="custom-select-option" role="option" data-value="5k-10k">5.000 € – 10.000 €</div>
+          <div class="custom-select-option" role="option" data-value="10k-15k">10.000 € – 15.000 €</div>
+          <div class="custom-select-option" role="option" data-value="15k-20k">15.000 € – 20.000 €</div>
+          <div class="custom-select-option" role="option" data-value="mas-20k">+ 20.000 €</div>
+        </div>
+      </div>
+      <input type="hidden" id="f-presupuesto" name="presupuesto" />
+      <span class="field-error" id="err-presupuesto"></span>
+    </div>
+  </div>
+  <div class="services-section">
+    <span class="services-label" id="services-label">¿En qué te podemos ayudar?</span>
+    <div class="services-grid" id="services-grid" role="group" aria-labelledby="services-label">
+      <div class="service-card" data-value="Diseño UX/UI" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Diseño UX/UI</span></div>
+      <div class="service-card" data-value="Desarrollo Web" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Desarrollo Web</span></div>
+      <div class="service-card" data-value="Tienda Online" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Tienda Online</span></div>
+      <div class="service-card" data-value="IA y Automatización" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">IA y Automatización</span></div>
+      <div class="service-card" data-value="Consultoría Digital" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Consultoría Digital</span></div>
+      <div class="service-card" data-value="Design Engineer" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Design Engineer</span></div>
+    </div>
+    <input type="hidden" id="f-servicios" name="servicio" />
+  </div>
+  <div class="form-field" style="margin-top:1.25rem;">
+    <label class="label" for="f-mensaje">Cuéntanos qué está pasando</label>
+    <textarea id="f-mensaje" class="input" rows="3" placeholder="Describe brevemente el proyecto. Qué quieres construir, qué problema tienes o qué no está funcionando en tu plataforma actual."></textarea>
+  </div>
+  <input type="hidden" id="f-pagina-origen" name="pagina_origen" />
+  <input type="hidden" id="f-utm-source" name="utm_source" />
+  <input type="hidden" id="f-utm-medium" name="utm_medium" />
+  <input type="hidden" id="f-utm-campaign" name="utm_campaign" />
+  <input type="hidden" id="f-referrer" name="referrer" />
+  <input type="hidden" id="f-timestamp" name="timestamp" />
+  <label class="checkbox-row" id="privacy-row" for="f-privacidad" style="margin-top:1rem;">
+    <input type="checkbox" id="f-privacidad" required />
+    <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+  </label>
+  <span class="field-error" id="err-privacidad"></span>
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAACv1HyITv5ZdYE50" data-theme="dark" data-size="invisible"></div>
+  <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn btn-disabled" style="width:100%;justify-content:center;">
+    Enviar mensaje
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+</form>
+<a href="/form-v3/form-step1.html" class="briefing-banner" style="margin-top:.75rem;">
+  <div class="briefing-banner-icon">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+      <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="12" cy="12" r="10"/>
+    </svg>
+  </div>
+  <div class="briefing-banner-text">
+    <span class="briefing-banner-title">¿Tu proyecto es urgente?</span>
+    <span class="briefing-banner-desc">Cuéntanos más detalles y te enviamos una propuesta completa en 48h.</span>
+  </div>
+  <svg class="briefing-banner-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+</a>
+</div>
         </div>
       </div>
     </div>
@@ -748,14 +520,69 @@
   <!-- Footer placeholder -->
   <div id="tp-footer"></div>
 
-  <script src="/js/components.js"></script>
+  <script src="/js/components.js?v=27"></script>
   <script>
-    TP.navbar('casos-de-negocio');
-    TP.footer();
-    TP.initJS();
+    try{try{TP.navbar('casos-de-negocio');}catch(e){}}catch(e){console.warn("TP.navbar:",e);}
+    try{try{TP.footer();}catch(e){}}catch(e){console.warn("TP.footer:",e);}
+    try{try{/* ctaForm inline */;}catch(e){}}catch(e){console.warn("TP.ctaForm:",e);}
+    try{try{TP.initJS();}catch(e){}}catch(e){console.warn("TP.initJS:",e);}
   </script>
   <script src="/js/service-page.js" defer></script>
   <script src="/js/supabase-forms.js" defer></script>
+  <script src="/js/form-validation.js" defer></script>
+  <script>
+    (function () {
+      /* ── Scroll Reveal — IntersectionObserver ── */
+      var revealEls = document.querySelectorAll('.cs-reveal, .cs-reveal-scale, .cs-reveal-left, .cs-reveal-right, .cs-reveal-blur, .cs-stagger, .cs-line-draw');
+      if (revealEls.length) {
+        requestAnimationFrame(function () {
+          revealEls.forEach(function (el) {
+            var rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              el.classList.add('visible');
+            }
+          });
+        });
+        var revealObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              revealObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) {
+          if (!el.classList.contains('visible')) revealObs.observe(el);
+        });
+      }
+    })();
+  </script>
+
+  <!-- Jordan — Agente Conversacional Tres Puntos -->
+  <script>
+  window.JordanConfig = {
+    webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
+    calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
+    avatar: '/assets/jordan/jordan-avatar.png',
+    avatarVideo: '/assets/jordan/jordan-avatar-video.mp4',
+    position: 'right',
+    rules: [
+      { pattern: '/blog/*', show: false },
+      { pattern: '/checkout/*', show: false },
+      { pattern: '/login', show: false },
+      { pattern: '/wp-admin/*', show: false },
+      { pattern: '/politica-*', show: false },
+      { pattern: '/aviso-legal', show: false },
+      { pattern: '/servicios/*', show: true, proactive: true, delay: 5 },
+      { pattern: '/contacto', show: true, proactive: true, delay: 5 },
+      { pattern: '/casos/*', show: true, proactive: true, delay: 5 },
+      { pattern: '/', show: true, proactive: true, delay: 5 },
+      { pattern: '*', show: true, proactive: true, delay: 5 }
+    ]
+  };
+  </script>
+  <script async src="/assets/jordan/jordan-widget-v5.js"></script>
+
 </body>
 
 </html>

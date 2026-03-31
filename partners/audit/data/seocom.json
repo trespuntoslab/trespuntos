@@ -1,0 +1,157 @@
+{
+  "agencia": "SEOCOM",
+  "web": "seocom.agency",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Propuesta de valor",
+          "titulo": "Claim \"el SEO está en nuestro ADN\" potente pero necesita soporte visual",
+          "detalle": "SEOCOM tiene un claim diferenciador fuerte con 25 años de experiencia y +500 clientes. <strong>Sin embargo, estos datos de autoridad deben visualizarse de forma impactante en el hero</strong> con contadores animados, logos de clientes y métricas de resultado que refuercen instantáneamente la credibilidad."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Arquitectura de conversión",
+          "titulo": "Múltiples marcas internas que fragmentan el mensaje",
+          "detalle": "SEOCOM gestiona submarcas como Roianalytics.agency para YouTube, lo que puede confundir al visitante. <strong>La arquitectura de marca debería simplificarse bajo un paraguas único que comunique toda la oferta sin redirigir a dominios externos</strong>, evitando fugas de tráfico y dispersión del mensaje."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Journey del usuario",
+          "titulo": "Falta de contenido interactivo que enganche al visitante",
+          "detalle": "Para una agencia con 25 años de expertise, la web debería ofrecer herramientas de autoservicio. <strong>Un diagnóstico SEO rápido, una calculadora de ROI o un test de visibilidad web capturaría leads cualificados</strong> y demostraría competencia técnica de forma inmediata."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Personalización",
+          "titulo": "Experiencia de usuario uniforme sin adaptación por perfil",
+          "detalle": "Con +500 clientes de múltiples sectores, la web trata a todos los visitantes igual. <strong>Implementar segmentación por sector o tamaño de empresa desde la home permitiría mostrar casos y servicios relevantes</strong> para cada tipo de prospecto, aumentando la conversión."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Modernidad visual",
+          "titulo": "Diseño profesional pero con oportunidad de renovación",
+          "detalle": "La web de SEOCOM transmite profesionalidad y seriedad, acorde con su trayectoria. <strong>Sin embargo, el diseño podría beneficiarse de tendencias actuales como glassmorphism, gradientes sutiles y dark mode</strong> que demostrarían que la agencia evoluciona con los tiempos."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Visual storytelling",
+          "titulo": "Datos de éxito presentes pero sin visualización impactante",
+          "detalle": "Los 25 años de experiencia y +500 clientes son argumentos potentes que merecen una presentación visual a la altura. <strong>Infografías animadas, gráficos de evolución y dashboards interactivos comunicarían estos logros de forma mucho más memorable</strong> que simples textos o números estáticos."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Coherencia entre servicios",
+          "titulo": "Servicios de UX/UI listados pero no reflejados en su propia web",
+          "detalle": "SEOCOM ofrece servicios de User Research, Wireframing, Visual Design y User Testing. <strong>Si su propia web no refleja las mejores prácticas de UX/UI que venden, la credibilidad de esos servicios se resiente</strong>. La web debería ser un showcase vivo de sus capacidades."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Fotografía y recursos",
+          "titulo": "Necesidad de más elementos visuales originales y menos stock",
+          "detalle": "Las agencias consolidadas se benefician enormemente de una identidad visual propia. <strong>Fotografía original del equipo, ilustraciones personalizadas y vídeos de cultura interna humanizarían la marca</strong> y la diferenciarían de competidores que usan los mismos recursos genéricos."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 9.2,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Dominio y branding",
+          "titulo": "El dominio .agency es diferenciador pero puede limitar la percepción",
+          "detalle": "Usar seocom.agency es memorable y temático, pero <strong>algunos usuarios y empresas pueden percibir los TLDs no convencionales como menos confiables que un .com o .es</strong>. Es recomendable tener el .com redirigiendo y monitorizar si el TLD afecta al CTR en SERPs."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido autoridad",
+          "titulo": "Potencial desaprovechado en contenido thought leadership",
+          "detalle": "Con 25 años de experiencia, SEOCOM tiene un capital de conocimiento enorme. <strong>Publicar estudios propios, benchmarks sectoriales y whitepapers con datos exclusivos posicionaría a la agencia como referente absoluto</strong> y generaría link building natural de alta calidad."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "SEO internacional",
+          "titulo": "Estrategia internacional presente pero con margen de optimización",
+          "detalle": "SEOCOM ofrece SEO internacional como servicio. <strong>Su propia web debería ser un ejemplo impecable de implementación multiidioma con hreflang, contenido localizado y URLs segmentadas por mercado</strong> para demostrar la expertise que comercializan."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Amazon y YouTube SEO",
+          "titulo": "Nichos de especialización que merecen más visibilidad orgánica",
+          "detalle": "Los servicios de Amazon SEO y YouTube SEO (vía Roianalytics) son diferenciadores valiosos. <strong>Crear pillar pages potentes para estos nichos con contenido de alta calidad posicionaría a SEOCOM como referente</strong> en estas verticales específicas de alto crecimiento."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 9.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Rendimiento web",
+          "titulo": "Una agencia SEO debe tener Core Web Vitals impecables",
+          "detalle": "Para una agencia que vende SEO técnico como servicio core, tener métricas de rendimiento mediocres en su propia web es una contradicción evidente. <strong>Los Core Web Vitals (LCP < 2.5s, CLS < 0.1, INP < 200ms) deberían estar en verde en todas las páginas</strong> como carta de presentación técnica."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Arquitectura técnica",
+          "titulo": "Subdominios y marcas fragmentan la estrategia técnica",
+          "detalle": "Gestionar roianalytics.agency como dominio separado fragmenta la autoridad de dominio y complica el mantenimiento. <strong>Consolidar todos los servicios bajo seocom.agency con subdirectorios en lugar de subdominios concentraría la autoridad SEO</strong> y simplificaría la infraestructura técnica."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Optimización frontend",
+          "titulo": "Oportunidad de migración a un stack más eficiente",
+          "detalle": "Si la web utiliza un CMS tradicional, existe margen de mejora significativo. <strong>Un enfoque headless o Jamstack con pre-renderizado estático ofrecería tiempos de carga sub-segundo</strong> y una experiencia de usuario superior, además de reducir costes de hosting."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Seguridad y headers",
+          "titulo": "Headers de seguridad probablemente incompletos",
+          "detalle": "Es habitual que las webs de agencias no implementen todos los headers de seguridad recomendados. <strong>CSP, HSTS, X-Frame-Options y Permissions-Policy deberían estar configurados correctamente</strong> para demostrar buenas prácticas técnicas y proteger contra ataques comunes."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Unificar marcas bajo un solo dominio y optimizar Core Web Vitals",
+    "detalle": "Consolidar Roianalytics y otros servicios como secciones de seocom.agency, y alcanzar puntuación verde en todos los Core Web Vitals para ser coherentes con el servicio que venden.",
+    "impacto": "Mayor autoridad de dominio concentrada, mejor posicionamiento orgánico y eliminación de la contradicción entre lo que venden y lo que demuestran."
+  },
+  "_score": 7.6,
+  "_nombre": "Iván",
+  "_icp": "SEO",
+  "resumen": [
+    "SEOCOM opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado seocom.agency en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (7.0/10) es el área más sólida, mientras que Dev & Performance (5.5/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 100,
+      "accessibility": 83,
+      "bestPractices": 92,
+      "seo": 92
+    },
+    "mobile": {
+      "performance": 100,
+      "accessibility": 83,
+      "bestPractices": 92,
+      "seo": 92
+    }
+  }
+}

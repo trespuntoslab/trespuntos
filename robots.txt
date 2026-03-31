@@ -1,23 +1,24 @@
 User-agent: *
 Allow: /
 
-# Block AI crawlers
+# Allow AI crawlers for GEO/AEO visibility
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Block scraping bots (not AI search)
 User-agent: CCBot
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
-User-agent: Googlebot-Extended
 Disallow: /
 
 # Sitemap

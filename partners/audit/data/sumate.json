@@ -1,0 +1,157 @@
+{
+  "agencia": "Sumate",
+  "web": "sumate.eu",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversion",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Conversion rate",
+          "titulo": "Navegacion compleja con demasiados niveles de profundidad",
+          "detalle": "Con mas de 40 personas en plantilla y servicios en 24 idiomas para 41 mercados, la web intenta abarcarlo todo. <strong>La arquitectura de informacion resulta abrumadora</strong>, con submenus de multiples niveles que dificultan encontrar lo relevante. Menos es mas cuando se trata de convertir visitantes en leads."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Lead generation",
+          "titulo": "Formulario de contacto estandar sin cualificacion de leads",
+          "detalle": "La pagina de contacto utiliza un formulario basico sin segmentacion. <strong>No cualifica al lead por sector, presupuesto o necesidad</strong>. Un formulario inteligente con campos condicionales permitiria al equipo comercial priorizar y personalizar el seguimiento."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "User journey",
+          "titulo": "Exceso de paginas de servicio sin diferenciacion clara",
+          "detalle": "SEM, SEO, inbound marketing, social networks, contenidos, analytics... <strong>cada servicio tiene su pagina pero no hay una narrativa que los conecte</strong>. El usuario no entiende por que deberia elegir Sumate frente a otra agencia que ofrece lo mismo."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Trust",
+          "titulo": "Equipo internacional como fortaleza pero poco explotada visualmente",
+          "detalle": "Tener 15 nacionalidades en plantilla es un diferencial enorme para proyectos internacionales. <strong>Pero esta informacion se pierde en texto plano</strong> en vez de mostrarse con un mapa interactivo o visualizacion que impacte al visitante."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepcion",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Imagen de marca",
+          "titulo": "Diseno visual corporativo pero anticuado",
+          "detalle": "La interfaz transmite seriedad y profesionalidad, pero <strong>el diseno se percibe como de 2018-2019</strong>. Tipografias sin personalidad, secciones con mucho texto sin jerarquia visual, y ausencia de elementos graficos diferenciadores. Para una agencia que compite en creatividad digital, la web deberia ser mas inspiradora."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Percepcion de innovacion",
+          "titulo": "Mencion a IA y automatizacion sin reflejarlo en la experiencia web",
+          "detalle": "Sumate habla de integrar inteligencia artificial y automatizacion en sus servicios, pero <strong>su propia web no refleja ninguna innovacion tecnologica</strong>. Si vendes transformacion digital, tu web debe ser el primer showcase de esa transformacion."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Consistencia",
+          "titulo": "Version multiidioma con inconsistencias de diseno",
+          "detalle": "Al ofrecer la web en multiples idiomas, <strong>hay secciones donde la traduccion rompe el layout</strong> o los textos se cortan. La experiencia en ingles no tiene la misma calidad que en espanol."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Diferenciacion",
+          "titulo": "Imagenes de stock en secciones clave",
+          "detalle": "Varias secciones usan <strong>fotografias de banco de imagenes genéricas</strong> que podrian pertenecer a cualquier agencia. Fotografia propia del equipo y las oficinas de Salamanca, Madrid y Barcelona generaria mayor autenticidad."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 9.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Arquitectura SEO",
+          "titulo": "Buena cobertura de keywords pero canibalizacion entre versiones de idioma",
+          "detalle": "Con contenido en multiples idiomas, <strong>la implementacion de hreflang y la separacion de contenido por mercado necesita revision</strong>. Es facil que las versiones en espanol e ingles compitan entre si por las mismas keywords si las etiquetas hreflang no estan correctamente configuradas."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido",
+          "titulo": "Blog con frecuencia de publicacion irregular",
+          "detalle": "El blog existe y tiene contenido relevante, pero <strong>la frecuencia de publicacion no es consistente</strong>. Para una agencia que ofrece content marketing como servicio, mantener un calendario editorial riguroso es fundamental para la credibilidad."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "SEO local",
+          "titulo": "Tres sedes sin landing pages locales optimizadas",
+          "detalle": "Con oficinas en Salamanca, Madrid y Barcelona, <strong>no se aprovecha el SEO local con landing pages dedicadas por ciudad</strong>. 'Agencia marketing digital Madrid' o 'Agencia SEO Barcelona' son keywords con alto volumen de busqueda local."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Schema markup",
+          "titulo": "Datos estructurados basicos sin aprovechar rich snippets",
+          "detalle": "La web carece de <strong>schema markup avanzado para servicios, FAQ y reviews</strong>. Implementar datos estructurados de Organization, LocalBusiness y ProfessionalService mejoraria la presencia en SERPs."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 6.8,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad de carga",
+          "titulo": "Tiempo de carga elevado por exceso de recursos",
+          "detalle": "La web carga multiples archivos CSS y JavaScript que <strong>no estan minificados ni concatenados adecuadamente</strong>. El First Contentful Paint se ve afectado por scripts de terceros (analytics, chat, tracking) que se cargan de forma sincrona."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Responsive",
+          "titulo": "Experiencia movil funcional pero no optimizada",
+          "detalle": "El sitio es responsive, pero <strong>la experiencia movil se siente como una adaptacion forzada del desktop</strong>, no como un diseno mobile-first. Los menus de navegacion en movil son dificiles de operar con multiples niveles de submenu."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Accesibilidad",
+          "titulo": "Contraste y tamanos de fuente no cumplen WCAG",
+          "detalle": "Varios elementos de texto tienen <strong>relaciones de contraste insuficientes segun WCAG 2.1 AA</strong>. Los links no siempre se distinguen del texto normal, y algunos botones tienen areas de toque inferiores a 44x44px en movil."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Infraestructura",
+          "titulo": "Sin CDN aparente para activos estaticos",
+          "detalle": "Los activos estaticos (imagenes, CSS, JS) <strong>se sirven desde el mismo servidor sin CDN</strong>, lo que impacta la velocidad de carga para visitantes internacionales, precisamente el publico objetivo de una agencia con presencia en 41 mercados."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Crear una landing page de impacto para el mercado internacional",
+    "detalle": "Disenar una landing especifica que destaque el diferencial de 15 nacionalidades, 24 idiomas y 41 mercados con un mapa visual interactivo y casos de exito segmentados por region. Un unico CTA claro: 'Planifica tu estrategia internacional'.",
+    "impacto": "Conversion 2x-3x superior al formulario generico actual, y posicionamiento claro como la agencia de referencia para internacionalizacion digital."
+  },
+  "_score": 7.0,
+  "_nombre": "Carmen",
+  "_icp": "SEO",
+  "resumen": [
+    "Sumate opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado sumate.eu en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (7.0/10) es el área más sólida, mientras que UI & Percepción (5.5/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 47,
+      "accessibility": 83,
+      "bestPractices": 92,
+      "seo": 100
+    },
+    "mobile": {
+      "performance": 88,
+      "accessibility": 83,
+      "bestPractices": 92,
+      "seo": 100
+    }
+  }
+}

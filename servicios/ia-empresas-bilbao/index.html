@@ -933,6 +933,9 @@
       }
     }
   </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.trespuntoscomunicacion.es/"},{"@type":"ListItem","position":2,"name":"Servicios","item":"https://www.trespuntoscomunicacion.es/servicios/"},{"@type":"ListItem","position":3,"name":"IA para Empresas Bilbao"}]}
+</script>
 </head>
 
 <body>
@@ -1605,76 +1608,97 @@
           </div>
         </div>
         <div class="cierre-form-col reveal reveal-delay-1">
-          <div class="form-gradient-accent"></div>
-          <div class="cierre-form-inner">
-            <div class="form-row">
-              <div class="form-field">
-                <label class="label label-required" for="f-nombre">Nombre</label>
-                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
-              </div>
-              <div class="form-field">
-                <label class="label label-required" for="f-email">Email</label>
-                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label class="label label-required" for="f-tel">Teléfono</label>
-                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
-              </div>
-              <div class="form-field">
-                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
-                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false"
-                  aria-haspopup="listbox">
-                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
-                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
-                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="2.5">
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </button>
-                  <div class="custom-select-panel" role="listbox">
-                    <div class="custom-select-placeholder">Rango aproximado</div>
-                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
-                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
-                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
-                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
-                  </div>
-                </div>
-                <input type="hidden" id="f-presupuesto" name="budget" value="" />
-              </div>
-            </div>
-            <div class="form-field">
-              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
-              <textarea id="f-mensaje" class="input" rows="4"
-                placeholder="Describe brevemente tu proyecto o el problema que buscas resolver con IA..."></textarea>
-            </div>
-            <label class="checkbox-row" for="f-privacidad" style="margin-top:1rem;">
-              <input type="checkbox" id="f-privacidad" required />
-              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de
-                  Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
-            </label>
-            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn"
-              style="width:100%;justify-content:center;">
-              Cuéntanos tu proyecto
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
-            <p class="form-note">Sin compromiso. Respuesta en menos de 24h.</p>
-            <div class="form-divider"
-              style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
-              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
-              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
-              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
-            </div>
-            <a href="/contacto/" class="btn-secondary" style="width:100%;justify-content:center;">
-              Formulario completo (Presupuesto en 24h)
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
+          <div class="cierre-form-inner" id="tp-cta-form">
+<div class="form-gradient-accent"></div>
+<div class="form-card-header">
+  <div class="form-card-title" style="font-size:1.25rem;font-weight:700;color:var(--mint);margin-bottom:.25rem;">Inicia el proyecto</div>
+  <div class="form-card-sub" style="font-size:.85rem;color:var(--text-muted);line-height:1.5;">En menos de 48h laborables tendrás una primera respuesta personalizada.</div>
+</div>
+<form>
+  <input type="text" name="hp_field" id="hp_field" style="position:absolute;left:-9999px;opacity:0;height:0;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+  <div class="form-row">
+    <div class="form-field">
+      <label class="label label-required" for="f-nombre">Nombre</label>
+      <input id="f-nombre" type="text" class="input" placeholder="¿Cómo te llamas?" autocomplete="name" required />
+      <span class="field-error" id="err-nombre"></span>
+    </div>
+    <div class="form-field">
+      <label class="label label-required" for="f-email">Email de empresa</label>
+      <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
+      <span class="field-error" id="err-email"></span>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-field">
+      <label class="label label-required" for="f-tel">Teléfono</label>
+      <input id="f-tel" type="tel" class="input" placeholder="Tu teléfono" autocomplete="tel" required minlength="9" />
+      <span class="field-error" id="err-tel"></span>
+    </div>
+    <div class="form-field">
+      <label class="label label-required" for="f-presupuesto">Inversión estimada</label>
+      <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Inversión estimada">
+        <button type="button" class="custom-select-trigger" aria-label="Selecciona rango de inversión" aria-controls="cs-presupuesto-panel">
+          <span class="custom-select-value">Rango de inversión</span>
+          <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="custom-select-panel" role="listbox" id="cs-presupuesto-panel" aria-label="Opciones de presupuesto">
+          <div class="custom-select-option" role="option" data-value="5k-10k">5.000 € – 10.000 €</div>
+          <div class="custom-select-option" role="option" data-value="10k-15k">10.000 € – 15.000 €</div>
+          <div class="custom-select-option" role="option" data-value="15k-20k">15.000 € – 20.000 €</div>
+          <div class="custom-select-option" role="option" data-value="mas-20k">+ 20.000 €</div>
+        </div>
+      </div>
+      <input type="hidden" id="f-presupuesto" name="presupuesto" />
+      <span class="field-error" id="err-presupuesto"></span>
+    </div>
+  </div>
+  <div class="services-section">
+    <span class="services-label" id="services-label">¿En qué te podemos ayudar?</span>
+    <div class="services-grid" id="services-grid" role="group" aria-labelledby="services-label">
+      <div class="service-card" data-value="Diseño UX/UI" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Diseño UX/UI</span></div>
+      <div class="service-card" data-value="Desarrollo Web" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Desarrollo Web</span></div>
+      <div class="service-card" data-value="Tienda Online" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Tienda Online</span></div>
+      <div class="service-card" data-value="IA y Automatización" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">IA y Automatización</span></div>
+      <div class="service-card" data-value="Consultoría Digital" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Consultoría Digital</span></div>
+      <div class="service-card" data-value="Design Engineer" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Design Engineer</span></div>
+    </div>
+    <input type="hidden" id="f-servicios" name="servicio" />
+  </div>
+  <div class="form-field" style="margin-top:1.25rem;">
+    <label class="label" for="f-mensaje">Cuéntanos qué está pasando</label>
+    <textarea id="f-mensaje" class="input" rows="3" placeholder="Describe brevemente el proyecto. Qué quieres construir, qué problema tienes o qué no está funcionando en tu plataforma actual."></textarea>
+  </div>
+  <input type="hidden" id="f-pagina-origen" name="pagina_origen" />
+  <input type="hidden" id="f-utm-source" name="utm_source" />
+  <input type="hidden" id="f-utm-medium" name="utm_medium" />
+  <input type="hidden" id="f-utm-campaign" name="utm_campaign" />
+  <input type="hidden" id="f-referrer" name="referrer" />
+  <input type="hidden" id="f-timestamp" name="timestamp" />
+  <label class="checkbox-row" id="privacy-row" for="f-privacidad" style="margin-top:1rem;">
+    <input type="checkbox" id="f-privacidad" required />
+    <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+  </label>
+  <span class="field-error" id="err-privacidad"></span>
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAACv1HyITv5ZdYE50" data-theme="dark" data-size="invisible"></div>
+  <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn btn-disabled" style="width:100%;justify-content:center;">
+    Enviar mensaje
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+</form>
+<a href="/form-v3/form-step1.html" class="briefing-banner" style="margin-top:.75rem;">
+  <div class="briefing-banner-icon">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+      <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="12" cy="12" r="10"/>
+    </svg>
+  </div>
+  <div class="briefing-banner-text">
+    <span class="briefing-banner-title">¿Tu proyecto es urgente?</span>
+    <span class="briefing-banner-desc">Cuéntanos más detalles y te enviamos una propuesta completa en 48h.</span>
+  </div>
+  <svg class="briefing-banner-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+</a>
+</div>
         </div>
       </div>
     </div>
@@ -1683,15 +1707,147 @@
   <!-- Footer placeholder -->
   <div id="tp-footer"></div>
 
-  <script src="/js/components.js"></script>
+  <script src="/js/components.js?v=27"></script>
   <script>
-    TP.navbar('ia-generativa');
-    TP.casos();
-    TP.footer();
-    TP.initJS();
+    try{try{TP.navbar('ia-generativa');}catch(e){}}catch(e){console.warn("TP.navbar:",e);}
+    try{try{TP.casos();}catch(e){}}catch(e){console.warn("TP.casos:",e);}
+    try{try{TP.footer();}catch(e){}}catch(e){console.warn("TP.footer:",e);}
+    try{try{/* ctaForm inline */;}catch(e){}}catch(e){console.warn("TP.ctaForm:",e);}
+    try{try{TP.initJS();}catch(e){}}catch(e){console.warn("TP.initJS:",e);}
   </script>
   <script src="/js/service-page.js" defer></script>
   <script src="/js/supabase-forms.js" defer></script>
+
+  <!-- Jordan — Agente Conversacional Tres Puntos -->
+  <script>
+  window.JordanConfig = {
+    webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
+    calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
+    avatar: '/assets/jordan/jordan-avatar.png',
+    avatarVideo: '/assets/jordan/jordan-avatar-video.mp4',
+    position: 'right',
+    rules: [
+      { pattern: '/blog/*', show: false },
+      { pattern: '/checkout/*', show: false },
+      { pattern: '/login', show: false },
+      { pattern: '/wp-admin/*', show: false },
+      { pattern: '/politica-*', show: false },
+      { pattern: '/aviso-legal', show: false },
+      { pattern: '/servicios/*', show: true, proactive: true, delay: 5 },
+      { pattern: '/contacto', show: true, proactive: true, delay: 5 },
+      { pattern: '/casos/*', show: true, proactive: true, delay: 5 },
+      { pattern: '/', show: true, proactive: true, delay: 5 },
+      { pattern: '*', show: true, proactive: true, delay: 5 }
+    ]
+  };
+  </script>
+  <script async src="/assets/jordan/jordan-widget-v5.js"></script>
+
+  <!-- Animated Cursor (Option 2 - stephenscaff) - Fluido con animación en links -->
+  <script defer>
+    (function() {
+      if (window.innerWidth > 1024) {
+        const outerCursor = document.createElement('div');
+        outerCursor.id = 'outer-cursor';
+        const innerCursor = document.createElement('div');
+        innerCursor.id = 'inner-cursor';
+        document.body.appendChild(outerCursor);
+        document.body.appendChild(innerCursor);
+
+        const style = document.createElement('style');
+        style.textContent = `
+          #outer-cursor, #inner-cursor {
+            position: fixed;
+            pointer-events: none;
+            border-radius: 50%;
+            mix-blend-mode: lighten;
+            z-index: 99999;
+          }
+          #outer-cursor {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #5dffbf;
+            top: -20px;
+            left: -20px;
+            transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+            opacity: 0.6;
+          }
+          #inner-cursor {
+            width: 8px;
+            height: 8px;
+            background: #5dffbf;
+            top: -4px;
+            left: -4px;
+            opacity: 1;
+            transition: transform 0.1s ease-out;
+          }
+          #outer-cursor.active {
+            transform: scale(1.5);
+            border-width: 3px;
+            opacity: 0.8;
+          }
+          #inner-cursor.active {
+            transform: scale(0.75);
+          }
+          #outer-cursor.click {
+            transform: scale(0.75);
+            border-width: 2px;
+            opacity: 0.4;
+          }
+          #inner-cursor.click {
+            transform: scale(1.5);
+            background: #5dffbf;
+          }
+          @media(max-width:1024px) {
+            #outer-cursor, #inner-cursor {
+              display: none !important;
+            }
+          }
+        `;
+        document.head.appendChild(style);
+
+        let mouseX = 0, mouseY = 0, outerX = 0, outerY = 0;
+        const smooth = 0.2;
+
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        function animate() {
+          outerX += (mouseX - outerX) * smooth;
+          outerY += (mouseY - outerY) * smooth;
+          outerCursor.style.transform = `translate3d(${outerX}px, ${outerY}px, 0)`;
+          innerCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+          requestAnimationFrame(animate);
+        }
+        animate();
+
+        const interactiveElements = document.querySelectorAll('a, button, [role="button"], .magnetic-btn, input, textarea, select, .caso-card');
+        interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            outerCursor.classList.add('active');
+            innerCursor.classList.add('active');
+          });
+          el.addEventListener('mouseleave', () => {
+            outerCursor.classList.remove('active');
+            innerCursor.classList.remove('active');
+            outerCursor.classList.remove('click');
+            innerCursor.classList.remove('click');
+          });
+          el.addEventListener('mousedown', () => {
+            outerCursor.classList.add('click');
+            innerCursor.classList.add('click');
+          });
+          el.addEventListener('mouseup', () => {
+            outerCursor.classList.remove('click');
+            innerCursor.classList.remove('click');
+          });
+        });
+      }
+    })();
+  </script>
+
 </body>
 
 </html>

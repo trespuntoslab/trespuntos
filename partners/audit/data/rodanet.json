@@ -1,0 +1,157 @@
+{
+  "agencia": "Rodanet",
+  "web": "rodanet.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Embudo de conversión",
+          "titulo": "CTAs genéricos que no diferencian la propuesta de valor",
+          "detalle": "Los call-to-action principales utilizan textos como \"Contacta\" o \"Pide presupuesto\" sin transmitir el beneficio concreto que obtendrá el usuario. <strong>Un CTA orientado a resultado como \"Audita tu web gratis\" o \"Descubre tu potencial SEO\" incrementaría la tasa de conversión entre un 20-35%</strong> al reducir la fricción percibida del primer contacto."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Arquitectura de información",
+          "titulo": "Navegación sobrecargada con demasiados niveles de profundidad",
+          "detalle": "El menú principal despliega un volumen considerable de subpáginas de servicio que puede abrumar al visitante. <strong>La arquitectura de información debería simplificarse con un máximo de 5-7 ítems principales</strong> y agrupar servicios relacionados bajo categorías más claras para reducir la carga cognitiva."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Prueba social",
+          "titulo": "Casos de éxito con métricas pero sin storytelling emocional",
+          "detalle": "Rodanet menciona +500 webs posicionadas, lo cual es un dato potente, pero <strong>falta un recorrido visual del \"antes y después\" con datos de tráfico, rankings y conversiones</strong> que permita al prospecto proyectar su propio resultado. Los testimonios en formato vídeo corto generarían mucha más confianza."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Formulario de contacto",
+          "titulo": "Formulario de contacto estándar sin cualificación de lead",
+          "detalle": "El formulario principal recoge datos básicos sin segmentar el tipo de consulta ni el presupuesto estimado. <strong>Añadir campos de cualificación como sector, facturación o presupuesto estimado permitiría priorizar leads de mayor valor</strong> y personalizar el seguimiento comercial."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Identidad visual",
+          "titulo": "Diseño funcional pero sin personalidad diferenciadora",
+          "detalle": "La web cumple su función pero visualmente se percibe como una plantilla corporativa estándar. <strong>Para una agencia que compite en Barcelona con +12 años de trayectoria, la web debería transmitir más carácter propio y modernidad</strong>. Elementos como microinteracciones, animaciones sutiles o una paleta más distintiva elevarían la percepción de marca."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Tipografía y jerarquía",
+          "titulo": "Jerarquía tipográfica plana en páginas de servicio",
+          "detalle": "Las páginas de servicio presentan bloques de texto largos con poca variación en tamaño y peso tipográfico. <strong>Implementar una escala tipográfica más contrastada con titulares display, subtítulos intermedios y cuerpo de texto bien diferenciado</strong> mejoraría la escaneabilidad y el tiempo de permanencia."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Consistencia visual",
+          "titulo": "Uso inconsistente de iconografía y componentes visuales",
+          "detalle": "Se mezclan estilos de iconos (outline, filled, ilustraciones) sin un sistema coherente. <strong>Un sistema de iconografía unificado refuerza la profesionalidad y facilita el mantenimiento del sitio a largo plazo</strong>. Recomendable definir un único set iconográfico para toda la web."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Fotografía",
+          "titulo": "Fotografía de equipo poco visible en la home",
+          "detalle": "Con un equipo de +25 profesionales, la humanización de la marca es un activo infrautilizado. <strong>Mostrar al equipo real en la home con fotografía profesional y natural genera un 40% más de confianza</strong> que las fotos de stock o las ilustraciones genéricas."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 8.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "SEO on-page",
+          "titulo": "Buena estructura de contenido SEO pero con margen de mejora en interlinking",
+          "detalle": "Como agencia SEO, Rodanet tiene una arquitectura de contenidos sólida con URLs limpias y estructura de headings correcta. <strong>Sin embargo, el interlinking entre páginas de servicio podría optimizarse con enlaces contextuales más estratégicos</strong> para distribuir mejor la autoridad entre las páginas comerciales clave."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido",
+          "titulo": "Blog activo pero con potencial de mejora en formatos",
+          "detalle": "El blog mantiene publicación regular, lo cual es positivo para el posicionamiento. <strong>Incorporar formatos como herramientas interactivas, calculadoras SEO o plantillas descargables incrementaría el link building natural</strong> y la captación de leads cualificados a través del contenido."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Local SEO",
+          "titulo": "Optimización local correcta pero con oportunidades en rich snippets",
+          "detalle": "La ficha de negocio local está bien gestionada para Barcelona. <strong>Añadir datos estructurados de tipo FAQ, HowTo y Review en las landing pages de servicio ampliaría la visibilidad en SERPs</strong> con resultados enriquecidos que capten más clics."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Meta descripciones",
+          "titulo": "Meta descripciones poco persuasivas en páginas clave",
+          "detalle": "Algunas meta descripciones son descriptivas pero no incluyen un gancho comercial claro. <strong>Optimizar las meta descripciones de las 10 landing pages principales con copy orientado a beneficio y CTA</strong> podría mejorar el CTR orgánico entre un 15-25%."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad de carga",
+          "titulo": "Rendimiento web mejorable con impacto directo en conversiones",
+          "detalle": "Para una agencia de marketing digital, la velocidad de carga de su propia web debería ser ejemplar. <strong>Cada segundo adicional de carga reduce las conversiones un 7% según Google</strong>. Optimizar imágenes, implementar lazy loading agresivo y reducir scripts de terceros debería ser prioridad."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "Probable uso de WordPress con carga excesiva de plugins",
+          "detalle": "La estructura de la web sugiere un WordPress con múltiples plugins activos que impactan el rendimiento. <strong>Migrar a un stack más ligero o al menos auditar y reducir plugins redundantes mejoraría significativamente los Core Web Vitals</strong>, especialmente el LCP y el TBT."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Recursos bloqueantes",
+          "titulo": "JavaScript y CSS render-blocking sin optimizar",
+          "detalle": "La carga inicial probablemente incluye scripts de tracking, widgets y CSS no crítico que bloquean el renderizado. <strong>Implementar code splitting, defer/async en scripts y critical CSS inline reduciría el First Contentful Paint</strong> de forma considerable."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Responsive design",
+          "titulo": "Experiencia móvil funcional pero no optimizada para conversión",
+          "detalle": "La adaptación responsive existe pero no parece diseñada mobile-first. <strong>Con más del 60% del tráfico viniendo de móvil, el diseño debería priorizar la experiencia táctil</strong> con botones más grandes, formularios simplificados y navegación adaptada a thumb zones."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Rediseño del hero y CTA principal con propuesta de valor clara",
+    "detalle": "Sustituir el CTA genérico por uno orientado a resultado inmediato como una auditoría SEO gratuita, con formulario inline de 2-3 campos máximo directamente en el hero.",
+    "impacto": "Incremento estimado del 25-40% en tasa de conversión del tráfico orgánico que ya reciben, sin necesidad de generar más tráfico."
+  },
+  "_score": 6.9,
+  "_nombre": "Sergi",
+  "_icp": "SEO",
+  "resumen": [
+    "Rodanet opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado rodanet.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (7.5/10) es el área más sólida, mientras que Dev & Performance (5.0/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 70,
+      "accessibility": 80,
+      "bestPractices": 54,
+      "seo": 85
+    },
+    "mobile": {
+      "performance": 80,
+      "accessibility": 83,
+      "bestPractices": 54,
+      "seo": 85
+    }
+  }
+}

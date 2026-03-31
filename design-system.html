@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System — Tres Puntos</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+
+  <style>
+    /* ═══ Design System Showcase Layout ═══ */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      cursor: auto !important;
+    }
+
+    a, button, input, textarea, select, label { cursor: auto !important; }
+    a:hover, button:hover { cursor: pointer !important; }
+    #custom-cursor { display: none !important; }
+
+    /* ── Sidebar Nav ── */
+    .ds-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      min-height: 100vh;
+    }
+
+    .ds-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 240px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 2rem 1.25rem;
+      background: var(--bg-surface);
+      border-right: 1px solid var(--border-base);
+      z-index: 50;
+    }
+
+    .ds-sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: .5rem;
+      text-decoration: none;
+    }
+
+    .ds-sidebar-logo svg { height: 24px; width: auto; }
+
+    .ds-sidebar-title {
+      font-family: var(--font-heading);
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -.01em;
+    }
+
+    .ds-sidebar-version {
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .ds-nav-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .ds-nav-label {
+      font-size: .6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text-muted);
+      margin-bottom: .5rem;
+      padding-left: .5rem;
+    }
+
+    .ds-nav-link {
+      display: block;
+      padding: .4rem .75rem;
+      font-size: .8rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      transition: all .15s;
+      margin-bottom: 1px;
+    }
+
+    .ds-nav-link:hover { color: var(--text-primary); background: rgba(255,255,255,.04); }
+    .ds-nav-link.active { color: var(--mint); background: rgba(93,255,191,.06); }
+
+    /* ── Main Content ── */
+    .ds-main {
+      grid-column: 2;
+      padding: 3rem 4rem 6rem;
+      max-width: 960px;
+    }
+
+    /* ── Section styles ── */
+    .ds-section {
+      margin-bottom: 5rem;
+      scroll-margin-top: 2rem;
+    }
+
+    .ds-section-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin-bottom: .5rem;
+    }
+
+    .ds-section-desc {
+      font-size: .875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .ds-subsection {
+      margin-bottom: 2.5rem;
+    }
+
+    .ds-subsection-title {
+      font-family: var(--font-heading);
+      font-size: .875rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border-base);
+    }
+
+    /* ── Swatch Grid ── */
+    .ds-swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: .75rem;
+    }
+
+    .ds-swatch {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-base);
+      cursor: pointer;
+      transition: border-color .2s, transform .15s;
+    }
+
+    .ds-swatch:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+
+    .ds-swatch-color {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ds-swatch-info {
+      padding: .5rem .75rem;
+      background: var(--bg-surface);
+    }
+
+    .ds-swatch-name {
+      font-family: var(--font-mono);
+      font-size: .65rem;
+      color: var(--text-secondary);
+      margin-bottom: .15rem;
+    }
+
+    .ds-swatch-hex {
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Component Preview Box ── */
+    .ds-preview {
+      padding: 2rem;
+      background: var(--bg-muted);
+      border: 1px solid var(--border-base);
+      border-radius: var(--radius-lg);
+      margin-bottom: 1rem;
+    }
+
+    .ds-preview-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .ds-preview-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .ds-preview-label {
+      font-family: var(--font-mono);
+      font-size: .65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: .35rem;
+    }
+
+    /* ── Code Block ── */
+    .ds-code {
+      font-family: var(--font-mono);
+      font-size: .75rem;
+      color: var(--mint);
+      background: var(--bg-subtle);
+      padding: .15rem .4rem;
+      border-radius: 4px;
+      border: 1px solid var(--border-base);
+    }
+
+    /* ── Typography Scale ── */
+    .ds-type-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: .75rem 0;
+      border-bottom: 1px solid var(--border-base);
+    }
+
+    .ds-type-meta {
+      flex-shrink: 0;
+      width: 120px;
+      font-family: var(--font-mono);
+      font-size: .65rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Radius Scale ── */
+    .ds-radius-grid {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .ds-radius-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .ds-radius-box {
+      width: 64px;
+      height: 64px;
+      background: var(--bg-muted);
+      border: 2px solid var(--mint);
+    }
+
+    .ds-radius-label {
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* ── Elevation Cards ── */
+    .ds-elevation-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .ds-elevation-card {
+      height: 100px;
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .25rem;
+      border: 1px solid var(--border-base);
+    }
+
+    .ds-elevation-label {
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      color: var(--text-muted);
+    }
+
+    .ds-elevation-name {
+      font-size: .7rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    /* ── Animation Grid ── */
+    .ds-anim-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: .75rem;
+    }
+
+    .ds-anim-card {
+      aspect-ratio: 1;
+      background: var(--bg-muted);
+      border: 1px solid var(--border-base);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      cursor: pointer;
+      transition: border-color .2s;
+      overflow: hidden;
+    }
+
+    .ds-anim-card:hover { border-color: rgba(93,255,191,.3); }
+
+    .ds-anim-dot {
+      width: 16px;
+      height: 16px;
+      background: var(--mint);
+      border-radius: 50%;
+      transition: all .3s;
+    }
+
+    .ds-anim-card:hover .ds-anim-dot {
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+    }
+
+    .ds-anim-name {
+      font-family: var(--font-mono);
+      font-size: .55rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Copied Toast ── */
+    .ds-toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--mint);
+      color: var(--text-inverse);
+      font-size: .8rem;
+      font-weight: 600;
+      padding: .5rem 1rem;
+      border-radius: var(--radius-md);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all .2s;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    .ds-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .ds-layout { grid-template-columns: 1fr; }
+      .ds-sidebar { display: none; }
+      .ds-main { grid-column: 1; padding: 2rem 1.5rem 4rem; }
+    }
+
+    @media (max-width: 768px) {
+      .ds-elevation-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── Separator ── */
+    .ds-sep {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(93,255,191,.2), transparent);
+      margin: 3rem 0;
+    }
+
+    /* ═══════════════════════════════════════════
+       LIGHT THEME
+       ═══════════════════════════════════════════ */
+
+    /* ── Theme Toggle ── */
+    .ds-theme-toggle {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .4rem .5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all .3s;
+    }
+
+    .ds-theme-toggle:hover { border-color: rgba(93,255,191,.4); }
+
+    .ds-toggle-track {
+      width: 36px;
+      height: 20px;
+      border-radius: 10px;
+      background: var(--border-strong);
+      position: relative;
+      transition: background .3s;
+    }
+
+    .ds-toggle-thumb {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--text-primary);
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+    }
+
+    .ds-toggle-label {
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      min-width: 32px;
+    }
+
+    /* Active toggle state */
+    [data-theme="light"] .ds-toggle-track { background: #10b981; }
+    [data-theme="light"] .ds-toggle-thumb { transform: translateX(16px); background: #fff; }
+
+    /* ── Light Theme Variables Override ── */
+    [data-theme="light"] {
+      --bg-base: #ffffff;
+      --bg-surface: #f8f9fa;
+      --bg-subtle: #f1f3f5;
+      --bg-muted: #e9ecef;
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --text-inverse: #ffffff;
+      --border-base: #e5e7eb;
+      --border-subtle: #f3f4f6;
+      --border-strong: #d1d5db;
+      --mint: #059669;
+      --mint-hover: #047857;
+      --mint-rgb: 5,150,105;
+      --shadow-elevation: 0 4px 16px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
+      --shadow-brand: 0 0 24px rgba(5,150,105,.15);
+      --gradient-brand: linear-gradient(135deg, #059669 0%, #2563eb 50%, #7c3aed 100%);
+    }
+
+    [data-theme="light"] .ds-sidebar {
+      background: #f8f9fa;
+      border-right-color: #e5e7eb;
+    }
+
+    [data-theme="light"] .ds-nav-link:hover { background: rgba(0,0,0,.04); }
+    [data-theme="light"] .ds-nav-link.active { color: #059669; background: rgba(5,150,105,.08); }
+
+    [data-theme="light"] .ds-swatch { border-color: #d1d5db; }
+    [data-theme="light"] .ds-swatch:hover { border-color: #059669; }
+    [data-theme="light"] .ds-swatch-info { background: #fff; }
+    [data-theme="light"] .ds-swatch-name { color: #111827; }
+    [data-theme="light"] .ds-swatch-hex { color: #6b7280; }
+    [data-theme="light"] .ds-section-title { color: #111827; }
+    [data-theme="light"] .ds-section-desc { color: #6b7280; }
+    [data-theme="light"] .ds-subsection-title { color: #374151; border-bottom-color: #e5e7eb; }
+    [data-theme="light"] .ds-type-row { border-bottom-color: #e5e7eb; }
+    [data-theme="light"] .ds-type-meta { color: #9ca3af; }
+    [data-theme="light"] .ds-preview-label { color: #9ca3af; }
+    [data-theme="light"] .ds-nav-label { color: #9ca3af; }
+    [data-theme="light"] .ds-nav-link { color: #4b5563; }
+    [data-theme="light"] .ds-nav-link:hover { color: #111827; }
+    [data-theme="light"] .ds-sidebar-title { color: #111827; }
+    [data-theme="light"] .ds-sidebar-version { color: #9ca3af; }
+    [data-theme="light"] .ds-elevation-name { color: #374151; }
+    [data-theme="light"] .ds-elevation-label { color: #9ca3af; }
+    [data-theme="light"] .ds-radius-label { color: #9ca3af; }
+    [data-theme="light"] .ds-anim-name { color: #9ca3af; }
+    [data-theme="light"] .ds-preview { background: #f1f3f5; border-color: #e5e7eb; }
+    [data-theme="light"] .ds-code { color: #059669; background: #f1f3f5; border-color: #e5e7eb; }
+    [data-theme="light"] .ds-anim-card { background: #f1f3f5; border-color: #e5e7eb; }
+    [data-theme="light"] .ds-anim-card:hover { border-color: rgba(5,150,105,.4); }
+    [data-theme="light"] .ds-anim-dot { background: #059669; }
+    [data-theme="light"] .ds-radius-box { background: #f1f3f5; border-color: #059669; }
+    [data-theme="light"] .ds-elevation-card { border-color: #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    [data-theme="light"] .ds-sep { background: linear-gradient(to right, transparent, rgba(5,150,105,.2), transparent); }
+    [data-theme="light"] .ds-toast { background: #059669; color: #fff; }
+    [data-theme="light"] .ds-theme-toggle { background: #f8f9fa; border-color: #d1d5db; }
+
+    /* Light theme component overrides */
+    [data-theme="light"] .btn-primary {
+      background: #059669; color: #fff;
+      box-shadow: 0 0 20px rgba(5,150,105,.15);
+    }
+    [data-theme="light"] .btn-primary:hover { background: #047857; box-shadow: 0 0 30px rgba(5,150,105,.25); }
+    [data-theme="light"] .btn-secondary { color: #111827; border-color: #d1d5db; }
+    [data-theme="light"] .btn-secondary:hover { color: #059669; border-color: rgba(5,150,105,.5); }
+    [data-theme="light"] .btn-ghost { color: #059669; }
+
+    [data-theme="light"] .section-badge {
+      background: rgba(5,150,105,.08); border-color: rgba(5,150,105,.2); color: #059669;
+    }
+    [data-theme="light"] .section-badge::before { background: #059669; }
+
+    [data-theme="light"] .input {
+      background: #fff; border-color: #d1d5db; color: #111827;
+    }
+    [data-theme="light"] .input::placeholder { color: #9ca3af; }
+    [data-theme="light"] .input:focus { border-color: #059669; box-shadow: 0 0 0 3px rgba(5,150,105,.1); }
+    [data-theme="light"] .input.input-valid { border-color: rgba(5,150,105,.5); box-shadow: 0 0 0 3px rgba(5,150,105,.08); }
+    [data-theme="light"] .label { color: #374151; }
+    [data-theme="light"] .label-required::after { color: #059669; }
+    [data-theme="light"] .checkbox-row span { color: #4b5563; }
+    [data-theme="light"] .field-error { color: #dc2626; }
+
+    [data-theme="light"] .text-gradient-standalone,
+    [data-theme="light"] .text-gradient .word {
+      background: linear-gradient(45deg, #059669 0%, #2563eb 35%, #7c3aed 70%, #059669 100%);
+      background-size: 300% 300%;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: cyber-aurora 6s ease infinite;
+    }
+
+    [data-theme="light"] .mint { color: #059669; }
+
+    /* Light theme logo swap */
+    [data-theme="light"] .ds-logo-dark { display: none; }
+    [data-theme="light"] .ds-logo-light { display: block; }
+    [data-theme="dark"] .ds-logo-light, .ds-logo-light { display: none; }
+    [data-theme="dark"] .ds-logo-dark, .ds-logo-dark { display: block; }
+
+    /* ── Light Theme Palette Section ── */
+    .ds-light-palette {
+      display: none;
+    }
+    [data-theme="light"] .ds-light-palette { display: block; }
+    [data-theme="light"] .ds-dark-palette { display: none; }
+  </style>
+</head>
+
+<body>
+
+<!-- Theme Toggle -->
+<div class="ds-theme-toggle" id="theme-toggle" onclick="toggleTheme()">
+  <span class="ds-toggle-label" id="theme-label">Dark</span>
+  <div class="ds-toggle-track">
+    <div class="ds-toggle-thumb"></div>
+  </div>
+</div>
+
+<div class="ds-layout">
+
+  <!-- ══════════ SIDEBAR ══════════ -->
+  <aside class="ds-sidebar">
+    <a href="/" class="ds-sidebar-logo">
+      <!-- Dark logo (default) -->
+      <svg class="ds-logo-dark" xmlns="http://www.w3.org/2000/svg" width="80" height="30" viewBox="0 0 261.303 99.928" aria-hidden="true">
+        <g transform="translate(-143.8 -26.1)">
+          <path d="M243.558,44.827a30.774,30.774,0,0,1,23.994,11.412,61.579,61.579,0,0,1,9.364-17.264,49.651,49.651,0,0,0-66.716,0,61.58,61.58,0,0,1,9.364,17.264,31.238,31.238,0,0,1,23.994-11.412Z" transform="translate(30.748 0)" fill="#5dffbf"/>
+          <path d="M355.213,26.1a49.114,49.114,0,0,0-33.358,12.875,45.236,45.236,0,0,0-7.023,7.9,49.619,49.619,0,0,0-9.364,28.969,31.1,31.1,0,0,1-31.017,31.163A30.774,30.774,0,0,1,250.457,95.6a31.275,31.275,0,0,1-7.023-19.751,49.618,49.618,0,0,0-9.364-28.969,45.233,45.233,0,0,0-7.023-7.9A49.114,49.114,0,0,0,193.691,26.1a49.891,49.891,0,0,0,0,99.781,49.114,49.114,0,0,0,33.358-12.875,61.579,61.579,0,0,1-9.364-17.264,30.876,30.876,0,1,1,7.023-19.459,49.618,49.618,0,0,0,9.364,28.969,45.231,45.231,0,0,0,7.023,7.9,49.651,49.651,0,0,0,66.716,0,45.232,45.232,0,0,0,7.023-7.9A49.619,49.619,0,0,0,324.2,76.283a31.1,31.1,0,1,1,7.023,19.459,61.579,61.579,0,0,1-9.364,17.264,49.113,49.113,0,0,0,33.358,12.875,49.891,49.891,0,1,0,0-99.781Z" transform="translate(0 0)" fill="#5dffbf"/>
+          <circle cx="16.24" cy="16.24" r="16.24" transform="translate(177.158 59.751)" fill="#f8f8f8"/>
+          <circle cx="16.24" cy="16.24" r="16.24" transform="translate(258.065 59.751)" fill="#f8f8f8"/>
+          <circle cx="16.24" cy="16.24" r="16.24" transform="translate(338.973 59.751)" fill="#f8f8f8"/>
+        </g>
+      </svg>
+      <!-- Light logo -->
+      <img class="ds-logo-light" src="/img/logo-trespuntos-light.svg" alt="Tres Puntos" height="30" />
+    </a>
+    <div class="ds-sidebar-title">Design System</div>
+    <div class="ds-sidebar-version">v3.0 · Actualizado 20 mar 2026</div>
+
+    <nav>
+      <div class="ds-nav-group">
+        <div class="ds-nav-label">Foundation</div>
+        <a href="#colors" class="ds-nav-link">Colors</a>
+        <a href="#typography" class="ds-nav-link">Typography</a>
+        <a href="#spacing" class="ds-nav-link">Spacing & Radius</a>
+        <a href="#elevation" class="ds-nav-link">Elevation & Shadows</a>
+      </div>
+      <div class="ds-nav-group">
+        <div class="ds-nav-label">Components</div>
+        <a href="#buttons" class="ds-nav-link">Buttons</a>
+        <a href="#badges" class="ds-nav-link">Badges</a>
+        <a href="#forms" class="ds-nav-link">Form Elements</a>
+        <a href="#cards" class="ds-nav-link">Cards</a>
+      </div>
+      <div class="ds-nav-group">
+        <div class="ds-nav-label">Patterns</div>
+        <a href="#animations" class="ds-nav-link">Animations</a>
+        <a href="#utilities" class="ds-nav-link">Utilities</a>
+        <a href="#gradients" class="ds-nav-link">Gradients</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ══════════ MAIN CONTENT ══════════ -->
+  <main class="ds-main">
+
+    <!-- HEADER -->
+    <div style="margin-bottom:4rem;">
+      <span class="section-badge" style="margin-bottom:1rem;">Design System</span>
+      <h1 style="font-family:var(--font-heading);font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin-bottom:1rem;">
+        Tres Puntos<br/><span class="text-gradient-standalone">Design System</span>
+      </h1>
+      <p style="font-size:1rem;color:var(--text-secondary);line-height:1.7;max-width:540px;">
+        Tokens, componentes y patrones visuales de la web de Tres Puntos. Referencia viva que se actualiza con cada cambio en el código.
+      </p>
+    </div>
+
+    <div class="ds-sep"></div>
+
+    <!-- ═══ 1. COLORS ═══ -->
+    <section class="ds-section" id="colors">
+      <h2 class="ds-section-title">Colors</h2>
+      <p class="ds-section-desc">Paleta de color basada en tokens CSS. Click en cualquier swatch para copiar el valor.</p>
+
+      <!-- ── DARK PALETTE ── -->
+      <div class="ds-dark-palette">
+        <div class="ds-subsection">
+          <h3 class="ds-subsection-title">Brand</h3>
+          <div class="ds-swatches">
+            <div class="ds-swatch" onclick="copyColor('#5dffbf','--mint')">
+              <div class="ds-swatch-color" style="background:#5dffbf;"></div>
+              <div class="ds-swatch-info"><div class="ds-swatch-name">--mint</div><div class="ds-swatch-hex">#5dffbf</div></div>
+            </div>
+            <div class="ds-swatch" onclick="copyColor('#49e6a8','--mint-hover')">
+              <div class="ds-swatch-color" style="background:#49e6a8;"></div>
+              <div class="ds-swatch-info"><div class="ds-swatch-name">--mint-hover</div><div class="ds-swatch-hex">#49e6a8</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="ds-subsection">
+          <h3 class="ds-subsection-title">Backgrounds</h3>
+          <div class="ds-swatches">
+            <div class="ds-swatch" onclick="copyColor('#0e0e0e','--bg-base')"><div class="ds-swatch-color" style="background:#0e0e0e;border-bottom:1px solid #2a2a2a;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--bg-base</div><div class="ds-swatch-hex">#0e0e0e</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#141414','--bg-surface')"><div class="ds-swatch-color" style="background:#141414;border-bottom:1px solid #2a2a2a;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--bg-surface</div><div class="ds-swatch-hex">#141414</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#191919','--bg-subtle')"><div class="ds-swatch-color" style="background:#191919;border-bottom:1px solid #2a2a2a;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--bg-subtle</div><div class="ds-swatch-hex">#191919</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#1f1f1f','--bg-muted')"><div class="ds-swatch-color" style="background:#1f1f1f;border-bottom:1px solid #2a2a2a;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--bg-muted</div><div class="ds-swatch-hex">#1f1f1f</div></div></div>
+          </div>
+        </div>
+        <div class="ds-subsection">
+          <h3 class="ds-subsection-title">Text</h3>
+          <div class="ds-swatches">
+            <div class="ds-swatch" onclick="copyColor('#f5f5f5','--text-primary')"><div class="ds-swatch-color" style="background:#f5f5f5;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--text-primary</div><div class="ds-swatch-hex">#f5f5f5</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#b3b3b3','--text-secondary')"><div class="ds-swatch-color" style="background:#b3b3b3;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--text-secondary</div><div class="ds-swatch-hex">#b3b3b3</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#8a8a8a','--text-muted')"><div class="ds-swatch-color" style="background:#8a8a8a;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--text-muted</div><div class="ds-swatch-hex">#8a8a8a</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#0e0e0e','--text-inverse')"><div class="ds-swatch-color" style="background:#0e0e0e;border-bottom:1px solid #2a2a2a;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--text-inverse</div><div class="ds-swatch-hex">#0e0e0e</div></div></div>
+          </div>
+        </div>
+        <div class="ds-subsection">
+          <h3 class="ds-subsection-title">Borders</h3>
+          <div class="ds-swatches">
+            <div class="ds-swatch" onclick="copyColor('#1f1f1f','--border-base')"><div class="ds-swatch-color" style="background:#1f1f1f;border-bottom:1px solid #2a2a2a;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--border-base</div><div class="ds-swatch-hex">#1f1f1f</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#1a1a1a','--border-subtle')"><div class="ds-swatch-color" style="background:#1a1a1a;border-bottom:1px solid #2a2a2a;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--border-subtle</div><div class="ds-swatch-hex">#1a1a1a</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#2a2a2a','--border-strong')"><div class="ds-swatch-color" style="background:#2a2a2a;border-bottom:1px solid #2a2a2a;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--border-strong</div><div class="ds-swatch-hex">#2a2a2a</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── LIGHT PALETTE ── -->
+      <div class="ds-light-palette">
+        <div class="ds-subsection">
+          <h3 class="ds-subsection-title">Brand</h3>
+          <div class="ds-swatches">
+            <div class="ds-swatch" onclick="copyColor('#059669','--mint')"><div class="ds-swatch-color" style="background:#059669;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--mint</div><div class="ds-swatch-hex">#059669</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#047857','--mint-hover')"><div class="ds-swatch-color" style="background:#047857;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--mint-hover</div><div class="ds-swatch-hex">#047857</div></div></div>
+          </div>
+        </div>
+        <div class="ds-subsection">
+          <h3 class="ds-subsection-title">Backgrounds</h3>
+          <div class="ds-swatches">
+            <div class="ds-swatch" onclick="copyColor('#ffffff','--bg-base')"><div class="ds-swatch-color" style="background:#ffffff;border-bottom:1px solid #e5e7eb;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--bg-base</div><div class="ds-swatch-hex">#ffffff</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#f8f9fa','--bg-surface')"><div class="ds-swatch-color" style="background:#f8f9fa;border-bottom:1px solid #e5e7eb;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--bg-surface</div><div class="ds-swatch-hex">#f8f9fa</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#f1f3f5','--bg-subtle')"><div class="ds-swatch-color" style="background:#f1f3f5;border-bottom:1px solid #e5e7eb;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--bg-subtle</div><div class="ds-swatch-hex">#f1f3f5</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#e9ecef','--bg-muted')"><div class="ds-swatch-color" style="background:#e9ecef;border-bottom:1px solid #e5e7eb;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--bg-muted</div><div class="ds-swatch-hex">#e9ecef</div></div></div>
+          </div>
+        </div>
+        <div class="ds-subsection">
+          <h3 class="ds-subsection-title">Text</h3>
+          <div class="ds-swatches">
+            <div class="ds-swatch" onclick="copyColor('#111827','--text-primary')"><div class="ds-swatch-color" style="background:#111827;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--text-primary</div><div class="ds-swatch-hex">#111827</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#4b5563','--text-secondary')"><div class="ds-swatch-color" style="background:#4b5563;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--text-secondary</div><div class="ds-swatch-hex">#4b5563</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#9ca3af','--text-muted')"><div class="ds-swatch-color" style="background:#9ca3af;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--text-muted</div><div class="ds-swatch-hex">#9ca3af</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#ffffff','--text-inverse')"><div class="ds-swatch-color" style="background:#ffffff;border-bottom:1px solid #e5e7eb;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--text-inverse</div><div class="ds-swatch-hex">#ffffff</div></div></div>
+          </div>
+        </div>
+        <div class="ds-subsection">
+          <h3 class="ds-subsection-title">Borders</h3>
+          <div class="ds-swatches">
+            <div class="ds-swatch" onclick="copyColor('#e5e7eb','--border-base')"><div class="ds-swatch-color" style="background:#e5e7eb;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--border-base</div><div class="ds-swatch-hex">#e5e7eb</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#f3f4f6','--border-subtle')"><div class="ds-swatch-color" style="background:#f3f4f6;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--border-subtle</div><div class="ds-swatch-hex">#f3f4f6</div></div></div>
+            <div class="ds-swatch" onclick="copyColor('#d1d5db','--border-strong')"><div class="ds-swatch-color" style="background:#d1d5db;"></div><div class="ds-swatch-info"><div class="ds-swatch-name">--border-strong</div><div class="ds-swatch-hex">#d1d5db</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-sep"></div>
+
+    <!-- ═══ 2. TYPOGRAPHY ═══ -->
+    <section class="ds-section" id="typography">
+      <h2 class="ds-section-title">Typography</h2>
+      <p class="ds-section-desc">Tres familias tipográficas con roles definidos: headings, body y monospace.</p>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Font Families</h3>
+        <div class="ds-preview ds-preview-col" style="gap:1.5rem;">
+          <div>
+            <div class="ds-preview-label">--font-heading · Plus Jakarta Sans</div>
+            <div style="font-family:var(--font-heading);font-size:1.75rem;font-weight:800;letter-spacing:-.03em;">The quick brown fox jumps over</div>
+          </div>
+          <div>
+            <div class="ds-preview-label">--font-body · Inter</div>
+            <div style="font-family:var(--font-body);font-size:1rem;line-height:1.7;">Diseñamos y construimos plataformas digitales pensadas para generar negocio. La experiencia de usuario y la arquitectura técnica trabajan juntas.</div>
+          </div>
+          <div>
+            <div class="ds-preview-label">--font-mono · JetBrains Mono</div>
+            <div style="font-family:var(--font-mono);font-size:.875rem;color:var(--mint);">const score = calculateLeadScore(data);</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Type Scale</h3>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">3rem · 800</div>
+          <div style="font-family:var(--font-heading);font-size:3rem;font-weight:800;letter-spacing:-.04em;line-height:1.1;">Heading XL</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">2.5rem · 800</div>
+          <div style="font-family:var(--font-heading);font-size:2.5rem;font-weight:800;letter-spacing:-.03em;line-height:1.15;">Heading Large</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">1.75rem · 800</div>
+          <div style="font-family:var(--font-heading);font-size:1.75rem;font-weight:800;letter-spacing:-.03em;">Section H2</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">1.25rem · 700</div>
+          <div style="font-family:var(--font-heading);font-size:1.25rem;font-weight:700;">Subsection H3</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">1rem · 400</div>
+          <div style="font-size:1rem;color:var(--text-secondary);line-height:1.7;">Body text — the default paragraph size for readability and comfort.</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">.875rem · 500</div>
+          <div style="font-size:.875rem;font-weight:500;color:var(--text-secondary);">Small text — labels, captions, metadata</div>
+        </div>
+        <div class="ds-type-row">
+          <div class="ds-type-meta">.75rem · 600</div>
+          <div style="font-size:.75rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;">Overline / Micro</div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Gradient Text</h3>
+        <div class="ds-preview">
+          <div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;letter-spacing:-.03em;">
+            Esto es <span class="text-gradient-standalone">texto con gradiente</span> de marca
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-sep"></div>
+
+    <!-- ═══ 3. SPACING & RADIUS ═══ -->
+    <section class="ds-section" id="spacing">
+      <h2 class="ds-section-title">Spacing & Radius</h2>
+      <p class="ds-section-desc">Tokens de espaciado y radio de borde para mantener coherencia visual en toda la interfaz.</p>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Border Radius</h3>
+        <div class="ds-radius-grid">
+          <div class="ds-radius-item">
+            <div class="ds-radius-box" style="border-radius:6px;"></div>
+            <div class="ds-radius-label">--radius-sm<br/>6px</div>
+          </div>
+          <div class="ds-radius-item">
+            <div class="ds-radius-box" style="border-radius:10px;"></div>
+            <div class="ds-radius-label">--radius-md<br/>10px</div>
+          </div>
+          <div class="ds-radius-item">
+            <div class="ds-radius-box" style="border-radius:14px;"></div>
+            <div class="ds-radius-label">--radius-lg<br/>14px</div>
+          </div>
+          <div class="ds-radius-item">
+            <div class="ds-radius-box" style="border-radius:20px;"></div>
+            <div class="ds-radius-label">--radius-xl<br/>20px</div>
+          </div>
+          <div class="ds-radius-item">
+            <div class="ds-radius-box" style="border-radius:24px;"></div>
+            <div class="ds-radius-label">--radius-2xl<br/>24px</div>
+          </div>
+          <div class="ds-radius-item">
+            <div class="ds-radius-box" style="border-radius:9999px;"></div>
+            <div class="ds-radius-label">--radius-full<br/>9999px</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Transitions</h3>
+        <div class="ds-preview ds-preview-col" style="gap:1rem;">
+          <div><span class="ds-code">--transition-fast</span> <span style="color:var(--text-muted);font-size:.8rem;margin-left:.5rem;">0.15s ease</span></div>
+          <div><span class="ds-code">--transition-base</span> <span style="color:var(--text-muted);font-size:.8rem;margin-left:.5rem;">0.25s ease</span></div>
+          <div><span class="ds-code">--transition-spring</span> <span style="color:var(--text-muted);font-size:.8rem;margin-left:.5rem;">0.4s cubic-bezier(0.34, 1.56, 0.64, 1)</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-sep"></div>
+
+    <!-- ═══ 4. ELEVATION ═══ -->
+    <section class="ds-section" id="elevation">
+      <h2 class="ds-section-title">Elevation & Shadows</h2>
+      <p class="ds-section-desc">Capas de profundidad usando diferencias de luminosidad en superficies oscuras.</p>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Surface Layers</h3>
+        <div class="ds-elevation-grid">
+          <div class="ds-elevation-card" style="background:var(--bg-base);">
+            <div class="ds-elevation-name">Base</div>
+            <div class="ds-elevation-label">#0e0e0e</div>
+          </div>
+          <div class="ds-elevation-card" style="background:var(--bg-surface);">
+            <div class="ds-elevation-name">Surface</div>
+            <div class="ds-elevation-label">#141414</div>
+          </div>
+          <div class="ds-elevation-card" style="background:var(--bg-subtle);">
+            <div class="ds-elevation-name">Subtle</div>
+            <div class="ds-elevation-label">#191919</div>
+          </div>
+          <div class="ds-elevation-card" style="background:var(--bg-muted);">
+            <div class="ds-elevation-name">Muted</div>
+            <div class="ds-elevation-label">#1f1f1f</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Shadows</h3>
+        <div class="ds-preview ds-preview-row" style="gap:2rem;">
+          <div style="text-align:center;">
+            <div style="width:120px;height:80px;background:var(--bg-surface);border-radius:var(--radius-md);box-shadow:var(--shadow-elevation);margin-bottom:.75rem;"></div>
+            <div class="ds-radius-label">--shadow-elevation</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="width:120px;height:80px;background:var(--bg-surface);border-radius:var(--radius-md);box-shadow:var(--shadow-brand);margin-bottom:.75rem;"></div>
+            <div class="ds-radius-label">--shadow-brand</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-sep"></div>
+
+    <!-- ═══ 5. BUTTONS ═══ -->
+    <section class="ds-section" id="buttons">
+      <h2 class="ds-section-title">Buttons</h2>
+      <p class="ds-section-desc">Tres variantes de botón para cubrir diferentes niveles de jerarquía visual.</p>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Variants</h3>
+        <div class="ds-preview ds-preview-row">
+          <div>
+            <div class="ds-preview-label">Primary</div>
+            <a class="btn-primary" href="#">
+              Cuéntanos tu proyecto
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div>
+            <div class="ds-preview-label">Secondary</div>
+            <a class="btn-secondary" href="#">
+              Ver casos de éxito
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div>
+            <div class="ds-preview-label">Ghost</div>
+            <a class="btn-ghost" href="#">
+              Ver más
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">States</h3>
+        <div class="ds-preview ds-preview-row">
+          <div>
+            <div class="ds-preview-label">Default</div>
+            <a class="btn-primary" href="#">Botón activo</a>
+          </div>
+          <div>
+            <div class="ds-preview-label">Disabled</div>
+            <a class="btn-primary" href="#" style="opacity:.45;pointer-events:none;filter:grayscale(.3);">Botón disabled</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-sep"></div>
+
+    <!-- ═══ 6. BADGES ═══ -->
+    <section class="ds-section" id="badges">
+      <h2 class="ds-section-title">Badges</h2>
+      <p class="ds-section-desc">Indicadores de sección y estado con animación pulse integrada.</p>
+
+      <div class="ds-preview ds-preview-row" style="gap:1.5rem;">
+        <div>
+          <div class="ds-preview-label">Section Badge</div>
+          <span class="section-badge">Nosotros</span>
+        </div>
+        <div>
+          <div class="ds-preview-label">Section Badge</div>
+          <span class="section-badge">Stack</span>
+        </div>
+        <div>
+          <div class="ds-preview-label">Section Badge</div>
+          <span class="section-badge">Equipo IA</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-sep"></div>
+
+    <!-- ═══ 7. FORM ELEMENTS ═══ -->
+    <section class="ds-section" id="forms">
+      <h2 class="ds-section-title">Form Elements</h2>
+      <p class="ds-section-desc">Componentes de formulario con validación visual, estados de error y estilos de focus.</p>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Text Inputs</h3>
+        <div class="ds-preview" style="max-width:500px;">
+          <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div class="form-field">
+              <label class="label label-required" style="color:var(--text-primary);">Nombre</label>
+              <input type="text" class="input" placeholder="¿Cómo te llamas?" />
+            </div>
+            <div class="form-field">
+              <label class="label label-required" style="color:var(--text-primary);">Email</label>
+              <input type="email" class="input" placeholder="tu@empresa.com" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Input States</h3>
+        <div class="ds-preview" style="max-width:400px;">
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div class="form-field">
+              <div class="ds-preview-label">Default</div>
+              <input type="text" class="input" placeholder="Default state" />
+            </div>
+            <div class="form-field">
+              <div class="ds-preview-label">Focus</div>
+              <input type="text" class="input" value="Focused input" style="border-color:var(--mint);box-shadow:0 0 0 3px rgba(93,255,191,.08);" />
+            </div>
+            <div class="form-field">
+              <div class="ds-preview-label">Valid</div>
+              <input type="text" class="input input-valid" value="Valid input" />
+            </div>
+            <div class="form-field">
+              <div class="ds-preview-label">Error</div>
+              <input type="text" class="input input-error" value="Error input" />
+              <span class="field-error visible" style="display:block;font-size:.75rem;color:#f87171;margin-top:.35rem;opacity:1;transform:none;">Este campo es obligatorio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Textarea</h3>
+        <div class="ds-preview" style="max-width:500px;">
+          <div class="form-field">
+            <label class="label" style="color:var(--text-primary);">Mensaje</label>
+            <textarea class="input" rows="3" placeholder="Describe brevemente tu proyecto..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Checkbox</h3>
+        <div class="ds-preview" style="max-width:500px;">
+          <label class="checkbox-row" style="display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;">
+            <input type="checkbox" style="accent-color:var(--mint);margin-top:.15rem;" />
+            <span style="font-size:.8rem;color:var(--text-secondary);line-height:1.5;">He leído y acepto la Política de Privacidad y el tratamiento de mis datos.</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-sep"></div>
+
+    <!-- ═══ 8. CARDS ═══ -->
+    <section class="ds-section" id="cards">
+      <h2 class="ds-section-title">Cards</h2>
+      <p class="ds-section-desc">Contenedores de contenido con diferentes niveles de complejidad y propósito.</p>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Base Card</h3>
+        <div class="ds-preview">
+          <div style="background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-xl);padding:2rem;max-width:360px;">
+            <h3 style="font-family:var(--font-heading);font-weight:700;font-size:1.1rem;margin-bottom:.5rem;">Card Title</h3>
+            <p style="font-size:.875rem;color:var(--text-secondary);line-height:1.6;">Contenido de la card con texto descriptivo que muestra el estilo base del contenedor.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Card with Gradient Accent</h3>
+        <div class="ds-preview">
+          <div style="background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-xl);overflow:hidden;max-width:360px;position:relative;">
+            <div style="height:3px;background:linear-gradient(90deg,transparent,#5dffbf,#4ea5ff,#c084fc,#5dffbf,transparent);background-size:200% 100%;animation:lineShimmer 10s linear infinite;"></div>
+            <div style="padding:2rem;">
+              <h3 style="font-family:var(--font-heading);font-weight:700;font-size:1.1rem;margin-bottom:.5rem;background:linear-gradient(45deg,#5dffbf,#4ea5ff,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Gradient Card</h3>
+              <p style="font-size:.875rem;color:var(--text-secondary);line-height:1.6;">Card con acento de gradiente animado en el borde superior. Usado en formularios y secciones destacadas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      @keyframes lineShimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Testimonial Card</h3>
+        <div class="ds-preview">
+          <div class="testimonio-card" style="background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-xl);padding:2rem;max-width:400px;">
+            <div style="display:flex;gap:2px;margin-bottom:1rem;">
+              <span style="color:#fbbf24;">★</span><span style="color:#fbbf24;">★</span><span style="color:#fbbf24;">★</span><span style="color:#fbbf24;">★</span><span style="color:#fbbf24;">★</span>
+            </div>
+            <p style="font-size:.9rem;color:var(--text-secondary);line-height:1.7;font-style:italic;margin-bottom:1.25rem;">"Tres Puntos transformó nuestra plataforma. El ROI se triplicó en 6 meses."</p>
+            <div style="display:flex;align-items:center;gap:.75rem;">
+              <div style="width:36px;height:36px;border-radius:50%;background:var(--bg-muted);border:1px solid var(--border-strong);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:var(--mint);">JG</div>
+              <div>
+                <div style="font-size:.8rem;font-weight:600;">Juan García</div>
+                <div style="font-size:.7rem;color:var(--text-muted);">CEO, TechCorp</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-sep"></div>
+
+    <!-- ═══ 9. ANIMATIONS ═══ -->
+    <section class="ds-section" id="animations">
+      <h2 class="ds-section-title">Animations</h2>
+      <p class="ds-section-desc">Biblioteca de animaciones CSS. Hover sobre cada tarjeta para ver la animación en acción.</p>
+
+      <div class="ds-anim-grid">
+        <div class="ds-anim-card" onmouseenter="this.querySelector('.ds-anim-dot').style.animation='fadeUp 1s ease infinite'" onmouseleave="this.querySelector('.ds-anim-dot').style.animation=''">
+          <div class="ds-anim-dot"></div>
+          <div class="ds-anim-name">fadeUp</div>
+        </div>
+        <div class="ds-anim-card" onmouseenter="this.querySelector('.ds-anim-dot').style.animation='pulse 1s ease infinite'" onmouseleave="this.querySelector('.ds-anim-dot').style.animation=''">
+          <div class="ds-anim-dot"></div>
+          <div class="ds-anim-name">pulse</div>
+        </div>
+        <div class="ds-anim-card" onmouseenter="this.querySelector('.ds-anim-dot').style.animation='ping 1.5s ease infinite'" onmouseleave="this.querySelector('.ds-anim-dot').style.animation=''">
+          <div class="ds-anim-dot"></div>
+          <div class="ds-anim-name">ping</div>
+        </div>
+        <div class="ds-anim-card" onmouseenter="this.querySelector('.ds-anim-dot').style.animation='scaleIn .6s ease infinite alternate'" onmouseleave="this.querySelector('.ds-anim-dot').style.animation=''">
+          <div class="ds-anim-dot"></div>
+          <div class="ds-anim-name">scaleIn</div>
+        </div>
+        <div class="ds-anim-card" onmouseenter="this.querySelector('.ds-anim-dot').style.animation='tiltIn 1s ease infinite alternate'" onmouseleave="this.querySelector('.ds-anim-dot').style.animation=''">
+          <div class="ds-anim-dot"></div>
+          <div class="ds-anim-name">tiltIn</div>
+        </div>
+        <div class="ds-anim-card" onmouseenter="this.querySelector('.ds-anim-dot').style.animation='glowPulse 2s ease infinite'" onmouseleave="this.querySelector('.ds-anim-dot').style.animation=''">
+          <div class="ds-anim-dot"></div>
+          <div class="ds-anim-name">glowPulse</div>
+        </div>
+        <div class="ds-anim-card" onmouseenter="this.querySelector('.ds-anim-dot').style.animation='dotPulse 1s ease infinite'" onmouseleave="this.querySelector('.ds-anim-dot').style.animation=''">
+          <div class="ds-anim-dot"></div>
+          <div class="ds-anim-name">dotPulse</div>
+        </div>
+        <div class="ds-anim-card" onmouseenter="this.querySelector('.ds-anim-dot').style.animation='slideInLeft .8s ease infinite alternate'" onmouseleave="this.querySelector('.ds-anim-dot').style.animation=''">
+          <div class="ds-anim-dot"></div>
+          <div class="ds-anim-name">slideInLeft</div>
+        </div>
+        <div class="ds-anim-card" onmouseenter="this.querySelector('.ds-anim-dot').style.animation='slideInRight .8s ease infinite alternate'" onmouseleave="this.querySelector('.ds-anim-dot').style.animation=''">
+          <div class="ds-anim-dot"></div>
+          <div class="ds-anim-name">slideInRight</div>
+        </div>
+        <div class="ds-anim-card">
+          <div class="ds-anim-dot" style="width:60px;height:16px;border-radius:8px;background:var(--gradient-brand);background-size:300% 300%;animation:cyber-aurora 4s ease infinite;"></div>
+          <div class="ds-anim-name">cyber-aurora</div>
+        </div>
+        <div class="ds-anim-card" onmouseenter="this.querySelector('.ds-anim-dot').style.animation='shakeField .45s ease infinite'" onmouseleave="this.querySelector('.ds-anim-dot').style.animation=''">
+          <div class="ds-anim-dot"></div>
+          <div class="ds-anim-name">shake</div>
+        </div>
+        <div class="ds-anim-card" onmouseenter="this.querySelector('.ds-anim-dot').style.animation='blink 1s infinite'" onmouseleave="this.querySelector('.ds-anim-dot').style.animation=''">
+          <div class="ds-anim-dot"></div>
+          <div class="ds-anim-name">blink</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-sep"></div>
+
+    <!-- ═══ 10. GRADIENTS ═══ -->
+    <section class="ds-section" id="gradients">
+      <h2 class="ds-section-title">Gradients</h2>
+      <p class="ds-section-desc">Gradientes de marca para acentos visuales, texto y fondos decorativos.</p>
+
+      <div class="ds-preview ds-preview-col" style="gap:1.5rem;">
+        <div>
+          <div class="ds-preview-label">--gradient-brand</div>
+          <div style="height:48px;border-radius:var(--radius-md);background:var(--gradient-brand);"></div>
+        </div>
+        <div>
+          <div class="ds-preview-label">Cyber Aurora (animated)</div>
+          <div style="height:48px;border-radius:var(--radius-md);background:linear-gradient(135deg,#5dffbf,#4ea5ff,#c084fc,#5dffbf);background-size:300% 300%;animation:cyber-aurora 6s ease infinite;"></div>
+        </div>
+        <div>
+          <div class="ds-preview-label">Shimmer Line</div>
+          <div style="height:3px;background:linear-gradient(90deg,transparent,#5dffbf,#4ea5ff,#c084fc,#5dffbf,transparent);background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:2px;"></div>
+        </div>
+        <div>
+          <div class="ds-preview-label">Separator</div>
+          <div style="height:1px;background:linear-gradient(to right,transparent,rgba(93,255,191,.3),transparent);"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-sep"></div>
+
+    <!-- ═══ 11. UTILITIES ═══ -->
+    <section class="ds-section" id="utilities">
+      <h2 class="ds-section-title">Utilities</h2>
+      <p class="ds-section-desc">Clases de utilidad para scroll reveal, color y layout.</p>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Reveal Animations</h3>
+        <div class="ds-preview ds-preview-col" style="gap:1.5rem;">
+          <div>
+            <div class="ds-preview-label">.reveal (default — fade up)</div>
+            <div class="ds-code">&lt;div class="reveal"&gt;...&lt;/div&gt;</div>
+          </div>
+          <div>
+            <div class="ds-preview-label">.reveal-delay-1 / 2 / 3 (stagger)</div>
+            <div style="display:flex;gap:.5rem;">
+              <div class="ds-code">.reveal-delay-1</div>
+              <span style="color:var(--text-muted);font-size:.75rem;">0.15s</span>
+              <div class="ds-code">.reveal-delay-2</div>
+              <span style="color:var(--text-muted);font-size:.75rem;">0.30s</span>
+              <div class="ds-code">.reveal-delay-3</div>
+              <span style="color:var(--text-muted);font-size:.75rem;">0.45s</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Text Utilities</h3>
+        <div class="ds-preview ds-preview-col" style="gap:1rem;">
+          <div>
+            <div class="ds-preview-label">.mint</div>
+            <span class="mint" style="font-weight:600;">Texto con color mint</span>
+          </div>
+          <div>
+            <div class="ds-preview-label">.text-gradient-standalone</div>
+            <span class="text-gradient-standalone" style="font-family:var(--font-heading);font-size:1.25rem;font-weight:800;">Texto con gradiente animado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Container</h3>
+        <div class="ds-preview">
+          <div class="ds-preview-label">.container-main</div>
+          <div style="font-size:.8rem;color:var(--text-secondary);line-height:1.7;">
+            Max-width: <span class="ds-code">1280px</span> · Padding: <span class="ds-code">0 2rem</span> (desktop) / <span class="ds-code">0 1.25rem</span> (mobile)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border-base);">
+      <p style="font-size:.75rem;color:var(--text-muted);">
+        Tres Puntos Design System v3.0 · Última actualización: 20 marzo 2026 ·
+        <span style="color:var(--mint);">Documento interno — no indexar</span>
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<!-- Toast notification -->
+<div class="ds-toast" id="ds-toast">Copiado al clipboard</div>
+
+<script>
+  // Copy color to clipboard
+  function copyColor(hex, name) {
+    navigator.clipboard.writeText(hex).then(function() {
+      var toast = document.getElementById('ds-toast');
+      toast.textContent = name + ' → ' + hex + ' copiado';
+      toast.classList.add('show');
+      setTimeout(function() { toast.classList.remove('show'); }, 1500);
+    });
+  }
+
+  // Scroll spy for sidebar nav
+  (function() {
+    var links = document.querySelectorAll('.ds-nav-link');
+    var sections = [];
+    links.forEach(function(link) {
+      var id = link.getAttribute('href').replace('#', '');
+      var el = document.getElementById(id);
+      if (el) sections.push({ id: id, el: el, link: link });
+    });
+
+    function updateActive() {
+      var scrollY = window.scrollY + 100;
+      var active = sections[0];
+      sections.forEach(function(s) {
+        if (s.el.offsetTop <= scrollY) active = s;
+      });
+      links.forEach(function(l) { l.classList.remove('active'); });
+      if (active) active.link.classList.add('active');
+    }
+
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
+  })();
+
+  // Theme toggle
+  function toggleTheme() {
+    var html = document.documentElement;
+    var current = html.getAttribute('data-theme') || 'dark';
+    var next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    document.getElementById('theme-label').textContent = next === 'dark' ? 'Dark' : 'Light';
+  }
+
+  // Set initial theme
+  document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+
+</body>
+</html>

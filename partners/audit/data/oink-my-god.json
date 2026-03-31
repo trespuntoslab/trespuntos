@@ -1,0 +1,163 @@
+{
+  "agencia": "Oink My God",
+  "web": "oinkmygod.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversion",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Conversion rate",
+          "titulo": "Exceso de servicios en navegacion sin jerarquia clara",
+          "detalle": "La home presenta un abanico enorme de servicios (SEO, SEM, social media, email marketing, branding, consultoria...) <strong>sin un flujo de conversion definido</strong>. El usuario aterriza y no sabe por donde empezar. Falta un embudo claro que guie desde el pain point hasta la solicitud de presupuesto."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Lead generation",
+          "titulo": "CTAs genericos y poco diferenciados",
+          "detalle": "Los call-to-action se limitan a 'Contacta' o 'Saber mas' sin propuesta de valor concreta. <strong>No hay un CTA principal diferenciado</strong> que destaque sobre el resto. En agencias de este perfil, un CTA como 'Auditoria gratuita' o 'Calcula tu presupuesto' convierte entre 2x y 3x mas."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "User journey",
+          "titulo": "Seccion de escuela de marketing compite con servicios de agencia",
+          "detalle": "Oink My God combina servicios de agencia con una escuela de marketing digital en el mismo sitio. <strong>Esto genera confusion en el user journey</strong>: el visitante que busca contratar servicios se distrae con cursos, y viceversa. Dos propuestas de valor en un mismo dominio diluyen ambas."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Social proof",
+          "titulo": "Portfolio sin metricas de impacto",
+          "detalle": "El portfolio muestra proyectos como el de Aclam, pero <strong>no incluye KPIs ni resultados medibles</strong>. Para una agencia de marketing, no mostrar datos de rendimiento (incremento de trafico, leads, ROAS) es una oportunidad perdida de generar confianza."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Engagement",
+          "titulo": "Shop de recursos sin integracion en el funnel principal",
+          "detalle": "La tienda de recursos digitales existe como seccion aislada. <strong>No se aprovecha como lead magnet</strong> integrado en el recorrido del visitante. Un recurso gratuito bien posicionado en la home podria captar emails de forma sistematica."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepcion",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Imagen de marca",
+          "titulo": "Diseno visual no refleja el posicionamiento premium",
+          "detalle": "La marca Oink My God tiene un nombre memorable y creativo, pero <strong>el diseno web no transmite la sofisticacion que se espera de una agencia de Barcelona y Madrid</strong>. La tipografia, el spacing y la paleta de colores se perciben como genericos. Una agencia creativa necesita una web que sea su mejor caso de exito."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Consistencia visual",
+          "titulo": "Inconsistencia en el sistema de iconografia y cards",
+          "detalle": "Las secciones de servicios utilizan estilos de tarjetas y iconos que <strong>no siguen un sistema de diseno coherente</strong>. Algunos bloques usan iconos flat, otros ilustraciones, y las cards tienen bordes y sombras inconsistentes entre secciones."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Credibilidad",
+          "titulo": "Fotos de equipo y seccion 'Quienes somos' poco actualizada",
+          "detalle": "La pagina de equipo es clave para una agencia boutique. <strong>Las fotografias del equipo no tienen un estilo fotografico unificado</strong>, lo que resta profesionalidad. Un reportaje fotografico consistente refuerza la percepcion de equipo cohesionado."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Modernidad",
+          "titulo": "Ausencia de microinteracciones y animaciones modernas",
+          "detalle": "La web carece de transiciones suaves, hover effects sofisticados o scroll animations. <strong>En 2025, las agencias digitales referentes usan motion design</strong> para transmitir dinamismo y atencion al detalle. La experiencia se siente estatica."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 9.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Trafico organico",
+          "titulo": "Blog con contenido abundante pero estructura SEO mejorable",
+          "detalle": "El blog tiene articulos como 'Marketing para abogados' o 'Podcasts de negocios digitales', indicando una estrategia de contenidos activa. Sin embargo, <strong>la estructura de URLs, headings y enlaces internos no esta optimizada</strong> para maximizar el link juice entre paginas de servicio y contenido editorial."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Posicionamiento local",
+          "titulo": "SEO local poco trabajado para doble sede Barcelona-Madrid",
+          "detalle": "Con oficinas en Barcelona y Madrid, <strong>no se aprovecha el potencial del SEO local</strong> con landing pages especificas por ciudad, schema LocalBusiness diferenciado, ni optimizacion de Google Business Profile integrada en la web."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Indexacion",
+          "titulo": "Paginas de la tienda y la escuela pueden canibalizar keywords",
+          "detalle": "Al tener servicios de agencia, cursos de la escuela, y productos en la shop, <strong>existe riesgo de canibalizacion de keywords</strong> entre paginas que compiten por las mismas busquedas (ej: 'marketing digital Barcelona')."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Autoridad",
+          "titulo": "Lead generation en LinkedIn como servicio pero sin mostrar resultados propios",
+          "detalle": "Ofrecen captacion de leads en LinkedIn como servicio, pero <strong>no muestran su propia autoridad en la plataforma</strong> con metricas o casos de exito de su propio perfil. Predicar con el ejemplo refuerza la credibilidad SEO off-page."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 8.2,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad de carga",
+          "titulo": "WordPress con carga pesada y plugins excesivos",
+          "detalle": "El sitio esta construido con WordPress y <strong>la carga inicial es lenta, con multiples scripts de terceros</strong> (analytics, chat, redes sociales) que bloquean el renderizado. El Largest Contentful Paint probablemente supera los 3 segundos, penalizando tanto UX como posicionamiento."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "Imagenes sin optimizacion moderna",
+          "detalle": "Las imagenes del portfolio y blog <strong>no utilizan formatos modernos como WebP o AVIF</strong>, ni implementan lazy loading de forma consistente. Esto impacta directamente en el LCP y el consumo de datos movil."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Mantenimiento",
+          "titulo": "Dependencia de WordPress para una web corporativa simple",
+          "detalle": "Para una web corporativa con blog, portfolio y formulario de contacto, <strong>WordPress anade complejidad innecesaria</strong>: actualizaciones de seguridad constantes, plugins que se rompen entre si, y una base de codigo dificil de escalar. Un enfoque JAMstack o headless seria mas eficiente."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Seguridad",
+          "titulo": "Posible exposicion de endpoints de WordPress",
+          "detalle": "Las instalaciones estandar de WordPress <strong>exponen la API REST y el directorio wp-admin</strong> por defecto. Sin hardening adecuado, esto supone un vector de ataque comun que una agencia digital deberia mitigar."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Redisenar el hero y el CTA principal con propuesta de valor clara",
+    "detalle": "Sustituir el hero generico por un mensaje directo centrado en el resultado que busca el cliente, con un unico CTA principal tipo 'Solicita tu auditoria gratuita'. Eliminar la competencia entre escuela y agencia en el primer scroll.",
+    "impacto": "Incremento estimado del 40-60% en tasa de conversion de la home, con mejora inmediata en la percepcion de profesionalidad y enfoque."
+  },
+  "_score": 7.4,
+  "_nombre": "Laura",
+  "_icp": "Branding",
+  "resumen": [
+    "Oink My God opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado oinkmygod.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (6.5/10) es el área más sólida, mientras que Dev & Performance (5.0/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 17 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 89,
+      "accessibility": 84,
+      "bestPractices": 58,
+      "seo": 92
+    },
+    "mobile": {
+      "performance": 85,
+      "accessibility": 84,
+      "bestPractices": 58,
+      "seo": 100
+    }
+  }
+}

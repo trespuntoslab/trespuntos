@@ -17,7 +17,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#5dffbf">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Las leyes de UX: el manual invisible del diseño centrado en el usuario | Blog | Tres Puntos</title>
+  <title>Las Leyes de UX: Manual del Diseño Centrado en el Usuario | Blog | Tres Puntos</title>
   <meta name="description" content="Descubre cómo la IA potencia la experiencia de usuario y revoluciona tu diseño web. Tres Puntos, la agencia UX/UI en Barcelona que marca la diferencia." />
   <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario/" />
   <meta property="og:title" content="Las leyes de UX: el manual invisible del diseño centrado en el usuario" />
@@ -46,7 +46,18 @@
       "dateModified": "2024-10-09",
       "author": {
         "@type": "Person",
-        "name": "Jordi Expósito"
+        "name": "Jordi Expósito",
+        "url": "https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/",
+        "sameAs": [
+          "https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/",
+          "https://www.linkedin.com/in/trespuntoscomunicacion/"
+        ],
+        "jobTitle": "Digital Project Lead & UX/UI Designer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Tres Puntos Comunicación",
+          "url": "https://www.trespuntoscomunicacion.es/"
+        }
       },
       "publisher": {
         "@type": "Organization",
@@ -56,6 +67,17 @@
           "url": "https://www.trespuntoscomunicacion.es/img/logo.svg"
         }
       }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.trespuntoscomunicacion.es/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.trespuntoscomunicacion.es/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Las leyes de UX: el manual invisible del diseño centrado en el usuario"}
+      ]
     }
   </script>
 
@@ -70,210 +92,363 @@
   <link rel="stylesheet" href="/css/service-page.css" />
 
   <style>
-    /* ═══ Blog Post Page Styles ═══ */
+    /* ═══ Blog Post Page Styles — v2 ═══ */
 
     /* ── Article Header ── */
     .article-header {
-      padding: 3rem 1.5rem;
-      border-bottom: 1px solid rgba(93, 255, 191, 0.1);
+      padding: 6.5rem 1.5rem 3rem;
+      border-bottom: 1px solid rgba(93, 255, 191, 0.08);
     }
-
     @media (min-width: 768px) {
-      .article-header {
-        padding: 4rem 2rem;
-      }
+      .article-header { padding: 7.5rem 2rem 3rem; }
     }
-
     .article-header-wrapper {
-      max-width: 760px;
+      max-width: 900px;
       margin: 0 auto;
     }
-
     .article-category {
       display: inline-block;
-      padding: 0.375rem 0.875rem;
-      margin-bottom: 1.5rem;
-      background: rgba(93, 255, 191, 0.1);
-      border: 1px solid rgba(93, 255, 191, 0.2);
+      padding: 0.35rem 0.8rem;
+      margin-bottom: 1.25rem;
+      background: rgba(93, 255, 191, 0.08);
+      border: 1px solid rgba(93, 255, 191, 0.15);
       border-radius: 6px;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
       color: var(--mint);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
-
     .article-title {
       font-family: var(--font-display);
-      font-size: 2rem;
+      font-size: 2.25rem;
       font-weight: 800;
-      line-height: 1.2;
-      margin: 0 0 1.5rem 0;
+      line-height: 1.15;
+      margin: 0 0 1.75rem 0;
       color: var(--text-primary);
+      letter-spacing: -0.03em;
     }
-
     @media (min-width: 768px) {
-      .article-title {
-        font-size: 2.5rem;
-      }
+      .article-title { font-size: 2.75rem; }
     }
 
+    /* ── Author Bar ── */
     .article-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 1.25rem;
       align-items: center;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       color: var(--text-secondary);
     }
-
-    .article-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
     .article-meta-author {
       display: flex;
       align-items: center;
       gap: 0.75rem;
     }
-
     .article-meta-avatar {
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background: rgba(93, 255, 191, 0.1);
-      border: 1px solid rgba(93, 255, 191, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      object-fit: cover;
+      border: 2px solid rgba(93, 255, 191, 0.2);
+    }
+    .article-meta-name {
       font-weight: 600;
-      color: var(--mint);
-      font-size: 0.75rem;
+      color: var(--text-primary);
+    }
+    .article-meta-name a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .article-meta-name a:hover { color: var(--mint); }
+    .article-meta-time {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    .article-meta-sep {
+      color: rgba(93,255,191,0.4);
+      font-size: 0.5rem;
     }
 
-    .article-meta-time {
+    /* ── Breadcrumb ── */
+    .article-breadcrumb {
+      margin: 0 0 1.75rem 0;
+      padding: 0;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .article-breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .article-breadcrumb a:hover { color: var(--mint); }
+    .article-breadcrumb-sep {
+      margin: 0 0.4rem;
+      opacity: 0.4;
+    }
+    .article-breadcrumb > span:last-child {
       color: var(--text-secondary);
     }
+
+    /* ── Table of Contents ── */
+    .article-toc {
+      max-width: 900px;
+      margin: 0 auto 0;
+      padding: 1.75rem 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .article-toc { padding: 2rem 2rem; }
+    }
+    .toc-box {
+      background: rgba(93, 255, 191, 0.03);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+    }
+    .toc-title {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--mint);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .toc-title svg { opacity: 0.6; }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .toc-list li {
+      margin: 0;
+    }
+    .toc-list a {
+      display: flex;
+      align-items: baseline;
+      gap: 0.65rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      padding: 0.3rem 0;
+      transition: color 0.2s;
+    }
+    .toc-list a:hover { color: var(--mint); }
+    .toc-list a::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(93,255,191,0.3);
+      flex-shrink: 0;
+      margin-top: 0.45rem;
+      transition: background 0.2s;
+    }
+    .toc-list a:hover::before { background: var(--mint); }
 
     /* ── Article Body ── */
     .article-body {
-      max-width: 760px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 3rem 1.5rem;
+      padding: 2rem 1.5rem 3rem;
     }
-
     @media (min-width: 768px) {
-      .article-body {
-        padding: 4rem 2rem;
-      }
+      .article-body { padding: 2.5rem 2rem 4rem; }
     }
-
     .article-content {
       font-size: 1.0625rem;
-      line-height: 1.8;
-      color: var(--text-primary);
+      line-height: 1.85;
+      color: rgba(245,245,245,0.88);
     }
-
     .article-content h2 {
       font-family: var(--font-display);
-      font-size: 1.75rem;
+      font-size: 1.65rem;
       font-weight: 700;
-      margin: 2rem 0 1rem 0;
+      margin: 3rem 0 1.25rem 0;
+      padding-top: 2rem;
       color: var(--text-primary);
+      letter-spacing: -0.02em;
+      border-top: 1px solid rgba(93,255,191,0.08);
+      position: relative;
     }
-
+    .article-content h2::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--mint);
+    }
     .article-content h3 {
       font-family: var(--font-display);
-      font-size: 1.375rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      margin: 1.75rem 0 0.875rem 0;
+      margin: 2rem 0 0.75rem 0;
       color: var(--text-primary);
+      letter-spacing: -0.01em;
     }
-
     .article-content p {
-      margin: 0 0 1rem 0;
+      margin: 0 0 1.25rem 0;
     }
-
-    .article-content ul,
-    .article-content ol {
-      margin: 1rem 0;
-      padding-left: 1.5rem;
+    .article-content ul, .article-content ol {
+      margin: 1.25rem 0;
+      padding-left: 0;
+      list-style: none;
     }
-
     .article-content li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.65rem;
+      padding-left: 1.5rem;
+      position: relative;
     }
-
+    .article-content ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--mint);
+      opacity: 0.5;
+    }
+    .article-content ol { counter-reset: ol-counter; }
+    .article-content ol li { counter-increment: ol-counter; }
+    .article-content ol li::before {
+      content: counter(ol-counter);
+      position: absolute;
+      left: 0;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mint);
+      opacity: 0.6;
+    }
     .article-content strong {
-      color: var(--text-primary);
+      color: var(--mint);
       font-weight: 600;
     }
-
     .article-content em {
       color: var(--text-secondary);
+      font-style: italic;
     }
-
     .article-content a {
       color: var(--mint);
       text-decoration: none;
-      transition: all 0.3s ease;
-      border-bottom: 1px solid rgba(93, 255, 191, 0.3);
+      border-bottom: 1px solid rgba(93, 255, 191, 0.25);
+      transition: all 0.2s;
     }
-
     .article-content a:hover {
       border-bottom-color: var(--mint);
     }
-
     .article-content blockquote {
-      margin: 1.5rem 0;
-      padding: 1rem 1.5rem;
-      background: rgba(93, 255, 191, 0.05);
+      margin: 2rem 0;
+      padding: 1.25rem 1.5rem;
+      background: rgba(93, 255, 191, 0.04);
       border-left: 3px solid var(--mint);
-      border-radius: 4px;
+      border-radius: 0 10px 10px 0;
       font-style: italic;
       color: var(--text-secondary);
+      line-height: 1.7;
     }
-
     .article-content code {
       font-family: var(--font-mono);
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       background: rgba(93, 255, 191, 0.08);
-      padding: 0.25rem 0.5rem;
+      padding: 0.2rem 0.45rem;
       border-radius: 4px;
       color: var(--mint);
     }
-
     .article-content pre {
-      margin: 1.5rem 0;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(93, 255, 191, 0.1);
-      border-radius: 8px;
+      margin: 1.75rem 0;
+      padding: 1.25rem;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(93, 255, 191, 0.08);
+      border-radius: 10px;
       overflow-x: auto;
     }
-
     .article-content pre code {
       background: none;
       padding: 0;
-      color: var(--mint);
     }
-
     .article-content img {
       max-width: 100%;
       height: auto;
       margin: 2rem 0;
-      border-radius: 8px;
-      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 10px;
+      border: 1px solid rgba(93, 255, 191, 0.08);
     }
 
-    /* ── Article Footer/Divider ── */
+    /* ── Author Card (bottom) ── */
+    .author-card {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+    @media (min-width: 768px) {
+      .author-card { padding: 0 2rem 3rem; }
+    }
+    .author-card-inner {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      padding: 1.5rem;
+      background: rgba(93, 255, 191, 0.03);
+      border: 1px solid rgba(93, 255, 191, 0.1);
+      border-radius: 14px;
+    }
+    .author-card-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(93, 255, 191, 0.2);
+      flex-shrink: 0;
+    }
+    .author-card-info { flex: 1; }
+    .author-card-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin-bottom: 0.15rem;
+    }
+    .author-card-role {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .author-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--mint);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .author-card-link:hover { opacity: 1; }
+    .author-card-link svg { width: 14px; height: 14px; }
+
+    /* ── Divider ── */
     .article-footer-divider {
-      max-width: 760px;
-      margin: 3rem auto;
+      max-width: 900px;
+      margin: 0 auto;
       height: 1px;
-      background: linear-gradient(to right, transparent, rgba(93, 255, 191, 0.2), transparent);
+      background: linear-gradient(to right, transparent, rgba(93, 255, 191, 0.15), transparent);
     }
 
     /* ── Related Articles ── */
@@ -281,109 +456,83 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 3rem 1.5rem;
-      border-top: 1px solid rgba(93, 255, 191, 0.1);
+      border-top: 1px solid rgba(93, 255, 191, 0.08);
     }
-
     @media (min-width: 768px) {
-      .related-articles {
-        padding: 4rem 2rem;
-      }
+      .related-articles { padding: 4rem 2rem; }
     }
-
     .related-articles-title {
       font-family: var(--font-display);
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       font-weight: 700;
       margin: 0 0 2rem 0;
       color: var(--text-primary);
     }
-
     .related-articles-grid {
       display: grid;
-      gap: 2rem;
+      gap: 1.5rem;
       grid-template-columns: 1fr;
     }
-
     @media (min-width: 768px) {
-      .related-articles-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2.5rem;
-      }
+      .related-articles-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
     }
-
     @media (min-width: 1024px) {
-      .related-articles-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      .related-articles-grid { grid-template-columns: repeat(3, 1fr); }
     }
-
     .related-card {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.85rem;
       padding: 1.5rem;
-      background: var(--bg-secondary);
-      border: 1px solid rgba(93, 255, 191, 0.1);
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(93, 255, 191, 0.08);
       border-radius: 12px;
       text-decoration: none;
       color: inherit;
       transition: all 0.3s ease;
     }
-
     .related-card:hover {
-      border-color: var(--mint);
+      border-color: rgba(93, 255, 191, 0.25);
       background: rgba(93, 255, 191, 0.03);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(93, 255, 191, 0.12);
+      transform: translateY(-3px);
     }
-
     .related-card-cat {
       display: inline-block;
-      padding: 0.375rem 0.875rem;
-      background: rgba(93, 255, 191, 0.1);
-      border: 1px solid rgba(93, 255, 191, 0.2);
-      border-radius: 6px;
-      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      background: rgba(93, 255, 191, 0.08);
+      border: 1px solid rgba(93, 255, 191, 0.15);
+      border-radius: 5px;
+      font-size: 0.65rem;
       font-weight: 600;
       color: var(--mint);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       width: fit-content;
     }
-
     .related-card-title {
       font-family: var(--font-display);
-      font-size: 1.125rem;
+      font-size: 1.05rem;
       font-weight: 700;
       line-height: 1.4;
       margin: 0;
       color: var(--text-primary);
       flex-grow: 1;
     }
-
     .related-card-link {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.875rem;
+      gap: 0.4rem;
+      font-size: 0.82rem;
       font-weight: 600;
       color: var(--mint);
-      transition: all 0.3s ease;
+      transition: gap 0.2s;
       width: fit-content;
     }
-
-    .related-card:hover .related-card-link {
-      gap: 0.75rem;
-    }
-
+    .related-card:hover .related-card-link { gap: 0.65rem; }
     .related-card-link svg {
-      width: 16px;
-      height: 16px;
-      stroke: currentColor;
-      stroke-width: 2;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      width: 14px; height: 14px;
+      stroke: currentColor; stroke-width: 2;
+      fill: none; stroke-linecap: round; stroke-linejoin: round;
     }
 
     /* ── CTA Section ── */
@@ -394,13 +543,9 @@
       padding: 3rem 1.5rem;
       text-align: center;
     }
-
     @media (min-width: 768px) {
-      .article-cta {
-        padding: 4rem 2rem;
-      }
+      .article-cta { padding: 4rem 2rem; }
     }
-
     .article-cta h2 {
       font-family: var(--font-display);
       font-size: 1.75rem;
@@ -408,13 +553,9 @@
       margin: 0 0 1.5rem 0;
       color: var(--text-primary);
     }
-
     @media (min-width: 768px) {
-      .article-cta h2 {
-        font-size: 2.25rem;
-      }
+      .article-cta h2 { font-size: 2rem; }
     }
-
     .article-cta-btn {
       display: inline-block;
       padding: 0.875rem 2rem;
@@ -429,41 +570,10 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-
     .article-cta-btn:hover {
       background: var(--mint-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(93, 255, 191, 0.3);
-    }
-
-    /* ── Breadcrumb Navigation ── */
-    .article-breadcrumb {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem 0 1.5rem;
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-    }
-
-    @media (min-width: 768px) {
-      .article-breadcrumb {
-        padding: 1rem 2rem 0 2rem;
-      }
-    }
-
-    .article-breadcrumb a {
-      color: var(--mint);
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .article-breadcrumb a:hover {
-      text-decoration: underline;
-    }
-
-    .article-breadcrumb-sep {
-      margin: 0 0.5rem;
-      color: var(--text-secondary);
+      box-shadow: 0 8px 16px rgba(93, 255, 191, 0.25);
     }
   </style>
 </head>
@@ -471,27 +581,17 @@
 <body class="bg-dark text-light">
   <div id="tp-navbar"></div>
 
-  <!-- Breadcrumb -->
-  <div class="article-breadcrumb">
-    <a href="/">Inicio</a>
-    <span class="article-breadcrumb-sep">/</span>
-    <a href="/blog">Blog</a>
-    <span class="article-breadcrumb-sep">/</span>
-    <span>Las leyes de UX: el manual invisible del diseño centrado en el usuario</span>
-  </div>
 
   <!-- Article Header -->
   <header class="article-header">
     <div class="article-header-wrapper">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="/">Inicio</a><span class="article-breadcrumb-sep">/</span><a href="/blog">Blog</a><span class="article-breadcrumb-sep">/</span><span>Las leyes de UX: el manual invisible del diseño centrado en el usuario</span></nav>
       <div class="article-category">Desarrollo Web</div>
       <h1 class="article-title">Las leyes de UX: el manual invisible del diseño centrado en el usuario</h1>
       <div class="article-meta">
         <div class="article-meta-author">
-          <div class="article-meta-avatar">JE</div>
-          <div>
-            <div style="font-weight: 600; color: var(--text-primary);">Jordi Expósito</div>
-            <div class="article-meta-time">9 de octubre de 2024</div>
-          </div>
+          <img class="article-meta-avatar" src="/img/jordi-exposito.webp" alt="Jordi Expósito" loading="lazy"/>
+          <div><div class="article-meta-name"><a href="https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/" target="_blank" rel="noopener">Jordi Expósito</a></div><div class="article-meta-time">9 de octubre de 2024</div></div>
         </div>
         <div class="article-meta-item">
           <span style="color: var(--mint);">•</span>
@@ -501,66 +601,110 @@
     </div>
   </header>
 
+
+  <!-- Table of Contents -->
+  <div class="article-toc">
+    <div class="toc-box">
+      <div class="toc-title"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h14"/></svg>En este artículo</div>
+      <ol class="toc-list">
+      <li><a href="#section-1">Diseñar es entender cómo pensamos</a></li>
+      <li><a href="#section-2">1. Ley de Hick</a></li>
+      <li><a href="#section-3">2. Ley de Fitts</a></li>
+      <li><a href="#section-4">## 3. Ley de Jakob</a></li>
+      <li><a href="#section-5">4. Ley de Miller</a></li>
+      <li><a href="#section-6">## 5. Ley de Tesler</a></li>
+      <li><a href="#section-7">## 6. Ley de Doherty</a></li>
+      <li><a href="#section-8">## 7. Ley de la Pregnancia</a></li>
+      <li><a href="#section-9">8. Ley de Similitud</a></li>
+      <li><a href="#section-10">9. Ley de Proximidad</a></li>
+      <li><a href="#section-11">10. Efecto de Von Restorff</a></li>
+      <li><a href="#section-12">11. Efecto Zeigarnik</a></li>
+      <li><a href="#section-13">12. Ley de Postel</a></li>
+      <li><a href="#section-14">13. Ley de Pareto (80/20)</a></li>
+      <li><a href="#section-15">14. Ley de Aesthetic-Usability</a></li>
+      <li><a href="#section-16">15. Ley de Ockham</a></li>
+      <li><a href="#section-17">Conclusión</a></li>
+      <li><a href="#section-18">¿Quieres aplicar estas leyes en tu proyecto?</a></li>
+      </ol>
+    </div>
+  </div>
+
   <!-- Article Body -->
   <main class="article-body">
     <article class="article-content">
       <p><strong>Metadescripción SEO:</strong> Guía completa con las 15 leyes más relevantes de UX. Aprende cómo aplicarlas en diseño UX/UI y mejora la experiencia de usuario con ejemplos reales y consejos prácticos.</p>
 
-<h2>Diseñar es entender cómo pensamos</h2>
+<h2 id="section-1">Diseñar es entender cómo pensamos</h2>
 <p>En <strong>Tres Puntos Comunicación</strong>, como <strong>agencia UX/UI en Barcelona</strong>, sabemos que un buen diseño no solo se ve bien: se siente bien. Las <strong>Leyes de UX</strong> explican por qué ciertos patrones, estructuras y microinteracciones funcionan mejor que otros. Y lo hacen apoyándose en la <strong>psicología cognitiva</strong> y el comportamiento humano. Esta guía recoge las 15 leyes más influyentes del <strong>diseño de experiencia de usuario</strong>, con explicaciones claras, ejemplos actuales y su aplicación práctica para profesionales del diseño, desarrollo o marketing digital.</p>
 
-<h2>1. Ley de Hick</h2>
+<h2 id="section-2">1. Ley de Hick</h2>
 <p><strong>Definición:</strong> Cuantas más opciones tiene una persona, más tiempo tarda en decidir. <strong>Fundamento psicológico:</strong> Nuestro cerebro busca eficiencia. Un exceso de alternativas genera ansiedad y parálisis por análisis. <strong>Aplicación UX/UI:</strong> simplifica menús, reduce pasos en flujos de registro o checkout, y muestra solo la información esencial. <strong>Ejemplo:</strong> Netflix limita las sugerencias visibles para evitar saturar al usuario. <em>Insight de agencia UX/UI:</em> en diseño digital, menos siempre comunica más.</p>
 
-<h2>2. Ley de Fitts</h2>
+<h2 id="section-3">2. Ley de Fitts</h2>
 <p><strong>Definición:</strong> El tiempo necesario para alcanzar un objetivo depende del tamaño y la distancia del elemento. <strong>Fundamento psicológico:</strong> El cerebro coordina visión y movimiento; los objetivos grandes y cercanos se alcanzan más rápido. <strong>Aplicación UX/UI:</strong> botones grandes, márgenes amplios y CTA accesibles (especialmente en móvil). <strong>Ejemplo:</strong> los botones inferiores de Instagram están situados en la "zona del pulgar".</p>
 
-<h2>## 3. Ley de Jakob</h2>
+<h2 id="section-4">## 3. Ley de Jakob</h2>
 <p><strong>Definición:</strong> Los usuarios prefieren que tu sitio funcione igual que los que ya conocen. <strong>Aplicación UX/UI:</strong> respeta los patrones comunes (carrito arriba, navegación estándar, formularios familiares). <strong>Ejemplo:</strong> todos los e-commerce mantienen la misma estructura base porque el usuario ya la domina. <em>Insight UX:</em> la innovación debe aportar valor, no confusión.</p>
 
-<h2>4. Ley de Miller</h2>
+<h2 id="section-5">4. Ley de Miller</h2>
 <p><strong>Definición:</strong> La memoria a corto plazo solo puede retener entre 5 y 9 elementos. <strong>Aplicación UX/UI:</strong> agrupa, jerarquiza y usa navegación por pasos. <strong>Ejemplo:</strong> los procesos de reserva de Booking están divididos en tres fases: búsqueda, selección y pago.</p>
 
-<h2>## 5. Ley de Tesler</h2>
+<h2 id="section-6">## 5. Ley de Tesler</h2>
 <p><strong>Definición:</strong> La complejidad no desaparece, solo se redistribuye. <strong>Fundamento:</strong> si simplificas la interfaz, el sistema o el diseñador asumen la carga. <strong>Aplicación UX/UI:</strong> automatiza tareas, prellena formularios, anticipa opciones. <strong>Ejemplo:</strong> el autocompletado de direcciones en Google Maps elimina fricción sin pedir más esfuerzo al usuario.</p>
 
-<h2>## 6. Ley de Doherty</h2>
+<h2 id="section-7">## 6. Ley de Doherty</h2>
 <p><strong>Definición:</strong> La productividad aumenta cuando el sistema y el usuario interactúan a la misma velocidad. <strong>Aplicación UX/UI:</strong> microinteracciones, tiempos de carga cortos y feedback inmediato. <strong>Ejemplo:</strong> animaciones de "guardado" o confirmación instantánea como en Figma o Notion.</p>
 
-<h2>## 7. Ley de la Pregnancia</h2>
+<h2 id="section-8">## 7. Ley de la Pregnancia</h2>
 <p><strong>Definición:</strong> Las personas perciben las formas más simples posibles. <strong>Fundamento psicológico:</strong> el cerebro busca orden y simplicidad visual. <strong>Aplicación UX/UI:</strong> usa jerarquía, espacios y diseño limpio para facilitar el reconocimiento. <strong>Ejemplo:</strong> Apple basa su diseño en la simplicidad perceptual: nada sobra, todo guía.</p>
 
-<h2>8. Ley de Similitud</h2>
+<h2 id="section-9">8. Ley de Similitud</h2>
 <p><strong>Definición:</strong> Los elementos que se parecen se perciben como parte de un mismo grupo. <strong>Aplicación UX/UI:</strong> usa colores, iconos o estilos coherentes para reforzar relaciones visuales. <strong>Ejemplo:</strong> los botones de acciones similares en Gmail comparten color y forma.</p>
 
-<h2>9. Ley de Proximidad</h2>
+<h2 id="section-10">9. Ley de Proximidad</h2>
 <p><strong>Definición:</strong> Los elementos cercanos se perciben relacionados. <strong>Aplicación UX/UI:</strong> usa el espaciado como herramienta de significado. <strong>Ejemplo:</strong> campos de formulario agrupados por sección en lugar de listados caóticos.</p>
 
-<h2>10. Efecto de Von Restorff</h2>
+<h2 id="section-11">10. Efecto de Von Restorff</h2>
 <p><strong>Definición:</strong> El elemento que destaca se recuerda más fácilmente. <strong>Aplicación UX/UI:</strong> resalta la acción principal con contraste visual o movimiento. <strong>Ejemplo:</strong> el botón "Comprar ahora" de Amazon sobresale respecto a otros elementos.</p>
 
-<h2>11. Efecto Zeigarnik</h2>
+<h2 id="section-12">11. Efecto Zeigarnik</h2>
 <p><strong>Definición:</strong> Recordamos mejor las tareas inacabadas. <strong>Aplicación UX/UI:</strong> muestra progreso o recordatorios visuales. <strong>Ejemplo:</strong> LinkedIn anima a completar el perfil mostrando un avance del 80%.</p>
 
-<h2>12. Ley de Postel</h2>
+<h2 id="section-13">12. Ley de Postel</h2>
 <p><strong>Definición:</strong> Sé flexible con lo que recibes, estricto con lo que devuelves. <strong>Aplicación UX/UI:</strong> permite errores razonables del usuario (por ejemplo, formatos de fecha o teléfono). <strong>Ejemplo:</strong> los formularios de Google aceptan múltiples formatos válidos.</p>
 
-<h2>13. Ley de Pareto (80/20)</h2>
+<h2 id="section-14">13. Ley de Pareto (80/20)</h2>
 <p><strong>Definición:</strong> El 80% de los resultados proviene del 20% de las funciones. <strong>Aplicación UX/UI:</strong> enfoca el diseño en las funcionalidades más usadas. <strong>Ejemplo:</strong> en Instagram, cámara y feed representan el 80% del uso real.</p>
 
-<h2>14. Ley de Aesthetic-Usability</h2>
+<h2 id="section-15">14. Ley de Aesthetic-Usability</h2>
 <p><strong>Definición:</strong> Los usuarios perciben los sistemas estéticamente agradables como más fáciles de usar. <strong>Aplicación UX/UI:</strong> cuida la estética visual: color, tipografía, consistencia. <strong>Ejemplo:</strong> la interfaz de Notion combina simplicidad estética y funcionalidad inmediata.</p>
 
-<h2>15. Ley de Ockham</h2>
+<h2 id="section-16">15. Ley de Ockham</h2>
 <p><strong>Definición:</strong> Entre varias soluciones, la más simple suele ser la correcta. <strong>Aplicación UX/UI:</strong> elimina elementos innecesarios, reduce pasos y deja respirar el diseño. <strong>Ejemplo:</strong> el proceso de "Sign up with Google" es la navaja de Ockham en acción.</p>
 
-<h2>Conclusión</h2>
+<h2 id="section-17">Conclusión</h2>
 <p>Estas leyes son la base del <strong>diseño UX/UI moderno</strong>. Conectan la mente humana con la interfaz digital, ayudando a crear experiencias fluidas, intuitivas y memorables. En <strong>Tres Puntos Comunicación</strong>, <strong>agencia de diseño UX/UI en Barcelona</strong>, aplicamos estas leyes para transformar productos digitales en experiencias que realmente funcionan.</p>
 
-<h2>¿Quieres aplicar estas leyes en tu proyecto?</h2>
+<h2 id="section-18">¿Quieres aplicar estas leyes en tu proyecto?</h2>
 <p>En Tres Puntos Comunicación te ayudamos a construir productos digitales intuitivos, visualmente potentes y basados en comportamiento real de usuario. Desde prototipos hasta diseño de interfaces completas, cada decisión se apoya en los principios de usabilidad más sólidos. Descubre cómo aplicamos estas leyes en Tres Puntos Comunicación →</p>
     </article>
   </main>
+
+
+  <!-- Author Card -->
+  <div class="author-card">
+    <div class="author-card-inner">
+      <img class="author-card-avatar" src="/img/jordi-exposito.webp" alt="Jordi Expósito" loading="lazy"/>
+      <div class="author-card-info">
+        <div class="author-card-name">Jordi Expósito</div>
+        <div class="author-card-role">Digital Project Lead & UX/UI Designer · Tres Puntos</div>
+        <a class="author-card-link" href="https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Conectar en LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- Divider -->
   <div class="article-footer-divider"></div>
@@ -592,99 +736,16 @@
     </div>
   </section>
 
-<!-- ============ FORMULARIO SIMPLE ============ -->
-  <section id="cierre" aria-label="Formulario de contacto">
-    <div class="container-main">
-      <div class="cierre-layout">
-        <div class="cierre-copy">
-          <span class="section-badge reveal">Hablemos</span>
-          <h2 class="cierre-h2 reveal">¿Tu plataforma necesita más que un artículo?</h2>
-          <p class="cierre-sub reveal">Cuéntanos tu situación y te respondemos en menos de 48h con una primera valoración.</p>
-          <div class="cierre-reasons">
-            <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
-            </div>
-            <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Respondemos en menos de 48h con una primera valoración.</span>
-            </div>
-            <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
-            </div>
-          </div>
-        </div>
-        <div class="cierre-form-col reveal reveal-delay-1">
-          <div class="form-gradient-accent"></div>
-          <div class="cierre-form-inner">
-            <div class="form-row">
-              <div class="form-field">
-                <label class="label label-required" for="f-nombre">Nombre</label>
-                <input id="f-nombre" type="text" class="input" placeholder="Tu nombre" autocomplete="name" />
-              </div>
-              <div class="form-field">
-                <label class="label label-required" for="f-email">Email</label>
-                <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label class="label label-required" for="f-tel">Teléfono</label>
-                <input id="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" />
-              </div>
-              <div class="form-field">
-                <label class="label label-required" for="cs-trigger">Presupuesto estimado</label>
-                <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox">
-                  <button type="button" class="custom-select-trigger" aria-label="Presupuesto estimado" id="cs-trigger">
-                    <span class="custom-select-value" id="cs-label">Selecciona rango</span>
-                    <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-                  </button>
-                  <div class="custom-select-panel" role="listbox">
-                    <div class="custom-select-placeholder">Rango aproximado</div>
-                    <div class="custom-select-option" role="option" data-value="5k-10k">5K – 10K€</div>
-                    <div class="custom-select-option" role="option" data-value="10k-15k">10K – 15K€</div>
-                    <div class="custom-select-option" role="option" data-value="15k-20k">15K – 20K€</div>
-                    <div class="custom-select-option" role="option" data-value="mas-20k">+20K€</div>
-                  </div>
-                </div>
-                <input type="hidden" id="f-presupuesto" name="budget" value="" />
-              </div>
-            </div>
-            <div class="form-field">
-              <label class="label" for="f-mensaje">Cuéntanos tu situación</label>
-              <textarea id="f-mensaje" class="input" rows="4" placeholder="Describe brevemente tu proyecto o el problema que percibes en tu plataforma actual..."></textarea>
-            </div>
-            <label class="checkbox-row" for="f-privacidad">
-              <input type="checkbox" id="f-privacidad" required />
-              <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
-            </label>
-            <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn" style="width:100%;justify-content:center;">
-              Cuéntanos tu proyecto
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-            <p class="form-note">Sin compromiso. Respuesta en menos de 48h laborables.</p>
-            <div class="form-divider" style="display:flex;align-items:center;text-align:center;margin:1.5rem 0;color:var(--text-muted);font-size:0.875rem;">
-              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
-              <span style="padding:0 1rem;">O si prefieres ir al detalle</span>
-              <div style="flex:1;border-top:1px solid var(--border-base);"></div>
-            </div>
-            <a href="/form-v3/form-step1.html" class="btn-secondary" style="width:100%;justify-content:center;">
-              Briefing completo (Presupuesto en 48h)
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <div id="tp-footer"></div>
 
-  <script src="/js/components.js"></script>
+  <script src="/js/components.js?v=27"></script>
   <script src="/js/supabase-forms.js" defer></script>
   <script>
     // Initialize navbar and footer
-    TP.navbar('blog');
-    TP.footer();
-    TP.initJS();
+    try{TP.navbar('blog');}catch(e){}
+    try{TP.footer();}catch(e){}
+    try{TP.initJS();}catch(e){}
   </script>
 </body>
 

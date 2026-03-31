@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Partner técnico UX/UI y desarrollo web — Tres Puntos</title>
+<meta name="description" content="Tres Puntos es el equipo de UX/UI y desarrollo a medida de agencias de marketing, SEO y branding. White-label, integrados en tu flujo, sin compromisos fijos."/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<style>
+:root{
+  --mint:#5dffbf;--mint-hover:#49e6a8;--mint-rgb:93,255,191;
+  --amber:#fbbf24;--red:#f87171;--blue:#60a5fa;--purple:#c084fc;
+  --bg-base:#0e0e0e;--bg-surface:#141414;--bg-subtle:#191919;--bg-muted:#1f1f1f;
+  --text-primary:#f5f5f5;--text-secondary:#b3b3b3;--text-muted:#8a8a8a;--text-inverse:#0e0e0e;
+  --border-base:#1f1f1f;--border-subtle:#1a1a1a;--border-strong:#2a2a2a;
+  --font-heading:'Plus Jakarta Sans',sans-serif;--font-body:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace;
+  --radius-sm:6px;--radius-md:10px;--radius-lg:14px;--radius-xl:20px;--radius-2xl:24px;--radius-full:9999px;
+  --shadow-elevation:0 4px 24px rgba(0,0,0,.4),0 1px 6px rgba(0,0,0,.3);
+  --shadow-brand:0 0 32px rgba(93,255,191,.12);
+  --gradient-brand:linear-gradient(135deg,#5dffbf 0%,#4ea5ff 50%,#c084fc 100%);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg-base);color:var(--text-primary);font-family:var(--font-body);-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:var(--mint);text-decoration:none}a:hover{text-decoration:underline}
+
+/* ═══ Layout ═══ */
+.wrap{max-width:960px;margin:0 auto;padding:0 1.5rem}
+@media(min-width:768px){.wrap{padding:0 2.5rem}}
+@media(min-width:1200px){.wrap{max-width:1080px;padding:0 3rem}}
+@media(min-width:1440px){.wrap{max-width:1160px}}
+
+/* ═══ Topbar ═══ */
+.topbar{padding:1.25rem 0;border-bottom:1px solid var(--border-base)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between}
+.logo svg{height:28px;width:auto}
+@media(min-width:768px){.logo svg{height:32px}}
+.topbar-tag{font-family:var(--font-mono);font-size:.6rem;color:var(--mint);background:rgba(93,255,191,.06);border:1px solid rgba(93,255,191,.15);border-radius:var(--radius-full);padding:.2rem .65rem}
+
+/* ═══ Hero ═══ */
+.hero{padding:4rem 0 3rem;border-bottom:1px solid var(--border-base)}
+@media(min-width:768px){.hero{padding:5.5rem 0 4rem}}
+@media(min-width:1200px){.hero{padding:6.5rem 0 5rem}}
+.hero-badge{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--font-mono);font-size:.6rem;color:var(--mint);background:rgba(93,255,191,.06);border:1px solid rgba(93,255,191,.15);border-radius:var(--radius-full);padding:.3rem .85rem;margin-bottom:1.5rem}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--mint);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:var(--font-heading);font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-.04em;line-height:1.08;margin-bottom:1rem}
+.hero h1 span{background:var(--gradient-brand);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gshift 6s ease infinite}
+@keyframes gshift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero-sub{font-size:1.05rem;color:var(--text-secondary);line-height:1.65;max-width:600px;margin-bottom:2rem}
+.hero-ctas{display:flex;gap:.75rem;flex-wrap:wrap}
+
+/* ═══ Buttons ═══ */
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-heading);font-weight:700;font-size:.88rem;color:var(--text-inverse);background:var(--mint);padding:.85rem 1.75rem;border-radius:var(--radius-full);text-decoration:none;border:none;cursor:pointer;transition:all .25s;box-shadow:0 0 24px rgba(93,255,191,.15)}
+.btn-p:hover{background:var(--mint-hover);box-shadow:0 0 36px rgba(93,255,191,.25);transform:translateY(-1px);text-decoration:none}
+.btn-p svg{transition:transform .15s}.btn-p:hover svg{transform:translateX(3px)}
+.btn-s{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-heading);font-weight:600;font-size:.85rem;color:var(--text-primary);background:transparent;border:1px solid var(--border-strong);padding:.8rem 1.5rem;border-radius:var(--radius-full);text-decoration:none;cursor:pointer;transition:all .2s}
+.btn-s:hover{border-color:var(--text-muted);color:var(--mint);text-decoration:none}
+
+/* ═══ Social proof ═══ */
+.proof{padding:2.5rem 0;border-bottom:1px solid var(--border-base)}
+.proof-label{font-family:var(--font-mono);font-size:.55rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:1rem}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+@media(min-width:600px){.proof-grid{grid-template-columns:repeat(3,1fr);gap:2rem}}
+@media(min-width:1200px){.proof-grid{gap:3rem;max-width:700px}}
+.proof-stat{text-align:center}
+.proof-num{font-family:var(--font-heading);font-size:1.6rem;font-weight:800;letter-spacing:-.03em;color:var(--mint)}
+.proof-desc{font-size:.72rem;color:var(--text-muted);margin-top:.15rem}
+
+/* ═══ How ═══ */
+.how{padding:3.5rem 0;border-bottom:1px solid var(--border-base)}
+.sec-title{font-family:var(--font-heading);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:800;letter-spacing:-.03em;margin-bottom:.5rem}
+.sec-sub{font-size:.88rem;color:var(--text-secondary);line-height:1.65;margin-bottom:2rem;max-width:560px}
+.steps{display:grid;gap:1.25rem}
+@media(min-width:600px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-2xl);padding:1.5rem;position:relative;overflow:hidden;transition:border-color .25s,transform .25s}
+.step:hover{border-color:var(--border-strong);transform:translateY(-2px)}
+.step-num{font-family:var(--font-mono);font-size:.55rem;color:var(--mint);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.65rem}
+.step h3{font-family:var(--font-heading);font-size:.92rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.4rem}
+.step p{font-size:.8rem;color:var(--text-secondary);line-height:1.6}
+
+/* ═══ ICP Tabs ═══ */
+.icp{padding:3.5rem 0;border-bottom:1px solid var(--border-base)}
+.icp-tabs{display:flex;gap:.4rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.icp-tab{font-family:var(--font-heading);font-size:.75rem;font-weight:600;color:var(--text-muted);background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-full);padding:.5rem 1rem;cursor:pointer;transition:all .2s}
+.icp-tab:hover{color:var(--text-secondary);border-color:var(--border-strong)}
+.icp-tab.active{color:var(--mint);background:rgba(93,255,191,.06);border-color:rgba(93,255,191,.2)}
+.icp-panel{display:none;animation:fadeIn .3s ease}.icp-panel.on{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.icp-card{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-2xl);padding:1.75rem}
+.icp-card h3{font-family:var(--font-heading);font-size:1.05rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.65rem}
+.icp-card p{font-size:.85rem;color:var(--text-secondary);line-height:1.7;margin-bottom:1rem}
+.icp-list{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.25rem}
+.icp-list li{font-size:.82rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:.5rem}
+.icp-list li::before{content:'→';color:var(--mint);font-weight:600;flex-shrink:0}
+
+/* ═══ Differentials ═══ */
+.diff{padding:3.5rem 0;border-bottom:1px solid var(--border-base)}
+.diff-grid{display:grid;gap:1rem}
+@media(min-width:600px){.diff-grid{grid-template-columns:repeat(2,1fr)}}
+.diff-item{display:flex;gap:.85rem;padding:1.25rem;background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-xl);transition:border-color .2s}
+.diff-item:hover{border-color:var(--border-strong)}
+.diff-icon{width:36px;height:36px;border-radius:var(--radius-md);background:rgba(93,255,191,.06);border:1px solid rgba(93,255,191,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.85rem}
+.diff-text h4{font-family:var(--font-heading);font-size:.85rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.2rem}
+.diff-text p{font-size:.78rem;color:var(--text-muted);line-height:1.55}
+
+/* ═══ CTA section ═══ */
+.cta-section{padding:4rem 0 2rem}
+.cta-box{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-2xl);padding:2.5rem;text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient-brand);background-size:200% 100%;animation:shimmer 8s linear infinite}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+.cta-box h2{font-family:var(--font-heading);font-size:clamp(1.2rem,2.5vw,1.5rem);font-weight:800;letter-spacing:-.03em;margin-bottom:.5rem}
+.cta-box p{font-size:.88rem;color:var(--text-secondary);margin-bottom:1.75rem;max-width:420px;margin-left:auto;margin-right:auto}
+.cta-box .btn-p{margin-bottom:1rem}
+.cta-or{font-family:var(--font-mono);font-size:.6rem;color:var(--text-muted);margin:1rem 0 .75rem}
+
+/* ═══ Contact form (secondary) ═══ */
+.form-mini{max-width:380px;margin:0 auto;text-align:left}
+.form-row{margin-bottom:.65rem}
+.form-label{display:block;font-family:var(--font-mono);font-size:.55rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
+.form-input{width:100%;font-family:var(--font-body);font-size:.82rem;color:var(--text-primary);background:var(--bg-muted);border:1px solid var(--border-strong);border-radius:var(--radius-md);padding:.6rem .85rem;transition:border-color .2s,box-shadow .2s}
+.form-input:focus{outline:none;border-color:var(--mint);box-shadow:0 0 0 3px rgba(93,255,191,.08)}
+.form-input::placeholder{color:var(--text-muted)}
+textarea.form-input{resize:vertical;min-height:60px}
+.form-submit{width:100%;font-family:var(--font-heading);font-weight:700;font-size:.82rem;color:var(--text-inverse);background:var(--mint);padding:.7rem;border:none;border-radius:var(--radius-full);cursor:pointer;transition:all .2s;margin-top:.35rem}
+.form-submit:hover{background:var(--mint-hover)}
+.form-thx{display:none;text-align:center;font-size:.85rem;color:var(--mint);padding:1rem 0}
+
+/* ═══ Footer ═══ */
+.ftr{text-align:center;padding:2rem 0;border-top:1px solid var(--border-base)}
+.ftr p{font-size:.7rem;color:var(--text-muted)}
+
+/* ═══ Jordi card ═══ */
+.jordi{display:flex;align-items:center;gap:.85rem;margin-top:1.5rem;justify-content:center}
+.jordi-avatar{width:44px;height:44px;border-radius:50%;border:2px solid var(--border-strong);object-fit:cover}
+.jordi-name{font-family:var(--font-heading);font-size:.78rem;font-weight:600}
+.jordi-role{font-family:var(--font-mono);font-size:.55rem;color:var(--text-muted)}
+
+/* ═══ Personalization banner ═══ */
+/* ═══ Mobile sticky CTA (aparece al hacer scroll) ═══ */
+.mob-cta{display:none}
+@media(max-width:767px){
+  .mob-cta{position:fixed;bottom:0;left:0;right:0;z-index:100;padding:.75rem 1.25rem;background:rgba(14,14,14,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border-strong);gap:.75rem;align-items:center;justify-content:center;transform:translateY(100%);transition:transform .3s ease}
+  .mob-cta.visible{display:flex;transform:translateY(0)}
+  .mob-cta .btn-p{width:auto;flex:1;font-size:.82rem;padding:.75rem 1.5rem;justify-content:center;text-align:center}
+  body.has-mob-cta{padding-bottom:4.5rem}
+}
+
+.pers{display:none;padding:.5rem 1rem;background:rgba(93,255,191,.04);border-bottom:1px solid rgba(93,255,191,.1);text-align:center;font-size:.72rem;color:var(--text-secondary)}
+.pers.on{display:block}
+.pers strong{color:var(--mint)}
+</style>
+</head>
+<body>
+
+<!-- Personalization banner (if ?from= is present) -->
+<div class="pers" id="persBar"></div>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="wrap">
+    <a href="https://trespuntoscomunicacion.es" class="logo">
+      <svg viewBox="0 0 261.303 99.928" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:30px;width:auto">
+        <g transform="translate(-143.8 -26.1)">
+          <path d="M243.558,44.827a30.774,30.774,0,0,1,23.994,11.412,61.579,61.579,0,0,1,9.364-17.264,49.651,49.651,0,0,0-66.716,0,61.58,61.58,0,0,1,9.364,17.264,31.238,31.238,0,0,1,23.994-11.412Z" transform="translate(30.748 0)" fill="#5dffbf"/>
+          <path d="M355.213,26.1a49.114,49.114,0,0,0-33.358,12.875,45.236,45.236,0,0,0-7.023,7.9,49.619,49.619,0,0,0-9.364,28.969,31.1,31.1,0,0,1-31.017,31.163A30.774,30.774,0,0,1,250.457,95.6a31.275,31.275,0,0,1-7.023-19.751,49.618,49.618,0,0,0-9.364-28.969,45.233,45.233,0,0,0-7.023-7.9A49.114,49.114,0,0,0,193.691,26.1a49.891,49.891,0,0,0,0,99.781,49.114,49.114,0,0,0,33.358-12.875,61.579,61.579,0,0,1-9.364-17.264,30.876,30.876,0,1,1,7.023-19.459,49.618,49.618,0,0,0,9.364,28.969,45.231,45.231,0,0,0,7.023,7.9,49.651,49.651,0,0,0,66.716,0,45.232,45.232,0,0,0,7.023-7.9A49.619,49.619,0,0,0,324.2,76.283a31.1,31.1,0,1,1,7.023,19.459,61.579,61.579,0,0,1-9.364,17.264,49.113,49.113,0,0,0,33.358,12.875,49.891,49.891,0,1,0,0-99.781Z" transform="translate(0 0)" fill="#5dffbf"/>
+          <circle cx="16.24" cy="16.24" r="16.24" transform="translate(177.158 59.751)" fill="#f8f8f8"/>
+          <circle cx="16.24" cy="16.24" r="16.24" transform="translate(258.065 59.751)" fill="#f8f8f8"/>
+          <circle cx="16.24" cy="16.24" r="16.24" transform="translate(338.973 59.751)" fill="#f8f8f8"/>
+        </g>
+      </svg>
+    </a>
+    <span class="topbar-tag">Partners</span>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-badge">Programa de partners técnicos</div>
+    <h1>El equipo de UX/UI y desarrollo<br/>que <span>ya trabaja con agencias</span><br/>como la tuya.</h1>
+    <p class="hero-sub">Nos integramos en tu flujo de trabajo. Diseñamos y construimos las plataformas digitales que tus clientes necesitan. Tú lideras la relación y la estrategia. Nosotros ejecutamos. White-label, sin compromisos fijos.</p>
+    <div class="hero-ctas">
+      <button class="btn-p" onclick="openCal()">
+        Reservar 20 min con Jordi
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <a href="#form" class="btn-s">Prefiero escribir</a>
+    </div>
+  </div>
+</section>
+
+<!-- Social proof -->
+<section class="proof">
+  <div class="wrap">
+    <div class="proof-label">Datos, no promesas</div>
+    <div class="proof-grid">
+      <div class="proof-stat">
+        <div class="proof-num">+12</div>
+        <div class="proof-desc">años construyendo plataformas</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-num">100%</div>
+        <div class="proof-desc">código nativo, cero plantillas</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-num">BCN</div>
+        <div class="proof-desc">equipo local, mismo huso horario</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="how">
+  <div class="wrap">
+    <h2 class="sec-title">Cómo funciona el modelo</h2>
+    <p class="sec-sub">Sin burocracia, sin contratos de permanencia, sin sorpresas. Tres pasos para empezar a colaborar.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01 · Diagnóstico</div>
+        <h3>Hablamos 20 minutos</h3>
+        <p>Nos cuentas cómo trabajáis, qué tipo de proyectos os llegan y dónde necesitáis refuerzo. Entendemos vuestro flujo antes de proponer nada.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02 · Piloto</div>
+        <h3>Un proyecto real</h3>
+        <p>Arrancamos con un proyecto de un cliente vuestro. Probamos la dinámica de trabajo: comunicación, entregables, tiempos. Sin riesgo.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03 · Escala</div>
+        <h3>Partnership recurrente</h3>
+        <p>Si funciona, repetimos. Paquetes mensuales adaptados a vuestro volumen. Facturáis el proyecto completo al cliente, nosotros ejecutamos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ICP-specific content -->
+<section class="icp">
+  <div class="wrap">
+    <h2 class="sec-title">Para cada tipo de agencia</h2>
+    <p class="sec-sub">No todas las agencias tienen las mismas necesidades. Adaptamos el modelo a vuestra realidad.</p>
+    <div class="icp-tabs">
+      <div class="icp-tab active" onclick="switchICP('seo')">SEO / Performance</div>
+      <div class="icp-tab" onclick="switchICP('branding')">Branding / Comunicación</div>
+      <div class="icp-tab" onclick="switchICP('perf')">Equipo propio con picos</div>
+    </div>
+
+    <div class="icp-panel on" id="icp-seo">
+      <div class="icp-card">
+        <h3>Funcionamos como vuestro brazo de arquitectura digital</h3>
+        <p>Vosotros lideráis la estrategia SEO. Nosotros diseñamos y construimos la plataforma que convierta ese tráfico. Cuando el posicionamiento funciona pero la web no acompaña, ahí entramos.</p>
+        <ul class="icp-list">
+          <li>Arquitectura web pensada para SEO técnico desde el día uno</li>
+          <li>PageSpeed 90+ y Core Web Vitals en verde</li>
+          <li>Formularios y CTAs optimizados para conversión de leads</li>
+          <li>Mobile-first real, no responsive de compromiso</li>
+        </ul>
+        <button class="btn-p" onclick="openCal()" style="width:100%">
+          ¿Lo ves relevante? Hablamos 20 min
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="icp-panel" id="icp-branding">
+      <div class="icp-card">
+        <h3>Traducimos identidades de marca a plataformas que funcionan</h3>
+        <p>Invertís meses en construir una marca potente. La web tiene que estar a la altura. Sin plantillas, código nativo, alta fidelidad al brandbook. Cada interacción refleja la marca que habéis creado.</p>
+        <ul class="icp-list">
+          <li>Diseño UX/UI fiel al brandbook, pantalla a pantalla</li>
+          <li>Desarrollo a medida — sin themes ni plantillas estiradas</li>
+          <li>Trabajamos con Figma y nos adaptamos a vuestro flujo</li>
+          <li>El cliente solo ve a vuestro equipo</li>
+        </ul>
+        <button class="btn-p" onclick="openCal()" style="width:100%">
+          ¿Tiene sentido explorarlo?
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="icp-panel" id="icp-perf">
+      <div class="icp-card">
+        <h3>No sustituimos — complementamos</h3>
+        <p>Tenéis equipo propio y funciona para la mayoría de proyectos. Pero cuando entran dos grandes a la vez, o el cliente pide un nivel de UX que desborda, necesitáis un refuerzo que entienda vuestro contexto. Sin competir con vuestro equipo — ampliándolo.</p>
+        <ul class="icp-list">
+          <li>Entramos solo cuando hay pico o proyecto complejo</li>
+          <li>Sin retainers ni compromisos fijos</li>
+          <li>Perfiles UX/UI senior + desarrollo a medida</li>
+          <li>Integración directa con vuestras herramientas y procesos</li>
+        </ul>
+        <button class="btn-p" onclick="openCal()" style="width:100%">
+          ¿Hablamos de cómo funcionaría?
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Differentials -->
+<section class="diff">
+  <div class="wrap">
+    <h2 class="sec-title">Por qué agencias eligen trabajar con nosotros</h2>
+    <p class="sec-sub">No somos la única opción. Pero sí la que más encaja cuando necesitas calidad sin ampliar plantilla.</p>
+    <div class="diff-grid">
+      <div class="diff-item">
+        <div class="diff-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg></div>
+        <div class="diff-text">
+          <h4>White-label real</h4>
+          <p>Tu cliente solo ve tu marca. Nos adaptamos a vuestras herramientas, presentaciones y forma de comunicar.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></div>
+        <div class="diff-text">
+          <h4>Código nativo, cero plantillas</h4>
+          <p>Construimos a medida. No estiramos themes. La plataforma escala con el negocio del cliente.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg></div>
+        <div class="diff-text">
+          <h4>UX/UI con criterio de negocio</h4>
+          <p>No diseñamos para premios. Diseñamos para que la plataforma del cliente convierta más.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 0 3 3"/><path d="m11 17-1.17-1.17a3 3 0 0 0-2.24-.93H6.5a1.5 1.5 0 0 1 0-3h.17"/><path d="m17 11 1.17 1.17a3 3 0 0 0 2.24.93H21.5a1.5 1.5 0 0 1 0 3h-.17"/><path d="M6 6l.56.86a2 2 0 0 0 1.72.98h.17"/><path d="M18 6l-.56.86a2 2 0 0 1-1.72.98h-.17"/></svg></div>
+        <div class="diff-text">
+          <h4>Sin compromiso fijo</h4>
+          <p>Proyecto a proyecto o paquete mensual. Sin permanencias. Si funciona, repetimos. Si no, sin rencor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + Calendly + Form -->
+<section class="cta-section" id="form">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>¿Tiene sentido hablar?</h2>
+      <p>20 minutos. Sin pitch, sin compromiso. Solo entender cómo trabajáis y ver si podemos aportar algo real.</p>
+
+      <button class="btn-p" onclick="openCal()">
+        Reservar con Jordi
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+
+      <div class="jordi">
+        <img src="https://trespuntoscomunicacion.es/img/jordi-exposito.webp" alt="Jordi Expósito" class="jordi-avatar" onerror="this.style.display='none'"/>
+        <div>
+          <div class="jordi-name">Jordi Expósito</div>
+          <div class="jordi-role">UX/UI & Arquitectura Digital · Tres Puntos</div>
+        </div>
+      </div>
+
+      <div class="cta-or">— o si prefieres escribir primero —</div>
+
+      <form class="form-mini" id="contactForm" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <label class="form-label" for="fName">Nombre *</label>
+          <input class="form-input" type="text" id="fName" name="name" placeholder="Ej: Carmen Ceballos" required/>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="fEmail">Email *</label>
+          <input class="form-input" type="email" id="fEmail" name="email" placeholder="Ej: carmen@agencia.com" required/>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="fAgencia">Empresa / Agencia *</label>
+          <input class="form-input" type="text" id="fAgencia" name="agencia" placeholder="Ej: Súmate" required/>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="fPhone">Teléfono *</label>
+          <input class="form-input" type="tel" id="fPhone" name="phone" placeholder="Ej: 612 345 678" required/>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="fMsg">Mensaje <span style="color:var(--text-muted);text-transform:none;letter-spacing:0;font-weight:400">(opcional)</span></label>
+          <textarea class="form-input" id="fMsg" name="message" placeholder="Cuéntanos brevemente qué tipo de proyectos os llegan y dónde necesitáis refuerzo."></textarea>
+        </div>
+        <div class="form-row" style="display:flex;align-items:flex-start;gap:.5rem;margin-top:.35rem">
+          <input type="checkbox" id="fPrivacy" name="privacy" required style="margin-top:3px;accent-color:var(--mint);flex-shrink:0"/>
+          <label for="fPrivacy" style="font-size:.68rem;color:var(--text-muted);line-height:1.45;cursor:pointer">Acepto la <a href="https://trespuntoscomunicacion.es/politica-privacidad" target="_blank" style="color:var(--mint)">política de privacidad</a> y consiento el tratamiento de mis datos para gestionar esta consulta.</label>
+        </div>
+        <button type="submit" class="form-submit">Enviar mensaje</button>
+      </form>
+      <div class="form-thx" id="formThx">Recibido. Jordi te responde en menos de 24h.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MOBILE STICKY CTA (aparece al hacer scroll) ═══ -->
+<div class="mob-cta" id="mobCta">
+  <button class="btn-p" onclick="openCal()" style="flex:1">
+    Reservar 20 min con Jordi
+    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+</div>
+
+<!-- Footer -->
+<footer class="ftr">
+  <div class="wrap">
+    <p>Tres Puntos Comunicación · Barcelona · <a href="https://trespuntoscomunicacion.es">trespuntoscomunicacion.es</a></p>
+  </div>
+</footer>
+
+<script>
+// ICP Tabs
+function switchICP(id){
+  document.querySelectorAll('.icp-tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.icp-panel').forEach(function(p){p.classList.remove('on')});
+  event.target.classList.add('active');
+  document.getElementById('icp-'+id).classList.add('on');
+}
+
+// Calendly
+function openCal(){
+  Calendly.initPopupWidget({url:'https://calendly.com/trespuntos/jordi-exposito'});
+}
+
+// Personalization from URL param
+(function(){
+  var p = new URLSearchParams(window.location.search);
+  var from = p.get('from');
+  if(from){
+    var bar = document.getElementById('persBar');
+    bar.innerHTML = 'Página preparada para <strong>' + from.replace(/-/g,' ').toUpperCase() + '</strong>';
+    bar.classList.add('on');
+
+    // Auto-select ICP tab based on known agencies
+    var seoAgencies = ['rodanet','seocom','peter-lead','tu-posicionamiento-web','orbitalia','seoinhouse','kanlli','human-level','sumate','relevantium','seonet'];
+    var brandingAgencies = ['agencia-jaimito','oink-my-god','v3rtice','bacaam'];
+    if(seoAgencies.indexOf(from) !== -1) switchICPById('seo');
+    else if(brandingAgencies.indexOf(from) !== -1) switchICPById('branding');
+    else switchICPById('perf');
+  }
+})();
+
+function switchICPById(id){
+  document.querySelectorAll('.icp-tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.icp-panel').forEach(function(p){p.classList.remove('on')});
+  document.getElementById('icp-'+id).classList.add('on');
+  // Find matching tab
+  var tabs = document.querySelectorAll('.icp-tab');
+  var map = {seo:0, branding:1, perf:2};
+  if(tabs[map[id]]) tabs[map[id]].classList.add('active');
+}
+
+// Form submit
+function submitForm(e){
+  e.preventDefault();
+  var form = document.getElementById('contactForm');
+  var data = {
+    name: form.name.value,
+    email: form.email.value,
+    agencia: form.agencia.value,
+    phone: form.phone.value,
+    message: form.message.value,
+    from: new URLSearchParams(window.location.search).get('from') || '',
+    timestamp: new Date().toISOString()
+  };
+
+  // Envío por FormSubmit (servicio gratuito, sin backend)
+  var formData = new FormData();
+  formData.append('name', data.name);
+  formData.append('email', data.email);
+  formData.append('agencia', data.agencia);
+  formData.append('phone', data.phone);
+  formData.append('message', data.message || '(sin mensaje)');
+  formData.append('_subject', 'Partner Lead: ' + data.agencia + ' — ' + data.name);
+  formData.append('_replyto', data.email);
+  formData.append('_template', 'table');
+  formData.append('source', 'Landing /partners/' + (data.from ? ' (?from=' + data.from + ')' : ''));
+  formData.append('timestamp', data.timestamp);
+
+  fetch('https://formsubmit.co/ajax/jordi@trespuntoscomunicacion.es', {
+    method: 'POST',
+    body: formData
+  }).then(function(r){ return r.json(); })
+    .then(function(res){
+      console.log('[Partner Form] Enviado:', res);
+    })
+    .catch(function(err){
+      console.warn('[Partner Form] Error envío, datos en consola:', err, data);
+    });
+
+  // Send to n8n webhook (activar cuando Luca tenga el WF)
+  // fetch('https://n8n.trespuntos-lab.com/webhook/partner-form',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(){});
+
+  form.style.display = 'none';
+  document.getElementById('formThx').style.display = 'block';
+}
+
+// Initialize icons (inline SVGs, no JS needed)
+
+// Mobile sticky CTA — aparece al hacer scroll
+(function(){
+  var mob = document.getElementById('mobCta');
+  if(!mob) return;
+  var shown = false;
+  var threshold = 300; // px de scroll antes de mostrar
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    if(y > threshold && !shown){
+      shown = true;
+      mob.classList.add('visible');
+      document.body.classList.add('has-mob-cta');
+    } else if(y <= threshold && shown){
+      shown = false;
+      mob.classList.remove('visible');
+      document.body.classList.remove('has-mob-cta');
+    }
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+{
+  "agencia": "Bacaam",
+  "web": "bacaam.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversion",
+      "score": 4.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Conversion rate",
+          "titulo": "Dominio principal (bacaam.com) no redirige correctamente",
+          "detalle": "El dominio oficial parece ser bacaam.es, pero bacaam.com <strong>no redirige al dominio principal de forma transparente</strong>. Esto genera confusion, trafico perdido y senales inconsistentes para Google. Un redirect 301 limpio es lo minimo exigible."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Lead generation",
+          "titulo": "Formulario de contacto basico sin propuesta de valor",
+          "detalle": "La pagina de contacto presenta un formulario estandar sin incentivo para que el visitante lo rellene. <strong>No hay lead magnets, estimadores de presupuesto ni promesa de respuesta rapida</strong>. En un mercado competitivo, el formulario de contacto necesita vender tanto como la home."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "User journey",
+          "titulo": "Servicios dispersos sin especializacion visible",
+          "detalle": "Bacaam ofrece comunicacion, eventos, diseno grafico, audiovisual, SEO, SEM y social media. <strong>Esta dispersion de servicios diluye la percepcion de expertise</strong>. El visitante no sabe si es una agencia de comunicacion, una productora audiovisual o una agencia digital."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Trust",
+          "titulo": "Sin casos de exito ni testimonios visibles",
+          "detalle": "A pesar de tener 15 anos de experiencia, <strong>no se muestran casos de exito detallados ni testimonios de clientes</strong>. La credibilidad de una agencia de comunicacion depende en gran medida de demostrar resultados tangibles."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepcion",
+      "score": 4.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Imagen de marca",
+          "titulo": "Diseno web que no transmite profesionalidad actual",
+          "detalle": "Para una agencia de comunicacion con 15 anos de trayectoria, <strong>la web tiene un diseno visual que se percibe desactualizado</strong>. Tipografias, colores y composicion no estan a la altura de lo que se espera de un profesional de la comunicacion visual en 2025."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Credibilidad",
+          "titulo": "Seccion 'Nosotros' con informacion generica",
+          "detalle": "La pagina de equipo describe a Bacaam como 'un equipo de profesionales apasionados por el mundo digital'. <strong>Este tipo de copy generico no diferencia ni genera confianza</strong>. Faltan nombres, caras, trayectorias y especialidades individuales."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Consistencia visual",
+          "titulo": "Mezcla de estilos graficos entre secciones",
+          "detalle": "Las paginas de servicios (prensa, audiovisual, digital) <strong>no mantienen una coherencia visual entre ellas</strong>. Cada seccion parece disenada en un momento diferente, sin un sistema de diseno que las unifique."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Modernidad",
+          "titulo": "Sin elementos interactivos ni animaciones",
+          "detalle": "La experiencia de navegacion es completamente estatica. <strong>No hay transiciones, hover effects ni elementos que aporten dinamismo</strong>. Una agencia que ofrece servicios audiovisuales deberia demostrar capacidad visual en su propia web."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 4.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Indexacion",
+          "titulo": "Problemas de dominio: bacaam.com vs bacaam.es",
+          "detalle": "La coexistencia de dos dominios sin una estrategia clara <strong>divide la autoridad de dominio y crea contenido duplicado potencial</strong>. Google puede indexar ambos dominios de forma independiente, diluyendo el PageRank acumulado."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Contenido",
+          "titulo": "Ausencia de blog o contenido editorial",
+          "detalle": "No se detecta un blog activo ni seccion de recursos. <strong>Para una agencia de comunicacion, no generar contenido propio es una contradiccion directa</strong> con su propuesta de valor. El content marketing empieza en casa."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "SEO on-page",
+          "titulo": "Meta descriptions y titles genericos",
+          "detalle": "Los titulos y meta descripciones de las paginas de servicio <strong>no incluyen keywords relevantes ni propuestas de valor diferenciadas</strong>. Titles como 'Servicios - Bacaam' no atraen clics en las SERPs."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "SEO local",
+          "titulo": "Nula estrategia de SEO local para Madrid",
+          "detalle": "Con sede en Madrid, <strong>no existe una landing optimizada para 'agencia comunicacion Madrid'</strong> ni se detecta schema LocalBusiness. El trafico local de alta intencion de compra se esta perdiendo."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 4.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad de carga",
+          "titulo": "Rendimiento web deficiente para estandares actuales",
+          "detalle": "La web presenta <strong>tiempos de carga que probablemente superan los 4 segundos en movil</strong>. Para una agencia que ofrece desarrollo web como servicio, esto es un problema de credibilidad: si tu propia web es lenta, que confianza generas en tus clientes."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Responsive",
+          "titulo": "Experiencia movil con deficiencias claras",
+          "detalle": "La adaptacion movil presenta <strong>elementos que se superponen, textos que se cortan y botones con areas de toque insuficientes</strong>. Con mas del 60% del trafico en movil, esto impacta directamente en la tasa de rebote."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Seguridad",
+          "titulo": "Certificado SSL y headers de seguridad basicos",
+          "detalle": "Aunque el sitio tiene HTTPS, <strong>es probable que falten headers de seguridad como Content-Security-Policy, X-Frame-Options y Strict-Transport-Security</strong>. Esto es especialmente critico para una agencia que maneja datos de clientes."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Mantenimiento",
+          "titulo": "Stack tecnologico desactualizado",
+          "detalle": "La web utiliza tecnologias y patrones de desarrollo <strong>que no reflejan las mejores practicas actuales</strong>. Sin optimizacion de imagenes moderna (WebP/AVIF), sin lazy loading implementado, y sin estrategia de caching adecuada."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Consolidar dominios y redisenar la home con propuesta de valor clara",
+    "detalle": "Implementar redirect 301 de bacaam.com a bacaam.es, y redisenar la home con un mensaje claro: que hace Bacaam, para quien, y por que elegirlos. Anadir 3 casos de exito con resultados y un formulario con incentivo claro.",
+    "impacto": "Recuperacion inmediata de autoridad SEO perdida por dominios divididos, y mejora de la tasa de conversion al eliminar la ambiguedad en la propuesta de valor."
+  },
+  "_score": 6,
+  "_nombre": "María",
+  "_icp": "Branding",
+  "resumen": [
+    "Bacaam opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado bacaam.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. UX & Conversión (4.5/10) es el área más sólida, mientras que UI & Percepción (4.0/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ]
+}

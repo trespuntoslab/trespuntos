@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Auditoría interna · tres.trespuntos-lab.com · Tres Puntos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --mint:#5dffbf;--mint-hover:#49e6a8;--mint-rgb:93,255,191;
+  --amber:#fbbf24;--red:#f87171;--blue:#60a5fa;--purple:#c084fc;
+  --bg-base:#0e0e0e;--bg-surface:#141414;--bg-subtle:#191919;--bg-muted:#1f1f1f;
+  --text-primary:#f5f5f5;--text-secondary:#b3b3b3;--text-muted:#8a8a8a;--text-inverse:#0e0e0e;
+  --border-base:#1f1f1f;--border-subtle:#1a1a1a;--border-strong:#2a2a2a;
+  --font-heading:'Plus Jakarta Sans',sans-serif;--font-body:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace;
+  --radius-sm:6px;--radius-md:10px;--radius-lg:14px;--radius-xl:20px;--radius-2xl:24px;--radius-full:9999px;
+  --shadow-elevation:0 4px 24px rgba(0,0,0,.4),0 1px 6px rgba(0,0,0,.3);
+  --shadow-brand:0 0 32px rgba(93,255,191,.12);
+  --gradient-brand:linear-gradient(135deg,#5dffbf 0%,#4ea5ff 50%,#c084fc 100%);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg-base);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+/* ── Page layout ── */
+.page{display:flex;max-width:1180px;margin:0 auto;padding:2rem 1.5rem 4rem;gap:2.5rem}
+.main{flex:1;min-width:0}
+.sidebar{width:300px;flex-shrink:0;position:sticky;top:2rem;align-self:flex-start}
+
+/* ── Header ── */
+.hdr{margin-bottom:2.5rem}
+.hdr .logo{display:flex;align-items:center;gap:.75rem;margin-bottom:1.75rem}
+.hdr .logo svg{height:28px;width:auto}
+.hdr .badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mint);background:rgba(var(--mint-rgb),.08);border:1px solid rgba(var(--mint-rgb),.15);padding:.35rem .85rem;border-radius:var(--radius-full);margin-bottom:1rem}
+.hdr .badge::before{content:'';width:6px;height:6px;background:var(--mint);border-radius:50%;animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+.hdr h1{font-family:var(--font-heading);font-size:clamp(1.6rem,3.5vw,2.25rem);font-weight:800;line-height:1.2;letter-spacing:-.03em;margin-bottom:.75rem}
+.hdr h1 span{background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hdr .meta{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);letter-spacing:.04em}
+
+/* ── Score panel ── */
+.score-panel{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-xl);padding:2rem;margin-bottom:2rem;box-shadow:var(--shadow-elevation)}
+.score-panel .top{display:flex;align-items:center;gap:2rem;margin-bottom:1.75rem;flex-wrap:wrap}
+.score-ring{position:relative;width:110px;height:110px;flex-shrink:0}
+.score-ring svg{transform:rotate(-90deg)}
+.score-ring .track{fill:none;stroke:var(--border-base);stroke-width:8}
+.score-ring .bar{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)}
+.score-ring .val{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.score-ring .num{font-family:var(--font-heading);font-size:1.85rem;font-weight:800;line-height:1}
+.score-ring .of{font-family:var(--font-mono);font-size:.6rem;color:var(--text-muted);margin-top:2px}
+.dims{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;flex:1}
+.dim{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;padding:.45rem .75rem;background:var(--bg-subtle);border-radius:var(--radius-sm);border:1px solid var(--border-subtle)}
+.dim b{font-family:var(--font-mono);font-size:.8rem;font-weight:600}
+.score-panel .line{font-size:.82rem;color:var(--text-secondary);line-height:1.65;border-top:1px solid var(--border-subtle);padding-top:1.25rem}
+
+/* ── Summary ── */
+.summary{font-size:.88rem;line-height:1.75;color:var(--text-secondary);margin-bottom:2.25rem;padding:1.5rem;background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-lg)}
+.summary strong{color:var(--text-primary)}
+
+/* ── Tabs ── */
+.tabs{display:flex;gap:.35rem;border-bottom:1px solid var(--border-base);margin-bottom:1.75rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{font-family:var(--font-body);font-size:.78rem;font-weight:500;color:var(--text-muted);background:0;border:0;padding:.65rem 1rem;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.tabs button:hover{color:var(--text-secondary)}
+.tabs button.on{color:var(--mint);border-bottom-color:var(--mint)}
+.tc{display:none}
+.tc.on{display:block}
+
+/* ── Tab header ── */
+.tab-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
+.tab-hdr h2{font-family:var(--font-heading);font-size:1.1rem;font-weight:700}
+.tab-score{font-family:var(--font-mono);font-size:.85rem;font-weight:600;padding:.3rem .75rem;border-radius:var(--radius-full);background:rgba(var(--mint-rgb),.1);color:var(--mint)}
+.tab-score.amber{background:rgba(251,191,36,.1);color:var(--amber)}
+
+/* ── Finding cards ── */
+.find{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-lg);padding:1.35rem 1.5rem;margin-bottom:1rem;transition:border-color .2s}
+.find:hover{border-color:var(--border-strong)}
+.find .row{display:flex;align-items:center;gap:.5rem;margin-bottom:.65rem;flex-wrap:wrap}
+.find .sev{font-family:var(--font-mono);font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;padding:.2rem .55rem;border-radius:var(--radius-full)}
+.sev-high{background:rgba(248,113,113,.12);color:var(--red)}
+.sev-med{background:rgba(251,191,36,.12);color:var(--amber)}
+.sev-low{background:rgba(96,165,250,.12);color:var(--blue)}
+.sev-ok{background:rgba(var(--mint-rgb),.12);color:var(--mint)}
+.find .cat{font-family:var(--font-mono);font-size:.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em}
+.find h3{font-family:var(--font-heading);font-size:.92rem;font-weight:700;line-height:1.4;margin-bottom:.5rem}
+.find p{font-size:.82rem;color:var(--text-secondary);line-height:1.65}
+.find p strong{color:var(--text-primary)}
+
+/* ── PSI card ── */
+.psi{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin-top:1.5rem;margin-bottom:.5rem}
+.psi .psi-title{font-family:var(--font-mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:1rem}
+.psi .psi-section{font-family:var(--font-mono);font-size:.55rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.5rem;margin-top:1rem;padding-top:.75rem;border-top:1px solid var(--border-subtle)}
+.psi .psi-section:first-of-type{border-top:0;margin-top:0;padding-top:0}
+.psi .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:.75rem}
+.psi .metric{text-align:center}
+.psi .metric .mv{font-family:var(--font-heading);font-size:1.15rem;font-weight:700;color:var(--mint)}
+.psi .metric .mv.warn{color:var(--amber)}
+.psi .metric .ml{font-family:var(--font-mono);font-size:.55rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-top:.15rem}
+.psi .metric .status{display:inline-block;font-family:var(--font-mono);font-size:.5rem;text-transform:uppercase;letter-spacing:.06em;padding:.1rem .4rem;border-radius:var(--radius-full);background:rgba(var(--mint-rgb),.1);color:var(--mint);margin-top:.25rem}
+.psi .metric .status.warn{background:rgba(251,191,36,.1);color:var(--amber)}
+.psi .scores-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-top:1rem;padding-top:.75rem;border-top:1px solid var(--border-subtle)}
+.psi .lh-score{text-align:center;padding:.5rem .25rem;background:var(--bg-subtle);border-radius:var(--radius-sm)}
+.psi .lh-score .lh-num{font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--mint)}
+.psi .lh-score .lh-label{font-family:var(--font-mono);font-size:.5rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-top:.15rem}
+
+/* ── Quick win ── */
+.qw{background:rgba(var(--mint-rgb),.04);border:1px solid rgba(var(--mint-rgb),.12);border-radius:var(--radius-lg);padding:1.5rem;margin:2rem 0}
+.qw .qw-badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-mono);font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--mint);margin-bottom:.75rem}
+.qw .qw-badge svg{width:14px;height:14px}
+.qw h3{font-family:var(--font-heading);font-size:.95rem;font-weight:700;margin-bottom:.5rem}
+.qw p{font-size:.82rem;color:var(--text-secondary);line-height:1.65;margin-bottom:.75rem}
+.qw .qw-time{font-family:var(--font-mono);font-size:.65rem;color:var(--mint);text-transform:uppercase;letter-spacing:.06em}
+
+/* ── Footer ── */
+.ftr{text-align:center;padding:2rem 0 0;border-top:1px solid var(--border-subtle);margin-top:2rem}
+.ftr p{font-family:var(--font-mono);font-size:.6rem;color:var(--text-muted);letter-spacing:.04em}
+
+/* ── Sidebar ── */
+.sidebar .card{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-xl);padding:1.75rem;box-shadow:var(--shadow-elevation)}
+.sidebar .card-icon{display:flex;align-items:center;justify-content:center;width:48px;height:48px;background:rgba(var(--mint-rgb),.08);border:1px solid rgba(var(--mint-rgb),.15);border-radius:var(--radius-md);margin-bottom:1.25rem}
+.sidebar .card-icon svg{width:24px;height:24px;color:var(--mint)}
+.sidebar h3{font-family:var(--font-heading);font-size:.9rem;font-weight:700;margin-bottom:.5rem}
+.sidebar .desc{font-size:.78rem;color:var(--text-secondary);line-height:1.6;margin-bottom:1rem}
+.sidebar .sc{font-family:var(--font-mono);font-size:.7rem;color:var(--mint);margin-bottom:1.25rem}
+.sidebar .status-line{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--text-secondary);margin-bottom:1.25rem;padding:.6rem .75rem;background:rgba(var(--mint-rgb),.05);border:1px solid rgba(var(--mint-rgb),.1);border-radius:var(--radius-sm)}
+.sidebar .status-line .dot{width:8px;height:8px;background:var(--mint);border-radius:50%;flex-shrink:0;animation:pulse-dot 2s infinite}
+.sidebar .sub-scores{list-style:none;margin:0;padding:0}
+.sidebar .sub-scores li{display:flex;justify-content:space-between;align-items:center;font-size:.75rem;padding:.45rem 0;border-bottom:1px solid var(--border-subtle)}
+.sidebar .sub-scores li:last-child{border-bottom:0}
+.sidebar .sub-scores li b{font-family:var(--font-mono);font-size:.75rem;font-weight:600;color:var(--mint)}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .page{flex-direction:column;padding:1.25rem 1rem 3rem}
+  .sidebar{width:100%;position:static;order:99}
+  .dims{grid-template-columns:1fr}
+  .score-panel .top{flex-direction:column;align-items:flex-start;gap:1.25rem}
+}
+@media(max-width:480px){
+  .hdr h1{font-size:1.35rem}
+  .tabs button{font-size:.72rem;padding:.55rem .7rem}
+  .find{padding:1.1rem 1.15rem}
+  .psi .metrics{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<!-- ════════ MAIN ════════ -->
+<div class="main">
+
+  <!-- Header -->
+  <header class="hdr">
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 32" height="28">
+        <circle cx="8" cy="16" r="4" fill="#5dffbf"/>
+        <circle cx="20" cy="16" r="4" fill="#5dffbf" opacity=".6"/>
+        <circle cx="32" cy="16" r="4" fill="#5dffbf" opacity=".3"/>
+        <text x="44" y="22" fill="#f5f5f5" font-family="'Plus Jakarta Sans',sans-serif" font-size="15" font-weight="700" letter-spacing="-.02em">TRES PUNTOS</text>
+      </svg>
+    </div>
+    <div class="badge">Auditoría interna · Arquitectura digital</div>
+    <h1>Análisis de <span>tres.trespuntos-lab.com</span></h1>
+    <div class="meta">Auto-diagnóstico &middot; Tres Puntos &middot; Marzo 2026</div>
+  </header>
+
+  <!-- Score panel -->
+  <section class="score-panel">
+    <div class="top">
+      <div class="score-ring">
+        <svg width="110" height="110" viewBox="0 0 120 120">
+          <circle class="track" cx="60" cy="60" r="52"/>
+          <circle class="bar" cx="60" cy="60" r="52" stroke="var(--mint)" stroke-dasharray="326.73" stroke-dashoffset="326.73" id="arc"/>
+        </svg>
+        <div class="val">
+          <span class="num" style="color:var(--mint)">8.4</span>
+          <span class="of">/ 10</span>
+        </div>
+      </div>
+      <div class="dims">
+        <div class="dim"><span>UX &amp; Conversión</span><b style="color:var(--mint)">7.8</b></div>
+        <div class="dim"><span>SEO &amp; Visibilidad</span><b style="color:var(--mint)">8.5</b></div>
+        <div class="dim"><span>Performance &amp; Dev</span><b style="color:var(--mint)">9.2</b></div>
+        <div class="dim"><span>Contenido &amp; E-E-A-T</span><b style="color:var(--mint)">8.2</b></div>
+      </div>
+    </div>
+    <p class="line">Plataforma beta con nivel técnico excelente y bases sólidas para el lanzamiento a producción. Los puntos de mejora son de conversión y arquitectura de información, no de rendimiento ni SEO técnico.</p>
+  </section>
+
+  <!-- Summary -->
+  <div class="summary">
+    La plataforma beta está en un nivel técnico excelente — Lighthouse 94 mobile, accesibilidad 100, SEO 100 — con un stack vanilla optimizado que supera a la mayoría de agencias del sector. <strong>Las bases están sólidas: schema rico, llms.txt implementado, triple capa anti-spam, y un design system coherente.</strong> Los puntos de mejora son de conversión y arquitectura de información: la home es densa, la navegación demasiado mínima, y hay oportunidades de optimización de LCP mobile (2.6s, justo por encima del umbral de 2.5s). Son ajustes accionables antes del lanzamiento a producción.
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs" role="tablist">
+    <button class="on" onclick="switchTab(0)" role="tab" aria-selected="true">UX &amp; Conversión <span style="opacity:.5;font-size:.7rem">(4)</span></button>
+    <button onclick="switchTab(1)" role="tab" aria-selected="false">SEO &amp; Visibilidad <span style="opacity:.5;font-size:.7rem">(4)</span></button>
+    <button onclick="switchTab(2)" role="tab" aria-selected="false">Performance &amp; Dev <span style="opacity:.5;font-size:.7rem">(4)</span></button>
+    <button onclick="switchTab(3)" role="tab" aria-selected="false">Contenido &amp; E-E-A-T <span style="opacity:.5;font-size:.7rem">(4)</span></button>
+  </div>
+
+  <!-- ─── Tab 0: UX & Conversión ─── -->
+  <div class="tc on" id="t0">
+    <div class="tab-hdr">
+      <h2>UX &amp; Conversión</h2>
+      <span class="tab-score">7.8 / 10</span>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-med">P2 — Media</span><span class="cat">Densidad de contenido</span></div>
+      <h3>La home acumula demasiadas secciones entre el hero y el formulario de cierre</h3>
+      <p>Hero + métricas + servicios + statements + casos + testimonios + fricciones + proceso + FAQ + form — 10 secciones compitiendo por atención. <strong>Cada sección intermedia entre la propuesta de valor y el CTA es un punto potencial de abandono. La distancia al formulario penaliza la conversión.</strong></p>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-med">P2 — Media</span><span class="cat">Arquitectura de navegación</span></div>
+      <h3>La navegación visible solo muestra 3 items — Blog, Casos y Nosotros están enterrados en el footer</h3>
+      <p>El menú principal tiene Home, Servicios y Contacto. El blog (40 artículos), los casos de negocio (8 proyectos) y el equipo son activos de conversión que no tienen visibilidad en la navegación principal. <strong>Un visitante que llega desde búsqueda orgánica a un artículo del blog no tiene camino visible hacia los casos ni los servicios.</strong></p>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-low">Oportunidad</span><span class="cat">Social proof above-the-fold</span></div>
+      <h3>Los testimonios y la métrica de 5.0/5 no aparecen en above-the-fold</h3>
+      <p>Las métricas (+13 años, +28% conversión) están visibles arriba, pero las reseñas y logos de clientes requieren scroll. <strong>Mover un badge de confianza (5.0 Google, 80+ proyectos) al hero reduciría fricción en la decisión inicial del visitante.</strong></p>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-low">Oportunidad</span><span class="cat">Micro-conversiones</span></div>
+      <h3>No hay micro-conversiones intermedias antes del formulario de contacto</h3>
+      <p>El único camino de conversión es el formulario completo o el briefing. <strong>Añadir un lead magnet (guía, checklist, mini-auditoría) como paso intermedio captaría visitantes que aún no están en fase de decisión pero sí de consideración.</strong></p>
+    </div>
+  </div>
+
+  <!-- ─── Tab 1: SEO & Visibilidad ─── -->
+  <div class="tc" id="t1">
+    <div class="tab-hdr">
+      <h2>SEO &amp; Visibilidad</h2>
+      <span class="tab-score">8.5 / 10</span>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-ok">Fortaleza</span><span class="cat">Schema.org</span></div>
+      <h3>Implementación de datos estructurados por encima de la media del sector</h3>
+      <p>Organization + LocalBusiness + ProfessionalService, FAQPage con 7 Q&A, BlogPosting con autoría Person, catálogo de servicios, coordenadas geográficas y áreas servidas. <strong>Esta base de schema posiciona la plataforma para rich results, knowledge panel y featured snippets desde el día 1 del lanzamiento.</strong></p>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-ok">Fortaleza</span><span class="cat">GEO/AEO</span></div>
+      <h3>llms.txt implementado + robots.txt permite crawlers de IA</h3>
+      <p>GPTBot, ChatGPT-User, Google-Extended, PerplexityBot y ClaudeBot están explícitamente permitidos. El archivo llms.txt existe y describe la empresa. <strong>Esto es una ventaja competitiva real: la mayoría de agencias UX/UI en Barcelona no tienen ninguna señal GEO implementada.</strong></p>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-med">P2 — Media</span><span class="cat">Schemas pendientes</span></div>
+      <h3>Faltan BreadcrumbList y WebSite+SearchAction en el schema</h3>
+      <p>La navegación jerárquica de la plataforma (servicios → servicio específico → ciudad) se beneficiaría de breadcrumbs marcados en JSON-LD. <strong>WebSite+SearchAction habilitaría el sitelinks searchbox en Google — visibilidad adicional gratuita.</strong></p>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-low">Oportunidad</span><span class="cat">Indexación</span></div>
+      <h3>El subdominio beta no está indexado — el lanzamiento a producción necesita plan de migración</h3>
+      <p>tres.trespuntos-lab.com no tiene presencia en Google (esperado para un entorno beta). <strong>Al migrar a www.trespuntoscomunicacion.es, asegurar redirects 301 desde todas las URLs antiguas, actualizar sitemap, y enviar a Search Console para preservar el posicionamiento existente.</strong></p>
+    </div>
+  </div>
+
+  <!-- ─── Tab 2: Performance & Dev ─── -->
+  <div class="tc" id="t2">
+    <div class="tab-hdr">
+      <h2>Performance &amp; Dev</h2>
+      <span class="tab-score">9.2 / 10</span>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-ok">Fortaleza</span><span class="cat">Lighthouse scores</span></div>
+      <h3>Performance 94 mobile / 97 desktop — en el top 5% de plataformas del sector</h3>
+      <p>CLS perfecto (0), FCP 1.9s, Speed Index 1.9s. Stack vanilla HTML/CSS/JS sin frameworks pesados, CSS crítico inlineado, carga async de hojas externas. <strong>Este nivel de rendimiento es coherente con el mensaje de marca de Tres Puntos: la plataforma practica lo que predica.</strong></p>
+
+      <!-- PSI card -->
+      <div class="psi">
+        <div class="psi-title">PageSpeed Insights &middot; Datos reales</div>
+
+        <div class="psi-section">Mobile (throttled)</div>
+        <div class="metrics">
+          <div class="metric"><div class="mv">1.9s</div><div class="ml">FCP</div><div class="status">Good</div></div>
+          <div class="metric"><div class="mv warn">2.6s</div><div class="ml">LCP</div><div class="status warn">Needs work</div></div>
+          <div class="metric"><div class="mv">150ms</div><div class="ml">TBT</div><div class="status">Good</div></div>
+          <div class="metric"><div class="mv">0</div><div class="ml">CLS</div><div class="status">Good</div></div>
+          <div class="metric"><div class="mv">1.9s</div><div class="ml">SI</div><div class="status">Good</div></div>
+          <div class="metric"><div class="mv warn">4.2s</div><div class="ml">TTI</div><div class="status warn">Needs work</div></div>
+        </div>
+
+        <div class="psi-section">Desktop</div>
+        <div class="metrics">
+          <div class="metric"><div class="mv">0.4s</div><div class="ml">FCP</div><div class="status">Good</div></div>
+          <div class="metric"><div class="mv">1.2s</div><div class="ml">LCP</div><div class="status">Good</div></div>
+          <div class="metric"><div class="mv">0ms</div><div class="ml">TBT</div><div class="status">Good</div></div>
+          <div class="metric"><div class="mv">0.002</div><div class="ml">CLS</div><div class="status">Good</div></div>
+          <div class="metric"><div class="mv">1.1s</div><div class="ml">SI</div><div class="status">Good</div></div>
+          <div class="metric"><div class="mv">1.2s</div><div class="ml">TTI</div><div class="status">Good</div></div>
+        </div>
+
+        <div class="scores-row">
+          <div class="lh-score"><div class="lh-num">94</div><div class="lh-label">Performance</div></div>
+          <div class="lh-score"><div class="lh-num">100</div><div class="lh-label">Accessibility</div></div>
+          <div class="lh-score"><div class="lh-num">96</div><div class="lh-label">Best Practices</div></div>
+          <div class="lh-score"><div class="lh-num">100</div><div class="lh-label">SEO</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-med">P2 — Media</span><span class="cat">LCP mobile</span></div>
+      <h3>LCP mobile en 2.6s — 100ms por encima del umbral 'Good' de Google</h3>
+      <p>El LCP está en zona 'Needs Improvement' (2.5-4s). El elemento LCP probablemente es el hero o la primera imagen. <strong>Optimizar la imagen hero (preload, formato WebP, tamaño adecuado) y reducir el render-blocking podría bajar el LCP por debajo de 2.5s y pasar a zona verde.</strong></p>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-med">P2 — Media</span><span class="cat">TTI mobile</span></div>
+      <h3>Time to Interactive en 4.2s — el canvas de partículas y los scripts defer suman</h3>
+      <p>El hero usa un canvas con partículas animadas que requiere JavaScript. En mobile (throttled), esto eleva el TTI. <strong>Considerar desactivar el canvas en conexiones lentas (Network Information API) o reducir el conteo de partículas a 10 en mobile.</strong></p>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-ok">Fortaleza</span><span class="cat">Anti-spam</span></div>
+      <h3>Sistema anti-spam robusto: Turnstile + Honeypot + Rate Limiting</h3>
+      <p>Cloudflare Turnstile invisible, campo honeypot oculto, y rate limiting de 30s en localStorage. <strong>Tres capas independientes que protegen el formulario sin añadir fricción visible al usuario — la mayoría de competidores usan solo reCAPTCHA.</strong></p>
+    </div>
+  </div>
+
+  <!-- ─── Tab 3: Contenido & E-E-A-T ─── -->
+  <div class="tc" id="t3">
+    <div class="tab-hdr">
+      <h2>Contenido &amp; E-E-A-T</h2>
+      <span class="tab-score">8.2 / 10</span>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-ok">Fortaleza</span><span class="cat">Autoría verificable</span></div>
+      <h3>E-E-A-T sólido: 13 años, 80+ proyectos, autoría con schema Person</h3>
+      <p>Jordi Expósito como autor en schema BlogPosting con jobTitle y worksFor. Equipo real de 5 personas + 6 agentes IA (transparencia). LinkedIn enlazado. 5.0/5 en Google con 9 reseñas verificables. <strong>Señales de Experience, Expertise, Authoritativeness y Trustworthiness bien implementadas.</strong></p>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-ok">Fortaleza</span><span class="cat">Blog</span></div>
+      <h3>40 artículos técnicos con categorización y fechas recientes</h3>
+      <p>Categorías claras (UX/UI, Desarrollo, E-commerce, IA, Arquitectura Digital, Conversión), filtrado interactivo, y contenido actualizado a 2026. <strong>Base de contenido que posiciona para long-tail SEO y demuestra expertise real ante Google y potenciales clientes.</strong></p>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-med">P2 — Media</span><span class="cat">Contenido local</span></div>
+      <h3>9 páginas de servicios por ciudad pendientes de creación</h3>
+      <p>Las páginas de consultoria-digital, design-engineer y tienda-online para Madrid, Sevilla y Bilbao están previstas pero no creadas. <strong>Son 9 oportunidades de posicionamiento local que los competidores ya cubren (Several, Morpheon, Hi Experience).</strong></p>
+    </div>
+
+    <div class="find">
+      <div class="row"><span class="sev sev-low">Oportunidad</span><span class="cat">Casos de negocio</span></div>
+      <h3>Los 8 casos de negocio podrían incluir métricas de impacto más prominentes</h3>
+      <p>Los casos existen con screenshots y narrativa sólida, pero las métricas de resultado (conversión, velocidad, retención) podrían tener más peso visual. <strong>Un banner de impacto al inicio de cada caso ('+40% conversión', '-2s carga') aumentaría la percepción de valor para visitantes que escanean.</strong></p>
+    </div>
+  </div>
+
+  <!-- Quick win -->
+  <div class="qw">
+    <div class="qw-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      Quick Win
+    </div>
+    <h3>Expandir la navegación principal: añadir Blog, Casos y Nosotros al menú</h3>
+    <p>Un cambio en components.js que no requiere rediseño ni nueva funcionalidad. Los tres enlaces existen en el footer pero no en el navbar. Añadirlos al menú principal da visibilidad inmediata a los activos de conversión más potentes: 8 casos de negocio con screenshots reales y 40 artículos técnicos. Impacto directo en la retención y en el recorrido del visitante por la plataforma.</p>
+    <div class="qw-time">Resoluble en menos de 1 hora</div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="ftr">
+    <p>Tres Puntos &middot; Auto-diagnóstico &middot; Marzo 2026</p>
+  </footer>
+
+</div>
+<!-- end .main -->
+
+<!-- ════════ SIDEBAR ════════ -->
+<aside class="sidebar">
+  <div class="card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+    </div>
+    <h3>Resumen del diagnóstico</h3>
+    <div class="sc">Score global: 8.4 / 10</div>
+    <div class="status-line">
+      <span class="dot"></span>
+      Lista para lanzamiento con ajustes menores
+    </div>
+    <ul class="sub-scores">
+      <li><span>UX &amp; Conversión</span><b>7.8</b></li>
+      <li><span>SEO &amp; Visibilidad</span><b>8.5</b></li>
+      <li><span>Performance &amp; Dev</span><b>9.2</b></li>
+      <li><span>Contenido &amp; E-E-A-T</span><b>8.2</b></li>
+    </ul>
+  </div>
+</aside>
+
+</div>
+<!-- end .page -->
+
+<script>
+/* ── Tabs ── */
+function switchTab(i){
+  document.querySelectorAll('.tabs button').forEach(function(b,j){
+    b.classList.toggle('on',j===i);
+    b.setAttribute('aria-selected',j===i?'true':'false');
+  });
+  document.querySelectorAll('.tc').forEach(function(t,j){
+    t.classList.toggle('on',j===i);
+  });
+}
+
+/* ── Score arc animation ── */
+(function(){
+  var arc=document.getElementById('arc');
+  if(!arc)return;
+  /* 326.73 * (1 - 0.84) = 52.28 */
+  setTimeout(function(){arc.style.strokeDashoffset='52.28'},300);
+})();
+</script>
+
+</body>
+</html>

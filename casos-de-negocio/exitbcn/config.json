@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "slug": "exitbcn",
+    "title": "Exitbcn — Caso de Negocio | Tres Puntos",
+    "description": "Exitbcn: e-commerce de moda premium que conecta la tienda física de Granollers con experiencia digital. Descubre cómo Tres Puntos diseñó una plataforma de compra de dos clics para marcas de lujo.",
+    "canonical": "/casos-de-negocio/exitbcn/",
+    "og": {
+      "title": "Exitbcn — Caso de Negocio | Tres Puntos",
+      "description": "Nuestro principal objetivo es ofrecer a nuestros clientes productos diferentes, además de una trato personalizado muy cercano cuando el cliente visita nuestra tienda física ubicada en Granollers (Barcelona).",
+      "image": "https://www.trespuntoscomunicacion.es/img/og-default.jpg"
+    },
+    "schema_type": "CreativeWork",
+    "date_published": "2020-06-04",
+    "date_modified": "2026-03-22",
+    "keywords": []
+  },
+  "faq_schema": [],
+  "blocks": [
+    {
+      "type": "hero-header",
+      "sector_label": "Caso de negocio",
+      "name": "Exitbcn",
+      "services": "Diseño web, UI/UX, UX Research",
+      "brief": "Exitbcn es moda premium con alma minorista. Diseñamos un e-commerce que replica la experiencia de compra consultiva de la tienda física, donde la atención al detalle y la curaduría de marcas es el verdadero diferencial.",
+      "meta_items": [
+        { "label": "Cliente", "value": "Exitbcn" },
+        { "label": "Industria", "value": "E-commerce / Moda" },
+        { "label": "Tecnología", "value": "Wordpress" },
+        { "label": "Sitio web", "value": "exitbcn.com", "url": "https://exitbcn.com" }
+      ]
+    },
+    {
+      "type": "hero-browser-mockup",
+      "browser_url": "exitbcn.com",
+      "image": "/img/casos/exitbcn/desktop-hero.webp",
+      "alt": "Exitbcn homepage - e-commerce de moda premium"
+    },
+    {
+      "type": "overview",
+      "variant": "cards",
+      "badge": "El proyecto",
+      "heading": "Descripción del proyecto",
+      "cards": [
+        {
+          "label": "Reto",
+          "text": "Exitbcn tenía un problema de omnicanalidad paradójico: su tienda física en Granollers era consultiva y cálida, pero online perdía identidad. El e-commerce genérico no reflejaba la curaduría experta, el trato personalizado, ni el DNA de marca. Necesitábamos que comprar online fuera tan intuitivo y confiable como entrar por la puerta."
+        },
+        {
+          "label": "Estrategia",
+          "text": "Etnografía digital de shoppers premium, mapeo de customer journey omnicanal, UX research sobre decisiones de compra en moda, y estrategia de filtrado y búsqueda avanzada para simplificar sin empobrecer."
+        },
+        {
+          "label": "Diseño",
+          "text": "Diseño minimalista de alto impacto, galería visual de productos con zoom 360, sistema de filtros inteligentes, checkout de 2 pasos, integración con inventario fisico, y experiencia mobile optimizada para navegación táctil."
+        }
+      ],
+      "content_paragraphs": [
+        "Exitbcn es más que una tienda de moda: es la curación de marcas premium con un enfoque minorista. Ubicada en Granollers, ha construido su reputación siendo el punto de referencia para fashion-forward customers que valoran la asesoría experta. Pero la tienda física tiene límites geográficos. Online, Exitbcn necesitaba escalar sin perder su esencia consultiva.",
+        "El desafío era paradójico: la moda premium vive de experiencias sensoriales (tacto, luz, contexto), pero online necesita rapidez y claridad. Los shoppers de alta gama son exigentes pero no quieren fricción. Investigamos cómo diferentes perfiles (directivos, creativos, estudiantes de moda) exploraban colecciones. El insight: el 60% primero buscaba \"vibes\" antes de buscar productos específicos.",
+        "Diseñamos una experiencia donde las imágenes son protagonistas absolutos: galerías de 360º, zoom sin perder cálidad, contexto visual (cómo lucen las prendas en movimiento). El checkout es minimalista pero completo: dos pasos, opciónes de pago diversas, transparencia total en stock. La búsqueda y filtros fueron pensados no para encontrar, sino para explorar y descubrir."
+      ]
+    },
+    {
+      "type": "detail-phones",
+      "badge": "Diseño responsive",
+      "heading": "Plataforma en detalle",
+      "intro": "Cada sección del e-commerce fue diseñada para comunicar la esencia premium de la marca.",
+      "phones": [
+        {
+          "src": "/img/casos/exitbcn/mobile-hero.webp",
+          "alt": "Exitbcn - Homepage móvil",
+          "label": "Homepage"
+        },
+        {
+          "src": "/img/casos/exitbcn/mobile-products.webp",
+          "alt": "Exitbcn - Catálogo móvil",
+          "label": "Catálogo"
+        },
+        {
+          "src": "/img/casos/exitbcn/mobile-brands.webp",
+          "alt": "Exitbcn - Marcas móvil",
+          "label": "Marcas"
+        },
+        {
+          "src": "/img/casos/exitbcn/mobile-scroll3.webp",
+          "alt": "Exitbcn - Productos móvil",
+          "label": "Productos"
+        }
+      ]
+    },
+    {
+      "type": "scroll-browser",
+      "bg": "var(--bg-subtle)",
+      "badge": "Live preview",
+      "heading": "Recorrido completo de la web",
+      "intro": "Navegación fluida desde el hero hasta el footer, diseñada para convertir visitantes en compradores.",
+      "browser_url": "exitbcn.com",
+      "image": "/img/casos/exitbcn/desktop-full.webp",
+      "alt": "Recorrido completo de exitbcn.com"
+    },
+    {
+      "type": "phone-carousel",
+      "badge": "Mobile-first",
+      "heading": "Experiencia móvil premium",
+      "intro": "Navegación táctil optimizada para descubrir colecciones, explorar productos y comprar en dos toques.",
+      "phones": [
+        {
+          "src": "/img/casos/exitbcn/mobile-hero.webp",
+          "alt": "Exitbcn mobile - Homepage"
+        },
+        {
+          "src": "/img/casos/exitbcn/mobile-products.webp",
+          "alt": "Exitbcn mobile - Productos"
+        },
+        {
+          "src": "/img/casos/exitbcn/mobile-brands.webp",
+          "alt": "Exitbcn mobile - Marcas"
+        },
+        {
+          "src": "/img/casos/exitbcn/mobile-scroll3.webp",
+          "alt": "Exitbcn mobile - Catálogo"
+        },
+        {
+          "src": "/img/casos/exitbcn/mobile-scroll4.webp",
+          "alt": "Exitbcn mobile - Footer"
+        }
+      ]
+    },
+    {
+      "type": "text-section",
+      "badge": "Proceso",
+      "heading": "Desarrollo del proyecto",
+      "paragraphs": [
+        "Iniciamos con research en tienda y online. Observamos cómo los clientes fisicos interactuaban con las marcas: leían etiquetas, tocaban telas, pedían asesoramiento. Online, ese comportamiento desaparecía. Los shoppers necesitaban poder evaluar cálidad, composición, y estilo sin dudas. Diseñamos fichas de producto que son narrativas visuales: descripción detallada, composición, guia de tallas, imágenes en múltiples ángulos.",
+        "La navegación fue pensada como exploración, no búsqueda urgente. Creamos filtros dinámicos que no saturan sino orientan: por marca, por estilo, por presupuesto, por temporada. El algoritmo sugiere combinaciones. La galeria de cada producto es cinemática: zoom sin limite, vistas 360, detalle de detalles (botones, costuras, texturas).",
+        "El checkout fue reducido a lo esencial pero sin sacrificar confianza: dos pasos limpios, múltiples formas de pago, cálculo transparente de envíos, opción de compra sin registrarse, y confirmación con detalles claros. La integración con inventario fisico fue crítica: si algo se agota en Granollers, también en web."
+      ]
+    },
+    {
+      "type": "stats-grid",
+      "variant": "cards",
+      "stats": [
+        { "number": "2", "label": "Pasos en el checkout" },
+        { "number": "12+", "label": "Vistas por producto" },
+        { "number": "100%", "label": "Responsive design" },
+        { "number": "4", "label": "Meses de desarrollo" }
+      ]
+    },
+    {
+      "type": "text-section",
+      "badge": "Impacto",
+      "heading": "Resultado",
+      "paragraphs": [
+        "Exitbcn ahora vende online con la misma confianza que en tienda física. El e-commerce es una extensión natural del DNA minorista, no un canal secundario. Las imágenes son galeria de arte, los filtros son consultores inteligentes, el checkout es ceremonia de compra elegante. Los clientes compran sabiendo exactamente que van a recibir.",
+        "El impacto comercial es claro: la tienda física ahora es centro de distribución y experiencia, mientras que la web abre mercado nacional. La experiencia omnicanal es real: clientes compran online y recogen en tienda, o lo inverso. Exitbcn demostró que moda premium online funciona cuando cada detalle refleja el cuidado que define la marca."
+      ]
+    },
+    {
+      "type": "expert-opinion",
+      "badge": "Opinión experta",
+      "heading": "Moda premium online es cuestión de narración visual y confianza. Exitbcn lo demostró",
+      "body": "El éxito de este proyecto fue entender que Exitbcn no es \"una tienda llevada a web\", sino una experiencia completamente nueva con raíces en la consultiva física. Las marcas premium necesitan que cada interacción comunique cálidad y cuidado. Desde galerías de 360º hasta checkout minimalista, cada píxel cuenta la historia de una marca que entiende moda. El resultado es omnicanalidad real: tienda física y web son una sola experiencia.",
+      "author": "Jordi Expósito",
+      "role": "UX/UI & Digital Architecture",
+      "avatar": "/img/jordi-exposito.webp",
+      "linkedin": "https://www.linkedin.com/in/trespuntoscomunicacion/"
+    },
+    {
+      "type": "cta-form",
+      "heading_prefix": "¿Tienes un",
+      "heading_highlight": "reto similar",
+      "sub": "El proceso empieza con 5 preguntas y en menos de 24h tienes una valoración.\n\nCuéntanos qué estás construyendo.",
+      "reasons": [
+        "Sin reunión de ventas previa. Formulario directo en 3 minutos.",
+        "Respondemos en menos de 24h con una primera valoración de alcance.",
+        "Si no encajamos con lo que necesitas, te lo decimos sin rodeos.",
+        "El proyecto empieza con diagnóstico, no con propuesta económica genérica."
+      ]
+    }
+  ]
+}

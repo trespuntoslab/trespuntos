@@ -1,0 +1,157 @@
+{
+  "agencia": "GO2JUMP",
+  "web": "go2jump.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Propuesta de valor",
+          "titulo": "Mensaje de home demasiado genérico para una agencia 360",
+          "detalle": "La home comunica \"agencia de marketing online 360\" sin diferenciar claramente qué hace mejor GO2JUMP frente a otras agencias similares. <strong>Cuando todo es 360, nada destaca: la web necesita un posicionamiento más nítido</strong> que conecte con el dolor específico de su cliente ideal (B2B industrial, finanzas, salud)."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Flujo de conversión",
+          "titulo": "Demasiados pasos entre el interés del usuario y el contacto",
+          "detalle": "El recorrido desde la home hasta el formulario de contacto requiere múltiples clics y no hay elementos de conversión intermedios. <strong>Insertar micro-conversiones (descargables, calculadoras, diagnósticos rápidos) en las páginas de servicio capturaría leads en etapas tempranas</strong> del funnel."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Segmentación",
+          "titulo": "Falta de rutas diferenciadas por tipo de cliente",
+          "detalle": "GO2JUMP trabaja con sectores muy diferentes (industrial, financiero, educación, salud) pero la web no ofrece caminos personalizados. <strong>Landing pages sectoriales con casos de éxito y vocabulario específico aumentarían la relevancia percibida</strong> y la tasa de conversión por vertical."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Prueba social",
+          "titulo": "Certificaciones visibles pero sin resultados cuantificables",
+          "detalle": "Los badges de Google Partner, HubSpot y Meta son un buen punto de partida, pero <strong>las certificaciones por sí solas no convencen tanto como los datos reales de rendimiento</strong>. Mostrar KPIs concretos (leads generados, ROAS medio, crecimiento de tráfico) por sector generaría más confianza."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Diseño visual",
+          "titulo": "Estética visual que no refleja el nivel de una agencia Partner de Google",
+          "detalle": "El diseño general se percibe como correcto pero anticuado para los estándares actuales de agencia digital. <strong>Una agencia que implementa estrategias digitales avanzadas debería tener una web que refleje esa modernidad</strong> con motion design, componentes interactivos y una experiencia visual más impactante."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Paleta cromática",
+          "titulo": "Paleta de colores segura pero sin personalidad",
+          "detalle": "Los colores corporativos se aplican de forma correcta pero conservadora. <strong>Introducir gradientes, acentos de color estratégicos y dark sections daría más dinamismo visual</strong> y rompería la monotonía de las secciones informativas."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Espaciado y ritmo",
+          "titulo": "Densidad de contenido excesiva en páginas de servicio",
+          "detalle": "Las páginas de servicio acumulan mucho texto sin suficiente aire visual entre secciones. <strong>Aumentar el white space y alternar bloques de texto con elementos visuales (gráficos, iconos, vídeos) mejoraría la experiencia de lectura</strong> y la retención del usuario."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Microinteracciones",
+          "titulo": "Ausencia de animaciones y transiciones que guíen la atención",
+          "detalle": "La web es estática en cuanto a movimiento, lo que la hace menos memorable. <strong>Animaciones on-scroll sutiles, hover effects en cards de servicio y transiciones fluidas entre secciones</strong> elevarían significativamente la percepción de calidad y profesionalidad."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 9.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Estrategia de contenido",
+          "titulo": "Contenido de blog con potencial pero sin estrategia de cluster temático",
+          "detalle": "El blog tiene contenido relevante pero no parece seguir una estrategia de topic clusters con pillar pages. <strong>Organizar el contenido en clusters temáticos (inbound marketing, PPC, SEO B2B) con interlinking estratégico multiplicaría la autoridad temática</strong> en cada vertical."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Datos estructurados",
+          "titulo": "Oportunidad perdida en rich snippets para páginas de servicio",
+          "detalle": "Las páginas de servicio probablemente carecen de schema markup específico. <strong>Implementar datos estructurados de tipo Service, FAQ y Organization ampliaría la presencia en SERPs</strong> con resultados enriquecidos que mejorarían el CTR orgánico."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Velocidad y SEO técnico",
+          "titulo": "Rendimiento web afectando al posicionamiento orgánico",
+          "detalle": "Los Core Web Vitals son un factor de ranking confirmado por Google. <strong>Si la web tiene problemas de LCP o CLS, el impacto en SEO es directo e inmediato</strong>, especialmente en mobile donde Google aplica mobile-first indexing."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "SEO multiidioma",
+          "titulo": "Presencia bilingüe infraexplotada",
+          "detalle": "Con oficinas en Barcelona y Madrid, la web podría beneficiarse de una estrategia multiidioma más agresiva. <strong>Implementar hreflang correctamente y contenido localizado para mercado anglosajón abriría nuevas oportunidades de captación internacional</strong>."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 8.7,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Stack tecnológico",
+          "titulo": "Web probablemente basada en WordPress con limitaciones de rendimiento",
+          "detalle": "La estructura sugiere un CMS WordPress que, sin optimización agresiva, genera tiempos de carga subóptimos. <strong>Considerar una migración a Jamstack o al menos implementar caching a nivel de servidor y CDN reduciría los tiempos de respuesta drásticamente</strong>."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Carga de terceros",
+          "titulo": "Exceso probable de scripts de tracking y marketing tools",
+          "detalle": "Como agencia de marketing, es habitual cargar múltiples herramientas (Analytics, Tag Manager, Hotjar, HubSpot, pixels de Meta/Google). <strong>Cada script de terceros suma entre 50-200ms al tiempo de carga total</strong>. Auditar y consolidar estos scripts mediante Tag Manager con triggers optimizados es crítico."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Optimización de assets",
+          "titulo": "Imágenes probablemente sin optimización moderna",
+          "detalle": "Es habitual encontrar imágenes en PNG/JPG sin conversión a formatos modernos. <strong>Migrar a WebP/AVIF con responsive images y lazy loading reduciría el peso de página entre un 40-60%</strong> sin pérdida de calidad visual."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Accesibilidad",
+          "titulo": "Posibles carencias en accesibilidad web (WCAG)",
+          "detalle": "La mayoría de webs de agencias no cumplen los estándares mínimos de accesibilidad. <strong>Falta de contraste suficiente, alt texts en imágenes y navegación por teclado son problemas habituales</strong> que además pueden suponer un riesgo legal con la directiva europea de accesibilidad 2025."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Crear landing pages sectoriales con casos de éxito específicos",
+    "detalle": "Diseñar 3-4 landing pages para los verticales clave (industrial B2B, finanzas, educación) con métricas reales, testimonios y CTAs personalizados para cada sector.",
+    "impacto": "Mayor relevancia percibida por el prospecto, mejora del Quality Score en campañas PPC y aumento del 30% en tasa de conversión por segmento."
+  },
+  "_score": 7.7,
+  "_nombre": "Jorge",
+  "_icp": "Performance",
+  "resumen": [
+    "GO2JUMP opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado go2jump.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (6.5/10) es el área más sólida, mientras que Dev & Performance (4.5/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 93,
+      "accessibility": 88,
+      "bestPractices": 77,
+      "seo": 92
+    },
+    "mobile": {
+      "performance": 90,
+      "accessibility": 91,
+      "bestPractices": 77,
+      "seo": 100
+    }
+  }
+}

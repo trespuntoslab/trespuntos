@@ -1,0 +1,157 @@
+{
+  "agencia": "Comunicare",
+  "web": "comunicare.es",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Propuesta de valor",
+          "titulo": "Hero sin diferenciación clara frente a otras agencias de Madrid",
+          "detalle": "La página principal presenta un mensaje genérico de \"agencia de marketing digital\" que <strong>no comunica qué hace única a Comunicare frente a las decenas de agencias similares en Madrid</strong>. El visitante no encuentra en los primeros 5 segundos una razón convincente para quedarse."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Arquitectura de información",
+          "titulo": "Menú con exceso de servicios que dificulta la navegación",
+          "detalle": "La estructura de navegación intenta mostrar todos los servicios (SEO, SEM, social media, email marketing, CRO...) de forma plana, <strong>sin priorización ni agrupación lógica</strong>. El usuario se pierde entre opciones similares sin entender cuál es la más relevante para su caso."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Conversión",
+          "titulo": "Múltiples puntos de contacto sin estrategia de funnel",
+          "detalle": "Se ofrecen varias formas de contacto (formulario, teléfono, email) pero <strong>no hay un embudo de conversión estructurado</strong> que guíe al usuario desde el descubrimiento hasta la solicitud de presupuesto con pasos intermedios de cualificación."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Prueba social",
+          "titulo": "Casos de éxito sin métricas cuantificables visibles",
+          "detalle": "Aunque mencionan 12 años de experiencia y transparencia en resultados, <strong>faltan dashboards visuales, gráficos de crecimiento o números concretos de ROI</strong> que demuestren el impacto real de sus campañas de forma inmediata."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Imagen profesional",
+          "titulo": "Diseño web que no refleja la sofisticación de una agencia 360°",
+          "detalle": "Para una agencia que ofrece servicios de marketing digital completos, <strong>el diseño visual de su web se percibe como funcional pero carente de personalidad</strong>. Tipografías estándar, layouts predecibles y una paleta de colores sin carácter propio no transmiten la creatividad esperada."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Jerarquía visual",
+          "titulo": "Páginas de servicio con bloques de texto extensos sin apoyo visual",
+          "detalle": "Las páginas de servicios individuales presentan <strong>muros de texto con poca variedad visual</strong>: faltan iconografías, infografías, comparativas visuales o elementos interactivos que faciliten la comprensión rápida de cada servicio."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Responsive",
+          "titulo": "Adaptación móvil funcional pero sin optimización de experiencia",
+          "detalle": "La web se adapta a móvil pero <strong>no se ha diseñado pensando primero en mobile</strong>. Los elementos simplemente se reordenan verticalmente sin aprovechar patrones de interacción nativos de dispositivos móviles como swipe, bottom sheets o navegación thumb-friendly."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Identidad visual",
+          "titulo": "Logo y elementos de marca sin sistema visual definido",
+          "detalle": "La identidad visual no se siente como un <strong>sistema de diseño cohesivo con reglas claras de uso de color, tipografía y espaciado</strong>. Esto genera inconsistencias entre secciones y debilita el reconocimiento de marca."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 8.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Contenido SEO",
+          "titulo": "Estrategia de contenidos centrada en keywords de alto volumen pero alta competencia",
+          "detalle": "La web apunta a términos como \"agencia marketing digital Madrid\" con páginas de landing específicas, pero <strong>la competencia por estos términos es brutal y el contenido no ofrece suficiente profundidad ni originalidad</strong> para diferenciarse en los resultados de búsqueda."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Canibalización",
+          "titulo": "Múltiples páginas compitiendo por keywords similares",
+          "detalle": "Se detectan varias URLs que apuntan a variaciones del mismo término (\"agencia marketing digital\", \"agencias de marketing digital Madrid\"), lo que puede causar <strong>canibalización de keywords y confusión para Google</strong> sobre qué página posicionar."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Meta tags",
+          "titulo": "Meta descriptions repetitivas o poco optimizadas para CTR",
+          "detalle": "Las meta descriptions de varias páginas siguen un patrón similar sin <strong>personalización que incentive el clic desde los resultados de búsqueda</strong>. Optimizar cada meta description como un micro-copy de venta mejoraría el CTR orgánico."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Link building",
+          "titulo": "Perfil de backlinks mejorable para una agencia de su tamaño",
+          "detalle": "Con 12 años de trayectoria, el perfil de enlaces entrantes debería ser más robusto. <strong>Faltan menciones en medios especializados y partnerships de contenido</strong> que refuercen la autoridad del dominio."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.7,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad de carga",
+          "titulo": "Tiempo de carga elevado por recursos no optimizados",
+          "detalle": "La web carga recursos CSS y JavaScript que <strong>no están minificados ni se cargan de forma asíncrona</strong>. Para una agencia que ofrece servicios de optimización de conversión, tener una web lenta es una contradicción evidente."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "LCP y CLS fuera de los rangos óptimos de Google",
+          "detalle": "El Largest Contentful Paint se ve afectado por imágenes hero sin optimizar y <strong>el Cumulative Layout Shift muestra desplazamientos de contenido durante la carga</strong> que perjudican tanto la experiencia del usuario como el posicionamiento."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Código",
+          "titulo": "Dependencia de page builders que genera código inflado",
+          "detalle": "El markup HTML presenta las señales típicas de constructores visuales con <strong>múltiples capas de divs anidados, CSS inline y scripts de terceros</strong> que podrían eliminarse con un desarrollo frontend custom más limpio."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Accesibilidad",
+          "titulo": "Problemas de accesibilidad en contraste y navegación por teclado",
+          "detalle": "Algunos elementos de la interfaz no cumplen con los <strong>ratios mínimos de contraste WCAG AA y la navegación por teclado no está completamente implementada</strong>, lo que limita el acceso a usuarios con discapacidad visual."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Crear landing page de servicio estrella con caso de éxito integrado",
+    "detalle": "Diseñar una landing dedicada al servicio más rentable de Comunicare con un caso de éxito real con métricas visibles, testimonial en vídeo y formulario de cualificación. Serviría como modelo para replicar en el resto de servicios.",
+    "impacto": "Mejora inmediata en la conversión del servicio principal y creación de un template replicable que elevaría la calidad de toda la web progresivamente."
+  },
+  "_score": 6.3,
+  "_nombre": "Raúl",
+  "_icp": "Performance",
+  "resumen": [
+    "Comunicare opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado comunicare.es en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma funcional pero con fricciones que afectan a la conversión. SEO & Visibilidad (6.5/10) es el área más sólida, mientras que Dev & Performance (4.5/10) requiere atención prioritaria para no perder oportunidades de captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 71,
+      "accessibility": 82,
+      "bestPractices": 54,
+      "seo": 85
+    },
+    "mobile": {
+      "performance": 53,
+      "accessibility": 82,
+      "bestPractices": 54,
+      "seo": 85
+    }
+  }
+}

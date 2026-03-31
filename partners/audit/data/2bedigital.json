@@ -1,0 +1,157 @@
+{
+  "agencia": "2bedigital",
+  "web": "2bedigital.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversion",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Conversion rate",
+          "titulo": "Hero enfocado en posicionamiento pero sin CTA de conversion inmediata",
+          "detalle": "La home destaca el claim de agencia de performance marketing especializada en calzado y retail, pero <strong>no ofrece un CTA directo que convierta en los primeros 5 segundos</strong>. Un boton de 'Solicita tu auditoria gratuita' o 'Calcula tu ROAS potencial' sobre el hero generaria leads mas cualificados que el scroll infinito actual."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Lead generation",
+          "titulo": "Pagina de contacto generica sin cualificacion de leads",
+          "detalle": "El formulario de contacto es estandar sin campos que segmenten por sector, facturacion o necesidad. <strong>Para una agencia que trabaja con marcas como Gioseppo, Victoria y MBT, un formulario inteligente con campos condicionales</strong> permitiria priorizar leads de alto valor y personalizar el primer contacto comercial."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Social proof",
+          "titulo": "Casos de exito con datos impresionantes pero enterrados en la navegacion",
+          "detalle": "Victoria con crecimiento del 35% anual y ROAS superior a 9, Gioseppo con 30% de crecimiento y ROAS superior a 10... <strong>estos resultados deberian estar en el hero, no escondidos en paginas internas</strong>. Son el argumento de venta mas potente y apenas se ven al llegar a la web."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "User journey",
+          "titulo": "Podcast como canal de autoridad sin integracion en el funnel",
+          "detalle": "Pablo Borras tiene un podcast activo '2be or not 2beDigital' que genera autoridad, pero <strong>no esta integrado en el recorrido de conversion de la web</strong>. Deberia usarse como lead magnet o pieza de nurturing dentro del customer journey."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepcion",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Imagen de marca",
+          "titulo": "Diseno limpio pero sin identidad visual diferenciadora",
+          "detalle": "La web transmite profesionalidad y tiene una estetica cuidada, pero <strong>el diseno visual no se diferencia de otras agencias de performance marketing</strong>. Con clientes como Victoria, MBT y Gioseppo, el porfolio de marcas de calzado podria inspirar una identidad visual mas premium y sectorial."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Percepcion de innovacion",
+          "titulo": "Mencion a plataformas 3D con IA pero sin reflejo visual en la web",
+          "detalle": "2bedigital desarrolla plataformas web 3D con inteligencia artificial como el metaverso de UNICEF, pero <strong>su propia web no refleja esta capacidad innovadora</strong>. Si vendes innovacion tecnologica, tu web deberia ser el primer escaparate de esa tecnologia."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Consistencia",
+          "titulo": "Version bilingue con inconsistencias en la experiencia",
+          "detalle": "La web ofrece version en ingles y espanol, pero <strong>la experiencia de navegacion y el nivel de detalle no es consistente entre ambas versiones</strong>. Dado que gestionan campanas internacionales para MBT en 5 paises europeos, la version inglesa deberia estar al mismo nivel."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Engagement",
+          "titulo": "Seccion de clientes sin interactividad ni datos de impacto visual",
+          "detalle": "La pagina de clientes muestra logos y texto, pero <strong>carece de elementos interactivos como sliders de resultados o graficos de crecimiento</strong> que refuercen visualmente el impacto del trabajo de 2bedigital."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Posicionamiento vertical",
+          "titulo": "Especializacion en calzado y retail sin landing pages verticales optimizadas",
+          "detalle": "2bedigital se posiciona como agencia lider en performance para calzado y retail, pero <strong>no tiene landing pages dedicadas para 'agencia marketing calzado' o 'performance marketing retail'</strong>. Estas keywords de nicho tienen menor competencia y atraerian leads altamente cualificados."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "SEO local",
+          "titulo": "Sede en Santiago de Compostela sin explotar SEO local",
+          "detalle": "Con oficina en Rua Galeras 13 en Santiago de Compostela, <strong>no se aprovecha el SEO local con landing pages optimizadas para 'agencia marketing digital Santiago' o 'agencia ecommerce Galicia'</strong>. Siendo referente gallego, deberian dominar las SERPs locales."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido",
+          "titulo": "Blog y podcast activos pero sin estrategia SEO coordinada",
+          "detalle": "El blog y el podcast generan contenido valioso, pero <strong>no estan coordinados en una estrategia de topic clusters</strong> que refuerce el posicionamiento en keywords clave de performance marketing, CRO y ecommerce."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Schema markup",
+          "titulo": "Datos estructurados basicos sin rich snippets avanzados",
+          "detalle": "La web tiene un SEO score de 92 en Lighthouse pero <strong>carece de schema markup avanzado para servicios, FAQ, reviews y casos de exito</strong>. Implementar ProfessionalService, Review y HowTo schema mejoraria significativamente la presencia en SERPs."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad de carga desktop",
+          "titulo": "Performance desktop critica con score 0 y Speed Index de 4 segundos",
+          "detalle": "Lighthouse desktop muestra un <strong>Performance score de 0 con Speed Index de 4.0s y LCP de 2.6s</strong>. Para una agencia que vende optimizacion de conversion, tener una web que no pasa las metricas basicas de rendimiento mina la credibilidad ante clientes tecnicos."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "LCP desktop por encima del umbral de Google a 2.6 segundos",
+          "detalle": "El Largest Contentful Paint en desktop es de 2.6s, superando el umbral recomendado de 2.5s. <strong>Google penaliza en ranking las paginas con LCP superior a 2.5s</strong>, lo que impacta directamente al posicionamiento organico de la agencia que precisamente vende performance."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Accesibilidad",
+          "titulo": "Accessibility score del 92-93% con margen de mejora en contraste",
+          "detalle": "Lighthouse reporta un score de accesibilidad de 92 en desktop y 93 en movil. <strong>Existen problemas de contraste y areas de toque que no cumplen WCAG 2.1 AA</strong>. Para ecommerce, la accesibilidad no es opcional: afecta al porcentaje de usuarios que pueden completar una compra."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Mobile performance",
+          "titulo": "Performance movil excelente con score 99 pero inconsistente con desktop",
+          "detalle": "Mientras mobile obtiene un 99 en performance (FCP 0.9s, LCP 1.6s, TBT 0ms), <strong>desktop muestra un score de 0, lo que sugiere problemas de carga de recursos pesados</strong> que solo afectan a la version de escritorio. Esta inconsistencia requiere investigacion urgente."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Subir los resultados de clientes al hero con datos reales de ROAS",
+    "detalle": "Incorporar en el hero principal un banner rotativo con resultados verificados: 'Victoria: +35% crecimiento anual, ROAS >9' y 'Gioseppo: +30% crecimiento, ROAS >10'. Anadir un CTA directo 'Calcula tu ROAS potencial'. Implementacion en menos de una semana, sin rediseno completo.",
+    "impacto": "Conversion rate estimada 2x-3x superior al hero actual. Los datos de ROAS son el argumento de venta mas potente en performance marketing y actualmente estan escondidos en paginas internas."
+  },
+  "_score": 6.7,
+  "_nombre": "Pablo",
+  "_icp": "Performance",
+  "resumen": [
+    "2bedigital es una agencia de performance marketing con sede en Santiago de Compostela, liderada por Pablo Borras, con mas de 20 profesionales y un posicionamiento claro en calzado y retail. Hemos analizado 2bedigital.com en cuatro dimensiones — UX, UI, SEO y rendimiento tecnico — para identificar donde hay friccion y donde hay oportunidad.",
+    "Detectamos una web profesional con buenos resultados en movil (Performance 99/100) pero con un problema critico de rendimiento en desktop (Performance 0/100) que mina la credibilidad de una agencia que vende optimizacion. SEO & Visibilidad (7.5/10) y UI & Percepcion (7.0/10) son areas solidas, mientras que Dev & Performance (5.5/10) requiere atencion urgente.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementacion rapida.</strong> Los datos de resultados con clientes como Victoria (ROAS >9), Gioseppo (ROAS >10) y MBT son el mayor activo comercial de 2bedigital, pero estan infrautilizados en la web."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 0,
+      "accessibility": 92,
+      "bestPractices": 100,
+      "seo": 92
+    },
+    "mobile": {
+      "performance": 99,
+      "accessibility": 93,
+      "bestPractices": 100,
+      "seo": 92
+    }
+  }
+}

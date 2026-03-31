@@ -1,0 +1,346 @@
+{
+  "meta": {
+    "slug": "nomade-rent",
+    "title": "Caso Nomade Rent | Plataforma de alquiler optimizada · Tres Puntos",
+    "description": "Cómo rediseñamos la arquitectura digital de Nomade Rent para mejorar su plataforma de alquiler y eliminar fricciones.",
+    "canonical": "/casos-de-negocio/nomade-rent/",
+    "og": {
+      "title": "Caso Nomade Rent | Arquitectura Digital aplicada a negocio",
+      "description": "De plataforma con fricciones a sistema preparado para escalar. Caso completo de Nomade Rent.",
+      "image": "https://www.trespuntoscomunicacion.es/img/og-default.jpg"
+    },
+    "schema_type": "Article",
+    "date_published": "2026-03-24",
+    "date_modified": "2026-03-24",
+    "keywords": [
+      "casos desarrollo web",
+      "plataforma alquiler vacacional",
+      "arquitectura digital plataforma reservas",
+      "ux ui plataforma alquiler"
+    ]
+  },
+  "faq_schema": [
+    {
+      "question": "¿Qué tipo de proyecto era?",
+      "answer": "Una plataforma digital de alquiler de propiedades con necesidad de mejorar conversión."
+    },
+    {
+      "question": "¿Qué se trabajó principalmente?",
+      "answer": "UX/UI, arquitectura digital y desarrollo de la plataforma."
+    },
+    {
+      "question": "¿Se desarrolló desde cero?",
+      "answer": "Se trabajó sobre la base existente, redefiniendo la estructura y la experiencia."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero-split",
+      "sector": "Alquiler vacacional · Campers",
+      "h1": "Plataforma de alquiler optimizada para",
+      "h1_highlight": "escalar y convertir",
+      "intro": "Nomade Rent no era solo una web.",
+      "intro_emphasis": "Era el core del negocio. Cada fricción se traducía en pérdida directa de ingresos.",
+      "meta": [
+        { "label": "Cliente", "value": "Nomade Rent" },
+        { "label": "Sector", "value": "Alquiler vacacional" },
+        { "label": "Servicios", "value": "UX/UI · Dev · Arquitectura" }
+      ],
+      "video_src": "/img/casos/nomade-rent/desktop-recording-1.mp4",
+      "browser_url": "nomaderent.com",
+      "browser_image": "/img/casos/nomade-rent/captura-de-pantalla-2026-03-24-a-las-17.06.45.webp",
+      "browser_alt": "Homepage de Nomade Nation con buscador hero y propuestas de valor"
+    },
+    {
+      "type": "statement",
+      "text": "Si el usuario no encuentra rápido lo que busca, <em>no hay reserva.</em>",
+      "sub": "El negocio dependía directamente de la capacidad de la web para mostrar propiedades, facilitar reservas y generar confianza. La plataforma no era solo una web. Era el core del negocio.",
+      "bg": "subtle",
+      "show_divider": true
+    },
+    {
+      "type": "browser-fullwidth",
+      "bg": "base",
+      "browser_url": "nomaderent.com",
+      "image": "/img/casos/nomade-rent/captura-de-pantalla-2026-03-24-a-las-17.06.45.webp",
+      "alt": "Homepage de Nomade Nation — Buscador de campers con propuestas de valor"
+    },
+    {
+      "type": "overview",
+      "variant": "narrative",
+      "badge": "Contexto del proyecto",
+      "heading": "Una plataforma de alquiler que necesitaba convertir tráfico en reservas",
+      "paragraphs": [
+        "Nomade Rent es una plataforma centrada en el alquiler de campers y propiedades vacacionales. Su modelo de negocio depende directamente de la capacidad de la web para mostrar vehículos disponibles, facilitar reservas y generar la confianza necesaria para que un usuario complete el proceso.",
+        "El reto era transformar una web funcional en un sistema pensado para convertir. No bastaba con mejorar el diseño. Había que reconstruir la arquitectura digital desde la lógica del usuario."
+      ],
+      "meta": [
+        { "label": "Cliente", "value": "Nomade Rent" },
+        { "label": "Sector", "value": "Alquiler vacacional · Campers" },
+        { "label": "Servicios", "value_tags": ["Diseño UX/UI", "Arquitectura digital", "Desarrollo web"] },
+        { "label": "Visitar", "value": "nomaderent.com", "url": "https://nomaderent.com" }
+      ]
+    },
+    {
+      "type": "challenge",
+      "badge": "El problema",
+      "heading": "Tráfico que no se convertía en reservas",
+      "paragraphs": [
+        "La plataforma tenía varios puntos de fricción que impactaban directamente en la conversión.",
+        "Cada fricción en el flujo de usuario se traducía en pérdida directa de ingresos."
+      ],
+      "signals_title": "Señales de fricción detectadas",
+      "signals": [
+        {
+          "title": "Navegación poco clara",
+          "description": "Los usuarios no encontraban rápidamente los campers disponibles ni sus características."
+        },
+        {
+          "title": "Proceso de reserva con fricción",
+          "description": "Demasiados pasos, falta de claridad en precios y disponibilidad generaban abandonos."
+        },
+        {
+          "title": "Experiencia inconsistente entre dispositivos",
+          "description": "La versión móvil no ofrecía la misma calidad que desktop, perdiendo usuarios en el canal principal."
+        }
+      ]
+    },
+    {
+      "type": "browser-showcase",
+      "bg": "surface",
+      "badge": "La plataforma",
+      "heading": "Un buscador que genera confianza desde el primer clic",
+      "intro": "Calendario con precios por noche, disponibilidad en tiempo real y resultados filtrados por ubicación.",
+      "browser_url": "nomaderent.com/buscar",
+      "content_type": "video",
+      "video_src": "/img/casos/nomade-rent/desktop-recording-2.mp4",
+      "poster": "/img/casos/nomade-rent/captura-de-pantalla-2026-03-24-a-las-17.07.07.webp",
+      "fallback_image": "/img/casos/nomade-rent/captura-de-pantalla-2026-03-24-a-las-17.07.07.webp",
+      "fallback_alt": "Calendario de búsqueda con precios por noche y resultados de campers"
+    },
+    {
+      "type": "approach-cards",
+      "badge": "La solución",
+      "heading": "Rediseñamos la plataforma desde una lógica de arquitectura digital",
+      "intro": "No fue un cambio visual. Fue una reconstrucción del sistema.",
+      "cards": [
+        {
+          "number": "01",
+          "title": "Reestructuración UX",
+          "items": [
+            "Rediseño completo de navegación",
+            "Jerarquía clara de propiedades",
+            "Filtros orientados a decisión"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Optimización del flujo de reserva",
+          "items": [
+            "Simplificación del proceso",
+            "Eliminación de pasos innecesarios",
+            "Claridad en precios y disponibilidad"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Arquitectura escalable",
+          "items": [
+            "Catálogo ampliable sin fricción",
+            "Sistema preparado para nuevas funcionalidades",
+            "Base sólida para evolución del negocio"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "No se trataba de hacer una web bonita.<br>Se trataba de construir un <em>sistema de reservas.</em>",
+      "bg": null,
+      "show_divider": false
+    },
+    {
+      "type": "combo-layout",
+      "bg": "surface",
+      "badge": "Detalle de vehículo",
+      "heading": "Del catálogo a la reserva en minutos",
+      "browser_url": "nomaderent.com/camper/dixie",
+      "browser_image": "/img/casos/nomade-rent/captura-de-pantalla-2026-03-24-a-las-17.06.02.webp",
+      "browser_alt": "Página de detalle del camper Dixie con foto interior y especificaciones",
+      "phone_image": "/img/casos/nomade-rent/img_0955.webp",
+      "phone_alt": "Detalle de camper Dixie en móvil"
+    },
+    {
+      "type": "phone-carousel",
+      "bg": "subtle",
+      "badge": "Mobile",
+      "heading": "Cada pantalla pensada para reservar",
+      "intro": "El usuario no quiere explorar catálogos infinitos. Quiere encontrar su camper y reservar.",
+      "phones": [
+        { "src": "/img/casos/nomade-rent/img_0962.webp", "alt": "Nomade — Homepage móvil" },
+        { "src": "/img/casos/nomade-rent/img_0948.webp", "alt": "Nomade — Buscador" },
+        { "src": "/img/casos/nomade-rent/img_0949.webp", "alt": "Nomade — Calendario con precios" },
+        { "src": "/img/casos/nomade-rent/img_0951.webp", "alt": "Nomade — Resultados de búsqueda" },
+        { "src": "/img/casos/nomade-rent/img_0952.webp", "alt": "Nomade — Detalle Family" },
+        { "src": "/img/casos/nomade-rent/img_0953.webp", "alt": "Nomade — Desglose de precio" },
+        { "src": "/img/casos/nomade-rent/img_0955.webp", "alt": "Nomade — Detalle Dixie" },
+        { "src": "/img/casos/nomade-rent/img_0956.webp", "alt": "Nomade — Detalle Kai" },
+        { "src": "/img/casos/nomade-rent/img_0957.webp", "alt": "Nomade — Detalle Family noche" },
+        { "src": "/img/casos/nomade-rent/img_0958.webp", "alt": "Nomade — Equipamiento" },
+        { "src": "/img/casos/nomade-rent/img_0959.webp", "alt": "Nomade — Distribución" },
+        { "src": "/img/casos/nomade-rent/img_0954.webp", "alt": "Nomade — Registro" }
+      ]
+    },
+    {
+      "type": "video-phones",
+      "badge": "En vivo",
+      "heading": "La experiencia real, sin filtros",
+      "intro": "Grabaciones reales de la plataforma en uso. Desde la búsqueda hasta la reserva.",
+      "videos": [
+        "/img/casos/nomade-rent/mobile-recording-1.mp4",
+        "/img/casos/nomade-rent/mobile-recording-2.mp4",
+        "/img/casos/nomade-rent/mobile-recording-3.mp4"
+      ]
+    },
+    {
+      "type": "platform-gallery",
+      "bg": "surface",
+      "badge": "Visualización",
+      "heading": "La plataforma en su máxima expresión",
+      "intro": "Desktop y mobile, diseñados como un todo coherente para convertir visitantes en reservas.",
+      "browsers": [
+        {
+          "url": "nomaderent.com",
+          "image": "/img/casos/nomade-rent/captura-de-pantalla-2026-03-24-a-las-17.06.45.webp",
+          "alt": "Homepage con buscador y propuestas de valor",
+          "wide": false
+        },
+        {
+          "url": "nomaderent.com/camper/dixie",
+          "image": "/img/casos/nomade-rent/captura-de-pantalla-2026-03-24-a-las-17.06.02.webp",
+          "alt": "Detalle camper Dixie — Hero con especificaciones",
+          "wide": false
+        },
+        {
+          "url": "nomaderent.com/camper/dixie#galeria",
+          "image": "/img/casos/nomade-rent/captura-de-pantalla-2026-03-24-a-las-17.06.34.webp",
+          "alt": "Galería interior con almacenamiento y descripción",
+          "wide": false
+        },
+        {
+          "url": "nomaderent.com/login",
+          "image": "/img/casos/nomade-rent/captura-de-pantalla-2026-03-24-a-las-17.07.22.webp",
+          "alt": "Login con formulario y foto atmosférica de camper",
+          "wide": false
+        },
+        {
+          "url": "nomaderent.com/buscar",
+          "image": "/img/casos/nomade-rent/captura-de-pantalla-2026-03-24-a-las-17.07.07.webp",
+          "alt": "Calendario con precios y resultados de búsqueda",
+          "wide": true
+        }
+      ]
+    },
+    {
+      "type": "scroll-browser",
+      "bg": "subtle",
+      "badge": "Live preview",
+      "heading": "Recorrido completo de la web",
+      "intro": "Desde el hero con buscador hasta el footer con puntos de recogida en España.",
+      "browser_url": "nomaderent.com",
+      "image": "/img/casos/nomade-rent/fireshot-capture-003---nomade-nation---furgonetas-camperizadas---[nomaderent.com].webp",
+      "alt": "Recorrido completo de la homepage de Nomade Nation"
+    },
+    {
+      "type": "marquee",
+      "words": ["Reservas", "Conversión", "Escalabilidad", "Confianza"]
+    },
+    {
+      "type": "impact-grid",
+      "bg": "surface",
+      "badge": "El impacto",
+      "heading": "De una web funcional a un sistema pensado para convertir",
+      "cards": [
+        {
+          "icon": "bolt",
+          "title": "Navegación más directa",
+          "description": "Reducción de pasos entre la entrada y la reserva. Flujo guiado que elimina dudas y acelera la decisión."
+        },
+        {
+          "icon": "shield",
+          "title": "Proceso de reserva más claro",
+          "description": "Precios transparentes, disponibilidad en tiempo real y confirmación sin fricción. Más confianza, menos abandonos."
+        },
+        {
+          "icon": "trending-up",
+          "title": "Preparada para escalar",
+          "description": "Arquitectura modular que soporta nuevos vehículos, ubicaciones y funcionalidades sin reestructurar."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "quote": "Muchos proyectos de alquiler fallan en lo mismo: intentan resolver el problema con diseño superficial.",
+      "body": "Pero el problema real está en la arquitectura. Si el usuario no encuentra rápido lo que busca o el proceso genera dudas, no hay reserva. En Nomade Rent trabajamos la estructura completa. No solo para mejorar la experiencia. Para eliminar fricción financiera.",
+      "author": "Jordi Expósito",
+      "role": "UX/UI & Digital Architecture",
+      "avatar": "/img/jordi-exposito.webp"
+    },
+    {
+      "type": "services",
+      "badge": "Servicios aplicados",
+      "heading": "Capacidades que hicieron posible este proyecto",
+      "links": [
+        {
+          "href": "/servicios/desarrollo-web-a-medida-barcelona",
+          "icon": "code",
+          "title": "Desarrollo web a medida",
+          "description": "Plataforma optimizada en rendimiento, con sistema de reservas fluido y base preparada para crecer."
+        },
+        {
+          "href": "/servicios/diseno-ux-ui-barcelona",
+          "icon": "paintbrush",
+          "title": "Diseño UX/UI",
+          "description": "Rediseño completo del flujo de usuario para reducir fricción y maximizar conversión de reservas."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "badge": "FAQ",
+      "heading": "Preguntas frecuentes sobre este proyecto",
+      "items": [
+        {
+          "question": "¿Qué tipo de proyecto era?",
+          "answer": "Una plataforma digital de alquiler de campers con necesidad de mejorar conversión. El negocio dependía directamente de la capacidad de la web para mostrar vehículos, facilitar reservas y generar confianza."
+        },
+        {
+          "question": "¿Qué se trabajó principalmente?",
+          "answer": "UX/UI, arquitectura digital y desarrollo de la plataforma. Se rediseñó el flujo completo del usuario, desde la búsqueda hasta la confirmación de reserva."
+        },
+        {
+          "question": "¿Se desarrolló desde cero?",
+          "answer": "Se trabajó sobre la base existente, redefiniendo la estructura y la experiencia completa. El enfoque fue eliminar fricción sin perder funcionalidad."
+        }
+      ]
+    },
+    {
+      "type": "next-project",
+      "label": "Caso relacionado",
+      "title": "Gibobs",
+      "href": "/casos-de-negocio/gibobs/"
+    },
+    {
+      "type": "cta-form",
+      "heading_prefix": "Tienes un",
+      "heading_highlight": "reto similar",
+      "sub": "Si tu plataforma tiene tráfico pero no convierte, el problema no es el diseño.<br>Es la arquitectura.<br><br>Cuéntanos tu proyecto.",
+      "reasons": [
+        "Sin reunión de ventas previa. Formulario directo en 3 minutos.",
+        "Respondemos en menos de 24h con una primera valoración de alcance.",
+        "Si no encajamos con lo que necesitas, te lo decimos sin rodeos.",
+        "El proyecto empieza con diagnóstico, no con propuesta económica genérica."
+      ]
+    }
+  ]
+}

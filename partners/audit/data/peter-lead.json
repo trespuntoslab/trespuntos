@@ -1,0 +1,163 @@
+{
+  "agencia": "Peter Lead",
+  "web": "peterlead.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Credibilidad",
+          "titulo": "Marca personal fuerte pero web que no la respalda al nivel necesario",
+          "detalle": "Peter Raventós ha construido una marca personal potente con presencia en TikTok y medios. <strong>Sin embargo, la web debe estar a la altura de esa marca personal: si el fundador transmite modernidad y dinamismo, la web no puede quedarse atrás</strong>. La disonancia entre la marca personal y la web genera pérdida de confianza."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Embudo de captación",
+          "titulo": "Claim de atención 24/7 sin un sistema automatizado visible",
+          "detalle": "La web promete atención personalizada 24/7, pero no hay un chatbot, sistema de booking o respuesta automatizada visible. <strong>Implementar un chat en vivo o un calendly embebido validaría esa promesa de inmediatez</strong> y capturaría leads fuera de horario comercial."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Prueba social",
+          "titulo": "98% de satisfacción declarado pero sin evidencia verificable",
+          "detalle": "Afirmar un 98% de satisfacción es un dato potente pero necesita respaldo. <strong>Integrar reviews de Google, Clutch o Trustpilot de forma dinámica daría credibilidad verificable</strong> a ese dato y permitiría que los prospectos confirmen la afirmación por sí mismos."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Propuesta de valor B2B",
+          "titulo": "Posicionamiento B2B declarado pero no reflejado en la experiencia",
+          "detalle": "Peter Lead se posiciona como agencia B2B para PYMEs pero la web no diferencia esta especialización de forma clara. <strong>Un B2B buyer necesita ver ROI, ciclos de venta, lead scoring y métricas de negocio, no solo rankings SEO</strong>. Adaptar el discurso al lenguaje B2B aumentaría la conversión."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Onboarding",
+          "titulo": "Falta un proceso de onboarding claro para nuevos clientes",
+          "detalle": "No se comunica claramente qué pasos seguirá el prospecto una vez contacte. <strong>Mostrar un timeline visual del proceso (auditoría, estrategia, ejecución, reporte) reduce la ansiedad de decisión</strong> y acelera el cierre comercial."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 4.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Percepción de marca",
+          "titulo": "Diseño web que no transmite la energía de la marca Peter Lead",
+          "detalle": "Peter Lead como marca tiene una personalidad dinámica y directa (presencia activa en redes, tono desenfadado). <strong>La web debería reflejar esa misma energía con un diseño bold, copy directo y elementos visuales que rompan con lo corporativo estándar</strong> del sector SEO."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Diseño responsive",
+          "titulo": "Experiencia móvil que necesita atención urgente",
+          "detalle": "Con una audiencia activa en TikTok y redes sociales, gran parte del tráfico llegará desde móvil. <strong>La experiencia mobile debe ser impecable: thumb-friendly navigation, CTAs prominentes y formularios optimizados para pantalla táctil</strong> son requisitos, no extras."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Identidad visual",
+          "titulo": "Paleta y tipografía sin un sistema de diseño definido",
+          "detalle": "La identidad visual no parece seguir un design system coherente. <strong>Definir una paleta de 3-4 colores con reglas de uso, una escala tipográfica y un set de componentes reutilizables</strong> profesionalizaría enormemente la percepción de la web."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Diferenciación visual",
+          "titulo": "Oportunidad de usar la marca personal del fundador como asset visual",
+          "detalle": "Peter Raventós es la cara visible de la agencia. <strong>Integrar vídeos cortos del fundador explicando servicios, testimonios en vídeo y contenido dinámico humanizaría la web</strong> y la diferenciaría de competidores que solo muestran texto e iconos."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 8.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Keyword strategy",
+          "titulo": "Buen posicionamiento local pero dependencia excesiva de marca personal",
+          "detalle": "Peter Lead rankea bien para términos de marca y SEO Barcelona, pero <strong>la estrategia de contenido debería diversificarse hacia long-tail keywords de alto valor comercial</strong> como \"agencia SEO B2B España\", \"SEO para empresas industriales\" o \"generación de leads B2B\" para reducir la dependencia del branding personal."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido",
+          "titulo": "Contenido de redes sociales no replicado en la web",
+          "detalle": "Peter Lead genera contenido valioso en TikTok y redes sociales que no se traduce en contenido indexable. <strong>Transcribir y expandir el contenido social en artículos de blog optimizados para SEO</strong> multiplicaría el tráfico orgánico aprovechando un asset que ya producen."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Visibilidad en IA",
+          "titulo": "Mención de visibilidad en ChatGPT como servicio pionero",
+          "detalle": "Peter Lead menciona optimización para ChatGPT, lo cual es innovador. <strong>Este posicionamiento como early adopter de GEO (Generative Engine Optimization) debería explotarse con contenido educativo propio</strong> que posicione a la agencia como referente en este nicho emergente."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Link building",
+          "titulo": "PR digital activo pero con oportunidad de mejora cualitativa",
+          "detalle": "La presencia en medios como press releases es visible. <strong>Complementar con guest posts en medios especializados de marketing y participación en podcasts del sector</strong> generaría backlinks de mayor autoridad temática."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 8.1,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Rendimiento global",
+          "titulo": "Web con rendimiento técnico que necesita una revisión profunda",
+          "detalle": "Para una agencia que promete resultados SEO, la base técnica de su propia web es su carta de presentación. <strong>Core Web Vitals en verde, TTFB inferior a 200ms y un score de rendimiento superior a 90 en Lighthouse deberían ser el mínimo exigible</strong> para demostrar competencia técnica."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Arquitectura web",
+          "titulo": "Probable necesidad de rediseño técnico completo",
+          "detalle": "Con una agencia de 2-10 empleados en crecimiento rápido (700K facturación), la web actual puede haberse quedado corta. <strong>Una reconstrucción técnica con un stack moderno (Next.js, Astro o similar) ofrecería velocidad, escalabilidad y una base sólida</strong> para el crecimiento que están experimentando."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "SEO técnico",
+          "titulo": "Implementación técnica SEO probablemente básica",
+          "detalle": "Schema markup, sitemap dinámico, canonical tags y hreflang son fundamentales para una agencia SEO. <strong>Su propia web debería ser un ejemplo perfecto de implementación técnica SEO</strong> que funcione como demostración tangible de sus capacidades."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Analítica y tracking",
+          "titulo": "Implementación de analytics probablemente subóptima",
+          "detalle": "Con múltiples canales de captación (redes, orgánico, PPC), la atribución correcta es crítica. <strong>GA4 con eventos personalizados, tracking de scroll depth, y atribución multicanal</strong> permitiría a Peter Lead optimizar su propio funnel de conversión con datos precisos."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Rediseño web completo alineado con la marca personal de Peter Raventós",
+    "detalle": "Construir una web moderna que refleje la energía y dinamismo de la marca personal, con vídeos del fundador, casos de éxito B2B con métricas reales y un sistema de booking integrado.",
+    "impacto": "Coherencia total entre marca personal y web corporativa, con un aumento estimado del 50% en tasa de conversión y mejor retención de leads cualificados."
+  },
+  "_score": 7.2,
+  "_nombre": "Peter",
+  "_icp": "SEO",
+  "resumen": [
+    "Peter Lead opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado peterlead.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "La plataforma tiene una base sólida. El área más fuerte es SEO & Visibilidad (6.5/10), lo que indica criterio en la construcción. Sin embargo, Dev & Performance (4.0/10) es donde detectamos el mayor margen de mejora.",
+    "<strong>Hemos identificado 17 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 72,
+      "accessibility": 88,
+      "bestPractices": 35,
+      "seo": 85
+    },
+    "mobile": {
+      "performance": 100,
+      "accessibility": 88,
+      "bestPractices": 35,
+      "seo": 85
+    }
+  }
+}

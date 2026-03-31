@@ -1,0 +1,382 @@
+{
+  "meta": {
+    "slug": "gibobs",
+    "title": "Desarrollo plataforma fintech | Caso Gibobs \u00b7 Tres Puntos",
+    "description": "C\u00f3mo dise\u00f1amos y desarrollamos una plataforma fintech enfocada en conversi\u00f3n y escalabilidad.",
+    "canonical": "/casos-de-negocio/gibobs/",
+    "og": {
+      "title": "Caso Gibobs | Plataforma fintech optimizada para conversi\u00f3n",
+      "description": "Arquitectura digital, UX/UI y desarrollo a medida para una plataforma fintech preparada para escalar.",
+      "image": "https://www.trespuntoscomunicacion.es/img/og-default.jpg"
+    },
+    "schema_type": "Article",
+    "date_published": "2019-06-03",
+    "date_modified": "2026-03-22",
+    "keywords": [
+      "desarrollo plataforma digital fintech",
+      "ux ui fintech",
+      "arquitectura digital fintech",
+      "desarrollo plataforma financiera",
+      "optimizaci\u00f3n conversi\u00f3n fintech"
+    ]
+  },
+  "faq_schema": [
+    {
+      "question": "\u00bfQu\u00e9 tipo de proyecto era?",
+      "answer": "Una plataforma fintech enfocada en captaci\u00f3n y conversi\u00f3n de usuarios interesados en hipotecas."
+    },
+    {
+      "question": "\u00bfQu\u00e9 se trabaj\u00f3 principalmente?",
+      "answer": "UX/UI, arquitectura digital y desarrollo a medida para optimizar el funnel de conversi\u00f3n."
+    },
+    {
+      "question": "\u00bfEst\u00e1 pensada para escalar?",
+      "answer": "S\u00ed. La arquitectura se dise\u00f1\u00f3 para soportar crecimiento, nuevas funcionalidades e integraciones."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero-split",
+      "sector": "Fintech \u00b7 Comparador hipotecario",
+      "h1": "Plataforma fintech optimizada para",
+      "h1_highlight": "conversi\u00f3n y escalabilidad",
+      "intro": "Dise\u00f1ar una plataforma financiera no es solo una cuesti\u00f3n est\u00e9tica.",
+      "intro_emphasis": "Es una cuesti\u00f3n de confianza, rendimiento y conversi\u00f3n.",
+      "meta": [
+        { "label": "Cliente", "value": "Gibobs" },
+        { "label": "Sector", "value": "Fintech" },
+        { "label": "Servicios", "value": "UX/UI \u00b7 Dev \u00b7 Arquitectura" }
+      ],
+      "video_src": "/casos-de-negocio/gibobs/hero-v2.mp4",
+      "browser_url": "gibobs.com",
+      "browser_image": "/img/casos/gibobs/hero-home.webp",
+      "browser_alt": "P\u00e1gina principal de Gibobs \u2014 Plataforma de comparaci\u00f3n hipotecaria"
+    },
+    {
+      "type": "statement",
+      "text": "En fintech, cada fricci\u00f3n <em>reduce ingresos.</em>",
+      "sub": "Gibobs necesitaba construir una plataforma capaz de gestionar procesos complejos de captaci\u00f3n y conversi\u00f3n en el sector hipotecario. El reto no era solo tecnol\u00f3gico. Era estructural.",
+      "bg": "subtle",
+      "show_divider": true
+    },
+    {
+      "type": "browser-fullwidth",
+      "bg": "base",
+      "browser_url": "gibobs.com/simulador-hipotecas",
+      "image": "/img/casos/gibobs/simulador-hipotecas.webp",
+      "alt": "Simulador de hipotecas de Gibobs \u2014 Interfaz de c\u00e1lculo inteligente"
+    },
+    {
+      "type": "overview",
+      "variant": "narrative",
+      "badge": "Contexto del proyecto",
+      "heading": "Un comparador hipotecario con ambici\u00f3n de plataforma l\u00edder",
+      "paragraphs": [
+        "Gibobs opera en uno de los mercados m\u00e1s complejos del sector financiero: el hipotecario. Su modelo conecta usuarios con ofertas personalizadas de m\u00faltiples entidades bancarias, combinando simulaci\u00f3n inteligente con asesoramiento humano.",
+        "El reto era trasladar esa complejidad a una experiencia digital que transmitiera confianza, redujera la fricci\u00f3n y escalara con el crecimiento del negocio."
+      ],
+      "meta": [
+        { "label": "Cliente", "value": "Gibobs" },
+        { "label": "Sector", "value": "Fintech \u00b7 Comparador hipotecario" },
+        {
+          "label": "Servicios",
+          "value": null,
+          "value_tags": ["Dise\u00f1o UX/UI", "Arquitectura digital", "Desarrollo web"]
+        },
+        {
+          "label": "Visitar",
+          "value": "gibobs.com \u2197",
+          "url": "https://gibobs.com"
+        }
+      ]
+    },
+    {
+      "type": "challenge",
+      "badge": "El problema",
+      "heading": "Procesos complejos que drenaban conversi\u00f3n",
+      "paragraphs": [
+        "Gibobs necesitaba construir una plataforma capaz de gestionar procesos complejos de captaci\u00f3n y conversi\u00f3n en el sector hipotecario.",
+        "El reto no era solo tecnol\u00f3gico. Era estructural."
+      ],
+      "signals_title": "Se\u00f1ales de fricci\u00f3n detectadas",
+      "signals": [
+        {
+          "title": "Procesos largos con m\u00faltiples pasos",
+          "description": "Abandono de usuarios en el funnel de simulaci\u00f3n hipotecaria."
+        },
+        {
+          "title": "Falta de claridad en la propuesta",
+          "description": "P\u00e9rdida de confianza al no comunicar el diferencial de Gibobs."
+        },
+        {
+          "title": "Experiencia fragmentada",
+          "description": "Fricci\u00f3n entre simulaci\u00f3n, comparativa y contacto con asesores."
+        }
+      ]
+    },
+    {
+      "type": "browser-showcase",
+      "bg": "surface",
+      "badge": "La plataforma",
+      "heading": "Un comparador que genera confianza",
+      "intro": "La interfaz muestra ofertas de CaixaBank, BBVA, Santander y m\u00e1s de 20 entidades en tiempo real.",
+      "browser_url": "gibobs.com/comparador-hipotecas",
+      "content_type": "video",
+      "video_src": "/img/casos/gibobs/comparador-demo.mp4",
+      "poster": "/img/casos/gibobs/comparador-bancos.webp",
+      "fallback_image": "/img/casos/gibobs/comparador-bancos.webp",
+      "fallback_alt": "Comparador hipotecario de Gibobs mostrando ofertas bancarias"
+    },
+    {
+      "type": "approach-cards",
+      "badge": "La soluci\u00f3n",
+      "heading": "Convertimos un proceso complejo en una experiencia guiada",
+      "intro": "Dise\u00f1amos una arquitectura digital centrada en simplificar la toma de decisiones del usuario.",
+      "cards": [
+        {
+          "number": "01",
+          "title": "UX/UI orientado a conversi\u00f3n",
+          "items": [
+            "Redise\u00f1o completo del flujo de usuario",
+            "Jerarqu\u00eda clara de informaci\u00f3n",
+            "Eliminaci\u00f3n de pasos innecesarios"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Arquitectura digital",
+          "items": [
+            "Estructura modular para escalar funcionalidades",
+            "Organizaci\u00f3n del funnel en bloques progresivos",
+            "Preparaci\u00f3n para integraciones externas"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Desarrollo a medida",
+          "items": [
+            "Plataforma optimizada en rendimiento",
+            "Interacciones r\u00e1pidas y sin fricci\u00f3n",
+            "Base preparada para crecimiento futuro"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "No se trataba de hacer una web.<br>Se trataba de construir un <em>sistema.</em>",
+      "sub": null,
+      "bg": null,
+      "show_divider": false
+    },
+    {
+      "type": "combo-layout",
+      "bg": "surface",
+      "badge": "Experiencia guiada",
+      "heading": "Del simulador a la decisi\u00f3n en minutos",
+      "browser_url": "gibobs.com/resultado-simulacion",
+      "browser_image": "/img/casos/gibobs/resultado-simulacion.webp",
+      "browser_alt": "Resultados del simulador hipotecario de Gibobs",
+      "phone_image": "/img/casos/gibobs/mobile-simulador.webp",
+      "phone_alt": "Simulador hipotecario de Gibobs en m\u00f3vil"
+    },
+    {
+      "type": "phone-carousel",
+      "bg": "subtle",
+      "badge": "Mobile",
+      "heading": "Cada pantalla pensada para decidir",
+      "intro": "El usuario no quiere explorar. Quiere decidir.",
+      "phones": [
+        { "src": "/img/casos/gibobs/img_0918.webp", "alt": "Gibobs \u2014 Home" },
+        { "src": "/img/casos/gibobs/mobile-home.webp", "alt": "Gibobs \u2014 P\u00e1gina principal" },
+        { "src": "/img/casos/gibobs/img_0920.webp", "alt": "Gibobs \u2014 Men\u00fa" },
+        { "src": "/img/casos/gibobs/img_0921.webp", "alt": "Gibobs \u2014 Landing" },
+        { "src": "/img/casos/gibobs/mobile-comparador.webp", "alt": "Gibobs \u2014 Comparador" },
+        { "src": "/img/casos/gibobs/img_0923.webp", "alt": "Gibobs \u2014 Contacto" },
+        { "src": "/img/casos/gibobs/img_0924.webp", "alt": "Gibobs \u2014 Login" },
+        { "src": "/img/casos/gibobs/mobile-asesores.webp", "alt": "Gibobs \u2014 Asesores" },
+        { "src": "/img/casos/gibobs/img_0925.webp", "alt": "Gibobs \u2014 Oferta hipotecaria" },
+        { "src": "/img/casos/gibobs/img_0926.webp", "alt": "Gibobs \u2014 Comparativa" },
+        { "src": "/img/casos/gibobs/mobile-simulador.webp", "alt": "Gibobs \u2014 Simulador" },
+        { "src": "/img/casos/gibobs/img_0927.webp", "alt": "Gibobs \u2014 Blog" },
+        { "src": "/img/casos/gibobs/img_0928.webp", "alt": "Gibobs \u2014 Simulaci\u00f3n" },
+        { "src": "/img/casos/gibobs/mobile-resultado.webp", "alt": "Gibobs \u2014 Resultado" },
+        { "src": "/img/casos/gibobs/img_0929.webp", "alt": "Gibobs \u2014 Resultados" },
+        { "src": "/img/casos/gibobs/img_0930.webp", "alt": "Gibobs \u2014 Recursos" },
+        { "src": "/img/casos/gibobs/img_0931.webp", "alt": "Gibobs \u2014 App" }
+      ]
+    },
+    {
+      "type": "video-phones",
+      "badge": "En vivo",
+      "heading": "La experiencia real, sin filtros",
+      "intro": "Grabaciones reales de la plataforma en uso. Sin prototipos, sin maquetas.",
+      "videos": [
+        "/img/casos/gibobs/screen-recording-1.mp4",
+        "/img/casos/gibobs/screen-recording-2.mp4",
+        "/casos-de-negocio/gibobs/hero.mp4"
+      ]
+    },
+    {
+      "type": "platform-gallery",
+      "bg": "surface",
+      "badge": "Visualizaci\u00f3n",
+      "heading": "La plataforma en su m\u00e1xima expresi\u00f3n",
+      "intro": "Desktop y mobile, dise\u00f1ados como un todo coherente y eficiente.",
+      "browsers": [
+        {
+          "url": "gibobs.com",
+          "image": "/img/casos/gibobs/captura-de-pantalla-2026-03-22--23.14.57.webp",
+          "alt": "Plataforma Gibobs \u2014 Vista home con simulador",
+          "wide": false
+        },
+        {
+          "url": "gibobs.com/simulador",
+          "image": "/img/casos/gibobs/captura-de-pantalla-2026-03-22--23.15.22.webp",
+          "alt": "Plataforma Gibobs \u2014 Simulador hipotecario",
+          "wide": false
+        },
+        {
+          "url": "gibobs.com/recursos",
+          "image": "/img/casos/gibobs/captura-de-pantalla-2026-03-22--23.15.58.webp",
+          "alt": "Plataforma Gibobs \u2014 Recursos formativos",
+          "wide": false
+        },
+        {
+          "url": "gibobs.com/blog",
+          "image": "/img/casos/gibobs/captura-de-pantalla-2026-03-22--23.16.21.webp",
+          "alt": "Plataforma Gibobs \u2014 Blog educativo",
+          "wide": false
+        },
+        {
+          "url": "gibobs.com/contacto",
+          "image": "/img/casos/gibobs/captura-de-pantalla-2026-03-22--23.16.35.webp",
+          "alt": "Plataforma Gibobs \u2014 Contacto con asesores",
+          "wide": true
+        }
+      ]
+    },
+    {
+      "type": "marquee",
+      "words": ["Conversi\u00f3n", "Escalabilidad", "Confianza", "Arquitectura"]
+    },
+    {
+      "type": "impact-grid",
+      "bg": "surface",
+      "badge": "El impacto",
+      "heading": "El resultado es una experiencia m\u00e1s clara, m\u00e1s r\u00e1pida y preparada para escalar",
+      "cards": [
+        {
+          "icon": "bolt",
+          "title": "Menos fricci\u00f3n",
+          "description": "Reducci\u00f3n de pasos en procesos complejos. De un funnel fragmentado a una experiencia fluida que gu\u00eda al usuario."
+        },
+        {
+          "icon": "shield-check",
+          "title": "Mayor confianza",
+          "description": "Gu\u00eda al usuario en cada decisi\u00f3n. La transparencia en comparativas y el acompa\u00f1amiento generan percepci\u00f3n de seguridad."
+        },
+        {
+          "icon": "trending-up",
+          "title": "Preparada para escalar",
+          "description": "Arquitectura modular que soporta nuevas funcionalidades, integraciones bancarias y crecimiento de tr\u00e1fico."
+        }
+      ]
+    },
+    {
+      "type": "fullbleed-image",
+      "image": "/img/casos/gibobs/ecosistema-plataforma.webp",
+      "alt": "Ecosistema de la plataforma Gibobs \u2014 Particulares, promotoras, inmobiliarias y bancos",
+      "caption_title": "Ecosistema conectado",
+      "caption_text": "Particulares, promotoras, inmobiliarias y bancos en una misma plataforma."
+    },
+    {
+      "type": "quote",
+      "quote": "Cuando el proceso es complejo, la interfaz debe hacer el trabajo dif\u00edcil.",
+      "body": "Dise\u00f1ar para fintech implica entender algo clave: el usuario no quiere explorar. Quiere decidir. En Gibobs, el reto no era a\u00f1adir funcionalidades. Era eliminar fricci\u00f3n sin perder control del proceso.",
+      "author": "Jordi Exp\u00f3sito",
+      "role": "UX/UI & Digital Architecture",
+      "avatar": "/img/jordi-exposito.webp"
+    },
+    {
+      "type": "showcase-duo",
+      "bg": "surface",
+      "items": [
+        {
+          "browser_url": "gibobs.com/asesores",
+          "image": "/img/casos/gibobs/asesores-equipo.webp",
+          "alt": "Equipo de asesores financieros de Gibobs",
+          "label": "Equipo de asesores \u2014 Confianza humana"
+        },
+        {
+          "browser_url": "gibobs.com/opiniones",
+          "image": "/img/casos/gibobs/social-proof.webp",
+          "alt": "Opiniones y valoraciones de Gibobs \u2014 4.8 estrellas",
+          "label": "Social proof \u2014 +1.500 rese\u00f1as verificadas"
+        }
+      ]
+    },
+    {
+      "type": "services",
+      "badge": "Servicios aplicados",
+      "heading": "Capacidades que hicieron posible este proyecto",
+      "links": [
+        {
+          "href": "/servicios/desarrollo-web-a-medida-barcelona",
+          "icon": "code",
+          "title": "Desarrollo web a medida",
+          "description": "Plataforma optimizada en rendimiento, con interacciones r\u00e1pidas y base preparada para crecimiento futuro."
+        },
+        {
+          "href": "/servicios/diseno-ux-ui-barcelona",
+          "icon": "paintbrush",
+          "title": "Dise\u00f1o UX/UI",
+          "description": "Redise\u00f1o completo del flujo de usuario con jerarqu\u00eda clara y eliminaci\u00f3n de pasos innecesarios."
+        },
+        {
+          "href": "/servicios/consultoria-digital-barcelona",
+          "icon": "monitor",
+          "title": "Consultor\u00eda digital",
+          "description": "Diagn\u00f3stico de plataforma, definici\u00f3n de arquitectura de conversi\u00f3n y estrategia digital para fintech."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "badge": "FAQ",
+      "heading": "Preguntas frecuentes sobre este proyecto",
+      "items": [
+        {
+          "question": "\u00bfQu\u00e9 tipo de proyecto era?",
+          "answer": "Una plataforma fintech enfocada en captaci\u00f3n y conversi\u00f3n de usuarios interesados en hipotecas. Combinamos simulaci\u00f3n inteligente, comparativas bancarias y asesoramiento humano en una experiencia digital unificada."
+        },
+        {
+          "question": "\u00bfQu\u00e9 se trabaj\u00f3 principalmente?",
+          "answer": "UX/UI, arquitectura digital y desarrollo a medida para optimizar el funnel de conversi\u00f3n. Se redise\u00f1\u00f3 el flujo completo del usuario, desde la simulaci\u00f3n inicial hasta el contacto con asesores financieros."
+        },
+        {
+          "question": "\u00bfEst\u00e1 pensada para escalar?",
+          "answer": "S\u00ed. La arquitectura se dise\u00f1\u00f3 para soportar crecimiento, nuevas funcionalidades e integraciones con entidades bancarias adicionales. La estructura modular permite a\u00f1adir productos financieros sin reestructurar la plataforma."
+        }
+      ]
+    },
+    {
+      "type": "next-project",
+      "label": "Caso relacionado",
+      "title": "ExitBCN",
+      "href": "/casos-de-negocio/exitbcn/"
+    },
+    {
+      "type": "cta-form",
+      "heading_prefix": "\u00bfTienes un",
+      "heading_highlight": "reto similar",
+      "sub": "Si tu plataforma tiene fricci\u00f3n, el problema no es solo de dise\u00f1o.<br>Es de arquitectura.<br><br>Cu\u00e9ntanos tu proyecto.",
+      "reasons": [
+        "Sin reuni\u00f3n de ventas previa. Formulario directo en 3 minutos.",
+        "Respondemos en menos de 24h con una primera valoraci\u00f3n de alcance.",
+        "Si no encajamos con lo que necesitas, te lo decimos sin rodeos.",
+        "El proyecto empieza con diagn\u00f3stico, no con propuesta econ\u00f3mica gen\u00e9rica."
+      ]
+    }
+  ]
+}

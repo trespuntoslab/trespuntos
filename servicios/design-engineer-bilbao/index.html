@@ -1,0 +1,1970 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ERX855WTHN');
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#5dffbf">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Engineer Bilbao | Tres Puntos</title>
+  <meta name="description" content="Design engineers en Bilbao para el sector industrial. Interfaces de control, dashboards IoT y portales de ingeniería implementados con precisión técnica desde Figma." />
+
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/servicios/design-engineer-bilbao/" />
+  <meta property="og:title" content="Interfaces industriales pixel-perfect | Design Engineer Bilbao · Tres Puntos" />
+  <meta property="og:description"
+    content="Traducimos diseños de Figma a código nativo para empresas industriales de Bilbao. Dashboards de producción, portales B2B y plataformas IoT con fidelidad total." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/servicios/design-engineer-bilbao/" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Tres Puntos Comunicación" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Interfaces industriales pixel-perfect | Design Engineer Bilbao · Tres Puntos" />
+  <meta name="twitter:description" content="Traducimos diseños de Figma a código nativo para empresas industriales de Bilbao. Dashboards de producción, portales B2B y plataformas IoT con fidelidad total." />
+  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Design Engineer Bilbao",
+      "description": "Traducimos diseños de Figma a código nativo para empresas industriales de Bilbao. Dashboards de producción, portales B2B y plataformas IoT con fidelidad total.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "url": "https://www.trespuntoscomunicacion.es/"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Bilbao"
+      },
+      "serviceType": "Design Engineering & Frontend Development"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué aporta un design engineer a una empresa industrial de Bilbao?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un design engineer traduce dashboards de control, portales de producción y plataformas IoT desde Figma a código nativo sin perder fidelidad. Para el sector industrial, esto significa interfaces de monitorización precisas, tiempos de carga mínimos y una experiencia de usuario que reduce errores operativos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se implementan interfaces de datos complejos para manufactura?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Construimos sistemas de componentes reutilizables optimizados para visualización de datos en tiempo real: gráficas de producción, alertas de sensores, KPIs de planta. Cada componente se implementa con rendimiento y accesibilidad desde el primer día."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Un design engineer puede trabajar con plataformas industriales legacy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Auditamos la interfaz existente, diseñamos un sistema de componentes moderno y lo implementamos de forma progresiva. Esto permite modernizar la experiencia de usuario sin interrumpir operaciones de producción."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tarda la implementación frontend de un dashboard industrial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un dashboard de producción con visualización de datos en tiempo real, alertas y KPIs operativos se implementa en 6-10 semanas. Incluye diagnóstico, arquitectura de componentes, desarrollo pixel-perfect y testing de rendimiento."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+
+  <style>
+    /* ══════════════════════════════════════
+       DE- prefix: Design Engineer page-specific
+       ══════════════════════════════════════ */
+
+    /* ── 1. HERO: Figma → Code → Production flow ── */
+    .de-flow {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    /* Central Component Transformed */
+    .de-comp-center {
+      position: relative;
+      width: 200px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .de-state {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+    }
+
+    .de-state-figma {
+      animation: deStateFigma 7.5s infinite;
+    }
+
+    .de-state-code {
+      animation: deStateCode 7.5s infinite;
+    }
+
+    .de-state-prod {
+      animation: deStateProd 7.5s infinite;
+    }
+
+    /* Figma Box */
+    .de-figma-box {
+      width: 160px;
+      height: 48px;
+      border: 1px dashed rgba(168, 130, 255, 0.6);
+      border-radius: 8px;
+      background: rgba(168, 130, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      position: relative;
+    }
+
+    .de-figma-box::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      border: 1px solid rgba(168, 130, 255, 0.2);
+      border-radius: 12px;
+    }
+
+    .de-figma-box::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 4px;
+      height: 4px;
+      border: 1px solid rgba(168, 130, 255, 0.8);
+      background: #000;
+      box-shadow: 164px 0 0 rgba(168, 130, 255, 0.8), 164px 52px 0 rgba(168, 130, 255, 0.8), 0 52px 0 rgba(168, 130, 255, 0.8);
+    }
+
+    .de-figma-line {
+      height: 4px;
+      background: rgba(168, 130, 255, 0.3);
+      border-radius: 2px;
+    }
+
+    .de-figma-line.short {
+      width: 40%;
+    }
+
+    .de-figma-line.long {
+      width: 60%;
+    }
+
+    /* Code Box */
+    .de-code-block {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--mint);
+      background: rgba(93, 255, 191, 0.05);
+      border: 1px solid rgba(93, 255, 191, 0.3);
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(93, 255, 191, 0.1);
+    }
+
+    .de-code-tag {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .de-code-attr {
+      color: rgba(93, 255, 191, 0.7);
+    }
+
+    /* Prod Button */
+    .de-prod-button {
+      padding: 0.75rem 2rem;
+      background: rgba(78, 165, 255, 0.1);
+      border: 1px solid rgba(78, 165, 255, 0.5);
+      border-radius: 99px;
+      color: #4ea5ff;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 0 30px rgba(78, 165, 255, 0.2), inset 0 0 10px rgba(78, 165, 255, 0.1);
+      letter-spacing: 0.5px;
+    }
+
+    /* Dynamic Labels */
+    .de-dynamic-labels {
+      position: relative;
+      height: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .de-lbl {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0;
+    }
+
+    .de-lbl strong {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .de-lbl span {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .de-lbl-figma strong {
+      color: #a882ff;
+      background: rgba(168, 130, 255, 0.1);
+      border: 1px solid rgba(168, 130, 255, 0.3);
+    }
+
+    .de-lbl-code strong {
+      color: #5dffbf;
+      background: rgba(93, 255, 191, 0.1);
+      border: 1px solid rgba(93, 255, 191, 0.3);
+    }
+
+    .de-lbl-prod strong {
+      color: #4ea5ff;
+      background: rgba(78, 165, 255, 0.1);
+      border: 1px solid rgba(78, 165, 255, 0.3);
+    }
+
+    .de-lbl-figma {
+      animation: deStateFigma 7.5s infinite;
+    }
+
+    .de-lbl-code {
+      animation: deStateCode 7.5s infinite;
+    }
+
+    .de-lbl-prod {
+      animation: deStateProd 7.5s infinite;
+    }
+
+    /* Keyframes for states */
+    @keyframes deStateFigma {
+
+      0%,
+      3%,
+      28% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+
+      32% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+        filter: blur(2px);
+      }
+
+      96% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+        filter: blur(2px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes deStateCode {
+
+      0%,
+      28% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+        filter: blur(2px);
+      }
+
+      32%,
+      61% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+
+      65%,
+      100% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+        filter: blur(2px);
+      }
+    }
+
+    @keyframes deStateProd {
+
+      0%,
+      61% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+        filter: blur(2px);
+      }
+
+      65%,
+      94% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+
+      98%,
+      100% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+        filter: blur(2px);
+      }
+    }
+
+    /* Micro indicators */
+    .de-micro-inds {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .de-ind {
+      position: absolute;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      opacity: 0;
+      letter-spacing: 0.05em;
+    }
+
+    .de-ind-1 {
+      top: 25%;
+      left: 15%;
+      color: #a882ff;
+      border: 1px dashed rgba(168, 130, 255, 0.4);
+      background: rgba(168, 130, 255, 0.05);
+      animation: deInd1 7.5s infinite;
+    }
+
+    .de-ind-2 {
+      top: 25%;
+      right: 15%;
+      color: #5dffbf;
+      border: 1px dashed rgba(93, 255, 191, 0.4);
+      background: rgba(93, 255, 191, 0.05);
+      animation: deInd2 7.5s infinite;
+    }
+
+    .de-ind-3 {
+      top: 55%;
+      left: 15%;
+      color: #4ea5ff;
+      border: 1px dashed rgba(78, 165, 255, 0.4);
+      background: rgba(78, 165, 255, 0.05);
+      animation: deInd3 7.5s infinite;
+    }
+
+    @keyframes deInd1 {
+
+      0%,
+      5% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      10%,
+      25% {
+        opacity: 0.8;
+        transform: translateY(0);
+      }
+
+      30%,
+      100% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes deInd2 {
+
+      0%,
+      36% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      41%,
+      56% {
+        opacity: 0.8;
+        transform: translateY(0);
+      }
+
+      61%,
+      100% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes deInd3 {
+
+      0%,
+      68% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      73%,
+      90% {
+        opacity: 0.8;
+        transform: translateY(0);
+      }
+
+      95%,
+      100% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Floating indicator */
+    .de-indicator {
+      position: absolute;
+      bottom: 12px;
+      right: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: .5rem;
+      color: var(--mint);
+      opacity: .7
+    }
+
+    .de-indicator-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--mint);
+      animation: deDotPulse 2s ease infinite
+    }
+
+    @keyframes deDotPulse {
+
+      0%,
+      100% {
+        opacity: .4
+      }
+
+      50% {
+        opacity: 1
+      }
+    }
+
+    /* ── 2. BROWSER MOCKUP: Figma layers → UI components ── */
+    .de-browser-wrap {
+      margin-top: 1.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem 2rem;
+      grid-column: 1/-1;
+      transition: border-color var(--transition-base);
+      overflow: hidden
+    }
+
+    .de-browser-wrap:hover {
+      border-color: rgba(93, 255, 191, .3)
+    }
+
+    .de-browser-title {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: .65rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--text-muted);
+      margin-bottom: 2rem
+    }
+
+    .de-transform {
+      position: relative;
+      max-width: 580px;
+      margin: 0 auto;
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      justify-content: center
+    }
+
+    .de-transform-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem
+    }
+
+    .de-transform-label {
+      font-family: var(--font-mono);
+      font-size: .5rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      text-align: center;
+      margin-bottom: .5rem
+    }
+
+    .de-transform-label-figma {
+      color: rgba(168, 130, 255, .8)
+    }
+
+    .de-transform-label-code {
+      color: var(--mint)
+    }
+
+    /* Figma layer items */
+    .de-layer {
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-family: var(--font-mono);
+      font-size: .45rem;
+      gap: 8px;
+      border: 1px solid rgba(168, 130, 255, .15);
+      background: rgba(168, 130, 255, 0.04);
+      color: rgba(168, 130, 255, .7);
+      transition: all 0.4s ease;
+      animation: deRowPulse 8s infinite;
+    }
+
+    .de-layer-icon {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      border: 1px solid rgba(168, 130, 255, .2);
+      flex-shrink: 0
+    }
+
+    /* Code component items */
+    .de-component {
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-family: var(--font-mono);
+      font-size: .45rem;
+      gap: 8px;
+      border: 1px solid rgba(93, 255, 191, .15);
+      background: rgba(93, 255, 191, 0.04);
+      color: rgba(93, 255, 191, .7);
+      transition: all 0.4s ease;
+      animation: deRowPulse 8s infinite;
+    }
+
+    /* Sequential animation for rows */
+    .de-transform-col .de-layer:nth-child(2),
+    .de-transform-col:last-child .de-component:nth-child(2) {
+      animation-delay: 0s;
+    }
+
+    .de-transform-col .de-layer:nth-child(3),
+    .de-transform-col:last-child .de-component:nth-child(3) {
+      animation-delay: 2s;
+    }
+
+    .de-transform-col .de-layer:nth-child(4),
+    .de-transform-col:last-child .de-component:nth-child(4) {
+      animation-delay: 4s;
+    }
+
+    .de-transform-col .de-layer:nth-child(5),
+    .de-transform-col:last-child .de-component:nth-child(5) {
+      animation-delay: 6s;
+    }
+
+    @keyframes deRowPulse {
+
+      0%,
+      20%,
+      100% {
+        background: rgba(255, 255, 255, 0.02);
+        border-color: rgba(255, 255, 255, 0.05);
+        transform: translateX(0);
+      }
+
+      5%,
+      15% {
+        background: rgba(93, 255, 191, 0.08);
+        border-color: rgba(93, 255, 191, 0.3);
+        transform: translateX(5px);
+        color: #fff;
+      }
+    }
+
+    .de-component-tag {
+      color: rgba(93, 255, 191, .5);
+      font-size: .4rem
+    }
+
+    /* Arrow */
+    .de-transform-arrow {
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--mint);
+      opacity: .2;
+      animation: deArrowPulse 8s infinite;
+    }
+
+    @keyframes deArrowPulse {
+
+      0%,
+      20%,
+      100% {
+        opacity: 0.1;
+        transform: scale(1);
+      }
+
+      5%,
+      15% {
+        opacity: 0.8;
+        transform: scale(1.2);
+      }
+    }
+
+    .de-browser-caption {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      color: var(--text-muted);
+      opacity: .6;
+      margin-top: 1.5rem
+    }
+
+    /* Methodology Fix: Ensure line is behind numbers and glowing correctly */
+    .sp-method-num {
+      position: relative;
+      z-index: 2;
+      background: #0d0d0d !important;
+      transition: all 0.6s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .sp-method-num.active {
+      background: linear-gradient(135deg, #00f2ff 0%, #0072ff 100%) !important;
+      border-color: rgba(0, 242, 255, 0.4) !important;
+      color: #fff !important;
+      box-shadow: 0 0 25px rgba(0, 242, 255, 0.4), 0 0 10px rgba(0, 114, 255, 0.2) !important;
+      transform: scale(1.1);
+    }
+
+    /* ── 4. FIT (ENCAJE) ANIMATION ── */
+    #fit-evolution .fit-viz-track::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--fit-progress, 0%);
+      background: linear-gradient(to bottom, var(--mint), #4ea5ff);
+      transition: height 1s ease-out;
+      box-shadow: 0 0 15px var(--mint);
+    }
+
+    .fit-node {
+      opacity: 0.2;
+      transition: all 0.6s ease;
+      transform: translateX(-5px);
+    }
+
+    .fit-node.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fit-node.active .fit-node-dot {
+      background: var(--mint);
+      box-shadow: 0 0 15px var(--mint);
+      border-color: #fff;
+      transform: scale(1.2);
+    }
+
+    .fit-node.active span {
+      color: var(--mint);
+      font-weight: 600;
+    }
+
+    /* ── 3. PROBLEM ANIMATION: Figma → Manual → UI Inconsistent → System ── */
+    .prob-anim-container {
+      margin-top: 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .prob-state {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    /* Stages animation loop - 15s total */
+    .prob-state-1 {
+      animation: probLoop1 18s infinite;
+    }
+
+    .prob-state-2 {
+      animation: probLoop2 18s infinite;
+    }
+
+    .prob-state-3 {
+      animation: probLoop3 18s infinite;
+    }
+
+    .prob-state-4 {
+      animation: probLoop4 18s infinite;
+    }
+
+    .prob-state-5 {
+      animation: probLoop5 18s infinite;
+    }
+
+    @keyframes probLoop1 {
+
+      0%,
+      18% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      20%,
+      100% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    @keyframes probLoop2 {
+
+      0%,
+      20% {
+        opacity: 0;
+        transform: scale(1.05);
+      }
+
+      22%,
+      38% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      40%,
+      100% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    @keyframes probLoop3 {
+
+      0%,
+      40% {
+        opacity: 0;
+        transform: scale(1.05);
+      }
+
+      42%,
+      58% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      60%,
+      100% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    @keyframes probLoop4 {
+
+      0%,
+      60% {
+        opacity: 0;
+        transform: scale(1.05);
+      }
+
+      62%,
+      78% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      80%,
+      100% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    @keyframes probLoop5 {
+
+      0%,
+      80% {
+        opacity: 0;
+        transform: scale(1.05);
+      }
+
+      82%,
+      98% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+
+    /* Figma Stage */
+    .prob-fig-box {
+      width: 100px;
+      height: 40px;
+      border: 1px solid #a882ff;
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .prob-fig-box::after {
+      content: 'FIGMA';
+      position: absolute;
+      top: -18px;
+      left: 0;
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: #a882ff;
+    }
+
+    /* Manual Stage (Broken UI) */
+    .prob-manual-ui {
+      display: flex;
+      gap: 10px;
+    }
+
+    .prob-item-broken {
+      width: 40px;
+      height: 20px;
+      background: rgba(248, 113, 113, 0.2);
+      border: 1px solid #f87171;
+      transform: rotate(2deg);
+      margin-top: 5px;
+    }
+
+    /* Inconsistent Stage */
+    .prob-inc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .prob-inc-box {
+      width: 60px;
+      height: 15px;
+      background: #333;
+    }
+
+    .prob-inc-box:nth-child(2) {
+      transform: translateX(8px);
+      background: #444;
+    }
+
+    /* System Stage */
+    .prob-sys-grid {
+      display: flex;
+      gap: 8px;
+    }
+
+    .prob-token {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 10px var(--mint);
+    }
+
+    /* Pixel Perfect Stage */
+    .prob-pp-flow {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--mint);
+    }
+
+    .prob-state span {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      margin-top: 1rem;
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    @media(max-width:768px) {
+      .de-browser-wrap {
+        padding: 1.5rem 1rem 1.25rem
+      }
+
+      .de-transform {
+        flex-direction: column;
+        gap: 1rem
+      }
+
+      .de-transform-arrow {
+        transform: rotate(90deg)
+      }
+
+      .de-flow svg {
+        font-size: 7px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      .de-pulse,
+      .de-indicator-dot,
+      .de-marquee-track,
+      .prob-state {
+        animation: none !important;
+        opacity: 1 !important;
+        position: relative !important;
+      }
+
+      .de-marquee-track {
+        overflow: hidden
+      }
+    }
+
+    @media(max-width:768px) {
+      .de-browser-wrap {
+        padding: 1.5rem 1rem 1.25rem
+      }
+
+      .de-transform {
+        flex-direction: column;
+        gap: 1rem
+      }
+
+      .de-transform-arrow {
+        transform: rotate(90deg)
+      }
+
+      .de-flow svg {
+        font-size: 7px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      .de-pulse,
+      .de-indicator-dot,
+      .de-marquee-track {
+        animation: none !important
+      }
+
+      .de-marquee-track {
+        overflow: hidden
+      }
+    }
+  </style>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.trespuntoscomunicacion.es/"},{"@type":"ListItem","position":2,"name":"Servicios","item":"https://www.trespuntoscomunicacion.es/servicios/"},{"@type":"ListItem","position":3,"name":"Design Engineer Bilbao"}]}
+</script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="sp-hero" aria-label="Design Engineer Bilbao">
+    <div class="container-main sp-hero-layout">
+      <div class="sp-hero-copy">
+        <span class="section-badge reveal">Design Engineer Bilbao</span>
+        <h1 class="sp-hero-h1 reveal">
+          <span class="text-gradient-standalone">Design engineer en Bilbao</span> para que tus interfaces industriales lleguen intactas a producción
+        </h1>
+        <p class="sp-hero-sub reveal">Traducimos dashboards de control, portales de ingeniería y plataformas IoT de Figma a código nativo. Precisión vasca aplicada al frontend: sin desviaciones entre diseño y producto final.</p>
+        <div class="sp-hero-ctas reveal">
+          <a href="/contacto/" class="btn-primary magnetic-btn">
+            Cuéntanos tu proyecto
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="/arquitectura-digital-conversion" class="btn-ghost">
+            Ver metodología
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="sp-hero-visual reveal reveal-delay-1">
+        <div class="sp-browser-mock">
+          <div class="sp-browser-bar">
+            <span class="sp-dot sp-dot-r"></span>
+            <span class="sp-dot sp-dot-y"></span>
+            <span class="sp-dot sp-dot-g"></span>
+            <div class="sp-browser-url"><span>figma → código → producción</span></div>
+          </div>
+          <div class="sp-browser-body">
+            <!-- Figma → Code → Production flow -->
+            <div class="de-flow">
+              <!-- Central Component Column -->
+              <div class="de-comp-center">
+
+                <!-- State 1: Figma -->
+                <div class="de-state de-state-figma">
+                  <div class="de-figma-box">
+                    <div class="de-figma-line long"></div>
+                    <div class="de-figma-line short"></div>
+                  </div>
+                </div>
+
+                <!-- State 2: Code -->
+                <div class="de-state de-state-code">
+                  <div class="de-code-block">
+                    <span class="de-code-tag">&lt;</span><span class="de-code-attr">Button</span> <span
+                      class="de-code-attr">variant</span>="primary" <span class="de-code-tag">/&gt;</span>
+                  </div>
+                </div>
+
+                <!-- State 3: Production -->
+                <div class="de-state de-state-prod">
+                  <div class="de-prod-button">Confirmar pedido</div>
+                </div>
+
+              </div>
+
+              <!-- Labels swapping BELOW the component -->
+              <div class="de-dynamic-labels">
+                <div class="de-lbl de-lbl-figma">
+                  <strong>FIGMA</strong>
+                  <span>Diseño listo</span>
+                </div>
+                <div class="de-lbl de-lbl-code">
+                  <strong>CÓDIGO</strong>
+                  <span>Implementación</span>
+                </div>
+                <div class="de-lbl de-lbl-prod">
+                  <strong>PRODUCCIÓN</strong>
+                  <span>Deploy OK</span>
+                </div>
+              </div>
+
+              <!-- Micro Indicators Layer -->
+              <div class="de-micro-inds">
+                <div class="de-ind de-ind-1">design tokens</div>
+                <div class="de-ind de-ind-2">components</div>
+                <div class="de-ind de-ind-3">responsive</div>
+              </div>
+              <div class="de-indicator">
+                <span class="de-indicator-dot"></span>
+                Pipeline activo
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. PROBLEMA ============ -->
+  <section class="sp-problem" aria-label="El problema">
+    <div class="container-main sp-problem-layout">
+      <div class="sp-problem-copy">
+        <span class="section-badge reveal">El problema</span>
+        <h2 class="section-h2 reveal">El diseño de tu plataforma está bien. <br>El problema aparece cuando se <span
+            class="text-gradient-standalone">traduce a código</span></h2>
+        <p class="sp-problem-text reveal">En el tejido industrial de Bilbao, las interfaces de control y los paneles de gestión se diseñan con precisión en Figma. Pero al pasar a desarrollo, los datos se descuadran, las interacciones se simplifican y la experiencia del operario se resiente.</p>
+        <p class="sp-problem-text reveal" style="margin-top: 1rem;">El resultado son dashboards que muestran datos correctos pero que no se usan porque la interfaz no es intuitiva.</p>
+
+        <!-- NEW ANIMATION UNDER LEFT TEXT -->
+        <div class="prob-anim-container reveal">
+          <div class="prob-state prob-state-1">
+            <div class="prob-fig-box"></div>
+            <span>Diseño original</span>
+          </div>
+          <div class="prob-state prob-state-2">
+            <div class="prob-manual-ui">
+              <div class="prob-item-broken"></div>
+              <div class="prob-item-broken" style="transform: rotate(-3deg); margin-left: 5px;"></div>
+            </div>
+            <span>Implementación manual</span>
+          </div>
+          <div class="prob-state prob-state-3">
+            <div class="prob-inc-grid">
+              <div class="prob-inc-box"></div>
+              <div class="prob-inc-box"></div>
+              <div class="prob-inc-box" style="width: 40px;"></div>
+              <div class="prob-inc-box" style="transform: scale(1.2);"></div>
+            </div>
+            <span>UI inconsistente</span>
+          </div>
+          <div class="prob-state prob-state-4">
+            <div class="prob-sys-grid">
+              <div class="prob-token"></div>
+              <div class="prob-token" style="opacity: 0.6;"></div>
+              <div class="prob-token" style="opacity: 0.3;"></div>
+            </div>
+            <span>Sistema de componentes</span>
+          </div>
+          <div class="prob-state prob-state-5">
+            <div class="prob-pp-flow">
+              Figma &rarr; Código &rarr; Producción
+            </div>
+            <span style="color: var(--mint); opacity: 1;">PIXEL PERFECT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sp-signals">
+        <h3 class="sp-signals-title reveal"
+          style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-main);">
+          Señales de que tu interfaz industrial se rompe en producción</h3>
+
+        <div class="sp-signal-card reveal">
+          <div class="sp-signal-icon">
+            <svg width="16" height="16" fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+          </div>
+          <div class="sp-signal-content">
+            <strong>Datos correctos, interfaz confusa</strong>
+            <span>Los sensores envían información precisa pero el dashboard la presenta de forma que genera errores de interpretación en planta.</span>
+          </div>
+        </div>
+        <div class="sp-signal-card reveal">
+          <div class="sp-signal-icon">
+            <svg width="16" height="16" fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+          </div>
+          <div class="sp-signal-content">
+            <strong>Interacciones críticas simplificadas</strong>
+            <span>Las alertas de producción, filtros de monitorización y controles operativos pierden funcionalidad al pasar de diseño a código.</span>
+          </div>
+        </div>
+        <div class="sp-signal-card reveal">
+          <div class="sp-signal-icon">
+            <svg width="16" height="16" fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+          </div>
+          <div class="sp-signal-content">
+            <strong>Componentes duplicados sin sistema</strong>
+            <span>Cada módulo del portal se desarrolla desde cero porque no existe una librería de componentes industrial reutilizable.</span>
+          </div>
+        </div>
+        <div class="sp-signal-card reveal">
+          <div class="sp-signal-icon">
+            <svg width="16" height="16" fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+          </div>
+          <div class="sp-signal-content">
+            <strong>Frontend que no escala con los datos</strong>
+            <span>Cuando aumentan los puntos de monitorización o se conectan nuevas máquinas, la interfaz se ralentiza o se rompe.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM MARQUEE ============ -->
+  <div class="sp-marquee" aria-hidden="true">
+    <div class="sp-marquee-track">
+      <span>Las interfaces bonitas no optimizan producción</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Un dashboard sin UX es un panel que nadie usa</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Figma lo aguanta todo, la producción no</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Las interfaces bonitas no optimizan producción</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Un dashboard sin UX es un panel que nadie usa</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Figma lo aguanta todo, la producción no</span>
+      <span class="sp-marquee-sep">&bull;</span>
+    </div>
+  </div>
+
+  <!-- ============ 3. SERVICIOS ============ -->
+  <section class="sp-services" aria-label="Qué incluye el servicio">
+    <div class="container-main">
+      <span class="section-badge reveal">Servicio</span>
+      <h2 class="section-h2 reveal">Qué incluye el servicio de <span class="text-gradient-standalone">design
+          engineer</span> para empresas de Bilbao</h2>
+      <p class="sp-services-intro reveal">Implementamos interfaces industriales con la misma exigencia técnica que el sector manufacturero vasco aplica a sus productos. Cada decisión de frontend tiene impacto directo en operaciones.</p>
+
+      <div class="sp-services-grid">
+        <div class="sp-service-card reveal">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M9.53 15.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Implementación pixel-perfect de dashboards</h3>
+          <p class="sp-service-text">Paneles de control, visualización de datos de producción y KPIs operativos trasladados de Figma a código con fidelidad total.</p>
+        </div>
+
+        <div class="sp-service-card reveal reveal-delay-1">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Frontend de alto rendimiento para datos en tiempo real</h3>
+          <p class="sp-service-text">Código nativo optimizado para renderizar grandes volúmenes de datos de sensores, máquinas y líneas de producción sin lag.</p>
+        </div>
+
+        <div class="sp-service-card reveal">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L12 12.75 6.429 9.75m11.142 0l4.179 2.25L12 17.25 2.25 12l4.179-2.25m11.142 0L12 12.75" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Sistemas de componentes industriales escalables</h3>
+          <p class="sp-service-text">Librería de componentes reutilizables para portales B2B, ERPs y plataformas de gestión. Preparada para añadir módulos sin reescribir.</p>
+        </div>
+
+        <div class="sp-service-card reveal reveal-delay-1">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Optimización de rendimiento en entornos críticos</h3>
+          <p class="sp-service-text">Interfaces que responden en milisegundos para operarios que necesitan tomar decisiones rápidas basadas en datos de planta.</p>
+        </div>
+
+        <!-- Browser Mockup: Figma → Code transformation -->
+        <div class="de-browser-wrap reveal">
+          <p class="de-browser-title">De Figma a código sin perder fidelidad</p>
+          <div class="de-transform">
+            <div class="de-transform-col">
+              <p class="de-transform-label de-transform-label-figma">Capas en Figma</p>
+              <div class="de-layer">
+                <div class="de-layer-icon"></div>Dashboard / KPIs
+              </div>
+              <div class="de-layer">
+                <div class="de-layer-icon"></div>Alert / Sensor
+              </div>
+              <div class="de-layer">
+                <div class="de-layer-icon"></div>Nav / Control Panel
+              </div>
+              <div class="de-layer">
+                <div class="de-layer-icon"></div>Form / Config
+              </div>
+            </div>
+            <div class="de-transform-arrow">&rarr;</div>
+            <div class="de-transform-col">
+              <p class="de-transform-label de-transform-label-code">Componentes en código</p>
+              <div class="de-component"><span class="de-component-tag">&lt;/&gt;</span> DashboardKPI.tsx</div>
+              <div class="de-component"><span class="de-component-tag">&lt;/&gt;</span> SensorAlert.tsx</div>
+              <div class="de-component"><span class="de-component-tag">&lt;/&gt;</span> ControlPanel.tsx</div>
+              <div class="de-component"><span class="de-component-tag">&lt;/&gt;</span> ConfigForm.tsx</div>
+            </div>
+          </div>
+          <p class="de-browser-caption">Cada capa de diseño se traduce en un componente optimizado, testeado y listo
+            para producción</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. METODOLOGÍA ============ -->
+  <section class="sp-methodology" aria-label="Metodología">
+    <div class="container-main">
+      <div class="sp-method-layout">
+        <div class="sp-method-copy">
+          <span class="section-badge reveal">Proceso</span>
+          <h2 class="section-h2 reveal">Cómo trabajamos tu <span class="text-gradient-standalone">arquitectura
+              digital</span></h2>
+          <p class="sp-method-intro reveal">Nuestro enfoque combina UX/UI estratégico y arquitectura digital adaptada al rigor operativo que exige el entorno industrial vasco.</p>
+        </div>
+        <div class="sp-method-steps">
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">01</div>
+            <div class="sp-method-step-content">
+              <h3>Diagnóstico</h3>
+              <p>Analizamos la plataforma actual, los flujos de datos y los cuellos de botella en la interfaz de tus sistemas industriales.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">02</div>
+            <div class="sp-method-step-content">
+              <h3>Estrategia</h3>
+              <p>Definimos la arquitectura frontend y el plan de implementación alineado con los procesos operativos de tu planta o empresa.
+              </p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">03</div>
+            <div class="sp-method-step-content">
+              <h3>Diseño / Arquitectura</h3>
+              <p>Construimos el sistema de componentes y la estructura técnica adaptada a la complejidad de tus datos y operaciones.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">04</div>
+            <div class="sp-method-step-content">
+              <h3>Implementación</h3>
+              <p>Traducimos cada capa de Figma a código nativo con fidelidad pixel-perfect y rendimiento validado con datos reales.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">05</div>
+            <div class="sp-method-step-content">
+              <h3>Validación</h3>
+              <p>Testeamos rendimiento bajo carga, accesibilidad y fidelidad visual antes del lanzamiento en entorno de producción.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sp-method-cta reveal">
+        <a href="/arquitectura-digital-conversion" class="btn-ghost">
+          Ver proceso completo: Arquitectura Digital de Conversión
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. TIPOS DE PROYECTO ============ -->
+  <section class="sp-fit" aria-label="Cuándo tiene sentido">
+    <div class="container-main">
+      <span class="section-badge reveal">Encaje</span>
+      <h2 class="section-h2 reveal">Cuándo necesitas un design engineer en Bilbao</h2>
+      <p class="sp-fit-intro reveal">No todos los proyectos necesitan un design engineer. Pero en el contexto industrial vasco, hay situaciones donde la precisión de la interfaz marca la diferencia operativa.</p>
+
+      <div class="sp-fit-layout">
+        <div class="sp-fit-content">
+          <div class="sp-fit-grid">
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Dashboards de producción</h3>
+              <p>Plataformas de monitorización industrial donde la claridad visual de los datos impacta directamente en la toma de decisiones de planta.</p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Portales B2B para cooperativas</h3>
+              <p>Interfaces de pedidos, gestión de socios y seguimiento de entregas que requieren precisión funcional y escalabilidad.</p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Plataformas IoT con datos en tiempo real</h3>
+              <p>Interfaces que visualizan datos de sensores y maquinaria con actualizaciones constantes y necesitan rendimiento extremo.</p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>ERPs y herramientas internas</h3>
+              <p>Sistemas de gestión empresarial donde la experiencia de usuario reduce errores operativos y tiempo de formación.</p>
+            </div>
+            <div class="sp-fit-card reveal">
+              <div class="sp-fit-indicator"></div>
+              <h3>Modernización de interfaces legacy</h3>
+              <p>Rediseños de plataformas industriales existentes donde mantener la operativa mientras se mejora la interfaz es crítico.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visualization Column -->
+        <div class="sp-fit-viz-column reveal" id="fit-evolution">
+          <div class="fit-viz-container">
+            <div class="fit-viz-track"></div>
+            <div class="fit-viz-nodes">
+              <div class="fit-node">
+                <div class="fit-node-dot"></div>
+                <span>Diseño en Figma</span>
+              </div>
+              <div class="fit-node">
+                <div class="fit-node-dot"></div>
+                <span>Fricción en desarrollo</span>
+              </div>
+              <div class="fit-node">
+                <div class="fit-node-dot"></div>
+                <span>Auditoría UI/UX</span>
+              </div>
+              <div class="fit-node">
+                <div class="fit-node-dot"></div>
+                <span>Sistemas de diseño</span>
+              </div>
+              <div class="fit-node last">
+                <div class="fit-node-dot"></div>
+                <span>Producción 1:1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT MARQUEE ============ -->
+  <div class="sp-marquee" aria-hidden="true">
+    <div class="sp-marquee-track">
+      <span>Design engineer</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Figma a código</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Frontend experto</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Pixel-perfect</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Arquitectura frontend</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Design engineer</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Figma a código</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Frontend experto</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Pixel-perfect</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Arquitectura frontend</span>
+      <span class="sp-marquee-sep">&bull;</span>
+    </div>
+  </div>
+
+  <!-- ============ CASOS (TP.casos) ============ -->
+  <div id="tp-casos"></div>
+
+  <!-- ============ SERVICIOS RELACIONADOS ============ -->
+  <section class="sp-related" aria-label="Servicios relacionados">
+    <div class="container-main">
+      <span class="section-badge reveal">Servicios complementarios</span>
+      <h2 class="section-h2 reveal">Servicios que suelen acompañar este proyecto</h2>
+      <p class="sp-related-intro reveal">El frontend industrial funciona mejor cuando el diseño, la arquitectura y la estrategia
+        técnica van alineados desde el principio.</p>
+
+      <div class="sp-related-grid">
+        <a href="/servicios/diseno-ux-ui-bilbao/" class="sp-related-card reveal">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M9.53 15.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+            </svg>
+          </div>
+          <h3>Diseño UX/UI</h3>
+          <p>Cuando el proyecto necesita diseño estratégico de interfaces industriales antes de la implementación.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/desarrollo-web-bilbao/" class="sp-related-card reveal reveal-delay-1">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+            </svg>
+          </div>
+          <h3>Desarrollo web a medida</h3>
+          <p>Para arquitecturas técnicas complejas con integraciones IoT, ERPs y sistemas industriales.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/consultoria-digital-bilbao/" class="sp-related-card reveal reveal-delay-2">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
+            </svg>
+          </div>
+          <h3>Consultoría digital</h3>
+          <p>Para auditar plataformas industriales existentes y detectar cuellos de botella en la interfaz.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============ OPINIÓN EXPERTA ============ -->
+  <section class="sp-expert" aria-label="Opinión experta">
+    <div class="container-main">
+      <div class="sp-expert-layout reveal">
+        <div class="sp-expert-quote">
+          <span class="section-badge">Opinión experta</span>
+          <h2 class="sp-expert-h2">En el sector industrial vasco, la interfaz no es un detalle estético. Es una herramienta de trabajo que afecta a la producción.</h2>
+          <p>Un design engineer traduce la complejidad de los datos industriales en interfaces que los operarios realmente usan. Sin esa precisión, el mejor sistema de monitorización se convierte en un panel decorativo.</p>
+        </div>
+        <div class="sp-expert-author">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="sp-expert-avatar" width="80" height="80"
+            loading="lazy">
+          <div>
+            <div class="sp-expert-name">Jordi Expósito</div>
+            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
+            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener"
+              class="sp-expert-linkedin">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path
+                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+              Ver en LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="sp-faq" aria-label="Preguntas frecuentes sobre design engineering en Bilbao">
+    <div class="container-main">
+      <div class="faq-layout">
+        <div class="reveal">
+          <span class="section-badge reveal">FAQ</span>
+          <h2 class="section-h2 reveal">Preguntas frecuentes sobre design engineering industrial</h2>
+        </div>
+        <div class="faq-list reveal reveal-delay-1">
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Qué aporta un design engineer a una empresa industrial de Bilbao?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Un design engineer traduce dashboards de control, portales de producción y plataformas IoT desde Figma a código nativo sin perder fidelidad. Para el sector industrial, esto significa interfaces de monitorización precisas, tiempos de carga mínimos y una experiencia de usuario que reduce errores operativos.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Cómo se implementan interfaces de datos complejos para manufactura?<svg
+                class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Construimos sistemas de componentes reutilizables optimizados para visualización de datos en tiempo real: gráficas de producción, alertas de sensores, KPIs de planta. Cada componente se implementa con rendimiento y accesibilidad desde el primer día.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Un design engineer puede trabajar con plataformas industriales legacy?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Sí. Auditamos la interfaz existente, diseñamos un sistema de componentes moderno y lo implementamos de forma progresiva. Esto permite modernizar la experiencia de usuario sin interrumpir operaciones de producción.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">¿Cuánto tarda la implementación frontend de un dashboard industrial?<svg
+                class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Un dashboard de producción con visualización de datos en tiempo real, alertas y KPIs operativos se implementa en 6-10 semanas. Incluye diagnóstico, arquitectura de componentes, desarrollo pixel-perfect y testing de rendimiento.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL + FORM ============ -->
+  <section id="cierre" aria-label="Iniciar proyecto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy reveal">
+          <span class="section-badge reveal">Siguiente paso</span>
+          <h2 class="cierre-h2">¿Tu interfaz industrial se pierde al pasar a <span
+              class="text-gradient-standalone">producción</span>?</h2>
+          <p class="cierre-sub">Si tus dashboards de Figma no se reflejan en la plataforma final, el problema no es el diseño. Es la
+            implementación.<br><br>El proceso empieza con 5 preguntas y en menos de 24h tienes una valoración.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+                  viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="cierre-form-inner" id="tp-cta-form">
+<div class="form-gradient-accent"></div>
+<div class="form-card-header">
+  <div class="form-card-title" style="font-size:1.25rem;font-weight:700;color:var(--mint);margin-bottom:.25rem;">Inicia el proyecto</div>
+  <div class="form-card-sub" style="font-size:.85rem;color:var(--text-muted);line-height:1.5;">En menos de 48h laborables tendrás una primera respuesta personalizada.</div>
+</div>
+<form>
+  <input type="text" name="hp_field" id="hp_field" style="position:absolute;left:-9999px;opacity:0;height:0;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+  <div class="form-row">
+    <div class="form-field">
+      <label class="label label-required" for="f-nombre">Nombre</label>
+      <input id="f-nombre" type="text" class="input" placeholder="¿Cómo te llamas?" autocomplete="name" required />
+      <span class="field-error" id="err-nombre"></span>
+    </div>
+    <div class="form-field">
+      <label class="label label-required" for="f-email">Email de empresa</label>
+      <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
+      <span class="field-error" id="err-email"></span>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-field">
+      <label class="label label-required" for="f-tel">Teléfono</label>
+      <input id="f-tel" type="tel" class="input" placeholder="Tu teléfono" autocomplete="tel" required minlength="9" />
+      <span class="field-error" id="err-tel"></span>
+    </div>
+    <div class="form-field">
+      <label class="label label-required" for="f-presupuesto">Inversión estimada</label>
+      <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Inversión estimada">
+        <button type="button" class="custom-select-trigger" aria-label="Selecciona rango de inversión" aria-controls="cs-presupuesto-panel">
+          <span class="custom-select-value">Rango de inversión</span>
+          <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="custom-select-panel" role="listbox" id="cs-presupuesto-panel" aria-label="Opciones de presupuesto">
+          <div class="custom-select-option" role="option" data-value="5k-10k">5.000 € – 10.000 €</div>
+          <div class="custom-select-option" role="option" data-value="10k-15k">10.000 € – 15.000 €</div>
+          <div class="custom-select-option" role="option" data-value="15k-20k">15.000 € – 20.000 €</div>
+          <div class="custom-select-option" role="option" data-value="mas-20k">+ 20.000 €</div>
+        </div>
+      </div>
+      <input type="hidden" id="f-presupuesto" name="presupuesto" />
+      <span class="field-error" id="err-presupuesto"></span>
+    </div>
+  </div>
+  <div class="services-section">
+    <span class="services-label" id="services-label">¿En qué te podemos ayudar?</span>
+    <div class="services-grid" id="services-grid" role="group" aria-labelledby="services-label">
+      <div class="service-card" data-value="Diseño UX/UI" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Diseño UX/UI</span></div>
+      <div class="service-card" data-value="Desarrollo Web" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Desarrollo Web</span></div>
+      <div class="service-card" data-value="Tienda Online" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Tienda Online</span></div>
+      <div class="service-card" data-value="IA y Automatización" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">IA y Automatización</span></div>
+      <div class="service-card" data-value="Consultoría Digital" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Consultoría Digital</span></div>
+      <div class="service-card" data-value="Design Engineer" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Design Engineer</span></div>
+    </div>
+    <input type="hidden" id="f-servicios" name="servicio" />
+  </div>
+  <div class="form-field" style="margin-top:1.25rem;">
+    <label class="label" for="f-mensaje">Cuéntanos qué está pasando</label>
+    <textarea id="f-mensaje" class="input" rows="3" placeholder="Describe brevemente el proyecto. Qué quieres construir, qué problema tienes o qué no está funcionando en tu plataforma actual."></textarea>
+  </div>
+  <input type="hidden" id="f-pagina-origen" name="pagina_origen" />
+  <input type="hidden" id="f-utm-source" name="utm_source" />
+  <input type="hidden" id="f-utm-medium" name="utm_medium" />
+  <input type="hidden" id="f-utm-campaign" name="utm_campaign" />
+  <input type="hidden" id="f-referrer" name="referrer" />
+  <input type="hidden" id="f-timestamp" name="timestamp" />
+  <label class="checkbox-row" id="privacy-row" for="f-privacidad" style="margin-top:1rem;">
+    <input type="checkbox" id="f-privacidad" required />
+    <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+  </label>
+  <span class="field-error" id="err-privacidad"></span>
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAACv1HyITv5ZdYE50" data-theme="dark" data-size="invisible"></div>
+  <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn btn-disabled" style="width:100%;justify-content:center;">
+    Enviar mensaje
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+</form>
+<a href="/form-v3/form-step1.html" class="briefing-banner" style="margin-top:.75rem;">
+  <div class="briefing-banner-icon">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+      <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="12" cy="12" r="10"/>
+    </svg>
+  </div>
+  <div class="briefing-banner-text">
+    <span class="briefing-banner-title">¿Tu proyecto es urgente?</span>
+    <span class="briefing-banner-desc">Cuéntanos más detalles y te enviamos una propuesta completa en 48h.</span>
+  </div>
+  <svg class="briefing-banner-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+</a>
+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="tp-footer"></div>
+
+  <script>
+    // Fit Evolution Sequential Animation
+    (function () {
+      const container = document.getElementById('fit-evolution');
+      if (!container) return;
+
+      const nodes = container.querySelectorAll('.fit-node');
+      let fired = false;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !fired) {
+            fired = true;
+            nodes.forEach((node, i) => {
+              setTimeout(() => {
+                node.classList.add('active');
+                const progress = ((i + 1) / nodes.length) * 100;
+                container.querySelector('.fit-viz-track').style.setProperty('--fit-progress', progress + '%');
+              }, i * 600);
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(container);
+    })();
+  </script>
+  <script src="/js/components.js?v=27"></script>
+  <script>
+    try{try{TP.navbar('design-engineer');}catch(e){}}catch(e){console.warn("TP.navbar:",e);}
+    try{try{TP.casos();}catch(e){}}catch(e){console.warn("TP.casos:",e);}
+    try{try{TP.footer();}catch(e){}}catch(e){console.warn("TP.footer:",e);}
+    try{try{/* ctaForm inline */;}catch(e){}}catch(e){console.warn("TP.ctaForm:",e);}
+    try{try{TP.initJS();}catch(e){}}catch(e){console.warn("TP.initJS:",e);}
+  </script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js" defer></script>
+  <script src="/js/form-validation.js" defer></script>
+
+  <!-- Jordan — Agente Conversacional Tres Puntos -->
+  <script>
+  window.JordanConfig = {
+    webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
+    calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
+    avatar: '/assets/jordan/jordan-avatar.png',
+    avatarVideo: '/assets/jordan/jordan-avatar-video.mp4',
+    position: 'right',
+    rules: [
+      { pattern: '/blog/*', show: false },
+      { pattern: '/checkout/*', show: false },
+      { pattern: '/login', show: false },
+      { pattern: '/wp-admin/*', show: false },
+      { pattern: '/politica-*', show: false },
+      { pattern: '/aviso-legal', show: false },
+      { pattern: '/servicios/*', show: true, proactive: true, delay: 5 },
+      { pattern: '/contacto', show: true, proactive: true, delay: 5 },
+      { pattern: '/casos/*', show: true, proactive: true, delay: 5 },
+      { pattern: '/', show: true, proactive: true, delay: 5 },
+      { pattern: '*', show: true, proactive: true, delay: 5 }
+    ]
+  };
+  </script>
+  <script async src="/assets/jordan/jordan-widget-v5.js"></script>
+
+  <!-- Animated Cursor (Option 2 - stephenscaff) - Fluido con animación en links -->
+  <script defer>
+    (function() {
+      if (window.innerWidth > 1024) {
+        const outerCursor = document.createElement('div');
+        outerCursor.id = 'outer-cursor';
+        const innerCursor = document.createElement('div');
+        innerCursor.id = 'inner-cursor';
+        document.body.appendChild(outerCursor);
+        document.body.appendChild(innerCursor);
+
+        const style = document.createElement('style');
+        style.textContent = `
+          #outer-cursor, #inner-cursor {
+            position: fixed;
+            pointer-events: none;
+            border-radius: 50%;
+            mix-blend-mode: lighten;
+            z-index: 99999;
+          }
+          #outer-cursor {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #5dffbf;
+            top: -20px;
+            left: -20px;
+            transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+            opacity: 0.6;
+          }
+          #inner-cursor {
+            width: 8px;
+            height: 8px;
+            background: #5dffbf;
+            top: -4px;
+            left: -4px;
+            opacity: 1;
+            transition: transform 0.1s ease-out;
+          }
+          #outer-cursor.active {
+            transform: scale(1.5);
+            border-width: 3px;
+            opacity: 0.8;
+          }
+          #inner-cursor.active {
+            transform: scale(0.75);
+          }
+          #outer-cursor.click {
+            transform: scale(0.75);
+            border-width: 2px;
+            opacity: 0.4;
+          }
+          #inner-cursor.click {
+            transform: scale(1.5);
+            background: #5dffbf;
+          }
+          @media(max-width:1024px) {
+            #outer-cursor, #inner-cursor {
+              display: none !important;
+            }
+          }
+        `;
+        document.head.appendChild(style);
+
+        let mouseX = 0, mouseY = 0, outerX = 0, outerY = 0;
+        const smooth = 0.2;
+
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        function animate() {
+          outerX += (mouseX - outerX) * smooth;
+          outerY += (mouseY - outerY) * smooth;
+          outerCursor.style.transform = `translate3d(${outerX}px, ${outerY}px, 0)`;
+          innerCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+          requestAnimationFrame(animate);
+        }
+        animate();
+
+        const interactiveElements = document.querySelectorAll('a, button, [role="button"], .magnetic-btn, input, textarea, select, .caso-card');
+        interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            outerCursor.classList.add('active');
+            innerCursor.classList.add('active');
+          });
+          el.addEventListener('mouseleave', () => {
+            outerCursor.classList.remove('active');
+            innerCursor.classList.remove('active');
+            outerCursor.classList.remove('click');
+            innerCursor.classList.remove('click');
+          });
+          el.addEventListener('mousedown', () => {
+            outerCursor.classList.add('click');
+            innerCursor.classList.add('click');
+          });
+          el.addEventListener('mouseup', () => {
+            outerCursor.classList.remove('click');
+            innerCursor.classList.remove('click');
+          });
+        });
+      }
+    })();
+  </script>
+
+</body>
+
+</html>

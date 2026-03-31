@@ -1,0 +1,153 @@
+{
+  "agencia": "DUPLO Digital",
+  "web": "duplodigital.com",
+  "_score": 6.0,
+  "_nombre": "Angélica",
+  "_icp": "Performance",
+  "lighthouse": {
+    "desktop": { "performance": 83, "accessibility": 75, "bestPractices": 58, "seo": 85 },
+    "mobile": { "performance": 95, "accessibility": 67, "bestPractices": 58, "seo": 85 }
+  },
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Accesibilidad",
+          "titulo": "Score de accesibilidad de 67/100 en móvil — por debajo del estándar",
+          "detalle": "Lighthouse detecta <strong>problemas de accesibilidad que penalizan la experiencia del 15% de usuarios que navegan con tecnologías asistivas</strong>. Imágenes sin alt descriptivo, formularios sin labels asociados y ausencia del landmark <main> en la estructura. El viewport además desactiva el zoom del usuario."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Conversión",
+          "titulo": "Múltiples CTAs compitiendo sin jerarquía clara",
+          "detalle": "La home presenta 'Hablemos', '¿Hablamos?', 'Cuéntanos tu caso' y '¿Buscas una agencia?' <strong>como variaciones del mismo CTA sin un claro ganador visual</strong>. Cuando todo compite por la atención al mismo nivel, nada destaca — y el usuario no tiene un camino claro hacia el contacto."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Navegación",
+          "titulo": "H1 cargado de keywords, no de propuesta de valor",
+          "detalle": "El H1 es 'Agencia de Marketing Digital Barcelona | DUPLO Digital', <strong>un título pensado para Google, no para el usuario</strong>. Un H1 más orientado a la propuesta de valor ('Tu departamento de marketing externo') conectaría mejor con la intención del visitante."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Confianza",
+          "titulo": "Formulario funcional pero sin elementos de conversión avanzados",
+          "detalle": "Contact Form 7 con reCAPTCHA v3, redirige a /gracias-contacto/. <strong>Funcional, pero sin campos progresivos, estimador de presupuesto o social proof junto al formulario.</strong>"
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Imagen de marca",
+          "titulo": "Tema WordPress a medida — identidad propia bien implementada",
+          "detalle": "DUPLO usa un tema WordPress a medida (duplo-theme), <strong>no un template genérico, lo cual transmite más profesionalidad</strong>. Logo SVG y colores corporativos bien implementados. El estilo visual se sitúa en la era 2021-2023 — moderno pero sin elementos diferenciadores de 2024-2025."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Credibilidad",
+          "titulo": "Logos de clientes sin resultados tangibles",
+          "detalle": "La sección 'Nuestros Clientes' muestra logos sin contexto. <strong>Logos sin datos de impacto generan menos confianza que logos acompañados de un resultado concreto</strong> (ej: '+40% de leads en 6 meses'). Oportunidad de conversión infrautilizada."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido",
+          "titulo": "Emojis checkmark en el title SEO restan profesionalidad",
+          "detalle": "El title incluye '✔' y '✓' para destacar en SERPs. <strong>Puede aumentar CTR a corto plazo, pero transmite una imagen menos seria</strong> para una agencia que se posiciona como departamento externo de marketing B2B."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Diferenciación",
+          "titulo": "Posicionamiento como 'departamento externo' poco explotado visualmente",
+          "detalle": "DUPLO se define como departamento de marketing externo, un posicionamiento potente. <strong>Pero la home no lo diferencia visualmente de cualquier otra agencia de Barcelona</strong> — faltan elementos que refuercen esta propuesta única."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Rich results",
+          "titulo": "6 schemas implementados — base técnica SEO muy sólida",
+          "detalle": "DUPLO tiene <strong>Organization, Place, FAQPage, WebSite, WebPage y Person implementados</strong>. Dirección física (C. Mallorca 214), teléfono, coordenadas GPS y autoría (Pol Escarpenter). Significativamente más que la media del sector."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Posicionamiento",
+          "titulo": "SEO score 85/100 — correcta base con margen de mejora",
+          "detalle": "El score SEO de Lighthouse es 85. <strong>La base técnica es correcta pero faltan los 15 puntos</strong> — probablemente meta descriptions optimizadas, hreflang para WPML multiidioma, o canonical tags en todas las páginas internas."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Visibilidad IA",
+          "titulo": "Sin preparación para rastreadores IA ni GEO",
+          "detalle": "El robots.txt bloquea ~30 bots pero <strong>no incluye directivas para GPTBot, ClaudeBot ni PerplexityBot</strong>. No hay llms.txt. Prepararse para GEO es una ventaja competitiva que pocas agencias están aprovechando."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Tracking",
+          "titulo": "GTM + consent mode RGPD bien configurado",
+          "detalle": "Google Tag Manager (GTM-WFSK4LD) con consent mode que bloquea ad_storage y analytics_storage por defecto. <strong>Cumple RGPD y muestra buena práctica técnica.</strong>"
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Seguridad",
+          "titulo": "Best Practices en 58/100 — el problema más grave de la plataforma",
+          "detalle": "Lighthouse asigna <strong>58/100 en Best Practices, el score más bajo de toda la auditoría</strong>. Puede indicar librerías JavaScript con vulnerabilidades conocidas, APIs obsoletas, o headers de seguridad ausentes. Para una agencia que gestiona datos de clientes, esto es prioridad uno."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Experiencia de carga",
+          "titulo": "Speed Index de 4.0s en desktop (score 10/100)",
+          "detalle": "El Speed Index mide la velocidad de renderizado visual progresivo. <strong>Un score de 10/100 significa que la página 'aparece' lentamente aunque los datos de LCP sean buenos (1.5s)</strong>. El usuario percibe lentitud. Optimizar el orden de renderizado de CSS y eliminar recursos bloqueantes."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Interactividad",
+          "titulo": "Time to Interactive de 5.3s en desktop (score 35/100)",
+          "detalle": "La web tarda <strong>5.3 segundos en ser completamente interactiva en desktop</strong>. En móvil es 1.9s (score 100). Hay scripts pesados en desktop que no se ejecutan o se difieren mejor en móvil."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Estabilidad visual",
+          "titulo": "CLS de 0.117 en móvil — justo por encima del umbral de Google",
+          "detalle": "El CLS en móvil es 0.117, <strong>superando el umbral de 0.1 que Google considera 'bueno'</strong>. En desktop es 0.061 (correcto). El shift puede venir de imágenes sin dimensiones o fuentes web que alteran el layout."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Stack",
+          "titulo": "WordPress con tema a medida — stack adecuado",
+          "detalle": "El stack es <strong>WordPress con duplo-theme, Contact Form 7, WPML y GTM</strong>. Correcto para el tamaño de la agencia. El tema personalizado es mejor que un template, pero el rendimiento indica margen de optimización."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Auditar dependencias JavaScript para resolver el 58/100 en Best Practices",
+    "detalle": "El 58/100 en Best Practices es la mayor vulnerabilidad. Ejecutar auditoría de dependencias JS para identificar librerías con vulnerabilidades conocidas, eliminar APIs deprecadas y asegurar que no hay HTTP mixto.",
+    "impacto": "Subir de 58 a ~80 en Best Practices, reducir riesgo de seguridad, y mejorar TTI eliminando scripts innecesarios."
+  },
+  "resumen": [
+    "Hemos analizado duplodigital.com en cuatro dimensiones: UX, UI, SEO y rendimiento técnico. La plataforma tiene una base SEO sólida con 6 schemas implementados (Organization, Place, FAQPage, WebSite, WebPage, Person), GTM con consent mode configurado, y un tema WordPress a medida que transmite identidad propia.",
+    "El problema principal es el score de Best Practices (58/100), el más bajo de la auditoría, que puede indicar dependencias JavaScript vulnerables o APIs obsoletas. El Speed Index en desktop (4.0s, score 10/100) y el TTI (5.3s, score 35/100) muestran que la percepción de velocidad no acompaña a los buenos datos de LCP (1.5s). En móvil, el CLS de 0.117 supera el umbral de Google.",
+    "<strong>Hemos identificado 17 hallazgos concretos y un quick win de implementación rápida.</strong> Prioridades: resolver Best Practices (Dev 5.0/10), mejorar accesibilidad móvil (67/100), y aprovechar el posicionamiento como 'departamento externo' que hoy no se traduce en diferenciación visual (UI 6.5/10)."
+  ]
+}

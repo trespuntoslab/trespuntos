@@ -1556,6 +1556,7 @@
   <meta name="twitter:title" content="Cuéntanos tu proyecto | Tres Puntos — Arquitectura Digital de Conversi" />
   <meta name="twitter:description" content="Cuéntanos tu proyecto. Analizamos tu situación y te enviamos una propuesta estructurada en 48h." />
   <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -1930,6 +1931,32 @@
                     viewBox="0 0 24 24">
                     <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                   </svg>Cuéntanos la situación (mínimo 20 caracteres)</div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="s3-target">¿Quién es tu público objetivo? *</label>
+                <textarea id="s3-target" style="min-height:70px;"
+                  placeholder="Describe a quién te diriges: perfil, edad, sector, necesidades..."></textarea>
+                <div class="field-error" id="err-target"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>Cuéntanos a quién te diriges</div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="s3-problems">¿Qué no funciona ahora? *</label>
+                <textarea id="s3-problems" style="min-height:70px;"
+                  placeholder="¿Qué está fallando en tu web/plataforma actual? ¿Por qué necesitas un cambio?"></textarea>
+                <div class="field-error" id="err-problems"><svg fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>Cuéntanos qué no funciona</div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="s3-competitors">Competidores o referencias (opcional)</label>
+                <textarea id="s3-competitors" style="min-height:60px;"
+                  placeholder="¿Hay webs de competidores o referencias que te gusten? Pega URLs o nombres..."></textarea>
               </div>
 
               <!-- ARCHIVO ADJUNTO (opcional) -->
@@ -2453,6 +2480,7 @@
                   viewBox="0 0 24 24">
                   <path d="M11 17l-5-5m0 0l5-5m-5 5h12" />
                 </svg>Anterior</button>
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAACv1HyITv5ZdYE50" data-theme="dark" data-size="invisible"></div>
               <button class="btn-primary btn-submit" id="submit-btn" onclick="submitForm()">
                 <span class="btn-text" style="display:flex;align-items:center;gap:.625rem;">
                   Enviar proyecto

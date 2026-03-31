@@ -1,0 +1,328 @@
+{
+  "meta": {
+    "slug": "penguinaula",
+    "title": "Rediseño UX plataforma educativa | Caso Penguin Aula · Tres Puntos",
+    "description": "Cómo rediseñamos la experiencia de uso de una plataforma educativa digital para hacerla más clara, usable y eficiente.",
+    "canonical": "/casos-de-negocio/penguinaula/",
+    "og": {
+      "title": "Caso Penguin Aula | Rediseño UX de plataforma educativa",
+      "description": "Reorganización de arquitectura, rediseño UX/UI y mejora de la experiencia de uso de una plataforma EdTech.",
+      "image": "https://www.trespuntoscomunicacion.es/img/og-default.jpg"
+    },
+    "schema_type": "Article",
+    "date_published": "2025-09-15",
+    "date_modified": "2026-03-24",
+    "keywords": [
+      "rediseño ux plataforma educativa",
+      "ux ui edtech",
+      "arquitectura plataforma educativa",
+      "usabilidad plataforma digital",
+      "consultoría digital educación"
+    ]
+  },
+  "faq_schema": [
+    {
+      "question": "¿Qué tipo de proyecto era?",
+      "answer": "Un rediseño UX completo de una plataforma educativa digital. El objetivo era reorganizar la arquitectura de información y simplificar la experiencia de uso."
+    },
+    {
+      "question": "¿Se desarrolló la plataforma desde cero?",
+      "answer": "No. El trabajo se centró en UX/UI y consultoría digital. Reorganizamos la estructura existente y rediseñamos las interfaces para mejorar la usabilidad sin reconstruir la tecnología."
+    },
+    {
+      "question": "¿Cuál fue el mayor reto del proyecto?",
+      "answer": "El problema no era visual. Era estructural. La plataforma tenía contenidos valiosos pero una navegación confusa que impedía a los usuarios encontrarlos y usarlos con fluidez."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero-split",
+      "sector": "Plataforma educativa · EdTech",
+      "h1": "Rediseño UX de",
+      "h1_highlight": "plataforma educativa",
+      "intro": "Cuando una plataforma educativa no se entiende, el usuario no aprende.",
+      "intro_emphasis": "El problema no era visual. Era estructural.",
+      "meta": [
+        { "label": "Cliente", "value": "Penguin Aula" },
+        { "label": "Sector", "value": "EdTech" },
+        { "label": "Servicios", "value": "UX/UI · Consultoría" }
+      ],
+      "video_src": "/img/casos/penguinaula/desktop-recording-1.mp4",
+      "browser_url": "penguinaula.com",
+      "browser_image": "/img/casos/penguinaula/2026-03-24-21.54.44.webp",
+      "browser_alt": "Plataforma Penguin Aula — Vista principal del panel educativo"
+    },
+    {
+      "type": "statement",
+      "text": "Cuando una plataforma educativa no es clara, el usuario se pierde. Y cuando se pierde, <em>deja de usarla.</em>",
+      "sub": null,
+      "bg": "subtle",
+      "show_divider": true
+    },
+    {
+      "type": "overview",
+      "variant": "narrative",
+      "badge": "Contexto del proyecto",
+      "heading": "Una plataforma educativa con buen contenido y mala experiencia",
+      "paragraphs": [
+        "Penguin Aula es una plataforma digital orientada a la formación online. Ofrece cursos, recursos y herramientas para estudiantes y profesores. El contenido era sólido, pero la estructura no acompañaba.",
+        "Los usuarios se perdían navegando. No encontraban lo que buscaban. Abandonaban antes de completar acciones básicas. El problema no era de diseño gráfico: era de arquitectura de información y flujos de uso."
+      ],
+      "meta": [
+        { "label": "Cliente", "value": "Penguin Aula" },
+        { "label": "Sector", "value": "Plataforma educativa · EdTech" },
+        {
+          "label": "Servicios",
+          "value": null,
+          "value_tags": ["Diseño UX/UI", "Consultoría digital"]
+        }
+      ]
+    },
+    {
+      "type": "browser-fullwidth",
+      "bg": "base",
+      "browser_url": "penguinaula.com/dashboard",
+      "image": "/img/casos/penguinaula/2026-03-24-21.54.52.webp",
+      "alt": "Panel principal de Penguin Aula — Dashboard educativo rediseñado"
+    },
+    {
+      "type": "challenge",
+      "badge": "El problema",
+      "heading": "Una plataforma potente que nadie sabía usar",
+      "paragraphs": [
+        "Penguin Aula tenía contenidos de calidad, herramientas útiles y una base de usuarios activa. Pero la experiencia de uso generaba confusión en lugar de claridad.",
+        "El problema no era lo que ofrecía. Era cómo lo organizaba."
+      ],
+      "signals_title": "Señales de fricción detectadas",
+      "signals": [
+        {
+          "title": "Navegación poco intuitiva",
+          "description": "Los usuarios no encontraban las secciones principales sin ayuda o indicaciones externas."
+        },
+        {
+          "title": "Estructura confusa",
+          "description": "Contenidos duplicados, categorías solapadas y jerarquía visual inconsistente."
+        },
+        {
+          "title": "Dificultad para encontrar contenidos",
+          "description": "Cursos, recursos y herramientas enterrados en niveles de navegación innecesarios."
+        },
+        {
+          "title": "Experiencia inconsistente",
+          "description": "Cada sección parecía diseñada por separado. Sin patrones comunes ni coherencia visual."
+        }
+      ]
+    },
+    {
+      "type": "approach-cards",
+      "badge": "La solución",
+      "heading": "De herramienta compleja a plataforma usable",
+      "intro": "El rediseño no se centró en lo visual. Se centró en cómo el usuario piensa, busca y actúa dentro de la plataforma.",
+      "cards": [
+        {
+          "number": "01",
+          "title": "Arquitectura de información",
+          "items": [
+            "Nueva estructura de navegación principal",
+            "Jerarquía clara de contenidos y secciones",
+            "Agrupación lógica de recursos y herramientas"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Rediseño UX/UI",
+          "items": [
+            "Interfaces limpias y sin ruido visual",
+            "Patrones consistentes en toda la plataforma",
+            "Componentes reutilizables y predecibles"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Mejora de experiencia de uso",
+          "items": [
+            "Flujos simplificados con menos pasos",
+            "Acceso directo a acciones frecuentes",
+            "Eliminación de pantallas intermedias innecesarias"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "combo-layout",
+      "bg": "surface",
+      "badge": "Desktop + Mobile",
+      "heading": "La misma claridad en cualquier dispositivo",
+      "browser_url": "penguinaula.com/cursos",
+      "browser_image": "/img/casos/penguinaula/2026-03-24-21.55.07.webp",
+      "browser_alt": "Penguin Aula — Vista de cursos en desktop",
+      "phone_image": "/img/casos/penguinaula/img_0987.webp",
+      "phone_alt": "Penguin Aula — Vista de cursos en móvil"
+    },
+    {
+      "type": "statement",
+      "text": "El objetivo no era rediseñar. Era hacer la plataforma <em>usable.</em>",
+      "sub": null,
+      "bg": null,
+      "show_divider": false
+    },
+    {
+      "type": "platform-gallery",
+      "bg": "surface",
+      "badge": "La plataforma",
+      "heading": "Cada pantalla pensada para que el usuario no se pierda",
+      "intro": "Estructura clara, jerarquía visual coherente y acceso directo a lo importante.",
+      "browsers": [
+        {
+          "url": "penguinaula.com/dashboard",
+          "image": "/img/casos/penguinaula/2026-03-24-21.54.52.webp",
+          "alt": "Penguin Aula — Dashboard principal"
+        },
+        {
+          "url": "penguinaula.com/cursos",
+          "image": "/img/casos/penguinaula/2026-03-24-21.55.07.webp",
+          "alt": "Penguin Aula — Catálogo de cursos"
+        },
+        {
+          "url": "penguinaula.com/curso/detalle",
+          "image": "/img/casos/penguinaula/2026-03-24-21.55.21.webp",
+          "alt": "Penguin Aula — Detalle de curso"
+        },
+        {
+          "url": "penguinaula.com/recursos",
+          "image": "/img/casos/penguinaula/2026-03-24-21.55.30.webp",
+          "alt": "Penguin Aula — Recursos educativos"
+        },
+        {
+          "url": "penguinaula.com/perfil",
+          "image": "/img/casos/penguinaula/2026-03-24-21.55.43.webp",
+          "alt": "Penguin Aula — Perfil de usuario"
+        },
+        {
+          "url": "penguinaula.com/progreso",
+          "image": "/img/casos/penguinaula/2026-03-24-21.55.56.webp",
+          "alt": "Penguin Aula — Progreso del alumno"
+        }
+      ]
+    },
+    {
+      "type": "phone-carousel",
+      "bg": "subtle",
+      "badge": "Mobile",
+      "heading": "La experiencia completa en el bolsillo",
+      "intro": "Cada pantalla mobile mantiene la misma estructura y claridad que en desktop.",
+      "phones": [
+        { "src": "/img/casos/penguinaula/img_0987.webp", "alt": "Penguin Aula — Home mobile" },
+        { "src": "/img/casos/penguinaula/img_0988.webp", "alt": "Penguin Aula — Navegación mobile" },
+        { "src": "/img/casos/penguinaula/img_0989.webp", "alt": "Penguin Aula — Cursos mobile" },
+        { "src": "/img/casos/penguinaula/img_0991.webp", "alt": "Penguin Aula — Detalle mobile" },
+        { "src": "/img/casos/penguinaula/img_0992.webp", "alt": "Penguin Aula — Recursos mobile" },
+        { "src": "/img/casos/penguinaula/img_0993.webp", "alt": "Penguin Aula — Perfil mobile" },
+        { "src": "/img/casos/penguinaula/img_0994.webp", "alt": "Penguin Aula — Progreso mobile" },
+        { "src": "/img/casos/penguinaula/img_0995.webp", "alt": "Penguin Aula — Actividad mobile" }
+      ]
+    },
+    {
+      "type": "video-browser",
+      "badge": "En vivo",
+      "heading": "La plataforma en acción",
+      "intro": "Grabación real de la navegación en la plataforma rediseñada.",
+      "browser_url": "penguinaula.com",
+      "video_src": "/img/casos/penguinaula/desktop-recording-1.mp4",
+      "poster": "/img/casos/penguinaula/2026-03-24-21.54.44.webp",
+      "fallback_image": "/img/casos/penguinaula/2026-03-24-21.54.44.webp",
+      "fallback_alt": "Navegación real en la plataforma Penguin Aula"
+    },
+    {
+      "type": "marquee",
+      "words": ["Usabilidad", "Claridad", "Estructura", "Experiencia"]
+    },
+    {
+      "type": "impact-grid",
+      "bg": "surface",
+      "badge": "El impacto",
+      "heading": "De herramienta compleja a plataforma que se entiende sola",
+      "cards": [
+        {
+          "icon": "compass",
+          "title": "Navegación sin esfuerzo",
+          "description": "Nueva estructura de navegación que permite al usuario encontrar lo que busca en menos pasos y sin necesidad de ayuda externa."
+        },
+        {
+          "icon": "layout",
+          "title": "Experiencia más fluida",
+          "description": "Flujos simplificados y patrones consistentes. El usuario avanza sin detenerse a pensar cómo funciona la interfaz."
+        },
+        {
+          "icon": "check-circle",
+          "title": "Plataforma que se entiende",
+          "description": "De una herramienta que necesitaba explicación a una plataforma donde cada elemento tiene sentido y está donde se espera."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "quote": "En educación, si la plataforma confunde, el alumno no aprende.",
+      "body": "Una plataforma educativa no puede permitirse que el usuario pierda tiempo buscando cómo funciona. Cada segundo de confusión es un segundo menos de aprendizaje. En Penguin Aula, el reto no era añadir funcionalidades. Era organizar las que ya existían para que tuvieran sentido.",
+      "author": "Jordi Expósito",
+      "role": "UX/UI & Digital Architecture",
+      "avatar": "/img/jordi-exposito.webp"
+    },
+    {
+      "type": "services",
+      "badge": "Servicios aplicados",
+      "heading": "Capacidades que hicieron posible este proyecto",
+      "links": [
+        {
+          "href": "/servicios/diseno-ux-ui-barcelona",
+          "icon": "paintbrush",
+          "title": "Diseño UX/UI",
+          "description": "Rediseño completo de interfaces con patrones consistentes, jerarquía clara y eliminación de ruido visual."
+        },
+        {
+          "href": "/servicios/consultoria-digital-barcelona",
+          "icon": "monitor",
+          "title": "Consultoría digital",
+          "description": "Diagnóstico de arquitectura de información, reorganización de navegación y definición de flujos de uso optimizados."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "badge": "FAQ",
+      "heading": "Preguntas frecuentes sobre este proyecto",
+      "items": [
+        {
+          "question": "¿Qué tipo de proyecto era?",
+          "answer": "Un rediseño UX completo de una plataforma educativa digital. El objetivo era reorganizar la arquitectura de información y simplificar la experiencia de uso para que los usuarios encontraran lo que buscaban sin esfuerzo."
+        },
+        {
+          "question": "¿Se desarrolló la plataforma desde cero?",
+          "answer": "No. El trabajo se centró en UX/UI y consultoría digital. Reorganizamos la estructura existente y rediseñamos las interfaces para mejorar la usabilidad sin reconstruir la tecnología de base."
+        },
+        {
+          "question": "¿Cuál fue el mayor reto del proyecto?",
+          "answer": "El problema no era visual. Era estructural. La plataforma tenía contenidos valiosos pero una navegación confusa que impedía a los usuarios encontrarlos y usarlos con fluidez. El reto fue reorganizar todo sin perder funcionalidad."
+        }
+      ]
+    },
+    {
+      "type": "next-project",
+      "label": "Caso relacionado",
+      "title": "Diferent Idea",
+      "href": "/casos-de-negocio/diferentidea/"
+    },
+    {
+      "type": "cta-form",
+      "heading_prefix": "¿Tienes un",
+      "heading_highlight": "reto similar",
+      "sub": "Si tu plataforma genera confusión en lugar de claridad, el problema no es de diseño.<br>Es de arquitectura.<br><br>Cuéntanos tu proyecto.",
+      "reasons": [
+        "Sin reunión de ventas previa. Formulario directo en 3 minutos.",
+        "Respondemos en menos de 24h con una primera valoración de alcance.",
+        "Si no encajamos con lo que necesitas, te lo decimos sin rodeos.",
+        "El proyecto empieza con diagnóstico, no con propuesta económica genérica."
+      ]
+    }
+  ]
+}
