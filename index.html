@@ -185,21 +185,30 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
+  <!-- Non-blocking Google Fonts — evita render-blocking en mobile -->
+  <link rel="preload"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono:wght@400&display=swap"
-    rel="stylesheet" />
+    as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  </noscript>
 
-  <!-- Preload hero orbit SVGs for LCP -->
-  <link rel="preload" href="/img/logos/figma.svg" as="image" type="image/svg+xml" />
-  <link rel="preload" href="/img/logos/react.svg" as="image" type="image/svg+xml" />
-  <link rel="preload" href="/img/logos/n8n.svg" as="image" type="image/svg+xml" />
-  <link rel="preload" href="/img/logos/chatgpt.svg" as="image" type="image/svg+xml" />
-  <link rel="preload" href="/img/logos/google-logo.svg" as="image" type="image/svg+xml" />
-  <link rel="preload" href="/img/logos/wordpress.svg" as="image" type="image/svg+xml" />
-  <link rel="preload" href="/img/logos/angular.svg" as="image" type="image/svg+xml" />
-  <link rel="preload" href="/img/logos/Laravel.svg" as="image" type="image/svg+xml" />
-  <link rel="preload" href="/img/logos/css3.svg" as="image" type="image/svg+xml" />
-  <link rel="preload" href="/img/logos/javascript-logo-svgrepo-com.svg" as="image" type="image/svg+xml" />
+  <!-- Preload hero orbit SVGs — solo en desktop (phone mockup oculto en mobile) -->
+  <script>
+    if (window.innerWidth > 768) {
+      var svgs = [
+        '/img/logos/figma.svg','/img/logos/react.svg','/img/logos/n8n.svg',
+        '/img/logos/chatgpt.svg','/img/logos/google-logo.svg','/img/logos/wordpress.svg',
+        '/img/logos/angular.svg','/img/logos/Laravel.svg','/img/logos/css3.svg',
+        '/img/logos/javascript-logo-svgrepo-com.svg'
+      ];
+      svgs.forEach(function(href){
+        var l=document.createElement('link');
+        l.rel='preload';l.as='image';l.type='image/svg+xml';l.href=href;
+        document.head.appendChild(l);
+      });
+    }
+  </script>
 
   <!-- Cloudflare Turnstile anti-spam -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

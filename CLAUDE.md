@@ -1,11 +1,17 @@
 # Tres Puntos Web — Normas de desarrollo
 
 ## Deploy — Regla crítica
-**NUNCA subir archivos al servidor (FTP, SSH, rsync) sin permiso EXPLÍCITO de Jordi en el chat.**
-- Preparar los archivos y listar qué se va a subir
-- Esperar confirmación ("sí", "sube", "dale") antes de ejecutar cualquier comando de upload
-- Esto aplica a FTP, SCP, rsync, o cualquier otro método de transferencia al servidor de producción
-- FTP: usuario `claude`, directorio base `/public_html/trespuntos/` en `trespuntos-lab.com`
+**NUNCA hacer `git push` ni subir archivos al servidor sin permiso EXPLÍCITO de Jordi en el chat.**
+- Claude recomienda cuándo hacer push (tras cambios significativos, al final de una sesión de trabajo, etc.)
+- Jordi debe confirmar ("sí", "sube", "dale", "push") antes de ejecutar cualquier `git push` o upload
+- Esto aplica a git push, FTP, SCP, rsync, o cualquier método de transferencia a producción
+
+### Flujo de deploy actual (desde 2026-03-31)
+1. **Git push**: `git push origin main` → sube al repositorio `git@github.com:trespuntoslab/trespuntos.git`
+2. **Deploy en Hostinger**: Panel hPanel → Git → botón **Implementar** (o activar Implementación automática)
+3. El directorio en servidor: `public_html/trespuntos/` en `trespuntos-lab.com`
+4. SSH configurado: clave `~/.ssh/id_ed25519` añadida a GitHub cuenta `trespuntoslab` (2026-03-31)
+5. FTP (alternativa): usuario `claude`, directorio base `/public_html/trespuntos/` — puerto 21 puede estar bloqueado según red
 
 ## Design System
 Cuando se modifique cualquier token CSS, componente visual, o se añada un nuevo componente:

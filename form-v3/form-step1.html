@@ -1499,17 +1499,103 @@
       }
     }
 
+    /* ─── MOBILE PROGRESS BAR ─── */
+    .mobile-steps {
+      display: none;
+    }
+
     @media (max-width: 900px) {
       .main {
         grid-template-columns: 1fr;
       }
 
       .left-panel {
-        position: static;
-        height: auto;
-        padding: 2rem 1.5rem;
-        border-right: none;
+        display: none;
+      }
+
+      /* Compact horizontal progress shown above form */
+      .mobile-steps {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        padding: 1rem 1.5rem 0;
+        background: var(--bg-surface);
         border-bottom: 1px solid var(--border-base);
+      }
+
+      .mobile-step {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        gap: 0;
+      }
+
+      .mobile-step-dot {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: .625rem;
+        font-weight: 700;
+        font-family: var(--font-mono);
+        border: 1.5px solid var(--border-strong);
+        color: var(--text-muted);
+        background: var(--bg-muted);
+        flex-shrink: 0;
+        transition: all .3s;
+      }
+
+      .mobile-step.active .mobile-step-dot {
+        background: var(--mint);
+        border-color: var(--mint);
+        color: #0e0e0e;
+        box-shadow: 0 0 12px rgba(93,255,191,.4);
+      }
+
+      .mobile-step.done .mobile-step-dot {
+        background: rgba(93,255,191,.15);
+        border-color: rgba(93,255,191,.3);
+        color: var(--mint);
+        font-size: 0;
+      }
+
+      .mobile-step.done .mobile-step-dot::after {
+        content: '✓';
+        font-size: .625rem;
+      }
+
+      .mobile-step-label {
+        font-size: .6875rem;
+        color: var(--text-muted);
+        margin-left: .375rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 60px;
+      }
+
+      .mobile-step.active .mobile-step-label {
+        color: var(--mint);
+        font-weight: 600;
+      }
+
+      .mobile-step-line {
+        flex: 1;
+        height: 1px;
+        background: var(--border-strong);
+        margin: 0 .25rem;
+        min-width: 8px;
+      }
+
+      .mobile-step.done ~ .mobile-step-line,
+      .mobile-step.done .mobile-step-line {
+        background: rgba(93,255,191,.3);
+      }
+
+      .mobile-steps-wrap {
+        padding-bottom: .875rem;
       }
 
       .right-panel {
@@ -1532,6 +1618,10 @@
     @media (max-width: 540px) {
       .nav {
         padding: 1rem 1.25rem;
+      }
+
+      .mobile-steps {
+        padding: .75rem 1.25rem 0;
       }
 
       .right-panel {
@@ -1674,6 +1764,36 @@
           </div>
         </div>
       </aside>
+
+      <!-- MOBILE STEPS (only visible on mobile) -->
+      <div class="mobile-steps" id="mobile-steps-nav">
+        <div class="mobile-steps-wrap" style="display:flex;align-items:center;width:100%;padding-bottom:.875rem;">
+          <div class="mobile-step active" data-step="1">
+            <div class="mobile-step-dot"><span>1</span></div>
+            <div class="mobile-step-label">Contacto</div>
+          </div>
+          <div class="mobile-step-line"></div>
+          <div class="mobile-step" data-step="2">
+            <div class="mobile-step-dot"><span>2</span></div>
+            <div class="mobile-step-label">Negocio</div>
+          </div>
+          <div class="mobile-step-line"></div>
+          <div class="mobile-step" data-step="3">
+            <div class="mobile-step-dot"><span>3</span></div>
+            <div class="mobile-step-label">Situación</div>
+          </div>
+          <div class="mobile-step-line"></div>
+          <div class="mobile-step" data-step="4">
+            <div class="mobile-step-dot"><span>4</span></div>
+            <div class="mobile-step-label">Técnico</div>
+          </div>
+          <div class="mobile-step-line"></div>
+          <div class="mobile-step" data-step="5">
+            <div class="mobile-step-dot"><span>5</span></div>
+            <div class="mobile-step-label">Proyecto</div>
+          </div>
+        </div>
+      </div>
 
       <!-- RIGHT PANEL -->
       <main class="right-panel">

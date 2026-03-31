@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>Auto-Audit · tres.trespuntos-lab.com · Tres Puntos</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>Auditoría interna beta · tres.trespuntos-lab.com — Tres Puntos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --mint:#5dffbf;--mint-hover:#49e6a8;--mint-rgb:93,255,191;
   --amber:#fbbf24;--red:#f87171;--blue:#60a5fa;--purple:#c084fc;
@@ -24,442 +21,406 @@
   --shadow-brand:0 0 32px rgba(93,255,191,.12);
   --gradient-brand:linear-gradient(135deg,#5dffbf 0%,#4ea5ff 50%,#c084fc 100%);
 }
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:var(--bg-base);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg-base);color:var(--text-primary);font-family:var(--font-body);-webkit-font-smoothing:antialiased;line-height:1.6}
 
-/* ── Page layout ── */
-.page{display:flex;max-width:1180px;margin:0 auto;padding:2rem 1.5rem 4rem;gap:2.5rem}
-.main{flex:1;min-width:0}
-.sidebar{width:300px;flex-shrink:0;position:sticky;top:2rem;align-self:flex-start}
+.page{max-width:1100px;margin:0 auto;padding:3rem 1.5rem 4rem}
+@media(min-width:900px){
+  .page{padding:3rem 2.5rem 5rem;display:grid;grid-template-columns:1fr 300px;gap:2.5rem;align-items:start}
+}
+.main{min-width:0}
 
-/* ── Header ── */
-.hdr{margin-bottom:2.5rem}
-.hdr .logo{display:flex;align-items:center;gap:.75rem;margin-bottom:1.75rem}
-.hdr .logo svg{height:28px;width:auto}
-.hdr .badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mint);background:rgba(var(--mint-rgb),.08);border:1px solid rgba(var(--mint-rgb),.15);padding:.35rem .85rem;border-radius:var(--radius-full);margin-bottom:1rem}
-.hdr .badge::before{content:'';width:6px;height:6px;background:var(--mint);border-radius:50%;animation:pulse-dot 2s infinite}
-@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
-.hdr h1{font-family:var(--font-heading);font-size:clamp(1.6rem,3.5vw,2.25rem);font-weight:800;line-height:1.2;letter-spacing:-.03em;margin-bottom:.75rem}
-.hdr h1 span{background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hdr .meta{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);letter-spacing:.04em}
+.sidebar{display:none}
+@media(min-width:900px){.sidebar{display:block;position:sticky;top:2rem}}
+.side-card{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-2xl);padding:1.75rem;text-align:center;position:relative;overflow:hidden}
+.side-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient-brand);background-size:200% 100%;animation:shimmer 8s linear infinite}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+.side-card h3{font-family:var(--font-heading);font-size:1rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.35rem}
+.side-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--border-strong);margin:0 auto .75rem;display:block}
+.side-name{font-family:var(--font-heading);font-size:.8rem;font-weight:700;margin-bottom:.05rem}
+.side-role{font-family:var(--font-mono);font-size:.55rem;color:var(--text-muted);margin-bottom:1rem}
+.side-card p{font-size:.8rem;color:var(--text-muted);line-height:1.5;margin-bottom:1.25rem}
+.side-card .side-score{font-family:var(--font-heading);font-size:.75rem;font-weight:600;color:var(--mint);margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;gap:.4rem}
+.side-card .side-score::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--mint)}
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-heading);font-weight:700;font-size:.85rem;color:var(--text-inverse);background:var(--mint);padding:.8rem 1.6rem;border-radius:var(--radius-full);text-decoration:none;border:none;cursor:pointer;transition:all .25s;box-shadow:0 0 24px rgba(93,255,191,.2);width:100%;justify-content:center}
+.btn-p:hover{background:var(--mint-hover);box-shadow:0 0 36px rgba(93,255,191,.3);transform:translateY(-1px)}
+.btn-p svg{transition:transform .15s}.btn-p:hover svg{transform:translateX(3px)}
+.side-checklist{list-style:none;text-align:left;margin-top:1rem;display:flex;flex-direction:column;gap:.4rem}
+.side-checklist li{font-family:var(--font-mono);font-size:.6rem;color:var(--text-muted);display:flex;align-items:center;gap:.4rem}
+.side-checklist li.ok{color:var(--mint)}.side-checklist li.warn{color:var(--amber)}.side-checklist li.err{color:var(--red)}
+.side-checklist li::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
 
-/* ── Score panel ── */
-.score-panel{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-xl);padding:2rem;margin-bottom:2rem;box-shadow:var(--shadow-elevation)}
-.score-panel .top{display:flex;align-items:center;gap:2rem;margin-bottom:1.75rem;flex-wrap:wrap}
-.score-ring{position:relative;width:110px;height:110px;flex-shrink:0}
+.mob-cta{display:none}
+@media(max-width:899px){
+  .mob-cta{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:100;padding:.75rem 1.25rem;background:rgba(14,14,14,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border-strong);gap:.75rem;align-items:center;justify-content:center}
+  .mob-cta .btn-p{width:auto;font-size:.8rem;padding:.7rem 1.5rem}
+  .mob-cta-text{font-size:.7rem;color:var(--text-muted);display:none}
+  @media(min-width:400px){.mob-cta-text{display:block}}
+  .main{padding-bottom:5rem}
+}
+
+.hdr{margin-bottom:2rem;padding-bottom:1.75rem;border-bottom:1px solid var(--border-strong)}
+.logo{display:inline-block;margin-bottom:1.5rem;text-decoration:none}
+.logo svg{height:28px;width:auto}
+.badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.65rem;font-weight:500;color:var(--amber);background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.2);border-radius:var(--radius-full);padding:.3rem .85rem;margin-bottom:1.25rem}
+.badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.h1{font-family:var(--font-heading);font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin-bottom:.6rem}
+.h1 span{background:var(--gradient-brand);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gshift 6s ease infinite}
+@keyframes gshift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.meta{font-size:.82rem;color:var(--text-muted)}.meta strong{color:var(--text-secondary);font-weight:600}
+
+.score-panel{display:grid;grid-template-columns:auto 1fr;gap:1.75rem;align-items:center;background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-2xl);padding:1.75rem;margin-bottom:2rem;position:relative;overflow:hidden}
+.score-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient-brand);background-size:200% 100%;animation:shimmer 8s linear infinite}
+.score-ring{position:relative;width:100px;height:100px}
 .score-ring svg{transform:rotate(-90deg)}
-.score-ring .track{fill:none;stroke:var(--border-base);stroke-width:8}
-.score-ring .bar{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)}
-.score-ring .val{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.score-ring .num{font-family:var(--font-heading);font-size:1.85rem;font-weight:800;line-height:1}
-.score-ring .of{font-family:var(--font-mono);font-size:.6rem;color:var(--text-muted);margin-top:2px}
-.dims{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;flex:1}
-.dim{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;padding:.45rem .75rem;background:var(--bg-subtle);border-radius:var(--radius-sm);border:1px solid var(--border-subtle)}
-.dim b{font-family:var(--font-mono);font-size:.8rem;font-weight:600}
-.score-panel .line{font-size:.82rem;color:var(--text-secondary);line-height:1.65;border-top:1px solid var(--border-subtle);padding-top:1.25rem}
+.score-ring .bg{fill:none;stroke:var(--bg-muted);stroke-width:8}
+.score-ring .fg{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.5s cubic-bezier(.34,1.56,.64,1)}
+.score-num{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.score-num strong{display:block;font-family:var(--font-heading);font-size:1.75rem;font-weight:800;letter-spacing:-.04em}
+.score-num small{font-family:var(--font-mono);font-size:.55rem;color:var(--text-muted)}
+.score-detail h3{font-family:var(--font-heading);font-size:.95rem;font-weight:700;margin-bottom:.4rem;letter-spacing:-.02em}
+.score-detail p{font-size:.8rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.85rem}
+.score-bars{display:flex;flex-direction:column;gap:.5rem}
+.sbar{display:flex;align-items:center;gap:.6rem}
+.sbar-label{font-family:var(--font-mono);font-size:.55rem;color:var(--text-muted);min-width:90px;text-align:right}
+.sbar-track{flex:1;height:5px;background:var(--bg-muted);border-radius:3px;overflow:hidden}
+.sbar-fill{height:100%;border-radius:3px;transition:width 1.2s cubic-bezier(.34,1.56,.64,1)}
+.sbar-val{font-family:var(--font-mono);font-size:.55rem;color:var(--text-secondary);min-width:28px}
+@media(max-width:520px){.score-panel{grid-template-columns:1fr;text-align:center}.score-ring{margin:0 auto}.sbar-label{min-width:75px}}
 
-/* ── CWV banner ── */
-.cwv{display:flex;align-items:flex-start;gap:.75rem;font-size:.8rem;line-height:1.55;padding:1rem 1.25rem;border-radius:var(--radius-md);border:1px solid;margin-bottom:2rem}
-.cwv svg{flex-shrink:0;margin-top:2px}
+.cwv{display:flex;align-items:center;gap:.65rem;background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.15);border-radius:var(--radius-lg);padding:.75rem 1.1rem;margin-bottom:2rem;font-size:.75rem;color:var(--amber)}
+.cwv svg{flex-shrink:0}.cwv strong{color:var(--text-primary)}
 
-/* ── Summary ── */
-.summary{font-size:.88rem;line-height:1.75;color:var(--text-secondary);margin-bottom:2.25rem;padding:1.5rem;background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-lg)}
+.summary{font-size:.85rem;color:var(--text-secondary);line-height:1.75;margin-bottom:2rem;padding:1.25rem;background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-xl)}
 .summary strong{color:var(--text-primary)}
+.summary br{display:block;content:'';margin-top:.75rem}
 
-/* ── Tabs ── */
-.tabs{display:flex;gap:.35rem;border-bottom:1px solid var(--border-base);margin-bottom:1.75rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tabs button{font-family:var(--font-body);font-size:.78rem;font-weight:500;color:var(--text-muted);background:0;border:0;padding:.65rem 1rem;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
-.tabs button:hover{color:var(--text-secondary)}
-.tabs button.on{color:var(--mint);border-bottom-color:var(--mint)}
-.tc{display:none}
-.tc.on{display:block}
+.tabs{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.tab{font-family:var(--font-heading);font-size:.75rem;font-weight:600;color:var(--text-muted);background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-full);padding:.5rem 1rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:.35rem}
+.tab:hover{color:var(--text-secondary);border-color:var(--border-strong)}
+.tab.active{color:var(--mint);background:rgba(93,255,191,.06);border-color:rgba(93,255,191,.2)}
+.tab .cnt{font-family:var(--font-mono);font-size:.55rem;background:var(--bg-muted);border-radius:var(--radius-full);padding:.1rem .4rem;color:var(--text-muted)}
+.tab.active .cnt{background:rgba(93,255,191,.12);color:var(--mint)}
+.tc{display:none}.tc.on{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── Tab header ── */
-.tab-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
-.tab-hdr h2{font-family:var(--font-heading);font-size:1.1rem;font-weight:700}
-.tab-score{font-family:var(--font-mono);font-size:.85rem;font-weight:600;padding:.3rem .75rem;border-radius:var(--radius-full);background:rgba(var(--mint-rgb),.1);color:var(--mint)}
-.tab-score.amber{background:rgba(251,191,36,.1);color:var(--amber)}
+.tab-score{display:flex;align-items:baseline;gap:.5rem;margin-bottom:1.25rem;padding:.85rem 1.1rem;background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-lg)}
+.tab-score-val{font-family:var(--font-heading);font-size:1.75rem;font-weight:800;letter-spacing:-.04em}
+.tab-score-label{font-family:var(--font-mono);font-size:.65rem;color:var(--text-muted)}
 
-/* ── Finding cards ── */
-.find{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-lg);padding:1.35rem 1.5rem;margin-bottom:1rem;transition:border-color .2s}
-.find:hover{border-color:var(--border-strong)}
-.find .row{display:flex;align-items:center;gap:.5rem;margin-bottom:.65rem;flex-wrap:wrap}
-.find .sev{font-family:var(--font-mono);font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;padding:.2rem .55rem;border-radius:var(--radius-full)}
-.sev-high{background:rgba(248,113,113,.12);color:var(--red)}
-.sev-med{background:rgba(251,191,36,.12);color:var(--amber)}
-.sev-low{background:rgba(96,165,250,.12);color:var(--blue)}
-.find .cat{font-family:var(--font-mono);font-size:.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em}
-.find h3{font-family:var(--font-heading);font-size:.92rem;font-weight:700;line-height:1.4;margin-bottom:.5rem}
-.find p{font-size:.82rem;color:var(--text-secondary);line-height:1.65}
-.find p strong{color:var(--text-primary)}
+.findings{display:grid;gap:1rem}
+.find{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-xl);padding:1.4rem;transition:border-color .25s,transform .25s}
+.find:hover{border-color:var(--border-strong);transform:translateY(-1px)}
+.find-top{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;flex-wrap:wrap}
+.sev{font-family:var(--font-mono);font-size:.5rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;border-radius:var(--radius-full);padding:.18rem .55rem}
+.sev-high{color:var(--red);background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.2)}
+.sev-med{color:var(--amber);background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.15)}
+.sev-low{color:var(--blue);background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.15)}
+.sev-ok{color:var(--mint);background:rgba(93,255,191,.08);border:1px solid rgba(93,255,191,.15)}
+.find-cat{font-family:var(--font-mono);font-size:.5rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em}
+.find h3{font-family:var(--font-heading);font-size:1rem;font-weight:700;letter-spacing:-.02em;line-height:1.3;margin-bottom:.45rem}
+.find p{font-size:.82rem;color:var(--text-secondary);line-height:1.7}
+.find p strong{color:var(--mint);font-weight:600}
+.find p strong.w{color:var(--amber)}
+.find p strong.e{color:var(--red)}
+.find code{font-family:var(--font-mono);font-size:.75em;color:var(--text-muted);background:var(--bg-muted);padding:.1em .35em;border-radius:3px}
 
-/* ── PSI card ── */
-.psi{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin-top:1.5rem;margin-bottom:.5rem}
-.psi .psi-title{font-family:var(--font-mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:1rem}
-.psi .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:.75rem}
-.psi .metric{text-align:center}
-.psi .metric .mv{font-family:var(--font-heading);font-size:1.15rem;font-weight:700;color:var(--mint)}
-.psi .metric .ml{font-family:var(--font-mono);font-size:.55rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-top:.15rem}
-.psi .metric .status{display:inline-block;font-family:var(--font-mono);font-size:.5rem;text-transform:uppercase;letter-spacing:.06em;padding:.1rem .4rem;border-radius:var(--radius-full);background:rgba(var(--mint-rgb),.1);color:var(--mint);margin-top:.25rem}
+.psi{background:var(--bg-subtle);border:1px solid var(--border-base);border-radius:var(--radius-lg);padding:1rem;margin-top:.85rem}
+.psi-title{font-family:var(--font-mono);font-size:.55rem;color:var(--mint);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.85rem;display:flex;align-items:center;gap:.35rem}
+.psi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem}
+@media(max-width:520px){.psi-grid{grid-template-columns:repeat(3,1fr)}}
+.psi-m{text-align:center}
+.psi-v{font-family:var(--font-heading);font-size:1.1rem;font-weight:800;letter-spacing:-.03em}
+.psi-l{font-family:var(--font-mono);font-size:.48rem;color:var(--text-muted);margin-top:.1rem}
+.psi-s{font-family:var(--font-mono);font-size:.42rem;margin-top:.2rem;font-weight:600}
+.c-g{color:var(--mint)}.c-w{color:var(--amber)}.c-p{color:var(--red)}
 
-/* ── Quick win ── */
-.qw{background:rgba(var(--mint-rgb),.04);border:1px solid rgba(var(--mint-rgb),.12);border-radius:var(--radius-lg);padding:1.5rem;margin:2rem 0}
-.qw .qw-badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-mono);font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--mint);margin-bottom:.75rem}
-.qw .qw-badge svg{width:14px;height:14px}
-.qw h3{font-family:var(--font-heading);font-size:.95rem;font-weight:700;margin-bottom:.5rem}
-.qw p{font-size:.82rem;color:var(--text-secondary);line-height:1.65;margin-bottom:.75rem}
-.qw .qw-time{font-family:var(--font-mono);font-size:.65rem;color:var(--mint);text-transform:uppercase;letter-spacing:.06em}
+.qw{background:rgba(93,255,191,.04);border:1px solid rgba(93,255,191,.12);border-radius:var(--radius-xl);padding:1.5rem;margin:2rem 0}
+.qw-label{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-mono);font-size:.6rem;font-weight:500;color:var(--mint);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.65rem}
+.qw h3{font-family:var(--font-heading);font-size:1rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.45rem}
+.qw p{font-size:.85rem;color:var(--text-secondary);line-height:1.7}
+.qw p code{font-family:var(--font-mono);font-size:.75em;color:var(--mint);background:rgba(93,255,191,.08);padding:.1em .35em;border-radius:3px}
+.qw-time{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--font-mono);font-size:.65rem;color:var(--text-muted);margin-top:.65rem;background:var(--bg-surface);border:1px solid var(--border-strong);border-radius:var(--radius-full);padding:.2rem .65rem}
 
-/* ── Decline ── */
-.dec{text-align:center;padding:2.5rem 1rem;margin-top:2rem;border-top:1px solid var(--border-base)}
-.dec button{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);background:0;border:1px solid var(--border-base);padding:.5rem 1.25rem;border-radius:var(--radius-full);cursor:pointer;transition:all .2s;letter-spacing:.04em}
-.dec button:hover{border-color:var(--border-strong);color:var(--text-secondary)}
-.dec .ty{display:none;font-size:.8rem;color:var(--text-muted);margin-top:.75rem}
-.dec .ty.show{display:block}
+.sep{height:1px;background:linear-gradient(to right,transparent,rgba(93,255,191,.15),transparent);margin:2rem 0}
 
-/* ── Footer ── */
-.ftr{text-align:center;padding:2rem 0 0;border-top:1px solid var(--border-subtle);margin-top:2rem}
-.ftr p{font-family:var(--font-mono);font-size:.6rem;color:var(--text-muted);letter-spacing:.04em}
+.dec{text-align:center;padding:1.25rem 0;border-top:1px solid var(--border-base)}
+@media(min-width:900px){.dec{display:none}}
+.btn-d{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-body);font-size:.78rem;font-weight:500;color:var(--text-muted);background:none;border:1px solid var(--border-strong);border-radius:var(--radius-full);padding:.5rem 1.1rem;cursor:pointer;text-decoration:none;transition:all .25s}
+.btn-d:hover{color:var(--text-secondary);border-color:var(--text-muted)}
 
-/* ── Sidebar ── */
-.sidebar .card{background:var(--bg-surface);border:1px solid var(--border-base);border-radius:var(--radius-xl);padding:1.75rem;box-shadow:var(--shadow-elevation)}
-.sidebar .avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(var(--mint-rgb),.2);margin-bottom:1rem}
-.sidebar .name{font-family:var(--font-heading);font-size:.95rem;font-weight:700;margin-bottom:.15rem}
-.sidebar .role{font-size:.72rem;color:var(--text-muted);line-height:1.5;margin-bottom:1.25rem}
-.sidebar h3{font-family:var(--font-heading);font-size:.9rem;font-weight:700;margin-bottom:.5rem}
-.sidebar .desc{font-size:.78rem;color:var(--text-secondary);line-height:1.6;margin-bottom:1rem}
-.sidebar .sc{font-family:var(--font-mono);font-size:.7rem;color:var(--mint);margin-bottom:1.25rem}
-.sidebar .btn-cal{display:block;width:100%;font-family:var(--font-heading);font-size:.8rem;font-weight:600;color:var(--text-inverse);background:var(--mint);border:0;padding:.7rem 1rem;border-radius:var(--radius-md);cursor:pointer;text-align:center;transition:background .2s;margin-bottom:.65rem}
-.sidebar .btn-cal:hover{background:var(--mint-hover)}
-.sidebar .btn-wa{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;font-family:var(--font-body);font-size:.78rem;font-weight:500;color:var(--text-secondary);background:var(--bg-subtle);border:1px solid var(--border-base);padding:.6rem 1rem;border-radius:var(--radius-md);cursor:pointer;transition:all .2s;margin-bottom:.65rem}
-.sidebar .btn-wa:hover{border-color:var(--border-strong);color:var(--text-primary)}
-.sidebar .btn-wa svg{width:16px;height:16px;fill:currentColor}
-.sidebar .btn-dec{display:block;width:100%;font-family:var(--font-mono);font-size:.65rem;color:var(--text-muted);background:0;border:0;padding:.5rem;cursor:pointer;text-align:center;transition:color .2s}
-.sidebar .btn-dec:hover{color:var(--text-secondary)}
+.ftr{text-align:center;padding-top:1.5rem;border-top:1px solid var(--border-base);margin-top:.75rem}
+.ftr p{font-size:.7rem;color:var(--text-muted)}.ftr a{color:var(--mint);text-decoration:none}
 
-/* ── Mobile CTA ── */
-.mob-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;padding:.75rem 1rem;background:rgba(14,14,14,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border-base);gap:.5rem}
-.mob-cta .btn-cal-m{flex:1;font-family:var(--font-heading);font-size:.8rem;font-weight:600;color:var(--text-inverse);background:var(--mint);border:0;padding:.7rem;border-radius:var(--radius-md);cursor:pointer;text-align:center}
-.mob-cta .btn-wa-m{width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--bg-subtle);border:1px solid var(--border-base);border-radius:var(--radius-md);cursor:pointer;flex-shrink:0}
-.mob-cta .btn-wa-m svg{width:20px;height:20px;fill:var(--text-secondary)}
-
-/* ── Responsive ── */
-@media(max-width:900px){
-  .page{flex-direction:column;padding:1.25rem 1rem 6rem}
-  .sidebar{width:100%;position:static;order:99}
-  .mob-cta{display:flex}
-  .dims{grid-template-columns:1fr}
-  .score-panel .top{flex-direction:column;align-items:flex-start;gap:1.25rem}
-}
-@media(max-width:480px){
-  .hdr h1{font-size:1.35rem}
-  .tabs button{font-size:.72rem;padding:.55rem .7rem}
-  .find{padding:1.1rem 1.15rem}
-  .psi .metrics{grid-template-columns:repeat(3,1fr)}
-}
+@media(max-width:480px){.find{padding:1.15rem}.qw{padding:1.15rem}}
 </style>
 </head>
 <body>
 
 <div class="page">
-
-<!-- ════════ MAIN ════════ -->
 <div class="main">
 
-  <!-- Header -->
-  <header class="hdr">
-    <div class="logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 32" height="28">
-        <circle cx="8" cy="16" r="4" fill="#5dffbf"/>
-        <circle cx="20" cy="16" r="4" fill="#5dffbf" opacity=".6"/>
-        <circle cx="32" cy="16" r="4" fill="#5dffbf" opacity=".3"/>
-        <text x="44" y="22" fill="#f5f5f5" font-family="'Plus Jakarta Sans',sans-serif" font-size="15" font-weight="700" letter-spacing="-.02em">TRES PUNTOS</text>
-      </svg>
-    </div>
-    <div class="badge">Auto-analisis de arquitectura digital</div>
-    <h1>Revision interna de <span>tres.trespuntos-lab.com</span></h1>
-    <div class="meta">Auditoria interna &middot; Tres Puntos &middot; Marzo 2026</div>
-  </header>
+<!-- HEADER -->
+<header class="hdr">
+  <a href="https://www.trespuntoscomunicacion.es" class="logo" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="28" viewBox="0 0 261.303 99.928" aria-hidden="true"><g transform="translate(-143.8 -26.1)"><path d="M243.558,44.827a30.774,30.774,0,0,1,23.994,11.412,61.579,61.579,0,0,1,9.364-17.264,49.651,49.651,0,0,0-66.716,0,61.58,61.58,0,0,1,9.364,17.264,31.238,31.238,0,0,1,23.994-11.412Z" transform="translate(30.748 0)" fill="#5dffbf"/><path d="M355.213,26.1a49.114,49.114,0,0,0-33.358,12.875,45.236,45.236,0,0,0-7.023,7.9,49.619,49.619,0,0,0-9.364,28.969,31.1,31.1,0,0,1-31.017,31.163A30.774,30.774,0,0,1,250.457,95.6a31.275,31.275,0,0,1-7.023-19.751,49.618,49.618,0,0,0-9.364-28.969,45.233,45.233,0,0,0-7.023-7.9A49.114,49.114,0,0,0,193.691,26.1a49.891,49.891,0,0,0,0,99.781,49.114,49.114,0,0,0,33.358-12.875,61.579,61.579,0,0,1-9.364-17.264,30.876,30.876,0,1,1,7.023-19.459,49.618,49.618,0,0,0,9.364,28.969,45.231,45.231,0,0,0,7.023,7.9,49.651,49.651,0,0,0,66.716,0,45.232,45.232,0,0,0,7.023-7.9A49.619,49.619,0,0,0,324.2,76.283a31.1,31.1,0,1,1,7.023,19.459,61.579,61.579,0,0,1-9.364,17.264,49.113,49.113,0,0,0,33.358,12.875,49.891,49.891,0,1,0,0-99.781Z" transform="translate(0 0)" fill="#5dffbf"/><circle cx="16.24" cy="16.24" r="16.24" transform="translate(177.158 59.751)" fill="#f8f8f8"/><circle cx="16.24" cy="16.24" r="16.24" transform="translate(258.065 59.751)" fill="#f8f8f8"/><circle cx="16.24" cy="16.24" r="16.24" transform="translate(338.973 59.751)" fill="#f8f8f8"/></g></svg>
+  </a>
+  <div class="badge">Auditoría interna · Beta pre-deploy · Marzo 2026</div>
+  <h1 class="h1">Hemos analizado<br/><span>tres.trespuntos-lab.com</span></h1>
+  <p class="meta">Preparado por <strong>Jordi Expósito</strong> · Tres Puntos · 31 de Marzo 2026 · Lighthouse 13.0.3</p>
+</header>
 
-  <!-- Score panel -->
-  <section class="score-panel">
-    <div class="top">
-      <div class="score-ring">
-        <svg width="110" height="110" viewBox="0 0 120 120">
-          <circle class="track" cx="60" cy="60" r="52"/>
-          <circle class="bar" cx="60" cy="60" r="52" stroke="var(--mint)" stroke-dasharray="326.73" stroke-dashoffset="326.73" id="arc"/>
-        </svg>
-        <div class="val">
-          <span class="num" style="color:var(--mint)">8.1</span>
-          <span class="of">/ 10</span>
-        </div>
-      </div>
-      <div class="dims">
-        <div class="dim"><span>UX &amp; Conversion</span><b style="color:var(--mint)">7.8</b></div>
-        <div class="dim"><span>Rendimiento</span><b style="color:var(--mint)">9.8</b></div>
-        <div class="dim"><span>SEO &amp; Visibilidad</span><b style="color:var(--mint)">7.5</b></div>
-        <div class="dim"><span>Accesibilidad</span><b style="color:var(--mint)">7.0</b></div>
-      </div>
-    </div>
-    <p class="line">La plataforma tiene una base tecnica solida y rendimiento excepcional, pero hay margen de mejora en accesibilidad, consistencia de datos y jerarquia de encabezados.</p>
-  </section>
-
-  <!-- CWV banner (PASS) -->
-  <div class="cwv" style="background:rgba(93,255,191,.06);border-color:rgba(93,255,191,.15);color:var(--mint)">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-    <span><strong>Core Web Vitals: Passed</strong> — LCP 0.9s, FCP 0.4s, CLS 0, TBT 20ms en mobile. Rendimiento excepcional en ambos dispositivos.</span>
+<!-- SCORE PANEL -->
+<div class="score-panel">
+  <div class="score-ring">
+    <svg viewBox="0 0 120 120" width="100" height="100">
+      <circle class="bg" cx="60" cy="60" r="52"/>
+      <circle class="fg" cx="60" cy="60" r="52" stroke="var(--mint)" stroke-dasharray="326.73" stroke-dashoffset="326.73" id="scoreArc"/>
+    </svg>
+    <div class="score-num"><strong>7.8</strong><small>/10</small></div>
   </div>
-
-  <!-- Summary -->
-  <div class="summary">
-    La plataforma beta de Tres Puntos presenta una base tecnica excepcional: <strong>rendimiento perfecto en Lighthouse (100/100 mobile)</strong>, Core Web Vitals superados con margen, y una arquitectura limpia sin dependencias de CMS ni frameworks pesados. El posicionamiento de marca es claro y diferenciado. Sin embargo, detectamos puntos de mejora antes del lanzamiento: <strong>3 etiquetas H1 donde deberia haber una sola</strong>, posibles inconsistencias en cifras entre paginas, y margen de mejora en accesibilidad (92-95 Lighthouse). Son ajustes quirurgicos sobre una base muy solida.
-  </div>
-
-  <!-- Tabs -->
-  <div class="tabs" role="tablist">
-    <button class="on" onclick="switchTab(0)" role="tab" aria-selected="true">Fortalezas <span style="opacity:.5;font-size:.7rem">(5)</span></button>
-    <button onclick="switchTab(1)" role="tab" aria-selected="false">SEO &amp; Estructura <span style="opacity:.5;font-size:.7rem">(4)</span></button>
-    <button onclick="switchTab(2)" role="tab" aria-selected="false">UX &amp; Contenido <span style="opacity:.5;font-size:.7rem">(3)</span></button>
-    <button onclick="switchTab(3)" role="tab" aria-selected="false">Accesibilidad <span style="opacity:.5;font-size:.7rem">(3)</span></button>
-  </div>
-
-  <!-- ─── Tab 0: Fortalezas ─── -->
-  <div class="tc on" id="t0">
-    <div class="tab-hdr">
-      <h2>Fortalezas</h2>
-      <span class="tab-score">9.0 / 10</span>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-low">Fortaleza</span><span class="cat">Performance</span></div>
-      <h3>Rendimiento perfecto: 100/100 en mobile, 99/100 en desktop</h3>
-      <p>Todos los Core Web Vitals superados con margen. LCP 0.9s, TBT 20ms, CLS 0. <strong>Para una agencia que vende desarrollo web, tener la plataforma mas rapida del sector es la mejor tarjeta de presentacion.</strong></p>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-low">Fortaleza</span><span class="cat">Arquitectura</span></div>
-      <h3>Codebase limpio: cero CMS, cero framework overhead</h3>
-      <p>HTML/CSS/JS puro con critical CSS inlineado, carga async y lazy loading nativo. <strong>La decision de construir sin WordPress ni React framework elimina la deuda tecnica que arrastran el 90% de las agencias competidoras.</strong></p>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-low">Fortaleza</span><span class="cat">GEO/AEO</span></div>
-      <h3>Preparada para la era de IA: llms.txt, crawlers permitidos, contenido estructurado</h3>
-      <p>llms.txt activo, robots.txt permite GPTBot, ClaudeBot, PerplexityBot y Google-Extended. <strong>Ventana de oportunidad que la mayoria de competidores aun no ha explotado — posicionamiento temprano en motores de respuesta.</strong></p>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-low">Fortaleza</span><span class="cat">Social Proof</span></div>
-      <h3>9 resenas verificadas en Google, todas 5.0 estrellas</h3>
-      <p>Testimonios reales con nombre, empresa y verificacion. <strong>En un sector donde la confianza se gana con pruebas, no con promesas, esto es un activo de conversion de alto valor.</strong></p>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-low">Fortaleza</span><span class="cat">Schema.org</span></div>
-      <h3>Datos estructurados completos: Organization, FAQ, BlogPosting con autoria</h3>
-      <p>JSON-LD de Organization/ProfessionalService, FAQPage con 7 preguntas, BlogPosting con Person schema y autoria verificable. <strong>Rich results, knowledge panel y featured snippets — las posiciones de visibilidad gratuita estan cubiertas.</strong></p>
-    </div>
-
-    <!-- PSI card -->
-    <div class="psi">
-      <div class="psi-title">PageSpeed Insights &middot; Mobile</div>
-      <div class="metrics">
-        <div class="metric"><div class="mv">0.9s</div><div class="ml">LCP</div><div class="status">Good</div></div>
-        <div class="metric"><div class="mv">0.4s</div><div class="ml">FCP</div><div class="status">Good</div></div>
-        <div class="metric"><div class="mv">0</div><div class="ml">CLS</div><div class="status">Good</div></div>
-        <div class="metric"><div class="mv">20ms</div><div class="ml">TBT</div><div class="status">Good</div></div>
-        <div class="metric"><div class="mv">1.2s</div><div class="ml">SI</div><div class="status">Good</div></div>
-      </div>
+  <div class="score-detail">
+    <h3>Plataforma sólida, un cuello de botella antes del deploy</h3>
+    <p>La arquitectura técnica, el sistema de diseño y la estructura SEO/GEO están al nivel. El LCP de 3.4s en mobile es el único bloqueo real antes de salir a producción.</p>
+    <div class="score-bars">
+      <div class="sbar"><span class="sbar-label">UX & Conversión</span><div class="sbar-track"><div class="sbar-fill" id="b1" style="width:0%;background:var(--mint)"></div></div><span class="sbar-val">8.0</span></div>
+      <div class="sbar"><span class="sbar-label">UI & Diseño</span><div class="sbar-track"><div class="sbar-fill" id="b2" style="width:0%;background:var(--mint)"></div></div><span class="sbar-val">8.2</span></div>
+      <div class="sbar"><span class="sbar-label">SEO & GEO</span><div class="sbar-track"><div class="sbar-fill" id="b3" style="width:0%;background:var(--mint)"></div></div><span class="sbar-val">8.5</span></div>
+      <div class="sbar"><span class="sbar-label">Dev & Performance</span><div class="sbar-track"><div class="sbar-fill" id="b4" style="width:0%;background:var(--amber)"></div></div><span class="sbar-val">6.5</span></div>
     </div>
   </div>
-
-  <!-- ─── Tab 1: SEO & Estructura ─── -->
-  <div class="tc" id="t1">
-    <div class="tab-hdr">
-      <h2>SEO &amp; Estructura</h2>
-      <span class="tab-score amber">7.5 / 10</span>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-high">P1 — Alta</span><span class="cat">Heading hierarchy</span></div>
-      <h3>3 etiquetas H1 en la home — deberia haber exactamente una</h3>
-      <p>Detectamos 3 H1 compitiendo en la pagina principal. <strong>Google necesita una jerarquia clara para entender el eje principal de la pagina — con 3 H1, el buscador no sabe cual priorizar y eso diluye la relevancia.</strong></p>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-med">P2 — Media</span><span class="cat">Meta tags</span></div>
-      <h3>Verificar presencia de canonical, OG tags y Twitter Cards</h3>
-      <p>No confirmamos canonical tag ni Open Graph completo en el fetch raw. <strong>Si faltan, las comparticiones en redes sociales y LinkedIn no mostraran el preview correcto — trafico social que se pierde por una omision tecnica.</strong></p>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-med">P2 — Media</span><span class="cat">Consistencia de datos</span></div>
-      <h3>Cifras inconsistentes entre paginas: +80 vs +150 proyectos</h3>
-      <p>La home dice '+80 proyectos', nosotros dice '+150 proyectos', contacto dice '50+'. <strong>La inconsistencia en metricas erosiona la credibilidad — el visitante que navega dos paginas detecta la discrepancia.</strong></p>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-low">Oportunidad</span><span class="cat">Contenido</span></div>
-      <h3>Blog sin contenido de marzo 2026 — el ultimo articulo es de febrero</h3>
-      <p>37 articulos publicados pero el blog no refleja actividad reciente. <strong>Google valora la frescura del contenido, especialmente en un blog que se posiciona como referencia tecnica del sector.</strong></p>
-    </div>
-  </div>
-
-  <!-- ─── Tab 2: UX & Contenido ─── -->
-  <div class="tc" id="t2">
-    <div class="tab-hdr">
-      <h2>UX &amp; Contenido</h2>
-      <span class="tab-score">7.8 / 10</span>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-med">P2 — Media</span><span class="cat">Jerarquia visual</span></div>
-      <h3>El hero concentra demasiados elementos compitiendo por atencion</h3>
-      <p>Titulo, subtitulo, 2 CTAs, badge, estadisticas y marquee — todo en above-the-fold. <strong>Aunque la propuesta de valor es clara, la densidad de estimulos puede generar paralisis de decision en los primeros 3 segundos.</strong></p>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-med">P2 — Media</span><span class="cat">Funnel de proceso</span></div>
-      <h3>La seccion de proceso tiene 5 pasos — verificar si el usuario retiene toda la secuencia</h3>
-      <p>5 pasos detallados con tiempos y descripciones largas. <strong>El visitante B2B necesita entender el proceso, pero la granularidad actual puede sobrecargar la memoria de trabajo — considerar agrupar en 3 fases.</strong></p>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-low">Oportunidad</span><span class="cat">Contenido blog</span></div>
-      <h3>Los 37 articulos del blog podrian beneficiarse de categorizacion mas visible</h3>
-      <p>El sistema de filtros por categoria existe pero los articulos no muestran reading time ni extract visible. <strong>Mejorar la escaneabilidad del listado aumentaria el engagement y el tiempo en pagina.</strong></p>
-    </div>
-  </div>
-
-  <!-- ─── Tab 3: Accesibilidad ─── -->
-  <div class="tc" id="t3">
-    <div class="tab-hdr">
-      <h2>Accesibilidad</h2>
-      <span class="tab-score amber">7.0 / 10</span>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-high">P1 — Alta</span><span class="cat">Lighthouse Score</span></div>
-      <h3>Accesibilidad 92 en desktop, 95 en mobile — objetivo: 100</h3>
-      <p>Para una agencia que ofrece servicios de accesibilidad WCAG, <strong>no alcanzar el 100 en Lighthouse es una inconsistencia entre el servicio que vendemos y la plataforma que mostramos.</strong> Verificar contrastes, alt texts y ARIA labels.</p>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-med">P2 — Media</span><span class="cat">Contraste</span></div>
-      <h3>Verificar ratios de contraste en textos --text-muted sobre --bg-base</h3>
-      <p>El color #8a8a8a sobre #0e0e0e tiene un ratio de contraste de ~5.6:1 (pasa AA para texto normal) pero <strong>los textos mas pequenos (font-mono .55rem) podrian no pasar AAA — y para una agencia que habla de accesibilidad, AAA deberia ser el estandar.</strong></p>
-    </div>
-
-    <div class="find">
-      <div class="row"><span class="sev sev-low">Oportunidad</span><span class="cat">ARIA</span></div>
-      <h3>Revisar aria-labels en elementos interactivos del formulario</h3>
-      <p>El formulario de contacto tiene validacion en tiempo real pero <strong>verificar que los mensajes de error se comunican correctamente a lectores de pantalla con aria-live regions.</strong></p>
-    </div>
-  </div>
-
-  <!-- Quick win -->
-  <div class="qw">
-    <div class="qw-badge">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-      Quick Win
-    </div>
-    <h3>Corregir la jerarquia de H1 y unificar las cifras de proyectos</h3>
-    <p>Dos cambios que se resuelven en menos de una hora: dejar un solo H1 en la home (el titulo principal) y unificar el numero de proyectos en todas las paginas. El resultado: mejor senal para Google y cero inconsistencias para el visitante que navega varias paginas.</p>
-    <div class="qw-time">Resoluble en menos de 1 hora</div>
-  </div>
-
-  <!-- Decline -->
-  <div class="dec">
-    <button onclick="this.style.display='none';this.nextElementSibling.classList.add('show');trackEvent('decline')">No es para nosotros</button>
-    <p class="ty">Gracias por el feedback. Seguimos mejorando.</p>
-  </div>
-
-  <!-- Footer -->
-  <footer class="ftr">
-    <p>Tres Puntos &middot; UX/UI y Arquitectura Digital &middot; Barcelona</p>
-  </footer>
-
 </div>
-<!-- end .main -->
 
-<!-- ════════ SIDEBAR ════════ -->
+<!-- CWV BANNER -->
+<div class="cwv">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+  <span><strong>Core Web Vitals mobile: Needs Improvement</strong> — LCP 3.4s y FCP 3.4s superan el umbral Google (2.5s). Desktop: perfecto (LCP 0.7s). Bloqueo P1 antes del deploy a producción.</span>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary">
+  La beta está en mejor estado del que se podría esperar. <strong>El sistema de diseño es coherente y maduro</strong>, la arquitectura SEO está trabajada (4 schemas JSON-LD, sitemap con 102 URLs, llms.txt para visibilidad en IA, robots.txt con todos los bots habilitados), la accesibilidad da 97-100 en Lighthouse y el rendimiento desktop es 100/100. Son señales de que la base técnica está bien construida.<br/><br/>
+  El único punto que merece atención antes de salir a producción es el rendimiento mobile. <strong>FCP y LCP de 3.4s en mobile no pasan el umbral de Google</strong>, y para una agencia que posiciona con "arquitectura digital de conversión", lanzar con ese dato en PageSpeed Insights genera una disonancia directa con el mensaje. El origen probable son las fuentes de Google y las animaciones del hero. El fix es resoluble en horas, no semanas.<br/><br/>
+  El resto de hallazgos son refinamientos no bloqueantes para maximizar conversión y posicionamiento después del lanzamiento: los CTAs del hero compitiendo al mismo peso visual, la densidad de social proof (9 reseñas para 13 años de trayectoria), y tres puntos de accesibilidad perdidos en desktop.
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab active" data-tab="ux" onclick="switchTab('ux')">UX & Conversión <span class="cnt">3</span></button>
+  <button class="tab" data-tab="ui" onclick="switchTab('ui')">UI & Diseño <span class="cnt">3</span></button>
+  <button class="tab" data-tab="seo" onclick="switchTab('seo')">SEO & GEO <span class="cnt">4</span></button>
+  <button class="tab" data-tab="dev" onclick="switchTab('dev')">Dev & Performance <span class="cnt">4</span></button>
+</div>
+
+<!-- TAB: UX -->
+<div class="tc on" id="tab-ux">
+<div class="tab-score"><span class="tab-score-val" style="color:var(--mint)">8.0</span><span class="tab-score-label">/10 · UX & Conversión</span></div>
+<div class="findings">
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-med">P2 — Media</span><span class="find-cat">Parálisis de decisión · Hero</span></div>
+    <h3>Dos CTAs con el mismo peso visual compiten en el fold</h3>
+    <p>"Cuéntanos tu proyecto" y "Conoce nuestra metodología" aparecen al mismo nivel de contraste en el hero. Para un visitante B2B que llega por primera vez, dos opciones equivalentes al mismo peso visual añaden tiempo de decisión antes de que se produzca cualquier acción. <strong class="w">El CTA primario debería dominar visualmente sobre el secundario</strong> — diferencia de tamaño de padding o un contraste claramente mayor, no solo la distinción outline/filled actual. La Ley de Hick es literal aquí: cada opción añadida al mismo nivel multiplica el tiempo de decisión.</p>
+  </article>
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-med">P2 — Media</span><span class="find-cat">Social Proof · Thin</span></div>
+    <h3>9 reseñas para 13 años y 80+ proyectos: la brecha es visible</h3>
+    <p>Los indicadores cuantitativos del hero (+28% conversión, -42% fricción, 96 CSAT) son potentes, pero aparecen sin fuente verificable. Las 9 reseñas de Google a 5.0 son auténticas, pero escasas para el posicionamiento que comunicamos. <strong class="w">Un competidor con 40-80 reseñas verificadas supera esta señal de confianza con solo existir.</strong> El plan de captación de reseñas debería activarse en los primeros 30 días post-deploy — es la acción de mayor retorno con el menor esfuerzo técnico.</p>
+  </article>
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-med">P2 — Media</span><span class="find-cat">Mobile Hero · Diferenciador visual ausente</span></div>
+    <h3>El mayor activo visual del hero no llega al 60%+ del tráfico</h3>
+    <p>El phone mockup animado con órbitas SVG y callouts de tecnologías — el elemento más memorable del hero en desktop — está oculto en mobile con <code>display:none !important</code>. El visitante mobile solo ve texto, botones y partículas: igual que cualquier competidor. <strong class="w">Sin el artefacto visual del phone, la propuesta de valor se comunica únicamente con palabras.</strong> Vale la pena explorar una alternativa mobile del hero (por ejemplo, un stack de iconos de tecnología o una versión simplificada del mockup) que conserve al menos una señal visual diferenciadora en el fold.</p>
+  </article>
+
+</div></div>
+
+<!-- TAB: UI -->
+<div class="tc" id="tab-ui">
+<div class="tab-score"><span class="tab-score-val" style="color:var(--mint)">8.2</span><span class="tab-score-label">/10 · UI & Diseño</span></div>
+<div class="findings">
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-ok">Fortaleza</span><span class="find-cat">Era de diseño · 2024-2025</span></div>
+    <h3>Sistema visual en el top 5% de agencias UX/UI en España</h3>
+    <p>Dark mode con paleta restringida (mint + amber + purple), tipografía editorial (Plus Jakarta Sans 800 en headings), partículas CSS puro sin JS, cursor personalizado con efecto magnetic, animaciones de entrada con stagger, menú móvil con blur y clip-path. <strong>El cerebro evalúa la calidad de un servicio en los primeros 50 milisegundos — aquí esos 50ms trabajan a favor.</strong> Frente a los competidores directos en Barcelona (Morpheon, Hi Experience, DEVyond), el nivel visual de esta plataforma es un diferenciador real y medible.</p>
+  </article>
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-low">Oportunidad</span><span class="find-cat">Métricas Hero · Credibilidad</span></div>
+    <h3>+28% conversión, -42% fricción y 96 CSAT sin contexto: el CMO escéptico no los cree</h3>
+    <p>Las tres métricas del hero son el tipo de dato que un tomador de decisiones B2B quiere ver — y que puede ignorar si no sabe de dónde vienen. <strong>Añadir una micro-nota contextual ("media en proyectos e-commerce 2022-2024") transforma el número de claim publicitario en evidencia verificable.</strong> Bajo esfuerzo, alto impacto en la percepción de rigor técnico. El visitante técnico — CTO, head of product — necesita ese anchor para creer el número.</p>
+  </article>
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-low">Refinamiento</span><span class="find-cat">Accesibilidad Desktop · 97/100</span></div>
+    <h3>3 puntos de accesibilidad perdidos en desktop — identificar y resolver antes del deploy</h3>
+    <p>Mobile da 100/100 (Lighthouse), desktop da 97/100. La discrepancia sugiere uno o dos elementos con contraste insuficiente o atributos ARIA incompletos que aparecen solo en ciertos breakpoints. <strong>Con la Ley 11/2023 como contexto, llegar al 100/100 en ambos es una señal de rigor que vale más que cualquier bullet de "accesibilidad AA" en la copy.</strong> Resoluble en una sesión de Chrome DevTools Accessibility panel — merece investigarse antes del launch.</p>
+  </article>
+
+</div></div>
+
+<!-- TAB: SEO -->
+<div class="tc" id="tab-seo">
+<div class="tab-score"><span class="tab-score-val" style="color:var(--mint)">8.5</span><span class="tab-score-label">/10 · SEO & GEO</span></div>
+<div class="findings">
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-ok">Fortaleza</span><span class="find-cat">Schema.org · 4 tipos implementados</span></div>
+    <h3>Implementación de schemas entre las mejores del sector en Barcelona</h3>
+    <p>Organization + LocalBusiness + ProfessionalService, FAQPage con 7 preguntas, WebSite con SearchAction (habilita sitelinks search box en Google) y BreadcrumbList en todas las páginas. Las páginas de servicio tienen ItemList. Los casos de estudio tienen Article con fecha de publicación y modificación. Lighthouse SEO 100/100 en mobile y desktop. <strong>La mayoría de competidores directos no tienen ni Organization schema implementado — esto es una ventaja técnica SEO medible que se traduce en más real estate en SERPs.</strong></p>
+  </article>
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-ok">Fortaleza</span><span class="find-cat">GEO/AEO · Preparado para IA</span></div>
+    <h3>La plataforma está mejor preparada para motores de IA que el 90% del sector</h3>
+    <p>llms.txt existe con contenido estructurado. robots.txt permite explícitamente GPTBot, ChatGPT-User, Google-Extended, PerplexityBot y ClaudeBot. FAQPage schema con 7 respuestas directas. Blog con 43 artículos con autoría clara y categorización. <strong>ChatGPT, Perplexity y Google AI Overviews ya tienen las señales necesarias para citar esta plataforma.</strong> La mayoría de agencias en Barcelona no tienen ninguna de estas señales implementadas — es una ventana de autoridad que sigue abierta.</p>
+  </article>
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-med">P2 — Verificar post-deploy</span><span class="find-cat">Meta Description · Visibilidad SERPs</span></div>
+    <h3>La meta description no se extrae limpiamente en análisis estático</h3>
+    <p>Lighthouse SEO da 100/100 (que incluye la verificación de meta description), pero el fetch estático de la homepage no devuelve la description de forma explícita en el markup analizado. Puede ser un artefacto del extractor de HTML. <strong class="w">Si la description está ausente o duplicada entre páginas de servicio, Google genera las suyas propias y se pierde el control del mensaje en SERPs.</strong> Verificar con Screaming Frog o Search Console en los primeros días post-deploy y confirmar unicidad de descriptions en las 26 páginas de servicio.</p>
+  </article>
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-low">Oportunidad</span><span class="find-cat">Blog · UX editorial</span></div>
+    <h3>43 artículos sin jerarquía editorial en el listing: Google ve todo, el usuario se pierde</h3>
+    <p>El listing del blog carga los 43 artículos en una sola página con filtros por categoría en JavaScript. No hay paginación HTML ni artículos destacados al tope. <strong>Para SEO el contenido es accesible (correcto), pero para el usuario que aterriza sin saber qué buscar, 43 cards al mismo nivel visual genera sobrecarga cognitiva.</strong> Añadir una sección "Últimas publicaciones" con 3-4 artículos recientes destacados al tope del listing es un quick win de UX editorial de bajo esfuerzo y alto impacto en tiempo de sesión.</p>
+  </article>
+
+</div></div>
+
+<!-- TAB: DEV -->
+<div class="tc" id="tab-dev">
+<div class="tab-score"><span class="tab-score-val" style="color:var(--amber)">6.5</span><span class="tab-score-label">/10 · Dev & Performance</span></div>
+<div class="findings">
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-high">P1 — Bloqueo pre-deploy</span><span class="find-cat">Core Web Vitals · Mobile</span></div>
+    <h3>FCP y LCP a 3.4s en mobile: el único bloqueo real antes de producción</h3>
+    <p>Desktop rinde al 100% (LCP 0.7s, FCP 0.3s, TBT 0ms, CLS 0.001). Mobile tiene FCP 3.4s y LCP 3.4s, ambos en zona "Needs Improvement" de Google. TBT de 20ms y CLS de 0.002 son excelentes — el JS no bloquea y el layout es estable. <strong class="e">El cuello de botella está en la carga del render inicial, no en la interacción.</strong> Para una agencia que posiciona con arquitectura digital de conversión, un LCP mobile por encima de 2.5s es disonancia de marca en el propio portafolio.
+    <div class="psi">
+      <div class="psi-title">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#5dffbf" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Lighthouse 13.0.3 · Mobile throttled
+      </div>
+      <div class="psi-grid">
+        <div class="psi-m"><div class="psi-v c-w">3.4s</div><div class="psi-l">FCP</div><div class="psi-s c-w">NEEDS IMPROV.</div></div>
+        <div class="psi-m"><div class="psi-v c-w">3.4s</div><div class="psi-l">LCP</div><div class="psi-s c-w">NEEDS IMPROV.</div></div>
+        <div class="psi-m"><div class="psi-v c-g">20ms</div><div class="psi-l">TBT</div><div class="psi-s c-g">EXCELLENT</div></div>
+        <div class="psi-m"><div class="psi-v c-g">0.002</div><div class="psi-l">CLS</div><div class="psi-s c-g">EXCELLENT</div></div>
+        <div class="psi-m"><div class="psi-v c-w">5.5s</div><div class="psi-l">TTI</div><div class="psi-s c-w">NEEDS IMPROV.</div></div>
+      </div>
+    </div>
+    </p>
+  </article>
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-high">P1 — Investigar</span><span class="find-cat">Render blocking · Google Fonts</span></div>
+    <h3>Google Fonts como sospechoso principal del FCP 3.4s</h3>
+    <p>La plataforma carga Inter, Plus Jakarta Sans y JetBrains Mono desde <code>fonts.googleapis.com</code> con <code>preconnect</code> (correcto), pero sin <code>rel="preload"</code> explícito para la fuente crítica (Plus Jakarta Sans 700 — usada en el H1 y headings principales). En mobile throttled esto puede causar FOIT (Flash of Invisible Text) que retrasa el FCP. <strong class="w">Añadir <code>rel="preload"</code> de Plus Jakarta Sans 700 más <code>font-display:swap</code> en el critical CSS inline puede reducir el FCP en 1-1.5s.</strong> Los 10 preloads de SVG de órbita ya están implementados correctamente — lo que confirma que la fuente es el cuello de botella más probable, no los assets visuales.</p>
+  </article>
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-ok">Fortaleza</span><span class="find-cat">Desktop · 100/100</span></div>
+    <h3>Performance de desktop al máximo: arquitectura técnica bien planteada</h3>
+    <p>LCP 0.7s, FCP 0.3s, TBT 0ms, CLS 0.001, TTI 0.7s — todo en verde en desktop. HTML estático sin framework JS, CSS crítico inlineado en <code>&lt;style&gt;</code> del <code>&lt;head&gt;</code>, assets lazy loaded, canvas de partículas en CSS puro (sin requestAnimationFrame), órbitas SVG con preload y <code>fetchpriority="high"</code>. <strong>La arquitectura de performance está bien pensada y ejecutada — el problema en mobile es de carga de fuente, no de arquitectura.</strong> Resolver el Google Fonts bloqueante debería elevar el score mobile sin tocar la arquitectura.</p>
+  </article>
+
+  <article class="find">
+    <div class="find-top"><span class="sev sev-low">Monitorizar</span><span class="find-cat">TTI Mobile · 5.5s</span></div>
+    <h3>5.5s de TTI en mobile: visualmente rápida, interactiva más tarde</h3>
+    <p>Con TBT de 20ms, el TTI de 5.5s sugiere que el script principal (<code>components.js</code> con defer) se ejecuta tarde en el parsing mobile throttled. No bloquea el render (TBT excelente) pero sí retrasa que el menú y las animaciones sean completamente interactivas. <strong>Revisar si hay tareas largas en el event loop post-load con Chrome DevTools Performance panel.</strong> Prioridad baja — no afecta a la experiencia percibida en la mayoría de visitas reales, pero vale la pena monitorizarlo en production con CrUX data.</p>
+  </article>
+
+</div></div>
+
+<!-- QUICK WIN -->
+<div class="sep"></div>
+<div class="qw">
+  <div class="qw-label">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#5dffbf" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+    Quick Win — Bloqueo P1
+  </div>
+  <h3>Self-host de fuentes + preload de Plus Jakarta Sans 700 para bajar FCP mobile a ~2.0s</h3>
+  <p>Dos acciones combinadas: (1) descargar las tres familias tipográficas (Inter, Plus Jakarta Sans, JetBrains Mono) y servirlas desde <code>/assets/fonts/</code> eliminando la request externa a <code>fonts.googleapis.com</code>; (2) añadir <code>&lt;link rel="preload" as="font" crossorigin&gt;</code> para el woff2 de Plus Jakarta Sans 700 en el <code>&lt;head&gt;</code> de todas las páginas. Asegurar <code>font-display:swap</code> en el <code>@font-face</code> del critical CSS inline. <strong>Estimación: 4-6 horas incluyendo generación de subsets, tests de regresión visual y medición post-cambio.</strong> Impacto esperado: LCP y FCP mobile de 3.4s → rango 1.8s-2.2s, pasando de "Needs Improvement" a "Good" en Core Web Vitals.</p>
+  <div class="qw-time">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    Resoluble en menos de 1 día · Prioridad máxima antes del deploy
+  </div>
+</div>
+
+<!-- DECLINE mobile only -->
+<div class="dec">
+  <a href="https://tres.trespuntos-lab.com/" target="_blank" class="btn-d">Ver la beta en vivo</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="ftr">
+  <p>Auditoría interna · <a href="https://tres.trespuntos-lab.com/" target="_blank">tres.trespuntos-lab.com</a> · <a href="https://www.trespuntoscomunicacion.es" target="_blank">Tres Puntos</a> · UX/UI y Arquitectura Digital · Barcelona · Marzo 2026</p>
+</footer>
+
+</div><!-- /main -->
+
+<!-- SIDEBAR STICKY -->
 <aside class="sidebar">
-  <div class="card">
-    <img class="avatar" src="/img/jordi-exposito.webp" alt="Jordi Exposito" width="72" height="72">
-    <div class="name">Jordi Exposito</div>
-    <div class="role">UX/UI &amp; Arquitectura Digital<br>Tres Puntos &middot; Barcelona</div>
-    <h3>Revisamos estos puntos?</h3>
-    <p class="desc">Auto-analisis para priorizar mejoras antes del lanzamiento.</p>
-    <div class="sc">Score actual: 8.1 / 10</div>
-    <button class="btn-cal" onclick="openCal()">Revisar hallazgos</button>
-    <button class="btn-wa" onclick="openWA()">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp
-    </button>
-    <button class="btn-dec" onclick="this.textContent='Gracias por el feedback';trackEvent('sidebar_decline')">No me interesa</button>
+  <div class="side-card">
+    <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="side-avatar"/>
+    <div class="side-name">Jordi Expósito</div>
+    <div class="side-role">UX/UI & Arquitectura Digital<br/>Tres Puntos · Barcelona</div>
+    <h3>Estado pre-deploy</h3>
+    <p>Un bloqueo P1 identificado. El resto son refinamientos post-lanzamiento.</p>
+    <div class="side-score">7.8 / 10 — Sólido</div>
+    <a href="https://tres.trespuntos-lab.com/" target="_blank" class="btn-p">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Ver beta en vivo
+    </a>
+    <ul class="side-checklist">
+      <li class="ok">Lighthouse SEO — 100/100</li>
+      <li class="ok">Schema.org — 4 tipos</li>
+      <li class="ok">GEO/AEO — llms.txt + AI bots</li>
+      <li class="ok">Accesibilidad mobile — 100/100</li>
+      <li class="ok">Desktop performance — 100/100</li>
+      <li class="ok">Sitemap — 102 URLs</li>
+      <li class="ok">robots.txt — AI bots OK</li>
+      <li class="warn">Mobile LCP — 3.4s (umbral 2.5s)</li>
+      <li class="warn">Social proof — 9 reviews (thin)</li>
+      <li class="warn">Desktop a11y — 97/100</li>
+    </ul>
   </div>
 </aside>
 
-</div>
-<!-- end .page -->
+</div><!-- /page -->
 
-<!-- ════════ Mobile CTA ════════ -->
+<!-- MOBILE STICKY CTA -->
 <div class="mob-cta">
-  <button class="btn-cal-m" onclick="openCal()">Revisar hallazgos</button>
-  <button class="btn-wa-m" onclick="openWA()">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </button>
+  <span class="mob-cta-text">7.8/10 · Un bloqueo P1</span>
+  <a href="https://tres.trespuntos-lab.com/" target="_blank" class="btn-p">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    Ver beta
+  </a>
 </div>
 
 <script>
-/* ── Tabs ── */
-function switchTab(i){
-  document.querySelectorAll('.tabs button').forEach(function(b,j){
-    b.classList.toggle('on',j===i);
-    b.setAttribute('aria-selected',j===i?'true':'false');
-  });
-  document.querySelectorAll('.tc').forEach(function(t,j){
-    t.classList.toggle('on',j===i);
-  });
-  trackEvent('tab_'+i);
+function switchTab(id){
+  document.querySelectorAll('.tc').forEach(function(el){el.classList.remove('on')});
+  document.querySelectorAll('.tab').forEach(function(el){el.classList.remove('active')});
+  document.getElementById('tab-'+id).classList.add('on');
+  document.querySelector('[data-tab="'+id+'"]').classList.add('active');
 }
-
-/* ── Score arc animation ── */
-(function(){
-  var arc=document.getElementById('arc');
-  if(!arc)return;
-  setTimeout(function(){arc.style.strokeDashoffset='62.08'},300);
-})();
-
-/* ── Calendly ── */
-function openCal(){
-  if(window.Calendly){
-    Calendly.initPopupWidget({url:'https://calendly.com/trespuntoscomunicacion/30min'});
-  }else{
-    window.open('https://calendly.com/trespuntoscomunicacion/30min','_blank');
-  }
-  trackEvent('open_calendly');
-}
-
-/* ── WhatsApp ── */
-function openWA(){
-  var msg=encodeURIComponent('Hola Jordi, he revisado el auto-analisis de tres.trespuntos-lab.com (score 8.1/10). Me gustaria comentar los hallazgos antes del lanzamiento.');
-  window.open('https://wa.me/34644122315?text='+msg,'_blank');
-  trackEvent('open_whatsapp');
-}
-
-/* ── Event tracking ── */
-function trackEvent(action){
-  console.log('[audit]',action,new Date().toISOString());
-  if(window.gtag){
-    gtag('event',action,{event_category:'audit',event_label:'trespuntos_self_audit'});
-  }
-}
-
-/* ── Page view ── */
-trackEvent('page_view');
+window.addEventListener('load',function(){
+  setTimeout(function(){
+    var arc=document.getElementById('scoreArc');
+    if(arc){arc.style.strokeDashoffset=(326.73*(1-7.8/10)).toFixed(2)}
+    [{id:'b1',v:80},{id:'b2',v:82},{id:'b3',v:85},{id:'b4',v:65}].forEach(function(b){
+      var el=document.getElementById(b.id);
+      if(el){el.style.width=b.v+'%'}
+    });
+  },300);
+});
 </script>
-
 </body>
 </html>

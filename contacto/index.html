@@ -22,8 +22,7 @@
 
   <link rel="canonical" href="https://www.trespuntoscomunicacion.es/contacto/" />
   <meta property="og:title" content="Contacto | Tres Puntos — Agencia UX/UI y Arquitectura Digital" />
-  <meta property="og:description"
-    content="Agencia de UX/UI y arquitectura digital en Barcelona. Especialistas en conversion y escalabilidad técnica." />
+  <meta property="og:description" content="Agencia de UX/UI y arquitectura digital en Barcelona. Especialistas en conversion y escalabilidad técnica." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.trespuntoscomunicacion.es/contacto/" />
   <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og-default.jpg" />
@@ -68,16 +67,14 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/css/design-system.css" />
   <link rel="stylesheet" href="/css/components.css" />
   <link rel="stylesheet" href="/css/case-study.css" />
 
   <style>
-    /* ═══ CONTACT PAGE: Animated Split Layout ═══ */
+    /* ═══ CONTACT V2: Agent/Form Toggle Layout ═══ */
 
     .contact-wrapper {
       position: relative;
@@ -151,31 +148,7 @@
     .contact-title .word:nth-child(6) { animation-delay: 0.85s; }
 
     @keyframes wordReveal {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .contact-title .word {
-      display: inline-block;
-      opacity: 0;
-      transform: translateY(15px);
-      animation: wordReveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    }
-
-    .contact-title .word:nth-child(1) { animation-delay: 0.35s; }
-    .contact-title .word:nth-child(2) { animation-delay: 0.45s; }
-    .contact-title .word:nth-child(3) { animation-delay: 0.55s; }
-    .contact-title .word:nth-child(4) { animation-delay: 0.65s; }
-    .contact-title .word:nth-child(5) { animation-delay: 0.75s; }
-    .contact-title .word:nth-child(6) { animation-delay: 0.85s; }
-
-    @keyframes wordReveal {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .contact-title .text-gradient-standalone {
@@ -206,7 +179,6 @@
       animation: fadeSlideUp 0.6s 0.6s forwards;
     }
 
-    /* Contact info blocks */
     .contact-info-blocks {
       display: flex;
       flex-direction: column;
@@ -227,9 +199,7 @@
       transition: border-color 0.3s ease;
     }
 
-    .contact-info-item:hover {
-      border-left-color: var(--mint);
-    }
+    .contact-info-item:hover { border-left-color: var(--mint); }
 
     .contact-info-item .ci-label {
       font-family: var(--font-mono);
@@ -247,11 +217,9 @@
       transition: color 0.25s ease;
     }
 
-    .contact-info-item a.ci-value:hover {
-      color: var(--mint);
-    }
+    .contact-info-item a.ci-value:hover { color: var(--mint); }
 
-    /* ── Right: Form Side ── */
+    /* ── Right: Content Side ── */
     .contact-right {
       position: relative;
       display: flex;
@@ -261,11 +229,357 @@
       z-index: 2;
     }
 
-    .contact-form-wrap {
+    .contact-right-inner {
+      display: flex;
+      flex-direction: column;
       width: 100%;
       max-width: 500px;
     }
 
+    /* ═══ MODE TOGGLE ═══ */
+    .mode-toggle-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 0.6s 0.3s forwards;
+    }
+
+    .mode-toggle {
+      display: flex;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-base);
+      border-radius: 100px;
+      padding: 4px;
+      position: relative;
+      gap: 0;
+    }
+
+    .mode-toggle-btn {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 100px;
+      transition: color 0.3s ease;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .mode-toggle-btn:hover { color: var(--text-secondary); }
+
+    .mode-toggle-btn.active { color: var(--bg-base); }
+
+    .mode-toggle-btn svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .mode-toggle-slider {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      height: calc(100% - 8px);
+      border-radius: 100px;
+      background: var(--mint);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .mode-toggle-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 6px;
+      background: rgba(93, 255, 191, 0.15);
+      border-radius: 4px;
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--mint);
+      line-height: 1;
+    }
+
+    .mode-toggle-btn.active .mode-toggle-badge {
+      background: rgba(14, 14, 14, 0.2);
+      color: var(--bg-base);
+    }
+
+    /* ═══ CONTENT PANELS ═══ */
+    .contact-panel {
+      display: none;
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    .contact-panel.active {
+      display: block;
+      animation: panelIn 0.4s ease forwards;
+    }
+
+    @keyframes panelIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ═══ JORDAN EMBEDDED CHAT ═══ */
+    .jordan-embed {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-base);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 560px;
+      position: relative;
+    }
+
+    .jordan-embed::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        #5dffbf 20%,
+        #4ea5ff 45%,
+        #c084fc 65%,
+        #5dffbf 80%,
+        transparent 100%
+      );
+      background-size: 200% 100%;
+      animation: lineShimmer 10s linear infinite;
+      z-index: 1;
+    }
+
+    .jordan-embed-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-base);
+      flex-shrink: 0;
+    }
+
+    .jordan-embed-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid transparent;
+      background-image: conic-gradient(from 0deg, #5dffbf, #4ea5ff, #c084fc, #5dffbf);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    }
+
+    .jordan-embed-avatar-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .jordan-embed-avatar-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+      width: 10px;
+      height: 10px;
+      background: var(--mint);
+      border-radius: 50%;
+      border: 2px solid var(--bg-surface);
+    }
+
+    .jordan-embed-info {
+      flex: 1;
+    }
+
+    .jordan-embed-name {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .jordan-embed-status {
+      font-size: 0.75rem;
+      color: var(--mint);
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    .jordan-embed-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      scroll-behavior: smooth;
+    }
+
+    .jordan-embed-messages::-webkit-scrollbar { width: 4px; }
+    .jordan-embed-messages::-webkit-scrollbar-track { background: transparent; }
+    .jordan-embed-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+
+    .jordan-msg {
+      max-width: 85%;
+      padding: 0.75rem 1rem;
+      border-radius: 16px;
+      font-size: 0.875rem;
+      line-height: 1.55;
+      animation: msgIn 0.3s ease;
+    }
+
+    @keyframes msgIn {
+      from { opacity: 0; transform: translateY(8px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .jordan-msg.assistant {
+      align-self: flex-start;
+      background: rgba(93, 255, 191, 0.08);
+      border: 1px solid rgba(93, 255, 191, 0.12);
+      color: var(--text-primary);
+      border-bottom-left-radius: 4px;
+    }
+
+    .jordan-msg.user {
+      align-self: flex-end;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-primary);
+      border-bottom-right-radius: 4px;
+    }
+
+    .jordan-msg a {
+      color: var(--mint);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .jordan-msg strong { font-weight: 600; }
+
+    /* Quick reply buttons */
+    .jordan-quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      padding: 0 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .jordan-qr-btn {
+      padding: 0.4375rem 0.875rem;
+      background: rgba(93, 255, 191, 0.06);
+      border: 1px solid rgba(93, 255, 191, 0.15);
+      border-radius: 100px;
+      font-family: inherit;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .jordan-qr-btn:hover {
+      background: rgba(93, 255, 191, 0.12);
+      border-color: rgba(93, 255, 191, 0.3);
+      color: var(--mint);
+    }
+
+    /* Typing indicator */
+    .jordan-typing {
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0.75rem 1rem;
+      background: rgba(93, 255, 191, 0.08);
+      border: 1px solid rgba(93, 255, 191, 0.12);
+      border-radius: 16px;
+      border-bottom-left-radius: 4px;
+    }
+
+    .jordan-typing-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--mint);
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: typingBounce 1.4s infinite;
+    }
+
+    .jordan-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .jordan-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-4px); opacity: 1; }
+    }
+
+    /* Input area */
+    .jordan-embed-input {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.5rem;
+      padding: 0.875rem 1.25rem;
+      border-top: 1px solid var(--border-base);
+      flex-shrink: 0;
+    }
+
+    .jordan-embed-textarea {
+      flex: 1;
+      background: var(--bg-subtle, #1a1a1a);
+      border: 1.5px solid var(--border-strong, #2a2a2a);
+      border-radius: 12px;
+      padding: 0.625rem 0.875rem;
+      font-family: inherit;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      resize: none;
+      outline: none;
+      min-height: 40px;
+      max-height: 120px;
+      line-height: 1.4;
+      transition: border-color 0.2s;
+    }
+
+    .jordan-embed-textarea::placeholder { color: var(--text-muted); }
+    .jordan-embed-textarea:focus { border-color: rgba(93, 255, 191, 0.4); }
+
+    .jordan-embed-send {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--mint);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--bg-base);
+    }
+
+    .jordan-embed-send:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(93, 255, 191, 0.3); }
+    .jordan-embed-send:disabled { opacity: 0.3; cursor: not-allowed; transform: none; box-shadow: none; }
+
+    /* ═══ FORM CARD (same as v1) ═══ */
     .contact-form-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-base);
@@ -273,9 +587,6 @@
       padding: 2.5rem;
       position: relative;
       overflow: hidden;
-      opacity: 0;
-      transform: translateY(30px) scale(0.98);
-      animation: formAppear 0.8s 0.4s forwards;
     }
 
     @keyframes lineShimmer {
@@ -302,9 +613,7 @@
       animation: lineShimmer 10s linear infinite;
     }
 
-    .form-card-header {
-      margin-bottom: 1.75rem;
-    }
+    .form-card-header { margin-bottom: 1.75rem; }
 
     .form-card-title {
       font-size: 1.35rem;
@@ -325,18 +634,15 @@
     /* ── Background Animations ── */
     #contact-canvas {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       z-index: 0;
       pointer-events: none;
     }
 
     .mouse-glow {
       position: fixed;
-      width: 400px;
-      height: 400px;
+      width: 400px; height: 400px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(93, 255, 191, 0.06) 0%, transparent 70%);
       pointer-events: none;
@@ -357,7 +663,6 @@
       pointer-events: none;
     }
 
-    /* Floating orbs */
     .orb {
       position: absolute;
       border-radius: 50%;
@@ -366,33 +671,26 @@
     }
 
     .orb-1 {
-      width: 250px;
-      height: 250px;
-      top: 10%;
-      left: -5%;
+      width: 250px; height: 250px;
+      top: 10%; left: -5%;
       background: radial-gradient(circle, rgba(93, 255, 191, 0.08) 0%, transparent 70%);
       animation: orbFloat1 8s ease-in-out infinite;
     }
 
     .orb-2 {
-      width: 180px;
-      height: 180px;
-      bottom: 20%;
-      left: 25%;
+      width: 180px; height: 180px;
+      bottom: 20%; left: 25%;
       background: radial-gradient(circle, rgba(78, 165, 255, 0.06) 0%, transparent 70%);
       animation: orbFloat2 10s ease-in-out infinite;
     }
 
     .orb-3 {
-      width: 300px;
-      height: 300px;
-      top: 5%;
-      right: -10%;
+      width: 300px; height: 300px;
+      top: 5%; right: -10%;
       background: radial-gradient(circle, rgba(192, 132, 252, 0.04) 0%, transparent 70%);
       animation: orbFloat1 12s ease-in-out infinite reverse;
     }
 
-    /* Animated connecting lines */
     .connect-lines {
       position: absolute;
       inset: 0;
@@ -413,7 +711,7 @@
     .connect-line:nth-child(3) { top: 70%; width: 45%; left: 0; animation-delay: 4s; }
     .connect-line:nth-child(4) { top: 85%; width: 30%; left: 15%; animation-delay: 1s; }
 
-    /* ── Bottom Section: compact info ── */
+    /* ── Bottom Section ── */
     .contact-bottom {
       padding: 3rem 0 0;
       position: relative;
@@ -436,8 +734,7 @@
 
     .contact-bottom-icon {
       flex-shrink: 0;
-      width: 40px;
-      height: 40px;
+      width: 40px; height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -467,10 +764,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes formAppear {
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
     @keyframes pulse-dot {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.5; transform: scale(1.5); }
@@ -496,13 +789,6 @@
       10% { opacity: 1; }
       90% { opacity: 1; }
       100% { opacity: 0; transform: translateX(250%); }
-    }
-
-    @keyframes particleDrift {
-      0% { transform: translateY(0) translateX(0); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
     }
 
     /* ── Form Validation UX ── */
@@ -552,9 +838,7 @@
       transition: opacity 0.3s ease, filter 0.3s ease;
     }
 
-    .btn-disabled:hover {
-      opacity: 0.55 !important;
-    }
+    .btn-disabled:hover { opacity: 0.55 !important; }
 
     .btn-enabled {
       opacity: 1 !important;
@@ -570,9 +854,7 @@
       80% { transform: translateX(3px); }
     }
 
-    .shake {
-      animation: shakeField 0.45s ease-in-out;
-    }
+    .shake { animation: shakeField 0.45s ease-in-out; }
 
     /* ── Responsive ── */
     @media (max-width: 1024px) {
@@ -594,26 +876,18 @@
         max-width: 100%;
       }
 
-      .contact-info-blocks {
-        align-items: center;
-      }
+      .contact-info-blocks { align-items: center; }
 
-      .contact-info-item .ci-value {
-        word-break: break-all;
-      }
+      .contact-info-item .ci-value { word-break: break-all; }
 
       .contact-right {
         padding: 0 0 3rem;
         justify-content: center;
       }
 
-      .contact-form-wrap {
-        max-width: 100%;
-      }
+      .contact-right-inner { max-width: 100%; }
 
-      .contact-form-card {
-        padding: 1.75rem;
-      }
+      .contact-form-card { padding: 1.75rem; }
 
       .grid-overlay {
         mask-image: radial-gradient(ellipse 80% 40% at 50% 30%, black 0%, transparent 100%);
@@ -624,9 +898,7 @@
     }
 
     @media (max-width: 768px) {
-      .contact-wrapper {
-        overflow-x: hidden;
-      }
+      .contact-wrapper { overflow-x: hidden; }
 
       .contact-split {
         padding: 0 1.25rem;
@@ -671,14 +943,8 @@
         padding-left: 1rem;
       }
 
-      .contact-info-item .ci-label {
-        font-size: 0.6rem;
-      }
-
-      .contact-info-item .ci-value {
-        font-size: 0.82rem;
-        word-break: break-all;
-      }
+      .contact-info-item .ci-label { font-size: 0.6rem; }
+      .contact-info-item .ci-value { font-size: 0.82rem; word-break: break-all; }
 
       .contact-right {
         padding: 0 0 2.5rem;
@@ -686,18 +952,14 @@
         overflow: hidden;
       }
 
-      .contact-form-wrap {
-        max-width: 100%;
-      }
+      .contact-right-inner { max-width: 100%; }
 
       .contact-form-card {
         padding: 1.5rem;
         max-width: 100%;
       }
 
-      .form-card-sub {
-        word-break: break-word;
-      }
+      .form-card-sub { word-break: break-word; }
 
       .contact-bottom-grid {
         grid-template-columns: 1fr;
@@ -705,50 +967,32 @@
       }
 
       .orb-1, .orb-2, .orb-3 { display: none; }
+
+      .jordan-embed { height: 480px; }
+
+      .mode-toggle-btn {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.75rem;
+      }
     }
 
     /* ── Large screens ── */
     @media (min-width: 1600px) {
-      .contact-split {
-        max-width: 1440px;
-        padding: 0 3rem;
-      }
-      .contact-title {
-        font-size: clamp(3rem, 5vw, 4.8rem);
-      }
-      .contact-subtitle {
-        font-size: 1.2rem;
-        max-width: 500px;
-      }
-      .contact-form-card {
-        padding: 3rem;
-      }
-      .contact-form-wrap {
-        max-width: 540px;
-      }
-      .ci-value {
-        font-size: 1.25rem;
-      }
+      .contact-split { max-width: 1440px; padding: 0 3rem; }
+      .contact-title { font-size: clamp(3rem, 5vw, 4.8rem); }
+      .contact-subtitle { font-size: 1.2rem; max-width: 500px; }
+      .contact-form-card { padding: 3rem; }
+      .contact-right-inner { max-width: 540px; }
+      .jordan-embed { height: 620px; }
     }
 
     @media (min-width: 1920px) {
-      .contact-split {
-        max-width: 1600px;
-        padding: 0 4rem;
-      }
-      .contact-title {
-        font-size: clamp(3.5rem, 5.5vw, 5.2rem);
-      }
-      .contact-subtitle {
-        font-size: 1.25rem;
-        max-width: 540px;
-      }
-      .contact-form-card {
-        padding: 3.5rem;
-      }
-      .contact-form-wrap {
-        max-width: 580px;
-      }
+      .contact-split { max-width: 1600px; padding: 0 4rem; }
+      .contact-title { font-size: clamp(3.5rem, 5.5vw, 5.2rem); }
+      .contact-subtitle { font-size: 1.25rem; max-width: 540px; }
+      .contact-form-card { padding: 3.5rem; }
+      .contact-right-inner { max-width: 580px; }
+      .jordan-embed { height: 660px; }
     }
 
     /* ─── BRIEFING BANNER ─── */
@@ -772,8 +1016,7 @@
 
     .briefing-banner-icon {
       flex-shrink: 0;
-      width: 36px;
-      height: 36px;
+      width: 36px; height: 36px;
       border-radius: 50%;
       background: var(--mint-dim, rgba(93, 255, 191, .12));
       display: flex;
@@ -856,15 +1099,12 @@
       background: var(--mint); flex-shrink: 0;
     }
 
-    /* ─── UNIFORM LABEL COLOR ─── */
     .contact-form-card .label { color: var(--text-primary); }
 
     /* ─── SERVICE CARDS ─── */
     .services-section { margin-top: 1rem; }
     .services-label { font-size: .8125rem; font-weight: 600; color: var(--text-primary); margin-bottom: .5rem; display: block; }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: .375rem;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .375rem; }
     .service-card {
       display: flex; align-items: center; gap: .375rem;
       padding: .3125rem .625rem; border: none; background: rgba(255,255,255,.05);
@@ -883,7 +1123,6 @@
     .service-card.selected .service-card-check svg { opacity: 1; }
     .service-card-label { font-size: .75rem; font-weight: 500; color: var(--text-secondary); line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .service-card.selected .service-card-label { color: var(--text-primary); }
-
   </style>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
@@ -930,7 +1169,7 @@
         </h1>
 
         <p class="contact-subtitle">
-          UX/UI y Arquitectura Digital para empresas que no se conforman con lo estándar.
+          UX/UI y Arquitectura Digital para empresas que no se conforman con el estandar.
         </p>
 
         <div class="contact-info-blocks">
@@ -939,7 +1178,7 @@
             <a href="mailto:hola@trespuntoscomunicacion.es" class="ci-value">hola@trespuntoscomunicacion.es</a>
           </div>
           <div class="contact-info-item">
-            <div class="ci-label">Teléfono / WhatsApp</div>
+            <div class="ci-label">Telefono / WhatsApp</div>
             <a href="tel:+34930117733" class="ci-value">+34 930 117 733</a>
           </div>
           <div class="contact-info-item">
@@ -949,88 +1188,133 @@
         </div>
     </div>
 
-    <!-- Right: Form -->
+    <!-- Right: Toggle + Content -->
     <div class="contact-right">
-      <div style="display:flex;flex-direction:column;width:100%;max-width:500px;">
-      <div class="contact-form-wrap" style="max-width:none;">
-        <div class="contact-form-card">
-          <div id="tp-cta-form">
-<div class="form-gradient-accent"></div>
-<div class="form-card-header">
-  <div class="form-card-title" style="font-size:1.25rem;font-weight:700;color:var(--mint);margin-bottom:.25rem;">Inicia el proyecto</div>
-  <div class="form-card-sub" style="font-size:.85rem;color:var(--text-muted);line-height:1.5;">En menos de 48h laborables tendrás una primera respuesta personalizada.</div>
-</div>
-<form>
-  <input type="text" name="hp_field" id="hp_field" style="position:absolute;left:-9999px;opacity:0;height:0;" tabindex="-1" autocomplete="off" aria-hidden="true" />
-  <div class="form-row">
-    <div class="form-field">
-      <label class="label label-required" for="f-nombre">Nombre</label>
-      <input id="f-nombre" name="f-nombre" type="text" class="input" placeholder="¿Cómo te llamas?" autocomplete="name" required />
-      <span class="field-error" id="err-nombre"></span>
-    </div>
-    <div class="form-field">
-      <label class="label label-required" for="f-email">Email de empresa</label>
-      <input id="f-email" name="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
-      <span class="field-error" id="err-email"></span>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-field">
-      <label class="label label-required" for="f-tel">Teléfono</label>
-      <input id="f-tel" name="f-tel" type="tel" class="input" placeholder="Tu teléfono" autocomplete="tel" required minlength="9" />
-      <span class="field-error" id="err-tel"></span>
-    </div>
-    <div class="form-field">
-      <label class="label label-required" for="f-presupuesto">Inversión estimada</label>
-      <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Inversión estimada">
-        <button type="button" class="custom-select-trigger" aria-label="Selecciona rango de inversión" aria-controls="cs-presupuesto-panel">
-          <span class="custom-select-value">Rango de inversión</span>
-          <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="custom-select-panel" role="listbox" id="cs-presupuesto-panel" aria-label="Opciones de presupuesto">
-          <div class="custom-select-option" role="option" data-value="5k-10k">5.000 € – 10.000 €</div>
-          <div class="custom-select-option" role="option" data-value="10k-15k">10.000 € – 15.000 €</div>
-          <div class="custom-select-option" role="option" data-value="15k-20k">15.000 € – 20.000 €</div>
-          <div class="custom-select-option" role="option" data-value="mas-20k">+ 20.000 €</div>
+      <div class="contact-right-inner">
+
+        <!-- Mode Toggle -->
+        <div class="mode-toggle-wrap">
+          <div class="mode-toggle" id="mode-toggle">
+            <div class="mode-toggle-slider" id="toggle-slider"></div>
+            <button type="button" class="mode-toggle-btn active" data-mode="agent" id="btn-agent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Habla con Jordan
+            </button>
+            <button type="button" class="mode-toggle-btn" data-mode="form" id="btn-form">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              Formulario
+            </button>
+          </div>
         </div>
-      </div>
-      <input type="hidden" id="f-presupuesto" name="f-presupuesto" />
-      <span class="field-error" id="err-presupuesto"></span>
-    </div>
-  </div>
-  <div class="services-section">
-    <span class="services-label" id="services-label">¿En qué te podemos ayudar?</span>
-    <div class="services-grid" id="services-grid" role="group" aria-labelledby="services-label">
-      <div class="service-card" data-value="Diseño UX/UI" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Diseño UX/UI</span></div>
-      <div class="service-card" data-value="Desarrollo Web" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Desarrollo Web</span></div>
-      <div class="service-card" data-value="Tienda Online" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Tienda Online</span></div>
-      <div class="service-card" data-value="IA y Automatización" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">IA y Automatización</span></div>
-      <div class="service-card" data-value="Consultoría Digital" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Consultoría Digital</span></div>
-      <div class="service-card" data-value="Design Engineer" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Design Engineer</span></div>
-    </div>
-    <input type="hidden" id="f-servicios" name="f-servicios" />
-  </div>
-  <div class="form-field" style="margin-top:1.25rem;">
-    <label class="label" for="f-mensaje">Cuéntanos qué está pasando</label>
-    <textarea id="f-mensaje" name="f-mensaje" class="input" rows="3" placeholder="Describe brevemente el proyecto. Qué quieres construir, qué problema tienes o qué no está funcionando en tu plataforma actual."></textarea>
-  </div>
-  <input type="hidden" id="f-pagina-origen" name="pagina_origen" />
-  <input type="hidden" id="f-utm-source" name="utm_source" />
-  <input type="hidden" id="f-utm-medium" name="utm_medium" />
-  <input type="hidden" id="f-utm-campaign" name="utm_campaign" />
-  <input type="hidden" id="f-referrer" name="referrer" />
-  <input type="hidden" id="f-timestamp" name="timestamp" />
-  <label class="checkbox-row" id="privacy-row" for="f-privacidad" style="margin-top:1rem;">
-    <input type="checkbox" id="f-privacidad" name="f-privacidad" required />
-    <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
-  </label>
-  <span class="field-error" id="err-privacidad"></span>
-  <div class="cf-turnstile" data-sitekey="0x4AAAAAACv1HyITv5ZdYE50" data-theme="dark" data-size="invisible"></div>
-  <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn btn-disabled" style="width:100%;justify-content:center;">
-    Enviar mensaje
-    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-  </button>
-</form>
+
+        <!-- Panel: Agent (Jordan Chat) -->
+        <div class="contact-panel active" id="panel-agent">
+          <div class="jordan-embed" id="jordan-embed">
+            <div class="jordan-embed-header">
+              <div class="jordan-embed-avatar-wrap">
+                <img src="/assets/jordan/jordan-avatar.png" alt="Jordan" class="jordan-embed-avatar" width="40" height="40" />
+              </div>
+              <div class="jordan-embed-info">
+                <div class="jordan-embed-name">Jordan</div>
+                <div class="jordan-embed-status">
+                  <span style="width:6px;height:6px;background:var(--mint);border-radius:50;display:inline-block;"></span>
+                  Online ahora
+                </div>
+              </div>
+            </div>
+            <div class="jordan-embed-messages" id="jordan-messages">
+              <!-- Messages render here -->
+            </div>
+            <div id="jordan-quick-replies" class="jordan-quick-replies" style="display:none;"></div>
+            <div class="jordan-embed-input">
+              <textarea class="jordan-embed-textarea" id="jordan-input" placeholder="Escribe tu mensaje..." rows="1"></textarea>
+              <button class="jordan-embed-send" id="jordan-send" aria-label="Enviar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: Form -->
+        <div class="contact-panel" id="panel-form">
+          <div class="contact-form-card">
+            <div id="tp-cta-form">
+              <div class="form-gradient-accent"></div>
+              <div class="form-card-header">
+                <div class="form-card-title" style="font-size:1.25rem;font-weight:700;color:var(--mint);margin-bottom:.25rem;">Inicia el proyecto</div>
+                <div class="form-card-sub" style="font-size:.85rem;color:var(--text-muted);line-height:1.5;">En menos de 48h laborables tendras una primera respuesta personalizada.</div>
+              </div>
+              <form>
+                <input type="text" name="hp_field" id="hp_field" style="position:absolute;left:-9999px;opacity:0;height:0;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                <div class="form-row">
+                  <div class="form-field">
+                    <label class="label label-required" for="f-nombre">Nombre</label>
+                    <input id="f-nombre" name="f-nombre" type="text" class="input" placeholder="¿Como te llamas?" autocomplete="name" required />
+                    <span class="field-error" id="err-nombre"></span>
+                  </div>
+                  <div class="form-field">
+                    <label class="label label-required" for="f-email">Email de empresa</label>
+                    <input id="f-email" name="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
+                    <span class="field-error" id="err-email"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <label class="label label-required" for="f-tel">Telefono</label>
+                    <input id="f-tel" name="f-tel" type="tel" class="input" placeholder="Tu telefono" autocomplete="tel" required minlength="9" />
+                    <span class="field-error" id="err-tel"></span>
+                  </div>
+                  <div class="form-field">
+                    <label class="label label-required" for="f-presupuesto">Inversion estimada</label>
+                    <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Inversion estimada">
+                      <button type="button" class="custom-select-trigger" aria-label="Selecciona rango de inversion" aria-controls="cs-presupuesto-panel">
+                        <span class="custom-select-value">Rango de inversion</span>
+                        <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                      </button>
+                      <div class="custom-select-panel" role="listbox" id="cs-presupuesto-panel" aria-label="Opciones de presupuesto">
+                        <div class="custom-select-option" role="option" data-value="5k-10k">5.000 € - 10.000 €</div>
+                        <div class="custom-select-option" role="option" data-value="10k-15k">10.000 € - 15.000 €</div>
+                        <div class="custom-select-option" role="option" data-value="15k-20k">15.000 € - 20.000 €</div>
+                        <div class="custom-select-option" role="option" data-value="mas-20k">+ 20.000 €</div>
+                      </div>
+                    </div>
+                    <input type="hidden" id="f-presupuesto" name="f-presupuesto" />
+                    <span class="field-error" id="err-presupuesto"></span>
+                  </div>
+                </div>
+                <div class="services-section">
+                  <span class="services-label" id="services-label">¿En que te podemos ayudar?</span>
+                  <div class="services-grid" id="services-grid" role="group" aria-labelledby="services-label">
+                    <div class="service-card" data-value="Diseno UX/UI" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Diseno UX/UI</span></div>
+                    <div class="service-card" data-value="Desarrollo Web" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Desarrollo Web</span></div>
+                    <div class="service-card" data-value="Tienda Online" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Tienda Online</span></div>
+                    <div class="service-card" data-value="IA y Automatizacion" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">IA y Automatizacion</span></div>
+                    <div class="service-card" data-value="Consultoria Digital" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Consultoria Digital</span></div>
+                    <div class="service-card" data-value="Design Engineer" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Design Engineer</span></div>
+                  </div>
+                  <input type="hidden" id="f-servicios" name="f-servicios" />
+                </div>
+                <div class="form-field" style="margin-top:1.25rem;">
+                  <label class="label" for="f-mensaje">Cuentanos que esta pasando</label>
+                  <textarea id="f-mensaje" name="f-mensaje" class="input" rows="3" placeholder="Describe brevemente el proyecto. Que quieres construir, que problema tienes o que no esta funcionando en tu plataforma actual."></textarea>
+                </div>
+                <input type="hidden" id="f-pagina-origen" name="pagina_origen" />
+                <input type="hidden" id="f-utm-source" name="utm_source" />
+                <input type="hidden" id="f-utm-medium" name="utm_medium" />
+                <input type="hidden" id="f-utm-campaign" name="utm_campaign" />
+                <input type="hidden" id="f-referrer" name="referrer" />
+                <input type="hidden" id="f-timestamp" name="timestamp" />
+                <label class="checkbox-row" id="privacy-row" for="f-privacidad" style="margin-top:1rem;">
+                  <input type="checkbox" id="f-privacidad" name="f-privacidad" required />
+                  <span class="checkbox-label">He leido y acepto la <a href="/politica-privacidad">Politica de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+                </label>
+                <span class="field-error" id="err-privacidad"></span>
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAACv1HyITv5ZdYE50" data-theme="dark" data-size="invisible"></div>
+                <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn btn-disabled" style="width:100%;justify-content:center;">
+                  Enviar mensaje
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </form>
           </div>
           <a href="/form-v3/form-step1.html" class="briefing-banner" style="margin-top:.75rem;">
             <div class="briefing-banner-icon">
@@ -1041,19 +1325,20 @@
             </div>
             <div class="briefing-banner-text">
               <span class="briefing-banner-title">¿Tu proyecto es urgente?</span>
-              <span class="briefing-banner-desc">Cuéntanos más detalles y te enviamos una propuesta completa en 48h.</span>
+              <span class="briefing-banner-desc">Cuentanos mas detalles y te enviamos una propuesta completa en 48h.</span>
             </div>
             <svg class="briefing-banner-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
-      </div>
+        </div>
+
       </div>
     </div>
   </section>
   </div><!-- /contact-wrapper -->
 
   <!-- ============ BOTTOM INFO BAR ============ -->
-  <section class="contact-bottom" aria-label="Información de contacto">
+  <section class="contact-bottom" aria-label="Informacion de contacto">
     <div class="container-main">
       <div class="contact-bottom-grid reveal">
         <div class="contact-bottom-item">
@@ -1062,7 +1347,7 @@
           </div>
           <div>
             <div class="contact-bottom-label">Horario</div>
-            <div class="contact-bottom-value">L–V 09:00–18:00 CET</div>
+            <div class="contact-bottom-value">L-V 09:00-18:00 CET</div>
           </div>
         </div>
         <div class="contact-bottom-item">
@@ -1070,8 +1355,8 @@
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div>
-            <div class="contact-bottom-label">Ubicación</div>
-            <div class="contact-bottom-value">Físicamente en Barcelona,<br>digitalmente en todas partes.</div>
+            <div class="contact-bottom-label">Ubicacion</div>
+            <div class="contact-bottom-value">Fisicamente en Barcelona,<br>digitalmente en todas partes.</div>
           </div>
         </div>
         <div class="contact-bottom-item">
@@ -1079,15 +1364,15 @@
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <div>
-            <div class="contact-bottom-label">Garantía</div>
-            <div class="contact-bottom-value">+80 proyectos · 5.0/5 Google</div>
+            <div class="contact-bottom-label">Garantia</div>
+            <div class="contact-bottom-value">+80 proyectos - 5.0/5 Google</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ TESTIMONIOS (TP.testimonios) ============ -->
+  <!-- ============ TESTIMONIOS ============ -->
   <div id="tp-testimonios"></div>
 
   </main>
@@ -1097,307 +1382,413 @@
 
   <script src="/js/components.js?v=27"></script>
   <script>
-    try{try{TP.navbar('contacto');}catch(e){}}catch(e){console.warn("TP.navbar:",e);}
-    try{try{TP.testimonios();}catch(e){}}catch(e){console.warn("TP.testimonios:",e);}
-    /* ctaForm inline — no llamar TP.ctaForm() para evitar duplicado */
-    try{try{TP.footer();}catch(e){}}catch(e){console.warn("TP.footer:",e);}
-    try{try{TP.initJS();}catch(e){}}catch(e){console.warn("TP.initJS:",e);}
+    try{TP.navbar('contacto');}catch(e){console.warn("TP.navbar:",e);}
+    try{TP.testimonios();}catch(e){console.warn("TP.testimonios:",e);}
+    try{TP.footer();}catch(e){console.warn("TP.footer:",e);}
+    try{TP.initJS();}catch(e){console.warn("TP.initJS:",e);}
   </script>
   <script src="/js/service-page.js" defer></script>
   <script src="/js/supabase-forms.js" defer></script>
   <script src="/js/form-validation.js" defer></script>
 
-  <!-- Contact page animations -->
+  <!-- ═══ MODE TOGGLE + JORDAN EMBEDDED CHAT ═══ -->
   <script>
-    (function () {
-      'use strict';
+  (function() {
+    'use strict';
 
-      // ── Mouse glow follow ──
-      var glow = document.getElementById('mouse-glow');
-      if (glow && window.innerWidth > 768) {
-        document.addEventListener('mousemove', function (e) {
-          glow.style.left = e.clientX + 'px';
-          glow.style.top = e.clientY + 'px';
+    // ── Toggle logic ──
+    var btnAgent = document.getElementById('btn-agent');
+    var btnForm = document.getElementById('btn-form');
+    var slider = document.getElementById('toggle-slider');
+    var panelAgent = document.getElementById('panel-agent');
+    var panelForm = document.getElementById('panel-form');
+
+    function setMode(mode) {
+      var isAgent = mode === 'agent';
+      btnAgent.classList.toggle('active', isAgent);
+      btnForm.classList.toggle('active', !isAgent);
+
+      // Animate slider
+      var agentRect = btnAgent.getBoundingClientRect();
+      var formRect = btnForm.getBoundingClientRect();
+      var toggleRect = document.getElementById('mode-toggle').getBoundingClientRect();
+
+      if (isAgent) {
+        slider.style.width = agentRect.width + 'px';
+        slider.style.transform = 'translateX(0)';
+      } else {
+        slider.style.width = formRect.width + 'px';
+        slider.style.transform = 'translateX(' + (formRect.left - agentRect.left) + 'px)';
+      }
+
+      // Switch panels
+      panelAgent.classList.toggle('active', isAgent);
+      panelForm.classList.toggle('active', !isAgent);
+    }
+
+    btnAgent.addEventListener('click', function() { setMode('agent'); });
+    btnForm.addEventListener('click', function() { setMode('form'); });
+
+    // Init slider dimensions
+    requestAnimationFrame(function() {
+      var agentRect = btnAgent.getBoundingClientRect();
+      slider.style.width = agentRect.width + 'px';
+      slider.style.transform = 'translateX(0)';
+    });
+
+    // ── Jordan Embedded Chat ──
+    var PROXY_URL = 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-proxy';
+    var LEADS_URL = 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads';
+
+    var messagesEl = document.getElementById('jordan-messages');
+    var inputEl = document.getElementById('jordan-input');
+    var sendBtn = document.getElementById('jordan-send');
+    var qrContainer = document.getElementById('jordan-quick-replies');
+
+    var messages = [];
+    var isLoading = false;
+    var sessionId = 'je_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6);
+    var startedAt = new Date().toISOString();
+    var extracted = {};
+    var leadSent = false;
+
+    // System prompt (same as Jordan widget v4)
+    var SYSTEM_PROMPT = 'Eres Jordan, asistente comercial de Tres Puntos (agencia UX/UI y desarrollo web en Barcelona). Tu trabajo: entender el proyecto del usuario para que Jordi (fundador) pueda preparar una propuesta. Flujo: 1) Tipo de proyecto + nombre 2) Detectar perfil/rol 3) Discovery adaptado por rol 4) Cierre con resumen + Calendly si score>=7. Reglas: max 2-4 frases por respuesta, nunca 3+ preguntas seguidas sin aportar valor, "Perfecto" solo no cuenta como aporte. Presupuesto contextualizado, nunca en frio. Tono: cercano, profesional, directo. Servicios: UX/UI, Desarrollo Web, E-commerce, Automatizacion/IA, Consultoria Digital, Design Engineer.';
+
+    // Welcome message
+    function init() {
+      addMessage('assistant', 'Hola. Soy Jordan, de Tres Puntos. Sin formularios, sin rollos. Cuentame, ¿que proyecto tienes en mente?');
+      showQuickReplies([
+        { label: 'Web corporativa', value: 'Necesito una web corporativa' },
+        { label: 'Tienda online', value: 'Quiero montar una tienda online' },
+        { label: 'Rediseno web', value: 'Necesito redisenar mi web actual' },
+        { label: 'Automatizacion', value: 'Me interesa automatizar procesos' }
+      ]);
+    }
+
+    function addMessage(role, text) {
+      messages.push({ role: role, content: text });
+      var div = document.createElement('div');
+      div.className = 'jordan-msg ' + role;
+      div.innerHTML = renderMarkdown(text);
+      messagesEl.appendChild(div);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function renderMarkdown(text) {
+      return text
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+        .replace(/\n/g, '<br>');
+    }
+
+    function showTyping() {
+      var div = document.createElement('div');
+      div.className = 'jordan-typing';
+      div.id = 'jordan-typing';
+      div.innerHTML = '<div class="jordan-typing-dot"></div><div class="jordan-typing-dot"></div><div class="jordan-typing-dot"></div>';
+      messagesEl.appendChild(div);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function hideTyping() {
+      var el = document.getElementById('jordan-typing');
+      if (el) el.remove();
+    }
+
+    function showQuickReplies(options) {
+      qrContainer.innerHTML = '';
+      options.forEach(function(opt) {
+        var btn = document.createElement('button');
+        btn.className = 'jordan-qr-btn';
+        btn.textContent = opt.label;
+        btn.addEventListener('click', function() {
+          qrContainer.style.display = 'none';
+          sendMessage(opt.value);
         });
-      }
+        qrContainer.appendChild(btn);
+      });
+      qrContainer.style.display = 'flex';
+    }
 
-      // ── Canvas particle system ──
-      var canvas = document.getElementById('contact-canvas');
-      if (!canvas) return;
-      var ctx = canvas.getContext('2d');
-      var particles = [];
-      var mouseX = 0, mouseY = 0;
-      var dpr = window.devicePixelRatio || 1;
+    function extractData(text) {
+      // Email
+      var emailMatch = text.match(/[\w.+-]+@[\w-]+\.[\w.]+/);
+      if (emailMatch) extracted.email = emailMatch[0];
 
-      function resize() {
-        var rect = canvas.parentElement.getBoundingClientRect();
-        canvas.width = rect.width * dpr;
-        canvas.height = rect.height * dpr;
-        canvas.style.width = rect.width + 'px';
-        canvas.style.height = rect.height + 'px';
-        ctx.scale(dpr, dpr);
-      }
-      resize();
-      window.addEventListener('resize', resize);
+      // Phone
+      var phoneMatch = text.match(/(?:\+34[\s-]?)?(?:\d[\s-]?){9}/);
+      if (phoneMatch) extracted.telefono = phoneMatch[0].replace(/[\s-]/g, '');
 
-      // Track mouse relative to canvas
-      canvas.parentElement.addEventListener('mousemove', function (e) {
-        var rect = canvas.parentElement.getBoundingClientRect();
-        mouseX = e.clientX - rect.left;
-        mouseY = e.clientY - rect.top;
+      // Name detection
+      var nameMatch = text.match(/(?:me llamo|soy|mi nombre es)\s+([A-Z][a-z]+(?:\s[A-Z][a-z]+)?)/i);
+      if (nameMatch) extracted.nombre = nameMatch[1];
+
+      // Company
+      var companyMatch = text.match(/(?:empresa|compania|startup|proyecto)\s+(?:es\s+|se llama\s+)?([A-Z][\w\s]{1,30})/i);
+      if (companyMatch) extracted.empresa = companyMatch[1].trim();
+    }
+
+    async function sendMessage(text) {
+      if (isLoading || !text.trim()) return;
+      isLoading = true;
+
+      addMessage('user', text.trim());
+      extractData(text);
+      qrContainer.style.display = 'none';
+      inputEl.value = '';
+      inputEl.style.height = 'auto';
+      sendBtn.disabled = true;
+
+      showTyping();
+
+      // Build conversation for API
+      var apiMessages = messages.filter(function(m) {
+        return m.role === 'user' || m.role === 'assistant';
+      }).map(function(m) {
+        return { role: m.role, content: m.content };
       });
 
-      // Create particles
-      var PARTICLE_COUNT = 50;
-      for (var i = 0; i < PARTICLE_COUNT; i++) {
-        particles.push({
-          x: Math.random() * (canvas.width / dpr),
-          y: Math.random() * (canvas.height / dpr),
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          size: Math.random() * 2 + 1,
-          alpha: Math.random() * 0.4 + 0.1
+      try {
+        var resp = await fetch(PROXY_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            system: SYSTEM_PROMPT,
+            messages: apiMessages,
+            max_tokens: 512
+          })
         });
-      }
 
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
-        var w = canvas.width / dpr;
-        var h = canvas.height / dpr;
+        var data = await resp.json();
+        hideTyping();
 
-        for (var i = 0; i < particles.length; i++) {
-          var p = particles[i];
-
-          // Mouse influence (gentle attraction)
-          var dx = mouseX - p.x;
-          var dy = mouseY - p.y;
-          var dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 200 && dist > 0) {
-            var force = (200 - dist) / 200 * 0.01;
-            p.vx += dx / dist * force;
-            p.vy += dy / dist * force;
-          }
-
-          // Damping
-          p.vx *= 0.99;
-          p.vy *= 0.99;
-
-          p.x += p.vx;
-          p.y += p.vy;
-
-          // Wrap around
-          if (p.x < 0) p.x = w;
-          if (p.x > w) p.x = 0;
-          if (p.y < 0) p.y = h;
-          if (p.y > h) p.y = 0;
-
-          // Draw particle
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(93, 255, 191, ' + p.alpha + ')';
-          ctx.fill();
-
-          // Draw connections
-          for (var j = i + 1; j < particles.length; j++) {
-            var p2 = particles[j];
-            var d = Math.hypot(p.x - p2.x, p.y - p2.y);
-            if (d < 120) {
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(p2.x, p2.y);
-              ctx.strokeStyle = 'rgba(93, 255, 191, ' + (0.08 * (1 - d / 120)) + ')';
-              ctx.lineWidth = 0.5;
-              ctx.stroke();
-            }
-          }
+        var reply = '';
+        if (data.content && data.content[0]) {
+          reply = data.content[0].text;
+        } else if (data.reply) {
+          reply = data.reply;
+        } else if (typeof data === 'string') {
+          reply = data;
         }
 
-        requestAnimationFrame(animate);
+        if (reply) {
+          addMessage('assistant', reply);
+          detectQuickReplies(reply);
+        }
+      } catch (err) {
+        hideTyping();
+        addMessage('assistant', 'Disculpa, ha habido un problema de conexion. ¿Puedes intentarlo de nuevo?');
+        console.error('Jordan proxy error:', err);
       }
 
-      // Only run on desktop
-      if (window.innerWidth > 768) {
-        animate();
+      isLoading = false;
+      sendBtn.disabled = false;
+      inputEl.focus();
+    }
+
+    function detectQuickReplies(text) {
+      var lower = text.toLowerCase();
+      if (lower.includes('presupuesto') && lower.includes('?')) {
+        showQuickReplies([
+          { label: '5K - 10K €', value: 'Entre 5.000 y 10.000 euros' },
+          { label: '10K - 15K €', value: 'Entre 10.000 y 15.000 euros' },
+          { label: '15K - 20K €', value: 'Entre 15.000 y 20.000 euros' },
+          { label: '+20K €', value: 'Mas de 20.000 euros' }
+        ]);
+      } else if ((lower.includes('plazo') || lower.includes('urgencia') || lower.includes('cuando') || lower.includes('timeline')) && lower.includes('?')) {
+        showQuickReplies([
+          { label: 'Urgente (< 1 mes)', value: 'Es urgente, necesito algo en menos de un mes' },
+          { label: '1-3 meses', value: 'Entre 1 y 3 meses' },
+          { label: '3-6 meses', value: 'Tenemos entre 3 y 6 meses' },
+          { label: 'Sin prisa', value: 'No tenemos prisa especial' }
+        ]);
       }
-    })();
+    }
+
+    // Send on Enter (Shift+Enter for new line)
+    inputEl.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage(inputEl.value);
+      }
+    });
+
+    // Auto-resize textarea
+    inputEl.addEventListener('input', function() {
+      this.style.height = 'auto';
+      this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+    });
+
+    sendBtn.addEventListener('click', function() {
+      sendMessage(inputEl.value);
+    });
+
+    // Send lead data on page unload
+    function sendLead() {
+      if (leadSent || messages.length < 3) return;
+      if (!extracted.nombre && !extracted.email && !extracted.telefono) return;
+      leadSent = true;
+
+      var convo = messages.map(function(m) {
+        return '[' + (m.role === 'assistant' ? 'Jordan' : 'Usuario') + '] ' + m.content;
+      }).join('\n');
+
+      var payload = {
+        nombre: extracted.nombre || '',
+        email: extracted.email || '',
+        telefono: extracted.telefono || '',
+        empresa: extracted.empresa || '',
+        tipo_proyecto: extracted.tipo_proyecto || '',
+        presupuesto: extracted.presupuesto || '',
+        urgencia: extracted.urgencia || '',
+        rol: extracted.rol || '',
+        conversacion_completa: convo,
+        score: 0,
+        sessionId: sessionId,
+        url_origen: window.location.pathname,
+        mensajes_totales: messages.length,
+        duracion_segundos: Math.round((Date.now() - new Date(startedAt).getTime()) / 1000),
+        timestamp: new Date().toISOString()
+      };
+
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(LEADS_URL, new Blob([JSON.stringify(payload)], { type: 'application/json' }));
+      } else {
+        fetch(LEADS_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), keepalive: true });
+      }
+    }
+
+    window.addEventListener('beforeunload', sendLead);
+
+    // Init
+    init();
+
+    // ── Mouse glow follow ──
+    var glow = document.getElementById('mouse-glow');
+    if (glow && window.innerWidth > 768) {
+      document.addEventListener('mousemove', function(e) {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+      });
+    }
+
+    // ── Canvas particle system ──
+    var canvas = document.getElementById('contact-canvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var particles = [];
+    var mouseX = 0, mouseY = 0;
+    var dpr = window.devicePixelRatio || 1;
+
+    function resize() {
+      var rect = canvas.parentElement.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      ctx.scale(dpr, dpr);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    canvas.parentElement.addEventListener('mousemove', function(e) {
+      var rect = canvas.parentElement.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    });
+
+    var PARTICLE_COUNT = 50;
+    for (var i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push({
+        x: Math.random() * (canvas.width / dpr),
+        y: Math.random() * (canvas.height / dpr),
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        size: Math.random() * 2 + 1,
+        alpha: Math.random() * 0.4 + 0.1
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
+      var w = canvas.width / dpr;
+      var h = canvas.height / dpr;
+
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        var dx = mouseX - p.x;
+        var dy = mouseY - p.y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 200 && dist > 0) {
+          var force = (200 - dist) / 200 * 0.01;
+          p.vx += dx / dist * force;
+          p.vy += dy / dist * force;
+        }
+        p.vx *= 0.99;
+        p.vy *= 0.99;
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(93, 255, 191, ' + p.alpha + ')';
+        ctx.fill();
+
+        for (var j = i + 1; j < particles.length; j++) {
+          var p2 = particles[j];
+          var d = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if (d < 120) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = 'rgba(93, 255, 191, ' + (0.08 * (1 - d / 120)) + ')';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    if (window.innerWidth > 768) { animate(); }
+  })();
   </script>
 
-  <!-- Jordan — Agente Conversacional Tres Puntos -->
-  <script>
-  window.JordanConfig = {
-    webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
-    calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
-    avatar: '/assets/jordan/jordan-avatar.png',
-    avatarVideo: '/assets/jordan/jordan-avatar-video.mp4',
-    position: 'right',
-    rules: [
-      { pattern: '/blog/*', show: false },
-      { pattern: '/checkout/*', show: false },
-      { pattern: '/login', show: false },
-      { pattern: '/wp-admin/*', show: false },
-      { pattern: '/politica-*', show: false },
-      { pattern: '/aviso-legal', show: false },
-      { pattern: '/servicios/*', show: true, proactive: true, delay: 5 },
-      { pattern: '/contacto', show: true, proactive: true, delay: 5 },
-      { pattern: '/casos/*', show: true, proactive: true, delay: 5 },
-      { pattern: '/', show: true, proactive: true, delay: 5 },
-      { pattern: '*', show: true, proactive: true, delay: 5 }
-    ]
-  };
-  </script>
-  <script async src="/assets/jordan/jordan-widget-v5.js"></script>
+  <!-- NO Jordan widget on this page (chat is embedded) -->
 
-  <!-- Animated Cursor (Option 2 - stephenscaff) - Fluido con animación en links -->
+  <!-- Animated Cursor -->
   <script defer>
-    // Usar función IIFE para evitar que DOMContentLoaded ya haya disparado
     (function() {
       if (window.innerWidth > 1024) {
-        // Crear elementos del cursor
-        const outerCursor = document.createElement('div');
+        var outerCursor = document.createElement('div');
         outerCursor.id = 'outer-cursor';
-
-        const innerCursor = document.createElement('div');
+        var innerCursor = document.createElement('div');
         innerCursor.id = 'inner-cursor';
-
         document.body.appendChild(outerCursor);
         document.body.appendChild(innerCursor);
 
-        // CSS del cursor
-        const style = document.createElement('style');
-        style.textContent = `
-          #outer-cursor, #inner-cursor {
-            position: fixed;
-            pointer-events: none;
-            border-radius: 50%;
-            mix-blend-mode: lighten;
-            z-index: 99999;
-          }
-
-          #outer-cursor {
-            width: 40px;
-            height: 40px;
-            border: 2px solid #5dffbf;
-            top: -20px;
-            left: -20px;
-            transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-            opacity: 0.6;
-          }
-
-          #inner-cursor {
-            width: 8px;
-            height: 8px;
-            background: #5dffbf;
-            top: -4px;
-            left: -4px;
-            opacity: 1;
-            transition: transform 0.1s ease-out;
-          }
-
-          /* Estados de hover en elementos interactivos */
-          #outer-cursor.active {
-            transform: scale(1.5);
-            border-width: 3px;
-            opacity: 0.8;
-          }
-
-          #inner-cursor.active {
-            transform: scale(0.75);
-          }
-
-          /* Estados de click */
-          #outer-cursor.click {
-            transform: scale(0.8);
-          }
-
-          #inner-cursor.click {
-            transform: scale(1.5);
-          }
-
-          body {
-            cursor: none;
-          }
-
-          a, button, [role="button"], .magnetic-btn, input, textarea, select, .caso-card {
-            cursor: none;
-          }
-
-          @media(max-width: 1024px) {
-            #outer-cursor, #inner-cursor {
-              display: none !important;
-            }
-            body {
-              cursor: auto;
-            }
-            a, button, [role="button"], .magnetic-btn, input, textarea, select, .caso-card {
-              cursor: auto;
-            }
-          }
-        `;
+        var style = document.createElement('style');
+        style.textContent = '#outer-cursor,#inner-cursor{position:fixed;pointer-events:none;border-radius:50%;mix-blend-mode:lighten;z-index:99999}#outer-cursor{width:40px;height:40px;border:2px solid #5dffbf;top:-20px;left:-20px;transition:transform .2s ease-out,opacity .2s ease-out;opacity:.6}#inner-cursor{width:8px;height:8px;background:#5dffbf;top:-4px;left:-4px;opacity:1;transition:transform .1s ease-out}#outer-cursor.active{transform:scale(1.5);border-width:3px;opacity:.8}#inner-cursor.active{transform:scale(.75)}#outer-cursor.click{transform:scale(.8)}#inner-cursor.click{transform:scale(1.5)}body{cursor:none}a,button,[role=button],.magnetic-btn,input,textarea,select,.caso-card{cursor:none}@media(max-width:1024px){#outer-cursor,#inner-cursor{display:none!important}body{cursor:auto}a,button,[role=button],.magnetic-btn,input,textarea,select,.caso-card{cursor:auto}}';
         document.head.appendChild(style);
 
-        // Variables de posición
-        let mouseX = 0;
-        let mouseY = 0;
-        let outerX = 0;
-        let outerY = 0;
-        const smooth = 0.2; // Suavidad del lerp para outer cursor
-
-        // Track mouse position
-        document.addEventListener('mousemove', (e) => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-        });
-
-        // Animación fluida
-        function animate() {
-          // Outer cursor sigue con lerp suave
-          outerX += (mouseX - outerX) * smooth;
-          outerY += (mouseY - outerY) * smooth;
-
-          outerCursor.style.transform = `translate3d(${outerX}px, ${outerY}px, 0)`;
-
-          // Inner cursor sigue directamente (sin delay)
-          innerCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-
-          requestAnimationFrame(animate);
-        }
+        var mouseX=0,mouseY=0,outerX=0,outerY=0,smooth=.2;
+        document.addEventListener('mousemove',function(e){mouseX=e.clientX;mouseY=e.clientY;});
+        function animate(){outerX+=(mouseX-outerX)*smooth;outerY+=(mouseY-outerY)*smooth;outerCursor.style.transform='translate3d('+outerX+'px,'+outerY+'px,0)';innerCursor.style.transform='translate3d('+mouseX+'px,'+mouseY+'px,0)';requestAnimationFrame(animate);}
         animate();
-
-        // Detectar elementos interactivos
-        const interactiveElements = document.querySelectorAll('a, button, [role="button"], .magnetic-btn, input, textarea, select, .caso-card');
-
-        interactiveElements.forEach(el => {
-          el.addEventListener('mouseenter', () => {
-            outerCursor.classList.add('active');
-            innerCursor.classList.add('active');
-          });
-
-          el.addEventListener('mouseleave', () => {
-            outerCursor.classList.remove('active');
-            innerCursor.classList.remove('active');
-          });
-
-          el.addEventListener('mousedown', () => {
-            outerCursor.classList.add('click');
-            innerCursor.classList.add('click');
-          });
-
-          el.addEventListener('mouseup', () => {
-            outerCursor.classList.remove('click');
-            innerCursor.classList.remove('click');
-          });
+        document.querySelectorAll('a,button,[role=button],.magnetic-btn,input,textarea,select,.caso-card').forEach(function(el){
+          el.addEventListener('mouseenter',function(){outerCursor.classList.add('active');innerCursor.classList.add('active');});
+          el.addEventListener('mouseleave',function(){outerCursor.classList.remove('active');innerCursor.classList.remove('active');});
+          el.addEventListener('mousedown',function(){outerCursor.classList.add('click');innerCursor.classList.add('click');});
+          el.addEventListener('mouseup',function(){outerCursor.classList.remove('click');innerCursor.classList.remove('click');});
         });
-
-        // Ocultar cursor cuando sale del viewport
-        document.addEventListener('mouseleave', () => {
-          outerCursor.style.opacity = '0';
-          innerCursor.style.opacity = '0';
-        });
-
-        document.addEventListener('mouseenter', () => {
-          outerCursor.style.opacity = '0.6';
-          innerCursor.style.opacity = '1';
-        });
+        document.addEventListener('mouseleave',function(){outerCursor.style.opacity='0';innerCursor.style.opacity='0';});
+        document.addEventListener('mouseenter',function(){outerCursor.style.opacity='.6';innerCursor.style.opacity='1';});
       }
     })();
   </script>
