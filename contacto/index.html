@@ -85,6 +85,7 @@
     .contact-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
       min-height: calc(100vh - 80px);
       max-width: 1280px;
       margin: 0 auto;
@@ -99,8 +100,17 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 6rem 3rem 4rem 0;
+      padding: 6rem 3rem 1.5rem 0;
       z-index: 2;
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .contact-info-blocks {
+      grid-column: 1;
+      grid-row: 2;
+      align-self: start;
+      padding: 0 3rem 4rem 0;
     }
 
     .contact-badge {
@@ -227,6 +237,8 @@
       justify-content: center;
       padding: 6rem 0 4rem 3rem;
       z-index: 2;
+      grid-column: 2;
+      grid-row: 1 / 3;
     }
 
     .contact-right-inner {
@@ -884,14 +896,31 @@
     @media (max-width: 1024px) {
       .contact-split {
         grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
         min-height: auto;
         padding: 0 1.25rem;
       }
 
       .contact-left {
-        padding: 3rem 0 2rem;
+        padding: 5.5rem 0 2rem;
         text-align: center;
         align-items: center;
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .contact-right {
+        grid-column: 1;
+        grid-row: 2;
+        padding: 0 0 1rem;
+        justify-content: center;
+      }
+
+      .contact-info-blocks {
+        grid-column: 1;
+        grid-row: 3;
+        align-items: center;
+        padding: 1rem 0 3rem;
       }
 
       .contact-subtitle {
@@ -900,14 +929,7 @@
         max-width: 100%;
       }
 
-      .contact-info-blocks { align-items: center; }
-
       .contact-info-item .ci-value { word-break: break-all; }
-
-      .contact-right {
-        padding: 0 0 3rem;
-        justify-content: center;
-      }
 
       .contact-right-inner { max-width: 100%; }
 
@@ -931,7 +953,7 @@
       }
 
       .contact-left {
-        padding: 2.5rem 0 0;
+        padding: 5rem 0 0;
         max-width: 100%;
         overflow: hidden;
         text-align: left;
@@ -960,6 +982,9 @@
         grid-template-columns: 1fr 1fr;
         gap: 0.75rem;
         width: 100%;
+        grid-column: 1;
+        grid-row: auto;
+        padding: 0 0 2.5rem;
       }
 
       .contact-info-item {
@@ -1196,20 +1221,6 @@
           UX/UI y Arquitectura Digital para empresas que no se conforman con el estandar.
         </p>
 
-        <div class="contact-info-blocks">
-          <div class="contact-info-item">
-            <div class="ci-label">Email</div>
-            <a href="mailto:hola@trespuntoscomunicacion.es" class="ci-value">hola@trespuntoscomunicacion.es</a>
-          </div>
-          <div class="contact-info-item">
-            <div class="ci-label">Telefono / WhatsApp</div>
-            <a href="tel:+34930117733" class="ci-value">+34 930 117 733</a>
-          </div>
-          <div class="contact-info-item">
-            <div class="ci-label">Sede</div>
-            <span class="ci-value">Emitiendo desde Barcelona para todo el mundo</span>
-          </div>
-        </div>
     </div>
 
     <!-- Right: Toggle + Content -->
@@ -1361,6 +1372,22 @@
 
       </div>
     </div>
+
+    <!-- Contact info below chat on mobile -->
+    <div class="contact-info-blocks">
+      <div class="contact-info-item">
+        <div class="ci-label">Email</div>
+        <a href="mailto:hola@trespuntoscomunicacion.es" class="ci-value">hola@trespuntoscomunicacion.es</a>
+      </div>
+      <div class="contact-info-item">
+        <div class="ci-label">Telefono / WhatsApp</div>
+        <a href="tel:+34930117733" class="ci-value">+34 930 117 733</a>
+      </div>
+      <div class="contact-info-item">
+        <div class="ci-label">Sede</div>
+        <span class="ci-value">Emitiendo desde Barcelona para todo el mundo</span>
+      </div>
+    </div>
   </section>
   </div><!-- /contact-wrapper -->
 
@@ -1397,6 +1424,7 @@
         </div>
       </div>
     </div>
+
   </section>
 
   <!-- ============ TESTIMONIOS ============ -->

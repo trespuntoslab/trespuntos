@@ -245,3 +245,8 @@ html,body{overflow-x:hidden;max-width:100vw}section{overflow-x:clip;max-width:10
 .service-card-label { font-size: .75rem; font-weight: 500; color: var(--text-secondary); line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .service-card.selected .service-card-label { color: var(--text-primary); }
 
+
+/* ── Mobile: section-badge navbar clearance ── */
+@media (max-width: 1024px) {
+  .section-badge:first-child { margin-top: 1rem; }
+}
