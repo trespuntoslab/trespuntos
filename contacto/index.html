@@ -380,27 +380,51 @@
       height: 40px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid transparent;
-      background-image: conic-gradient(from 0deg, #5dffbf, #4ea5ff, #c084fc, #5dffbf);
-      background-origin: border-box;
-      background-clip: padding-box, border-box;
+      display: block;
     }
 
     .jordan-embed-avatar-wrap {
       position: relative;
       flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      overflow: hidden;
     }
 
-    .jordan-embed-avatar-wrap::after {
+    .jordan-embed-avatar-wrap::before {
       content: '';
       position: absolute;
-      bottom: 1px;
-      right: 1px;
+      inset: -4px;
+      background: conic-gradient(from 0deg, #5dffbf, #4ea5ff, #c084fc, #5dffbf);
+      animation: jordanAvatarSpin 4s linear infinite;
+      border-radius: 50%;
+    }
+
+    .jordan-embed-avatar-wrap video {
+      position: relative;
+      z-index: 1;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: block;
+      margin: 2px;
+    }
+
+    @keyframes jordanAvatarSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    .jordan-status-dot {
+      position: absolute;
+      bottom: 0;
+      right: 0;
       width: 10px;
       height: 10px;
       background: var(--mint);
       border-radius: 50%;
       border: 2px solid var(--bg-surface);
+      z-index: 2;
     }
 
     .jordan-embed-info {
@@ -1212,7 +1236,10 @@
           <div class="jordan-embed" id="jordan-embed">
             <div class="jordan-embed-header">
               <div class="jordan-embed-avatar-wrap">
-                <img src="/assets/jordan/jordan-avatar.png" alt="Jordan" class="jordan-embed-avatar" width="40" height="40" />
+                <video class="jordan-embed-avatar" autoplay loop muted playsinline width="40" height="40" aria-label="Jordan avatar">
+                  <source src="/assets/jordan/jordan-avatar-loop.mp4" type="video/mp4">
+                </video>
+                <span class="jordan-status-dot" aria-hidden="true"></span>
               </div>
               <div class="jordan-embed-info">
                 <div class="jordan-embed-name">Jordan</div>

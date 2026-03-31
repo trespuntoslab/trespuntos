@@ -224,3 +224,24 @@ html,body{overflow-x:hidden;max-width:100vw}section{overflow-x:clip;max-width:10
 .line.l1 { left: 25%; transform: rotate(18deg); }
 .line.l2 { right: 25%; transform: rotate(-18deg); }
 
+/* ─── CTA FORM: Service cards (shared across all pages) ─── */
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: .375rem; }
+.service-card {
+  display: flex; align-items: center; gap: .375rem;
+  padding: .3125rem .625rem; border: none; background: rgba(255,255,255,.05);
+  border-radius: 20px; cursor: pointer; transition: all .15s; user-select: none;
+}
+.service-card:hover { background: rgba(255,255,255,.09); }
+.service-card.selected { background: rgba(93,255,191,.1); }
+.service-card-check {
+  width: 12px; height: 12px; min-width: 12px; border-radius: 3px;
+  border: 1px solid rgba(255,255,255,.2);
+  display: flex; align-items: center; justify-content: center;
+  transition: all .15s; flex-shrink: 0;
+}
+.service-card.selected .service-card-check { background: var(--mint); border-color: var(--mint); }
+.service-card-check svg { width: 8px; height: 8px; color: #0e0e0e; opacity: 0; transition: opacity .1s; }
+.service-card.selected .service-card-check svg { opacity: 1; }
+.service-card-label { font-size: .75rem; font-weight: 500; color: var(--text-secondary); line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.service-card.selected .service-card-label { color: var(--text-primary); }
+
