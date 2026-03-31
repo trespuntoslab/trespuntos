@@ -2095,11 +2095,10 @@
   </script>
   <script async src="/assets/jordan/jordan-widget-v5.js"></script>
 
-  <!-- Animated Cursor (Option 2 - stephenscaff) - Fluido con animación en links -->
+  <!-- Animated Cursor eliminado — ocultaba el cursor del OS con cursor:none causando UX degradada -->
   <script defer>
-    // Usar función IIFE para evitar que DOMContentLoaded ya haya disparado
     (function() {
-      if (window.innerWidth > 1024) {
+      if (false) {
         // Crear elementos del cursor
         const outerCursor = document.createElement('div');
         outerCursor.id = 'outer-cursor';
