@@ -105,15 +105,22 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
 
-  <link rel="stylesheet" href="/css/design-system.css" />
-  <link rel="stylesheet" href="/css/components.css" />
-  <link rel="stylesheet" href="/css/service-page.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
 
-  <style>
+  <link rel="stylesheet" href="/css/design-system.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="/css/components.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="/css/service-page.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="/css/design-system.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/service-page.css">
+  </noscript>
+
+  <style>@font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}@font-face{font-family:'Jakarta Fallback';src:local('Arial Black');size-adjust:95%;ascent-override:100%;descent-override:22%;line-gap-override:0%}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--mint:#5dffbf;--mint-rgb:93,255,191;--bg-base:#0e0e0e;--bg-surface:#141414;--text-primary:#f5f5f5;--text-secondary:#b3b3b3;--text-muted:#8a8a8a;--font-heading:'Plus Jakarta Sans','Jakarta Fallback',sans-serif;--font-body:'Inter','Inter Fallback',sans-serif;--radius-md:10px;--radius-lg:14px;--radius-full:9999px}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg-base);color:var(--text-primary);-webkit-font-smoothing:antialiased;overflow-x:hidden}.container-main{max-width:1200px;margin:0 auto;padding:0 1.5rem}#tp-navbar{position:fixed;top:0;left:0;right:0;z-index:1000;min-height:72px}
+
     /* ═══ Page-specific: Desarrollo Web — Animated Visuals ═══ */
 
     /* ── 1. HERO: Code to Platform Animation ── */
@@ -1932,13 +1939,13 @@
   <!-- Footer placeholder -->
   <div id="tp-footer"></div>
 
-  <script src="/js/components.js?v=27"></script>
-  <script>
+  <script src="/js/components.js?v=27" defer></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){
     try{try{TP.navbar('desarrollo-web');}catch(e){}}catch(e){console.warn("TP.navbar:",e);}
     try{try{TP.casos();}catch(e){}}catch(e){console.warn("TP.casos:",e);}
     try{try{TP.footer();}catch(e){}}catch(e){console.warn("TP.footer:",e);}
     try{try{TP.initJS();}catch(e){}}catch(e){console.warn("TP.initJS:",e);}
-  </script>
+  });</script>
   <script src="/js/service-page.js" defer></script>
   <script>
 
