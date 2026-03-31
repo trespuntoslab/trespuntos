@@ -1472,25 +1472,25 @@
             valoración.<br><br>Cuéntanos qué estás construyendo.</p>
           <div class="cierre-reasons">
             <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+              <div class="cierre-reason-icon"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"
                   viewBox="0 0 24 24">
                   <path d="M4.5 12.75l6 6 9-13.5" />
                 </svg></div><span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
             </div>
             <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+              <div class="cierre-reason-icon"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"
                   viewBox="0 0 24 24">
                   <path d="M4.5 12.75l6 6 9-13.5" />
                 </svg></div><span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
             </div>
             <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+              <div class="cierre-reason-icon"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"
                   viewBox="0 0 24 24">
                   <path d="M4.5 12.75l6 6 9-13.5" />
                 </svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
             </div>
             <div class="cierre-reason">
-              <div class="cierre-reason-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5"
+              <div class="cierre-reason-icon"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"
                   viewBox="0 0 24 24">
                   <path d="M4.5 12.75l6 6 9-13.5" />
                 </svg></div><span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
@@ -1509,19 +1509,19 @@
   <div class="form-row">
     <div class="form-field">
       <label class="label label-required" for="f-nombre">Nombre</label>
-      <input id="f-nombre" type="text" class="input" placeholder="¿Cómo te llamas?" autocomplete="name" required />
+      <input id="f-nombre" name="f-nombre" type="text" class="input" placeholder="¿Cómo te llamas?" autocomplete="name" required />
       <span class="field-error" id="err-nombre"></span>
     </div>
     <div class="form-field">
       <label class="label label-required" for="f-email">Email de empresa</label>
-      <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
+      <input id="f-email" name="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
       <span class="field-error" id="err-email"></span>
     </div>
   </div>
   <div class="form-row">
     <div class="form-field">
       <label class="label label-required" for="f-tel">Teléfono</label>
-      <input id="f-tel" type="tel" class="input" placeholder="Tu teléfono" autocomplete="tel" required minlength="9" />
+      <input id="f-tel" name="f-tel" type="tel" class="input" placeholder="Tu teléfono" autocomplete="tel" required minlength="9" />
       <span class="field-error" id="err-tel"></span>
     </div>
     <div class="form-field">
@@ -1538,25 +1538,25 @@
           <div class="custom-select-option" role="option" data-value="mas-20k">+ 20.000 €</div>
         </div>
       </div>
-      <input type="hidden" id="f-presupuesto" name="presupuesto" />
+      <input type="hidden" id="f-presupuesto" name="f-presupuesto" />
       <span class="field-error" id="err-presupuesto"></span>
     </div>
   </div>
   <div class="services-section">
     <span class="services-label" id="services-label">¿En qué te podemos ayudar?</span>
     <div class="services-grid" id="services-grid" role="group" aria-labelledby="services-label">
-      <div class="service-card" data-value="Diseño UX/UI" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Diseño UX/UI</span></div>
-      <div class="service-card" data-value="Desarrollo Web" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Desarrollo Web</span></div>
-      <div class="service-card" data-value="Tienda Online" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Tienda Online</span></div>
-      <div class="service-card" data-value="IA y Automatización" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">IA y Automatización</span></div>
-      <div class="service-card" data-value="Consultoría Digital" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Consultoría Digital</span></div>
-      <div class="service-card" data-value="Design Engineer" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Design Engineer</span></div>
+      <div class="service-card" data-value="Diseño UX/UI" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Diseño UX/UI</span></div>
+      <div class="service-card" data-value="Desarrollo Web" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Desarrollo Web</span></div>
+      <div class="service-card" data-value="Tienda Online" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Tienda Online</span></div>
+      <div class="service-card" data-value="IA y Automatización" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">IA y Automatización</span></div>
+      <div class="service-card" data-value="Consultoría Digital" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Consultoría Digital</span></div>
+      <div class="service-card" data-value="Design Engineer" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Design Engineer</span></div>
     </div>
-    <input type="hidden" id="f-servicios" name="servicio" />
+    <input type="hidden" id="f-servicios" name="f-servicios" />
   </div>
   <div class="form-field" style="margin-top:1.25rem;">
     <label class="label" for="f-mensaje">Cuéntanos qué está pasando</label>
-    <textarea id="f-mensaje" class="input" rows="3" placeholder="Describe brevemente el proyecto. Qué quieres construir, qué problema tienes o qué no está funcionando en tu plataforma actual."></textarea>
+    <textarea id="f-mensaje" name="f-mensaje" class="input" rows="3" placeholder="Describe brevemente el proyecto. Qué quieres construir, qué problema tienes o qué no está funcionando en tu plataforma actual."></textarea>
   </div>
   <input type="hidden" id="f-pagina-origen" name="pagina_origen" />
   <input type="hidden" id="f-utm-source" name="utm_source" />
@@ -1565,7 +1565,7 @@
   <input type="hidden" id="f-referrer" name="referrer" />
   <input type="hidden" id="f-timestamp" name="timestamp" />
   <label class="checkbox-row" id="privacy-row" for="f-privacidad" style="margin-top:1rem;">
-    <input type="checkbox" id="f-privacidad" required />
+    <input type="checkbox" id="f-privacidad" name="f-privacidad" required />
     <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
   </label>
   <span class="field-error" id="err-privacidad"></span>
@@ -1602,7 +1602,6 @@
     try{try{TP.navbar('consultoria-digital');}catch(e){}}catch(e){console.warn("TP.navbar:",e);}
     try{try{TP.casos();}catch(e){}}catch(e){console.warn("TP.casos:",e);}
     try{try{TP.footer();}catch(e){}}catch(e){console.warn("TP.footer:",e);}
-    try{try{TP.ctaForm();}catch(e){}}catch(e){console.warn("TP.ctaForm:",e);}
     try{try{TP.initJS();}catch(e){}}catch(e){console.warn("TP.initJS:",e);}
   </script>
   <script src="/js/service-page.js" defer></script>
