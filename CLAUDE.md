@@ -187,6 +187,14 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
 - **Phone mockup responsive**: `transform:scale()` por viewport (≤1400px: .78, ≤1200px: .68, ≤1024px: .58)
 - **Botones hero mobile**: full-width apilados verticalmente en `<768px`
 
+### Cambios aplicados (2026-04-01)
+- **Contacto v3 → producción**: Nueva página `/contacto/index.html` con chat IA embebido (Jordan), border gradiente animado (conic-gradient 12 stops, 16s), placeholder animado con avatar Jordan + frases rotativas, canvas particles de fondo, custom cursor. Backup en `/contacto/index-v2-backup.html`
+- **Nueva página `/iniciar-proyecto/`**: Página standalone solo con hero + chat Jordan, sin footer ni formulario. Es el destino del CTA "Cuéntanos tu proyecto" en la navbar
+- **CTA navbar → `/iniciar-proyecto/`**: Todos los botones CTA de la navbar, menú móvil, footer y briefing-banners (~42 HTMLs + components.js) apuntan ahora a `/iniciar-proyecto/` en lugar de `/form-v3/form-step1.html`
+- **Privacidad en chats**: Aviso de privacidad añadido al chat embebido de contacto y al widget Jordan v4 (footer del Shadow DOM)
+- **`.htaccess` actualizado**: Eliminado redirect `iniciar-proyecto → form-v3/form-step1.html`. Añadido redirect inverso `form-v3/form-step1.html → /iniciar-proyecto/`
+- **Sitemap actualizado**: Nueva entrada `/iniciar-proyecto/` con priority 0.9
+
 ### Pendientes globales — DEPLOY
 - **🔴 SUBIR ZIP A HOSTINGER**: ZIP en `~/Downloads/trespuntos-web-20260327-deploy.zip`. Subir a `public_html` y extraer. Después purgar caché LiteSpeed en Hostinger (Advanced → Cache Manager → Purge All)
 - **🔴 Verificar formularios post-deploy**: Hard refresh (`Cmd+Shift+R`) en contacto. El formulario CTA debe renderizarse con campos visibles y enviar correctamente a `/form-v3/gracias.html`
@@ -215,7 +223,7 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
 - El campo `presupuesto` necesita mapeo: "15k-20k" → "15K-20K€" (ver `presMap` en nodo "Upsert AT Briefing")
 
 ### Formularios eliminados (no recrear)
-- `/iniciar-proyecto.html` — ELIMINADO. Era un duplicado sin Turnstile. Redirect 301 → `/form-v3/form-step1.html`
+- `/iniciar-proyecto.html` — REEMPLAZADO (2026-04-01). Ahora `/iniciar-proyecto/index.html` es una página real con chat Jordan embebido (no formulario clásico)
 - `/gracias/index.html` — ELIMINADO. Tenía bucle circular. Redirect 301 → `/form-v3/gracias.html`
 
 ## Jordan — Widget Chat IA (v4.0 — 2026-03-27)

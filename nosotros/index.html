@@ -81,6 +81,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono:wght@400&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'" />
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide-core.min.css" />
   <link rel="stylesheet" href="/css/design-system.css" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="/css/components.css" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="/css/service-page.css" media="print" onload="this.media='all'" />
@@ -892,35 +893,15 @@
       line-height: 1.7;
     }
 
-    /* Carousel wrapper */
-    .ai-carousel {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-    }
-
-    .ai-carousel-track {
-      display: flex;
-      gap: 1.25rem;
-      width: max-content;
-      animation: ai-scroll 35s linear infinite;
-    }
-
-    .ai-carousel:hover .ai-carousel-track {
-      animation-play-state: paused;
-    }
-
-    @keyframes ai-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+    /* Splide overrides */
+    .ai-carousel .splide__slide { display: flex; overflow: hidden; }
+    .ai-carousel { cursor: grab; padding: 1rem 0; }
+    .ai-carousel.is-active:active, .ai-carousel .is-dragging { cursor: grabbing; }
 
     /* Card — tall & thin */
     .nosotros-ai-member {
       flex-shrink: 0;
-      width: 210px;
+      width: 100%;
       background: var(--bg-surface);
       border: 1px solid var(--border-strong);
       border-radius: var(--radius-lg);
@@ -1049,27 +1030,6 @@
       font-style: italic;
     }
 
-    /* Mobile: swipeable carousel with wider cards */
-    @media (max-width: 768px) {
-      .ai-carousel {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-        mask-image: none;
-        -webkit-mask-image: none;
-      }
-      .ai-carousel::-webkit-scrollbar { display: none; }
-      .ai-carousel-track {
-        animation: none;
-        gap: 1rem;
-      }
-      .nosotros-ai-member {
-        width: 260px;
-        scroll-snap-align: start;
-      }
-    }
 
     .reveal-delay-4 { transition-delay: .6s; }
     .reveal-delay-5 { transition-delay: .75s; }
@@ -1621,7 +1581,7 @@
         <!-- Cooper -->
         <div class="nosotros-member reveal member-cooper">
           <div class="nosotros-member-avatar">
-            <img src="/img/cooper.webp" alt="Cooper" loading="lazy" />
+            <img src="/img/cooper.webp" alt="Cooper – Chief Happiness Officer en Tres Puntos" loading="lazy" />
           </div>
           <div class="nosotros-member-info">
             <h3 class="nosotros-member-name">Cooper</h3>
@@ -1633,7 +1593,7 @@
         <!-- Jordi -->
         <div class="nosotros-member reveal reveal-delay-1">
           <div class="nosotros-member-avatar">
-            <img src="/nosotros/Jordi.webp" alt="Jordi" loading="lazy" />
+            <img src="/nosotros/Jordi.webp" alt="Jordi Expósito – Digital Project Lead y UX/UI Designer en Tres Puntos" loading="lazy" />
           </div>
           <div class="nosotros-member-info">
             <h3 class="nosotros-member-name">Jordi</h3>
@@ -1645,7 +1605,7 @@
         <!-- Dani -->
         <div class="nosotros-member reveal reveal-delay-2">
           <div class="nosotros-member-avatar">
-            <img src="/nosotros/Dani.webp" alt="Dani" loading="lazy" />
+            <img src="/nosotros/Dani.webp" alt="Dani – Project Manager en Tres Puntos" loading="lazy" />
           </div>
           <div class="nosotros-member-info">
             <h3 class="nosotros-member-name">Dani</h3>
@@ -1657,7 +1617,7 @@
         <!-- Alberto -->
         <div class="nosotros-member reveal reveal-delay-3">
           <div class="nosotros-member-avatar">
-            <img src="/nosotros/Alberto.webp" alt="Alberto" loading="lazy" />
+            <img src="/nosotros/Alberto.webp" alt="Alberto – Full Stack Developer en Tres Puntos" loading="lazy" />
           </div>
           <div class="nosotros-member-info">
             <h3 class="nosotros-member-name">Alberto</h3>
@@ -1669,7 +1629,7 @@
         <!-- Judith -->
         <div class="nosotros-member reveal reveal-delay-4">
           <div class="nosotros-member-avatar">
-            <img src="/nosotros/Judith.webp" alt="Judith" loading="lazy" />
+            <img src="/nosotros/Judith.webp" alt="Judith – UX/UI Designer en Tres Puntos" loading="lazy" />
           </div>
           <div class="nosotros-member-info">
             <h3 class="nosotros-member-name">Judith</h3>
@@ -1681,7 +1641,7 @@
         <!-- Manuel -->
         <div class="nosotros-member reveal reveal-delay-5">
           <div class="nosotros-member-avatar">
-            <img src="/nosotros/Manuel.webp" alt="Manuel" loading="lazy" />
+            <img src="/nosotros/Manuel.webp" alt="Manuel – Especialista en automatizaciones y agentes IA en Tres Puntos" loading="lazy" />
           </div>
           <div class="nosotros-member-info">
             <h3 class="nosotros-member-name">Manuel</h3>
@@ -1701,130 +1661,82 @@
       <h2 class="reveal">Seis especialistas que <span class="text-gradient-standalone">no duermen, no se distraen</span> y no fallan en lo básico.</h2>
       <p class="nosotros-ai-team-intro reveal">Nuestro equipo humano trabaja con <strong style="color:var(--text-primary);font-weight:600">agentes de IA especializados</strong>. Entrenados con nuestra metodología y nuestra forma de trabajar. Tiempo humano para lo que importa: <span class="text-gradient-standalone">pensar, diseñar y decidir contigo</span>.</p>
 
-      <div class="ai-carousel reveal">
-        <div class="ai-carousel-track">
-          <!-- Set 1 -->
-          <div class="nosotros-ai-member">
-            <div class="nosotros-ai-member-avatar">
-              <img src="/nosotros/jordan.webp" alt="JORDAN — Director de operaciones IA" loading="lazy" />
-            </div>
-            <div class="nosotros-ai-member-info">
-              <h3 class="nosotros-ai-member-name">JORDAN</h3>
-              <p class="nosotros-ai-member-role">Director de operaciones</p>
-              <p class="nosotros-ai-member-desc">Coordina al equipo, decide quién ejecuta qué y supervisa cada entrega antes de que llegue al cliente.</p>
-            </div>
-          </div>
-          <div class="nosotros-ai-member">
-            <div class="nosotros-ai-member-avatar">
-              <img src="/nosotros/magic.webp" alt="MAGIC — Research y análisis UX" loading="lazy" />
-            </div>
-            <div class="nosotros-ai-member-info">
-              <h3 class="nosotros-ai-member-name">MAGIC</h3>
-              <p class="nosotros-ai-member-role">Research y análisis UX</p>
-              <p class="nosotros-ai-member-desc">Benchmarks, tendencias y análisis de competencia. Cada decisión de diseño arranca con datos, no con intuiciones.</p>
-            </div>
-          </div>
-          <div class="nosotros-ai-member">
-            <div class="nosotros-ai-member-avatar">
-              <img src="/nosotros/bird.webp" alt="BIRD — Propuestas y documentación" loading="lazy" />
-            </div>
-            <div class="nosotros-ai-member-info">
-              <h3 class="nosotros-ai-member-name">BIRD</h3>
-              <p class="nosotros-ai-member-role">Propuestas y documentación</p>
-              <p class="nosotros-ai-member-desc">Propuestas, briefs y presupuestos. Preciso con las cifras, claro en el alcance, listo para enviar.</p>
-            </div>
-          </div>
-          <div class="nosotros-ai-member">
-            <div class="nosotros-ai-member-avatar">
-              <img src="/nosotros/kobe.webp" alt="KOBE — Contenido y comunicación" loading="lazy" />
-            </div>
-            <div class="nosotros-ai-member-info">
-              <h3 class="nosotros-ai-member-name">KOBE</h3>
-              <p class="nosotros-ai-member-role">Contenido y comunicación</p>
-              <p class="nosotros-ai-member-desc">Blog, LinkedIn, copy web, casos de estudio. Escribe con la voz de Tres Puntos. Si suena a genérico, lo reescribe.</p>
-            </div>
-          </div>
-          <div class="nosotros-ai-member">
-            <div class="nosotros-ai-member-avatar">
-              <img src="/nosotros/curry.webp" alt="CURRY — SEO y posicionamiento" loading="lazy" />
-            </div>
-            <div class="nosotros-ai-member-info">
-              <h3 class="nosotros-ai-member-name">CURRY</h3>
-              <p class="nosotros-ai-member-role">SEO y posicionamiento</p>
-              <p class="nosotros-ai-member-desc">Auditorías técnicas, keywords y estrategia de contenido. Cada recomendación conecta con impacto de negocio.</p>
-            </div>
-          </div>
-          <div class="nosotros-ai-member">
-            <div class="nosotros-ai-member-avatar">
-              <img src="/nosotros/nash.webp" alt="LUKA — Automatización e integración" loading="lazy" />
-            </div>
-            <div class="nosotros-ai-member-info">
-              <h3 class="nosotros-ai-member-name">LUKA</h3>
-              <p class="nosotros-ai-member-role">Automatización e integración</p>
-              <p class="nosotros-ai-member-desc">Workflows, APIs, conexiones entre sistemas. Si un proceso se repite dos veces, Luka lo automatiza.</p>
-            </div>
-          </div>
-          <!-- Set 2 (duplicate for seamless loop) -->
-          <div class="nosotros-ai-member" aria-hidden="true">
-            <div class="nosotros-ai-member-avatar">
-              <img src="/nosotros/jordan.webp" alt="" loading="lazy" />
-            </div>
-            <div class="nosotros-ai-member-info">
-              <h3 class="nosotros-ai-member-name">JORDAN</h3>
-              <p class="nosotros-ai-member-role">Director de operaciones</p>
-              <p class="nosotros-ai-member-desc">Coordina al equipo, decide quién ejecuta qué y supervisa cada entrega antes de que llegue al cliente.</p>
-            </div>
-          </div>
-          <div class="nosotros-ai-member" aria-hidden="true">
-            <div class="nosotros-ai-member-avatar">
-              <img src="/nosotros/magic.webp" alt="" loading="lazy" />
-            </div>
-            <div class="nosotros-ai-member-info">
-              <h3 class="nosotros-ai-member-name">MAGIC</h3>
-              <p class="nosotros-ai-member-role">Research y análisis UX</p>
-              <p class="nosotros-ai-member-desc">Benchmarks, tendencias y análisis de competencia. Cada decisión de diseño arranca con datos, no con intuiciones.</p>
-            </div>
-          </div>
-          <div class="nosotros-ai-member" aria-hidden="true">
-            <div class="nosotros-ai-member-avatar">
-              <img src="/nosotros/bird.webp" alt="" loading="lazy" />
-            </div>
-            <div class="nosotros-ai-member-info">
-              <h3 class="nosotros-ai-member-name">BIRD</h3>
-              <p class="nosotros-ai-member-role">Propuestas y documentación</p>
-              <p class="nosotros-ai-member-desc">Propuestas, briefs y presupuestos. Preciso con las cifras, claro en el alcance, listo para enviar.</p>
-            </div>
-          </div>
-          <div class="nosotros-ai-member" aria-hidden="true">
-            <div class="nosotros-ai-member-avatar">
-              <img src="/nosotros/kobe.webp" alt="" loading="lazy" />
-            </div>
-            <div class="nosotros-ai-member-info">
-              <h3 class="nosotros-ai-member-name">KOBE</h3>
-              <p class="nosotros-ai-member-role">Contenido y comunicación</p>
-              <p class="nosotros-ai-member-desc">Blog, LinkedIn, copy web, casos de estudio. Escribe con la voz de Tres Puntos. Si suena a genérico, lo reescribe.</p>
-            </div>
-          </div>
-          <div class="nosotros-ai-member" aria-hidden="true">
-            <div class="nosotros-ai-member-avatar">
-              <img src="/nosotros/curry.webp" alt="" loading="lazy" />
-            </div>
-            <div class="nosotros-ai-member-info">
-              <h3 class="nosotros-ai-member-name">CURRY</h3>
-              <p class="nosotros-ai-member-role">SEO y posicionamiento</p>
-              <p class="nosotros-ai-member-desc">Auditorías técnicas, keywords y estrategia de contenido. Cada recomendación conecta con impacto de negocio.</p>
-            </div>
-          </div>
-          <div class="nosotros-ai-member" aria-hidden="true">
-            <div class="nosotros-ai-member-avatar">
-              <img src="/nosotros/nash.webp" alt="" loading="lazy" />
-            </div>
-            <div class="nosotros-ai-member-info">
-              <h3 class="nosotros-ai-member-name">LUKA</h3>
-              <p class="nosotros-ai-member-role">Automatización e integración</p>
-              <p class="nosotros-ai-member-desc">Workflows, APIs, conexiones entre sistemas. Si un proceso se repite dos veces, Luka lo automatiza.</p>
-            </div>
-          </div>
+      <div class="ai-carousel splide reveal" aria-label="Agentes IA de Tres Puntos">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <div class="nosotros-ai-member">
+                <div class="nosotros-ai-member-avatar">
+                  <img src="/nosotros/jordan.webp" alt="JORDAN — Director de operaciones IA" loading="lazy" />
+                </div>
+                <div class="nosotros-ai-member-info">
+                  <h3 class="nosotros-ai-member-name">JORDAN</h3>
+                  <p class="nosotros-ai-member-role">Director de operaciones</p>
+                  <p class="nosotros-ai-member-desc">Coordina al equipo, decide quién ejecuta qué y supervisa cada entrega antes de que llegue al cliente.</p>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="nosotros-ai-member">
+                <div class="nosotros-ai-member-avatar">
+                  <img src="/nosotros/magic.webp" alt="MAGIC — Research y análisis UX" loading="lazy" />
+                </div>
+                <div class="nosotros-ai-member-info">
+                  <h3 class="nosotros-ai-member-name">MAGIC</h3>
+                  <p class="nosotros-ai-member-role">Research y análisis UX</p>
+                  <p class="nosotros-ai-member-desc">Benchmarks, tendencias y análisis de competencia. Cada decisión de diseño arranca con datos, no con intuiciones.</p>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="nosotros-ai-member">
+                <div class="nosotros-ai-member-avatar">
+                  <img src="/nosotros/bird.webp" alt="BIRD — Propuestas y documentación" loading="lazy" />
+                </div>
+                <div class="nosotros-ai-member-info">
+                  <h3 class="nosotros-ai-member-name">BIRD</h3>
+                  <p class="nosotros-ai-member-role">Propuestas y documentación</p>
+                  <p class="nosotros-ai-member-desc">Propuestas, briefs y presupuestos. Preciso con las cifras, claro en el alcance, listo para enviar.</p>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="nosotros-ai-member">
+                <div class="nosotros-ai-member-avatar">
+                  <img src="/nosotros/kobe.webp" alt="KOBE — Contenido y comunicación" loading="lazy" />
+                </div>
+                <div class="nosotros-ai-member-info">
+                  <h3 class="nosotros-ai-member-name">KOBE</h3>
+                  <p class="nosotros-ai-member-role">Contenido y comunicación</p>
+                  <p class="nosotros-ai-member-desc">Blog, LinkedIn, copy web, casos de estudio. Escribe con la voz de Tres Puntos. Si suena a genérico, lo reescribe.</p>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="nosotros-ai-member">
+                <div class="nosotros-ai-member-avatar">
+                  <img src="/nosotros/curry.webp" alt="CURRY — SEO y posicionamiento" loading="lazy" />
+                </div>
+                <div class="nosotros-ai-member-info">
+                  <h3 class="nosotros-ai-member-name">CURRY</h3>
+                  <p class="nosotros-ai-member-role">SEO y posicionamiento</p>
+                  <p class="nosotros-ai-member-desc">Auditorías técnicas, keywords y estrategia de contenido. Cada recomendación conecta con impacto de negocio.</p>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="nosotros-ai-member">
+                <div class="nosotros-ai-member-avatar">
+                  <img src="/nosotros/nash.webp" alt="LUKA — Automatización e integración" loading="lazy" />
+                </div>
+                <div class="nosotros-ai-member-info">
+                  <h3 class="nosotros-ai-member-name">LUKA</h3>
+                  <p class="nosotros-ai-member-role">Automatización e integración</p>
+                  <p class="nosotros-ai-member-desc">Workflows, APIs, conexiones entre sistemas. Si un proceso se repite dos veces, Luka lo automatiza.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -2043,7 +1955,7 @@
     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </button>
 </form>
-<a href="/form-v3/form-step1.html" class="briefing-banner" style="margin-top:.75rem;">
+<a href="/iniciar-proyecto/" class="briefing-banner" style="margin-top:.75rem;">
   <div class="briefing-banner-icon">
     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
       <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2105,158 +2017,28 @@
   </script>
   <script async src="/assets/jordan/jordan-widget-v5.js"></script>
 
-  <!-- Animated Cursor eliminado — ocultaba el cursor del OS con cursor:none causando UX degradada -->
-  <script defer>
-    (function() {
-      if (false) {
-        // Crear elementos del cursor
-        const outerCursor = document.createElement('div');
-        outerCursor.id = 'outer-cursor';
-
-        const innerCursor = document.createElement('div');
-        innerCursor.id = 'inner-cursor';
-
-        document.body.appendChild(outerCursor);
-        document.body.appendChild(innerCursor);
-
-        // CSS del cursor
-        const style = document.createElement('style');
-        style.textContent = `
-          #outer-cursor, #inner-cursor {
-            position: fixed;
-            pointer-events: none;
-            border-radius: 50%;
-            mix-blend-mode: lighten;
-            z-index: 99999;
-          }
-
-          #outer-cursor {
-            width: 40px;
-            height: 40px;
-            border: 2px solid #5dffbf;
-            top: -20px;
-            left: -20px;
-            transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-            opacity: 0.6;
-          }
-
-          #inner-cursor {
-            width: 8px;
-            height: 8px;
-            background: #5dffbf;
-            top: -4px;
-            left: -4px;
-            opacity: 1;
-            transition: transform 0.1s ease-out;
-          }
-
-          /* Estados de hover en elementos interactivos */
-          #outer-cursor.active {
-            transform: scale(1.5);
-            border-width: 3px;
-            opacity: 0.8;
-          }
-
-          #inner-cursor.active {
-            transform: scale(0.75);
-          }
-
-          /* Estados de click */
-          #outer-cursor.click {
-            transform: scale(0.8);
-          }
-
-          #inner-cursor.click {
-            transform: scale(1.5);
-          }
-
-          body {
-            cursor: none;
-          }
-
-          a, button, [role="button"], .magnetic-btn, input, textarea, select, .caso-card {
-            cursor: none;
-          }
-
-          @media(max-width: 1024px) {
-            #outer-cursor, #inner-cursor {
-              display: none !important;
-            }
-            body {
-              cursor: auto;
-            }
-            a, button, [role="button"], .magnetic-btn, input, textarea, select, .caso-card {
-              cursor: auto;
-            }
-          }
-        `;
-        document.head.appendChild(style);
-
-        // Variables de posición
-        let mouseX = 0;
-        let mouseY = 0;
-        let outerX = 0;
-        let outerY = 0;
-        const smooth = 0.2; // Suavidad del lerp para outer cursor
-
-        // Track mouse position
-        document.addEventListener('mousemove', (e) => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-        });
-
-        // Animación fluida
-        function animate() {
-          // Outer cursor sigue con lerp suave
-          outerX += (mouseX - outerX) * smooth;
-          outerY += (mouseY - outerY) * smooth;
-
-          outerCursor.style.transform = `translate3d(${outerX}px, ${outerY}px, 0)`;
-
-          // Inner cursor sigue directamente (sin delay)
-          innerCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-
-          requestAnimationFrame(animate);
+  <!-- Splide JS + AI carousel init -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0/dist/js/splide-extension-auto-scroll.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var el = document.querySelector('.ai-carousel.splide');
+      if (!el || typeof Splide === 'undefined') return;
+      new Splide(el, {
+        type: 'loop',
+        drag: 'free',
+        fixedWidth: '210px',
+        gap: '1.25rem',
+        padding: '1.5rem',
+        pagination: false,
+        arrows: false,
+        autoScroll: {
+          speed: 0.6,
+          pauseOnHover: true,
+          pauseOnFocus: true
         }
-        animate();
-
-        // Detectar elementos interactivos
-        const interactiveElements = document.querySelectorAll('a, button, [role="button"], .magnetic-btn, input, textarea, select, .caso-card');
-
-        interactiveElements.forEach(el => {
-          el.addEventListener('mouseenter', () => {
-            outerCursor.classList.add('active');
-            innerCursor.classList.add('active');
-          });
-
-          el.addEventListener('mouseleave', () => {
-            outerCursor.classList.remove('active');
-            innerCursor.classList.remove('active');
-          });
-
-          el.addEventListener('mousedown', () => {
-            outerCursor.classList.add('click');
-            innerCursor.classList.add('click');
-          });
-
-          el.addEventListener('mouseup', () => {
-            outerCursor.classList.remove('click');
-            innerCursor.classList.remove('click');
-          });
-        });
-
-        // Ocultar cursor cuando sale del viewport
-        document.addEventListener('mouseleave', () => {
-          outerCursor.style.opacity = '0';
-          innerCursor.style.opacity = '0';
-        });
-
-        document.addEventListener('mouseenter', () => {
-          outerCursor.style.opacity = '0.6';
-          innerCursor.style.opacity = '1';
-        });
-      }
-    })();
+      }).mount(window.splide.Extensions);
+    });
   </script>
 
 </body>

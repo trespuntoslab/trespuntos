@@ -828,11 +828,20 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     .jordan-footer {
       padding: 6px 16px 8px;
       text-align: center;
-      font-size: 10px;
+      font-size: 9.5px;
       color: #444;
       background: #141414;
+      line-height: 1.4;
       flex-shrink: 0;
     }
+
+    .jordan-footer a {
+      color: #666;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .jordan-footer a:hover { color: #5dffbf; }
 
     /* ===== MOBILE (up to 768px for tablets too) ===== */
     @media (max-width: 768px) {
@@ -1123,7 +1132,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
             </button>
           </div>
         </div>
-        <div class="jordan-footer">Tres Puntos &middot; Barcelona</div>
+        <div class="jordan-footer">Al usar este chat aceptas nuestra <a href="/politica-privacidad" target="_blank">Pol\u00edtica de Privacidad</a>. Tus datos se usan para gestionar tu consulta.</div>
       `;
       this.shadow.appendChild(this.chatEl);
 

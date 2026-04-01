@@ -100,8 +100,8 @@
     RewriteRule ^author/(.*)$ /nosotros/ [R=301,L]
 
     # --- Forms antiguos → nuevos ---
-    RewriteRule ^iniciar-proyecto/?$ /form-v3/form-step1.html [R=301,L]
     RewriteRule ^gracias/?$ /form-v3/gracias.html [R=301,L]
+    RewriteRule ^form-v3/form-step1\.html$ /iniciar-proyecto/ [R=301,L]
 
     # --- Páginas antiguas (producción WordPress) ---
     RewriteRule ^trespuntos/?$ /nosotros/ [R=301,L]

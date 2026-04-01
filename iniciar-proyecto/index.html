@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#5dffbf">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto | Tres Puntos — Agencia UX/UI y Desarrollo Web Barcelona</title>
+  <title>Cuéntanos tu proyecto | Tres Puntos</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1010,128 +1010,19 @@
 
       <!-- Form link -->
       <div class="v3-form-link" id="v3-form-link">
-        <a href="#" id="v3-show-form">¿Prefieres un formulario? <span>Ir al formulario clásico</span></a>
+        <a href="/contacto/">¿Prefieres un formulario? <span>Ir al formulario clásico</span></a>
       </div>
 
     </div>
   </section>
 
-  <!-- ═══ FORM SECTION ═══ -->
-  <section class="v3-form-section" id="v3-form-section">
-    <button type="button" class="v3-form-back" id="v3-form-back">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-      Volver
-    </button>
-    <div style="background:var(--bg-surface);border:1px solid var(--border-base);border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;">
-      <div style="height:2px;width:100%;background:linear-gradient(90deg,var(--mint),#4ea5ff,#c084fc,var(--mint));background-size:200% 100%;animation:shimmer 8s linear infinite;position:absolute;top:0;left:0;border-radius:20px 20px 0 0;"></div>
-      <div style="margin-bottom:1.5rem;">
-        <div style="font-size:1.125rem;font-weight:700;color:var(--mint);margin-bottom:.25rem;font-family:var(--font-heading);">Inicia el proyecto</div>
-        <div style="font-size:.8125rem;color:var(--text-muted);line-height:1.5;">En menos de 48h laborables tendrás una primera respuesta.</div>
-      </div>
-      <form id="v3-form">
-        <input type="text" name="hp_field" id="hp_field" style="position:absolute;left:-9999px;opacity:0;height:0;" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <div class="form-row">
-          <div class="form-field">
-            <label class="label label-required" for="f-nombre">Nombre</label>
-            <input id="f-nombre" name="f-nombre" type="text" class="input" placeholder="¿Cómo te llamas?" autocomplete="name" required />
-            <span class="field-error" id="err-nombre"></span>
-          </div>
-          <div class="form-field">
-            <label class="label label-required" for="f-email">Email de empresa</label>
-            <input id="f-email" name="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
-            <span class="field-error" id="err-email"></span>
-          </div>
-        </div>
-        <div class="form-row" style="margin-top:1rem;">
-          <div class="form-field">
-            <label class="label label-required" for="f-tel">Teléfono</label>
-            <input id="f-tel" name="f-tel" type="tel" class="input" placeholder="Tu teléfono" autocomplete="tel" required minlength="9" />
-            <span class="field-error" id="err-tel"></span>
-          </div>
-          <div class="form-field">
-            <label class="label label-required" for="f-presupuesto">Inversión estimada</label>
-            <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false">
-              <button type="button" class="custom-select-trigger">
-                <span class="custom-select-value">Rango de inversión</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-              <div class="custom-select-panel" role="listbox">
-                <div class="custom-select-option" role="option" data-value="5k-10k">5.000 € - 10.000 €</div>
-                <div class="custom-select-option" role="option" data-value="10k-15k">10.000 € - 15.000 €</div>
-                <div class="custom-select-option" role="option" data-value="15k-20k">15.000 € - 20.000 €</div>
-                <div class="custom-select-option" role="option" data-value="mas-20k">+ 20.000 €</div>
-              </div>
-            </div>
-            <input type="hidden" id="f-presupuesto" name="f-presupuesto" />
-            <span class="field-error" id="err-presupuesto"></span>
-          </div>
-        </div>
-        <div style="margin-top:1rem;">
-          <span style="font-size:.8125rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;display:block;">¿En qué te podemos ayudar?</span>
-          <div class="services-grid" id="services-grid" role="group">
-            <div class="service-card" data-value="Diseño UX/UI" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Diseño UX/UI</span></div>
-            <div class="service-card" data-value="Desarrollo Web" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Desarrollo Web</span></div>
-            <div class="service-card" data-value="Tienda Online" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Tienda Online</span></div>
-            <div class="service-card" data-value="IA y Automatización" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">IA y Automatización</span></div>
-            <div class="service-card" data-value="Consultoría Digital" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Consultoría Digital</span></div>
-            <div class="service-card" data-value="Design Engineer" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Design Engineer</span></div>
-          </div>
-          <input type="hidden" id="f-servicios" name="f-servicios" />
-        </div>
-        <div class="form-field" style="margin-top:1.25rem;">
-          <label class="label" for="f-mensaje">Cuéntanos qué está pasando</label>
-          <textarea id="f-mensaje" name="f-mensaje" class="input" rows="3" placeholder="Describe brevemente el proyecto..."></textarea>
-        </div>
-        <input type="hidden" id="f-pagina-origen" name="pagina_origen" />
-        <input type="hidden" id="f-utm-source" name="utm_source" />
-        <input type="hidden" id="f-utm-medium" name="utm_medium" />
-        <input type="hidden" id="f-utm-campaign" name="utm_campaign" />
-        <input type="hidden" id="f-referrer" name="referrer" />
-        <input type="hidden" id="f-timestamp" name="timestamp" />
-        <label class="checkbox-row" for="f-privacidad">
-          <input type="checkbox" id="f-privacidad" name="f-privacidad" required />
-          <span>He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a>.</span>
-        </label>
-        <span class="field-error" id="err-privacidad"></span>
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAACv1HyITv5ZdYE50" data-theme="dark" data-size="invisible"></div>
-        <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn btn-disabled" style="width:100%;justify-content:center;margin-top:1.25rem;">
-          Enviar mensaje
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ═══ CONTACT INFO ═══ -->
-  <div class="v3-info-bar reveal">
-    <div class="v3-info-item">
-      <div class="v3-info-label">Email</div>
-      <a href="mailto:hola@trespuntoscomunicacion.es" class="v3-info-value">hola@trespuntoscomunicacion.es</a>
-    </div>
-    <div class="v3-info-item">
-      <div class="v3-info-label">Teléfono</div>
-      <a href="tel:+34930117733" class="v3-info-value">+34 930 117 733</a>
-    </div>
-    <div class="v3-info-item">
-      <div class="v3-info-label">Ubicación</div>
-      <span class="v3-info-value">Barcelona — para todo el mundo</span>
-    </div>
-  </div>
-
-  <div id="tp-testimonios"></div>
   </main>
-
-  <div id="tp-footer"></div>
 
   <script src="/js/components.js?v=27" defer></script>
   <script>document.addEventListener('DOMContentLoaded',function(){
-    try{TP.navbar('contacto');}catch(e){console.warn("TP.navbar:",e);}
-    try{TP.testimonios();}catch(e){console.warn("TP.testimonios:",e);}
-    try{TP.footer();}catch(e){console.warn("TP.footer:",e);}
+    try{TP.navbar();}catch(e){console.warn("TP.navbar:",e);}
     try{TP.initJS();}catch(e){console.warn("TP.initJS:",e);}
   });</script>
-  <script src="/js/supabase-forms.js" defer></script>
-  <script src="/js/form-validation.js" defer></script>
 
   <!-- ═══ V3 LOGIC ═══ -->
   <script>
@@ -1148,9 +1039,6 @@
     var inputWrap = document.getElementById('v3-input-wrap');
     var chips = document.querySelectorAll('.v3-chip');
     var formLink = document.getElementById('v3-form-link');
-    var formSection = document.getElementById('v3-form-section');
-    var showFormBtn = document.getElementById('v3-show-form');
-    var formBack = document.getElementById('v3-form-back');
     var hero = document.getElementById('v3-hero');
     var chatWrap = document.getElementById('v3-chat-wrap');
 
@@ -1223,19 +1111,6 @@
         var prompt = this.getAttribute('data-prompt');
         if (prompt) startChat(prompt);
       });
-    });
-
-    showFormBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      hero.style.display = 'none';
-      formSection.classList.add('active');
-      formSection.scrollIntoView({ behavior: 'smooth' });
-    });
-
-    formBack.addEventListener('click', function() {
-      formSection.classList.remove('active');
-      hero.style.display = '';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     function addMessage(role, text) {
