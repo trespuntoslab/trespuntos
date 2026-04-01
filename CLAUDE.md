@@ -195,13 +195,28 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
 - **`.htaccess` actualizado**: Eliminado redirect `iniciar-proyecto → form-v3/form-step1.html`. Añadido redirect inverso `form-v3/form-step1.html → /iniciar-proyecto/`
 - **Sitemap actualizado**: Nueva entrada `/iniciar-proyecto/` con priority 0.9
 
-### Pendientes globales — DEPLOY
-- **🔴 SUBIR ZIP A HOSTINGER**: ZIP en `~/Downloads/trespuntos-web-20260327-deploy.zip`. Subir a `public_html` y extraer. Después purgar caché LiteSpeed en Hostinger (Advanced → Cache Manager → Purge All)
-- **🔴 Verificar formularios post-deploy**: Hard refresh (`Cmd+Shift+R`) en contacto. El formulario CTA debe renderizarse con campos visibles y enviar correctamente a `/form-v3/gracias.html`
+### Cambios aplicados (2026-04-02)
+- **Fix formularios servicios**: `ctaForm()` en `components.js` sobrescribía el form hardcoded de las 27 páginas de servicios, destruyendo las referencias DOM de `form-validation.js` y `supabase-forms.js`. Fix: `if(el.querySelector('form'))return;` — si ya existe un `<form>`, no sobrescribe
+
+### Estado actual del deploy (2026-04-02)
+- **Git push realizado**: Commit `b405bc5` pusheado a `origin/main` (2026-04-02)
+- **Contenido subido**: Contacto v3, /iniciar-proyecto/, CTAs actualizados en ~55 archivos, privacidad en chats, .htaccess, sitemap, fix formularios servicios
+- **🟡 Pendiente en Hostinger**: Hacer **Implementar** en hPanel → Git para que los cambios se reflejen en producción
+- **🟡 Verificar post-deploy**:
+  - `/contacto/` → Debe mostrar el chat Jordan embebido con border gradiente animado
+  - `/iniciar-proyecto/` → Debe cargar la página standalone con hero + chat Jordan
+  - Navbar CTA "Cuéntanos tu proyecto" → Debe ir a `/iniciar-proyecto/`
+  - `/form-v3/form-step1.html` → Debe redirigir 301 a `/iniciar-proyecto/`
+  - Jordan widget bubble → Aviso de privacidad visible en el footer
+- **🟡 Purgar caché**: Después de implementar, purgar LiteSpeed en Hostinger (Advanced → Cache Manager → Purge All)
 
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
-- ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27): Form inline con checkboxes limpios, redirect a `/form-v3/gracias.html`, hero sin `<br/>` forzado
+- ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
+- ✅ ~~Contacto v3 con chat Jordan embebido~~ COMPLETADO (2026-04-01)
+- ✅ ~~Página /iniciar-proyecto/ standalone~~ COMPLETADO (2026-04-01)
+- ✅ ~~CTAs navbar/footer → /iniciar-proyecto/~~ COMPLETADO (2026-04-01)
+- ✅ ~~Privacidad en chats (contacto + Jordan widget)~~ COMPLETADO (2026-04-01)
 - Replicar formulario inline de contacto en el resto de páginas (home, casos, servicios) — actualmente dependen de `TP.ctaForm()` que puede fallar
 - Validar token Turnstile server-side en n8n (workflow leads-trespuntos)
 - Añadir puntos verdes animados (como contacto) en secciones statement de TODOS los casos
