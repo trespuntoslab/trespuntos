@@ -359,31 +359,22 @@ window.JordanConfig = {
 - **Flujo widget**: Muestra slots como botones → usuario clicka → abre `scheduling_url?name=X&email=Y` en nueva pestaña → usuario solo confirma (1 click)
 - **NUNCA** ofrecer Calendly si presupuesto < 5.000€ o score < 7
 
-### System prompt v9.4 (actualizado 2026-03-29)
-- **4 fases**: Entrada (tipo proyecto + nombre) → Detección perfil/rol → Discovery profundo (adaptado por rol) → Cierre (resumen + confirmación + Calendly)
-- **Detección de perfil** (Fase 2): CEO/Dueño, Marketing, Técnico — adapta preguntas según rol
-- **Preguntas adaptadas por rol**: CEO → visión y presupuesto. Marketing → leads, tráfico, conversión. Técnico → stack, integraciones, limitaciones
-- **Árboles de preguntas por tipo**: Web corporativa (Nivel 1 obligatorio + Nivel 2 si hay tiempo), E-commerce (B2C/B2B + productos + ERP + pasarela + envíos + gestión catálogo), Automatización/IA, Consultoría
-- **9 casos de éxito**: ExitBCN, Gibobs, Diferent Idea, TSH, Penguin Aula, Nomade Vans, Nomade Rent, TSP, Zim Connections — mencionar máximo 1 por conversación cuando encaje
-- **Scoring 0-10**: Base 3 + presupuesto(+1/+2) + urgencia(+2) + decisor(+2) + complejo(+1) + discovery(+1) + rica(+1). TOPE: Si Nivel 1 no cubierto, score máximo = 5. Caliente ≥7 → OBLIGATORIO Calendly | Tibio 4-6 → "te escribimos en 48h" | Frío <4 → cierre educado
+### System prompt v10.0 (actualizado 2026-04-03)
+- **7 fases**: Escuchar proyecto → Nombre y email → Identificar perfil → Propuesta de valor → Discovery por tipo → Presupuesto y urgencia → Scoring + Cierre
+- **Sistema dos velocidades**: Velocidad 1 (cualificación rápida) vs Velocidad 2 (discovery funcional, activado con 2+ señales: ERP/CRM, B2B, portal privado, +10K, urgencia, contexto técnico, IA/automatización)
+- **Equipo actualizado**: Jordi (Digital Project Lead + UX/UI Senior), Dani (PM), Alberto (Full Stack Dev), Cooper (Chief Happiness Officer). Agentes: Jordan, Magic, Kobe, Bird, Curry, Luka, Rodman
+- **Regla de engagement**: Entre preguntas aportar valor, mencionar equipo (Luka → n8n, Bird → propuestas, Curry → SEO), casos de éxito naturales (máx 1/conversación)
+- **White-label**: Nuevo tipo de proyecto con preguntas específicas
+- **Filtro < 6.000€**: Cierre educado sin negociar alcance: "nuestros proyectos arrancan a partir de 6.000€"
+- **Nunca inventar slots Calendly**: Si no consultó API, usar siempre fallback [CALENDLY_URL]
+- **20 puntos NUNCA** (antes 13): nuevos items para slots inventados, negociar < 6K, improvisar bienvenida, link estático Calendly, preguntar cookies/legales, guión rígido
+- **Scoring**: Base 3. Discovery completo(+2), parcial(+1). Rechazo(-1), <5K(-2). TOPE: Nivel 1 no cubierto = score MAX 5
+- **Bienvenida fija**: "Hola. Soy Jordan. Sin formularios ni rollos. ¿Qué proyecto tienes en mente?" — nunca improvisar
+- **Email y teléfono OBLIGATORIOS** antes de resumen, Calendly o cierre (v9.5)
 - **Modelo**: Claude Haiku 4.5 — nunca Sonnet, nunca Opus
-- **Regla maestra**: Entender negocio para preguntar mejor sobre el PROYECTO. Máx 2 preguntas de negocio, luego pivotar
-- **Regla anti-formulario** (v6.2): Nunca 3+ preguntas seguidas sin observación de valor. "Perfecto"/"Entendido" NO cuentan
-- **Mensajes de progreso**: "Son 4-5 preguntas...", "Ya tenemos lo más importante...", "Última cosa..." — dentro de respuestas, no separados
-- **Calendly en Fase 4**: Score ≥7 → OBLIGATORIO ofrecer slots reales de Calendly antes de cerrar (widget llama a WF3 para slots reales)
-- **Calendly proactivo**: Si presupuesto >10K + decisor, ofrecer reunión sin esperar al scoring final
-- **Reuniones = Jordi**: Siempre es Jordi quien hace las reuniones. Nunca derivar a otro miembro del equipo
-- **Propuesta discovery**: Antes del discovery, proponer: "si tienes 3 minutos recojo todo el contexto. Documento funcional y presupuesto en 48h"
-- **Presupuesto contextualizado**: No preguntar en frío. Justificar POR QUÉ se necesita saber, conectando con lo que el usuario recibirá
-- **Nombre antes de presupuesto**: Si llegas a presupuesto sin nombre, PARA y pídelo primero
-- **"No entendí" prohibido**: Reformular siempre con contexto
-- **Orden obligatorio**: Preguntas de proyecto ANTES de presupuesto/urgencia/decisor
-- **v9.3 (análisis Carlos B2B)**: Refuerzo "Perfecto" con ejemplo negativo, presupuesto "encaja" prohibido con ejemplos, protocolo perfil obligatorio aunque usuario parezca técnico
-- **v9.4 (Calendly forzado)**: Calendly movido dentro de Fase 4 como paso obligatorio del cierre. Trigger explícito en scoring
-- **Documento maestro**: `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v9.3-master.md` — fuente única de verdad expandida
-- **Proceso de actualización**: Jordi crea `instrucciones-claude-code-v9.X.md` con cambios quirúrgicos → Claude Code aplica al widget → sincroniza → documenta en CLAUDE.md
-- **Límite prompt**: 145 líneas máximo. Si se añaden líneas, comprimir otras para no exceder
-- **Source**: Mejoras incorporadas de `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v6.2.md`
+- **Documento maestro**: `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v10.0-master.md` — fuente única de verdad
+- **Proceso de actualización**: Jordi actualiza `system-prompt.md` en carpeta Jordan → Claude Code comprime e incorpora al widget → sincroniza → documenta en CLAUDE.md
+- **Límite prompt compacto**: ~148 líneas
 
 ### Reglas críticas
 - **NUNCA** exponer la API key de Anthropic en el frontend — va server-side en n8n
@@ -447,11 +438,11 @@ window.JordanConfig = {
 - **Segundo event type**: `tres-puntos` (60 min, Google Meet) — no usar para Jordan
 
 ### Sincronización de archivos
-- Widget v4: `/assets/jordan/jordan-widget-v4.js` ↔ `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/jordan-widget-v4.js` — **SINCRONIZADOS** (2026-03-29)
-- System prompt compacto (v9.4): Embebido en widget (145 líneas, límite máximo)
-- System prompt maestro (v9.3): `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v9.3-master.md` — fuente única expandida
-- Instrucciones v9.3: `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/instrucciones-claude-code-v9.3.md` (10 cambios)
-- Instrucciones v9.4: `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/instrucciones-claude-code-v9.4.md` (2 cambios)
+- Widget v4: `/assets/jordan/jordan-widget-v4.js` — prompt v10.0 incorporado (2026-04-03)
+- Contacto: `/contacto/index.html` — prompt v10.0 embebido (2026-04-03)
+- Iniciar proyecto: `/iniciar-proyecto/index.html` — prompt v10.0 embebido (2026-04-03)
+- System prompt maestro (v10.0): `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v10.0-master.md` — fuente única expandida
+- System prompt maestro anterior (v9.3): `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v9.3-master.md` — referencia histórica
 - System prompt completo (v6.2): `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v6.2.md` (~680 líneas, referencia histórica)
 
 ### Historial de versiones del prompt
@@ -460,6 +451,8 @@ window.JordanConfig = {
 | v9.2 | 2026-03-27 | Incorporación v6.2 al widget v4 | Primera versión completa en producción |
 | v9.3 | 2026-03-27 | Análisis Carlos (B2B TechVentures) | 10 cambios: "Perfecto" prohibido, presupuesto "encaja" prohibido, perfil obligatorio, reuniones=Jordi, propuesta discovery, e-commerce ampliado, nombre antes presupuesto, presupuesto contextualizado, scoring tope, Calendly slots |
 | v9.4 | 2026-03-29 | Problema Calendly no se activa | 2 cambios: Calendly dentro de Fase 4 como paso obligatorio, trigger explícito en scoring |
+| v9.5 | 2026-03-30 | Contacto sin email/teléfono | 3 cambios: email+tel obligatorios antes de cierre/Calendly, verificación en Fase 4, nuevo punto NUNCA |
+| v10.0 | 2026-04-03 | Reescritura completa master | 7 fases, dos velocidades, equipo actualizado, engagement rules, white-label, filtro <6K€, 20 NUNCA, no inventar slots Calendly |
 
 ### Test end-to-end v9.4 (2026-03-29)
 - ✅ **Proxy Claude**: Haiku responde con prompt v9.4 completo (145 líneas)
