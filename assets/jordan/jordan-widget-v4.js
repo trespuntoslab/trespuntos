@@ -26,6 +26,7 @@
     avatar: '/assets/jordan/jordan-avatar.png',
     calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
     position: 'right',
+    hideBubble: false,
     rules: [
       { pattern: '/blog/*', show: false },
       { pattern: '/checkout/*', show: false },
@@ -1044,6 +1045,11 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       this.teaserTextEl = this.bubbleEl.querySelector('.jordan-teaser-text');
       this.teaserCloseBtn = this.bubbleEl.querySelector('.jordan-teaser-close');
       this.unreadDot = this.bubbleEl.querySelector('.jordan-unread');
+
+      // Hide bubble when used as embedded chat (contacto page)
+      if (CONFIG.hideBubble) {
+        this.bubbleEl.style.display = 'none';
+      }
     }
 
     _buildChat() {
@@ -1209,17 +1215,36 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       this.chatEl.classList.add('closing');
       this.chatEl.classList.remove('open');
 
-      // Show bubble after close animation finishes
+      // Show bubble after close animation finishes (skip if bubble hidden)
       setTimeout(() => {
         this.chatEl.classList.remove('closing');
-        this.bubbleEl.classList.remove('chat-open');
+        if (!CONFIG.hideBubble) {
+          this.bubbleEl.classList.remove('chat-open');
+        }
       }, 250);
 
       // Restore body scroll
       document.body.style.overflow = this._prevBodyOverflow || '';
       document.documentElement.style.overflow = this._prevHtmlOverflow || '';
 
+      // Notify external code (contacto page hero restore)
+      if (CONFIG.hideBubble && CONFIG.onClose) {
+        CONFIG.onClose();
+      }
+
       this._sendLeadWebhook();
+    }
+
+    // Public: open with an initial user message (used by contacto hero)
+    openWithMessage(text) {
+      this.open();
+      if (text && text.trim()) {
+        // Wait for welcome message to render, then send user message
+        setTimeout(() => {
+          this.textarea.value = text.trim();
+          this._sendMessage();
+        }, 600);
+      }
     }
 
     _toggleExpand() {
@@ -1278,6 +1303,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     }
 
     _scheduleTeaser() {
+      if (CONFIG.hideBubble) return;
       if (!activeRule.proactive || this.teaserDismissed) return;
       if (this.messages.length > 0) return; // Returning user with history
 
@@ -2037,7 +2063,14 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
   // ========== BOOT ==========
 
   function boot() {
-    new JordanWidget();
+    const widget = new JordanWidget();
+
+    // Expose public API for external integration (contacto, iniciar-proyecto)
+    window.JordanAPI = {
+      open: (msg) => { if (msg) widget.openWithMessage(msg); else widget.open(); },
+      close: () => widget.close(),
+      isOpen: () => widget.isOpen
+    };
   }
 
   if (document.readyState === 'loading') {
