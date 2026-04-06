@@ -27,6 +27,7 @@
     calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
     position: 'right',
     hideBubble: false,
+    embedTarget: null,  // CSS selector — renders chat inside element instead of floating
     rules: [
       { pattern: '/blog/*', show: false },
       { pattern: '/checkout/*', show: false },
@@ -259,7 +260,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
   }
 
   const activeRule = getActiveRule();
-  if (!activeRule || activeRule.show === false) return;
+  if (!CONFIG.embedTarget && (!activeRule || activeRule.show === false)) return;
 
   // ========== WIDGET CSS ==========
 
@@ -902,6 +903,55 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       pointer-events: none;
       transform: scale(0.5);
     }
+
+    /* ===== EMBED MODE ===== */
+    .jordan-chat.jordan-embed {
+      position: relative !important;
+      width: 100% !important;
+      height: auto !important;
+      bottom: auto !important;
+      left: auto !important;
+      right: auto !important;
+      top: auto !important;
+      border-radius: 20px !important;
+      border: none !important;
+      box-shadow: none !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      transform: none !important;
+      transition: none !important;
+      overflow: hidden;
+    }
+
+    .jordan-chat.jordan-embed .jordan-messages {
+      min-height: 300px;
+      max-height: calc(100vh - 300px);
+      max-height: calc(100dvh - 300px);
+    }
+
+    .jordan-chat.jordan-embed .jordan-close-btn { display: none; }
+
+    @media (max-width: 768px) {
+      .jordan-chat.jordan-embed {
+        position: relative !important;
+        height: auto !important;
+        border-radius: 14px !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+      .jordan-chat.jordan-embed .jordan-messages {
+        min-height: 200px;
+        max-height: 55vh;
+      }
+      .jordan-chat.jordan-embed .jordan-expand-btn { display: none !important; }
+    }
+
+    @media (min-width: 1440px) {
+      .jordan-chat.jordan-embed .jordan-messages {
+        min-height: 400px;
+        max-height: calc(100vh - 280px);
+      }
+    }
   `;
 
   // ========== WIDGET CLASS ==========
@@ -924,6 +974,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       this._pageOrigin = window.location.pathname;
       this._leadSent = false;
       this._isClosing = false;
+      this._isEmbedded = !!CONFIG.embedTarget;
       this._init();
     }
 
@@ -1003,6 +1054,14 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     // -- Init --
 
     _init() {
+      if (this._isEmbedded) {
+        this._initEmbed();
+      } else {
+        this._initFloating();
+      }
+    }
+
+    _initFloating() {
       this.host = document.createElement('div');
       this.host.id = 'jordan-widget-v4';
       this.shadow = this.host.attachShadow({ mode: 'closed' });
@@ -1018,6 +1077,32 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
 
       this._bindEvents();
       this._scheduleTeaser();
+    }
+
+    _initEmbed() {
+      const target = document.querySelector(CONFIG.embedTarget);
+      if (!target) { console.warn('[Jordan] embedTarget not found:', CONFIG.embedTarget); return; }
+
+      this.host = target;
+      this.shadow = target.attachShadow({ mode: 'closed' });
+
+      const style = document.createElement('style');
+      style.textContent = WIDGET_CSS;
+      this.shadow.appendChild(style);
+
+      // No bubble in embed mode
+      this.bubbleEl = null;
+      this.bubbleBtn = null;
+      this.teaserEl = null;
+      this.teaserTextEl = null;
+      this.teaserCloseBtn = null;
+      this.unreadDot = null;
+
+      this._buildChat();
+      this.chatEl.classList.add('jordan-embed');
+
+      this._bindEvents();
+      // No teaser in embed mode
     }
 
     _buildBubble() {
@@ -1112,16 +1197,20 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     // -- Events --
 
     _bindEvents() {
-      this.bubbleBtn.addEventListener('click', () => this.open());
+      if (this.bubbleBtn) {
+        this.bubbleBtn.addEventListener('click', () => this.open());
+      }
 
-      this.teaserEl.addEventListener('click', (e) => {
-        if (e.target === this.teaserCloseBtn || this.teaserCloseBtn.contains(e.target)) {
-          this._hideTeaser();
-          this.teaserDismissed = true;
-        } else {
-          this.open();
-        }
-      });
+      if (this.teaserEl) {
+        this.teaserEl.addEventListener('click', (e) => {
+          if (e.target === this.teaserCloseBtn || this.teaserCloseBtn.contains(e.target)) {
+            this._hideTeaser();
+            this.teaserDismissed = true;
+          } else {
+            this.open();
+          }
+        });
+      }
 
       this.closeBtn.addEventListener('click', () => this.close());
       this.expandBtn.addEventListener('click', () => this._toggleExpand());
@@ -1179,19 +1268,22 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
 
     open() {
       this.isOpen = true;
-      this._hideTeaser();
-      this.teaserDismissed = true;
-      this.unreadDot.classList.add('hidden');
+
+      if (!this._isEmbedded) {
+        this._hideTeaser();
+        this.teaserDismissed = true;
+        if (this.unreadDot) this.unreadDot.classList.add('hidden');
+        if (this.bubbleEl) this.bubbleEl.classList.add('chat-open');
+
+        // Body scroll lock — overflow only, NO position:fixed (breaks iOS keyboard)
+        this._prevBodyOverflow = document.body.style.overflow;
+        this._prevHtmlOverflow = document.documentElement.style.overflow;
+        this._scrollY = window.scrollY;
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+      }
 
       this.chatEl.classList.add('open');
-      this.bubbleEl.classList.add('chat-open');
-
-      // Body scroll lock — overflow only, NO position:fixed (breaks iOS keyboard)
-      this._prevBodyOverflow = document.body.style.overflow;
-      this._prevHtmlOverflow = document.documentElement.style.overflow;
-      this._scrollY = window.scrollY;
-      document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
 
       // Welcome message on first open
       if (this.messages.length === 0) {
@@ -1211,6 +1303,13 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     close() {
       this.isOpen = false;
 
+      if (this._isEmbedded) {
+        // Embed mode: notify page, send lead
+        if (CONFIG.onClose) CONFIG.onClose();
+        this._sendLeadWebhook();
+        return;
+      }
+
       // Animate close
       this.chatEl.classList.add('closing');
       this.chatEl.classList.remove('open');
@@ -1218,7 +1317,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       // Show bubble after close animation finishes (skip if bubble hidden)
       setTimeout(() => {
         this.chatEl.classList.remove('closing');
-        if (!CONFIG.hideBubble) {
+        if (!CONFIG.hideBubble && this.bubbleEl) {
           this.bubbleEl.classList.remove('chat-open');
         }
       }, 250);
@@ -1256,7 +1355,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     // -- Mobile Keyboard Handling --
 
     _setupMobileKeyboard() {
-      if (window.innerWidth > 768) return;
+      if (window.innerWidth > 768 || this._isEmbedded) return;
 
       // Prevent iOS/Chrome auto-zoom on input focus by temporarily
       // adding maximum-scale=1 to the page viewport meta tag
@@ -1303,7 +1402,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     }
 
     _scheduleTeaser() {
-      if (CONFIG.hideBubble) return;
+      if (this._isEmbedded || CONFIG.hideBubble) return;
       if (!activeRule.proactive || this.teaserDismissed) return;
       if (this.messages.length > 0) return; // Returning user with history
 
@@ -1341,6 +1440,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     }
 
     _hideTeaser() {
+      if (!this.teaserEl) return;
       this.teaserEl.classList.add('hidden');
       if (this.teaserTimer) { clearTimeout(this.teaserTimer); this.teaserTimer = null; }
       if (this.teaserRotateTimer) { clearTimeout(this.teaserRotateTimer); this.teaserRotateTimer = null; }
