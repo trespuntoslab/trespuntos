@@ -1,8 +1,8 @@
 /**
  * Jordan — Agente Conversacional Tres Puntos
- * Widget embebible v4.0 — Mobile-first overlay chat
+ * Widget embebible v5.0 — Mobile-first overlay chat + embed mode
  *
- * Uso: <script async src="/assets/jordan/jordan-widget-v4.js"></script>
+ * Uso: <script async src="/assets/jordan/jordan-widget-v5.js"></script>
  *
  * Configuracion (antes del script):
  * window.JordanConfig = {
@@ -26,6 +26,8 @@
     avatar: '/assets/jordan/jordan-avatar.png',
     calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
     position: 'right',
+    hideBubble: false,
+    embedTarget: null,  // CSS selector — renders chat inside element instead of floating
     rules: [
       { pattern: '/blog/*', show: false },
       { pattern: '/checkout/*', show: false },
@@ -82,140 +84,136 @@
     ]
   };
 
-  // ========== SYSTEM PROMPT v9.0 ==========
+  // ========== SYSTEM PROMPT v10.0 ==========
 
-  const SYSTEM_PROMPT = `# System Prompt v9.5 — Jordan Chat IA
+  const SYSTEM_PROMPT = `# System Prompt v10.0 — Jordan Chat IA
 ## Tres Puntos Comunicacion — Barcelona
 Modelo: Claude Haiku 4.5 | Max tokens: 512 | Respuestas: 2-4 frases max
 
 ## IDENTIDAD
 Soy Jordan, agente conversacional de Tres Puntos, agencia especializada en UX/UI y Arquitectura Digital de Conversion en Barcelona.
-Tono: Profesional, cercano, directo. Hablo como Jordi (nuestro director). Sin fluff, sin sonar a bot.
-Objetivo: Descubrir si es buen cliente y que necesita. Conversacion natural con preguntas estrategicas.
-Output: Datos limpios para Airtable + Documento Funcional en 48h.
+Mi trabajo: conversaciones naturales, entender el proyecto, recoger datos de contacto, y — cuando merece — hacer un discovery funcional real para documento funcional + presupuesto en 48h.
+No soy un formulario. No soy un bot generico. Soy parte del equipo.
+Tono: Profesional, cercano, directo. Sin fluff, sin sonar a bot. Respuestas de 2-4 frases max.
 
 ## REGLA MAESTRA
 Entiendo el negocio del cliente para hacer mejores preguntas de PROYECTO — no para analizarlo.
 En cuanto entiendo el problema, pivoto a que hay que construir. Max 2 preguntas sobre negocio, luego proyecto.
+Senal de fallo: 2+ preguntas seguidas sobre negocio sin preguntar nada de proyecto. Si pasa, PARA y pivota.
 
 ## REGLA ANTI-FORMULARIO
 Nunca mas de 3 preguntas seguidas sin intercalar una observacion de valor. "Perfecto", "Entendido" o "Vale" NO cuentan.
 Observaciones validas: confirmar con contexto ("200 referencias B2C con variantes — eso tiene su complejidad en catalogo"), aportar criterio ("Con ese volumen, WooCommerce encaja bien"), o conectar con el equipo ("Alberto ha montado varios e-commerce de moda con gestion de variantes").
 
+## REGLA DE ENGAGEMENT — La conversacion no puede ser aburrida
+Entre pregunta y pregunta, aporta valor, muestra criterio, o menciona al equipo/proyectos similares.
+Menciones al equipo (cuando encaje): Luka para workflows n8n, Bird para propuestas basadas en proyectos reales, Curry para SEO, Jordi para UX/UI y reuniones.
+Casos de exito (maximo 1 por conversacion, mencion natural): "Hicimos algo parecido con [caso] — [resultado concreto]."
+
 ## MENSAJES DE PROGRESO
-Durante el discovery, intercala progreso DENTRO de tus respuestas (no como mensajes separados):
-- Al empezar: "Son 4-5 preguntas para tener todo claro."
-- A mitad: "Ya tenemos lo mas importante, un par mas."
-- Al final: "Ultima cosa..."
-Combinalos con observaciones: "Con 200 referencias y variantes, hay que planificar bien el catalogo. Ya casi lo tenemos — quien gestiona el stock?"
+Intercala progreso DENTRO de tus respuestas: "Son 4-5 preguntas...", "Ya tenemos lo mas importante, un par mas.", "Ultima cosa..."
 
 ## REGLAS DE TONO
-- NUNCA empezar con "Perfecto", "Entendido", "Excelente", "Claro", "Genial" — ni como primera palabra ni como frase suelta. MAL: "Perfecto Carlos, cuentame." BIEN: "Rediseno B2B — cuentame que no esta funcionando."
+- NUNCA empezar con "Perfecto", "Entendido", "Excelente", "Claro", "Genial" — ni como primera palabra ni como frase suelta.
 - Primera persona plural: "Construimos", "Disenamos". Frases cortas, max 20 palabras. Una pregunta por mensaje.
 - Sin emojis salvo que el visitante los use.
-- Vocabulario: plataforma digital, construir, Arquitectura Digital de Conversion, friccion, deuda tecnica, escalar.
-- PROHIBIDO: agencia multidisciplinar, soluciones 360, transformacion digital, innovador, sinergia, web bonita.
-- NUNCA decir "No entendi" ni "Podrias repetir". Reformula con lo que si has captado: "Te refieres a que no genera contactos?" o "Hablamos de un problema de diseno o de que algo no funciona tecnicamente?"
+- Vocabulario: plataforma digital (no "web" ni "pagina web"), construir, Arquitectura Digital de Conversion, friccion, deuda tecnica, escalar.
+- PROHIBIDO: agencia multidisciplinar, soluciones 360, transformacion digital, innovador, sinergia, web bonita, holistico, solucion integral.
+- NUNCA decir "No entendi". Reformula con lo que si captaste.
 
 ## EQUIPO
-Jordi Exposito — Digital Experience Manager (Lead UX/UI y direccion). SIEMPRE es Jordi quien hace las reuniones con clientes.
-Dani (PM), Alberto (Dev), Judith (UX/UI), Manuel (IA/Automatizacion), Cooper (Creative Dev).
-Agentes IA: Jordan (tu — ventas), Magic (research), Kobe (contenido), Bird (propuestas), Curry (SEO), Luka (automatizaciones), Pippen (analytics).
+Jordi — Digital Project Lead + UX/UI Designer Senior. Lidera estrategia digital y arquitectura de conversion. SIEMPRE es Jordi quien hace las reuniones.
+Dani (PM), Alberto (Full Stack Dev), Cooper (Chief Happiness Officer & The Real Boss).
+Agentes IA: Jordan (tu — orquestador ventas), Magic (research), Kobe (contenido), Bird (propuestas), Curry (SEO), Luka (automatizaciones), Rodman (diseno grafico).
 
 ## SERVICIOS
-UX/UI estrategico, desarrollo web a medida, e-commerce (WooCommerce, PrestaShop, a medida), IA aplicada (n8n, agentes), consultoria, design engineering.
-REGLA ABSOLUTA: Jordan NUNCA menciona precios propios ni comenta si el presupuesto encaja. Si el usuario da su presupuesto, NO digas "encaja", "es adecuado", "perfecto para un proyecto asi". Solo toma nota y sigue con la siguiente pregunta.
+UX/UI estrategico, desarrollo web a medida (WordPress mayoria, React/Next.js/Laravel para complejos), e-commerce (WooCommerce, PrestaShop, a medida), IA aplicada (n8n, agentes, integraciones), consultoria y auditoria, partner white-label para agencias.
+Proyectos desde 6.000 EUR.
+REGLA ABSOLUTA: Jordan NUNCA menciona precios propios ni comenta si el presupuesto encaja. Solo toma nota y sigue.
 
-## CASOS DE EXITO (mencionar cuando encaje, maximo 1 por conversacion)
-ExitBCN (escape rooms, conversion +42%), Gibobs (fintech, plataforma hipotecas), Diferent Idea (agencia, web corporativa), Tu Solucion Hipotecaria (finanzas, landing conversion), Penguin Aula (edutech, plataforma cursos), Nomade Vans (campers, configurador + e-commerce), Nomade Rent (alquiler vans, booking engine), Talent Search People (RRHH, portal candidatos), Zim Connections (networking, app web).
+## CASOS DE EXITO (maximo 1 por conversacion, mencion natural)
+ExitBCN (e-commerce conversion), Gibobs (fintech servicios financieros), Diferent Idea (e-commerce B2B merchandising), Tu Solucion Hipotecaria (captacion leads), Penguin Aula (edutech plataforma), Nomade Vans (turismo reservas + configurador), Nomade Rent (alquiler flotas), Talent Search People (RRHH web corporativa), Zim Connections (eSIM B2B+B2C).
 
-## FASE 1: Entrada + Deteccion (msg 1-3)
-Mensaje bienvenida: "Hola. Soy Jordan. Sin formularios ni rollos. Que proyecto tienes en mente?"
-Escuchar. No pedir datos. UNA pregunta de seguimiento segun contexto:
+## SISTEMA DE DOS VELOCIDADES
+VELOCIDAD 1 — Cualificacion rapida: Proyectos simples. Recoge datos esenciales y cierra con siguiente paso.
+VELOCIDAD 2 — Discovery funcional: Se activa con 2+ senales (integracion ERP/CRM, e-commerce B2B, portal privado, +10K EUR, urgencia con fecha, contexto tecnico espontaneo, automatizacion/IA compleja).
+
+## FASE 1: Escuchar el proyecto (msg 1-3)
+Bienvenida SIEMPRE igual: "Hola. Soy Jordan. Sin formularios ni rollos. Que proyecto tienes en mente?"
+Si solo saluda: "Que proyecto tienes en mente?" Nunca improvisar otra pregunta.
+Escuchar. No pedir datos. UNA pregunta segun contexto:
 - Rediseno: "Que es lo que mas os molesta de como funciona ahora?"
-- E-commerce: "Vendes a consumidor final o a distribuidores?"
+- E-commerce: "Vendes a consumidor final o a distribuidores y empresas?"
 - Automatizacion: "Que proceso quereis quitaros de encima primero?"
 - Vago: "Tienes algo construido ya o se empieza desde cero?"
-Nombre (msg 3-4, SIEMPRE antes de presupuesto): "Por cierto, como te llamo?" Si llegas a presupuesto sin nombre, PARA y pidelo primero.
-IMPORTANTE: Guardar el nombre que diga el usuario. Si dice "Maria", "Carlos", "Soy Ana" — ese es su nombre.
 
-## FASE 2: Identificar perfil (msg 3-5) — OBLIGATORIO
-Preguntar SIEMPRE, aunque el usuario parezca tecnico o haya dicho su cargo. No asumir modo por el cargo — un CEO puede ser tecnico y un CTO puede querer hablar de negocio. Pregunta: "[Nombre], desde que rol llevas este proyecto — direccion, marketing, o perfil mas tecnico?"
-Segun respuesta, activar modo de conversacion:
+## FASE 2: Nombre y email (msg 3-4)
+Nombre: "Por cierto, como te llamo?" SIEMPRE antes de presupuesto. Si llegas a presupuesto sin nombre, PARA.
+Email justo despues: "Te voy mandando el resumen. A que email te lo envio?"
+Telefono mas adelante: "Y un telefono por si el equipo necesita aclarar algo rapido antes de preparar la propuesta?"
+Minimo obligatorio antes de cerrar: email O telefono.
 
-MODO DIRECCION/CEO: Lenguaje de negocio, sin tecnicismos. Foco: que quiere conseguir, presupuesto, quien decide, cuando.
-Si necesitas info tecnica: "Te sientes comodo hablando de lo tecnico o lo vemos directamente en la reunion con el equipo?"
-Si dice no → punto pendiente, sigue con lo que si puede responder.
+## FASE 3: Identificar perfil (msg 3-5) — OBLIGATORIO
+Pregunta: "[Nombre], desde que rol llevas este proyecto — eres el CEO, llevas el marketing, o eres el responsable tecnico?"
+MODO CEO: Lenguaje de negocio. Foco: objetivo, presupuesto, decisor, cuando.
+MODO MARKETING: Nivel medio. Foco: leads, canales, contenido, herramientas.
+MODO TECNICO: De igual a igual. Stack, APIs, integraciones sin filtro.
 
-MODO MARKETING: Nivel medio. Puede hablar de CMS, analytics, campanas, herramientas. Foco: donde se pierden leads, que canales usa, que contenido tiene.
-Si necesitas mas: "Hay alguien de IT que lleve la parte tecnica? Nos ayudaria hablar con esa persona tambien."
+## FASE 4: Propuesta de valor (msg 4-6)
+Si proyecto tiene entidad: "[Nombre], si tienes 3 minutos recojo todo el contexto. Documento funcional y presupuesto en 48h. Seguimos?"
+Si acepta → Velocidad 2. Si no → Velocidad 1, recoge basico y cierra.
 
-MODO TECNICO: De igual a igual. Stack, APIs, integraciones, infraestructura sin filtro. No pidas permiso para ir a lo tecnico.
-
-## FASE 3: Discovery Profundo (msg 4-8)
-ANTES del discovery, si el proyecto tiene entidad, PROPONER: "[Nombre], si tienes 3 minutos recojo todo el contexto. Documento funcional y presupuesto en 48h. Seguimos?"
-ORDEN OBLIGATORIO: Preguntas de PROYECTO primero (plataforma actual, secciones, integraciones, identidad visual, contenidos, gestion post-lanzamiento). DESPUES presupuesto, urgencia y decisor.
-
-### Por tipo de proyecto:
-WEB CORPORATIVA Nivel 1: Existe algo o desde cero? Objetivo (leads, marca)? Integraciones (CRM, email, reservas)? Identidad visual? Cuantas paginas? Contenidos preparados? Quien gestiona despues?
+## FASE 5: Discovery por tipo de proyecto
+ORDEN OBLIGATORIO: Preguntas de PROYECTO primero. DESPUES presupuesto/urgencia/decisor.
+WEB CORPORATIVA Nivel 1: Existe algo o desde cero? Objetivo (leads, marca)? Trafico (SEO, campanas, redes)? Integraciones (CRM, email, reservas)? Identidad visual? Cuantas paginas? Quien gestiona despues?
 WEB Nivel 2: Multiidioma? Blog? Area privada? Formularios complejos?
+E-COMMERCE Nivel 1 — cubrir TODO antes de presupuesto: B2C o B2B? Cuantos productos? Variantes? Plataforma actual? Precios personalizados? ERP? Pasarela? Envios? Gestion catalogo?
+E-COMMERCE Nivel 2: Multipais/moneda? Area cliente? Stock?
+AUTOMATIZACION/IA: Que proceso? Herramientas? Objetivo?
+CONSULTORIA: Que indica problema? Hipotesis?
+WHITE-LABEL: Tipo proyectos? Equipo puntual o continuo? Fase llegada? Stack habitual?
+Pregunta final SIEMPRE: "Hay algo mas del proyecto que quieras contarnos?"
 
-E-COMMERCE Nivel 1 — NO preguntar presupuesto hasta cubrir TODO: B2C o B2B? Cuantos productos? Variantes (tallas/colores/formatos)? Plataforma actual? Precios personalizados? ERP? Pasarela de pago? Envios? Quien gestiona catalogo despues?
-E-COMMERCE Nivel 2: Multiples paises/monedas? Area cliente? Stock? Pasarela pago?
+### Discovery profundo (solo Velocidad 2) — una pregunta por mensaje, intercalar valor:
+A-Contexto: Que limita mas? Sistemas (ERP, CRM)? Sistema maestro?
+B-Usuarios: Tipos usuario/roles? Permisos distintos?
+C-Integraciones: Sistemas externos? Datos entre sistemas? Limitaciones conocidas?
+D-Restricciones: Tecnologia obligatoria? Multiidioma? Plazo critico?
+E-Abiertos: Que falta definir? Que cerrar para presupuestar?
 
-AUTOMATIZACION/IA: Que proceso? Herramientas actuales? Objetivo (ahorro tiempo, errores)?
-CONSULTORIA: Que hace pensar que hay problema? Hipotesis del fallo?
-
-### Preguntas adaptadas por rol (ya tiene web):
-- CEO: "Que es lo que mas te molesta de como funciona ahora?"
-- Marketing: "Donde crees que se estan perdiendo los leads?"
-- Tecnico: "Que es lo que mas os esta limitando tecnicamente?"
-
-### Despues del discovery de proyecto:
-Presupuesto — CONTEXTUALIZAR segun el proyecto. No preguntar en frio. Justifica POR QUE lo necesitas saber. Ejemplos:
-- E-commerce con configurador: "[Nombre], para definir si el configurador lo construimos a medida o con solucion existente, necesito saber en que rango de inversion os moveis."
-- Web con integraciones: "[Nombre], segun el presupuesto podemos incluir integraciones con vuestro CRM, automatizaciones, o ir con una primera fase. En que rango os manejais?"
-- Proyecto generico: "[Nombre], para proponerte las funcionalidades que mas impacto tengan — IA, automatizaciones, integraciones — necesito saber en que rango de inversion os moveis."
-SIEMPRE conectar presupuesto con lo que el usuario VA A RECIBIR, no como dato administrativo.
+## FASE 6: Presupuesto y urgencia
+Presupuesto CONTEXTUALIZADO — conectar con lo que recibira, no dato administrativo.
 Opciones (botones): [5.000-10.000] [10.000-15.000] [15.000-20.000] [+20.000]
+Si presupuesto < 6.000 EUR: "[Nombre], con ese presupuesto estamos por debajo de nuestro punto de entrada — nuestros proyectos arrancan a partir de 6.000. Si en algun momento cambia, aqui estamos." NO negociar alcance, NO reducir scope.
 Timeline: "En cuanto tiempo necesitas verlo funcionando?"
-Opciones (botones): [Urgente <30d] [Rapido 1-2m] [Normal 2-3m] [Flexible +3m]
-Objetivo: "Que te gustaria lograr con esto? Cual es el objetivo clave?"
-Decisor: "Quien toma la decision final del proyecto?"
+Decisor: "Quien toma la decision final?"
 Email (OBLIGATORIO antes de resumen/cierre/Calendly): "Te mando el resumen. A que email?"
 Telefono (OBLIGATORIO antes de resumen/cierre/Calendly): "Y un telefono por si el equipo necesita aclarar algo rapido?"
 REGLA: Jordan NO puede mostrar resumen, ofrecer Calendly ni cerrar sin email Y telefono. Si faltan, PARA y pidelos.
 
-## FASE 4: Resumen + Cierre
-Cuando tengas datos suficientes o 10+ mensajes: mostrar resumen (nombre, empresa, tipo proyecto, problema, presupuesto, timeline, objetivo).
-Pedir confirmacion: "Confirmas estos datos?"
-ANTES de resumen: verificar nombre + email + telefono — si falta, pedirlo AHORA. Si confirma Y score >=7: ofrecer reunion con Jordi. Consulta slots Calendly: "[Nombre], esto merece hablarlo en directo con Jordi. Tengo el [dia] a las [hora] o el [dia] a las [hora]. Cual te viene mejor?"
-Si confirma Y score <7: enviar a webhook, "Datos guardados. Te escribiremos en 48h."
-Si quiere irse sin datos: "Antes de irte: cual es tu email para que el equipo pueda contactarte?"
-
-## SCORING 0-10
-Base 3. Presupuesto 5K-15K(+1) o +15K(+2). Urgencia con fecha(+2). Decisor confirmado(+2). Proyecto complejo(+1). Discovery rico(+1). Conversacion rica(+1). Restas: explorando(-1), menor5K(-1).
-TOPE: Si Nivel 1 del tipo de proyecto NO esta cubierto, score MAXIMO = 5. Presupuesto alto no compensa discovery incompleto. Completa preguntas de proyecto primero.
-Caliente >=7 → OBLIGATORIO ofrecer Calendly con slots reales antes de cerrar | Tibio 4-6 → "te escribimos en 48h" | Frio <4 → cierre educado
-
-## CALENDLY
-Score >=7: OBLIGATORIO ofrecer slots reales. No decir "te contactamos en 48h". Consulta API Calendly y ofrece horarios concretos:
-"[Nombre], esto merece hablarlo en directo con Jordi. Tengo disponibilidad el [dia] a las [hora] o el [dia] a las [hora]. Cual te viene mejor?"
+## FASE 7: Scoring + Cierre
+SCORING: Base 3. 5K-15K(+1), +15K(+2). Urgencia fecha(+2). Decisor(+2). Complejo(+1). Discovery completo(+2), parcial(+1). Restas: explorando(-1), rechaza(-1), <5K(-2).
+TOPE: Si Nivel 1 no cubierto, score MAX = 5.
+ANTES de resumen: verificar nombre + email + telefono — si falta, pedirlo AHORA.
+Score 7-10 → OBLIGATORIO Calendly con slots reales: "[Nombre], esto merece hablarlo en directo con Jordi. Tengo el [dia] a las [hora] o el [dia] a las [hora]."
+NUNCA inventar slots. Si no has consultado API Calendly, usa fallback [CALENDLY_URL]. Inventar horarios es peor que dar el link.
 Si API falla: "Reserva directamente aqui: [CALENDLY_URL]"
-PROACTIVO: Si detectas proyecto serio antes del scoring (presupuesto >10K + decisor, integraciones complejas), ofrece reunion sin esperar:
-"[Nombre], esto tiene pinta de proyecto serio. Buscamos un hueco para hablarlo en directo con Jordi?"
+PROACTIVO: Proyecto serio antes del scoring (+10K + decisor) → ofrecer reunion sin esperar.
+Score 4-6 → "[Nombre], el equipo lo mira hoy y te escribimos antes de 24 horas."
+Score 1-3 → "[Nombre], cuando lo tengais mas aterrizado, aqui estamos."
+Si < 5K EUR: NO ofrecer Calendly.
 
 ## SITUACIONES ESPECIALES
 Precio: "Depende del alcance. Cuentame que necesitais — el equipo llega con algo concreto."
-Hablar con alguien: "La reunion la hace Jordi, nuestro director. Dame tu email o telefono y te contacta directamente."
+Insiste precio: "Trabajamos con proyectos de distinta envergadura — prefiero entender primero que necesitais."
+Hablar con alguien: "La reunion la hace Jordi. Dame tu email o telefono y te contacta directamente."
 No sabe: "Cuentame que problema tienes — si no convierte, limita crecimiento, o no os representa bien."
-Eres un bot: "Soy Jordan, el agente de Tres Puntos. Recojo contexto para que el equipo llegue preparado."
-Briefing/pregunta tecnica a CEO: "Si tienes documento, compartelo mas adelante. Para preguntas tecnicas, el equipo te responde — dejame tu contacto."
-Enfadado con agencia actual: "Nos llegan casos asi cada mes. Se construyo sin pensar en el negocio. Cuentanos que esta fallando."
+Eres un bot: "Soy Jordan, el agente de Tres Puntos. Recojo contexto para que el equipo llegue preparado. Si prefieres hablar directamente con alguien, dame tu contacto y te llaman hoy."
+Enfadado con agencia: "Nos llegan casos asi cada mes. Se construyo sin pensar en el negocio. Cuentanos que esta fallando."
 
 ## NUNCA
-1. Analizar negocio interno (facturacion, empleados, organigrama)
-2. Mas de 3 preguntas seguidas sin observacion de valor (regla anti-formulario)
+1. Analizar negocio interno (facturacion, empleados, organigrama, cliente ideal)
+2. Mas de 3 preguntas seguidas sin observacion de valor
 3. Mencionar precios propios ni opinar sobre si el presupuesto encaja
 4. Pedir datos (nombre, email) antes del mensaje 3
 5. Cerrar, mostrar resumen o ofrecer Calendly sin email Y telefono
@@ -223,10 +221,17 @@ Enfadado con agencia actual: "Nos llegan casos asi cada mes. Se construyo sin pe
 7. Multiples preguntas en un mismo mensaje
 8. Prometer lo que no puedes o inventar datos/casos
 9. Empezar con reafirmaciones ("Perfecto", "Entendido") como respuesta completa
-10. Saltar a presupuesto sin cubrir preguntas de proyecto
-11. Preguntar metricas tecnicas a perfiles no tecnicos (CEO/Marketing)
+10. Saltar a presupuesto sin cubrir preguntas de proyecto Nivel 1
+11. Preguntar metricas tecnicas a perfiles no tecnicos
 12. Decir "No entendi" — reformula siempre con contexto
 13. Criticar agencias por nombre
+14. Inventar slots de Calendly — si no consultaste API, usa fallback [CALENDLY_URL]
+15. Negociar alcance ni decir que cabe en un presupuesto < 6.000 EUR
+16. Ofrecer Calendly a leads con score < 7 o presupuesto < 5.000 EUR
+17. Improvisar el mensaje de bienvenida
+18. Dar link estatico de Calendly si la API esta disponible
+19. Preguntar sobre politicas, cookies o aspectos legales
+20. Seguir un guion rigido — evalua y adapta siempre
 
 IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un email.`;
 
@@ -255,7 +260,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
   }
 
   const activeRule = getActiveRule();
-  if (!activeRule || activeRule.show === false) return;
+  if (!CONFIG.embedTarget && (!activeRule || activeRule.show === false)) return;
 
   // ========== WIDGET CSS ==========
 
@@ -744,7 +749,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       outline: none;
       color: #f0f0f0;
       font-family: inherit;
-      font-size: 16px; /* Must be >= 16px to prevent iOS Safari auto-zoom on focus */
+      font-size: 16px;
       line-height: 1.45;
       resize: none;
       max-height: 100px;
@@ -834,7 +839,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       flex-shrink: 0;
     }
 
-    /* ===== MOBILE ===== */
+    /* ===== MOBILE (up to 768px for tablets too) ===== */
     @media (max-width: 768px) {
       .jordan-bubble {
         bottom: 20px;
@@ -845,45 +850,43 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
 
       .jordan-chat {
         position: fixed !important;
-        left: 0 !important;
         top: 0 !important;
-        width: 100vw !important;
-        max-width: 100vw !important;
-        border-radius: 0;
-        border: none;
-        box-shadow: none;
-        /* height set by JS via visualViewport */
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        overflow: hidden;
+        padding-left: env(safe-area-inset-left, 0px);
+        padding-right: env(safe-area-inset-right, 0px);
       }
 
       .jordan-chat.expanded {
-        width: 100vw !important;
+        width: 100% !important;
+        height: 100% !important;
       }
 
       .jordan-header {
-        padding-top: calc(14px + env(safe-area-inset-top, 0px));
-        padding-left: 16px;
-        padding-right: 16px;
-        flex-shrink: 0;
+        padding: calc(14px + env(safe-area-inset-top, 0px)) 16px 14px 16px !important;
       }
 
       .jordan-expand-btn { display: none !important; }
 
       .jordan-messages {
         -webkit-overflow-scrolling: touch;
-        padding: 12px 16px;
-        flex: 1;
-        min-height: 0;
-        overflow-y: auto;
+        padding: 12px 16px !important;
       }
 
-      .jordan-msg { max-width: 88%; font-size: 13px; }
+      .jordan-msg { max-width: 85% !important; font-size: 13px; }
 
       .jordan-input-area {
-        padding: 8px 16px;
-        flex-shrink: 0;
+        padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px)) 16px !important;
       }
-
-      .jordan-footer { display: none; }
 
       .jordan-bubble-label { display: none; }
 
@@ -899,6 +902,55 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       opacity: 0;
       pointer-events: none;
       transform: scale(0.5);
+    }
+
+    /* ===== EMBED MODE ===== */
+    .jordan-chat.jordan-embed {
+      position: relative !important;
+      width: 100% !important;
+      height: auto !important;
+      bottom: auto !important;
+      left: auto !important;
+      right: auto !important;
+      top: auto !important;
+      border-radius: 20px !important;
+      border: none !important;
+      box-shadow: none !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      transform: none !important;
+      transition: none !important;
+      overflow: hidden;
+    }
+
+    .jordan-chat.jordan-embed .jordan-messages {
+      min-height: 300px;
+      max-height: calc(100vh - 300px);
+      max-height: calc(100dvh - 300px);
+    }
+
+    .jordan-chat.jordan-embed .jordan-close-btn { display: none; }
+
+    @media (max-width: 768px) {
+      .jordan-chat.jordan-embed {
+        position: relative !important;
+        height: auto !important;
+        border-radius: 14px !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+      .jordan-chat.jordan-embed .jordan-messages {
+        min-height: 200px;
+        max-height: 55vh;
+      }
+      .jordan-chat.jordan-embed .jordan-expand-btn { display: none !important; }
+    }
+
+    @media (min-width: 1440px) {
+      .jordan-chat.jordan-embed .jordan-messages {
+        min-height: 400px;
+        max-height: calc(100vh - 280px);
+      }
     }
   `;
 
@@ -922,6 +974,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       this._pageOrigin = window.location.pathname;
       this._leadSent = false;
       this._isClosing = false;
+      this._isEmbedded = !!CONFIG.embedTarget;
       this._init();
     }
 
@@ -1001,6 +1054,14 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     // -- Init --
 
     _init() {
+      if (this._isEmbedded) {
+        this._initEmbed();
+      } else {
+        this._initFloating();
+      }
+    }
+
+    _initFloating() {
       this.host = document.createElement('div');
       this.host.id = 'jordan-widget-v4';
       this.shadow = this.host.attachShadow({ mode: 'closed' });
@@ -1016,6 +1077,32 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
 
       this._bindEvents();
       this._scheduleTeaser();
+    }
+
+    _initEmbed() {
+      const target = document.querySelector(CONFIG.embedTarget);
+      if (!target) { console.warn('[Jordan] embedTarget not found:', CONFIG.embedTarget); return; }
+
+      this.host = target;
+      this.shadow = target.attachShadow({ mode: 'closed' });
+
+      const style = document.createElement('style');
+      style.textContent = WIDGET_CSS;
+      this.shadow.appendChild(style);
+
+      // No bubble in embed mode
+      this.bubbleEl = null;
+      this.bubbleBtn = null;
+      this.teaserEl = null;
+      this.teaserTextEl = null;
+      this.teaserCloseBtn = null;
+      this.unreadDot = null;
+
+      this._buildChat();
+      this.chatEl.classList.add('jordan-embed');
+
+      this._bindEvents();
+      // No teaser in embed mode
     }
 
     _buildBubble() {
@@ -1043,6 +1130,11 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       this.teaserTextEl = this.bubbleEl.querySelector('.jordan-teaser-text');
       this.teaserCloseBtn = this.bubbleEl.querySelector('.jordan-teaser-close');
       this.unreadDot = this.bubbleEl.querySelector('.jordan-unread');
+
+      // Hide bubble when used as embedded chat (contacto page)
+      if (CONFIG.hideBubble) {
+        this.bubbleEl.style.display = 'none';
+      }
     }
 
     _buildChat() {
@@ -1105,16 +1197,20 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     // -- Events --
 
     _bindEvents() {
-      this.bubbleBtn.addEventListener('click', () => this.open());
+      if (this.bubbleBtn) {
+        this.bubbleBtn.addEventListener('click', () => this.open());
+      }
 
-      this.teaserEl.addEventListener('click', (e) => {
-        if (e.target === this.teaserCloseBtn || this.teaserCloseBtn.contains(e.target)) {
-          this._hideTeaser();
-          this.teaserDismissed = true;
-        } else {
-          this.open();
-        }
-      });
+      if (this.teaserEl) {
+        this.teaserEl.addEventListener('click', (e) => {
+          if (e.target === this.teaserCloseBtn || this.teaserCloseBtn.contains(e.target)) {
+            this._hideTeaser();
+            this.teaserDismissed = true;
+          } else {
+            this.open();
+          }
+        });
+      }
 
       this.closeBtn.addEventListener('click', () => this.close());
       this.expandBtn.addEventListener('click', () => this._toggleExpand());
@@ -1172,23 +1268,22 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
 
     open() {
       this.isOpen = true;
-      this._hideTeaser();
-      this.teaserDismissed = true;
-      this.unreadDot.classList.add('hidden');
+
+      if (!this._isEmbedded) {
+        this._hideTeaser();
+        this.teaserDismissed = true;
+        if (this.unreadDot) this.unreadDot.classList.add('hidden');
+        if (this.bubbleEl) this.bubbleEl.classList.add('chat-open');
+
+        // Body scroll lock — overflow only, NO position:fixed (breaks iOS keyboard)
+        this._prevBodyOverflow = document.body.style.overflow;
+        this._prevHtmlOverflow = document.documentElement.style.overflow;
+        this._scrollY = window.scrollY;
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+      }
 
       this.chatEl.classList.add('open');
-      this.bubbleEl.classList.add('chat-open');
-
-      // Body scroll lock — position:fixed prevents page showing behind on iOS
-      this._scrollY = window.scrollY;
-      document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
-      if (window.innerWidth <= 768) {
-        document.body.style.position = 'fixed';
-        document.body.style.top = -this._scrollY + 'px';
-        document.body.style.width = '100%';
-        document.body.style.height = '100%';
-      }
 
       // Welcome message on first open
       if (this.messages.length === 0) {
@@ -1198,10 +1293,8 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
         this._renderMessages();
       }
 
-      // Set mobile height from visualViewport + focus
-      if (this._syncMobileHeight) this._syncMobileHeight();
+      // Focus textarea after animation
       setTimeout(() => {
-        if (this._syncMobileHeight) this._syncMobileHeight();
         this.textarea.focus();
         this._scrollToBottom();
       }, 100);
@@ -1210,31 +1303,47 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     close() {
       this.isOpen = false;
 
+      if (this._isEmbedded) {
+        // Embed mode: notify page, send lead
+        if (CONFIG.onClose) CONFIG.onClose();
+        this._sendLeadWebhook();
+        return;
+      }
+
       // Animate close
       this.chatEl.classList.add('closing');
       this.chatEl.classList.remove('open');
 
-      // Show bubble after close animation finishes
+      // Show bubble after close animation finishes (skip if bubble hidden)
       setTimeout(() => {
         this.chatEl.classList.remove('closing');
-        this.bubbleEl.classList.remove('chat-open');
+        if (!CONFIG.hideBubble && this.bubbleEl) {
+          this.bubbleEl.classList.remove('chat-open');
+        }
       }, 250);
 
       // Restore body scroll
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.height = '';
-      if (this._scrollY) window.scrollTo(0, this._scrollY);
+      document.body.style.overflow = this._prevBodyOverflow || '';
+      document.documentElement.style.overflow = this._prevHtmlOverflow || '';
 
-      // Reset inline styles set by visualViewport handler
-      this.chatEl.style.removeProperty('height');
-      this.chatEl.style.removeProperty('max-height');
-      this.chatEl.style.removeProperty('top');
+      // Notify external code (contacto page hero restore)
+      if (CONFIG.hideBubble && CONFIG.onClose) {
+        CONFIG.onClose();
+      }
 
       this._sendLeadWebhook();
+    }
+
+    // Public: open with an initial user message (used by contacto hero)
+    openWithMessage(text) {
+      this.open();
+      if (text && text.trim()) {
+        // Wait for welcome message to render, then send user message
+        setTimeout(() => {
+          this.textarea.value = text.trim();
+          this._sendMessage();
+        }, 600);
+      }
     }
 
     _toggleExpand() {
@@ -1244,63 +1353,38 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     }
 
     // -- Mobile Keyboard Handling --
-    // Based on hydrogen-web (Element/Matrix) production fix:
-    // github.com/element-hq/hydrogen-web/pull/279
 
     _setupMobileKeyboard() {
-      if (window.innerWidth > 768) return;
+      if (window.innerWidth > 768 || this._isEmbedded) return;
 
-      const vv = window.visualViewport;
+      // Prevent iOS/Chrome auto-zoom on input focus by temporarily
+      // adding maximum-scale=1 to the page viewport meta tag
+      const vpMeta = document.querySelector('meta[name="viewport"]');
+      const originalContent = vpMeta ? vpMeta.getAttribute('content') : '';
 
-      // Core: sync chat position + height to visual viewport
-      // This is the ONLY reliable way on iOS Safari — CSS units (vh, dvh, %)
-      // do NOT respond to the keyboard opening.
-      const syncViewport = () => {
-        if (!this.isOpen) return;
-        if (!vv) {
-          this.chatEl.style.setProperty('height', window.innerHeight + 'px', 'important');
-          return;
-        }
-        const h = Math.round(vv.height);
-        const top = Math.round(vv.offsetTop); // iOS scrolls layout viewport up — correct for it
-        this.chatEl.style.setProperty('height', h + 'px', 'important');
-        this.chatEl.style.setProperty('max-height', h + 'px', 'important');
-        this.chatEl.style.setProperty('top', top + 'px', 'important');
-      };
-
-      // Expose for open() to call
-      this._syncMobileHeight = syncViewport;
-
-      if (vv) {
-        // resize: keyboard shows/hides, address bar changes
-        vv.addEventListener('resize', () => {
-          syncViewport();
-          requestAnimationFrame(() => this._scrollToBottom());
-        });
-        // scroll: iOS shifts layout viewport up when focusing input near bottom
-        vv.addEventListener('scroll', () => {
-          if (!this.isOpen) return;
-          this.chatEl.style.setProperty('top', Math.round(vv.offsetTop) + 'px', 'important');
-        });
-      }
-
-      // Focus: extra sync after keyboard animation completes
       this.textarea.addEventListener('focus', () => {
         if (!this.isOpen) return;
-        setTimeout(() => {
-          syncViewport();
-          this._scrollToBottom();
-        }, 400);
+        // Disable zoom while typing
+        if (vpMeta) {
+          vpMeta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+        }
+        setTimeout(() => this._scrollToBottom(), 400);
       });
 
-      // Prevent iOS rubber-band bounce outside scrollable areas
+      this.textarea.addEventListener('blur', () => {
+        // Restore original zoom ability
+        if (vpMeta && originalContent) {
+          vpMeta.setAttribute('content', originalContent);
+        }
+      });
+
+      // Prevent iOS bounce outside messages area
       this.chatEl.addEventListener('touchmove', (e) => {
-        const target = e.target;
-        if (this.messagesEl && this.messagesEl.contains(target)) return;
-        if (this.textarea.contains(target)) return;
-        if (target.closest && target.closest('.jordan-quick-replies')) return;
-        if (target.closest && target.closest('.jordan-file-preview')) return;
-        e.preventDefault();
+        const messages = this.messagesEl;
+        if (!messages) return;
+        if (!messages.contains(e.target) && !this.textarea.contains(e.target)) {
+          e.preventDefault();
+        }
       }, { passive: false });
     }
 
@@ -1318,6 +1402,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     }
 
     _scheduleTeaser() {
+      if (this._isEmbedded || CONFIG.hideBubble) return;
       if (!activeRule.proactive || this.teaserDismissed) return;
       if (this.messages.length > 0) return; // Returning user with history
 
@@ -1355,6 +1440,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     }
 
     _hideTeaser() {
+      if (!this.teaserEl) return;
       this.teaserEl.classList.add('hidden');
       if (this.teaserTimer) { clearTimeout(this.teaserTimer); this.teaserTimer = null; }
       if (this.teaserRotateTimer) { clearTimeout(this.teaserRotateTimer); this.teaserRotateTimer = null; }
@@ -2077,7 +2163,14 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
   // ========== BOOT ==========
 
   function boot() {
-    new JordanWidget();
+    const widget = new JordanWidget();
+
+    // Expose public API for external integration (contacto, iniciar-proyecto)
+    window.JordanAPI = {
+      open: (msg) => { if (msg) widget.openWithMessage(msg); else widget.open(); },
+      close: () => widget.close(),
+      isOpen: () => widget.isOpen
+    };
   }
 
   if (document.readyState === 'loading') {

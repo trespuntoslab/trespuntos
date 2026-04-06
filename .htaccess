@@ -1,19 +1,16 @@
 # ============================================================
 # TRES PUNTOS — Apache Configuration
-# Deploy on Nominalia shared hosting
+# Deploy on Hostinger shared hosting
 # ============================================================
 
-# ── Force HTTPS ──────────────────────────────────────────────
+# ── Force HTTPS + www (single redirect) ─────────────────────
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
 
-    # Redirect HTTP → HTTPS
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-    # Enforce www
-    RewriteCond %{HTTP_HOST} ^trespuntoscomunicacion\.es [NC]
+    # HTTP + no-www → https://www in 1 hop
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
     RewriteRule ^(.*)$ https://www.trespuntoscomunicacion.es/$1 [L,R=301]
 </IfModule>
 
@@ -82,25 +79,26 @@
     RewriteRule ^tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/?$ /blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/ [R=301,L]
     RewriteRule ^experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web/?$ /blog/experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web/ [R=301,L]
     RewriteRule ^tests-de-usuarios-de-guerrilla/?$ /blog/tests-de-usuarios-de-guerrilla/ [R=301,L]
-    RewriteRule ^que-es-diseno-ux/?$ /blog/que-es-diseno-ux/ [R=301,L]
-    RewriteRule ^ux-en-ecommerce/?$ /blog/ux-en-ecommerce/ [R=301,L]
-    RewriteRule ^rediseno-web/?$ /blog/rediseno-web/ [R=301,L]
-    RewriteRule ^tendencias-ux-ui-2024/?$ /blog/tendencias-ux-ui-2024/ [R=301,L]
-    RewriteRule ^design-system-guia-completa/?$ /blog/design-system-guia-completa/ [R=301,L]
-    RewriteRule ^accesibilidad-web-wcag/?$ /blog/accesibilidad-web-wcag/ [R=301,L]
-    RewriteRule ^velocidad-web-conversion/?$ /blog/velocidad-web-conversion/ [R=301,L]
-    RewriteRule ^atomic-design-metodologia/?$ /blog/atomic-design-metodologia/ [R=301,L]
-    RewriteRule ^prototipado-rapido-figma/?$ /blog/prototipado-rapido-figma/ [R=301,L]
-    RewriteRule ^microinteracciones-ux/?$ /blog/microinteracciones-ux/ [R=301,L]
-    RewriteRule ^headless-cms-ventajas/?$ /blog/headless-cms-ventajas/ [R=301,L]
-    RewriteRule ^seo-tecnico-desarrolladores/?$ /blog/seo-tecnico-desarrolladores/ [R=301,L]
+    # Slugs planificados que nunca existieron — redirigir al hub del blog
+    RewriteRule ^que-es-diseno-ux/?$ /blog/ [R=301,L]
+    RewriteRule ^ux-en-ecommerce/?$ /blog/ [R=301,L]
+    RewriteRule ^rediseno-web/?$ /blog/ [R=301,L]
+    RewriteRule ^tendencias-ux-ui-2024/?$ /blog/ [R=301,L]
+    RewriteRule ^design-system-guia-completa/?$ /blog/ [R=301,L]
+    RewriteRule ^accesibilidad-web-wcag/?$ /blog/ [R=301,L]
+    RewriteRule ^velocidad-web-conversion/?$ /blog/ [R=301,L]
+    RewriteRule ^atomic-design-metodologia/?$ /blog/ [R=301,L]
+    RewriteRule ^prototipado-rapido-figma/?$ /blog/ [R=301,L]
+    RewriteRule ^microinteracciones-ux/?$ /blog/ [R=301,L]
+    RewriteRule ^headless-cms-ventajas/?$ /blog/ [R=301,L]
+    RewriteRule ^seo-tecnico-desarrolladores/?$ /blog/ [R=301,L]
 
     # WordPress categories & authors
     RewriteRule ^category/(.*)$ /blog/ [R=301,L]
     RewriteRule ^author/(.*)$ /nosotros/ [R=301,L]
 
     # --- Forms antiguos → nuevos ---
-    RewriteRule ^gracias/?$ /form-v3/gracias.html [R=301,L]
+    RewriteRule ^gracias/?$ /form-v3/gracias [R=301,L]
     RewriteRule ^form-v3/form-step1\.html$ /iniciar-proyecto/ [R=301,L]
 
     # --- Páginas antiguas (producción WordPress) ---

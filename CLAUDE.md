@@ -245,20 +245,20 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
 
 ### Arquitectura
 ```
-Widget (jordan-widget-v4.js) → n8n Proxy (jordan-chat-proxy) → Anthropic API (claude-haiku-4-5)
+Widget (jordan-widget-v5.js) → n8n Proxy (jordan-chat-proxy) → Anthropic API (claude-haiku-4-5)
                              → n8n Webhook (jordan-chat-leads) → Scoring IA → Airtable + Telegram + Emails
 ```
 
 ### Archivos
-- `/assets/jordan/jordan-widget-v4.js` — Widget v4.0, Shadow DOM cerrado (`mode: 'closed'`), ~2000 líneas
+- `/assets/jordan/jordan-widget-v5.js` — Widget v5.0, Shadow DOM cerrado (`mode: 'closed'`), ~2180 líneas. Incluye modo flotante + modo embed
 - `/assets/jordan/jordan-avatar.png` — Avatar de Jordan (526KB)
-- System prompt v9.4 embebido en el widget (145 líneas, límite máximo)
-- Documento maestro: `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v9.3-master.md` — fuente única de verdad expandida
+- System prompt v10.0 embebido en el widget (~148 líneas)
+- Documento maestro: `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v10.0-master.md` — fuente única de verdad expandida
 - Instrucciones de actualización: `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/instrucciones-claude-code-v9.X.md`
 - Source de referencia: `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/` — sincronizar cambios en ambos sitios
-- Archivos obsoletos en servidor: eliminar `jordan-widget.js`, `jordan-widget-v2.js`, `jordan-widget-v3.js` si existen
+- Archivos obsoletos en servidor: eliminar `jordan-widget.js`, `jordan-widget-v2.js`, `jordan-widget-v3.js`, `jordan-widget-v4.js` si existen
 
-### Widget v4 — Features
+### Widget v5 — Features
 - **Borde gradiente animado**: mint → blue → purple con `@keyframes` rotate, 3px border con `conic-gradient`
 - **Teaser messages**: Bocadillos contextuales por página (6 categorías: home, servicios, casos, contacto, nosotros, default). Timing: aparece a 5s, desaparece a 8s, siguiente a 15s
 - **Quick reply buttons**: 6 categorías (tipo proyecto, rol/perfil, presupuesto, timeline, confirmación datos, calendly/cierre). Estilo assistant-ui con hover mint. Detección contextual: solo aparecen cuando Jordan pregunta directamente (requiere `?` + keywords específicos para evitar falsos positivos)
@@ -313,9 +313,9 @@ Widget (jordan-widget-v4.js) → n8n Proxy (jordan-chat-proxy) → Anthropic API
 ```
 
 ### Carga en HTMLs
-- Script async en 37 páginas: `<script async src="/assets/jordan/jordan-widget-v4.js"></script>`
-- Cache-busting: renombrar a `jordan-widget-v5.js` etc. para futuras versiones
-- Configuración en cada HTML antes del script:
+- Script async en 42 páginas: `<script async src="/assets/jordan/jordan-widget-v5.js"></script>`
+- Cache-busting: renombrar a `jordan-widget-v6.js` etc. para futuras versiones (y actualizar las 42 páginas)
+- **Modo flotante** (40 páginas — home, servicios, casos, blog, nosotros):
 ```html
 <script>
 window.JordanConfig = {
@@ -324,6 +324,17 @@ window.JordanConfig = {
   avatar: '/assets/jordan/jordan-avatar.png',
   position: 'right',
   rules: [...]
+};
+</script>
+```
+- **Modo embed** (2 páginas — contacto, iniciar-proyecto):
+```html
+<script>
+window.JordanConfig = {
+  webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
+  calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
+  avatar: '/assets/jordan/jordan-avatar.png',
+  embedTarget: '#jordan-embed'
 };
 </script>
 ```
@@ -382,8 +393,17 @@ window.JordanConfig = {
 - **NUNCA** usar Sonnet ni Opus para Jordan — siempre Haiku
 - **NUNCA** enviar email al usuario a mitad de conversación — solo al cerrar
 - **SIEMPRE** renombrar el archivo (incrementar versión) al actualizar el widget para evitar cache
-- **SIEMPRE** sincronizar cambios entre `/assets/jordan/jordan-widget-v4.js` y `/jordan/tres-puntos-agent/`
+- **SIEMPRE** sincronizar cambios entre `/assets/jordan/jordan-widget-v5.js` y `/jordan/tres-puntos-agent/`
 - Al generar ZIPs para subir, **NO excluir** `assets/jordan/` — contiene el widget y avatar
+
+### Regla de actualización Jordan — OBLIGATORIA
+**Cuando se modifique CUALQUIER cosa del widget Jordan (`jordan-widget-v5.js`), se DEBEN actualizar TODAS las referencias:**
+1. **Un solo archivo fuente**: `/assets/jordan/jordan-widget-v5.js` — es la ÚNICA fuente de verdad
+2. **42 páginas lo cargan**: Todas con `<script async src="/assets/jordan/jordan-widget-v5.js"></script>`
+3. **Contacto e iniciar-proyecto** usan embed mode (`embedTarget: '#jordan-embed'`) — verificar que sigue funcionando tras cambios
+4. **Si se cambia el system prompt**: Actualizar el prompt dentro del widget Y el documento maestro en `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/`
+5. **Si se incrementa versión** (ej. v5→v6): Buscar y reemplazar en las 42 páginas HTML + actualizar esta sección de CLAUDE.md
+6. **Después de cualquier cambio**: Hacer test básico en al menos 1 página flotante (home) y 1 página embed (contacto o iniciar-proyecto)
 
 ### Bugs resueltos (2026-03-27)
 - **API Key prompt**: El `window.prompt()` en tres.trespuntos-lab.com era por versión vieja cacheada (`jordan-widget.js`). Solucionado con v4 + eliminar archivos viejos del servidor
@@ -438,9 +458,10 @@ window.JordanConfig = {
 - **Segundo event type**: `tres-puntos` (60 min, Google Meet) — no usar para Jordan
 
 ### Sincronización de archivos
-- Widget v4: `/assets/jordan/jordan-widget-v4.js` — prompt v10.0 incorporado (2026-04-03)
-- Contacto: `/contacto/index.html` — prompt v10.0 embebido (2026-04-03)
-- Iniciar proyecto: `/iniciar-proyecto/index.html` — prompt v10.0 embebido (2026-04-03)
+- Widget v5: `/assets/jordan/jordan-widget-v5.js` — prompt v10.0 + embed mode (2026-04-06)
+- 42 páginas cargan v5 (flotante en 40, embed en contacto + iniciar-proyecto)
+- Contacto: `/contacto/index.html` — usa embed mode con `embedTarget: '#jordan-embed'`
+- Iniciar proyecto: `/iniciar-proyecto/index.html` — usa embed mode con `embedTarget: '#jordan-embed'`
 - System prompt maestro (v10.0): `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v10.0-master.md` — fuente única expandida
 - System prompt maestro anterior (v9.3): `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v9.3-master.md` — referencia histórica
 - System prompt completo (v6.2): `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v6.2.md` (~680 líneas, referencia histórica)
