@@ -1,58 +1,79 @@
-# Tres Puntos Comunicación
+# Tres Puntos — Agencia UX/UI y Arquitectura Digital de Conversión
 
-> Agencia UX/UI y desarrollo web en Barcelona especializada en Arquitectura Digital de Conversión. 13 años construyendo plataformas que convierten.
+> Diseñamos y construimos plataformas digitales pensadas para generar negocio. Desde 2011 en Barcelona.
 
 ## Qué hacemos
 
-Tres Puntos es una agencia de diseño UX/UI y desarrollo web a medida con sede en Barcelona. No hacemos webs presenciales: construimos ecosistemas digitales donde cada euro de captación tiene un destino claro.
+- Diseño UX/UI de alta conversión: embudos de venta fluidos basados en data y psicología del usuario
+- Desarrollo web a medida: plataformas sin limitaciones de plantillas, arquitectura headless, APIs, integraciones
+- Consultoría de arquitectura digital: diagnóstico técnico con consecuencia financiera cuantificada (3.000-20.000€)
+- IA generativa para empresas: agentes de IA, automatizaciones con n8n/Make, cerebros digitales empresariales
+- Design engineering: del diseño Figma al código nativo sin perder fidelidad ni rendimiento
 
-Nuestro modelo de trabajo — la Arquitectura Digital de Conversión — parte siempre de un diagnóstico técnico antes de diseñar o desarrollar. El diseño es la consecuencia del diagnóstico, nunca el punto de partida.
+## Metodología: Arquitectura Digital de Conversión (ADC)
 
-## Servicios
+Proceso en 5 fases: Entender el negocio → Diseño UX/UI → Validación → Desarrollo → Beta y Lanzamiento. Cada decisión técnica está vinculada a un objetivo de negocio medible. El diseño es siempre la consecuencia del diagnóstico, nunca el punto de partida.
 
-- **Diseño UX/UI de Alta Conversión**: Embudos de venta fluidos basados en data y psicología del usuario. Arquitectura de información, prototipado de alta fidelidad y sistemas de diseño escalables.
-- **Desarrollo Web a Medida**: Plataformas digitales sin limitaciones de plantillas o CMS genéricos. Arquitectura técnica sólida, integraciones y rendimiento optimizado.
-- **Tienda Online a Medida**: Experiencias de compra optimizadas con checkout simplificado, fichas de producto que convierten y métricas en tiempo real.
-- **Consultoría de Arquitectura Digital**: Investigación de usuarios, arquitectura de información, prototipado y sistemas de diseño.
-- **Design Engineering**: Puente entre diseño y desarrollo cuando el prototipo y el producto final no coinciden.
-- **IA para Empresas**: Integración de inteligencia artificial para automatización de procesos, chatbots, análisis predictivo y optimización de flujos de trabajo.
+## Equipo
+
+- Jordi Expósito — Digital Project Lead & UX/UI Designer Senior
+- Dani — Project Manager
+- Alberto — Full Stack Developer
+- Judith — UX/UI Designer
+- Manuel — Especialista en automatizaciones y agentes
+- 6 agentes de IA especializados: Jordan (operaciones), Magic (research UX), Bird (propuestas), Kobe (contenido), Curry (SEO), Luka (automatización)
+
+## Stack tecnológico
+
+React, Next.js, Angular, Figma, Node.js, Laravel, WordPress, WooCommerce, Headless CMS, TypeScript, n8n, Make, Vercel, CSS custom properties
 
 ## Datos clave
 
-- Fundada en 2011
-- Sede: Barcelona, España
-- Operación 100% remota con proyectos en Madrid, Valencia, Bilbao y Europa
-- Idiomas: Español, Catalán, Inglés
-- Web: https://www.trespuntoscomunicacion.es/
-- LinkedIn: https://www.linkedin.com/company/trespuntoscomunicacion
+- +13 años de experiencia (desde 2011)
+- +80 proyectos ejecutados
+- 9 reseñas Google a 5.0/5
+- Proyectos desde 5.000€
+- Barcelona con alcance global
+- Respuesta en menos de 48h
 
-## Especialización
+## Sectores
 
-- UX Design, UI Design, Web Development, E-commerce, Digital Strategy, AI for Business
-- Stack técnico: HTML/CSS/JS vanilla de alto rendimiento, arquitectura headless, integraciones API
-- Enfoque en Core Web Vitals, INP, rendimiento y conversión medible
+E-commerce, Fintech, EdTech, SaaS, B2B, RRHH/Recruitment, Turismo, Real Estate, Servicios financieros
 
-## Preguntas frecuentes
+## Casos de negocio documentados
 
-### ¿Qué es la Arquitectura Digital de Conversión?
-Es el modelo de trabajo de Tres Puntos: antes de diseñar o desarrollar, se diagnostica dónde pierde dinero la plataforma. El UX/UI retiene al usuario y el desarrollo a medida elimina cada fisura técnica.
-
-### ¿Cómo mejora el ROI un buen diseño UX/UI?
-El UX elimina fricción en el funnel. Cada segundo de carga extra, cada paso innecesario en el checkout y cada elemento que genera confusión tiene un coste directo en conversión medible.
-
-### ¿Trabajáis fuera de Barcelona?
-Sí. El proceso es 100% remoto. Tres Puntos tiene proyectos en Madrid, Valencia, Bilbao y con empresas europeas.
-
-### ¿Usáis templates o todo es a medida?
-Todo a medida. Los proyectos tienen objetivos de conversión, rendimiento y escala que los templates no pueden cumplir.
-
-### ¿Qué incluye la auditoría de arquitectura digital?
-Un documento funcional con la arquitectura actual mapeada, fricciones técnicas identificadas con su consecuencia financiera y prioridades de acción ordenadas por impacto en conversión.
+- ExitBCN (e-commerce streetwear)
+- Gibobs (fintech hipotecas)
+- Diferent Idea (merchandising corporativo)
+- Tu Solución Hipotecaria (servicios financieros)
+- Penguin Aula (plataforma educativa)
+- Nomade Vans (alquiler camper)
+- Nomade Rent (gestión flotas autocaravanas)
+- Talent Search People (consultoría RRHH)
+- ZIM Connections (eSIM conectividad)
 
 ## Contacto
 
-Para consultas sobre proyectos: https://www.trespuntoscomunicacion.es/contacto/
+- Web: https://trespuntoscomunicacion.es
+- Email: hola@trespuntoscomunicacion.es
+- Teléfono: +34 930 117 733
+- LinkedIn: https://www.linkedin.com/in/trespuntoscomunicacion/
+- Ubicación: Barcelona, España
 
-## Blog
+## Contenido técnico (blog)
 
-Artículos técnicos sobre UX/UI, desarrollo web, tendencias digitales e IA: https://www.trespuntoscomunicacion.es/blog/
+Artículos sobre arquitectura frontend, tendencias UX/UI, leyes de UX, desarrollo web, accesibilidad WCAG, IA y automatización, e-commerce. Todos firmados por Jordi Expósito con fecha y biografía.
+
+## URLs principales
+
+- Home: https://trespuntoscomunicacion.es/
+- UX/UI: https://trespuntoscomunicacion.es/servicios/diseno-ux-ui-barcelona
+- Desarrollo: https://trespuntoscomunicacion.es/servicios/desarrollo-web-a-medida-barcelona
+- Consultoría: https://trespuntoscomunicacion.es/servicios/consultoria-digital-barcelona
+- IA: https://trespuntoscomunicacion.es/servicios/ia-generativa-empresas
+- Design Engineering: https://trespuntoscomunicacion.es/servicios/design-engineer-barcelona
+- Metodología: https://trespuntoscomunicacion.es/arquitectura-digital-conversion
+- Nosotros: https://trespuntoscomunicacion.es/nosotros
+- Blog: https://trespuntoscomunicacion.es/blog
+- Casos: https://trespuntoscomunicacion.es/casos-de-negocio
+- Contacto: https://trespuntoscomunicacion.es/contacto
