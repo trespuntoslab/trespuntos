@@ -893,15 +893,44 @@
       line-height: 1.7;
     }
 
-    /* Splide overrides */
-    .ai-carousel .splide__slide { display: flex; overflow: hidden; }
-    .ai-carousel { cursor: grab; padding: 1rem 0; }
-    .ai-carousel.is-active:active, .ai-carousel .is-dragging { cursor: grabbing; }
+    /* ── Marquee dual rows ── */
+    .ai-marquee-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 1rem 0;
+    }
+
+    .ai-marquee-row {
+      display: flex;
+      width: max-content;
+      gap: 1.5rem;
+      will-change: transform;
+    }
+
+    .ai-marquee-row--left {
+      animation: aiMarqueeLeft 40s linear infinite;
+    }
+
+    .ai-marquee-row--right {
+      animation: aiMarqueeRight 40s linear infinite;
+    }
+
+
+    @keyframes aiMarqueeLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes aiMarqueeRight {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
 
     /* Card — tall & thin */
     .nosotros-ai-member {
       flex-shrink: 0;
-      width: 100%;
+      width: 240px;
       background: var(--bg-surface);
       border: 1px solid var(--border-strong);
       border-radius: var(--radius-lg);
@@ -910,6 +939,12 @@
       flex-direction: column;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .nosotros-ai-member { width: 200px; }
+      .ai-marquee-row--left { animation-duration: 30s; }
+      .ai-marquee-row--right { animation-duration: 30s; }
     }
 
     .nosotros-ai-member::after {
@@ -1658,89 +1693,222 @@
   <section class="nosotros-ai-team">
     <div class="container-main">
       <span class="section-badge reveal">Equipo IA</span>
-      <h2 class="reveal">Seis especialistas que <span class="text-gradient-standalone">no duermen, no se distraen</span> y no fallan en lo básico.</h2>
+      <h2 class="reveal">Diez especialistas que <span class="text-gradient-standalone">no duermen, no se distraen</span> y no fallan en lo básico.</h2>
       <p class="nosotros-ai-team-intro reveal">Nuestro equipo humano trabaja con <strong style="color:var(--text-primary);font-weight:600">agentes de IA especializados</strong>. Entrenados con nuestra metodología y nuestra forma de trabajar. Tiempo humano para lo que importa: <span class="text-gradient-standalone">pensar, diseñar y decidir contigo</span>.</p>
 
-      <div class="ai-carousel splide reveal" aria-label="Agentes IA de Tres Puntos">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide">
-              <div class="nosotros-ai-member">
-                <div class="nosotros-ai-member-avatar">
-                  <img src="/nosotros/jordan.webp" alt="JORDAN — Director de operaciones IA" loading="lazy" />
-                </div>
-                <div class="nosotros-ai-member-info">
-                  <h3 class="nosotros-ai-member-name">JORDAN</h3>
-                  <p class="nosotros-ai-member-role">Director de operaciones</p>
-                  <p class="nosotros-ai-member-desc">Coordina al equipo, decide quién ejecuta qué y supervisa cada entrega antes de que llegue al cliente.</p>
-                </div>
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="nosotros-ai-member">
-                <div class="nosotros-ai-member-avatar">
-                  <img src="/nosotros/magic.webp" alt="MAGIC — Research y análisis UX" loading="lazy" />
-                </div>
-                <div class="nosotros-ai-member-info">
-                  <h3 class="nosotros-ai-member-name">MAGIC</h3>
-                  <p class="nosotros-ai-member-role">Research y análisis UX</p>
-                  <p class="nosotros-ai-member-desc">Benchmarks, tendencias y análisis de competencia. Cada decisión de diseño arranca con datos, no con intuiciones.</p>
-                </div>
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="nosotros-ai-member">
-                <div class="nosotros-ai-member-avatar">
-                  <img src="/nosotros/bird.webp" alt="BIRD — Propuestas y documentación" loading="lazy" />
-                </div>
-                <div class="nosotros-ai-member-info">
-                  <h3 class="nosotros-ai-member-name">BIRD</h3>
-                  <p class="nosotros-ai-member-role">Propuestas y documentación</p>
-                  <p class="nosotros-ai-member-desc">Propuestas, briefs y presupuestos. Preciso con las cifras, claro en el alcance, listo para enviar.</p>
-                </div>
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="nosotros-ai-member">
-                <div class="nosotros-ai-member-avatar">
-                  <img src="/nosotros/kobe.webp" alt="KOBE — Contenido y comunicación" loading="lazy" />
-                </div>
-                <div class="nosotros-ai-member-info">
-                  <h3 class="nosotros-ai-member-name">KOBE</h3>
-                  <p class="nosotros-ai-member-role">Contenido y comunicación</p>
-                  <p class="nosotros-ai-member-desc">Blog, LinkedIn, copy web, casos de estudio. Escribe con la voz de Tres Puntos. Si suena a genérico, lo reescribe.</p>
-                </div>
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="nosotros-ai-member">
-                <div class="nosotros-ai-member-avatar">
-                  <img src="/nosotros/curry.webp" alt="CURRY — SEO y posicionamiento" loading="lazy" />
-                </div>
-                <div class="nosotros-ai-member-info">
-                  <h3 class="nosotros-ai-member-name">CURRY</h3>
-                  <p class="nosotros-ai-member-role">SEO y posicionamiento</p>
-                  <p class="nosotros-ai-member-desc">Auditorías técnicas, keywords y estrategia de contenido. Cada recomendación conecta con impacto de negocio.</p>
-                </div>
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="nosotros-ai-member">
-                <div class="nosotros-ai-member-avatar">
-                  <img src="/nosotros/nash.webp" alt="LUKA — Automatización e integración" loading="lazy" />
-                </div>
-                <div class="nosotros-ai-member-info">
-                  <h3 class="nosotros-ai-member-name">LUKA</h3>
-                  <p class="nosotros-ai-member-role">Automatización e integración</p>
-                  <p class="nosotros-ai-member-desc">Workflows, APIs, conexiones entre sistemas. Si un proceso se repite dos veces, Luka lo automatiza.</p>
-                </div>
-              </div>
-            </li>
-          </ul>
+      <div class="ai-marquee-wrap reveal" aria-label="Agentes IA de Tres Puntos">
+        <!-- Fila 1 → izquierda: Jordan, Magic, Bird, Kobe, Curry -->
+        <div class="ai-marquee-row ai-marquee-row--left">
+          <div class="nosotros-ai-member">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/jordan.webp" alt="JORDAN — Director de operaciones IA en Tres Puntos" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">JORDAN</h3>
+              <p class="nosotros-ai-member-role">Director de operaciones</p>
+              <p class="nosotros-ai-member-desc">Coordina al equipo, decide quién ejecuta qué y supervisa cada entrega antes de que llegue al cliente.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/magic.webp" alt="MAGIC — Research y análisis UX en Tres Puntos" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">MAGIC</h3>
+              <p class="nosotros-ai-member-role">Research y análisis UX</p>
+              <p class="nosotros-ai-member-desc">Benchmarks, tendencias y análisis de competencia. Cada decisión de diseño arranca con datos, no con intuiciones.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/bird.webp" alt="BIRD — Propuestas y documentación IA en Tres Puntos" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">BIRD</h3>
+              <p class="nosotros-ai-member-role">Propuestas y documentación</p>
+              <p class="nosotros-ai-member-desc">Propuestas, briefs y presupuestos. Preciso con las cifras, claro en el alcance, listo para enviar.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/kobe.webp" alt="KOBE — Contenido y comunicación IA en Tres Puntos" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">KOBE</h3>
+              <p class="nosotros-ai-member-role">Contenido y comunicación</p>
+              <p class="nosotros-ai-member-desc">Blog, LinkedIn, copy web, casos de estudio. Escribe con la voz de Tres Puntos. Si suena a genérico, lo reescribe.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/curry.webp" alt="CURRY — SEO y posicionamiento IA en Tres Puntos" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">CURRY</h3>
+              <p class="nosotros-ai-member-role">SEO y posicionamiento</p>
+              <p class="nosotros-ai-member-desc">Auditorías técnicas, keywords y estrategia de contenido. Cada recomendación conecta con impacto de negocio.</p>
+            </div>
+          </div>
+          <!-- Duplicado para loop infinito -->
+          <div class="nosotros-ai-member" aria-hidden="true">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/jordan.webp" alt="" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">JORDAN</h3>
+              <p class="nosotros-ai-member-role">Director de operaciones</p>
+              <p class="nosotros-ai-member-desc">Coordina al equipo, decide quién ejecuta qué y supervisa cada entrega antes de que llegue al cliente.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member" aria-hidden="true">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/magic.webp" alt="" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">MAGIC</h3>
+              <p class="nosotros-ai-member-role">Research y análisis UX</p>
+              <p class="nosotros-ai-member-desc">Benchmarks, tendencias y análisis de competencia. Cada decisión de diseño arranca con datos, no con intuiciones.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member" aria-hidden="true">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/bird.webp" alt="" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">BIRD</h3>
+              <p class="nosotros-ai-member-role">Propuestas y documentación</p>
+              <p class="nosotros-ai-member-desc">Propuestas, briefs y presupuestos. Preciso con las cifras, claro en el alcance, listo para enviar.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member" aria-hidden="true">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/kobe.webp" alt="" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">KOBE</h3>
+              <p class="nosotros-ai-member-role">Contenido y comunicación</p>
+              <p class="nosotros-ai-member-desc">Blog, LinkedIn, copy web, casos de estudio. Escribe con la voz de Tres Puntos. Si suena a genérico, lo reescribe.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member" aria-hidden="true">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/curry.webp" alt="" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">CURRY</h3>
+              <p class="nosotros-ai-member-role">SEO y posicionamiento</p>
+              <p class="nosotros-ai-member-desc">Auditorías técnicas, keywords y estrategia de contenido. Cada recomendación conecta con impacto de negocio.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fila 2 → derecha: Luka, Rodman, Shaq, Iverson, Pippen -->
+        <div class="ai-marquee-row ai-marquee-row--right">
+          <div class="nosotros-ai-member">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/nash.webp" alt="LUKA — Automatización e integración IA en Tres Puntos" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">LUKA</h3>
+              <p class="nosotros-ai-member-role">Automatización e integración</p>
+              <p class="nosotros-ai-member-desc">Workflows, APIs, conexiones entre sistemas. Si un proceso se repite dos veces, Luka lo automatiza.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/rodman.webp" alt="RODMAN — QA y control de calidad IA en Tres Puntos" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">RODMAN</h3>
+              <p class="nosotros-ai-member-role">QA y control de calidad</p>
+              <p class="nosotros-ai-member-desc">Tests, revisiones y validación antes de cada entrega. Si hay un error, Rodman lo encuentra antes que el cliente.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/shaq.webp" alt="SHAQ — Desarrollo y arquitectura IA en Tres Puntos" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">SHAQ</h3>
+              <p class="nosotros-ai-member-role">Desarrollo y arquitectura</p>
+              <p class="nosotros-ai-member-desc">Código, estructura y rendimiento. Shaq levanta la arquitectura técnica y resuelve lo que otros no pueden mover.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/iverson.webp" alt="IVERSON — Analítica y datos IA en Tres Puntos" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">IVERSON</h3>
+              <p class="nosotros-ai-member-role">Analítica y datos</p>
+              <p class="nosotros-ai-member-desc">Métricas, dashboards y análisis de rendimiento. Iverson encuentra las respuestas que los datos esconden.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/pippen.webp" alt="PIPPEN — Paid media y campañas IA en Tres Puntos" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">PIPPEN</h3>
+              <p class="nosotros-ai-member-role">Paid media y campañas</p>
+              <p class="nosotros-ai-member-desc">Google Ads, Meta Ads, estrategia de inversión. Pippen optimiza cada euro para que rinda al máximo.</p>
+            </div>
+          </div>
+          <!-- Duplicado para loop infinito -->
+          <div class="nosotros-ai-member" aria-hidden="true">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/nash.webp" alt="" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">LUKA</h3>
+              <p class="nosotros-ai-member-role">Automatización e integración</p>
+              <p class="nosotros-ai-member-desc">Workflows, APIs, conexiones entre sistemas. Si un proceso se repite dos veces, Luka lo automatiza.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member" aria-hidden="true">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/rodman.webp" alt="" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">RODMAN</h3>
+              <p class="nosotros-ai-member-role">QA y control de calidad</p>
+              <p class="nosotros-ai-member-desc">Tests, revisiones y validación antes de cada entrega. Si hay un error, Rodman lo encuentra antes que el cliente.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member" aria-hidden="true">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/shaq.webp" alt="" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">SHAQ</h3>
+              <p class="nosotros-ai-member-role">Desarrollo y arquitectura</p>
+              <p class="nosotros-ai-member-desc">Código, estructura y rendimiento. Shaq levanta la arquitectura técnica y resuelve lo que otros no pueden mover.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member" aria-hidden="true">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/iverson.webp" alt="" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">IVERSON</h3>
+              <p class="nosotros-ai-member-role">Analítica y datos</p>
+              <p class="nosotros-ai-member-desc">Métricas, dashboards y análisis de rendimiento. Iverson encuentra las respuestas que los datos esconden.</p>
+            </div>
+          </div>
+          <div class="nosotros-ai-member" aria-hidden="true">
+            <div class="nosotros-ai-member-avatar">
+              <img src="/nosotros/pippen.webp" alt="" loading="lazy" width="570" height="760" />
+            </div>
+            <div class="nosotros-ai-member-info">
+              <h3 class="nosotros-ai-member-name">PIPPEN</h3>
+              <p class="nosotros-ai-member-role">Paid media y campañas</p>
+              <p class="nosotros-ai-member-desc">Google Ads, Meta Ads, estrategia de inversión. Pippen optimiza cada euro para que rinda al máximo.</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <p class="nosotros-ai-team-closing reveal">Seis agentes especializados. Supervisión humana constante. Un equipo de cinco personas con la capacidad de una agencia de quince.</p>
+      <p class="nosotros-ai-team-closing reveal">Diez agentes especializados. Supervisión humana constante. Un equipo de cinco personas con la capacidad de una agencia de veinte.</p>
     </div>
   </section>
 

@@ -13,6 +13,16 @@
 4. SSH configurado: clave `~/.ssh/id_ed25519` añadida a GitHub cuenta `trespuntoslab` (2026-03-31)
 5. FTP (alternativa): usuario `claude`, directorio base `/public_html/trespuntos/` — puerto 21 puede estar bloqueado según red
 
+### FTP Producción — trespuntoscomunicacion.es (Nominalia)
+- **Host**: `trespuntoscomunicacion.es`
+- **Usuario**: `claude@trespuntoscomunicacion.es`
+- **Password**: `N63aCg5%&9xÑ(Atk5R`
+- **Directorio raíz**: `/home/tres/public_html`
+- **Protocolo**: FTP con TLS implícito (usar `curl -k` por cert mismatch del hosting)
+- **Comando base**: `curl -k "ftp://claude%40trespuntoscomunicacion.es:N63aCg5%25%269xÑ(Atk5R@trespuntoscomunicacion.es/"`
+- **Nota**: La Ñ en la password requiere encoding UTF-8 directo (no percent-encode)
+- **Elementos a preservar siempre**: `db-clientes/`, `intekmedical-reporte/`, `proyectos/`, `img_firma/`, `phpMyAdmin/`, `.well-known/`, `cgi-bin/`, archivos verificación Google
+
 ## Design System
 Cuando se modifique cualquier token CSS, componente visual, o se añada un nuevo componente:
 - Actualizar `/design-system.html` para reflejar el cambio
@@ -210,6 +220,26 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
   - Jordan widget bubble → Aviso de privacidad visible en el footer
 - **🟡 Purgar caché**: Después de implementar, purgar LiteSpeed en Hostinger (Advanced → Cache Manager → Purge All)
 
+### Cambios aplicados (2026-04-07) — Revisión campaña partners
+- **Auditoría completa de la campaña partners**: Revisión de todos los workflows n8n, Airtable, landing de auditoría y documentación antes de activación
+- **Seguridad Kobe workflow (BLcLAnrGcwUYyDJf)**: Migración de API keys hardcodeadas a n8n Credentials:
+  - Nodo "Leer Datos Agencia Airtable": `Authorization: Bearer patN5OZQ...` → credencial `airtableApiKey` (Predefined → Airtable API). Header eliminado.
+  - Nodo "GPT-4.1-mini Kobe": `Authorization: Bearer sk-proj-fWYIB...` → credencial `OpenAi account 2` (Predefined → OpenAi). Header eliminado.
+  - Nodo "Notificar Jordan": Token Telegram en URL — no migrable en nodo HTTP Request (API requiere token en path `/bot<token>/`). Pendiente: reemplazar por nodo nativo Telegram.
+- **Verificación workflows en producción**:
+  - WF3 (Envío Secuencial): Filtro correcto `Pipeline = "✅ Aprobado"`, Gmail OAuth2, firma HTML — OK
+  - WF5 (Tracking Auditoría): Última ejecución exitosa 7 abril — OK
+  - WF0 (Jordan Chat Proxy): CORS correcto para trespuntoscomunicacion.es — OK
+  - Pipeline v2.5 (Leads): Email bienvenida con colores mint, URL correcta — OK
+- **Verificación Airtable (base appdeN48esyCb1v7H)**:
+  - Sin duplicados (RODANET, V3rtice: 1 registro por tabla)
+  - Datos completos en las 3 tablas (Agencias, Secuencia Emails, Auditorías)
+- **Verificación landing auditoría** (`/partners/audit/index.html`):
+  - Webhook base URL correcta: `https://n8n.trespuntos-lab.com/webhook`
+  - Tracking events (visit, calendly, dismiss) apuntan a WF5 — OK
+- **Documentación actualizada**: `/partners/campana/WORKFLOWS.md` — Problemas de WF3, WF5 y Kobe marcados como resueltos/migrados
+- **Cloudflare Turnstile**: Configurado por Jordi en la landing de auditoría partners
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
@@ -217,11 +247,13 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
 - ✅ ~~Página /iniciar-proyecto/ standalone~~ COMPLETADO (2026-04-01)
 - ✅ ~~CTAs navbar/footer → /iniciar-proyecto/~~ COMPLETADO (2026-04-01)
 - ✅ ~~Privacidad en chats (contacto + Jordan widget)~~ COMPLETADO (2026-04-01)
+- ✅ ~~Seguridad Kobe workflow: migrar API keys a credenciales~~ COMPLETADO (2026-04-07): Airtable + OpenAI migrados. Telegram pendiente (requiere nodo nativo)
 - Replicar formulario inline de contacto en el resto de páginas (home, casos, servicios) — actualmente dependen de `TP.ctaForm()` que puede fallar
 - Validar token Turnstile server-side en n8n (workflow leads-trespuntos)
 - Añadir puntos verdes animados (como contacto) en secciones statement de TODOS los casos
 - Mejorar animaciones de entrada en todos los templates (más "wow")
 - Revisar spacing del hero centrado en TSH y Nomade Vans (título en 3 líneas, texto pegado)
+- Kobe workflow: reemplazar nodo HTTP "Notificar Jordan" por nodo nativo Telegram (para eliminar token del URL)
 
 ## Documentación de automatización
 **IMPORTANTE: Antes de tocar CUALQUIER cosa relacionada con formularios, webhooks, o el flujo de envío, leer OBLIGATORIAMENTE:**

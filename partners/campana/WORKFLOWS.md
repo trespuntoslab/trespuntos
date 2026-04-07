@@ -43,10 +43,10 @@ Magic Research  →   web-audit skill  →   Kobe Emails      →   WF3 Envio
 7. Actualizar Funnel de agencia a "Contactada"
 8. Notificar por Telegram
 
-### Problemas detectados:
-- **CRITICO:** El filtro busca Pipeline = "Listo" pero el valor real en Airtable es "Listo para enviar"
-- Envia desde jordi@trespuntos-lab.com — verificar que es correcto
-- No tiene credential reference para Airtable, usa {{$credentials.airtableApiKey}}
+### Estado (verificado 2026-04-07):
+- ✅ Filtro corregido: busca `Pipeline = "✅ Aprobado"` (OR con "📧 Email 1 enviado" y "📧 Email 2 enviado")
+- ✅ Envía desde jordi@trespuntos-lab.com via Gmail OAuth2
+- ✅ Usa credencial Airtable via `{{$credentials.airtableApiKey}}`
 
 ---
 
@@ -99,10 +99,10 @@ Magic Research  →   web-audit skill  →   Kobe Emails      →   WF3 Envio
 4. Cambia Funnel de agencia a "Descartada"
 5. Notifica Telegram
 
-### Problemas detectados:
-- **CRITICO:** 10/10 ejecuciones con error — probable problema de credencial Airtable
-- La landing audit/index.html SI envia eventos a estos webhooks (trackEvent)
-- Verificar que la URL base del webhook es correcta en el JS de la landing
+### Estado (verificado 2026-04-07):
+- ✅ Última ejecución exitosa: 7 abril 18:31 (rama Calendly)
+- ✅ La landing audit/index.html envía eventos a los webhooks (trackEvent)
+- ✅ URL base del webhook correcta: `https://n8n.trespuntos-lab.com/webhook`
 
 ---
 
@@ -120,11 +120,10 @@ Magic Research  →   web-audit skill  →   Kobe Emails      →   WF3 Envio
 4. Notifica por Telegram
 5. Responde con JSON de los 3 emails
 
-### Problemas detectados:
-- **SEGURIDAD:** API key de Airtable hardcodeada en texto plano en nodo HTTP
-- **SEGURIDAD:** API key de OpenAI hardcodeada en texto plano en nodo HTTP
-- **SEGURIDAD:** Token de Telegram hardcodeado en texto plano
-- Todas deberian usar n8n credentials en lugar de valores inline
+### Seguridad (actualizado 2026-04-07):
+- ✅ **Airtable**: Migrado a credencial `airtableApiKey` (Predefined Credential Type → Airtable API). Header Authorization eliminado.
+- ✅ **OpenAI**: Migrado a credencial `OpenAi account 2` (Predefined Credential Type → OpenAi). Header Authorization eliminado.
+- ⚠️ **Telegram**: Token sigue en la URL (`/bot<token>/sendMessage`). No migrable a credenciales en nodo HTTP Request — la API de Telegram requiere el token en la URL. Para migrar, habría que reemplazar el nodo HTTP por un nodo nativo de Telegram.
 
 ---
 
