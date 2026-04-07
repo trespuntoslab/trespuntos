@@ -6,22 +6,27 @@
 - Jordi debe confirmar ("sí", "sube", "dale", "push") antes de ejecutar cualquier `git push` o upload
 - Esto aplica a git push, FTP, SCP, rsync, o cualquier método de transferencia a producción
 
-### Flujo de deploy actual (desde 2026-03-31)
+### Flujo de deploy actual (desde 2026-04-07)
 1. **Git push**: `git push origin main` → sube al repositorio `git@github.com:trespuntoslab/trespuntos.git`
-2. **Deploy en Hostinger**: Panel hPanel → Git → botón **Implementar** (o activar Implementación automática)
-3. El directorio en servidor: `public_html/trespuntos/` en `trespuntos-lab.com`
-4. SSH configurado: clave `~/.ssh/id_ed25519` añadida a GitHub cuenta `trespuntoslab` (2026-03-31)
-5. FTP (alternativa): usuario `claude`, directorio base `/public_html/trespuntos/` — puerto 21 puede estar bloqueado según red
+2. **FTP a producción**: Subir archivos modificados por FTP a `www.trespuntoscomunicacion.es` (Nominalia)
+3. No se necesita paso adicional — los archivos están en producción directamente tras el FTP
 
-### FTP Producción — trespuntoscomunicacion.es (Nominalia)
-- **Host**: `trespuntoscomunicacion.es`
+### Producción — www.trespuntoscomunicacion.es (Nominalia)
+- **URL**: `https://www.trespuntoscomunicacion.es`
+- **Host FTP**: `trespuntoscomunicacion.es`
 - **Usuario**: `claude@trespuntoscomunicacion.es`
 - **Password**: `N63aCg5%&9xÑ(Atk5R`
 - **Directorio raíz**: `/home/tres/public_html`
-- **Protocolo**: FTP con TLS implícito (usar `curl -k` por cert mismatch del hosting)
-- **Comando base**: `curl -k "ftp://claude%40trespuntoscomunicacion.es:N63aCg5%25%269xÑ(Atk5R@trespuntoscomunicacion.es/"`
+- **Protocolo**: FTP — usar `curl -k --ftp-pasv` (sin --ftp-ssl, causa error 451 en algunos archivos)
+- **Comando base**: `curl -k --ftp-pasv "ftp://claude%40trespuntoscomunicacion.es:N63aCg5%25%269xÑ(Atk5R@trespuntoscomunicacion.es/"`
 - **Nota**: La Ñ en la password requiere encoding UTF-8 directo (no percent-encode)
 - **Elementos a preservar siempre**: `db-clientes/`, `intekmedical-reporte/`, `proyectos/`, `img_firma/`, `phpMyAdmin/`, `.well-known/`, `cgi-bin/`, archivos verificación Google
+
+### ⚠️ Deprecado — tres.trespuntos-lab.com (Hostinger)
+- **Ya NO es producción** (deprecado 2026-04-07)
+- Era entorno beta/staging en Hostinger con deploy vía Git (hPanel → Implementar)
+- El dominio `trespuntos-lab.com` puede seguir existiendo pero NO es donde se sirve la web real
+- No subir cambios a Hostinger — toda la producción va por FTP a Nominalia
 
 ## Design System
 Cuando se modifique cualquier token CSS, componente visual, o se añada un nuevo componente:

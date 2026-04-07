@@ -685,11 +685,12 @@
     try{try{TP.navbar('casos-de-negocio');}catch(e){}}catch(e){console.warn("TP.navbar:",e);}
     try{try{TP.footer();}catch(e){}}catch(e){console.warn("TP.footer:",e);}
     try{try{TP.ctaForm();}catch(e){}}catch(e){console.warn("TP.ctaForm:",e);}
+    try{TP.initJS();}catch(e){console.warn("TP.initJS:",e);}
+    setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},800);
   });</script>
   <script src="/js/main.js" defer></script>
   <script src="/js/service-page.js" defer></script>
   <script src="/js/supabase-forms.js" defer></script>
-  <script>try{TP.initJS();}catch(e){}</script>
 
   <!-- Jordan — Agente Conversacional Tres Puntos -->
   <script>
