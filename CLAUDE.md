@@ -245,6 +245,19 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
 - **Documentación actualizada**: `/partners/campana/WORKFLOWS.md` — Problemas de WF3, WF5 y Kobe marcados como resueltos/migrados
 - **Cloudflare Turnstile**: Configurado por Jordi en la landing de auditoría partners
 
+### Cambios aplicados (2026-04-08) — Páginas legales + Cookiebot
+- **Páginas legales del WordPress recuperadas**: Contenido legal real extraído de la base de datos WP (`tres_wp907`, tabla `wpqt_posts`) del backup en `_wordpress-backup/` en FTP Nominalia
+- **4 páginas legales creadas/actualizadas** con contenido real (CIF B66018490, Tres Puntos Comunicación S.L., dirección, LOPD):
+  - `/aviso-legal/index.html` — Aviso legal completo (protección datos, contenidos, jurisdicción)
+  - `/politica-privacidad/index.html` — Política de privacidad (derechos ARCO, propiedad intelectual, seguridad, confidencialidad)
+  - `/politica-cookies/index.html` — Política de cookies + script CookieDeclaration de Cookiebot (genera tabla automática)
+  - `/politica-redes-sociales/index.html` — **NUEVA** página de privacidad en redes sociales (Facebook, Twitter, YouTube, LinkedIn)
+- **SEO**: Todas las legales con `<meta name="robots" content="noindex, follow" />`
+- **Cookiebot** (ID: `b7dc2b5e-2d86-47c4-9650-a68520004f23`): Script de consentimiento añadido en **89 páginas HTML** del sitio. El banner solo aparece en dominios configurados en Cookiebot (producción)
+- **Footer actualizado**: `components.js` + `index.html` (inline) con 4 links legales: Legal, Privacidad, Cookies, Redes Sociales
+- **Subido a producción por FTP**: 89+ archivos subidos y verificados en www.trespuntoscomunicacion.es
+- **WordPress backup**: La DB del WP antiguo sigue accesible en `_wordpress-backup/` con credenciales en `wp-config.php` (DB: `tres_wp907`, user: `tres_wp907`, tabla prefix: `wpqt_`)
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
@@ -253,12 +266,15 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
 - ✅ ~~CTAs navbar/footer → /iniciar-proyecto/~~ COMPLETADO (2026-04-01)
 - ✅ ~~Privacidad en chats (contacto + Jordan widget)~~ COMPLETADO (2026-04-01)
 - ✅ ~~Seguridad Kobe workflow: migrar API keys a credenciales~~ COMPLETADO (2026-04-07): Airtable + OpenAI migrados. Telegram pendiente (requiere nodo nativo)
+- ✅ ~~Páginas legales con contenido real del WP~~ COMPLETADO (2026-04-08): 4 páginas legales + Cookiebot en 89 páginas
 - Replicar formulario inline de contacto en el resto de páginas (home, casos, servicios) — actualmente dependen de `TP.ctaForm()` que puede fallar
 - Validar token Turnstile server-side en n8n (workflow leads-trespuntos)
 - Añadir puntos verdes animados (como contacto) en secciones statement de TODOS los casos
 - Mejorar animaciones de entrada en todos los templates (más "wow")
 - Revisar spacing del hero centrado en TSH y Nomade Vans (título en 3 líneas, texto pegado)
 - Kobe workflow: reemplazar nodo HTTP "Notificar Jordan" por nodo nativo Telegram (para eliminar token del URL)
+- Configurar dominio en Cookiebot panel para que el banner aparezca en producción (trespuntoscomunicacion.es)
+- Actualizar textos legales a RGPD/LOPDGDD (actualmente referencian LOPD 15/1999 del WP antiguo)
 
 ## Documentación de automatización
 **IMPORTANTE: Antes de tocar CUALQUIER cosa relacionada con formularios, webhooks, o el flujo de envío, leer OBLIGATORIAMENTE:**
