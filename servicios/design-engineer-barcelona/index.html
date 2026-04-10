@@ -2,16 +2,27 @@
 <html lang="es" class="scroll-smooth">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+  <!-- CookieConsent v3 (self-hosted, GDPR, consent mode v2) + GA4 condicional — post-LCP -->
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css">
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css">
+  </noscript>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ERX855WTHN');
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var s1 = document.createElement('script');
+        s1.src = '/assets/cookieconsent/cookieconsent.umd.js';
+        s1.onload = function () {
+          var s2 = document.createElement('script');
+          s2.src = '/assets/cookieconsent/cookieconsent-init.js';
+          document.head.appendChild(s2);
+        };
+        document.head.appendChild(s1);
+      }, 800);
+    });
   </script>
-  <!-- Cookiebot -->
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="b7dc2b5e-2d86-47c4-9650-a68520004f23" type="text/javascript" async></script>
   <meta charset="UTF-8" />
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -103,8 +114,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono:wght@400&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'" />
 
-  <link rel="stylesheet" href="/css/design-system.css" media="print" onload="this.media='all'" />
-  <link rel="stylesheet" href="/css/components.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
   <link rel="stylesheet" href="/css/service-page.css" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="/css/case-study.css" media="print" onload="this.media='all'" />
   <noscript>

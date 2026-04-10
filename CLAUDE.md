@@ -258,6 +258,41 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
 - **Subido a producción por FTP**: 89+ archivos subidos y verificados en www.trespuntoscomunicacion.es
 - **WordPress backup**: La DB del WP antiguo sigue accesible en `_wordpress-backup/` con credenciales en `wp-config.php` (DB: `tres_wp907`, user: `tres_wp907`, tabla prefix: `wpqt_`)
 
+### Cambios aplicados (2026-04-10) — Migración Cookiebot → CookieConsent v3 + Fix FOUC crítico
+
+#### 1. Cookiebot → CookieConsent v3 (self-hosted, GDPR, Consent Mode v2)
+- **Motivo**: Cookiebot cargaba sincrónicamente y se convertía en el elemento LCP en mobile. Además dependía de un SaaS externo.
+- **Solución**: Migración a [CookieConsent v3](https://github.com/orestbida/cookieconsent) (MIT, ~11KB, self-hosted)
+- **4 archivos nuevos en `/assets/cookieconsent/`**:
+  - `cookieconsent.css` — CSS base de la librería
+  - `cookieconsent.umd.js` — Librería (11KB)
+  - `cookieconsent-init.js` — Config: 4 categorías (necessary, functionality, analytics, marketing), Consent Mode v2 con defaults denied, callback `onAccept` que carga GA4 condicionalmente
+  - `cookieconsent-theme.css` — Theme dark + mint coherente con design-system (override CSS vars `--cc-bg`, `--cc-btn-primary-bg` mint, botones pill con glow)
+- **Loader post-LCP**: El bloque se carga con `window.load` + `setTimeout(800)` — no bloquea el LCP. CSS con `media="print" onload="this.media='all'"` + fallback `<noscript>`
+- **GA4 condicional**: El tag `gtag('config', 'G-ERX855WTHN')` solo se ejecuta tras aceptar analytics — antes estaba inline en el `<head>` siempre
+- **Script batch aplicado a 88 HTMLs** (`/tmp/replace_cookiebot.py`): Reemplaza el bloque Cookiebot + GA4 inline por el loader CookieConsent. index.html se migró manualmente antes
+- **Total**: 89 páginas con el nuevo banner
+
+#### 2. Fix FOUC crítico — CSS síncrono (causa raíz del CLS 0.49)
+- **Bug descubierto**: `design-system.css`, `components.css` y `case-study.css` se cargaban con el patrón async `media="print" onload="this.media='all'"` en todas las páginas. El critical CSS inline del `<head>` solo cubría el hero → el resto de la página se renderizaba SIN estilos y después saltaba al aplicar el CSS real → CLS 0.49, FOUC visible
+- **Fix**: Script batch (`/tmp/fix_fouc_css.py`) convierte `design-system.css` y `components.css` a **carga síncrona (render-blocking)** en 88 HTMLs. `case-study.css` se deja async porque no siempre es above-the-fold
+- **Resultado Lighthouse local (throttled)**:
+  - Score: 76 → **95**
+  - CLS: **0.49 → 0.005** (99% mejora)
+  - LCP: ~2.8s
+  - FCP: ~1.3s
+- **REGLA CRÍTICA derivada**: El patrón `media="print" onload="this.media='all'"` SOLO es válido si el critical CSS inline cubre el 100% del above-the-fold. Si no, causa FOUC + CLS masivo. En este proyecto el critical CSS solo cubre el hero de la home, así que components.css y design-system.css deben ser síncronos en todas las páginas que no tengan critical CSS completo
+
+#### 3. Deploy
+- **FTP a Nominalia**: 89 HTMLs + 4 archivos de `/assets/cookieconsent/` subidos a producción
+- **Verificación**: /nosotros/ carga con background oscuro correcto, navbar inyectado, banner CookieConsent aparece, no hay referencias a Cookiebot, no hay FOUC visible
+
+#### 4. Bugs conocidos / sin resolver
+- **Botón "Rechazar" del banner sigue en mint**: El selector `#cc-main .cm__btn[data-role="necessary"]` con `!important` no sobrescribe el background mint. El selector coincide pero el estilo no se aplica (posible cache CSS o transition interna de CookieConsent). Pendiente: investigar especificidad o pasar a inline styles via JS en `cookieconsent-init.js`
+- **PSI public vs Lighthouse local**: Local (throttled) muestra score 95, pero PSI público (Moto G emulado) sigue en 67-69. Discrepancia no resuelta — posible causa: PSI mide desde EEUU con red 4G real, local usa throttling simulado
+- **`.htaccess` — loop en /servicios/**: Línea `RewriteRule ^servicios/?$ /servicios/ [R=301,L]` crea un no-op loop 301 entre http/https. **PREEXISTENTE** (no introducido hoy). `curl` a https://www.trespuntoscomunicacion.es/servicios/ hace timeout. Pendiente de decisión de Jordi
+- **`politica-cookies/index.html`**: Sigue cargando el script `CookieDeclaration` de Cookiebot (es la tabla legal automática, no el banner). Aceptable mientras no haya alternativa — o reemplazar por tabla estática manual
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
@@ -267,6 +302,11 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
 - ✅ ~~Privacidad en chats (contacto + Jordan widget)~~ COMPLETADO (2026-04-01)
 - ✅ ~~Seguridad Kobe workflow: migrar API keys a credenciales~~ COMPLETADO (2026-04-07): Airtable + OpenAI migrados. Telegram pendiente (requiere nodo nativo)
 - ✅ ~~Páginas legales con contenido real del WP~~ COMPLETADO (2026-04-08): 4 páginas legales + Cookiebot en 89 páginas
+- ✅ ~~Migrar Cookiebot → CookieConsent v3 self-hosted~~ COMPLETADO (2026-04-10): 89 HTMLs, Consent Mode v2, GA4 condicional
+- ✅ ~~Fix FOUC + CLS 0.49~~ COMPLETADO (2026-04-10): CSS síncrono en 88 HTMLs, CLS 0.49 → 0.005
+- Fix botón "Rechazar" del banner (sigue en mint, debería ser outline)
+- Investigar discrepancia PSI público (67-69) vs Lighthouse local (95)
+- Decidir qué hacer con loop `.htaccess` en `/servicios/` (preexistente)
 - Replicar formulario inline de contacto en el resto de páginas (home, casos, servicios) — actualmente dependen de `TP.ctaForm()` que puede fallar
 - Validar token Turnstile server-side en n8n (workflow leads-trespuntos)
 - Añadir puntos verdes animados (como contacto) en secciones statement de TODOS los casos
