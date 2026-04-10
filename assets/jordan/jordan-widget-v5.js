@@ -7,7 +7,7 @@
  * Configuracion (antes del script):
  * window.JordanConfig = {
  *   webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
- *   avatar: '/assets/jordan/jordan-avatar.png',
+ *   avatar: '/assets/jordan/jordan-avatar.webp',
  *   position: 'right',
  *   rules: [...]
  * };
@@ -23,7 +23,7 @@
   const CONFIG = Object.assign({
     proxyUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-proxy',
     webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
-    avatar: '/assets/jordan/jordan-avatar.png',
+    avatar: '/assets/jordan/jordan-avatar.webp',
     calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
     position: 'right',
     hideBubble: false,
@@ -1117,7 +1117,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
           <button class="jordan-bubble-btn" aria-label="Abrir chat con Jordan">
             <span class="jordan-unread hidden"></span>
             <span class="jordan-avatar-wrap">
-              ${CONFIG.avatar ? `<img src="${CONFIG.avatar}" alt="Jordan" width="58" height="58" loading="lazy">` : '<span style="font-size:28px;color:#5dffbf;">J</span>'}
+              ${CONFIG.avatar ? `<img src="${CONFIG.avatar}" alt="Jordan" width="58" height="58" loading="eager" fetchpriority="high">` : '<span style="font-size:28px;color:#5dffbf;">J</span>'}
             </span>
           </button>
           <span class="jordan-bubble-label">Habla con Jordan<br>Sin formularios</span>
