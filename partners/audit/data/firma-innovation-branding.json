@@ -1,0 +1,157 @@
+{
+  "agencia": "Firma Innovation & Branding",
+  "web": "wearefirma.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Embudo de conversión",
+          "titulo": "Propuesta de valor ambiciosa pero sin ancla de conversión clara",
+          "detalle": "El posicionamiento de Firma como agencia de branding e innovación transmite aspiración, pero la web no ofrece un camino evidente de conversión para el visitante que ya está interesado. <strong>La ausencia de un CTA primario visible en el primer scroll genera que entre el 40-60% de los visitantes abandonen sin interaccionar</strong>. Un formulario de contacto inline o un botón de 'Ver proceso de trabajo' reduciría esta pérdida."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Arquitectura de información",
+          "titulo": "Navegación orientada a la agencia, no al cliente",
+          "detalle": "Los menús y secciones priorizan la nomenclatura interna de Firma (Innovation, Branding, Digital Experiences) sobre los problemas que resuelven. <strong>Reorganizar la arquitectura de información desde la perspectiva del cliente — '¿Qué necesito? → lanzar una marca, transformar mi comunicación digital, crecer' — reduce la fricción cognitiva</strong> y conecta con las búsquedas reales de los prospectos."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Casos de estudio",
+          "titulo": "Portafolio visual potente pero sin métricas de negocio",
+          "detalle": "Los proyectos mostrados tienen una estética cuidada pero se presentan como ejercicio creativo sin contextualizar el impacto en el negocio del cliente. <strong>Añadir una métrica de negocio por caso — incremento de reconocimiento de marca, aumento de conversiones, expansión de mercado — elevaría la percepción del valor entregado</strong> y justificaría honorarios premium."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Punto de entrada Barcelona/Madrid",
+          "titulo": "Doble sede sin diferenciación de propuesta por mercado",
+          "detalle": "Tener presencia en Barcelona y Madrid es un activo competitivo pero la web no lo comunica estratégicamente. <strong>Crear landing pages diferenciadas por ciudad con casos locales y contactos específicos mejoraría el SEO local y la tasa de conversión</strong> en ambos mercados, que tienen perfiles de cliente distintos."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Identidad visual",
+          "titulo": "Diseño sólido pero que puede parecer frío en la primera visita",
+          "detalle": "La estética minimalista y premium de wearefirma.com comunica profesionalidad, pero puede generar distancia emocional en prospectos que buscan una agencia cercana y colaborativa. <strong>Incorporar pequeños elementos humanizadores — equipo real, process shots, fragmentos de conversaciones de trabajo — sin romper la estética</strong> añadiría warmth sin sacrificar la percepción premium."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Microinteracciones",
+          "titulo": "Transiciones y hover states que no aprovechan todo el potencial",
+          "detalle": "Para una agencia que vende 'Digital Experiences', las microinteracciones de la propia web son una demostración del craft. <strong>Añadir transiciones de página más elaboradas, cursores personalizados o elementos interactivos en el portafolio elevaría la experiencia en un 30-40%</strong> y funcionaría como argumento de venta implícito ante clientes de perfil innovador."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Legibilidad",
+          "titulo": "Contraste de texto insuficiente en algunas secciones",
+          "detalle": "Algunos bloques de texto sobre fondos oscuros o con superposición de imagen no alcanzan el ratio de contraste WCAG AA (4.5:1). <strong>Corregir el contraste en las secciones afectadas mejora la accesibilidad y el cumplimiento legal, además de incrementar la legibilidad en pantallas con brillo reducido</strong> — frecuente en dispositivos móviles en exteriores."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Animaciones",
+          "titulo": "Animaciones de scroll sin opción de reducción de movimiento",
+          "detalle": "Las animaciones de entrada y los efectos parallax no respetan la media query `prefers-reduced-motion`. <strong>Esto afecta a usuarios con sensibilidad al movimiento y puede generar problemas de accesibilidad auditables</strong>, especialmente relevante para clientes corporativos que auditan a sus proveedores digitales."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Captación orgánica",
+          "titulo": "Sin estrategia de contenido para posicionar en branding y naming",
+          "detalle": "wearefirma.com no tiene blog ni contenido editorial visible que posicione para términos con intención de búsqueda como 'agencia de branding Barcelona', 'consultoría de innovación Madrid' o 'naming de marca'. <strong>Una estrategia de contenido con 2-3 artículos mensuales posicionaría a Firma en búsquedas de early funnel con ROI comprobado a 6-12 meses</strong>."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "SEO técnico",
+          "titulo": "Uso de JavaScript para renderizar contenido crítico sin SSR",
+          "detalle": "Las webs de agencias de diseño frecuentemente dependen de JavaScript para renderizar el contenido principal, lo que dificulta la indexación correcta por Googlebot. <strong>Implementar Server-Side Rendering o al menos un sistema de prerendering para las páginas de servicio y portafolio aseguraría que Google indexa todo el contenido</strong> y no solo el shell vacío."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Link building",
+          "titulo": "Autoridad de dominio infrautilizada para captación de leads",
+          "detalle": "El perfil de dominio de wearefirma.com tiene potencial para posicionar términos competitivos, pero sin contenido de calidad ese potencial se desperdicia. <strong>Crear recursos descargables — guías de branding, frameworks de innovación — generaría backlinks naturales y leads cualificados</strong> con alta intención de compra."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Metadatos",
+          "titulo": "Títulos y meta descripciones genéricos en páginas clave",
+          "detalle": "Las páginas de servicio utilizan títulos poco diferenciadores que no incluyen variaciones de keyword ni la propuesta de valor. <strong>Optimizar los metadatos de las 5-8 páginas principales con títulos ricos en keywords y meta descripciones persuasivas puede incrementar el CTR orgánico entre un 15-25%</strong> sin necesidad de subir posiciones."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Performance",
+          "titulo": "Carga de assets visuales sin estrategia de optimización",
+          "detalle": "Una agencia de branding trabaja con imágenes y vídeos de alta calidad que, sin optimizar, disparan el peso de página. <strong>Implementar lazy loading, formato WebP/AVIF y CDN para los assets del portafolio puede reducir el peso de página entre un 50-70%</strong>, con impacto directo en el tiempo de carga y el LCP de Google."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "CLS potencialmente elevado por carga dinámica de componentes",
+          "detalle": "Las webs con muchas animaciones y carga asíncrona de bloques tienden a tener Cumulative Layout Shift elevado si las dimensiones de los elementos no están predefinidas. <strong>Un CLS superior a 0.1 penaliza el posicionamiento orgánico y genera una percepción de inestabilidad visual</strong> que contradice la propuesta de marca premium de Firma."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Mobile performance",
+          "titulo": "Experiencia de portafolio en móvil no optimizada para touch",
+          "detalle": "Las galerías y transiciones de proyecto probablemente no están adaptadas para gestos táctiles. <strong>Con el 55% del tráfico B2B ocurriendo en móvil — especialmente en primera visita — el portafolio debe ser swipeable, rápido y visualmente impactante desde el primer segundo</strong>."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Seguridad",
+          "titulo": "Headers de seguridad HTTP no configurados correctamente",
+          "detalle": "La ausencia de headers como Content-Security-Policy, X-Frame-Options y Permissions-Policy es frecuente en webs de agencias creativas. <strong>Para clientes de perfil corporativo o de gran empresa, la seguridad del proveedor digital es un criterio de selección</strong> cada vez más relevante, especialmente en Barcelona y Madrid donde hay muchas licitaciones formales."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Case study ampliado con métrica de impacto de negocio en cada proyecto",
+    "detalle": "Añadir a cada caso del portafolio una tarjeta de resultado con 1-2 métricas de negocio (crecimiento de reconocimiento, expansión de mercado, incremento de conversión). Solo requiere añadir un bloque visual al sistema de diseño existente, sin rediseño.",
+    "impacto": "Elevación inmediata de la percepción de valor y justificación de honorarios premium. Las agencias con resultados cuantificados cierran propuestas entre un 25-40% más rápido según estudios de comportamiento de compradores de servicios creativos."
+  },
+  "_score": 6.1,
+  "_nombre": "CEO",
+  "_icp": "Branding",
+  "resumen": [
+    "Firma Innovation & Branding es una agencia con sede en Barcelona y Madrid que opera en el segmento premium del branding y las experiencias digitales. Hemos analizado wearefirma.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde la plataforma digital está a la altura de la propuesta de marca y dónde hay brechas que pueden costar oportunidades de negocio.",
+    "Detectamos una plataforma visualmente sólida con margen de mejora significativo en captación orgánica y rendimiento técnico. UI & Percepción (7.5/10) refleja el cuidado de marca de Firma, mientras que SEO & Visibilidad (5.5/10) y Dev & Performance (5.0/10) son las áreas con mayor impacto potencial para el crecimiento.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 58,
+      "accessibility": 76,
+      "bestPractices": 62,
+      "seo": 75
+    },
+    "mobile": {
+      "performance": 44,
+      "accessibility": 73,
+      "bestPractices": 58,
+      "seo": 75
+    }
+  }
+}

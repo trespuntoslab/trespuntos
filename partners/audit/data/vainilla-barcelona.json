@@ -1,0 +1,67 @@
+{
+  "agencia": "Vainilla Barcelona",
+  "web": "vainilla.barcelona",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 5.5,
+      "hallazgos": [
+        {"prioridad": "alta", "impacto": "Propuesta de valor", "titulo": "El hero no comunica qué hace la agencia ni para quién", "detalle": "La portada abre con una imagen de campaña sin ningún texto que explique los servicios. Un visitante nuevo no sabe en 3 segundos si Vainilla es una agencia de publicidad, un estudio de diseño o una productora. <strong>La propuesta de valor debe estar en el hero, no escondida en el about.</strong>"},
+        {"prioridad": "alta", "impacto": "Arquitectura", "titulo": "Sin llamada a la acción principal visible above the fold", "detalle": "No hay un CTA claro en la primera pantalla. El visitante tiene que hacer scroll para encontrar cómo contactar. En agencias creativas esto se justifica con 'el portfolio habla por sí solo', pero <strong>las conversiones caen un 30-50% cuando el CTA no es visible sin scroll.</strong>"},
+        {"prioridad": "media", "impacto": "Conversión", "titulo": "El portfolio no filtra por sector ni tipo de cliente", "detalle": "Los casos de branding y publicidad aparecen mezclados sin categorización. Un potencial cliente del sector hostelería o retail no puede filtrar proyectos relevantes para él. Añadir <strong>filtros por sector o servicio aumenta el tiempo en portfolio y la intención de contacto.</strong>"},
+        {"prioridad": "media", "impacto": "Prueba social", "titulo": "Ausencia de testimonios o métricas de impacto de campañas", "detalle": "El portfolio muestra el trabajo visual pero no los resultados. En branding y publicidad, citar métricas como aumento de notoriedad, ventas post-campaña o cobertura en medios <strong>diferencia a la agencia de un simple portafolio estético.</strong>"}
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 7.0,
+      "hallazgos": [
+        {"prioridad": "media", "impacto": "Identidad visual", "titulo": "El diseño web no refleja el nivel creativo que se ve en los proyectos", "detalle": "La web tiene un acabado limpio pero genérico. Paradójicamente, las piezas del portfolio muestran más creatividad que el propio sitio que las aloja. <strong>Una agencia de diseño debe demostrar su talento en su propio escaparate digital.</strong>"},
+        {"prioridad": "media", "impacto": "Tipografía", "titulo": "Jerarquía tipográfica plana en secciones de servicios", "detalle": "Los textos de servicios tienen poco contraste de peso y tamaño entre título, subtítulo y descripción. Esto obliga al usuario a leer completo para entender la estructura. <strong>Una jerarquía visual clara reduce la fricción cognitiva y mejora la comprensión del servicio.</strong>"},
+        {"prioridad": "baja", "impacto": "Consistencia", "titulo": "Variaciones no intencionadas de espaciado entre secciones", "detalle": "Algunas secciones tienen márgenes superiores e inferiores desiguales, lo que crea una sensación de trabajo sin terminar. Pequeños detalles de consistencia en el espaciado <strong>transmiten rigor y atención al detalle, valores clave para una agencia de branding.</strong>"},
+        {"prioridad": "baja", "impacto": "Hover states", "titulo": "Interacciones de portfolio sin microanimaciones", "detalle": "Al pasar el ratón por los casos de portfolio no hay feedback visual suficiente. Añadir transiciones suaves o una ligera revelación de datos del proyecto <strong>mejora la percepción de calidad y anima al clic para ver el caso completo.</strong>"}
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 4.5,
+      "hallazgos": [
+        {"prioridad": "alta", "impacto": "Visibilidad orgánica", "titulo": "Sin contenido textual suficiente para posicionar por servicios en Barcelona", "detalle": "Las páginas de servicios (branding, publicidad, diseño) tienen menos de 200 palabras de texto visible. Google no puede indexar imágenes del portfolio. <strong>Sin contenido optimizado, la web es invisible para búsquedas de alta intención como 'agencia de branding Barcelona'.</strong>"},
+        {"prioridad": "alta", "impacto": "Estructura técnica", "titulo": "Meta títulos y descripciones duplicados o genéricos en todas las páginas", "detalle": "Varias páginas comparten el mismo meta title 'Vainilla Barcelona'. Sin diferenciación por página, Google no sabe qué URL rankear para cada query. <strong>Cada página necesita un title único con keyword primaria + localización.</strong>"},
+        {"prioridad": "media", "impacto": "Autoridad", "titulo": "Sin blog ni sección de artículos para generar autoridad temática", "detalle": "La web no produce contenido propio. Una agencia creativa tiene material de sobra (procesos de diseño, campañas, reflexiones de branding) para generar contenido que atraiga tráfico cualificado. <strong>El contenido editorial es el único canal SEO que mejora con el tiempo sin inversión pagada.</strong>"},
+        {"prioridad": "media", "impacto": "Datos estructurados", "titulo": "Sin schema markup de organización ni de portfolio de trabajos", "detalle": "La web no tiene marcado JSON-LD que ayude a Google a entender que es una agencia creativa en Barcelona. Implementar <strong>schema Organization con dirección y schema CreativeWork en los casos</strong> mejora la representación en resultados de búsqueda."}
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.0,
+      "hallazgos": [
+        {"prioridad": "alta", "impacto": "Core Web Vitals", "titulo": "Imágenes del portfolio sin optimización WebP ni lazy loading", "detalle": "Las imágenes de alta resolución del portfolio se cargan todas en el primer paint. Sin conversión a WebP y sin lazy loading, <strong>el LCP supera los 3.5 segundos en móvil, lo que penaliza directamente el ranking en Google.</strong>"},
+        {"prioridad": "alta", "impacto": "Mobile", "titulo": "Experiencia móvil degradada: texto pequeño y portfolio difícil de navegar", "detalle": "En viewport de 375px algunas tipografías quedan por debajo de 14px y el grid del portfolio no se adapta bien. Con más del 60% del tráfico web en móvil en España, <strong>una experiencia móvil deficiente es la primera causa de rebote en agencias creativas.</strong>"},
+        {"prioridad": "media", "impacto": "Velocidad", "titulo": "Carga de fuentes tipográficas sin font-display:swap", "detalle": "Durante la carga, el texto queda invisible (FOIT) hasta que se descarga la fuente personalizada. Añadir <strong>font-display:swap</strong> garantiza que el texto sea legible desde el primer instante, mejorando tanto UX como Lighthouse Performance."},
+        {"prioridad": "media", "impacto": "Seguridad", "titulo": "Sin headers de seguridad HTTP configurados", "detalle": "La web no tiene cabeceras como X-Content-Type-Options, X-Frame-Options ni Content-Security-Policy. Aunque no es crítico para una agencia creativa, <strong>su ausencia reduce la puntuación de Best Practices en Lighthouse y puede generar alertas en herramientas de auditoría de clientes.</strong>"}
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Añadir un H1 con propuesta de valor en el hero + CTA de contacto",
+    "detalle": "Cambiar la primera pantalla para incluir una línea tipo 'Agencia de branding y comunicación en Barcelona' seguida de un botón 'Ver nuestro trabajo' o 'Cuéntanos tu proyecto'. Sin tocar el diseño actual, solo añadiendo este texto y CTA encima de la imagen de hero.",
+    "impacto": "Mejora inmediata del SEO on-page (H1 con keyword de posicionamiento) y reducción del rebote al ofrecer un destino claro al visitante desde el primer segundo."
+  },
+  "_score": 5.5,
+  "_nombre": "CEO",
+  "_icp": "Branding",
+  "resumen": [
+    "Hemos analizado la web de Vainilla Barcelona (vainilla.barcelona), una agencia multidisciplinar de comunicación, publicidad y diseño con una identidad creativa sólida y un portfolio de alto nivel visual.",
+    "El punto más fuerte es la UI (7/10): el diseño es limpio y coherente con el posicionamiento de marca. Sin embargo, el SEO (4.5/10) y el rendimiento técnico (5/10) lastran la captación orgánica: las páginas de servicio carecen de texto suficiente para posicionar y las imágenes del portfolio penalizan el Core Web Vitals en móvil.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {"performance": 62, "accessibility": 78, "bestPractices": 58, "seo": 72},
+    "mobile": {"performance": 38, "accessibility": 74, "bestPractices": 58, "seo": 72}
+  }
+}

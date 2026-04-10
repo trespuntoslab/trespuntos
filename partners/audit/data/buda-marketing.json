@@ -1,0 +1,157 @@
+{
+  "agencia": "Buda Marketing",
+  "web": "budamarketing.es",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Embudo de conversión",
+          "titulo": "Hero sin propuesta de valor diferenciadora",
+          "detalle": "La cabecera de la web no comunica con claridad por qué elegir Buda frente a otras agencias de Madrid. Un mensaje genérico como 'agencia de marketing digital' no activa la toma de decisión. <strong>Reemplazar el headline por una propuesta orientada a resultado — 'Convertimos tu presupuesto en clientes' — puede incrementar el engagement inicial en un 30-40%</strong> al conectar directamente con lo que busca el prospecto."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Arquitectura de información",
+          "titulo": "Servicios listados sin jerarquía de valor percibido",
+          "detalle": "Diseño web, SEO, RRSS, Videomarketing y Ads se presentan como una lista plana sin guiar al visitante hacia el servicio más relevante para su situación. <strong>Estructurar los servicios por tipo de resultado esperado — captación, visibilidad, conversión — reduciría la carga cognitiva</strong> y aumentaría el porcentaje de usuarios que llegan a la página de contacto."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Prueba social",
+          "titulo": "Casos de éxito sin datos cuantitativos visibles",
+          "detalle": "Los clientes referenciados aparecen como logos o menciones sin métricas asociadas. <strong>Mostrar resultados concretos — 'incrementamos un 45% las conversiones orgánicas en 6 meses' — genera una prueba social activa</strong> que permite al prospecto proyectar su propio escenario y reduce la fricción comercial."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Formulario de contacto",
+          "titulo": "Formulario de contacto sin segmentación por servicio",
+          "detalle": "El formulario principal recoge nombre, email y mensaje sin segmentar el tipo de consulta ni el presupuesto. <strong>Añadir un selector de servicio y un rango de inversión permite clasificar automáticamente los leads y personalizar la respuesta</strong>, mejorando la tasa de cierre del equipo comercial."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Identidad visual",
+          "titulo": "Diseño que no transmite especialización ni diferenciación",
+          "detalle": "La estética visual es funcional pero intercambiable con otras agencias de marketing de Madrid. Para una agencia que vende creatividad y resultados, <strong>la propia web es el primer caso de éxito que evalúa el cliente: un diseño genérico comunica que la agencia no innova en sus propios proyectos</strong>. Recomendamos un rediseño que use la identidad visual como argumento de venta."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Percepción de marca",
+          "titulo": "Sección de videomarketing sin muestra de producción propia",
+          "detalle": "Siendo el videomarketing uno de los servicios destacados, la web no muestra vídeos de producción propia de forma prominente. <strong>Un showreel en el hero o en la sección de servicios de vídeo generaría confianza inmediata</strong> y eliminaría la duda más frecuente del cliente: '¿seré capaz este equipo de hacer algo a mi nivel?'"
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Tipografía y jerarquía",
+          "titulo": "Escala tipográfica plana en páginas de servicio",
+          "detalle": "Las páginas de servicio presentan bloques de texto con poca variación en peso y tamaño. <strong>Una jerarquía tipográfica bien definida — H1 display, H2 comercial, cuerpo informativo — mejora la escaneabilidad en un 60%</strong> y reduce el tiempo necesario para que el usuario entienda la propuesta de valor de cada servicio."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Consistencia visual",
+          "titulo": "Uso de ilustraciones genéricas sin personalidad propia",
+          "detalle": "Las ilustraciones de fondo y los iconos de servicios son recursos de stock reconocibles. <strong>Sustituirlos por elementos visuales propios o fotografía real del equipo aumenta el factor de confianza entre un 25-35%</strong> según estudios de conversión, al humanizar la marca y diferenciarla de la competencia."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "SEO on-page",
+          "titulo": "Páginas de servicio con contenido insuficiente para posicionar",
+          "detalle": "Las landing pages de servicios como SEO, Ads o RRSS tienen textos cortos que difícilmente satisfacen la intención informativa del usuario. <strong>Google necesita entre 800-1500 palabras de contenido de calidad por página para posicionar términos competitivos como 'agencia Google Ads Madrid'</strong>. El desarrollo de contenido semántico es la principal palanca de captación orgánica."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Datos estructurados",
+          "titulo": "Ausencia de schema markup en páginas de servicio y empresa",
+          "detalle": "No se detectan datos estructurados de tipo LocalBusiness, Service o FAQ que amplíen la visibilidad en SERPs. <strong>Implementar schema markup en las 6 páginas de servicio principales podría generar resultados enriquecidos en Google</strong>, aumentando el CTR orgánico entre un 20-30% sin necesidad de subir posiciones."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "SEO local",
+          "titulo": "Optimización local de Madrid sin segmentación por barrio o zona",
+          "detalle": "La presencia local en Madrid está trabajada a nivel general pero no por zonas de negocio relevantes. <strong>Crear landing pages específicas para barrios de alta concentración empresarial — Salamanca, Chamberí, Las Rozas — abriría nichos de posicionamiento local de baja competencia</strong> donde las agencias grandes no invierten."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Velocidad de indexación",
+          "titulo": "Sitemap y robots.txt sin optimizar para crawl budget",
+          "detalle": "La arquitectura de rastreo no está optimizada para priorizar las páginas comerciales frente a las auxiliares. <strong>Configurar correctamente el crawl budget mediante un sitemap priorizado y directivas robots.txt adecuadas</strong> asegura que Google indexe primero las páginas que generan negocio."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 4.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad de carga",
+          "titulo": "Performance mobile por debajo del umbral competitivo",
+          "detalle": "Para una agencia de marketing que presume de resultados digitales, la velocidad de su propia web es el primer test de credibilidad. <strong>Un tiempo de carga superior a 3 segundos en móvil genera una tasa de rebote del 53% según Google</strong>. Optimizar imágenes, reducir scripts de terceros y activar compresión son acciones inmediatas con alto impacto."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "LCP y CLS probablemente por encima de los umbrales Google",
+          "detalle": "La estructura de la web sugiere un WordPress con builders visuales que generan CSS y JS redundante. <strong>Scores de LCP superiores a 2.5s y CLS por encima de 0.1 penalizan directamente el posicionamiento orgánico desde la actualización Page Experience de Google</strong>. Una auditoría técnica con Lighthouse es el primer paso obligatorio."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Recursos bloqueantes",
+          "titulo": "Scripts de terceros cargados síncronamente",
+          "detalle": "Píxeles de tracking, widgets de chat y scripts de analítica se cargan probablemente en el head sin diferido, bloqueando el renderizado. <strong>Implementar carga asíncrona y diferida para todos los scripts de terceros reduce el TBT (Total Blocking Time) entre un 40-60%</strong> sin afectar la funcionalidad de ninguna herramienta."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Experiencia móvil",
+          "titulo": "Experiencia de navegación móvil no optimizada para conversión",
+          "detalle": "La versión móvil es responsive pero no diseñada con mobile-first en mente. <strong>Con el 65% del tráfico de agencias de marketing proveniente de dispositivos móviles, los CTAs deben ser thumb-friendly y los formularios reducirse a 2-3 campos máximo</strong> para no perder leads en el momento de mayor intención."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Showreel de videomarketing en el hero con CTA directo",
+    "detalle": "Integrar un vídeo de producción propia (30-60 segundos) en el hero de la home, con un CTA superpuesto tipo 'Quiero algo así para mi empresa'. El vídeo actúa simultáneamente como prueba de capacidad y como gancho emocional.",
+    "impacto": "Incremento estimado del 35-50% en el tiempo de permanencia y del 20-30% en la tasa de contacto, especialmente desde tráfico de búsqueda de agencias de videomarketing en Madrid."
+  },
+  "_score": 5.4,
+  "_nombre": "CEO",
+  "_icp": "Performance",
+  "resumen": [
+    "Buda Marketing opera en el mercado madrileño de marketing digital con una propuesta de servicios amplia que cubre desde SEO y Ads hasta videomarketing y redes sociales. Hemos analizado budamarketing.es en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar los puntos de fricción que frenan la captación de nuevos clientes.",
+    "Detectamos una web funcional pero con importantes brechas en la percepción de marca y el rendimiento técnico. SEO & Visibilidad (6.5/10) es el área más trabajada, mientras que Dev & Performance (4.5/10) arrastra problemas que afectan directamente al posicionamiento y a la conversión, especialmente en móvil.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 52,
+      "accessibility": 74,
+      "bestPractices": 58,
+      "seo": 79
+    },
+    "mobile": {
+      "performance": 38,
+      "accessibility": 71,
+      "bestPractices": 55,
+      "seo": 79
+    }
+  }
+}

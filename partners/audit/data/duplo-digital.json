@@ -5,8 +5,18 @@
   "_nombre": "Angélica",
   "_icp": "Performance",
   "lighthouse": {
-    "desktop": { "performance": 83, "accessibility": 75, "bestPractices": 58, "seo": 85 },
-    "mobile": { "performance": 95, "accessibility": 67, "bestPractices": 58, "seo": 85 }
+    "desktop": {
+      "performance": 82,
+      "accessibility": 75,
+      "bestPractices": 58,
+      "seo": 85
+    },
+    "mobile": {
+      "performance": 95,
+      "accessibility": 67,
+      "bestPractices": 58,
+      "seo": 85
+    }
   },
   "categorias": [
     {

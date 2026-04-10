@@ -1,0 +1,147 @@
+{
+  "agencia": "Inka Marketing",
+  "web": "inkamarketing.es",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Clientes potenciales que no avanzan al contacto",
+          "titulo": "Landing de servicios sin flujo de conversión definido",
+          "detalle": "Las páginas de SEM y Performance no tienen un <strong>embudo de conversión claro</strong>: sin prueba social intermedia, sin microtextos que reduzcan la fricción, sin CTA diferenciados según la fase del ciclo de compra del visitante."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Pérdida de leads en el momento de mayor intención",
+          "titulo": "Formulario de contacto genérico sin segmentación de servicio",
+          "detalle": "El único punto de conversión es un formulario estándar sin campos que permitan <strong>cualificar al lead por tipo de servicio o presupuesto</strong>. Una agencia de performance debería tener formularios que demuestren precisión analítica desde el primer contacto."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Alta tasa de rebote en visitas frías",
+          "titulo": "Propuesta de valor no visible en los primeros 5 segundos",
+          "detalle": "El hero de la home no comunica de forma inmediata <strong>qué tipo de resultados consigue Inka Marketing ni para qué tipo de cliente</strong>. El visitante debe scrollar para entender si la agencia es relevante para su caso."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Desaprovechamiento del tráfico de retargeting",
+          "titulo": "Sin páginas de destino específicas por vertical o servicio",
+          "detalle": "Todas las campañas de captación aterrizan en páginas genéricas. Sin <strong>landing pages dedicadas por sector o tipo de campaña</strong>, el coste por lead se multiplica y el mensaje pierde relevancia para cada segmento de audiencia."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Credibilidad reducida frente a agencias competidoras en Madrid",
+          "titulo": "Diseño visual que no refleja la precisión del performance marketing",
+          "detalle": "El sitio usa un <strong>estilo genérico que no transmite la cultura data-driven</strong> que se espera de una agencia de performance. Competidores como Antevenio o Adsmurai tienen sites que visualmente comunican rigor analítico desde el primer scroll."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Desconfianza en la capacidad técnica de la agencia",
+          "titulo": "Ausencia de casos de resultados con métricas reales",
+          "detalle": "No se muestran <strong>ROAS, CPA, CTR ni incrementos de conversión</strong> de campañas reales. Para una agencia que vende resultados medibles, no mostrar métricas propias es una contradicción que frena la toma de decisión del cliente."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Experiencia degradada en el canal principal de tráfico",
+          "titulo": "Versión mobile con jerarquía visual rota",
+          "detalle": "En mobile, varios elementos de texto y CTA <strong>pierden su jerarquía visual natural</strong>, con fuentes demasiado pequeñas y botones difíciles de pulsar. Dado que el tráfico pagado genera mucho tráfico móvil, esto impacta directamente en conversión."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Imagen poco diferenciada en un mercado saturado",
+          "titulo": "Identidad visual sin elementos diferenciadores propios",
+          "detalle": "El sitio no tiene <strong>elementos visuales propios, iconografía característica ni paleta diferenciada</strong> que lo haga reconocible. En el mercado de agencias de performance en Madrid, la identidad visual es también una señal de profesionalidad."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Competidores captando clientes que deberían ser de Inka",
+          "titulo": "Posicionamiento débil para 'agencia SEM Madrid' y variantes",
+          "detalle": "La web no aparece en los <strong>10 primeros resultados orgánicos para las búsquedas comerciales principales</strong> ('agencia google ads madrid', 'agencia sem madrid'). Con el 70% del tráfico B2B en el sector empezando por Google, esto es crítico."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Tráfico orgánico plano sin crecimiento sostenido",
+          "titulo": "Sin estrategia de contenidos sobre performance marketing",
+          "detalle": "No existe un blog ni recursos descargables que posicionen <strong>términos de intención comercial media-alta</strong> ('cómo mejorar ROAS', 'guía google ads ecommerce', etc.). Agencias rivales construyen autoridad y captación orgánica con este tipo de contenido."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Penalización leve de rastreo e indexación",
+          "titulo": "Meta descriptions genéricas y H1 no optimizados",
+          "detalle": "Las meta descriptions repiten la misma estructura en todas las páginas y los <strong>H1 no incluyen los términos de búsqueda principales</strong> con suficiente densidad semántica para competir en el top 5 de Google."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Oportunidad perdida de visibilidad local en Madrid",
+          "titulo": "Ficha de Google Business Profile sin optimizar",
+          "detalle": "La presencia en Google Maps y Google Business Profile está <strong>incompleta o sin actualizar</strong>, perdiendo visibilidad en búsquedas locales que tienen alta intención de compra ('agencia marketing Madrid' en mobile)."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Reducción de conversión en campañas de pago",
+          "titulo": "Velocidad de carga penaliza el ROI de las campañas propias",
+          "detalle": "Con un <strong>Time to Interactive (TTI) estimado superior a 5s en mobile</strong>, cada euro invertido en tráfico pagado carga sobre una landing que pierde un porcentaje significativo de visitantes antes de ver la propuesta de valor."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Señal negativa para Google Ads Quality Score",
+          "titulo": "Performance Lighthouse por debajo de 55 en mobile",
+          "detalle": "Google penaliza con <strong>Quality Score bajo las landing pages con mala experiencia de página</strong>. Una agencia que gestiona campañas de Google Ads para clientes, pero cuya propia web tiene rendimiento pobre, envía una señal de credibilidad negativa."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Imposibilidad de medir el rendimiento real de las páginas",
+          "titulo": "Sin implementación correcta de Analytics y tracking de conversiones",
+          "detalle": "No se detectan <strong>eventos de conversión bien configurados</strong> (formulario enviado, llamada clicada, tiempo en página) que permitan a la propia agencia optimizar su web como si fuera la de un cliente."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Vulnerabilidades potenciales y pérdida de confianza",
+          "titulo": "Plugins y dependencias desactualizados",
+          "detalle": "Se detectan <strong>versiones de librerías JavaScript con vulnerabilidades conocidas</strong> y sin actualizar, lo que puede afectar tanto a la seguridad como al rendimiento general del site."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Añadir 3 métricas de resultados reales en la home (ROAS, CPA o porcentaje de mejora)",
+    "detalle": "Con datos anonimizados de campañas reales —por ejemplo '280% de incremento en conversiones' o 'Reducción del CPA en un 40%'— en la sección hero o justo debajo, la percepción de credibilidad cambia de forma inmediata sin rediseño.",
+    "impacto": "Incremento estimado de un 20-30% en solicitudes de información entrantes"
+  },
+  "_score": 5.6,
+  "_nombre": "CEO",
+  "_icp": "Performance",
+  "resumen": [
+    "Inka Marketing es una agencia de performance en Madrid especializada en SEM, Google Ads y análisis de resultados con diseño de creatividades UI/UX. Hemos auditado su presencia digital completa: arquitectura web, experiencia de conversión, posicionamiento orgánico y rendimiento técnico.",
+    "El análisis muestra una agencia con capacidad técnica real en performance pero con una web que no la representa: la categoría mejor valorada es SEO con un <strong>6.5/10</strong>, mientras que UX & Conversión es la más débil con un <strong>5.0/10</strong>. La principal contradicción es que una agencia de performance no tiene sus propios procesos de conversión optimizados.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {"performance": 58, "accessibility": 72, "bestPractices": 63, "seo": 75},
+    "mobile": {"performance": 42, "accessibility": 70, "bestPractices": 63, "seo": 75}
+  }
+}

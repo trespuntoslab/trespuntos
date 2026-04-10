@@ -1,0 +1,157 @@
+{
+  "agencia": "ómibu",
+  "web": "omibu.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Propuesta de valor",
+          "titulo": "Hero que habla de metodología pero no de resultados concretos",
+          "detalle": "La portada de omibu.com describe su enfoque en embudos y automatizaciones, pero <strong>no comunica ningún resultado tangible ni cifra de rendimiento que ancle la propuesta</strong>. Un visitante que llega desde Google Ads no encuentra en los primeros 5 segundos una razón cuantificable para confiar en la agencia."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Embudo de conversión",
+          "titulo": "Sin cualificación progresiva del lead antes del formulario final",
+          "detalle": "El recorrido del usuario va directamente de la página principal al formulario de contacto sin pasos intermedios que califiquen la intención. <strong>No hay calculadoras de ROI, auditorías express ni lead magnets</strong> que separen a los curiosos de los compradores reales, lo que encarece el coste por lead cualificado."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Navegación",
+          "titulo": "Arquitectura de servicios plana que no guía al visitante según su problema",
+          "detalle": "Los servicios (marketing digital, publicidad, embudos) se presentan en el mismo nivel jerárquico sin <strong>caminos diferenciados según el perfil del visitante</strong> (e-commerce, B2B, local...). El usuario tiene que leer todo para entender qué propuesta le corresponde."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Prueba social",
+          "titulo": "Testimonios sin contexto de antes/después ni métricas de campaña",
+          "detalle": "La sección de clientes lista logos y frases genéricas sin mostrar <strong>incrementos de ROAS, reducción de CPA o crecimiento de pipeline</strong> atribuibles al trabajo de la agencia. En un mercado performance, la prueba social sin números no convence."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Credibilidad visual",
+          "titulo": "Estética genérica que no transmite especialización en performance",
+          "detalle": "El diseño de omibu.com sigue los patrones visuales de decenas de agencias de marketing madrileñas: colores corporativos estándar, iconos de stock y layouts de plantilla. <strong>Una agencia que vende embudos y automatizaciones debería reflejar precisión, datos y tecnología en su propio diseño</strong>, no aspecto de folleto digital."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Jerarquía visual",
+          "titulo": "Páginas de servicio con densidad de texto que dificulta el escaneo",
+          "detalle": "Las páginas de servicios individuales presentan bloques de copy sin suficiente variación visual. <strong>Faltan elementos de datos como gráficos, comparativas porcentuales o tablas de proceso</strong> que refuercen visualmente el enfoque analítico que la agencia promete."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Responsive",
+          "titulo": "Experiencia móvil funcional pero sin adaptar los CTAs principales",
+          "detalle": "La web se visualiza correctamente en móvil, pero <strong>los botones de llamada a la acción principales pierden prominencia visual en pantallas pequeñas</strong> y el formulario de contacto requiere más scroll del necesario para llegar al envío."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Confianza",
+          "titulo": "Ausencia de señales de autoridad visual: premios, certificaciones, partners",
+          "detalle": "No se muestran badges de Google Partner, Meta Business Partner ni certificaciones de plataforma que son señales inmediatas de confianza en el sector. <strong>Estos elementos actúan como atajos cognitivos que reducen el esfuerzo de evaluación del comprador</strong> y justifican el precio premium."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Contenido orgánico",
+          "titulo": "Blog sin publicación regular que desaprovecha el potencial de captación orgánica",
+          "detalle": "La sección de contenidos tiene publicaciones esporádicas sin una cadencia definida. <strong>Una agencia de marketing digital debería captar leads a través de su propio SEO</strong> con artículos que posicionen términos como 'automatización marketing Madrid' o 'cómo mejorar ROAS Google Ads'."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Autoridad de dominio",
+          "titulo": "Perfil de backlinks escaso para el mercado competitivo de Madrid",
+          "detalle": "El dominio omibu.com tiene un perfil de enlaces entrantes limitado para una agencia que compite por keywords de alto valor en Madrid. <strong>Sin apariciones en medios de negocio ni partnerships de contenido</strong>, la autoridad orgánica crece muy lentamente frente a competidores establecidos."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Intención de búsqueda",
+          "titulo": "Páginas de servicio sin orientación a intención transaccional clara",
+          "detalle": "El contenido de las landing pages de servicio mezcla información educativa y comercial sin una jerarquía clara que <strong>guíe a Google a entender si la página responde a una búsqueda de información o de compra</strong>. Esta ambigüedad penaliza el posicionamiento en búsquedas bottom-funnel."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Schema markup",
+          "titulo": "Sin datos estructurados que mejoren la presencia en SERPs",
+          "detalle": "La web no implementa schema de tipo Organization, Service ni FAQPage que permitan a Google <strong>mostrar fragmentos enriquecidos en los resultados de búsqueda</strong>. Los rich snippets aumentan el CTR orgánico sin necesidad de subir posiciones."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad de carga",
+          "titulo": "Performance score móvil por debajo de 50 — umbral crítico para campañas de pago",
+          "detalle": "Una web lenta en móvil no solo perjudica el SEO: <strong>Google Ads penaliza el Quality Score de landing pages con carga lenta, aumentando el CPC</strong>. Para una agencia que gestiona presupuestos publicitarios, tener una landing propia mal optimizada es una inconsistencia que los clientes detectan."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "LCP elevado por imágenes hero sin formato moderno ni lazy loading",
+          "detalle": "El Largest Contentful Paint se ve afectado por imágenes en formato JPEG o PNG de gran peso sin conversión a WebP. <strong>El tiempo hasta que el usuario ve contenido útil supera los 3 segundos en conexiones medias</strong>, lo que incrementa la tasa de rebote especialmente en tráfico móvil."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Código",
+          "titulo": "Markup generado por page builder con CSS y scripts redundantes",
+          "detalle": "La estructura del HTML presenta señales de construcción visual con <strong>clases CSS no utilizadas, scripts de terceros bloqueantes y múltiples archivos CSS cargados en cabecera</strong> en lugar de inline crítico + async diferido."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Seguimiento",
+          "titulo": "Implementación de píxeles y etiquetas sin contenedor GTM centralizado",
+          "detalle": "Los píxeles de seguimiento (Meta, Google) parecen implementados directamente en el código sin gestión centralizada vía Google Tag Manager. <strong>Esto dificulta la auditoría, el debugging y la actualización de tags</strong> sin tocar el código fuente de la web."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Landing de captación con calculadora de ROAS interactiva",
+    "detalle": "Crear una landing page standalone para el servicio de publicidad digital con una calculadora interactiva que estime el ROAS esperado según inversión y sector. El usuario introduce su presupuesto actual y la herramienta muestra el potencial de mejora con ómibu, culminando en un formulario de auditoría gratuita.",
+    "impacto": "Convierte la propuesta de valor de 'resultados medibles' en una experiencia interactiva que cualifica el lead automáticamente y justifica la reunión comercial con datos concretos."
+  },
+  "_score": 5.5,
+  "_nombre": "CEO",
+  "_icp": "Performance",
+  "resumen": [
+    "ómibu se posiciona como agencia de performance en Madrid con foco en embudos, automatizaciones y acciones medibles. Hemos analizado omibu.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción entre la promesa de resultados que hace la agencia y la experiencia real que ofrece su web.",
+    "La mayor oportunidad está en alinear el producto con el escaparate: una agencia que vende rendimiento medible debería demostrarlo en su propia web. SEO & Visibilidad (6.5/10) es el área más desarrollada, mientras que Dev & Performance (5.0/10) y UX & Conversión (5.5/10) presentan fricciones que afectan directamente a la captación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 54,
+      "accessibility": 75,
+      "bestPractices": 58,
+      "seo": 81
+    },
+    "mobile": {
+      "performance": 44,
+      "accessibility": 73,
+      "bestPractices": 58,
+      "seo": 80
+    }
+  }
+}

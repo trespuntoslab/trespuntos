@@ -5,8 +5,18 @@
   "_nombre": "Joan",
   "_icp": "Performance",
   "lighthouse": {
-    "desktop": { "performance": 100, "accessibility": 88, "bestPractices": 96, "seo": 100 },
-    "mobile": { "performance": 100, "accessibility": 89, "bestPractices": 96, "seo": 100 }
+    "desktop": {
+      "performance": 100,
+      "accessibility": 88,
+      "bestPractices": 96,
+      "seo": 100
+    },
+    "mobile": {
+      "performance": 100,
+      "accessibility": 89,
+      "bestPractices": 96,
+      "seo": 100
+    }
   },
   "categorias": [
     {

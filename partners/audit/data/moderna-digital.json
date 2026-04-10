@@ -1,0 +1,157 @@
+{
+  "agencia": "Moderna Digital",
+  "web": "modernadigital.es",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Propuesta de valor",
+          "titulo": "Hero genérico sin diferenciación frente a otras agencias SEO de Madrid",
+          "detalle": "La página principal comunica una propuesta estándar de 'agencia de marketing digital' sin identificar qué hace única a Moderna Digital. <strong>En un mercado donde hay decenas de agencias SEO en Madrid, el visitante no encuentra en los primeros 5 segundos una razón específica para contactar con ellos en lugar de con la competencia.</strong>"
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Conversión e-commerce",
+          "titulo": "Sección e-commerce sin casos de éxito ni métricas de tiendas gestionadas",
+          "detalle": "La especialidad en e-commerce es una de las propuestas de mayor valor, pero <strong>no se respalda con datos de tiendas optimizadas, incrementos de facturación ni plataformas manejadas (PrestaShop, WooCommerce, Shopify)</strong>. El potencial cliente de e-commerce necesita ver prueba específica de ese vertiente."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Navegación",
+          "titulo": "Menú de servicios sin priorización según el problema del visitante",
+          "detalle": "La estructura de navegación presenta SEO, SEM, Social Media, Email Marketing y E-commerce al mismo nivel sin guiar al usuario según su contexto. <strong>No hay caminos diferenciados para tiendas online versus negocio local versus B2B</strong>, lo que obliga al visitante a leer toda la web para encontrar lo relevante para su caso."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Captación de leads",
+          "titulo": "Formularios de contacto sin segmentación por servicio ni cualificación previa",
+          "detalle": "El único punto de conversión es un formulario genérico de contacto. <strong>No hay auditorías SEO express, calculadoras de visibilidad orgánica ni lead magnets</strong> que permitan capturar leads en fases más tempranas del funnel de decisión antes de que el visitante esté listo para hablar con un comercial."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Credibilidad visual",
+          "titulo": "Diseño que no transmite expertise técnico SEO ni autoridad digital",
+          "detalle": "Para una agencia cuya principal propuesta es el posicionamiento orgánico, <strong>el diseño visual no proyecta rigor técnico ni autoridad en el sector</strong>. Layouts predecibles, tipografías sin personalidad y una paleta de colores poco diferenciada generan una primera impresión genérica que no justifica el valor premium."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Jerarquía visual",
+          "titulo": "Páginas de servicio con bloques de texto extensos sin visualización de datos",
+          "detalle": "Las páginas de servicios presentan descripciones textuales largas sin recursos visuales que faciliten la comprensión. <strong>Una agencia SEO debería apoyarse en gráficos de crecimiento orgánico, tablas comparativas de visibilidad o infografías de proceso</strong> que demuestren el método de forma visual."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Señales de confianza",
+          "titulo": "Sin certificaciones de Google ni Meta visibles en posición prominente",
+          "detalle": "Las certificaciones de Google Partner, Google Analytics Individual o Meta Blueprint no aparecen en la página principal ni en las landing de servicio correspondiente. <strong>Estos badges son atajos cognitivos de confianza que los buyers verifican antes de solicitar presupuesto</strong> y su ausencia obliga a esfuerzo adicional de evaluación."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Responsive",
+          "titulo": "Adaptación móvil con CTAs poco accesibles en posición thumb",
+          "detalle": "La web se adapta a pantallas pequeñas pero <strong>los botones de llamada a la acción no están posicionados en la zona de alcance natural del pulgar en móvil</strong>, lo que incrementa la fricción en el dispositivo desde el que más usuarios descubren agencias por primera vez."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Autoridad temática",
+          "titulo": "Blog con contenido pero sin estructura de clúster temático que refuerce autoridad",
+          "detalle": "La sección de blog tiene artículos sobre SEO y marketing, pero <strong>no están organizados en clústeres de contenido con páginas pilar y contenidos satélite enlazados estratégicamente</strong>. Esta arquitectura es precisamente lo que Google premia con mayor autoridad temática en nichos competitivos."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "SEO local",
+          "titulo": "Posicionamiento local en Madrid sin optimización completa de señales geográficas",
+          "detalle": "Aunque la agencia opera en Madrid, <strong>las señales de SEO local (NAP consistente, Google Business Profile optimizado, citas locales, reseñas) no están completamente alineadas</strong> para capturar búsquedas de 'agencia SEO Madrid' con intención local de alta conversión."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Canibalización",
+          "titulo": "Múltiples páginas de servicio compitiendo por keywords similares de SEO",
+          "detalle": "Se detectan varias URLs que abordan variantes del mismo término (SEO para e-commerce, posicionamiento web, consultoría SEO) sin una jerarquía clara. <strong>Esta fragmentación puede generar canibalización interna y confundir a Google sobre qué URL priorizar</strong> para las búsquedas de mayor valor comercial."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "CTR orgánico",
+          "titulo": "Meta descriptions sin orientación a beneficio ni call-to-action en resultados",
+          "detalle": "Las meta descriptions de las páginas de servicio siguen un patrón descriptivo sin <strong>copywriting orientado al clic que incluya beneficio, diferenciador y llamada a la acción</strong>. Tratar cada meta description como un micro-anuncio mejoraría el CTR sin necesidad de mejorar posiciones."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Contradicción de marca",
+          "titulo": "Web lenta de una agencia que vende posicionamiento — señal negativa para clientes",
+          "detalle": "El rendimiento técnico bajo en una agencia SEO es la contradicción más visible del sector. <strong>Un potencial cliente que llega buscando mejorar su web verá que la web de la propia agencia falla en los criterios básicos de Core Web Vitals</strong> que Google usa como factor de posicionamiento."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "CLS y LCP fuera de rangos verdes que penalizan posicionamiento",
+          "detalle": "El Cumulative Layout Shift muestra desplazamientos de elementos durante la carga y el LCP supera el umbral de 2.5 segundos recomendado por Google. <strong>Estos mismos indicadores son los que Moderna Digital debería estar optimizando para sus clientes</strong>, lo que hace imprescindible resolverlos primero en casa."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Código",
+          "titulo": "Dependencia de page builder con código inflado y renders bloqueantes",
+          "detalle": "El markup HTML presenta las características típicas de constructores visuales: <strong>múltiples niveles de anidación, CSS inline redundante y JavaScript de terceros cargado en el hilo principal</strong> que bloquea el renderizado y eleva el tiempo de interactividad."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Accesibilidad técnica",
+          "titulo": "Ratio de contraste y navegación por teclado por debajo de WCAG AA",
+          "detalle": "Algunos textos secundarios y elementos de interfaz no alcanzan el ratio de contraste mínimo 4.5:1 de WCAG AA. <strong>La accesibilidad es factor de ranking en Google y criterio legal en España bajo el RD 1112/2018</strong>, con implicaciones especialmente si entre sus clientes hay entidades públicas."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Auditoría SEO gratuita como lead magnet con informe automatizado",
+    "detalle": "Implementar una herramienta de auditoría SEO básica en la web (puede ser via API de tercero) que genere un informe personalizado a cambio del email. La herramienta analiza la URL del visitante y muestra 5-6 métricas clave con semáforos verde/amarillo/rojo, culminando en una CTA para hablar con un especialista.",
+    "impacto": "Transforma el tráfico orgánico que ya recibe en leads cualificados con intención de mejora demostrada, reduciendo el coste de adquisición y demostrando la capacidad técnica de la agencia de forma interactiva."
+  },
+  "_score": 5.75,
+  "_nombre": "CEO",
+  "_icp": "SEO",
+  "resumen": [
+    "Moderna Digital opera como agencia de marketing digital en Madrid con un foco claro en SEO, SEM, social media y e-commerce. Hemos analizado modernadigital.es en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar la distancia entre lo que la agencia ofrece a sus clientes y lo que su propia plataforma digital demuestra.",
+    "El dato más llamativo: la agencia con mayor especialización en SEO (7.5/10) presenta un rendimiento técnico (5.0/10) que contradice su propuesta de valor. Dev & Performance y UI & Percepción son las áreas con mayor potencial de mejora inmediata para construir credibilidad ante potenciales clientes.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 52,
+      "accessibility": 77,
+      "bestPractices": 62,
+      "seo": 86
+    },
+    "mobile": {
+      "performance": 41,
+      "accessibility": 75,
+      "bestPractices": 62,
+      "seo": 85
+    }
+  }
+}

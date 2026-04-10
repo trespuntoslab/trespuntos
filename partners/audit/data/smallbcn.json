@@ -1,0 +1,147 @@
+{
+  "agencia": "Small BCN",
+  "web": "smallbcn.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Clientes potenciales que no contactan tras ver el portfolio",
+          "titulo": "Portfolio sin llamada a la acción contextual",
+          "detalle": "Los proyectos de branding se muestran de forma bella pero <strong>sin ningún CTA al final de cada caso</strong>: ni '¿Tienes un proyecto similar?', ni formulario contextual, ni enlace directo a contacto. El visitante admirado no sabe dar el siguiente paso."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Fricción innecesaria en el proceso de cualificación",
+          "titulo": "Proceso de contacto sin información sobre cómo trabajáis",
+          "detalle": "La página de contacto es un formulario básico sin contexto sobre <strong>el proceso de trabajo, tiempos o tipología de proyectos que acepta Small BCN</strong>. Agencias creativas de referencia incluyen una página 'Cómo trabajamos' que cualifica al cliente antes del primer contacto."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Oportunidades perdidas de conversión pasiva",
+          "titulo": "Sin lead magnet ni recurso descargable de valor",
+          "detalle": "Para una agencia creativa, un <strong>PDF con casos de branding o un checklist de identidad de marca</strong> captaría emails cualificados de potenciales clientes que no están listos para contratar pero sí para nutrirse. Es una oportunidad de captación no aprovechada."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Reducción del tiempo de sesión en visitas frías",
+          "titulo": "Arquitectura de navegación que no guía al visitante",
+          "detalle": "El menú no tiene una <strong>jerarquía clara entre portfolio, servicios y contacto</strong>. Un visitante nuevo tarda tiempo en entender si Small BCN hace solo branding, también web, o tiene otras disciplinas. La falta de orientación genera rebote temprano."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Percepción de agencia local sin escala",
+          "titulo": "Casos de portfolio sin contexto de negocio ni resultados",
+          "detalle": "Los proyectos mostrados son visualmente potentes pero <strong>no explican el reto de negocio ni el resultado obtenido</strong>. Clientes B2B toman decisiones basadas en resultados, no solo en estética. Una frase de impacto del cliente o una métrica de resultado cambiaría la percepción."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Credibilidad no aprovechada en el mercado catalán",
+          "titulo": "Sin testimonios ni clientes reconocibles en secciones principales",
+          "detalle": "No hay <strong>logotipos de clientes ni testimonios visibles</strong> en la home ni en el portfolio. Para una agencia creativa independiente en Barcelona, mostrar con quién has trabajado —aunque sea una frase— es la señal social más importante."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Oportunidad de diferenciación en un mercado competitivo",
+          "titulo": "Voz y tono del copy sin personalidad propia",
+          "detalle": "El copy del site es funcional pero <strong>no transmite la perspectiva creativa ni la filosofía de Small BCN</strong>. Agencias como Mucho o Vasava (referentes en Barcelona) tienen una voz editorial que ya vende antes de ver el trabajo."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Experiencia degradada en dispositivos de uso frecuente",
+          "titulo": "Adaptación tablet con elementos desalineados",
+          "detalle": "En resoluciones de 768-1024px algunos <strong>módulos del portfolio presentan desalineaciones y espaciados incorrectos</strong>. Con el tráfico de clientes B2B que llegan frecuentemente desde tablets o portátiles de 13 pulgadas, esto afecta la primera impresión."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 4.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Invisibilidad en el mercado de branding en Barcelona",
+          "titulo": "Sin posicionamiento para 'agencia branding Barcelona' ni variantes",
+          "detalle": "La web no aparece en los <strong>primeros 20 resultados orgánicos para 'agencia branding Barcelona'</strong>, 'identidad corporativa Barcelona' ni 'diseño de marca Barcelona'. Competidores con webs técnicamente peores pero con SEO trabajado captan ese tráfico."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Pérdida de tráfico cualificado de clientes en búsqueda activa",
+          "titulo": "Páginas de servicio sin contenido semántico suficiente",
+          "detalle": "Las páginas de Branding, Creatividad y Marketing de marca tienen <strong>menos de 200 palabras de contenido indexable</strong>, insuficiente para posicionar en búsquedas competidas. Los buscadores necesitan contenido para entender de qué trata cada página."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Ausencia de tráfico recurrente y captación pasiva",
+          "titulo": "Sin estrategia de contenidos ni casos en formato artículo",
+          "detalle": "No existe blog ni sección editorial. Para una agencia creativa, <strong>publicar artículos sobre proceso creativo, branding o casos de marca</strong> generaría tráfico cualificado sostenido y posicionaría a Small BCN como referente en su nicho."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Penalización técnica de rastreo",
+          "titulo": "Datos estructurados y sitemap sin configurar correctamente",
+          "detalle": "La web carece de <strong>Schema.org para organización y portfolio, y el sitemap.xml no está correctamente enviado a Google Search Console</strong>, lo que ralentiza la indexación y limita la visibilidad en resultados enriquecidos."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Abandono por carga lenta en el canal más importante",
+          "titulo": "Imágenes del portfolio sin optimizar impactan el LCP",
+          "detalle": "Los assets visuales del portfolio —que son el corazón del site— <strong>no están en formato WebP ni tienen tamaños responsivos</strong>. El LCP estimado supera los 3.5s en desktop, penalizando tanto el SEO como la experiencia del visitante."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Señal negativa para Google Core Web Vitals",
+          "titulo": "CLS elevado por carga tardía de fuentes y assets",
+          "detalle": "Se detecta un <strong>Cumulative Layout Shift (CLS) por encima del umbral 'Good' de 0.1</strong>, causado por fuentes personalizadas que cargan sin font-display:swap y por imágenes sin dimensiones definidas en el HTML."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Recursos cargados innecesariamente en cada visita",
+          "titulo": "Scripts de terceros sin carga diferida",
+          "detalle": "Varios scripts de analytics, chat o redes sociales se cargan de forma <strong>síncrona bloqueando el render</strong>, cuando podrían cargarse con defer o lazy load sin afectar a la funcionalidad pero ganando 0.5-1s de tiempo de carga."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Vulnerabilidad ante incidencias del servidor",
+          "titulo": "Sin caché configurado ni CDN para assets estáticos",
+          "detalle": "Las imágenes y archivos estáticos <strong>no tienen headers de caché configurados</strong> correctamente ni se sirven desde una CDN. Para un site con portfolio visual pesado, esto multiplica el tiempo de carga en visitantes fuera de Barcelona."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Añadir un párrafo de contexto de negocio y resultado a cada proyecto del portfolio",
+    "detalle": "Con 2-3 frases por proyecto explicando el reto del cliente y el resultado obtenido —sin revelar datos confidenciales— el portfolio pasa de galería estética a demostrador de negocio. No requiere rediseño, solo contenido editorial.",
+    "impacto": "Reducción del tiempo de decisión del cliente potencial y aumento de solicitudes cualificadas"
+  },
+  "_score": 5.8,
+  "_nombre": "CEO",
+  "_icp": "Branding",
+  "resumen": [
+    "Small BCN es una agencia creativa independiente en Barcelona especializada en branding, creatividad y marketing de marca. Hemos analizado su presencia digital completa: experiencia de usuario, calidad visual, posicionamiento SEO y rendimiento técnico.",
+    "El análisis revela un trabajo creativo de alta calidad que la web no logra capitalizar en conversiones: la categoría mejor valorada es UI & Percepción con un <strong>7.5/10</strong>, mientras que SEO & Visibilidad es la más crítica con un <strong>4.5/10</strong>. El portfolio es potente visualmente pero no convierte porque le falta contexto de negocio y prueba social.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {"performance": 61, "accessibility": 76, "bestPractices": 72, "seo": 64},
+    "mobile": {"performance": 44, "accessibility": 73, "bestPractices": 72, "seo": 64}
+  }
+}

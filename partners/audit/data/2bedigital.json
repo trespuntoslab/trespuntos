@@ -142,7 +142,7 @@
   ],
   "lighthouse": {
     "desktop": {
-      "performance": 0,
+      "performance": 75,
       "accessibility": 92,
       "bestPractices": 100,
       "seo": 92

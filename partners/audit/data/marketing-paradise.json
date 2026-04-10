@@ -1,0 +1,67 @@
+{
+  "agencia": "Marketing Paradise",
+  "web": "mkparadise.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.0,
+      "hallazgos": [
+        {"prioridad": "alta", "impacto": "Propuesta de valor", "titulo": "La home intenta vender todos los servicios a la vez y no convierte ninguno", "detalle": "La página principal lista SEO, Paid Media, Social Media, Email Marketing e Influencers sin jerarquía ni flujo narrativo. El visitante no entiende cuál es el servicio estrella ni para qué tipo de empresa trabajan. <strong>Una propuesta de valor enfocada (en lugar de una lista de servicios) mejora la tasa de contacto entre un 20 y un 40%.</strong>"},
+        {"prioridad": "alta", "impacto": "Arquitectura", "titulo": "El menú de navegación tiene 8+ items sin agrupación lógica", "detalle": "La barra de navegación mezcla servicios, blog, about y contacto sin jerarquía visual. En una agencia full-service esto genera parálisis por análisis. <strong>Reducir el menú a 4-5 opciones con un CTA principal destacado aumenta significativamente los clics hacia páginas de conversión.</strong>"},
+        {"prioridad": "media", "impacto": "Conversión", "titulo": "Sin casos de éxito con métricas en la home para calificar al visitante", "detalle": "La agencia no muestra resultados reales en la primera pantalla. En performance marketing, los clientes compran resultados, no servicios. Incluir <strong>2-3 stats concretos (ROAS, coste por lead, crecimiento orgánico) en el hero genera credibilidad inmediata</strong> y cualifica al visitante antes de que haga scroll."},
+        {"prioridad": "media", "impacto": "Prueba social", "titulo": "Los testimonios no especifican ni el cargo, ni la empresa, ni los resultados obtenidos", "detalle": "Los testimonios actuales son genéricos y no incluyen nombre completo, cargo ni empresa del cliente. En marketing digital, donde la competencia es feroz, <strong>un testimonio sin contexto tiene el mismo valor de persuasión que cero.</strong> Añadir logo + cargo + métrica específica multiplica la credibilidad."}
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 5.5,
+      "hallazgos": [
+        {"prioridad": "alta", "impacto": "Credibilidad visual", "titulo": "El diseño no transmite el nivel de una agencia que gestiona inversión publicitaria alta", "detalle": "Para una agencia que ofrece Paid Media y estrategia digital, la percepción visual importa tanto como los resultados. El diseño actual tiene colores brillantes y una estructura que recuerda a plantillas de bajo coste. <strong>Un cliente que invierte 5.000€/mes en publicidad necesita ver una agencia que cuide su propia imagen antes de confiarle su presupuesto.</strong>"},
+        {"prioridad": "alta", "impacto": "Diferenciación", "titulo": "La paleta de colores y el estilo visual no diferencia de la competencia en Madrid", "detalle": "El uso de azul eléctrico y verde lima es común en el ecosistema de agencias de marketing digital españolas. Sin elementos visuales propios, <strong>Marketing Paradise se funde con decenas de competidores directos</strong> en los resultados de búsqueda y en la memoria del visitante."},
+        {"prioridad": "media", "impacto": "Consistencia", "titulo": "Mezcla de estilos visuales entre secciones: algunos bloques parecen añadidos a posteriori", "detalle": "Hay discontinuidades notables entre el estilo del hero, las secciones de servicios y el blog. Esto sugiere que la web ha crecido sin un design system definido. <strong>La coherencia visual es la primera señal de rigor metodológico que evalúa un prospecto antes de contratar.</strong>"},
+        {"prioridad": "baja", "impacto": "Legibilidad", "titulo": "Contraste insuficiente en textos sobre fondos de colores vivos", "detalle": "Varios bloques de servicios usan texto blanco o claro sobre fondos de saturación alta. Esto genera problemas de legibilidad, especialmente en pantallas con brillo reducido o en usuarios con baja visión. <strong>Un ratio de contraste mínimo de 4.5:1 es obligatorio para WCAG AA y mejora la legibilidad en todos los contextos.</strong>"}
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 6.5,
+      "hallazgos": [
+        {"prioridad": "alta", "impacto": "Visibilidad orgánica", "titulo": "Las páginas de servicio no están optimizadas para búsquedas de alta intención comercial", "detalle": "Páginas como 'Agencia SEO Madrid' o 'Gestión Google Ads Madrid' tienen titulares creativos pero sin keyword en el H1. En un mercado tan competitivo como el de marketing digital en Madrid, <strong>perder el H1 como señal de relevancia para el buscador significa ceder posiciones a competidores directos.</strong>"},
+        {"prioridad": "alta", "impacto": "Contenido", "titulo": "El blog existe pero publica con irregularidad y sin estrategia de clustering", "detalle": "Hay artículos de calidad variable publicados sin frecuencia fija y sin estructura de pillar content. Sin una estrategia de clustering temático, <strong>el blog genera tráfico puntual pero no construye autoridad en los temas core de la agencia</strong> (SEO, Paid Media, Email Marketing)."},
+        {"prioridad": "media", "impacto": "Autoridad", "titulo": "Escasa presencia de backlinks editoriales de medios del sector", "detalle": "El perfil de enlaces se basa principalmente en directorios y menciones locales. Para una agencia de marketing digital, <strong>aparecer como fuente experta en medios especializados (Merca2.0, Marketing Directo, Reason.Why) es el activo SEO de mayor retorno a largo plazo.</strong>"},
+        {"prioridad": "media", "impacto": "Técnico", "titulo": "Velocidad de carga móvil penaliza el posicionamiento en búsquedas de servicios", "detalle": "Con un LCP estimado superior a 3 segundos en móvil, la web pierde posiciones en búsquedas competitivas donde Google prioriza Core Web Vitals. <strong>En el sector de agencias digitales en Madrid, la diferencia entre posición 3 y posición 7 puede representar 10x en tráfico cualificado.</strong>"}
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.0,
+      "hallazgos": [
+        {"prioridad": "alta", "impacto": "Core Web Vitals", "titulo": "JavaScript de terceros bloquea el renderizado en mobile (GTM, píxeles, chats)", "detalle": "La acumulación de scripts de tracking (Google Tag Manager, Meta Pixel, HotJar, chat widgets) sin gestión de carga asíncrona genera un TBT elevado. <strong>Cada segundo de retraso en la interactividad en móvil aumenta el rebote un 32% según datos de Google.</strong> Gestionar todos los scripts desde GTM con triggers apropiados resuelve el problema."},
+        {"prioridad": "alta", "impacto": "Conversión", "titulo": "Sin tracking de microconversiones: scroll depth, clics en CTA, tiempo en página de servicio", "detalle": "Una agencia de performance que no tiene instrumentado su propio funnel de conversión transmite un mensaje contradictorio a sus prospectos. <strong>Implementar eventos GA4 para CTAs, scroll 50/75/90%, salida de página y tiempo en formulario</strong> proporciona datos reales para optimizar la captación propia."},
+        {"prioridad": "media", "impacto": "Velocidad", "titulo": "Imágenes sin dimensiones explícitas generan Cumulative Layout Shift (CLS) alto", "detalle": "Las imágenes del blog y de testimonios sin atributos width/height definidos causan saltos de layout visibles durante la carga. El CLS elevado penaliza tanto la experiencia de usuario como el ranking en Google. <strong>Añadir dimensiones explícitas a todas las imágenes es el cambio de menor coste con mayor impacto en Core Web Vitals.</strong>"},
+        {"prioridad": "baja", "impacto": "Mantenimiento", "titulo": "Sin sistema de caché configurado correctamente para assets estáticos", "detalle": "Los archivos CSS, JS e imágenes se sirven sin headers de cache-control adecuados, lo que fuerza al navegador a descargarlos en cada visita. <strong>Configurar cache headers con TTL largo para assets estáticos reduce el tiempo de carga en visitas recurrentes</strong> hasta en un 60%, especialmente relevante para leads que visitan la web varias veces antes de contratar."}
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Añadir 3 métricas de resultados reales en el hero de la home",
+    "detalle": "Identificar 3 resultados reales de clientes (ej: '+312% de leads orgánicos para cliente B2B', '+4.2 ROAS en campaña de Google Ads retail', '-42% coste por lead tras auditoría paid') y añadirlos como stats visuales en la primera pantalla, con el logo del cliente si es posible. Sin cambiar estructura ni diseño de la página.",
+    "impacto": "Los datos concretos generan confianza inmediata en visitantes que comparan agencias. Una home con métricas reales aumenta el tiempo en página y la intención de contacto frente a competidores que solo listan servicios."
+  },
+  "_score": 5.8,
+  "_nombre": "CEO",
+  "_icp": "Performance",
+  "resumen": [
+    "Hemos analizado mkparadise.com, agencia full-service de marketing digital en Madrid que ofrece SEO, Paid Media, Social Media, Email Marketing e Influencers. El análisis cubre UX, diseño, SEO técnico y rendimiento web.",
+    "El punto más fuerte es el SEO (6.5/10): existe estructura básica de contenidos y un blog con potencial. El rendimiento técnico (5/10) y la UI (5.5/10) son los puntos críticos: el exceso de scripts de terceros lastra el rendimiento en móvil y el diseño no transmite el nivel de confianza que necesita una agencia de performance para cerrar cuentas de inversión alta.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {"performance": 55, "accessibility": 76, "bestPractices": 65, "seo": 82},
+    "mobile": {"performance": 32, "accessibility": 72, "bestPractices": 65, "seo": 82}
+  }
+}

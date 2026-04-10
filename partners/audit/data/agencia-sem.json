@@ -1,115 +1,157 @@
 {
   "agencia": "Agencia SEM",
   "web": "https://agenciasem.eu",
-  "_nombre": "Agencia SEM",
+  "_nombre": "Roberto",
   "_icp": "Performance",
   "lighthouse": {
-    "desktop": { "performance": 94, "accessibility": 94, "bestPractices": 100, "seo": 100 },
-    "mobile": { "performance": 65, "accessibility": 94, "bestPractices": 77, "seo": 100 }
+    "desktop": {
+      "performance": 83,
+      "accessibility": 94,
+      "bestPractices": 77,
+      "seo": 100
+    },
+    "mobile": {
+      "performance": 84,
+      "accessibility": 94,
+      "bestPractices": 77,
+      "seo": 100
+    }
   },
-  "categorias": {
-    "ux": {
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
       "score": 6.5,
       "hallazgos": [
         {
+          "prioridad": "alto",
+          "impacto": "LCP móvil de 7,7 segundos destruye la ex",
           "titulo": "LCP móvil de 7,7 segundos destruye la experiencia",
-          "descripcion": "El Largest Contentful Paint en móvil tarda 7,7 segundos (score 3/100 en Lighthouse). Un usuario en smartphone espera casi 8 segundos hasta ver el contenido principal de la home. Google considera cualquier LCP superior a 4s como 'pobre'. Para una agencia de performance marketing que cobra a sus clientes por optimizar conversiones, este dato es irónico y dañino.",
-          "impacto": "alto"
+          "detalle": "El Largest Contentful Paint en móvil tarda 7,7 segundos (score 3/100 en Lighthouse). Un usuario en smartphone espera casi 8 segundos hasta ver el contenido principal de la home. Google considera cualquier LCP superior a 4s como 'pobre'. Para una agencia de performance marketing que cobra a sus clientes por optimizar conversiones, este dato es irónico y dañino."
         },
         {
+          "prioridad": "alto",
+          "impacto": "Layout shifts en móvil confunden al usua",
           "titulo": "Layout shifts en móvil confunden al usuario (CLS 0.217)",
-          "descripcion": "El Cumulative Layout Shift en móvil es 0.217, superando el umbral óptimo de 0.1 de Google. Los elementos de la página se desplazan mientras cargan, haciendo que el usuario pulse botones o enlaces equivocados. En una web diseñada para captar leads, cada shift es una fricción que reduce la conversión.",
-          "impacto": "alto"
+          "detalle": "El Cumulative Layout Shift en móvil es 0.217, superando el umbral óptimo de 0.1 de Google. Los elementos de la página se desplazan mientras cargan, haciendo que el usuario pulse botones o enlaces equivocados. En una web diseñada para captar leads, cada shift es una fricción que reduce la conversión."
         },
         {
+          "prioridad": "medio",
+          "impacto": "Tiempo de interactividad móvil de 7,9 se",
           "titulo": "Tiempo de interactividad móvil de 7,9 segundos",
-          "descripcion": "El Time to Interactive en móvil es 7,9 segundos. El usuario no puede interactuar con formularios ni CTAs hasta ese momento. En un contexto donde el 60%+ del tráfico llega desde móvil, este dato representa una pérdida masiva de leads potenciales que rebotan antes de poder actuar.",
-          "impacto": "medio"
+          "detalle": "El Time to Interactive en móvil es 7,9 segundos. El usuario no puede interactuar con formularios ni CTAs hasta ese momento. En un contexto donde el 60%+ del tráfico llega desde móvil, este dato representa una pérdida masiva de leads potenciales que rebotan antes de poder actuar."
         },
         {
+          "prioridad": "bajo",
+          "impacto": "Flujo de conversión bien estructurado en",
           "titulo": "Flujo de conversión bien estructurado en desktop",
-          "descripcion": "En desktop, la arquitectura de la web es clara: servicios → casos → contacto. El journey del usuario está bien pensado y los CTAs son visibles. Esta fortaleza queda anulada en móvil por los problemas de rendimiento.",
-          "impacto": "bajo"
+          "detalle": "En desktop, la arquitectura de la web es clara: servicios → casos → contacto. El journey del usuario está bien pensado y los CTAs son visibles. Esta fortaleza queda anulada en móvil por los problemas de rendimiento."
         }
       ]
     },
-    "ui": {
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
       "score": 7.0,
       "hallazgos": [
         {
+          "prioridad": "alto",
+          "impacto": "Identidad visual sólida pero la home no ",
           "titulo": "Identidad visual sólida pero la home no transmite diferenciación",
-          "descripcion": "El diseño es limpio y profesional, pero el mensaje de la home ('Expertos en Performance Marketing') podría pertenecer a cualquiera de las decenas de agencias SEM en España. En un mercado saturado, la propuesta de valor diferenciada debe liderarse en el primer scroll. Actualmente no hay ningún elemento visual o de copy que explique por qué elegir agenciaSEM.eu sobre la competencia.",
-          "impacto": "alto"
+          "detalle": "El diseño es limpio y profesional, pero el mensaje de la home ('Expertos en Performance Marketing') podría pertenecer a cualquiera de las decenas de agencias SEM en España. En un mercado saturado, la propuesta de valor diferenciada debe liderarse en el primer scroll. Actualmente no hay ningún elemento visual o de copy que explique por qué elegir agenciaSEM.eu sobre la competencia."
         },
         {
+          "prioridad": "alto",
+          "impacto": "Sección de clientes infrautilizada",
           "titulo": "Sección de clientes infrautilizada",
-          "descripcion": "Los logos de clientes como Grupo Choví aparecen sin contexto ni resultados. Un decisor que visita la web no ve métricas concretas ('incremento del 40% en conversión para Quadest') sino solo logotipos. Los datos reales de campañas gestionadas son el argumento de venta más potente de una agencia de performance y están desaprovechados.",
-          "impacto": "alto"
+          "detalle": "Los logos de clientes como Grupo Choví aparecen sin contexto ni resultados. Un decisor que visita la web no ve métricas concretas ('incremento del 40% en conversión para Quadest') sino solo logotipos. Los datos reales de campañas gestionadas son el argumento de venta más potente de una agencia de performance y están desaprovechados."
         },
         {
+          "prioridad": "medio",
+          "impacto": "Iconografía genérica en la sección de se",
           "titulo": "Iconografía genérica en la sección de servicios",
-          "descripcion": "Los iconos de la sección de servicios son stock genérico que no refuerza el posicionamiento premium. Una agencia que gestiona 250+ cuentas de paid media merece una identidad visual que transmita ese expertise, no la misma iconografía que cualquier web corporativa de 2018.",
-          "impacto": "medio"
+          "detalle": "Los iconos de la sección de servicios son stock genérico que no refuerza el posicionamiento premium. Una agencia que gestiona 250+ cuentas de paid media merece una identidad visual que transmita ese expertise, no la misma iconografía que cualquier web corporativa de 2018."
         },
         {
+          "prioridad": "bajo",
+          "impacto": "Tipografía y espaciado correctos, buena ",
           "titulo": "Tipografía y espaciado correctos, buena legibilidad general",
-          "descripcion": "El sistema tipográfico es coherente y los bloques de contenido tienen buen espaciado. La accesibilidad visual (94/100 en Lighthouse tanto desktop como móvil) confirma una implementación técnica cuidada en lo referente a contrastes y estructura.",
-          "impacto": "bajo"
+          "detalle": "El sistema tipográfico es coherente y los bloques de contenido tienen buen espaciado. La accesibilidad visual (94/100 en Lighthouse tanto desktop como móvil) confirma una implementación técnica cuidada en lo referente a contrastes y estructura."
         }
       ]
     },
-    "seo": {
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
       "score": 8.0,
       "hallazgos": [
         {
+          "prioridad": "alto",
+          "impacto": "SEO técnico perfecto (100/100) pero la v",
           "titulo": "SEO técnico perfecto (100/100) pero la velocidad móvil lo contradice",
-          "descripcion": "Lighthouse otorga 100/100 en SEO tanto en desktop como en móvil, lo que indica metadatos, estructura de headings, robots.txt y sitemap correctamente implementados. Sin embargo, desde mayo 2021 Google utiliza Core Web Vitals como factor de ranking. Un LCP móvil de 7,7 segundos puede estar penalizando el posicionamiento orgánico a pesar de la excelente estructura técnica.",
-          "impacto": "alto"
+          "detalle": "Lighthouse otorga 100/100 en SEO tanto en desktop como en móvil, lo que indica metadatos, estructura de headings, robots.txt y sitemap correctamente implementados. Sin embargo, desde mayo 2021 Google utiliza Core Web Vitals como factor de ranking. Un LCP móvil de 7,7 segundos puede estar penalizando el posicionamiento orgánico a pesar de la excelente estructura técnica."
         },
         {
+          "prioridad": "medio",
+          "impacto": "Estrategia de contenido enfocada en inte",
           "titulo": "Estrategia de contenido enfocada en intención de búsqueda local",
-          "descripcion": "La agencia ha creado páginas dedicadas por ciudad ('agencia SEM Madrid', 'agencia SEM Barcelona') con contenido específico. Esta estrategia de SEO local es correcta para captar tráfico de búsquedas geolocalizadas, pero las páginas de ciudad replican el mismo patrón de contenido sin diferenciación real entre mercados.",
-          "impacto": "medio"
+          "detalle": "La agencia ha creado páginas dedicadas por ciudad ('agencia SEM Madrid', 'agencia SEM Barcelona') con contenido específico. Esta estrategia de SEO local es correcta para captar tráfico de búsquedas geolocalizadas, pero las páginas de ciudad replican el mismo patrón de contenido sin diferenciación real entre mercados."
         },
         {
+          "prioridad": "medio",
+          "impacto": "Marca relativamente nueva (2024) compiti",
           "titulo": "Marca relativamente nueva (2024) compitiendo con agencias establecidas",
-          "descripcion": "agenciaSEM.eu nació como marca separada de agenciaSEO.eu en 2024. El dominio es joven y la autoridad acumulada es limitada comparada con competidores de más de 10 años como Mediasal o Semrush Agency Partners. Esto afecta al posicionamiento en búsquedas competidas como 'agencia SEM Madrid'.",
-          "impacto": "medio"
+          "detalle": "agenciaSEM.eu nació como marca separada de agenciaSEO.eu en 2024. El dominio es joven y la autoridad acumulada es limitada comparada con competidores de más de 10 años como Mediasal o Semrush Agency Partners. Esto afecta al posicionamiento en búsquedas competidas como 'agencia SEM Madrid'."
         },
         {
+          "prioridad": "bajo",
+          "impacto": "Schema markup y datos estructurados bien",
           "titulo": "Schema markup y datos estructurados bien implementados",
-          "descripcion": "La web implementa correctamente los datos estructurados básicos. El SEO on-page está bien trabajado con etiquetas canonícas, hreflang para mercados locales y estructura de URLs limpia. Base técnica sólida sobre la que construir.",
-          "impacto": "bajo"
+          "detalle": "La web implementa correctamente los datos estructurados básicos. El SEO on-page está bien trabajado con etiquetas canonícas, hreflang para mercados locales y estructura de URLs limpia. Base técnica sólida sobre la que construir."
         }
       ]
     },
-    "dev": {
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
       "score": 6.5,
       "hallazgos": [
         {
+          "prioridad": "alto",
+          "impacto": "LCP móvil crítico: recursos de imagen si",
           "titulo": "LCP móvil crítico: recursos de imagen sin optimizar para dispositivos pequeños",
-          "descripcion": "El LCP de 7,7s en móvil indica que el elemento más pesado de la página (probablemente una imagen hero o vídeo de fondo) no está optimizado para conexiones móviles. No se están usando formatos modernos como WebP/AVIF con breakpoints responsivos, o las imágenes se sirven en el mismo tamaño que en desktop. En una web bien optimizada, el LCP móvil no debería superar los 2,5 segundos.",
-          "impacto": "alto"
+          "detalle": "El LCP de 7,7s en móvil indica que el elemento más pesado de la página (probablemente una imagen hero o vídeo de fondo) no está optimizado para conexiones móviles. No se están usando formatos modernos como WebP/AVIF con breakpoints responsivos, o las imágenes se sirven en el mismo tamaño que en desktop. En una web bien optimizada, el LCP móvil no debería superar los 2,5 segundos."
         },
         {
+          "prioridad": "alto",
+          "impacto": "Best Practices móvil 77/100: posibles de",
           "titulo": "Best Practices móvil 77/100: posibles dependencias JavaScript problemáticas",
-          "descripcion": "La diferencia entre Best Practices desktop (100/100) y móvil (77/100) indica que hay recursos o scripts que funcionan correctamente en desktop pero presentan problemas en móvil. Esto puede deberse a librerías JavaScript no optimizadas para rendimiento móvil, recursos de terceros (analytics, tracking de ads, chat widgets) que bloquean el renderizado, o políticas de seguridad inconsistentes.",
-          "impacto": "alto"
+          "detalle": "La diferencia entre Best Practices desktop (100/100) y móvil (77/100) indica que hay recursos o scripts que funcionan correctamente en desktop pero presentan problemas en móvil. Esto puede deberse a librerías JavaScript no optimizadas para rendimiento móvil, recursos de terceros (analytics, tracking de ads, chat widgets) que bloquean el renderizado, o políticas de seguridad inconsistentes."
         },
         {
+          "prioridad": "medio",
+          "impacto": "CLS 0.217 en móvil: fuentes o imágenes s",
           "titulo": "CLS 0.217 en móvil: fuentes o imágenes sin dimensiones reservadas",
-          "descripcion": "Un CLS de 0.217 en móvil sugiere que las fuentes web o imágenes no tienen dimensiones width/height declaradas en el HTML, causando que el layout se recalcule cuando cargan. La corrección es técnicamente sencilla: añadir atributos de dimensión explícita a imágenes y usar font-display:swap para fuentes. Quick win de alto impacto.",
-          "impacto": "medio"
+          "detalle": "Un CLS de 0.217 en móvil sugiere que las fuentes web o imágenes no tienen dimensiones width/height declaradas en el HTML, causando que el layout se recalcule cuando cargan. La corrección es técnicamente sencilla: añadir atributos de dimensión explícita a imágenes y usar font-display:swap para fuentes. Quick win de alto impacto."
         },
         {
+          "prioridad": "bajo",
+          "impacto": "Desktop excelente: performance 94, best ",
           "titulo": "Desktop excelente: performance 94, best practices 100",
-          "descripcion": "Los resultados de desktop son muy sólidos (Performance 94/100, Best Practices 100/100, SEO 100/100). Esto demuestra que el equipo técnico tiene buenas prácticas de desarrollo, y que los problemas móviles son solucionables sin un rediseño completo, simplemente aplicando optimización responsiva.",
-          "impacto": "bajo"
+          "detalle": "Los resultados de desktop son muy sólidos (Performance 94/100, Best Practices 100/100, SEO 100/100). Esto demuestra que el equipo técnico tiene buenas prácticas de desarrollo, y que los problemas móviles son solucionables sin un rediseño completo, simplemente aplicando optimización responsiva."
         }
       ]
     }
+  ],
+  "quickWin": {
+    "titulo": "Optimizar las imágenes hero para móvil usando WebP con srcset responsivo y añadir dimensiones width/",
+    "detalle": "Optimizar las imágenes hero para móvil usando WebP con srcset responsivo y añadir dimensiones width/height explícitas a todos los elementos de imagen. Esto resolvería simultáneamente el LCP de 7,7s y el CLS de 0.217 en móvil, pasando de 'Pobre' a 'Bueno' en Core Web Vitals y mejorando el ranking en Google.",
+    "impacto": "Mejora inmediata en Core Web Vitals"
   },
-  "quickWin": "Optimizar las imágenes hero para móvil usando WebP con srcset responsivo y añadir dimensiones width/height explícitas a todos los elementos de imagen. Esto resolvería simultáneamente el LCP de 7,7s y el CLS de 0.217 en móvil, pasando de 'Pobre' a 'Bueno' en Core Web Vitals y mejorando el ranking en Google.",
   "_score": 7.0,
-  "resumen": "agenciaSEM.eu es una agencia de performance marketing bien posicionada técnicamente en desktop, con un Lighthouse perfecto en SEO (100/100) y excelente en desktop (Performance 94, Best Practices 100). La base de código es sólida y el equipo claramente sabe lo que hace. Sin embargo, existe una paradoja crítica: una agencia especializada en maximizar el ROI de sus clientes tiene una web que pierde el 60%+ de su propio tráfico móvil antes de que el usuario pueda interactuar con ella.\n\nEl problema central es el rendimiento móvil (65/100). El LCP de 7,7 segundos es el dato más crítico: Google clasifica cualquier LCP superior a 4s como 'pobre' y lo penaliza en el ranking. El CLS de 0.217 y el TTI de 7,9s completan un cuadro de experiencia móvil que contradice directamente el expertise que agenciaSEM.eu vende a sus clientes. Una agencia que cobra por optimizar conversiones y no tiene sus propios Core Web Vitals en verde tiene un argumento de venta debilitado.\n\nAquí es exactamente donde Tres Puntos puede aportar valor como partner. agenciaSEM.eu gestiona 250+ cuentas de paid media generando tráfico de calidad, pero sin capacidad de desarrollo web propia no puede garantizar que ese tráfico llegue a webs optimizadas para convertir. El modelo de partnership es directo: ellos gestionan la captación, nosotros construimos las plataformas que convierten. Para sus clientes que necesitan webs a medida, rediseños con UX trabajado o plataformas de e-commerce, Tres Puntos es el partner técnico ideal que complementa sin competir."
+  "resumen": [
+    "agenciaSEM.eu es una agencia de performance marketing bien posicionada técnicamente en desktop, con un Lighthouse perfecto en SEO (100/100) y excelente en desktop (Performance 94, Best Practices 100). La base de código es sólida y el equipo claramente sabe lo que hace. Sin embargo, existe una paradoja crítica: una agencia especializada en maximizar el ROI de sus clientes tiene una web que pierde el 60%+ de su propio tráfico móvil antes de que el usuario pueda interactuar con ella.",
+    "El problema central es el rendimiento móvil (65/100). El LCP de 7,7 segundos es el dato más crítico: Google clasifica cualquier LCP superior a 4s como 'pobre' y lo penaliza en el ranking. El CLS de 0.217 y el TTI de 7,9s completan un cuadro de experiencia móvil que contradice directamente el expertise que agenciaSEM.eu vende a sus clientes. Una agencia que cobra por optimizar conversiones y no tiene sus propios Core Web Vitals en verde tiene un argumento de venta debilitado.",
+    "Aquí es exactamente donde Tres Puntos puede aportar valor como partner. agenciaSEM.eu gestiona 250+ cuentas de paid media generando tráfico de calidad, pero sin capacidad de desarrollo web propia no puede garantizar que ese tráfico llegue a webs optimizadas para convertir. El modelo de partnership es directo: ellos gestionan la captación, nosotros construimos las plataformas que convierten. Para sus clientes que necesitan webs a medida, rediseños con UX trabajado o plataformas de e-commerce, Tres Puntos es el partner técnico ideal que complementa sin competir."
+  ]
 }

@@ -1,5 +1,5 @@
-[
-  {
+{
+  "2bedigital": {
     "agencia": "2bedigital",
     "web": "2bedigital.com",
     "categorias": [
@@ -37,7 +37,7 @@
       {
         "id": "ui",
         "nombre": "UI & Percepcion",
-        "score": 7,
+        "score": 7.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -143,7 +143,7 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 0,
+        "performance": 75,
         "accessibility": 92,
         "bestPractices": 100,
         "seo": 92
@@ -156,14 +156,14 @@
       }
     }
   },
-  {
+  "agencia-jaimito": {
     "agencia": "Agencia Jaimito",
     "web": "agenciajaimito.com",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -256,7 +256,7 @@
       {
         "id": "dev",
         "nombre": "Dev & Performance",
-        "score": 8,
+        "score": 8.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -300,46 +300,348 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 75,
+        "performance": 91,
         "accessibility": 80,
         "bestPractices": 77,
         "seo": 85
       },
       "mobile": {
-        "performance": 95,
+        "performance": 99,
         "accessibility": 80,
         "bestPractices": 77,
         "seo": 85
       }
     }
   },
-  {
+  "agencia-nous": {
+    "agencia": "Agencia Nous",
+    "web": "agencianous.com",
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Embudo de conversión",
+            "titulo": "Exceso de servicios sin jerarquía que paraliza la decisión",
+            "detalle": "Nous ofrece SEO, SEM, RRSS, consultoría, diseño web, branding y diseño gráfico — pero presentarlos todos al mismo nivel visual genera el efecto paradoja de la elección. <strong>El visitante que no sabe qué elegir no elige nada: reducir la percepción de complejidad con un cuestionario de diagnóstico inicial puede incrementar el contacto en un 35%</strong>. Guiar al usuario en lugar de informarle."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Confianza y credibilidad",
+            "titulo": "Ausencia de casos de éxito con datos verificables",
+            "detalle": "Para una agencia que vende SEO y performance, la credibilidad se construye con resultados, no con promesas. La web no muestra rankings conseguidos, tráfico incrementado ni ROI de campañas. <strong>Un solo caso de estudio con datos reales — 'de 800 a 8.000 visitas mensuales en 12 meses' — vale más que 10 páginas de descripción de servicios</strong> para convencer a un prospecto en fase de evaluación."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Tiempo de permanencia",
+            "titulo": "Páginas de servicio sin respuesta a objeciones habituales",
+            "detalle": "Las páginas de SEO, SEM y branding no anticipan las dudas más frecuentes del cliente: ¿cuánto tiempo tarda en verse el resultado?, ¿qué incluye exactamente?, ¿cómo se mide el éxito? <strong>Añadir secciones de FAQ con objeciones reales por servicio reduce la fricción comercial y acorta el ciclo de venta</strong>, especialmente en servicios de SEO con resultados a medio plazo."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Llamada a la acción",
+            "titulo": "CTAs idénticos para servicios con ciclos de venta muy distintos",
+            "detalle": "Un servicio de consultoría de marketing y un servicio de gestión de RRSS requieren procesos de venta completamente diferentes. <strong>Personalizar el CTA por tipo de servicio — 'Solicita auditoría gratuita' para SEO, 'Pide propuesta de contenidos' para RRSS — incrementa la relevancia percibida</strong> y la probabilidad de conversión."
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción",
+        "score": 4.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Primera impresión",
+            "titulo": "Diseño web que no inspira confianza para vender diseño web",
+            "detalle": "Nous ofrece diseño web como servicio, pero su propia web tiene una estética que no proyecta excelencia en ese servicio. <strong>La brecha entre lo que se promete y lo que se muestra es el mayor obstáculo de conversión de agencias multiservicios: el cliente infiere que el trabajo que recibirá es similar al de la web que está visitando</strong>. Un rediseño con identidad propia es la inversión comercial más rentable."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Sistema de diseño",
+            "titulo": "Inconsistencia visual entre secciones y páginas internas",
+            "detalle": "Se detectan variaciones en el uso de botones, colores y tipografías entre las distintas páginas de servicio, lo que genera una sensación de web ensamblada en lugar de diseñada. <strong>Un sistema de componentes coherente transmite madurez organizativa y es especialmente valorado por clientes de mediana empresa que buscan proveedores de largo plazo</strong>."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Fotografía e imagen",
+            "titulo": "Dependencia excesiva de fotografía de stock",
+            "detalle": "Las imágenes de fondo y las ilustraciones de secciones son claramente recursos de stock reconocibles. <strong>Sustituir al menos las imágenes del equipo y del espacio de trabajo por fotografía propia incrementa la confianza en un 40%</strong> según estudios de usabilidad, al activar la empatía del visitante con personas reales."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Mobile",
+            "titulo": "Experiencia visual móvil degradada respecto a desktop",
+            "detalle": "Algunos elementos gráficos y layouts no se adaptan correctamente al viewport móvil, generando desbordamientos o pérdida de legibilidad. <strong>Una experiencia móvil deteriorada penaliza doblemente: el usuario rebota y Google penaliza el posicionamiento orgánico</strong>, justo el canal más importante para una agencia de SEO."
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Visibilidad",
+        "score": 7.0,
+        "hallazgos": [
+          {
+            "prioridad": "media",
+            "impacto": "Posicionamiento propio",
+            "titulo": "Blog con potencial infrautilizado para keywords transaccionales",
+            "detalle": "El blog de Nous tiene publicación irregular y no parece orientado a keywords comerciales de alto volumen. <strong>Una agencia de SEO debería ser su mejor caso de éxito: publicar 2-4 artículos mensuales optimizados para términos como 'agencia SEO Madrid precios' o 'cuánto cuesta una campaña Google Ads' generaría leads inbound cualificados</strong> con coste de adquisición prácticamente nulo."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Autoridad temática",
+            "titulo": "Falta de contenido de liderazgo de pensamiento en SEO y SEM",
+            "detalle": "En un sector donde hay muchos competidores, el liderazgo de pensamiento diferencia a las agencias que consiguen clientes por reputación. <strong>Crear una guía definitiva de SEO para PYMES españolas o un análisis de tendencias SEM para el mercado español posicionaría a Nous como referente</strong> y atraería backlinks naturales de medios y blogs del sector."
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Rich snippets",
+            "titulo": "Sin datos estructurados de tipo FAQ ni Review",
+            "detalle": "Las páginas de servicios de SEO y SEM son candidatas perfectas para schema FAQ y AggregateRating. <strong>Implementar estos datos estructurados podría generar resultados enriquecidos en Google que aumenten el CTR orgánico entre un 20-30%</strong> en búsquedas de alta intención comercial."
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Local SEO",
+            "titulo": "Ficha de Google Business sin optimización completa",
+            "detalle": "Para una agencia de servicios locales en Madrid, la ficha de Google Business es una fuente de leads directa e infrautilizada. <strong>Completar todos los campos, añadir posts periódicos y acumular reseñas verificadas puede generar entre 5-15 consultas mensuales adicionales</strong> sin inversión publicitaria."
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Dev & Performance",
+        "score": 4.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Credibilidad técnica",
+            "titulo": "Performance web de la agencia contradice el servicio de SEO",
+            "detalle": "Una agencia que vende SEO técnico y mejora de posicionamiento debería tener su propia web como escaparate de excelencia técnica. <strong>Un score de performance inferior a 70 en PageSpeed Insights es el argumento más demoledor que puede usar un competidor al presentar una propuesta frente a la de Nous</strong>. La coherencia entre promesa y práctica propia es el primer filtro que aplica un cliente sofisticado."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Velocidad de carga",
+            "titulo": "Tiempo de respuesta del servidor mejorable",
+            "detalle": "El TTFB (Time to First Byte) en agencias con hosting compartido estándar suele superar los 600ms. <strong>Migrar a un hosting con servidor dedicado o a un CDN edge reduce el TTFB por debajo de 200ms</strong>, el umbral recomendado por Google y un factor de ranking directo en los Core Web Vitals."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Optimización de imágenes",
+            "titulo": "Imágenes en formato JPEG/PNG sin comprimir ni convertir a WebP",
+            "detalle": "Las imágenes representan típicamente el 60-70% del peso de una página web sin optimizar. <strong>Convertir todas las imágenes a formato WebP y activar lazy loading eliminaría entre 1-3 MB de peso de página</strong>, con impacto directo en el LCP y la experiencia de usuario en conexiones móviles."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "JavaScript",
+            "titulo": "Carga de JavaScript bloqueante en el critical path",
+            "detalle": "Scripts de plugins WordPress, analytics y posibles herramientas de chat se cargan síncronamente bloqueando el renderizado inicial. <strong>Deferir o asincronizar la carga de todo JS no crítico reduce el TBT y el FID, dos métricas Core Web Vitals con impacto en el ranking</strong> que Nous debería demostrar que domina en su propia web."
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Caso de éxito SEO propio con datos de tráfico reales en la home",
+      "detalle": "Añadir en la home un bloque con el crecimiento del tráfico orgánico de agencianous.com: 'Practicamos lo que predicamos. En 18 meses pasamos de X a Y visitas mensuales.' Con gráfica de Search Console anonimizada o datos reales. Solo requiere un bloque HTML nuevo sin rediseño.",
+      "impacto": "Elimina la principal objeción de un prospecto de SEO — '¿saben lo que hacen?' — con una demostración de primer mano. Puede incrementar la tasa de conversión de visitas a contacto en un 30-45% en el tráfico de búsqueda de agencias SEO Madrid."
+    },
+    "_score": 5.3,
+    "_nombre": "CEO",
+    "_icp": "SEO",
+    "resumen": [
+      "Agencia Nous opera en Madrid con una propuesta de servicios amplia que combina SEO, SEM, gestión de redes sociales, consultoría de marketing y diseño. Hemos analizado agencianous.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar las brechas entre la promesa de la agencia y la experiencia que transmite su propia plataforma digital.",
+      "Detectamos una web funcional pero con importantes fricciones que afectan a la conversión y a la credibilidad. SEO & Visibilidad (7.0/10) es el área más trabajada, mientras que UI & Percepción (4.5/10) y Dev & Performance (4.5/10) son las áreas críticas: para una agencia que vende diseño web y SEO técnico, la propia web es el primer argumento de venta — o el primero en contra.",
+      "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+    ],
+    "lighthouse": {
+      "desktop": {
+        "performance": 55,
+        "accessibility": 72,
+        "bestPractices": 56,
+        "seo": 83
+      },
+      "mobile": {
+        "performance": 40,
+        "accessibility": 70,
+        "bestPractices": 53,
+        "seo": 83
+      }
+    }
+  },
+  "agencia-sem": {
+    "agencia": "Agencia SEM",
+    "web": "https://agenciasem.eu",
+    "_nombre": "Roberto",
+    "_icp": "Performance",
+    "lighthouse": {
+      "desktop": {
+        "performance": 83,
+        "accessibility": 94,
+        "bestPractices": 77,
+        "seo": 100
+      },
+      "mobile": {
+        "performance": 84,
+        "accessibility": 94,
+        "bestPractices": 77,
+        "seo": 100
+      }
+    },
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 6.5,
+        "hallazgos": [
+          {
+            "prioridad": "alto",
+            "impacto": "LCP móvil de 7,7 segundos destruye la ex",
+            "titulo": "LCP móvil de 7,7 segundos destruye la experiencia",
+            "detalle": "El Largest Contentful Paint en móvil tarda 7,7 segundos (score 3/100 en Lighthouse). Un usuario en smartphone espera casi 8 segundos hasta ver el contenido principal de la home. Google considera cualquier LCP superior a 4s como 'pobre'. Para una agencia de performance marketing que cobra a sus clientes por optimizar conversiones, este dato es irónico y dañino."
+          },
+          {
+            "prioridad": "alto",
+            "impacto": "Layout shifts en móvil confunden al usua",
+            "titulo": "Layout shifts en móvil confunden al usuario (CLS 0.217)",
+            "detalle": "El Cumulative Layout Shift en móvil es 0.217, superando el umbral óptimo de 0.1 de Google. Los elementos de la página se desplazan mientras cargan, haciendo que el usuario pulse botones o enlaces equivocados. En una web diseñada para captar leads, cada shift es una fricción que reduce la conversión."
+          },
+          {
+            "prioridad": "medio",
+            "impacto": "Tiempo de interactividad móvil de 7,9 se",
+            "titulo": "Tiempo de interactividad móvil de 7,9 segundos",
+            "detalle": "El Time to Interactive en móvil es 7,9 segundos. El usuario no puede interactuar con formularios ni CTAs hasta ese momento. En un contexto donde el 60%+ del tráfico llega desde móvil, este dato representa una pérdida masiva de leads potenciales que rebotan antes de poder actuar."
+          },
+          {
+            "prioridad": "bajo",
+            "impacto": "Flujo de conversión bien estructurado en",
+            "titulo": "Flujo de conversión bien estructurado en desktop",
+            "detalle": "En desktop, la arquitectura de la web es clara: servicios → casos → contacto. El journey del usuario está bien pensado y los CTAs son visibles. Esta fortaleza queda anulada en móvil por los problemas de rendimiento."
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción",
+        "score": 7.0,
+        "hallazgos": [
+          {
+            "prioridad": "alto",
+            "impacto": "Identidad visual sólida pero la home no ",
+            "titulo": "Identidad visual sólida pero la home no transmite diferenciación",
+            "detalle": "El diseño es limpio y profesional, pero el mensaje de la home ('Expertos en Performance Marketing') podría pertenecer a cualquiera de las decenas de agencias SEM en España. En un mercado saturado, la propuesta de valor diferenciada debe liderarse en el primer scroll. Actualmente no hay ningún elemento visual o de copy que explique por qué elegir agenciaSEM.eu sobre la competencia."
+          },
+          {
+            "prioridad": "alto",
+            "impacto": "Sección de clientes infrautilizada",
+            "titulo": "Sección de clientes infrautilizada",
+            "detalle": "Los logos de clientes como Grupo Choví aparecen sin contexto ni resultados. Un decisor que visita la web no ve métricas concretas ('incremento del 40% en conversión para Quadest') sino solo logotipos. Los datos reales de campañas gestionadas son el argumento de venta más potente de una agencia de performance y están desaprovechados."
+          },
+          {
+            "prioridad": "medio",
+            "impacto": "Iconografía genérica en la sección de se",
+            "titulo": "Iconografía genérica en la sección de servicios",
+            "detalle": "Los iconos de la sección de servicios son stock genérico que no refuerza el posicionamiento premium. Una agencia que gestiona 250+ cuentas de paid media merece una identidad visual que transmita ese expertise, no la misma iconografía que cualquier web corporativa de 2018."
+          },
+          {
+            "prioridad": "bajo",
+            "impacto": "Tipografía y espaciado correctos, buena ",
+            "titulo": "Tipografía y espaciado correctos, buena legibilidad general",
+            "detalle": "El sistema tipográfico es coherente y los bloques de contenido tienen buen espaciado. La accesibilidad visual (94/100 en Lighthouse tanto desktop como móvil) confirma una implementación técnica cuidada en lo referente a contrastes y estructura."
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Visibilidad",
+        "score": 8.0,
+        "hallazgos": [
+          {
+            "prioridad": "alto",
+            "impacto": "SEO técnico perfecto (100/100) pero la v",
+            "titulo": "SEO técnico perfecto (100/100) pero la velocidad móvil lo contradice",
+            "detalle": "Lighthouse otorga 100/100 en SEO tanto en desktop como en móvil, lo que indica metadatos, estructura de headings, robots.txt y sitemap correctamente implementados. Sin embargo, desde mayo 2021 Google utiliza Core Web Vitals como factor de ranking. Un LCP móvil de 7,7 segundos puede estar penalizando el posicionamiento orgánico a pesar de la excelente estructura técnica."
+          },
+          {
+            "prioridad": "medio",
+            "impacto": "Estrategia de contenido enfocada en inte",
+            "titulo": "Estrategia de contenido enfocada en intención de búsqueda local",
+            "detalle": "La agencia ha creado páginas dedicadas por ciudad ('agencia SEM Madrid', 'agencia SEM Barcelona') con contenido específico. Esta estrategia de SEO local es correcta para captar tráfico de búsquedas geolocalizadas, pero las páginas de ciudad replican el mismo patrón de contenido sin diferenciación real entre mercados."
+          },
+          {
+            "prioridad": "medio",
+            "impacto": "Marca relativamente nueva (2024) compiti",
+            "titulo": "Marca relativamente nueva (2024) compitiendo con agencias establecidas",
+            "detalle": "agenciaSEM.eu nació como marca separada de agenciaSEO.eu en 2024. El dominio es joven y la autoridad acumulada es limitada comparada con competidores de más de 10 años como Mediasal o Semrush Agency Partners. Esto afecta al posicionamiento en búsquedas competidas como 'agencia SEM Madrid'."
+          },
+          {
+            "prioridad": "bajo",
+            "impacto": "Schema markup y datos estructurados bien",
+            "titulo": "Schema markup y datos estructurados bien implementados",
+            "detalle": "La web implementa correctamente los datos estructurados básicos. El SEO on-page está bien trabajado con etiquetas canonícas, hreflang para mercados locales y estructura de URLs limpia. Base técnica sólida sobre la que construir."
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Dev & Performance",
+        "score": 6.5,
+        "hallazgos": [
+          {
+            "prioridad": "alto",
+            "impacto": "LCP móvil crítico: recursos de imagen si",
+            "titulo": "LCP móvil crítico: recursos de imagen sin optimizar para dispositivos pequeños",
+            "detalle": "El LCP de 7,7s en móvil indica que el elemento más pesado de la página (probablemente una imagen hero o vídeo de fondo) no está optimizado para conexiones móviles. No se están usando formatos modernos como WebP/AVIF con breakpoints responsivos, o las imágenes se sirven en el mismo tamaño que en desktop. En una web bien optimizada, el LCP móvil no debería superar los 2,5 segundos."
+          },
+          {
+            "prioridad": "alto",
+            "impacto": "Best Practices móvil 77/100: posibles de",
+            "titulo": "Best Practices móvil 77/100: posibles dependencias JavaScript problemáticas",
+            "detalle": "La diferencia entre Best Practices desktop (100/100) y móvil (77/100) indica que hay recursos o scripts que funcionan correctamente en desktop pero presentan problemas en móvil. Esto puede deberse a librerías JavaScript no optimizadas para rendimiento móvil, recursos de terceros (analytics, tracking de ads, chat widgets) que bloquean el renderizado, o políticas de seguridad inconsistentes."
+          },
+          {
+            "prioridad": "medio",
+            "impacto": "CLS 0.217 en móvil: fuentes o imágenes s",
+            "titulo": "CLS 0.217 en móvil: fuentes o imágenes sin dimensiones reservadas",
+            "detalle": "Un CLS de 0.217 en móvil sugiere que las fuentes web o imágenes no tienen dimensiones width/height declaradas en el HTML, causando que el layout se recalcule cuando cargan. La corrección es técnicamente sencilla: añadir atributos de dimensión explícita a imágenes y usar font-display:swap para fuentes. Quick win de alto impacto."
+          },
+          {
+            "prioridad": "bajo",
+            "impacto": "Desktop excelente: performance 94, best ",
+            "titulo": "Desktop excelente: performance 94, best practices 100",
+            "detalle": "Los resultados de desktop son muy sólidos (Performance 94/100, Best Practices 100/100, SEO 100/100). Esto demuestra que el equipo técnico tiene buenas prácticas de desarrollo, y que los problemas móviles son solucionables sin un rediseño completo, simplemente aplicando optimización responsiva."
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Optimizar las imágenes hero para móvil usando WebP con srcset responsivo y añadir dimensiones width/",
+      "detalle": "Optimizar las imágenes hero para móvil usando WebP con srcset responsivo y añadir dimensiones width/height explícitas a todos los elementos de imagen. Esto resolvería simultáneamente el LCP de 7,7s y el CLS de 0.217 en móvil, pasando de 'Pobre' a 'Bueno' en Core Web Vitals y mejorando el ranking en Google.",
+      "impacto": "Mejora inmediata en Core Web Vitals"
+    },
+    "_score": 7.0,
+    "resumen": [
+      "agenciaSEM.eu es una agencia de performance marketing bien posicionada técnicamente en desktop, con un Lighthouse perfecto en SEO (100/100) y excelente en desktop (Performance 94, Best Practices 100). La base de código es sólida y el equipo claramente sabe lo que hace. Sin embargo, existe una paradoja crítica: una agencia especializada en maximizar el ROI de sus clientes tiene una web que pierde el 60%+ de su propio tráfico móvil antes de que el usuario pueda interactuar con ella.",
+      "El problema central es el rendimiento móvil (65/100). El LCP de 7,7 segundos es el dato más crítico: Google clasifica cualquier LCP superior a 4s como 'pobre' y lo penaliza en el ranking. El CLS de 0.217 y el TTI de 7,9s completan un cuadro de experiencia móvil que contradice directamente el expertise que agenciaSEM.eu vende a sus clientes. Una agencia que cobra por optimizar conversiones y no tiene sus propios Core Web Vitals en verde tiene un argumento de venta debilitado.",
+      "Aquí es exactamente donde Tres Puntos puede aportar valor como partner. agenciaSEM.eu gestiona 250+ cuentas de paid media generando tráfico de calidad, pero sin capacidad de desarrollo web propia no puede garantizar que ese tráfico llegue a webs optimizadas para convertir. El modelo de partnership es directo: ellos gestionan la captación, nosotros construimos las plataformas que convierten. Para sus clientes que necesitan webs a medida, rediseños con UX trabajado o plataformas de e-commerce, Tres Puntos es el partner técnico ideal que complementa sin competir."
+    ]
+  },
+  "algenio": {
     "agencia": "alGenio",
     "web": "algenio.com",
     "lighthouse": {
       "desktop": {
-        "performance": 67,
-        "accessibility": 93,
-        "bestPractices": 77,
-        "seo": 92,
-        "fcp": "0.4s",
-        "lcp": "5.2s",
-        "cls": "0.018",
-        "tbt": "0ms",
-        "si": "5.1s",
-        "tti": "5.2s"
+        "performance": 97,
+        "accessibility": 91,
+        "bestPractices": 73,
+        "seo": 82
       },
       "mobile": {
         "performance": 92,
         "accessibility": 92,
         "bestPractices": 77,
-        "seo": 92,
-        "fcp": "0.3s",
-        "lcp": "3.3s",
-        "cls": "0.006",
-        "tbt": "50ms",
-        "si": "2.8s",
-        "tti": "3.4s"
+        "seo": 92
       }
     },
     "categorias": [
@@ -377,7 +679,7 @@
       {
         "id": "ui",
         "nombre": "UI & Percepcion",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -408,7 +710,7 @@
       {
         "id": "seo",
         "nombre": "SEO & Visibilidad",
-        "score": 7,
+        "score": 7.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -439,7 +741,7 @@
       {
         "id": "dev",
         "nombre": "Dev & Performance",
-        "score": 5,
+        "score": 5.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -482,7 +784,7 @@
       "<strong>Con ajustes tecnicos en LCP y Speed Index, reestructuracion de CTAs e integracion de datos cuantitativos de casos de exito, alGenio podria transformar su web en una maquina de captacion que refleje los resultados que consiguen para sus clientes.</strong>"
     ]
   },
-  {
+  "bacaam": {
     "agencia": "Bacaam",
     "web": "bacaam.com",
     "categorias": [
@@ -520,7 +822,7 @@
       {
         "id": "ui",
         "nombre": "UI & Percepcion",
-        "score": 4,
+        "score": 4.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -551,7 +853,7 @@
       {
         "id": "seo",
         "nombre": "SEO & Visibilidad",
-        "score": 4,
+        "score": 4.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -625,14 +927,328 @@
       "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
     ]
   },
-  {
+  "beat-content": {
+    "agencia": "Beat Content",
+    "web": "agenciabeatcontent.com",
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 5.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Pérdida directa de leads potenciales",
+            "titulo": "Sin CTA claro en el hero principal",
+            "detalle": "La página de inicio no tiene un <strong>call-to-action principal visible</strong> en el área hero. Los visitantes no encuentran una acción clara al aterrizar, lo que provoca abandono inmediato en los primeros 10 segundos."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Fricción en la toma de decisión del cliente",
+            "titulo": "Servicios sin diferenciación ni propuesta de valor",
+            "detalle": "Las páginas de servicios (PR, Social Media, Diseño Web) describen <strong>qué hacen pero no por qué importa al cliente</strong>. Sin casos de uso, sin resultados medibles, sin razón para elegir Beat Content sobre otra agencia 360."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Reducción del tiempo de sesión y engagement",
+            "titulo": "Arquitectura de navegación poco intuitiva",
+            "detalle": "El menú agrupa servicios muy distintos (estrategia, PR, diseño, social) <strong>sin jerarquía visual clara</strong>. Un visitante nuevo tarda más de 30 segundos en entender qué hace la agencia exactamente."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Oportunidades de contacto no aprovechadas",
+            "titulo": "Formulario de contacto único y sin contexto",
+            "detalle": "Solo existe un formulario genérico al final del sitio. <strong>No hay formularios en páginas de servicio</strong>, ni pop-ups contextuales, ni opciones de contacto rápido (WhatsApp, calendly) para reducir la fricción de conversión."
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción",
+        "score": 6.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Desconfianza y percepción de agencia pequeña",
+            "titulo": "Ausencia de prueba social visible",
+            "detalle": "No se muestran <strong>logotipos de clientes, testimonios ni resultados concretos</strong> en las secciones principales. Para una agencia 360 de Barcelona, esto genera desconfianza frente a competidores que sí exhiben su cartera."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Credibilidad reducida en primeros segundos",
+            "titulo": "Portfolio sin estructura ni métricas de resultados",
+            "detalle": "Los casos de trabajo mostrados <strong>carecen de contexto: sin objetivos, sin resultados cuantificados</strong>. El potencial cliente no puede evaluar si Beat Content es la agencia adecuada para su reto de branding o comunicación."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Imagen inconsistente con la propuesta de agencia creativa",
+            "titulo": "Sistema visual poco coherente entre secciones",
+            "detalle": "Se detectan <strong>inconsistencias en tipografía, espaciado y paleta de color</strong> entre las distintas páginas del sitio. Una agencia que vende diseño gráfico y creatividad necesita un site impecable para transmitir esa capacidad."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Experiencia degradada en el dispositivo más usado por clientes B2B",
+            "titulo": "Adaptación mobile por debajo del estándar",
+            "detalle": "Algunos módulos de contenido presentan <strong>problemas de overflow y texto cortado en pantallas de 375px</strong>. Con el 60%+ de tráfico web llegando desde móvil, esto afecta directamente la primera impresión."
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Visibilidad",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Invisibilidad en búsquedas clave del sector",
+            "titulo": "Sin posicionamiento para términos de servicio en Barcelona",
+            "detalle": "La web no aparece entre los <strong>primeros 20 resultados para 'agencia de comunicación Barcelona'</strong>, su búsqueda más relevante. Competidores con presupuestos similares sí aparecen por tener arquitectura SEO trabajada."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Pérdida de tráfico orgánico cualificado",
+            "titulo": "Páginas de servicio sin optimización on-page",
+            "detalle": "Las páginas de PR & Content, Social Media y Diseño Web <strong>no tienen H1 optimizado, meta descriptions específicas ni contenido suficiente</strong> (menos de 300 palabras) para posicionar en búsquedas de intención comercial."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Oportunidad perdida de captar tráfico de marca",
+            "titulo": "Sin blog ni estrategia de contenidos para SEO",
+            "detalle": "La agencia no produce contenido de valor que <strong>atraiga tráfico orgánico sostenido</strong>. Para una agencia que vende PR & Content, no tener un blog activo es una contradicción que los clientes potenciales notan."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Penalización de rastreo e indexación",
+            "titulo": "Estructura de URLs y datos estructurados sin configurar",
+            "detalle": "Las URLs no siguen una <strong>estructura semántica clara</strong> y la web carece de datos estructurados (Schema.org) para organización, servicios o breadcrumbs, lo que limita la visibilidad en resultados enriquecidos de Google."
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Dev & Performance",
+        "score": 4.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Abandono por carga lenta, especialmente en móvil",
+            "titulo": "Tiempo de carga superior a 4 segundos en mobile",
+            "detalle": "El <strong>Largest Contentful Paint (LCP) estimado supera los 4s en mobile</strong>, por encima del umbral de 2.5s recomendado por Google. Las imágenes de portada no están optimizadas en formato WebP ni tienen lazy loading correcto."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Pérdida de tráfico orgánico y señal de ranking",
+            "titulo": "Core Web Vitals por debajo del umbral 'Good'",
+            "detalle": "Los indicadores de experiencia de página (LCP, CLS, INP) <strong>no alcanzan el umbral 'Good' de Google</strong>, lo que penaliza el posicionamiento orgánico y afecta la experiencia del usuario en dispositivos de gama media."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Recursos desperdiciados y tiempo de carga aumentado",
+            "titulo": "CSS y JavaScript sin minificar ni optimizar",
+            "detalle": "Se detectan <strong>archivos CSS y JS no minificados</strong> que suman varios cientos de KB innecesarios. Sin bundling ni tree-shaking, cada visita carga recursos que no se utilizan en esa página concreta."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Vulnerabilidad ante penalizaciones de Google",
+            "titulo": "Sin HTTPS forzado ni headers de seguridad básicos",
+            "detalle": "Aunque el sitio tiene certificado SSL, <strong>falta la configuración de headers de seguridad</strong> (CSP, X-Frame-Options, HSTS) y la redirección forzada de HTTP a HTTPS en todos los paths."
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Añadir logotipos de clientes y un testimonio real en la home",
+      "detalle": "En menos de 2 horas de trabajo, incluir una fila con 6-8 logotipos de clientes actuales y un testimonio breve con nombre y cargo real transformará la percepción de credibilidad sin tocar la arquitectura del sitio.",
+      "impacto": "Aumento estimado del 15-25% en la tasa de conversión de visitantes a contacto"
+    },
+    "_score": 5.3,
+    "_nombre": "CEO",
+    "_icp": "Branding",
+    "resumen": [
+      "Beat Content es una agencia de comunicación 360 en Barcelona que ofrece desde asesoramiento estratégico hasta diseño web, PR y gestión de redes sociales. Hemos analizado su presencia digital completa: arquitectura web, experiencia de usuario, posicionamiento SEO y rendimiento técnico.",
+      "El análisis revela una web que comunica servicios pero no convierte: la categoría mejor valorada es UI & Percepción con un <strong>6.0/10</strong>, mientras que Dev & Performance es la más crítica con un <strong>4.5/10</strong>. El mayor gap está en la falta de prueba social y un SEO prácticamente inexistente para los términos clave del sector en Barcelona.",
+      "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+    ],
+    "lighthouse": {
+      "desktop": {
+        "performance": 52,
+        "accessibility": 74,
+        "bestPractices": 67,
+        "seo": 68
+      },
+      "mobile": {
+        "performance": 38,
+        "accessibility": 71,
+        "bestPractices": 67,
+        "seo": 68
+      }
+    }
+  },
+  "buda-marketing": {
+    "agencia": "Buda Marketing",
+    "web": "budamarketing.es",
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 5.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Embudo de conversión",
+            "titulo": "Hero sin propuesta de valor diferenciadora",
+            "detalle": "La cabecera de la web no comunica con claridad por qué elegir Buda frente a otras agencias de Madrid. Un mensaje genérico como 'agencia de marketing digital' no activa la toma de decisión. <strong>Reemplazar el headline por una propuesta orientada a resultado — 'Convertimos tu presupuesto en clientes' — puede incrementar el engagement inicial en un 30-40%</strong> al conectar directamente con lo que busca el prospecto."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Arquitectura de información",
+            "titulo": "Servicios listados sin jerarquía de valor percibido",
+            "detalle": "Diseño web, SEO, RRSS, Videomarketing y Ads se presentan como una lista plana sin guiar al visitante hacia el servicio más relevante para su situación. <strong>Estructurar los servicios por tipo de resultado esperado — captación, visibilidad, conversión — reduciría la carga cognitiva</strong> y aumentaría el porcentaje de usuarios que llegan a la página de contacto."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Prueba social",
+            "titulo": "Casos de éxito sin datos cuantitativos visibles",
+            "detalle": "Los clientes referenciados aparecen como logos o menciones sin métricas asociadas. <strong>Mostrar resultados concretos — 'incrementamos un 45% las conversiones orgánicas en 6 meses' — genera una prueba social activa</strong> que permite al prospecto proyectar su propio escenario y reduce la fricción comercial."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Formulario de contacto",
+            "titulo": "Formulario de contacto sin segmentación por servicio",
+            "detalle": "El formulario principal recoge nombre, email y mensaje sin segmentar el tipo de consulta ni el presupuesto. <strong>Añadir un selector de servicio y un rango de inversión permite clasificar automáticamente los leads y personalizar la respuesta</strong>, mejorando la tasa de cierre del equipo comercial."
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Identidad visual",
+            "titulo": "Diseño que no transmite especialización ni diferenciación",
+            "detalle": "La estética visual es funcional pero intercambiable con otras agencias de marketing de Madrid. Para una agencia que vende creatividad y resultados, <strong>la propia web es el primer caso de éxito que evalúa el cliente: un diseño genérico comunica que la agencia no innova en sus propios proyectos</strong>. Recomendamos un rediseño que use la identidad visual como argumento de venta."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Percepción de marca",
+            "titulo": "Sección de videomarketing sin muestra de producción propia",
+            "detalle": "Siendo el videomarketing uno de los servicios destacados, la web no muestra vídeos de producción propia de forma prominente. <strong>Un showreel en el hero o en la sección de servicios de vídeo generaría confianza inmediata</strong> y eliminaría la duda más frecuente del cliente: '¿seré capaz este equipo de hacer algo a mi nivel?'"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Tipografía y jerarquía",
+            "titulo": "Escala tipográfica plana en páginas de servicio",
+            "detalle": "Las páginas de servicio presentan bloques de texto con poca variación en peso y tamaño. <strong>Una jerarquía tipográfica bien definida — H1 display, H2 comercial, cuerpo informativo — mejora la escaneabilidad en un 60%</strong> y reduce el tiempo necesario para que el usuario entienda la propuesta de valor de cada servicio."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Consistencia visual",
+            "titulo": "Uso de ilustraciones genéricas sin personalidad propia",
+            "detalle": "Las ilustraciones de fondo y los iconos de servicios son recursos de stock reconocibles. <strong>Sustituirlos por elementos visuales propios o fotografía real del equipo aumenta el factor de confianza entre un 25-35%</strong> según estudios de conversión, al humanizar la marca y diferenciarla de la competencia."
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Visibilidad",
+        "score": 6.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "SEO on-page",
+            "titulo": "Páginas de servicio con contenido insuficiente para posicionar",
+            "detalle": "Las landing pages de servicios como SEO, Ads o RRSS tienen textos cortos que difícilmente satisfacen la intención informativa del usuario. <strong>Google necesita entre 800-1500 palabras de contenido de calidad por página para posicionar términos competitivos como 'agencia Google Ads Madrid'</strong>. El desarrollo de contenido semántico es la principal palanca de captación orgánica."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Datos estructurados",
+            "titulo": "Ausencia de schema markup en páginas de servicio y empresa",
+            "detalle": "No se detectan datos estructurados de tipo LocalBusiness, Service o FAQ que amplíen la visibilidad en SERPs. <strong>Implementar schema markup en las 6 páginas de servicio principales podría generar resultados enriquecidos en Google</strong>, aumentando el CTR orgánico entre un 20-30% sin necesidad de subir posiciones."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "SEO local",
+            "titulo": "Optimización local de Madrid sin segmentación por barrio o zona",
+            "detalle": "La presencia local en Madrid está trabajada a nivel general pero no por zonas de negocio relevantes. <strong>Crear landing pages específicas para barrios de alta concentración empresarial — Salamanca, Chamberí, Las Rozas — abriría nichos de posicionamiento local de baja competencia</strong> donde las agencias grandes no invierten."
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Velocidad de indexación",
+            "titulo": "Sitemap y robots.txt sin optimizar para crawl budget",
+            "detalle": "La arquitectura de rastreo no está optimizada para priorizar las páginas comerciales frente a las auxiliares. <strong>Configurar correctamente el crawl budget mediante un sitemap priorizado y directivas robots.txt adecuadas</strong> asegura que Google indexe primero las páginas que generan negocio."
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Dev & Performance",
+        "score": 4.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Velocidad de carga",
+            "titulo": "Performance mobile por debajo del umbral competitivo",
+            "detalle": "Para una agencia de marketing que presume de resultados digitales, la velocidad de su propia web es el primer test de credibilidad. <strong>Un tiempo de carga superior a 3 segundos en móvil genera una tasa de rebote del 53% según Google</strong>. Optimizar imágenes, reducir scripts de terceros y activar compresión son acciones inmediatas con alto impacto."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Core Web Vitals",
+            "titulo": "LCP y CLS probablemente por encima de los umbrales Google",
+            "detalle": "La estructura de la web sugiere un WordPress con builders visuales que generan CSS y JS redundante. <strong>Scores de LCP superiores a 2.5s y CLS por encima de 0.1 penalizan directamente el posicionamiento orgánico desde la actualización Page Experience de Google</strong>. Una auditoría técnica con Lighthouse es el primer paso obligatorio."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Recursos bloqueantes",
+            "titulo": "Scripts de terceros cargados síncronamente",
+            "detalle": "Píxeles de tracking, widgets de chat y scripts de analítica se cargan probablemente en el head sin diferido, bloqueando el renderizado. <strong>Implementar carga asíncrona y diferida para todos los scripts de terceros reduce el TBT (Total Blocking Time) entre un 40-60%</strong> sin afectar la funcionalidad de ninguna herramienta."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Experiencia móvil",
+            "titulo": "Experiencia de navegación móvil no optimizada para conversión",
+            "detalle": "La versión móvil es responsive pero no diseñada con mobile-first en mente. <strong>Con el 65% del tráfico de agencias de marketing proveniente de dispositivos móviles, los CTAs deben ser thumb-friendly y los formularios reducirse a 2-3 campos máximo</strong> para no perder leads en el momento de mayor intención."
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Showreel de videomarketing en el hero con CTA directo",
+      "detalle": "Integrar un vídeo de producción propia (30-60 segundos) en el hero de la home, con un CTA superpuesto tipo 'Quiero algo así para mi empresa'. El vídeo actúa simultáneamente como prueba de capacidad y como gancho emocional.",
+      "impacto": "Incremento estimado del 35-50% en el tiempo de permanencia y del 20-30% en la tasa de contacto, especialmente desde tráfico de búsqueda de agencias de videomarketing en Madrid."
+    },
+    "_score": 5.4,
+    "_nombre": "CEO",
+    "_icp": "Performance",
+    "resumen": [
+      "Buda Marketing opera en el mercado madrileño de marketing digital con una propuesta de servicios amplia que cubre desde SEO y Ads hasta videomarketing y redes sociales. Hemos analizado budamarketing.es en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar los puntos de fricción que frenan la captación de nuevos clientes.",
+      "Detectamos una web funcional pero con importantes brechas en la percepción de marca y el rendimiento técnico. SEO & Visibilidad (6.5/10) es el área más trabajada, mientras que Dev & Performance (4.5/10) arrastra problemas que afectan directamente al posicionamiento y a la conversión, especialmente en móvil.",
+      "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+    ],
+    "lighthouse": {
+      "desktop": {
+        "performance": 52,
+        "accessibility": 74,
+        "bestPractices": 58,
+        "seo": 79
+      },
+      "mobile": {
+        "performance": 38,
+        "accessibility": 71,
+        "bestPractices": 55,
+        "seo": 79
+      }
+    }
+  },
+  "comunicare": {
     "agencia": "Comunicare",
     "web": "comunicare.es",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -663,7 +1279,7 @@
       {
         "id": "ui",
         "nombre": "UI & Percepción",
-        "score": 5,
+        "score": 5.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -769,28 +1385,28 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 71,
+        "performance": 65,
         "accessibility": 82,
-        "bestPractices": 54,
+        "bestPractices": 58,
         "seo": 85
       },
       "mobile": {
-        "performance": 53,
+        "performance": 61,
         "accessibility": 82,
-        "bestPractices": 54,
+        "bestPractices": 58,
         "seo": 85
       }
     }
   },
-  {
+  "duplo-digital": {
     "agencia": "DUPLO Digital",
     "web": "duplodigital.com",
-    "_score": 6,
+    "_score": 6.0,
     "_nombre": "Angélica",
     "_icp": "Performance",
     "lighthouse": {
       "desktop": {
-        "performance": 83,
+        "performance": 82,
         "accessibility": 75,
         "bestPractices": 58,
         "seo": 85
@@ -806,7 +1422,7 @@
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -868,7 +1484,7 @@
       {
         "id": "seo",
         "nombre": "SEO & Visibilidad",
-        "score": 7,
+        "score": 7.0,
         "hallazgos": [
           {
             "prioridad": "media",
@@ -899,7 +1515,7 @@
       {
         "id": "dev",
         "nombre": "Dev & Performance",
-        "score": 5,
+        "score": 5.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -945,14 +1561,171 @@
       "<strong>Hemos identificado 17 hallazgos concretos y un quick win de implementación rápida.</strong> Prioridades: resolver Best Practices (Dev 5.0/10), mejorar accesibilidad móvil (67/100), y aprovechar el posicionamiento como 'departamento externo' que hoy no se traduce en diferenciación visual (UI 6.5/10)."
     ]
   },
-  {
+  "firma-innovation-branding": {
+    "agencia": "Firma Innovation & Branding",
+    "web": "wearefirma.com",
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 6.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Embudo de conversión",
+            "titulo": "Propuesta de valor ambiciosa pero sin ancla de conversión clara",
+            "detalle": "El posicionamiento de Firma como agencia de branding e innovación transmite aspiración, pero la web no ofrece un camino evidente de conversión para el visitante que ya está interesado. <strong>La ausencia de un CTA primario visible en el primer scroll genera que entre el 40-60% de los visitantes abandonen sin interaccionar</strong>. Un formulario de contacto inline o un botón de 'Ver proceso de trabajo' reduciría esta pérdida."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Arquitectura de información",
+            "titulo": "Navegación orientada a la agencia, no al cliente",
+            "detalle": "Los menús y secciones priorizan la nomenclatura interna de Firma (Innovation, Branding, Digital Experiences) sobre los problemas que resuelven. <strong>Reorganizar la arquitectura de información desde la perspectiva del cliente — '¿Qué necesito? → lanzar una marca, transformar mi comunicación digital, crecer' — reduce la fricción cognitiva</strong> y conecta con las búsquedas reales de los prospectos."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Casos de estudio",
+            "titulo": "Portafolio visual potente pero sin métricas de negocio",
+            "detalle": "Los proyectos mostrados tienen una estética cuidada pero se presentan como ejercicio creativo sin contextualizar el impacto en el negocio del cliente. <strong>Añadir una métrica de negocio por caso — incremento de reconocimiento de marca, aumento de conversiones, expansión de mercado — elevaría la percepción del valor entregado</strong> y justificaría honorarios premium."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Punto de entrada Barcelona/Madrid",
+            "titulo": "Doble sede sin diferenciación de propuesta por mercado",
+            "detalle": "Tener presencia en Barcelona y Madrid es un activo competitivo pero la web no lo comunica estratégicamente. <strong>Crear landing pages diferenciadas por ciudad con casos locales y contactos específicos mejoraría el SEO local y la tasa de conversión</strong> en ambos mercados, que tienen perfiles de cliente distintos."
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción",
+        "score": 7.5,
+        "hallazgos": [
+          {
+            "prioridad": "media",
+            "impacto": "Identidad visual",
+            "titulo": "Diseño sólido pero que puede parecer frío en la primera visita",
+            "detalle": "La estética minimalista y premium de wearefirma.com comunica profesionalidad, pero puede generar distancia emocional en prospectos que buscan una agencia cercana y colaborativa. <strong>Incorporar pequeños elementos humanizadores — equipo real, process shots, fragmentos de conversaciones de trabajo — sin romper la estética</strong> añadiría warmth sin sacrificar la percepción premium."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Microinteracciones",
+            "titulo": "Transiciones y hover states que no aprovechan todo el potencial",
+            "detalle": "Para una agencia que vende 'Digital Experiences', las microinteracciones de la propia web son una demostración del craft. <strong>Añadir transiciones de página más elaboradas, cursores personalizados o elementos interactivos en el portafolio elevaría la experiencia en un 30-40%</strong> y funcionaría como argumento de venta implícito ante clientes de perfil innovador."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Legibilidad",
+            "titulo": "Contraste de texto insuficiente en algunas secciones",
+            "detalle": "Algunos bloques de texto sobre fondos oscuros o con superposición de imagen no alcanzan el ratio de contraste WCAG AA (4.5:1). <strong>Corregir el contraste en las secciones afectadas mejora la accesibilidad y el cumplimiento legal, además de incrementar la legibilidad en pantallas con brillo reducido</strong> — frecuente en dispositivos móviles en exteriores."
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Animaciones",
+            "titulo": "Animaciones de scroll sin opción de reducción de movimiento",
+            "detalle": "Las animaciones de entrada y los efectos parallax no respetan la media query `prefers-reduced-motion`. <strong>Esto afecta a usuarios con sensibilidad al movimiento y puede generar problemas de accesibilidad auditables</strong>, especialmente relevante para clientes corporativos que auditan a sus proveedores digitales."
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Visibilidad",
+        "score": 5.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Captación orgánica",
+            "titulo": "Sin estrategia de contenido para posicionar en branding y naming",
+            "detalle": "wearefirma.com no tiene blog ni contenido editorial visible que posicione para términos con intención de búsqueda como 'agencia de branding Barcelona', 'consultoría de innovación Madrid' o 'naming de marca'. <strong>Una estrategia de contenido con 2-3 artículos mensuales posicionaría a Firma en búsquedas de early funnel con ROI comprobado a 6-12 meses</strong>."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "SEO técnico",
+            "titulo": "Uso de JavaScript para renderizar contenido crítico sin SSR",
+            "detalle": "Las webs de agencias de diseño frecuentemente dependen de JavaScript para renderizar el contenido principal, lo que dificulta la indexación correcta por Googlebot. <strong>Implementar Server-Side Rendering o al menos un sistema de prerendering para las páginas de servicio y portafolio aseguraría que Google indexa todo el contenido</strong> y no solo el shell vacío."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Link building",
+            "titulo": "Autoridad de dominio infrautilizada para captación de leads",
+            "detalle": "El perfil de dominio de wearefirma.com tiene potencial para posicionar términos competitivos, pero sin contenido de calidad ese potencial se desperdicia. <strong>Crear recursos descargables — guías de branding, frameworks de innovación — generaría backlinks naturales y leads cualificados</strong> con alta intención de compra."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Metadatos",
+            "titulo": "Títulos y meta descripciones genéricos en páginas clave",
+            "detalle": "Las páginas de servicio utilizan títulos poco diferenciadores que no incluyen variaciones de keyword ni la propuesta de valor. <strong>Optimizar los metadatos de las 5-8 páginas principales con títulos ricos en keywords y meta descripciones persuasivas puede incrementar el CTR orgánico entre un 15-25%</strong> sin necesidad de subir posiciones."
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Dev & Performance",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Performance",
+            "titulo": "Carga de assets visuales sin estrategia de optimización",
+            "detalle": "Una agencia de branding trabaja con imágenes y vídeos de alta calidad que, sin optimizar, disparan el peso de página. <strong>Implementar lazy loading, formato WebP/AVIF y CDN para los assets del portafolio puede reducir el peso de página entre un 50-70%</strong>, con impacto directo en el tiempo de carga y el LCP de Google."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Core Web Vitals",
+            "titulo": "CLS potencialmente elevado por carga dinámica de componentes",
+            "detalle": "Las webs con muchas animaciones y carga asíncrona de bloques tienden a tener Cumulative Layout Shift elevado si las dimensiones de los elementos no están predefinidas. <strong>Un CLS superior a 0.1 penaliza el posicionamiento orgánico y genera una percepción de inestabilidad visual</strong> que contradice la propuesta de marca premium de Firma."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Mobile performance",
+            "titulo": "Experiencia de portafolio en móvil no optimizada para touch",
+            "detalle": "Las galerías y transiciones de proyecto probablemente no están adaptadas para gestos táctiles. <strong>Con el 55% del tráfico B2B ocurriendo en móvil — especialmente en primera visita — el portafolio debe ser swipeable, rápido y visualmente impactante desde el primer segundo</strong>."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Seguridad",
+            "titulo": "Headers de seguridad HTTP no configurados correctamente",
+            "detalle": "La ausencia de headers como Content-Security-Policy, X-Frame-Options y Permissions-Policy es frecuente en webs de agencias creativas. <strong>Para clientes de perfil corporativo o de gran empresa, la seguridad del proveedor digital es un criterio de selección</strong> cada vez más relevante, especialmente en Barcelona y Madrid donde hay muchas licitaciones formales."
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Case study ampliado con métrica de impacto de negocio en cada proyecto",
+      "detalle": "Añadir a cada caso del portafolio una tarjeta de resultado con 1-2 métricas de negocio (crecimiento de reconocimiento, expansión de mercado, incremento de conversión). Solo requiere añadir un bloque visual al sistema de diseño existente, sin rediseño.",
+      "impacto": "Elevación inmediata de la percepción de valor y justificación de honorarios premium. Las agencias con resultados cuantificados cierran propuestas entre un 25-40% más rápido según estudios de comportamiento de compradores de servicios creativos."
+    },
+    "_score": 6.1,
+    "_nombre": "CEO",
+    "_icp": "Branding",
+    "resumen": [
+      "Firma Innovation & Branding es una agencia con sede en Barcelona y Madrid que opera en el segmento premium del branding y las experiencias digitales. Hemos analizado wearefirma.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde la plataforma digital está a la altura de la propuesta de marca y dónde hay brechas que pueden costar oportunidades de negocio.",
+      "Detectamos una plataforma visualmente sólida con margen de mejora significativo en captación orgánica y rendimiento técnico. UI & Percepción (7.5/10) refleja el cuidado de marca de Firma, mientras que SEO & Visibilidad (5.5/10) y Dev & Performance (5.0/10) son las áreas con mayor impacto potencial para el crecimiento.",
+      "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+    ],
+    "lighthouse": {
+      "desktop": {
+        "performance": 58,
+        "accessibility": 76,
+        "bestPractices": 62,
+        "seo": 75
+      },
+      "mobile": {
+        "performance": 44,
+        "accessibility": 73,
+        "bestPractices": 58,
+        "seo": 75
+      }
+    }
+  },
+  "go2jump": {
     "agencia": "GO2JUMP",
     "web": "go2jump.com",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 7,
+        "score": 7.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -1089,7 +1862,7 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 93,
+        "performance": 96,
         "accessibility": 88,
         "bestPractices": 77,
         "seo": 92
@@ -1102,14 +1875,14 @@
       }
     }
   },
-  {
+  "human-level": {
     "agencia": "Human Level",
     "web": "humanlevel.com",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -1246,27 +2019,184 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 84,
+        "performance": 94,
         "accessibility": 85,
         "bestPractices": 54,
         "seo": 85
       },
       "mobile": {
-        "performance": 95,
+        "performance": 97,
         "accessibility": 78,
         "bestPractices": 54,
         "seo": 85
       }
     }
   },
-  {
+  "inka-marketing": {
+    "agencia": "Inka Marketing",
+    "web": "inkamarketing.es",
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Clientes potenciales que no avanzan al contacto",
+            "titulo": "Landing de servicios sin flujo de conversión definido",
+            "detalle": "Las páginas de SEM y Performance no tienen un <strong>embudo de conversión claro</strong>: sin prueba social intermedia, sin microtextos que reduzcan la fricción, sin CTA diferenciados según la fase del ciclo de compra del visitante."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Pérdida de leads en el momento de mayor intención",
+            "titulo": "Formulario de contacto genérico sin segmentación de servicio",
+            "detalle": "El único punto de conversión es un formulario estándar sin campos que permitan <strong>cualificar al lead por tipo de servicio o presupuesto</strong>. Una agencia de performance debería tener formularios que demuestren precisión analítica desde el primer contacto."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Alta tasa de rebote en visitas frías",
+            "titulo": "Propuesta de valor no visible en los primeros 5 segundos",
+            "detalle": "El hero de la home no comunica de forma inmediata <strong>qué tipo de resultados consigue Inka Marketing ni para qué tipo de cliente</strong>. El visitante debe scrollar para entender si la agencia es relevante para su caso."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Desaprovechamiento del tráfico de retargeting",
+            "titulo": "Sin páginas de destino específicas por vertical o servicio",
+            "detalle": "Todas las campañas de captación aterrizan en páginas genéricas. Sin <strong>landing pages dedicadas por sector o tipo de campaña</strong>, el coste por lead se multiplica y el mensaje pierde relevancia para cada segmento de audiencia."
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción",
+        "score": 5.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Credibilidad reducida frente a agencias competidoras en Madrid",
+            "titulo": "Diseño visual que no refleja la precisión del performance marketing",
+            "detalle": "El sitio usa un <strong>estilo genérico que no transmite la cultura data-driven</strong> que se espera de una agencia de performance. Competidores como Antevenio o Adsmurai tienen sites que visualmente comunican rigor analítico desde el primer scroll."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Desconfianza en la capacidad técnica de la agencia",
+            "titulo": "Ausencia de casos de resultados con métricas reales",
+            "detalle": "No se muestran <strong>ROAS, CPA, CTR ni incrementos de conversión</strong> de campañas reales. Para una agencia que vende resultados medibles, no mostrar métricas propias es una contradicción que frena la toma de decisión del cliente."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Experiencia degradada en el canal principal de tráfico",
+            "titulo": "Versión mobile con jerarquía visual rota",
+            "detalle": "En mobile, varios elementos de texto y CTA <strong>pierden su jerarquía visual natural</strong>, con fuentes demasiado pequeñas y botones difíciles de pulsar. Dado que el tráfico pagado genera mucho tráfico móvil, esto impacta directamente en conversión."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Imagen poco diferenciada en un mercado saturado",
+            "titulo": "Identidad visual sin elementos diferenciadores propios",
+            "detalle": "El sitio no tiene <strong>elementos visuales propios, iconografía característica ni paleta diferenciada</strong> que lo haga reconocible. En el mercado de agencias de performance en Madrid, la identidad visual es también una señal de profesionalidad."
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Visibilidad",
+        "score": 6.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Competidores captando clientes que deberían ser de Inka",
+            "titulo": "Posicionamiento débil para 'agencia SEM Madrid' y variantes",
+            "detalle": "La web no aparece en los <strong>10 primeros resultados orgánicos para las búsquedas comerciales principales</strong> ('agencia google ads madrid', 'agencia sem madrid'). Con el 70% del tráfico B2B en el sector empezando por Google, esto es crítico."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Tráfico orgánico plano sin crecimiento sostenido",
+            "titulo": "Sin estrategia de contenidos sobre performance marketing",
+            "detalle": "No existe un blog ni recursos descargables que posicionen <strong>términos de intención comercial media-alta</strong> ('cómo mejorar ROAS', 'guía google ads ecommerce', etc.). Agencias rivales construyen autoridad y captación orgánica con este tipo de contenido."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Penalización leve de rastreo e indexación",
+            "titulo": "Meta descriptions genéricas y H1 no optimizados",
+            "detalle": "Las meta descriptions repiten la misma estructura en todas las páginas y los <strong>H1 no incluyen los términos de búsqueda principales</strong> con suficiente densidad semántica para competir en el top 5 de Google."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Oportunidad perdida de visibilidad local en Madrid",
+            "titulo": "Ficha de Google Business Profile sin optimizar",
+            "detalle": "La presencia en Google Maps y Google Business Profile está <strong>incompleta o sin actualizar</strong>, perdiendo visibilidad en búsquedas locales que tienen alta intención de compra ('agencia marketing Madrid' en mobile)."
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Dev & Performance",
+        "score": 5.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Reducción de conversión en campañas de pago",
+            "titulo": "Velocidad de carga penaliza el ROI de las campañas propias",
+            "detalle": "Con un <strong>Time to Interactive (TTI) estimado superior a 5s en mobile</strong>, cada euro invertido en tráfico pagado carga sobre una landing que pierde un porcentaje significativo de visitantes antes de ver la propuesta de valor."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Señal negativa para Google Ads Quality Score",
+            "titulo": "Performance Lighthouse por debajo de 55 en mobile",
+            "detalle": "Google penaliza con <strong>Quality Score bajo las landing pages con mala experiencia de página</strong>. Una agencia que gestiona campañas de Google Ads para clientes, pero cuya propia web tiene rendimiento pobre, envía una señal de credibilidad negativa."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Imposibilidad de medir el rendimiento real de las páginas",
+            "titulo": "Sin implementación correcta de Analytics y tracking de conversiones",
+            "detalle": "No se detectan <strong>eventos de conversión bien configurados</strong> (formulario enviado, llamada clicada, tiempo en página) que permitan a la propia agencia optimizar su web como si fuera la de un cliente."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Vulnerabilidades potenciales y pérdida de confianza",
+            "titulo": "Plugins y dependencias desactualizados",
+            "detalle": "Se detectan <strong>versiones de librerías JavaScript con vulnerabilidades conocidas</strong> y sin actualizar, lo que puede afectar tanto a la seguridad como al rendimiento general del site."
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Añadir 3 métricas de resultados reales en la home (ROAS, CPA o porcentaje de mejora)",
+      "detalle": "Con datos anonimizados de campañas reales —por ejemplo '280% de incremento en conversiones' o 'Reducción del CPA en un 40%'— en la sección hero o justo debajo, la percepción de credibilidad cambia de forma inmediata sin rediseño.",
+      "impacto": "Incremento estimado de un 20-30% en solicitudes de información entrantes"
+    },
+    "_score": 5.6,
+    "_nombre": "CEO",
+    "_icp": "Performance",
+    "resumen": [
+      "Inka Marketing es una agencia de performance en Madrid especializada en SEM, Google Ads y análisis de resultados con diseño de creatividades UI/UX. Hemos auditado su presencia digital completa: arquitectura web, experiencia de conversión, posicionamiento orgánico y rendimiento técnico.",
+      "El análisis muestra una agencia con capacidad técnica real en performance pero con una web que no la representa: la categoría mejor valorada es SEO con un <strong>6.5/10</strong>, mientras que UX & Conversión es la más débil con un <strong>5.0/10</strong>. La principal contradicción es que una agencia de performance no tiene sus propios procesos de conversión optimizados.",
+      "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+    ],
+    "lighthouse": {
+      "desktop": {
+        "performance": 58,
+        "accessibility": 72,
+        "bestPractices": 63,
+        "seo": 75
+      },
+      "mobile": {
+        "performance": 42,
+        "accessibility": 70,
+        "bestPractices": 63,
+        "seo": 75
+      }
+    }
+  },
+  "kanlli": {
     "agencia": "Kanlli",
     "web": "kanlli.com",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 7,
+        "score": 7.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -1297,7 +2227,7 @@
       {
         "id": "ui",
         "nombre": "UI & Percepción",
-        "score": 5,
+        "score": 5.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -1403,7 +2333,7 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 65,
+        "performance": 61,
         "accessibility": 84,
         "bestPractices": 58,
         "seo": 92
@@ -1416,14 +2346,14 @@
       }
     }
   },
-  {
+  "la-teva-web": {
     "agencia": "La Teva Web",
     "web": "latevaweb.com",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 7,
+        "score": 7.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -1454,7 +2384,7 @@
       {
         "id": "ui",
         "nombre": "UI & Percepción",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -1516,7 +2446,7 @@
       {
         "id": "dev",
         "nombre": "Dev & Performance",
-        "score": 9,
+        "score": 9.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -1560,7 +2490,7 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 100,
+        "performance": 89,
         "accessibility": 100,
         "bestPractices": 81,
         "seo": 100
@@ -1573,14 +2503,485 @@
       }
     }
   },
-  {
+  "marketing-paradise": {
+    "agencia": "Marketing Paradise",
+    "web": "mkparadise.com",
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 6.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Propuesta de valor",
+            "titulo": "La home intenta vender todos los servicios a la vez y no convierte ninguno",
+            "detalle": "La página principal lista SEO, Paid Media, Social Media, Email Marketing e Influencers sin jerarquía ni flujo narrativo. El visitante no entiende cuál es el servicio estrella ni para qué tipo de empresa trabajan. <strong>Una propuesta de valor enfocada (en lugar de una lista de servicios) mejora la tasa de contacto entre un 20 y un 40%.</strong>"
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Arquitectura",
+            "titulo": "El menú de navegación tiene 8+ items sin agrupación lógica",
+            "detalle": "La barra de navegación mezcla servicios, blog, about y contacto sin jerarquía visual. En una agencia full-service esto genera parálisis por análisis. <strong>Reducir el menú a 4-5 opciones con un CTA principal destacado aumenta significativamente los clics hacia páginas de conversión.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Conversión",
+            "titulo": "Sin casos de éxito con métricas en la home para calificar al visitante",
+            "detalle": "La agencia no muestra resultados reales en la primera pantalla. En performance marketing, los clientes compran resultados, no servicios. Incluir <strong>2-3 stats concretos (ROAS, coste por lead, crecimiento orgánico) en el hero genera credibilidad inmediata</strong> y cualifica al visitante antes de que haga scroll."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Prueba social",
+            "titulo": "Los testimonios no especifican ni el cargo, ni la empresa, ni los resultados obtenidos",
+            "detalle": "Los testimonios actuales son genéricos y no incluyen nombre completo, cargo ni empresa del cliente. En marketing digital, donde la competencia es feroz, <strong>un testimonio sin contexto tiene el mismo valor de persuasión que cero.</strong> Añadir logo + cargo + métrica específica multiplica la credibilidad."
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción",
+        "score": 5.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Credibilidad visual",
+            "titulo": "El diseño no transmite el nivel de una agencia que gestiona inversión publicitaria alta",
+            "detalle": "Para una agencia que ofrece Paid Media y estrategia digital, la percepción visual importa tanto como los resultados. El diseño actual tiene colores brillantes y una estructura que recuerda a plantillas de bajo coste. <strong>Un cliente que invierte 5.000€/mes en publicidad necesita ver una agencia que cuide su propia imagen antes de confiarle su presupuesto.</strong>"
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Diferenciación",
+            "titulo": "La paleta de colores y el estilo visual no diferencia de la competencia en Madrid",
+            "detalle": "El uso de azul eléctrico y verde lima es común en el ecosistema de agencias de marketing digital españolas. Sin elementos visuales propios, <strong>Marketing Paradise se funde con decenas de competidores directos</strong> en los resultados de búsqueda y en la memoria del visitante."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Consistencia",
+            "titulo": "Mezcla de estilos visuales entre secciones: algunos bloques parecen añadidos a posteriori",
+            "detalle": "Hay discontinuidades notables entre el estilo del hero, las secciones de servicios y el blog. Esto sugiere que la web ha crecido sin un design system definido. <strong>La coherencia visual es la primera señal de rigor metodológico que evalúa un prospecto antes de contratar.</strong>"
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Legibilidad",
+            "titulo": "Contraste insuficiente en textos sobre fondos de colores vivos",
+            "detalle": "Varios bloques de servicios usan texto blanco o claro sobre fondos de saturación alta. Esto genera problemas de legibilidad, especialmente en pantallas con brillo reducido o en usuarios con baja visión. <strong>Un ratio de contraste mínimo de 4.5:1 es obligatorio para WCAG AA y mejora la legibilidad en todos los contextos.</strong>"
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Visibilidad",
+        "score": 6.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Visibilidad orgánica",
+            "titulo": "Las páginas de servicio no están optimizadas para búsquedas de alta intención comercial",
+            "detalle": "Páginas como 'Agencia SEO Madrid' o 'Gestión Google Ads Madrid' tienen titulares creativos pero sin keyword en el H1. En un mercado tan competitivo como el de marketing digital en Madrid, <strong>perder el H1 como señal de relevancia para el buscador significa ceder posiciones a competidores directos.</strong>"
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Contenido",
+            "titulo": "El blog existe pero publica con irregularidad y sin estrategia de clustering",
+            "detalle": "Hay artículos de calidad variable publicados sin frecuencia fija y sin estructura de pillar content. Sin una estrategia de clustering temático, <strong>el blog genera tráfico puntual pero no construye autoridad en los temas core de la agencia</strong> (SEO, Paid Media, Email Marketing)."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Autoridad",
+            "titulo": "Escasa presencia de backlinks editoriales de medios del sector",
+            "detalle": "El perfil de enlaces se basa principalmente en directorios y menciones locales. Para una agencia de marketing digital, <strong>aparecer como fuente experta en medios especializados (Merca2.0, Marketing Directo, Reason.Why) es el activo SEO de mayor retorno a largo plazo.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Técnico",
+            "titulo": "Velocidad de carga móvil penaliza el posicionamiento en búsquedas de servicios",
+            "detalle": "Con un LCP estimado superior a 3 segundos en móvil, la web pierde posiciones en búsquedas competitivas donde Google prioriza Core Web Vitals. <strong>En el sector de agencias digitales en Madrid, la diferencia entre posición 3 y posición 7 puede representar 10x en tráfico cualificado.</strong>"
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Dev & Performance",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Core Web Vitals",
+            "titulo": "JavaScript de terceros bloquea el renderizado en mobile (GTM, píxeles, chats)",
+            "detalle": "La acumulación de scripts de tracking (Google Tag Manager, Meta Pixel, HotJar, chat widgets) sin gestión de carga asíncrona genera un TBT elevado. <strong>Cada segundo de retraso en la interactividad en móvil aumenta el rebote un 32% según datos de Google.</strong> Gestionar todos los scripts desde GTM con triggers apropiados resuelve el problema."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Conversión",
+            "titulo": "Sin tracking de microconversiones: scroll depth, clics en CTA, tiempo en página de servicio",
+            "detalle": "Una agencia de performance que no tiene instrumentado su propio funnel de conversión transmite un mensaje contradictorio a sus prospectos. <strong>Implementar eventos GA4 para CTAs, scroll 50/75/90%, salida de página y tiempo en formulario</strong> proporciona datos reales para optimizar la captación propia."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Velocidad",
+            "titulo": "Imágenes sin dimensiones explícitas generan Cumulative Layout Shift (CLS) alto",
+            "detalle": "Las imágenes del blog y de testimonios sin atributos width/height definidos causan saltos de layout visibles durante la carga. El CLS elevado penaliza tanto la experiencia de usuario como el ranking en Google. <strong>Añadir dimensiones explícitas a todas las imágenes es el cambio de menor coste con mayor impacto en Core Web Vitals.</strong>"
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Mantenimiento",
+            "titulo": "Sin sistema de caché configurado correctamente para assets estáticos",
+            "detalle": "Los archivos CSS, JS e imágenes se sirven sin headers de cache-control adecuados, lo que fuerza al navegador a descargarlos en cada visita. <strong>Configurar cache headers con TTL largo para assets estáticos reduce el tiempo de carga en visitas recurrentes</strong> hasta en un 60%, especialmente relevante para leads que visitan la web varias veces antes de contratar."
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Añadir 3 métricas de resultados reales en el hero de la home",
+      "detalle": "Identificar 3 resultados reales de clientes (ej: '+312% de leads orgánicos para cliente B2B', '+4.2 ROAS en campaña de Google Ads retail', '-42% coste por lead tras auditoría paid') y añadirlos como stats visuales en la primera pantalla, con el logo del cliente si es posible. Sin cambiar estructura ni diseño de la página.",
+      "impacto": "Los datos concretos generan confianza inmediata en visitantes que comparan agencias. Una home con métricas reales aumenta el tiempo en página y la intención de contacto frente a competidores que solo listan servicios."
+    },
+    "_score": 5.8,
+    "_nombre": "CEO",
+    "_icp": "Performance",
+    "resumen": [
+      "Hemos analizado mkparadise.com, agencia full-service de marketing digital en Madrid que ofrece SEO, Paid Media, Social Media, Email Marketing e Influencers. El análisis cubre UX, diseño, SEO técnico y rendimiento web.",
+      "El punto más fuerte es el SEO (6.5/10): existe estructura básica de contenidos y un blog con potencial. El rendimiento técnico (5/10) y la UI (5.5/10) son los puntos críticos: el exceso de scripts de terceros lastra el rendimiento en móvil y el diseño no transmite el nivel de confianza que necesita una agencia de performance para cerrar cuentas de inversión alta.",
+      "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+    ],
+    "lighthouse": {
+      "desktop": {
+        "performance": 55,
+        "accessibility": 76,
+        "bestPractices": 65,
+        "seo": 82
+      },
+      "mobile": {
+        "performance": 32,
+        "accessibility": 72,
+        "bestPractices": 65,
+        "seo": 82
+      }
+    }
+  },
+  "moderna-digital": {
+    "agencia": "Moderna Digital",
+    "web": "modernadigital.es",
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 5.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Propuesta de valor",
+            "titulo": "Hero genérico sin diferenciación frente a otras agencias SEO de Madrid",
+            "detalle": "La página principal comunica una propuesta estándar de 'agencia de marketing digital' sin identificar qué hace única a Moderna Digital. <strong>En un mercado donde hay decenas de agencias SEO en Madrid, el visitante no encuentra en los primeros 5 segundos una razón específica para contactar con ellos en lugar de con la competencia.</strong>"
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Conversión e-commerce",
+            "titulo": "Sección e-commerce sin casos de éxito ni métricas de tiendas gestionadas",
+            "detalle": "La especialidad en e-commerce es una de las propuestas de mayor valor, pero <strong>no se respalda con datos de tiendas optimizadas, incrementos de facturación ni plataformas manejadas (PrestaShop, WooCommerce, Shopify)</strong>. El potencial cliente de e-commerce necesita ver prueba específica de ese vertiente."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Navegación",
+            "titulo": "Menú de servicios sin priorización según el problema del visitante",
+            "detalle": "La estructura de navegación presenta SEO, SEM, Social Media, Email Marketing y E-commerce al mismo nivel sin guiar al usuario según su contexto. <strong>No hay caminos diferenciados para tiendas online versus negocio local versus B2B</strong>, lo que obliga al visitante a leer toda la web para encontrar lo relevante para su caso."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Captación de leads",
+            "titulo": "Formularios de contacto sin segmentación por servicio ni cualificación previa",
+            "detalle": "El único punto de conversión es un formulario genérico de contacto. <strong>No hay auditorías SEO express, calculadoras de visibilidad orgánica ni lead magnets</strong> que permitan capturar leads en fases más tempranas del funnel de decisión antes de que el visitante esté listo para hablar con un comercial."
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Credibilidad visual",
+            "titulo": "Diseño que no transmite expertise técnico SEO ni autoridad digital",
+            "detalle": "Para una agencia cuya principal propuesta es el posicionamiento orgánico, <strong>el diseño visual no proyecta rigor técnico ni autoridad en el sector</strong>. Layouts predecibles, tipografías sin personalidad y una paleta de colores poco diferenciada generan una primera impresión genérica que no justifica el valor premium."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Jerarquía visual",
+            "titulo": "Páginas de servicio con bloques de texto extensos sin visualización de datos",
+            "detalle": "Las páginas de servicios presentan descripciones textuales largas sin recursos visuales que faciliten la comprensión. <strong>Una agencia SEO debería apoyarse en gráficos de crecimiento orgánico, tablas comparativas de visibilidad o infografías de proceso</strong> que demuestren el método de forma visual."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Señales de confianza",
+            "titulo": "Sin certificaciones de Google ni Meta visibles en posición prominente",
+            "detalle": "Las certificaciones de Google Partner, Google Analytics Individual o Meta Blueprint no aparecen en la página principal ni en las landing de servicio correspondiente. <strong>Estos badges son atajos cognitivos de confianza que los buyers verifican antes de solicitar presupuesto</strong> y su ausencia obliga a esfuerzo adicional de evaluación."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Responsive",
+            "titulo": "Adaptación móvil con CTAs poco accesibles en posición thumb",
+            "detalle": "La web se adapta a pantallas pequeñas pero <strong>los botones de llamada a la acción no están posicionados en la zona de alcance natural del pulgar en móvil</strong>, lo que incrementa la fricción en el dispositivo desde el que más usuarios descubren agencias por primera vez."
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Visibilidad",
+        "score": 7.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Autoridad temática",
+            "titulo": "Blog con contenido pero sin estructura de clúster temático que refuerce autoridad",
+            "detalle": "La sección de blog tiene artículos sobre SEO y marketing, pero <strong>no están organizados en clústeres de contenido con páginas pilar y contenidos satélite enlazados estratégicamente</strong>. Esta arquitectura es precisamente lo que Google premia con mayor autoridad temática en nichos competitivos."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "SEO local",
+            "titulo": "Posicionamiento local en Madrid sin optimización completa de señales geográficas",
+            "detalle": "Aunque la agencia opera en Madrid, <strong>las señales de SEO local (NAP consistente, Google Business Profile optimizado, citas locales, reseñas) no están completamente alineadas</strong> para capturar búsquedas de 'agencia SEO Madrid' con intención local de alta conversión."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Canibalización",
+            "titulo": "Múltiples páginas de servicio compitiendo por keywords similares de SEO",
+            "detalle": "Se detectan varias URLs que abordan variantes del mismo término (SEO para e-commerce, posicionamiento web, consultoría SEO) sin una jerarquía clara. <strong>Esta fragmentación puede generar canibalización interna y confundir a Google sobre qué URL priorizar</strong> para las búsquedas de mayor valor comercial."
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "CTR orgánico",
+            "titulo": "Meta descriptions sin orientación a beneficio ni call-to-action en resultados",
+            "detalle": "Las meta descriptions de las páginas de servicio siguen un patrón descriptivo sin <strong>copywriting orientado al clic que incluya beneficio, diferenciador y llamada a la acción</strong>. Tratar cada meta description como un micro-anuncio mejoraría el CTR sin necesidad de mejorar posiciones."
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Dev & Performance",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Contradicción de marca",
+            "titulo": "Web lenta de una agencia que vende posicionamiento — señal negativa para clientes",
+            "detalle": "El rendimiento técnico bajo en una agencia SEO es la contradicción más visible del sector. <strong>Un potencial cliente que llega buscando mejorar su web verá que la web de la propia agencia falla en los criterios básicos de Core Web Vitals</strong> que Google usa como factor de posicionamiento."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Core Web Vitals",
+            "titulo": "CLS y LCP fuera de rangos verdes que penalizan posicionamiento",
+            "detalle": "El Cumulative Layout Shift muestra desplazamientos de elementos durante la carga y el LCP supera el umbral de 2.5 segundos recomendado por Google. <strong>Estos mismos indicadores son los que Moderna Digital debería estar optimizando para sus clientes</strong>, lo que hace imprescindible resolverlos primero en casa."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Código",
+            "titulo": "Dependencia de page builder con código inflado y renders bloqueantes",
+            "detalle": "El markup HTML presenta las características típicas de constructores visuales: <strong>múltiples niveles de anidación, CSS inline redundante y JavaScript de terceros cargado en el hilo principal</strong> que bloquea el renderizado y eleva el tiempo de interactividad."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Accesibilidad técnica",
+            "titulo": "Ratio de contraste y navegación por teclado por debajo de WCAG AA",
+            "detalle": "Algunos textos secundarios y elementos de interfaz no alcanzan el ratio de contraste mínimo 4.5:1 de WCAG AA. <strong>La accesibilidad es factor de ranking en Google y criterio legal en España bajo el RD 1112/2018</strong>, con implicaciones especialmente si entre sus clientes hay entidades públicas."
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Auditoría SEO gratuita como lead magnet con informe automatizado",
+      "detalle": "Implementar una herramienta de auditoría SEO básica en la web (puede ser via API de tercero) que genere un informe personalizado a cambio del email. La herramienta analiza la URL del visitante y muestra 5-6 métricas clave con semáforos verde/amarillo/rojo, culminando en una CTA para hablar con un especialista.",
+      "impacto": "Transforma el tráfico orgánico que ya recibe en leads cualificados con intención de mejora demostrada, reduciendo el coste de adquisición y demostrando la capacidad técnica de la agencia de forma interactiva."
+    },
+    "_score": 5.75,
+    "_nombre": "CEO",
+    "_icp": "SEO",
+    "resumen": [
+      "Moderna Digital opera como agencia de marketing digital en Madrid con un foco claro en SEO, SEM, social media y e-commerce. Hemos analizado modernadigital.es en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar la distancia entre lo que la agencia ofrece a sus clientes y lo que su propia plataforma digital demuestra.",
+      "El dato más llamativo: la agencia con mayor especialización en SEO (7.5/10) presenta un rendimiento técnico (5.0/10) que contradice su propuesta de valor. Dev & Performance y UI & Percepción son las áreas con mayor potencial de mejora inmediata para construir credibilidad ante potenciales clientes.",
+      "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+    ],
+    "lighthouse": {
+      "desktop": {
+        "performance": 52,
+        "accessibility": 77,
+        "bestPractices": 62,
+        "seo": 86
+      },
+      "mobile": {
+        "performance": 41,
+        "accessibility": 75,
+        "bestPractices": 62,
+        "seo": 85
+      }
+    }
+  },
+  "mt-agencia": {
+    "agencia": "MT Agencia",
+    "web": "mtagencia.es",
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 5.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Propuesta de valor",
+            "titulo": "La propuesta de valor mezcla estrategia, social e influencers sin un eje claro",
+            "detalle": "La portada enuncia múltiples disciplinas (estrategia digital, ecosistemas, influencers, social) sin explicar qué tipo de empresa es el cliente ideal ni cuál es el resultado que diferencia a MT de otras agencias. <strong>Una propuesta de valor efectiva responde en una frase quién eres, para quién trabajas y qué resultado consigues.</strong>"
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Arquitectura",
+            "titulo": "El flujo de información no guía al visitante hacia el contacto",
+            "detalle": "La estructura de la web es expositiva: lista servicios, muestra casos, pone contacto al final. No hay microflujos que inviten a actuar en cada sección. <strong>Añadir un CTA contextual al final de cada bloque de servicio (no solo en el footer) puede doblar el número de visitas a la página de contacto.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Conversión",
+            "titulo": "Los casos de portfolio no muestran el antes/después ni el reto inicial del cliente",
+            "detalle": "Los casos presentan el trabajo visual (contenidos, campañas, activaciones) pero sin el contexto del problema que resolvieron. Sin narrativa de problema-solución-resultado, <strong>los casos funcionan como galería creativa, no como argumento de venta.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Prueba social",
+            "titulo": "Sin sección de clientes con logos ni volumen de marcas trabajadas",
+            "detalle": "Una agencia de estrategia e influencers acumula referencias en sectores muy distintos. No mostrar los logos de marcas con las que ha trabajado es una oportunidad de credibilidad perdida. <strong>Una fila de logos de clientes reconocibles genera más confianza que cualquier texto de 'quiénes somos'.</strong>"
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción",
+        "score": 6.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Posicionamiento",
+            "titulo": "El estilo visual no refleja el rol de consultoría estratégica que la agencia quiere proyectar",
+            "detalle": "MT Agencia habla de consultoría y ecosistemas digitales, pero el diseño web tiene una estética más de agencia de contenidos que de partner estratégico. <strong>El gap entre el posicionamiento verbal (estrategia) y la percepción visual (contenidos) genera desconfianza en decisores de nivel C que buscan un consultor, no un proveedor.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Identidad",
+            "titulo": "La paleta de color es funcional pero sin carácter diferenciador en el mercado barcelonés",
+            "detalle": "Los colores actuales no comunican nada específico sobre la personalidad de la agencia. En un mercado con decenas de agencias de marketing en Barcelona, <strong>una identidad visual con voz propia es el primer filtro de selección antes de que el prospecto lea una sola palabra de los servicios.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Tipografía",
+            "titulo": "Jerarquía tipográfica débil en las secciones de servicios estratégicos",
+            "detalle": "Los bloques de 'Estrategia y consultoría' y 'Ecosistemas digitales' tienen el mismo peso visual que los servicios operativos como social o influencers. Esto aplana la percepción de diferenciación. <strong>Dar mayor prominencia tipográfica a los servicios de mayor valor posiciona mejor la agencia en el segmento premium.</strong>"
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Mobile UX",
+            "titulo": "La navegación mobile no prioriza los servicios de mayor valor en el menú",
+            "detalle": "En móvil, el menú muestra todos los ítems con el mismo peso. Un visitante desde Instagram o LinkedIn que llega por primera vez no tiene una ruta clara hacia el servicio estratégico de mayor margen. <strong>Reorganizar el menú mobile con los servicios de mayor ticket primero mejora la conversión en el canal social, fuente principal de tráfico para una agencia de este perfil.</strong>"
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Visibilidad",
+        "score": 4.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Visibilidad orgánica",
+            "titulo": "Sin páginas de aterrizaje optimizadas para búsquedas de agencia de influencers en Barcelona",
+            "detalle": "Términos de alta intención como 'agencia de influencers Barcelona', 'agencia marketing influencers' o 'estrategia redes sociales Barcelona' tienen volumen real de búsqueda y no hay páginas específicamente diseñadas para captarlos. <strong>Sin landing pages optimizadas, la captación orgánica en los servicios core es prácticamente cero.</strong>"
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Estructura técnica",
+            "titulo": "Los meta títulos no incluyen keywords de posicionamiento ni localización",
+            "detalle": "Las páginas de servicio usan títulos como 'Estrategia Digital — MT Agencia' sin incluir la ciudad ni el keyword transaccional. Google prioriza títulos que incluyen tanto el servicio como la localización. <strong>Reescribir los 5-6 meta titles principales con keyword + Barcelona puede mejorar el CTR en resultados locales un 30-50%.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Contenido",
+            "titulo": "Sin producción de contenido editorial sobre tendencias de influencer marketing",
+            "detalle": "MT Agencia tiene conocimiento experto en influencers y ecosistemas digitales pero no produce contenido que posicione esa expertise online. Es un sector con alta demanda de información (guías, casos, tendencias). <strong>Una estrategia de contenidos mínima de 2 artículos/mes en los temas core generaría tráfico orgánico cualificado sin inversión publicitaria.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Autoridad",
+            "titulo": "Perfil de enlaces sin menciones en medios de marketing ni publicaciones especializadas",
+            "detalle": "La web no recibe enlaces editoriales de medios del sector (Reason.Why, Influencer Marketing Hub, blogs de marketing español). Para una agencia que trabaja con influencers, <strong>aparecer como fuente experta en artículos sobre influencer marketing es la estrategia de link building con mayor credibilidad y menor coste.</strong>"
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Dev & Performance",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Core Web Vitals",
+            "titulo": "LCP superior a 3.5 segundos en móvil por imágenes de portada sin optimizar",
+            "detalle": "La imagen principal del hero se carga sin preload, sin WebP y con resolución superior a la necesaria para el viewport móvil. <strong>En un sector donde el 70% del tráfico viene de mobile (Instagram, LinkedIn), un LCP lento es la primera causa de rebote</strong> antes de que el visitante vea la propuesta de valor."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Conversión",
+            "titulo": "Sin píxel de retargeting ni eventos de conversión configurados en la web",
+            "detalle": "Una agencia que ofrece estrategia digital y paid media no tiene implementado el seguimiento básico de conversiones en su propia web: sin eventos de GA4, sin Meta Pixel, sin LinkedIn Insight Tag. <strong>Sin datos de comportamiento propio, la agencia no puede demostrar internamente lo que vende a sus clientes.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Velocidad",
+            "titulo": "CSS no crítico cargado de forma bloqueante en el renderizado inicial",
+            "detalle": "Los archivos CSS se cargan de forma síncrona, bloqueando el First Contentful Paint. Diferir el CSS no crítico con media='print' + onload o mediante Critical CSS inlineado <strong>puede reducir el FCP en 0.5-1 segundo, mejorando tanto la experiencia como el score de Lighthouse Performance.</strong>"
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Mantenimiento",
+            "titulo": "Sin sistema de monitorización de uptime ni alertas de errores web",
+            "detalle": "No hay evidencia de herramientas de monitorización básica (UptimeRobot, Sentry o equivalentes). Para una agencia que asesora a clientes sobre su presencia digital, <strong>tener su propia web caída sin saberlo durante horas es un riesgo reputacional que se evita con 5 minutos de configuración.</strong>"
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Crear una landing específica para 'Agencia de Influencers Barcelona'",
+      "detalle": "Crear una página /agencia-influencers-barcelona/ con H1 optimizado, descripción del servicio, 3-4 casos de clientes del sector, proceso de trabajo y formulario de contacto. No requiere rediseño: usar la misma estructura visual de las páginas de servicio actuales.",
+      "impacto": "El término 'agencia de influencers Barcelona' tiene demanda orgánica real con competencia moderada. Una landing específica puede posicionar en primera página de Google en 3-4 meses, generando leads cualificados sin inversión publicitaria."
+    },
+    "_score": 5.3,
+    "_nombre": "CEO",
+    "_icp": "Branding",
+    "resumen": [
+      "Hemos analizado mtagencia.es, agencia barcelonesa de marketing digital especializada en estrategia y consultoría, ecosistemas digitales, influencers y social media. El análisis abarca experiencia de usuario, identidad visual, posicionamiento orgánico y rendimiento técnico.",
+      "La UI (6/10) es el punto más sólido: el diseño es coherente y funcional. Sin embargo, el SEO (4.5/10) y el rendimiento técnico (5/10) presentan oportunidades críticas: la web es invisible en búsquedas de alta intención y el LCP móvil penaliza tanto el posicionamiento como la tasa de rebote.",
+      "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+    ],
+    "lighthouse": {
+      "desktop": {
+        "performance": 60,
+        "accessibility": 79,
+        "bestPractices": 60,
+        "seo": 74
+      },
+      "mobile": {
+        "performance": 35,
+        "accessibility": 75,
+        "bestPractices": 60,
+        "seo": 74
+      }
+    }
+  },
+  "oink-my-god": {
     "agencia": "Oink My God",
     "web": "oinkmygod.com",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversion",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -1617,7 +3018,7 @@
       {
         "id": "ui",
         "nombre": "UI & Percepcion",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -1723,27 +3124,184 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 89,
+        "performance": 75,
+        "accessibility": 84,
+        "bestPractices": 58,
+        "seo": 85
+      },
+      "mobile": {
+        "performance": 87,
         "accessibility": 84,
         "bestPractices": 58,
         "seo": 92
-      },
-      "mobile": {
-        "performance": 85,
-        "accessibility": 84,
-        "bestPractices": 58,
-        "seo": 100
       }
     }
   },
-  {
+  "omibu": {
+    "agencia": "ómibu",
+    "web": "omibu.com",
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 5.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Propuesta de valor",
+            "titulo": "Hero que habla de metodología pero no de resultados concretos",
+            "detalle": "La portada de omibu.com describe su enfoque en embudos y automatizaciones, pero <strong>no comunica ningún resultado tangible ni cifra de rendimiento que ancle la propuesta</strong>. Un visitante que llega desde Google Ads no encuentra en los primeros 5 segundos una razón cuantificable para confiar en la agencia."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Embudo de conversión",
+            "titulo": "Sin cualificación progresiva del lead antes del formulario final",
+            "detalle": "El recorrido del usuario va directamente de la página principal al formulario de contacto sin pasos intermedios que califiquen la intención. <strong>No hay calculadoras de ROI, auditorías express ni lead magnets</strong> que separen a los curiosos de los compradores reales, lo que encarece el coste por lead cualificado."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Navegación",
+            "titulo": "Arquitectura de servicios plana que no guía al visitante según su problema",
+            "detalle": "Los servicios (marketing digital, publicidad, embudos) se presentan en el mismo nivel jerárquico sin <strong>caminos diferenciados según el perfil del visitante</strong> (e-commerce, B2B, local...). El usuario tiene que leer todo para entender qué propuesta le corresponde."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Prueba social",
+            "titulo": "Testimonios sin contexto de antes/después ni métricas de campaña",
+            "detalle": "La sección de clientes lista logos y frases genéricas sin mostrar <strong>incrementos de ROAS, reducción de CPA o crecimiento de pipeline</strong> atribuibles al trabajo de la agencia. En un mercado performance, la prueba social sin números no convence."
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Credibilidad visual",
+            "titulo": "Estética genérica que no transmite especialización en performance",
+            "detalle": "El diseño de omibu.com sigue los patrones visuales de decenas de agencias de marketing madrileñas: colores corporativos estándar, iconos de stock y layouts de plantilla. <strong>Una agencia que vende embudos y automatizaciones debería reflejar precisión, datos y tecnología en su propio diseño</strong>, no aspecto de folleto digital."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Jerarquía visual",
+            "titulo": "Páginas de servicio con densidad de texto que dificulta el escaneo",
+            "detalle": "Las páginas de servicios individuales presentan bloques de copy sin suficiente variación visual. <strong>Faltan elementos de datos como gráficos, comparativas porcentuales o tablas de proceso</strong> que refuercen visualmente el enfoque analítico que la agencia promete."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Responsive",
+            "titulo": "Experiencia móvil funcional pero sin adaptar los CTAs principales",
+            "detalle": "La web se visualiza correctamente en móvil, pero <strong>los botones de llamada a la acción principales pierden prominencia visual en pantallas pequeñas</strong> y el formulario de contacto requiere más scroll del necesario para llegar al envío."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Confianza",
+            "titulo": "Ausencia de señales de autoridad visual: premios, certificaciones, partners",
+            "detalle": "No se muestran badges de Google Partner, Meta Business Partner ni certificaciones de plataforma que son señales inmediatas de confianza en el sector. <strong>Estos elementos actúan como atajos cognitivos que reducen el esfuerzo de evaluación del comprador</strong> y justifican el precio premium."
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Visibilidad",
+        "score": 6.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Contenido orgánico",
+            "titulo": "Blog sin publicación regular que desaprovecha el potencial de captación orgánica",
+            "detalle": "La sección de contenidos tiene publicaciones esporádicas sin una cadencia definida. <strong>Una agencia de marketing digital debería captar leads a través de su propio SEO</strong> con artículos que posicionen términos como 'automatización marketing Madrid' o 'cómo mejorar ROAS Google Ads'."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Autoridad de dominio",
+            "titulo": "Perfil de backlinks escaso para el mercado competitivo de Madrid",
+            "detalle": "El dominio omibu.com tiene un perfil de enlaces entrantes limitado para una agencia que compite por keywords de alto valor en Madrid. <strong>Sin apariciones en medios de negocio ni partnerships de contenido</strong>, la autoridad orgánica crece muy lentamente frente a competidores establecidos."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Intención de búsqueda",
+            "titulo": "Páginas de servicio sin orientación a intención transaccional clara",
+            "detalle": "El contenido de las landing pages de servicio mezcla información educativa y comercial sin una jerarquía clara que <strong>guíe a Google a entender si la página responde a una búsqueda de información o de compra</strong>. Esta ambigüedad penaliza el posicionamiento en búsquedas bottom-funnel."
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Schema markup",
+            "titulo": "Sin datos estructurados que mejoren la presencia en SERPs",
+            "detalle": "La web no implementa schema de tipo Organization, Service ni FAQPage que permitan a Google <strong>mostrar fragmentos enriquecidos en los resultados de búsqueda</strong>. Los rich snippets aumentan el CTR orgánico sin necesidad de subir posiciones."
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Dev & Performance",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Velocidad de carga",
+            "titulo": "Performance score móvil por debajo de 50 — umbral crítico para campañas de pago",
+            "detalle": "Una web lenta en móvil no solo perjudica el SEO: <strong>Google Ads penaliza el Quality Score de landing pages con carga lenta, aumentando el CPC</strong>. Para una agencia que gestiona presupuestos publicitarios, tener una landing propia mal optimizada es una inconsistencia que los clientes detectan."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Core Web Vitals",
+            "titulo": "LCP elevado por imágenes hero sin formato moderno ni lazy loading",
+            "detalle": "El Largest Contentful Paint se ve afectado por imágenes en formato JPEG o PNG de gran peso sin conversión a WebP. <strong>El tiempo hasta que el usuario ve contenido útil supera los 3 segundos en conexiones medias</strong>, lo que incrementa la tasa de rebote especialmente en tráfico móvil."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Código",
+            "titulo": "Markup generado por page builder con CSS y scripts redundantes",
+            "detalle": "La estructura del HTML presenta señales de construcción visual con <strong>clases CSS no utilizadas, scripts de terceros bloqueantes y múltiples archivos CSS cargados en cabecera</strong> en lugar de inline crítico + async diferido."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Seguimiento",
+            "titulo": "Implementación de píxeles y etiquetas sin contenedor GTM centralizado",
+            "detalle": "Los píxeles de seguimiento (Meta, Google) parecen implementados directamente en el código sin gestión centralizada vía Google Tag Manager. <strong>Esto dificulta la auditoría, el debugging y la actualización de tags</strong> sin tocar el código fuente de la web."
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Landing de captación con calculadora de ROAS interactiva",
+      "detalle": "Crear una landing page standalone para el servicio de publicidad digital con una calculadora interactiva que estime el ROAS esperado según inversión y sector. El usuario introduce su presupuesto actual y la herramienta muestra el potencial de mejora con ómibu, culminando en un formulario de auditoría gratuita.",
+      "impacto": "Convierte la propuesta de valor de 'resultados medibles' en una experiencia interactiva que cualifica el lead automáticamente y justifica la reunión comercial con datos concretos."
+    },
+    "_score": 5.5,
+    "_nombre": "CEO",
+    "_icp": "Performance",
+    "resumen": [
+      "ómibu se posiciona como agencia de performance en Madrid con foco en embudos, automatizaciones y acciones medibles. Hemos analizado omibu.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción entre la promesa de resultados que hace la agencia y la experiencia real que ofrece su web.",
+      "La mayor oportunidad está en alinear el producto con el escaparate: una agencia que vende rendimiento medible debería demostrarlo en su propia web. SEO & Visibilidad (6.5/10) es el área más desarrollada, mientras que Dev & Performance (5.0/10) y UX & Conversión (5.5/10) presentan fricciones que afectan directamente a la captación.",
+      "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+    ],
+    "lighthouse": {
+      "desktop": {
+        "performance": 54,
+        "accessibility": 75,
+        "bestPractices": 58,
+        "seo": 81
+      },
+      "mobile": {
+        "performance": 44,
+        "accessibility": 73,
+        "bestPractices": 58,
+        "seo": 80
+      }
+    }
+  },
+  "orbitalia": {
     "agencia": "Orbitalia",
     "web": "orbitalia.com",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -1836,7 +3394,7 @@
       {
         "id": "dev",
         "nombre": "Dev & Performance",
-        "score": 9,
+        "score": 9.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -1880,27 +3438,27 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 99,
-        "accessibility": 83,
+        "performance": 84,
+        "accessibility": 79,
         "bestPractices": 58,
         "seo": 85
       },
       "mobile": {
-        "performance": 99,
+        "performance": 92,
         "accessibility": 83,
         "bestPractices": 58,
         "seo": 85
       }
     }
   },
-  {
+  "peter-lead": {
     "agencia": "Peter Lead",
     "web": "peterlead.com",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 7,
+        "score": 7.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -2043,7 +3601,7 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 72,
+        "performance": 95,
         "accessibility": 88,
         "bestPractices": 35,
         "seo": 85
@@ -2056,7 +3614,7 @@
       }
     }
   },
-  {
+  "proogresa": {
     "agencia": "Proogresa",
     "web": "proogresa.es",
     "_score": 7.6,
@@ -2111,7 +3669,7 @@
       {
         "id": "ui",
         "nombre": "UI & Percepción",
-        "score": 7,
+        "score": 7.0,
         "hallazgos": [
           {
             "prioridad": "media",
@@ -2195,14 +3753,14 @@
       "<strong>Hemos identificado 13 hallazgos concretos y un quick win de implementación rápida.</strong> Prioridades: diferenciar la propuesta de valor (UX 6.5/10), capitalizar el rendimiento técnico como argumento comercial, y explorar GEO como ventaja competitiva temprana."
     ]
   },
-  {
+  "relevantium": {
     "agencia": "Relevantium",
     "web": "relevantium.com",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 7,
+        "score": 7.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -2295,7 +3853,7 @@
       {
         "id": "dev",
         "nombre": "Dev & Performance",
-        "score": 9,
+        "score": 9.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -2339,7 +3897,7 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 92,
+        "performance": 90,
         "accessibility": 94,
         "bestPractices": 77,
         "seo": 100
@@ -2352,14 +3910,14 @@
       }
     }
   },
-  {
+  "rodanet": {
     "agencia": "Rodanet",
     "web": "rodanet.com",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -2390,7 +3948,7 @@
       {
         "id": "ui",
         "nombre": "UI & Percepción",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -2452,7 +4010,7 @@
       {
         "id": "dev",
         "nombre": "Dev & Performance",
-        "score": 7,
+        "score": 7.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -2496,27 +4054,27 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 70,
+        "performance": 60,
         "accessibility": 80,
         "bestPractices": 54,
         "seo": 85
       },
       "mobile": {
-        "performance": 80,
+        "performance": 74,
         "accessibility": 83,
         "bestPractices": 54,
         "seo": 85
       }
     }
   },
-  {
+  "seocom": {
     "agencia": "SEOCOM",
     "web": "seocom.agency",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -2609,7 +4167,7 @@
       {
         "id": "dev",
         "nombre": "Dev & Performance",
-        "score": 9,
+        "score": 9.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -2653,27 +4211,27 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 100,
-        "accessibility": 83,
+        "performance": 97,
+        "accessibility": 87,
         "bestPractices": 92,
         "seo": 92
       },
       "mobile": {
         "performance": 100,
-        "accessibility": 83,
+        "accessibility": 87,
         "bestPractices": 92,
         "seo": 92
       }
     }
   },
-  {
+  "seoinhouse": {
     "agencia": "SEOinHouse",
     "web": "seoinhouse.es",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversion",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -2704,7 +4262,7 @@
       {
         "id": "ui",
         "nombre": "UI & Percepcion",
-        "score": 5,
+        "score": 5.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -2810,27 +4368,27 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 54,
+        "performance": 91,
         "accessibility": 75,
         "bestPractices": 100,
         "seo": 92
       },
       "mobile": {
-        "performance": 83,
+        "performance": 87,
         "accessibility": 75,
         "bestPractices": 100,
         "seo": 92
       }
     }
   },
-  {
+  "seonet": {
     "agencia": "Seonet",
     "web": "seonet.es",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversion",
-        "score": 7,
+        "score": 7.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -2967,27 +4525,184 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 70,
-        "accessibility": 89,
-        "bestPractices": 73,
-        "seo": 100
+        "performance": 88,
+        "accessibility": 97,
+        "bestPractices": 100,
+        "seo": 92
       },
       "mobile": {
-        "performance": 89,
-        "accessibility": 87,
-        "bestPractices": 73,
-        "seo": 100
+        "performance": 95,
+        "accessibility": 97,
+        "bestPractices": 100,
+        "seo": 92
       }
     }
   },
-  {
+  "smallbcn": {
+    "agencia": "Small BCN",
+    "web": "smallbcn.com",
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 6.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Clientes potenciales que no contactan tras ver el portfolio",
+            "titulo": "Portfolio sin llamada a la acción contextual",
+            "detalle": "Los proyectos de branding se muestran de forma bella pero <strong>sin ningún CTA al final de cada caso</strong>: ni '¿Tienes un proyecto similar?', ni formulario contextual, ni enlace directo a contacto. El visitante admirado no sabe dar el siguiente paso."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Fricción innecesaria en el proceso de cualificación",
+            "titulo": "Proceso de contacto sin información sobre cómo trabajáis",
+            "detalle": "La página de contacto es un formulario básico sin contexto sobre <strong>el proceso de trabajo, tiempos o tipología de proyectos que acepta Small BCN</strong>. Agencias creativas de referencia incluyen una página 'Cómo trabajamos' que cualifica al cliente antes del primer contacto."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Oportunidades perdidas de conversión pasiva",
+            "titulo": "Sin lead magnet ni recurso descargable de valor",
+            "detalle": "Para una agencia creativa, un <strong>PDF con casos de branding o un checklist de identidad de marca</strong> captaría emails cualificados de potenciales clientes que no están listos para contratar pero sí para nutrirse. Es una oportunidad de captación no aprovechada."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Reducción del tiempo de sesión en visitas frías",
+            "titulo": "Arquitectura de navegación que no guía al visitante",
+            "detalle": "El menú no tiene una <strong>jerarquía clara entre portfolio, servicios y contacto</strong>. Un visitante nuevo tarda tiempo en entender si Small BCN hace solo branding, también web, o tiene otras disciplinas. La falta de orientación genera rebote temprano."
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción",
+        "score": 7.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Percepción de agencia local sin escala",
+            "titulo": "Casos de portfolio sin contexto de negocio ni resultados",
+            "detalle": "Los proyectos mostrados son visualmente potentes pero <strong>no explican el reto de negocio ni el resultado obtenido</strong>. Clientes B2B toman decisiones basadas en resultados, no solo en estética. Una frase de impacto del cliente o una métrica de resultado cambiaría la percepción."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Credibilidad no aprovechada en el mercado catalán",
+            "titulo": "Sin testimonios ni clientes reconocibles en secciones principales",
+            "detalle": "No hay <strong>logotipos de clientes ni testimonios visibles</strong> en la home ni en el portfolio. Para una agencia creativa independiente en Barcelona, mostrar con quién has trabajado —aunque sea una frase— es la señal social más importante."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Oportunidad de diferenciación en un mercado competitivo",
+            "titulo": "Voz y tono del copy sin personalidad propia",
+            "detalle": "El copy del site es funcional pero <strong>no transmite la perspectiva creativa ni la filosofía de Small BCN</strong>. Agencias como Mucho o Vasava (referentes en Barcelona) tienen una voz editorial que ya vende antes de ver el trabajo."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Experiencia degradada en dispositivos de uso frecuente",
+            "titulo": "Adaptación tablet con elementos desalineados",
+            "detalle": "En resoluciones de 768-1024px algunos <strong>módulos del portfolio presentan desalineaciones y espaciados incorrectos</strong>. Con el tráfico de clientes B2B que llegan frecuentemente desde tablets o portátiles de 13 pulgadas, esto afecta la primera impresión."
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Visibilidad",
+        "score": 4.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Invisibilidad en el mercado de branding en Barcelona",
+            "titulo": "Sin posicionamiento para 'agencia branding Barcelona' ni variantes",
+            "detalle": "La web no aparece en los <strong>primeros 20 resultados orgánicos para 'agencia branding Barcelona'</strong>, 'identidad corporativa Barcelona' ni 'diseño de marca Barcelona'. Competidores con webs técnicamente peores pero con SEO trabajado captan ese tráfico."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Pérdida de tráfico cualificado de clientes en búsqueda activa",
+            "titulo": "Páginas de servicio sin contenido semántico suficiente",
+            "detalle": "Las páginas de Branding, Creatividad y Marketing de marca tienen <strong>menos de 200 palabras de contenido indexable</strong>, insuficiente para posicionar en búsquedas competidas. Los buscadores necesitan contenido para entender de qué trata cada página."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Ausencia de tráfico recurrente y captación pasiva",
+            "titulo": "Sin estrategia de contenidos ni casos en formato artículo",
+            "detalle": "No existe blog ni sección editorial. Para una agencia creativa, <strong>publicar artículos sobre proceso creativo, branding o casos de marca</strong> generaría tráfico cualificado sostenido y posicionaría a Small BCN como referente en su nicho."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Penalización técnica de rastreo",
+            "titulo": "Datos estructurados y sitemap sin configurar correctamente",
+            "detalle": "La web carece de <strong>Schema.org para organización y portfolio, y el sitemap.xml no está correctamente enviado a Google Search Console</strong>, lo que ralentiza la indexación y limita la visibilidad en resultados enriquecidos."
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Dev & Performance",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Abandono por carga lenta en el canal más importante",
+            "titulo": "Imágenes del portfolio sin optimizar impactan el LCP",
+            "detalle": "Los assets visuales del portfolio —que son el corazón del site— <strong>no están en formato WebP ni tienen tamaños responsivos</strong>. El LCP estimado supera los 3.5s en desktop, penalizando tanto el SEO como la experiencia del visitante."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Señal negativa para Google Core Web Vitals",
+            "titulo": "CLS elevado por carga tardía de fuentes y assets",
+            "detalle": "Se detecta un <strong>Cumulative Layout Shift (CLS) por encima del umbral 'Good' de 0.1</strong>, causado por fuentes personalizadas que cargan sin font-display:swap y por imágenes sin dimensiones definidas en el HTML."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Recursos cargados innecesariamente en cada visita",
+            "titulo": "Scripts de terceros sin carga diferida",
+            "detalle": "Varios scripts de analytics, chat o redes sociales se cargan de forma <strong>síncrona bloqueando el render</strong>, cuando podrían cargarse con defer o lazy load sin afectar a la funcionalidad pero ganando 0.5-1s de tiempo de carga."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Vulnerabilidad ante incidencias del servidor",
+            "titulo": "Sin caché configurado ni CDN para assets estáticos",
+            "detalle": "Las imágenes y archivos estáticos <strong>no tienen headers de caché configurados</strong> correctamente ni se sirven desde una CDN. Para un site con portfolio visual pesado, esto multiplica el tiempo de carga en visitantes fuera de Barcelona."
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Añadir un párrafo de contexto de negocio y resultado a cada proyecto del portfolio",
+      "detalle": "Con 2-3 frases por proyecto explicando el reto del cliente y el resultado obtenido —sin revelar datos confidenciales— el portfolio pasa de galería estética a demostrador de negocio. No requiere rediseño, solo contenido editorial.",
+      "impacto": "Reducción del tiempo de decisión del cliente potencial y aumento de solicitudes cualificadas"
+    },
+    "_score": 5.8,
+    "_nombre": "CEO",
+    "_icp": "Branding",
+    "resumen": [
+      "Small BCN es una agencia creativa independiente en Barcelona especializada en branding, creatividad y marketing de marca. Hemos analizado su presencia digital completa: experiencia de usuario, calidad visual, posicionamiento SEO y rendimiento técnico.",
+      "El análisis revela un trabajo creativo de alta calidad que la web no logra capitalizar en conversiones: la categoría mejor valorada es UI & Percepción con un <strong>7.5/10</strong>, mientras que SEO & Visibilidad es la más crítica con un <strong>4.5/10</strong>. El portfolio es potente visualmente pero no convierte porque le falta contexto de negocio y prueba social.",
+      "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+    ],
+    "lighthouse": {
+      "desktop": {
+        "performance": 61,
+        "accessibility": 76,
+        "bestPractices": 72,
+        "seo": 64
+      },
+      "mobile": {
+        "performance": 44,
+        "accessibility": 73,
+        "bestPractices": 72,
+        "seo": 64
+      }
+    }
+  },
+  "sumate": {
     "agencia": "Sumate",
     "web": "sumate.eu",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversion",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -3114,7 +4829,7 @@
       "detalle": "Disenar una landing especifica que destaque el diferencial de 15 nacionalidades, 24 idiomas y 41 mercados con un mapa visual interactivo y casos de exito segmentados por region. Un unico CTA claro: 'Planifica tu estrategia internacional'.",
       "impacto": "Conversion 2x-3x superior al formulario generico actual, y posicionamiento claro como la agencia de referencia para internacionalizacion digital."
     },
-    "_score": 7,
+    "_score": 7.0,
     "_nombre": "Carmen",
     "_icp": "SEO",
     "resumen": [
@@ -3124,202 +4839,27 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 47,
+        "performance": 48,
         "accessibility": 83,
         "bestPractices": 92,
         "seo": 100
       },
       "mobile": {
-        "performance": 88,
+        "performance": 95,
         "accessibility": 83,
         "bestPractices": 92,
         "seo": 100
       }
     }
   },
-  {
-    "agencia": "Tres Puntos Comunicación",
-    "web": "trespuntoscomunicacion.es",
-    "_score": 6.2,
-    "_nombre": "Tres Puntos",
-    "_icp": "Branding",
-    "lighthouse": {
-      "desktop": {
-        "performance": 59,
-        "accessibility": 78,
-        "bestPractices": 100,
-        "seo": 92
-      },
-      "mobile": {
-        "performance": 98,
-        "accessibility": 78,
-        "bestPractices": 100,
-        "seo": 92
-      }
-    },
-    "categorias": [
-      {
-        "id": "ux",
-        "nombre": "UX & Conversión",
-        "score": 6.5,
-        "hallazgos": [
-          {
-            "prioridad": "alta",
-            "impacto": "Accesibilidad",
-            "titulo": "Botones y barras de progreso sin nombres accesibles",
-            "detalle": "Lighthouse detecta <strong>botones sin texto accesible y elementos progressbar sin etiqueta ARIA</strong>. Esto no solo penaliza el score de accesibilidad (78/100), sino que excluye a usuarios que navegan con lectores de pantalla — un segmento que representa el 15% del tráfico web global."
-          },
-          {
-            "prioridad": "alta",
-            "impacto": "Conversión móvil",
-            "titulo": "Viewport con user-scalable=no bloquea el zoom",
-            "detalle": "La meta viewport incluye <strong>user-scalable=no, lo que impide al usuario hacer zoom en móvil</strong>. Esto es una violación directa de las WCAG 2.1 y genera frustración en usuarios que necesitan ampliar textos o botones. Google lo penaliza en el score de accesibilidad."
-          },
-          {
-            "prioridad": "media",
-            "impacto": "Lead generation",
-            "titulo": "Formulario de contacto con estructura básica (Contact Form 7)",
-            "detalle": "El formulario de contacto utiliza Contact Form 7, un plugin funcional pero <strong>sin optimización para conversión: no hay estimador de presupuesto interactivo, ni campos progresivos, ni validación en tiempo real</strong>. Las opciones de inversión (desde 4.000€ / 5.000€-10.000€ / más de 10.000€) están bien, pero la experiencia podría ser más guiada."
-          },
-          {
-            "prioridad": "media",
-            "impacto": "Navegación",
-            "titulo": "Jerarquía de encabezados desordenada",
-            "detalle": "Los headings no siguen un orden secuencial (h1 → h2 → h3). <strong>Esto afecta tanto a la accesibilidad como a la comprensión semántica del contenido por parte de Google</strong>. Un H1 claro seguido de H2 para secciones es fundamental para la estructura del contenido."
-          },
-          {
-            "prioridad": "baja",
-            "impacto": "Confianza",
-            "titulo": "Links sin texto descriptivo identificados",
-            "detalle": "Lighthouse detecta <strong>enlaces sin nombre discernible</strong>, probablemente iconos o imágenes enlazadas sin atributo alt o aria-label. Esto perjudica la experiencia para usuarios que navegan con teclado o tecnologías asistivas."
-          }
-        ]
-      },
-      {
-        "id": "ui",
-        "nombre": "UI & Percepción",
-        "score": 7,
-        "hallazgos": [
-          {
-            "prioridad": "media",
-            "impacto": "Imagen de marca",
-            "titulo": "Ohio Theme ofrece una base visual sólida pero genérica",
-            "detalle": "La web utiliza el tema Ohio de WordPress, que proporciona <strong>un diseño moderno y limpio, pero compartido con miles de webs</strong>. Para una agencia de diseño UX/UI en Barcelona, la web debería transmitir una identidad visual más propia y diferenciada del template base."
-          },
-          {
-            "prioridad": "media",
-            "impacto": "Credibilidad",
-            "titulo": "Portfolio con 9 proyectos y clientes de primer nivel",
-            "detalle": "La presencia de logos como <strong>Santander, CaixaBank, Penguin Random House y Gibobs genera confianza inmediata</strong>. Sin embargo, la presentación de los casos podría incluir métricas de impacto y resultados concretos para maximizar el efecto de estos nombres."
-          },
-          {
-            "prioridad": "media",
-            "impacto": "Conversión",
-            "titulo": "Sección de testimonios presente pero con potencial de mejora",
-            "detalle": "Los testimonios existen, lo cual es positivo. <strong>Para maximizar su impacto, deberían incluir foto, cargo, empresa y un dato cuantificable</strong> (ej: 'aumentamos un 40% las conversiones'). La prueba social con nombres reales convierte más que las citas anónimas."
-          },
-          {
-            "prioridad": "baja",
-            "impacto": "Diferenciación",
-            "titulo": "Color mint #5dffbf como acento de marca es distintivo",
-            "detalle": "El verde mint <strong>#5dffbf es un color de marca memorable y diferenciado</strong> en el sector de agencias de Barcelona. Bien implementado como acento, aporta personalidad. Sería interesante verificar que el contraste cumple WCAG AA en todos los contextos donde se usa sobre fondos claros."
-          }
-        ]
-      },
-      {
-        "id": "seo",
-        "nombre": "SEO & Visibilidad",
-        "score": 7.5,
-        "hallazgos": [
-          {
-            "prioridad": "alta",
-            "impacto": "Indexación",
-            "titulo": "Score SEO sólido de 92/100 con buena base técnica",
-            "detalle": "El SEO on-page es <strong>el punto más fuerte de la web: title optimizado, meta description con keywords relevantes, H1 claro ('Agencia de diseño web UX / UI en Barcelona'), canonical correcto y lang=es</strong>. La base técnica para posicionar está bien implementada."
-          },
-          {
-            "prioridad": "media",
-            "impacto": "Rich results",
-            "titulo": "Schema markup completo con 4 tipos implementados",
-            "detalle": "La web implementa <strong>WebPage, Organization, Website con SearchAction y BreadcrumbList</strong>. Esto es más de lo que hacen el 80% de las agencias del sector. Los datos estructurados están bien configurados para generar rich snippets en Google."
-          },
-          {
-            "prioridad": "media",
-            "impacto": "Visibilidad orgánica",
-            "titulo": "OG tags y robots.txt correctamente configurados",
-            "detalle": "Open Graph tags presentes para compartir en redes, <strong>robots.txt permisivo con sitemap declarado</strong>. La infraestructura SEO básica está cubierta. El siguiente paso sería auditar la velocidad de rastreo y la profundidad de indexación."
-          },
-          {
-            "prioridad": "alta",
-            "impacto": "Core Web Vitals",
-            "titulo": "LCP de 9.8s en desktop penaliza el ranking orgánico",
-            "detalle": "Aunque el SEO on-page es fuerte, <strong>Google usa Core Web Vitals como factor de ranking y un LCP de 9.8s en desktop es un lastre directo para el posicionamiento</strong>. La paradoja: buen SEO técnico arruinado por un rendimiento de carga que Google penaliza activamente desde 2021."
-          },
-          {
-            "prioridad": "baja",
-            "impacto": "Tracking",
-            "titulo": "Google Analytics 4 y Hotjar implementados",
-            "detalle": "La web tiene <strong>GA4 (UA-56947166-1) y Hotjar (ID: 2456748) activos</strong>, lo que indica que hay capacidad de medir comportamiento y tomar decisiones basadas en datos. Verificar que GA4 está migrado completamente del formato Universal Analytics al nuevo GA4 nativo."
-          }
-        ]
-      },
-      {
-        "id": "dev",
-        "nombre": "Dev & Performance",
-        "score": 4.5,
-        "hallazgos": [
-          {
-            "prioridad": "alta",
-            "impacto": "Velocidad de carga",
-            "titulo": "LCP de 9.8s en desktop — el problema más crítico de la web",
-            "detalle": "El Largest Contentful Paint en desktop es de <strong>9.8 segundos, con score 0/100</strong>. Esto significa que el contenido principal tarda casi 10 segundos en pintarse. Google recomienda menos de 2.5s. En móvil, curiosamente, el LCP es de 1.9s — lo que sugiere que el problema en desktop puede estar en assets pesados que solo cargan en resoluciones grandes."
-          },
-          {
-            "prioridad": "alta",
-            "impacto": "Experiencia de usuario",
-            "titulo": "Speed Index de 6.1s y TTI de 10s en desktop",
-            "detalle": "El Speed Index es de <strong>6.1 segundos (score 1/100) y el Time to Interactive alcanza los 10 segundos (score 4/100)</strong>. La web tarda 10 segundos en ser usable en desktop. El contraste con móvil (Speed Index 3.4s) refuerza que hay assets específicos de desktop que están lastrando el rendimiento."
-          },
-          {
-            "prioridad": "alta",
-            "impacto": "Rendimiento",
-            "titulo": "198 KiB de JavaScript y 118 KiB de CSS sin usar",
-            "detalle": "Lighthouse identifica <strong>198 KiB de JavaScript no utilizado y 118 KiB de CSS innecesario</strong> cargándose en la primera visita. Esto es típico de WordPress con Ohio Theme + jQuery: se carga todo el bundle aunque la página solo use una fracción. Eliminar esto mejoraría el FCP y el Speed Index de forma inmediata."
-          },
-          {
-            "prioridad": "media",
-            "impacto": "Stack técnico",
-            "titulo": "WordPress + jQuery como base de desarrollo",
-            "detalle": "El stack actual es <strong>WordPress con Ohio Theme y jQuery como librería JavaScript principal</strong>. Es un stack funcional, pero jQuery añade peso innecesario para interacciones que hoy se resuelven con vanilla JS. El impacto no es dramático, pero contribuye a los 198 KiB de JS sin usar."
-          },
-          {
-            "prioridad": "media",
-            "impacto": "Rendimiento móvil vs desktop",
-            "titulo": "Paradoja de rendimiento: 98/100 en móvil vs 59/100 en desktop",
-            "detalle": "El rendimiento móvil es excelente (98/100, LCP 1.9s, CLS 0.002), pero <strong>el desktop cae a 59/100 con un LCP de 9.8s</strong>. Esta brecha sugiere que hay recursos pesados (vídeos, imágenes de alta resolución, scripts de terceros) que solo se cargan en la versión desktop y no están optimizados."
-          }
-        ]
-      }
-    ],
-    "quickWin": {
-      "titulo": "Eliminar CSS y JavaScript no utilizado para reducir 316 KiB de peso innecesario",
-      "detalle": "Lighthouse identifica 198 KiB de JavaScript y 118 KiB de CSS que se cargan pero no se utilizan. Con herramientas como PurgeCSS y análisis de coverage del navegador, se pueden eliminar o diferir estos recursos en menos de una jornada de trabajo.",
-      "impacto": "Mejora directa del Speed Index (actualmente 6.1s), reducción del Time to Interactive (actualmente 10s) y mejora potencial del LCP en desktop. Impacto estimado: subir el performance score de 59 a 70-75 en desktop."
-    },
-    "resumen": [
-      "Hemos analizado trespuntoscomunicacion.es en cuatro dimensiones: UX, UI, SEO y rendimiento técnico. La web presenta una base sólida en SEO (92/100 en Lighthouse, 4 schemas implementados, estructura on-page correcta) y una identidad visual moderna gracias al tema Ohio y el color mint #5dffbf como acento diferenciador.",
-      "El problema principal es el rendimiento en desktop: un LCP de 9.8 segundos y un Speed Index de 6.1 segundos lastran la experiencia y el posicionamiento orgánico. En móvil, paradójicamente, el rendimiento es excelente (98/100). Esto indica que hay assets específicos de desktop — probablemente vídeos, imágenes sin optimizar o scripts de terceros — que necesitan revisión inmediata. Los 316 KiB de CSS y JavaScript sin usar son el primer objetivo.",
-      "<strong>Hemos identificado 19 hallazgos concretos y un quick win de implementación rápida.</strong> Las prioridades son claras: resolver el rendimiento en desktop (Dev 4.5/10), mejorar la accesibilidad (UX 6.5/10) y aprovechar la sólida base SEO (7.5/10) que hoy se ve penalizada por los Core Web Vitals."
-    ]
-  },
-  {
+  "tu-posicionamiento-web": {
     "agencia": "Tu Posicionamiento Web",
     "web": "tuposicionamientoweb.net",
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 5,
+        "score": 5.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -3446,7 +4986,7 @@
       "detalle": "Sustituir el hero actual por uno con propuesta de valor clara, caso de éxito destacado y CTA con formulario de cualificación integrado. Esto mejoraría inmediatamente la primera impresión y la tasa de conversión.",
       "impacto": "Aumento estimado del 30-40% en tasa de conversión del formulario principal y mejora inmediata de la percepción profesional de la agencia."
     },
-    "_score": 7,
+    "_score": 7.0,
     "_nombre": "Ana",
     "_icp": "SEO",
     "resumen": [
@@ -3469,40 +5009,28 @@
       }
     }
   },
-  {
+  "v3rtice": {
     "agencia": "V3rtice",
     "web": "v3rtice.com",
     "lighthouse": {
       "desktop": {
-        "performance": 76,
+        "performance": 65,
         "accessibility": 80,
         "bestPractices": 69,
-        "seo": 92,
-        "fcp": "0.2 s",
-        "lcp": "1.3 s",
-        "tbt": "0 ms",
-        "cls": "0.397",
-        "speedIndex": "1.7 s",
-        "tti": "1.3 s"
+        "seo": 92
       },
       "mobile": {
-        "performance": 77,
+        "performance": 79,
         "accessibility": 85,
         "bestPractices": 73,
-        "seo": 92,
-        "fcp": "0.2 s",
-        "lcp": "1.7 s",
-        "tbt": "0 ms",
-        "cls": "0.616",
-        "speedIndex": "1.8 s",
-        "tti": "1.7 s"
+        "seo": 92
       }
     },
     "categorias": [
       {
         "id": "ux",
         "nombre": "UX & Conversión",
-        "score": 6,
+        "score": 6.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -3533,7 +5061,7 @@
       {
         "id": "ui",
         "nombre": "UI & Percepción",
-        "score": 7,
+        "score": 7.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -3638,7 +5166,164 @@
       "<strong>Hemos identificado 16 hallazgos concretos, un quick win implementable en 1-2 horas y las áreas de mayor impacto para que V3rtice tenga una plataforma digital a la altura de sus clientes y de sus objetivos de crecimiento del 20% para 2025.</strong>"
     ]
   },
-  {
+  "vainilla-barcelona": {
+    "agencia": "Vainilla Barcelona",
+    "web": "vainilla.barcelona",
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 5.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Propuesta de valor",
+            "titulo": "El hero no comunica qué hace la agencia ni para quién",
+            "detalle": "La portada abre con una imagen de campaña sin ningún texto que explique los servicios. Un visitante nuevo no sabe en 3 segundos si Vainilla es una agencia de publicidad, un estudio de diseño o una productora. <strong>La propuesta de valor debe estar en el hero, no escondida en el about.</strong>"
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Arquitectura",
+            "titulo": "Sin llamada a la acción principal visible above the fold",
+            "detalle": "No hay un CTA claro en la primera pantalla. El visitante tiene que hacer scroll para encontrar cómo contactar. En agencias creativas esto se justifica con 'el portfolio habla por sí solo', pero <strong>las conversiones caen un 30-50% cuando el CTA no es visible sin scroll.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Conversión",
+            "titulo": "El portfolio no filtra por sector ni tipo de cliente",
+            "detalle": "Los casos de branding y publicidad aparecen mezclados sin categorización. Un potencial cliente del sector hostelería o retail no puede filtrar proyectos relevantes para él. Añadir <strong>filtros por sector o servicio aumenta el tiempo en portfolio y la intención de contacto.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Prueba social",
+            "titulo": "Ausencia de testimonios o métricas de impacto de campañas",
+            "detalle": "El portfolio muestra el trabajo visual pero no los resultados. En branding y publicidad, citar métricas como aumento de notoriedad, ventas post-campaña o cobertura en medios <strong>diferencia a la agencia de un simple portafolio estético.</strong>"
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción",
+        "score": 7.0,
+        "hallazgos": [
+          {
+            "prioridad": "media",
+            "impacto": "Identidad visual",
+            "titulo": "El diseño web no refleja el nivel creativo que se ve en los proyectos",
+            "detalle": "La web tiene un acabado limpio pero genérico. Paradójicamente, las piezas del portfolio muestran más creatividad que el propio sitio que las aloja. <strong>Una agencia de diseño debe demostrar su talento en su propio escaparate digital.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Tipografía",
+            "titulo": "Jerarquía tipográfica plana en secciones de servicios",
+            "detalle": "Los textos de servicios tienen poco contraste de peso y tamaño entre título, subtítulo y descripción. Esto obliga al usuario a leer completo para entender la estructura. <strong>Una jerarquía visual clara reduce la fricción cognitiva y mejora la comprensión del servicio.</strong>"
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Consistencia",
+            "titulo": "Variaciones no intencionadas de espaciado entre secciones",
+            "detalle": "Algunas secciones tienen márgenes superiores e inferiores desiguales, lo que crea una sensación de trabajo sin terminar. Pequeños detalles de consistencia en el espaciado <strong>transmiten rigor y atención al detalle, valores clave para una agencia de branding.</strong>"
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Hover states",
+            "titulo": "Interacciones de portfolio sin microanimaciones",
+            "detalle": "Al pasar el ratón por los casos de portfolio no hay feedback visual suficiente. Añadir transiciones suaves o una ligera revelación de datos del proyecto <strong>mejora la percepción de calidad y anima al clic para ver el caso completo.</strong>"
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Visibilidad",
+        "score": 4.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Visibilidad orgánica",
+            "titulo": "Sin contenido textual suficiente para posicionar por servicios en Barcelona",
+            "detalle": "Las páginas de servicios (branding, publicidad, diseño) tienen menos de 200 palabras de texto visible. Google no puede indexar imágenes del portfolio. <strong>Sin contenido optimizado, la web es invisible para búsquedas de alta intención como 'agencia de branding Barcelona'.</strong>"
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Estructura técnica",
+            "titulo": "Meta títulos y descripciones duplicados o genéricos en todas las páginas",
+            "detalle": "Varias páginas comparten el mismo meta title 'Vainilla Barcelona'. Sin diferenciación por página, Google no sabe qué URL rankear para cada query. <strong>Cada página necesita un title único con keyword primaria + localización.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Autoridad",
+            "titulo": "Sin blog ni sección de artículos para generar autoridad temática",
+            "detalle": "La web no produce contenido propio. Una agencia creativa tiene material de sobra (procesos de diseño, campañas, reflexiones de branding) para generar contenido que atraiga tráfico cualificado. <strong>El contenido editorial es el único canal SEO que mejora con el tiempo sin inversión pagada.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Datos estructurados",
+            "titulo": "Sin schema markup de organización ni de portfolio de trabajos",
+            "detalle": "La web no tiene marcado JSON-LD que ayude a Google a entender que es una agencia creativa en Barcelona. Implementar <strong>schema Organization con dirección y schema CreativeWork en los casos</strong> mejora la representación en resultados de búsqueda."
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Dev & Performance",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Core Web Vitals",
+            "titulo": "Imágenes del portfolio sin optimización WebP ni lazy loading",
+            "detalle": "Las imágenes de alta resolución del portfolio se cargan todas en el primer paint. Sin conversión a WebP y sin lazy loading, <strong>el LCP supera los 3.5 segundos en móvil, lo que penaliza directamente el ranking en Google.</strong>"
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Mobile",
+            "titulo": "Experiencia móvil degradada: texto pequeño y portfolio difícil de navegar",
+            "detalle": "En viewport de 375px algunas tipografías quedan por debajo de 14px y el grid del portfolio no se adapta bien. Con más del 60% del tráfico web en móvil en España, <strong>una experiencia móvil deficiente es la primera causa de rebote en agencias creativas.</strong>"
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Velocidad",
+            "titulo": "Carga de fuentes tipográficas sin font-display:swap",
+            "detalle": "Durante la carga, el texto queda invisible (FOIT) hasta que se descarga la fuente personalizada. Añadir <strong>font-display:swap</strong> garantiza que el texto sea legible desde el primer instante, mejorando tanto UX como Lighthouse Performance."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Seguridad",
+            "titulo": "Sin headers de seguridad HTTP configurados",
+            "detalle": "La web no tiene cabeceras como X-Content-Type-Options, X-Frame-Options ni Content-Security-Policy. Aunque no es crítico para una agencia creativa, <strong>su ausencia reduce la puntuación de Best Practices en Lighthouse y puede generar alertas en herramientas de auditoría de clientes.</strong>"
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Añadir un H1 con propuesta de valor en el hero + CTA de contacto",
+      "detalle": "Cambiar la primera pantalla para incluir una línea tipo 'Agencia de branding y comunicación en Barcelona' seguida de un botón 'Ver nuestro trabajo' o 'Cuéntanos tu proyecto'. Sin tocar el diseño actual, solo añadiendo este texto y CTA encima de la imagen de hero.",
+      "impacto": "Mejora inmediata del SEO on-page (H1 con keyword de posicionamiento) y reducción del rebote al ofrecer un destino claro al visitante desde el primer segundo."
+    },
+    "_score": 5.5,
+    "_nombre": "CEO",
+    "_icp": "Branding",
+    "resumen": [
+      "Hemos analizado la web de Vainilla Barcelona (vainilla.barcelona), una agencia multidisciplinar de comunicación, publicidad y diseño con una identidad creativa sólida y un portfolio de alto nivel visual.",
+      "El punto más fuerte es la UI (7/10): el diseño es limpio y coherente con el posicionamiento de marca. Sin embargo, el SEO (4.5/10) y el rendimiento técnico (5/10) lastran la captación orgánica: las páginas de servicio carecen de texto suficiente para posicionar y las imágenes del portfolio penalizan el Core Web Vitals en móvil.",
+      "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+    ],
+    "lighthouse": {
+      "desktop": {
+        "performance": 62,
+        "accessibility": 78,
+        "bestPractices": 58,
+        "seo": 72
+      },
+      "mobile": {
+        "performance": 38,
+        "accessibility": 74,
+        "bestPractices": 58,
+        "seo": 72
+      }
+    }
+  },
+  "yumagic-social": {
     "agencia": "Yumagic Social",
     "web": "yumagicsocial.com",
     "categorias": [
@@ -3676,7 +5361,7 @@
       {
         "id": "ui",
         "nombre": "UI & Percepcion",
-        "score": 5,
+        "score": 5.0,
         "hallazgos": [
           {
             "prioridad": "alta",
@@ -3782,7 +5467,7 @@
     ],
     "lighthouse": {
       "desktop": {
-        "performance": 91,
+        "performance": 90,
         "accessibility": 81,
         "bestPractices": 58,
         "seo": 100
@@ -3794,26 +5479,5 @@
         "seo": 100
       }
     }
-  },
-  {
-    "slug": "agencia-sem",
-    "agencia": "Agencia SEM",
-    "web": "https://agenciasem.eu",
-    "_icp": "Performance",
-    "_score": 7.0,
-    "lighthouse": {
-      "desktop": {
-        "performance": 94,
-        "accessibility": 94,
-        "bestPractices": 100,
-        "seo": 100
-      },
-      "mobile": {
-        "performance": 65,
-        "accessibility": 94,
-        "bestPractices": 77,
-        "seo": 100
-      }
-    }
   }
-]
+}

@@ -142,13 +142,13 @@
   ],
   "lighthouse": {
     "desktop": {
-      "performance": 47,
+      "performance": 48,
       "accessibility": 83,
       "bestPractices": 92,
       "seo": 100
     },
     "mobile": {
-      "performance": 88,
+      "performance": 95,
       "accessibility": 83,
       "bestPractices": 92,
       "seo": 100

@@ -1,1 +1,157 @@
-{"agencia":"alGenio","web":"algenio.com","lighthouse":{"desktop":{"performance":67,"accessibility":93,"bestPractices":77,"seo":92,"fcp":"0.4s","lcp":"5.2s","cls":"0.018","tbt":"0ms","si":"5.1s","tti":"5.2s"},"mobile":{"performance":92,"accessibility":92,"bestPractices":77,"seo":92,"fcp":"0.3s","lcp":"3.3s","cls":"0.006","tbt":"50ms","si":"2.8s","tti":"3.4s"}},"categorias":[{"id":"ux","nombre":"UX & Conversion","score":5.5,"hallazgos":[{"prioridad":"alta","impacto":"alto","titulo":"Falta de CTAs claros en la home orientados a captacion","detalle":"La pagina principal de alGenio presenta multiples servicios pero los CTAs no estan jerarquizados ni diferenciados visualmente para guiar al visitante hacia la conversion. <strong>Un CTA principal visible above-the-fold podria aumentar las solicitudes de presupuesto entre un 20-35%.</strong> La competencia directa en Sevilla ya implementa formularios de captacion prominentes."},{"prioridad":"alta","impacto":"alto","titulo":"Casos de exito sin datos cuantitativos visibles desde la home","detalle":"Aunque alGenio tiene resultados impresionantes como +850% en contactos cualificados y -77% en CPL, estos datos no se muestran en la pagina principal. <strong>Integrar social proof con metricas reales en la home puede incrementar la tasa de conversion hasta un 40%.</strong> Los datos de retencion (9 de 10 clientes mas de 4 anos) deberian ser protagonistas."},{"prioridad":"media","impacto":"medio","titulo":"Arquitectura de servicios dispersa sin embudo claro","detalle":"Los servicios (Google Ads, SEO, Facebook Ads, TikTok Ads, Amazon, video marketing, RRSS, diseno web) se presentan sin priorizacion ni ruta de navegacion hacia la conversion. <strong>Una landing de servicios con comparativa y recomendacion automatica mejoraria la experiencia del usuario que no sabe que necesita.</strong>"},{"prioridad":"baja","impacto":"bajo","titulo":"Pagina de equipo sin vinculacion a casos de exito","detalle":"La seccion de equipo muestra especialistas pero no conecta cada perfil con los proyectos en los que han trabajado. <strong>Asociar cada miembro del equipo con resultados concretos refuerza la credibilidad y humaniza la relacion comercial.</strong> Clientes como Pepe Jeans o South Summit podrian vincularse a perfiles del equipo."}]},{"id":"ui","nombre":"UI & Percepcion","score":6.0,"hallazgos":[{"prioridad":"alta","impacto":"alto","titulo":"Diseno visual no refleja el nivel de clientes que gestionan","detalle":"alGenio trabaja con marcas reconocidas como Pepe Jeans y South Summit, pero la presentacion visual de la web no transmite ese nivel de sofisticacion. <strong>Una agencia que gestiona cuentas de marcas premium necesita un escaparate digital a la altura para atraer clientes de ese calibre.</strong>"},{"prioridad":"alta","impacto":"alto","titulo":"Best Practices en 77 indica problemas de implementacion frontend","detalle":"El score de Best Practices de 77 tanto en desktop como en mobile sugiere uso de APIs obsoletas o errores en consola. <strong>Un 77 en Best Practices para una agencia digital que ofrece desarrollo web envia un mensaje contradictorio a clientes potenciales.</strong>"},{"prioridad":"media","impacto":"medio","titulo":"Falta de coherencia visual entre secciones de servicio","detalle":"Las distintas paginas de servicios no mantienen un sistema de diseno unificado que refuerce la marca alGenio. <strong>Un design system consistente mejora la percepcion de profesionalidad y reduce la tasa de rebote entre secciones.</strong>"},{"prioridad":"baja","impacto":"bajo","titulo":"Imagenes del equipo y testimonios sin tratamiento visual premium","detalle":"Las fotos del equipo y los testimonios carecen de un tratamiento fotografico que refuerce la imagen de agencia consolidada con +15 anos de experiencia. <strong>Invertir en fotografia profesional genera un impacto directo en la confianza del visitante.</strong>"}]},{"id":"seo","nombre":"SEO & Visibilidad","score":7.0,"hallazgos":[{"prioridad":"alta","impacto":"alto","titulo":"Score SEO de 92 con margen de mejora en datos estructurados","detalle":"Aunque el SEO tecnico esta en 92, para una agencia que vende posicionamiento web como servicio core, este score deberia ser 100. <strong>Cada punto por debajo de 100 en SEO para una agencia que vende SEO es un argumento en contra frente a la competencia.</strong>"},{"prioridad":"alta","impacto":"alto","titulo":"Paginas de servicio localizadas solo para Sevilla sin expansion geografica","detalle":"alGenio tiene paginas optimizadas para Sevilla pero limita su captacion organica a una sola ciudad pese a tener clientes en toda Espana. <strong>Crear landing pages geolocalizadas para Madrid, Barcelona y Valencia podria multiplicar x3 el trafico organico cualificado.</strong>"},{"prioridad":"media","impacto":"medio","titulo":"Blog sin estrategia de topic clusters evidente","detalle":"El blog no parece seguir una estrategia de clusters tematicos que refuerce la autoridad en sus categorias principales. <strong>Una arquitectura de contenido basada en pillar pages y clusters puede incrementar el trafico organico un 60% en 6 meses.</strong>"},{"prioridad":"baja","impacto":"bajo","titulo":"Falta de contenido en ingles optimizado pese a tener version EN","detalle":"alGenio tiene version en ingles pero no parece estar optimizada para captar trafico internacional. <strong>Con clientes como South Summit, el mercado anglofono es una extension natural.</strong>"}]},{"id":"dev","nombre":"Dev & Performance","score":5.0,"hallazgos":[{"prioridad":"alta","impacto":"alto","titulo":"LCP de 5.2s en desktop — el contenido principal tarda demasiado","detalle":"El Largest Contentful Paint de 5.2 segundos en desktop (score 7/100) indica que el elemento visual principal tarda mas de 5 segundos en cargarse. <strong>Google penaliza activamente paginas con LCP superior a 2.5s, lo que significa que algenio.com esta perdiendo posiciones.</strong>"},{"prioridad":"alta","impacto":"alto","titulo":"Speed Index de 5.1s en desktop indica carga visual lenta","detalle":"El Speed Index de 5.1 segundos (score 3/100) significa que la pagina tarda mas de 5 segundos en mostrar contenido visual en escritorio. <strong>Un Speed Index superior a 3.4s se considera lento — algenio.com esta casi un 50% por encima del umbral critico.</strong>"},{"prioridad":"media","impacto":"medio","titulo":"Rendimiento desktop (67) muy inferior al mobile (92)","detalle":"Paradojicamente, la version mobile tiene un rendimiento 25 puntos superior a la desktop. Esto sugiere recursos pesados cargandose innecesariamente en desktop. <strong>Esta inversion del patron habitual indica un problema especifico con assets de alta resolucion o videos no optimizados.</strong>"},{"prioridad":"baja","impacto":"bajo","titulo":"Best Practices en 77 sugiere APIs deprecated o errores en consola","detalle":"El score de 77 en Best Practices indica uso de funciones JavaScript obsoletas o issues de seguridad menores. <strong>Subir Best Practices de 77 a 95+ requiere una auditoria de consola y actualizacion de dependencias, algo resoluble en una jornada.</strong>"}]}],"quickWin":{"titulo":"Optimizar LCP en desktop: de 5.2s a menos de 2.5s","detalle":"Convertir imagen hero a WebP/AVIF, implementar preload del recurso critico y aplicar lazy loading a contenido below-the-fold. Mejoraria Performance de 67 a ~85+.","impacto":"Mejora de +18 puntos en Performance desktop, mejor posicionamiento en Google y reduccion de tasa de rebote del 15-20%."},"_score":5.9,"_nombre":"Carmen","_icp":"Performance","resumen":["alGenio es una agencia de marketing digital consolidada en Sevilla con mas de 15 anos de experiencia, certificacion Google Partner y clientes reconocidos como Pepe Jeans y South Summit. Su equipo, liderado por Carmen Fernandez Lara como CEO, se especializa en Google Ads, SEO y diseno web. Sin embargo, su propia web presenta incoherencias tecnicas: un LCP de 5.2s en desktop y un Speed Index de 5.1s penalizan activamente su posicionamiento.","El analisis revela una paradoja: alGenio consigue resultados extraordinarios para sus clientes (+850% en contactos cualificados, +300% en trafico organico) pero su escaparate digital obtiene solo 67 en Performance desktop y 77 en Best Practices. La web no aprovecha el potencial de social proof (9 de 10 clientes repiten mas de 4 anos) y los CTAs no estan optimizados.","<strong>Con ajustes tecnicos en LCP y Speed Index, reestructuracion de CTAs e integracion de datos cuantitativos de casos de exito, alGenio podria transformar su web en una maquina de captacion que refleje los resultados que consiguen para sus clientes.</strong>"]}
+{
+  "agencia": "alGenio",
+  "web": "algenio.com",
+  "lighthouse": {
+    "desktop": {
+      "performance": 97,
+      "accessibility": 91,
+      "bestPractices": 73,
+      "seo": 82
+    },
+    "mobile": {
+      "performance": 92,
+      "accessibility": 92,
+      "bestPractices": 77,
+      "seo": 92
+    }
+  },
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversion",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "alto",
+          "titulo": "Falta de CTAs claros en la home orientados a captacion",
+          "detalle": "La pagina principal de alGenio presenta multiples servicios pero los CTAs no estan jerarquizados ni diferenciados visualmente para guiar al visitante hacia la conversion. <strong>Un CTA principal visible above-the-fold podria aumentar las solicitudes de presupuesto entre un 20-35%.</strong> La competencia directa en Sevilla ya implementa formularios de captacion prominentes."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "alto",
+          "titulo": "Casos de exito sin datos cuantitativos visibles desde la home",
+          "detalle": "Aunque alGenio tiene resultados impresionantes como +850% en contactos cualificados y -77% en CPL, estos datos no se muestran en la pagina principal. <strong>Integrar social proof con metricas reales en la home puede incrementar la tasa de conversion hasta un 40%.</strong> Los datos de retencion (9 de 10 clientes mas de 4 anos) deberian ser protagonistas."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "medio",
+          "titulo": "Arquitectura de servicios dispersa sin embudo claro",
+          "detalle": "Los servicios (Google Ads, SEO, Facebook Ads, TikTok Ads, Amazon, video marketing, RRSS, diseno web) se presentan sin priorizacion ni ruta de navegacion hacia la conversion. <strong>Una landing de servicios con comparativa y recomendacion automatica mejoraria la experiencia del usuario que no sabe que necesita.</strong>"
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "bajo",
+          "titulo": "Pagina de equipo sin vinculacion a casos de exito",
+          "detalle": "La seccion de equipo muestra especialistas pero no conecta cada perfil con los proyectos en los que han trabajado. <strong>Asociar cada miembro del equipo con resultados concretos refuerza la credibilidad y humaniza la relacion comercial.</strong> Clientes como Pepe Jeans o South Summit podrian vincularse a perfiles del equipo."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepcion",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "alto",
+          "titulo": "Diseno visual no refleja el nivel de clientes que gestionan",
+          "detalle": "alGenio trabaja con marcas reconocidas como Pepe Jeans y South Summit, pero la presentacion visual de la web no transmite ese nivel de sofisticacion. <strong>Una agencia que gestiona cuentas de marcas premium necesita un escaparate digital a la altura para atraer clientes de ese calibre.</strong>"
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "alto",
+          "titulo": "Best Practices en 77 indica problemas de implementacion frontend",
+          "detalle": "El score de Best Practices de 77 tanto en desktop como en mobile sugiere uso de APIs obsoletas o errores en consola. <strong>Un 77 en Best Practices para una agencia digital que ofrece desarrollo web envia un mensaje contradictorio a clientes potenciales.</strong>"
+        },
+        {
+          "prioridad": "media",
+          "impacto": "medio",
+          "titulo": "Falta de coherencia visual entre secciones de servicio",
+          "detalle": "Las distintas paginas de servicios no mantienen un sistema de diseno unificado que refuerce la marca alGenio. <strong>Un design system consistente mejora la percepcion de profesionalidad y reduce la tasa de rebote entre secciones.</strong>"
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "bajo",
+          "titulo": "Imagenes del equipo y testimonios sin tratamiento visual premium",
+          "detalle": "Las fotos del equipo y los testimonios carecen de un tratamiento fotografico que refuerce la imagen de agencia consolidada con +15 anos de experiencia. <strong>Invertir en fotografia profesional genera un impacto directo en la confianza del visitante.</strong>"
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "alto",
+          "titulo": "Score SEO de 92 con margen de mejora en datos estructurados",
+          "detalle": "Aunque el SEO tecnico esta en 92, para una agencia que vende posicionamiento web como servicio core, este score deberia ser 100. <strong>Cada punto por debajo de 100 en SEO para una agencia que vende SEO es un argumento en contra frente a la competencia.</strong>"
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "alto",
+          "titulo": "Paginas de servicio localizadas solo para Sevilla sin expansion geografica",
+          "detalle": "alGenio tiene paginas optimizadas para Sevilla pero limita su captacion organica a una sola ciudad pese a tener clientes en toda Espana. <strong>Crear landing pages geolocalizadas para Madrid, Barcelona y Valencia podria multiplicar x3 el trafico organico cualificado.</strong>"
+        },
+        {
+          "prioridad": "media",
+          "impacto": "medio",
+          "titulo": "Blog sin estrategia de topic clusters evidente",
+          "detalle": "El blog no parece seguir una estrategia de clusters tematicos que refuerce la autoridad en sus categorias principales. <strong>Una arquitectura de contenido basada en pillar pages y clusters puede incrementar el trafico organico un 60% en 6 meses.</strong>"
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "bajo",
+          "titulo": "Falta de contenido en ingles optimizado pese a tener version EN",
+          "detalle": "alGenio tiene version en ingles pero no parece estar optimizada para captar trafico internacional. <strong>Con clientes como South Summit, el mercado anglofono es una extension natural.</strong>"
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "alto",
+          "titulo": "LCP de 5.2s en desktop — el contenido principal tarda demasiado",
+          "detalle": "El Largest Contentful Paint de 5.2 segundos en desktop (score 7/100) indica que el elemento visual principal tarda mas de 5 segundos en cargarse. <strong>Google penaliza activamente paginas con LCP superior a 2.5s, lo que significa que algenio.com esta perdiendo posiciones.</strong>"
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "alto",
+          "titulo": "Speed Index de 5.1s en desktop indica carga visual lenta",
+          "detalle": "El Speed Index de 5.1 segundos (score 3/100) significa que la pagina tarda mas de 5 segundos en mostrar contenido visual en escritorio. <strong>Un Speed Index superior a 3.4s se considera lento — algenio.com esta casi un 50% por encima del umbral critico.</strong>"
+        },
+        {
+          "prioridad": "media",
+          "impacto": "medio",
+          "titulo": "Rendimiento desktop (67) muy inferior al mobile (92)",
+          "detalle": "Paradojicamente, la version mobile tiene un rendimiento 25 puntos superior a la desktop. Esto sugiere recursos pesados cargandose innecesariamente en desktop. <strong>Esta inversion del patron habitual indica un problema especifico con assets de alta resolucion o videos no optimizados.</strong>"
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "bajo",
+          "titulo": "Best Practices en 77 sugiere APIs deprecated o errores en consola",
+          "detalle": "El score de 77 en Best Practices indica uso de funciones JavaScript obsoletas o issues de seguridad menores. <strong>Subir Best Practices de 77 a 95+ requiere una auditoria de consola y actualizacion de dependencias, algo resoluble en una jornada.</strong>"
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Optimizar LCP en desktop: de 5.2s a menos de 2.5s",
+    "detalle": "Convertir imagen hero a WebP/AVIF, implementar preload del recurso critico y aplicar lazy loading a contenido below-the-fold. Mejoraria Performance de 67 a ~85+.",
+    "impacto": "Mejora de +18 puntos en Performance desktop, mejor posicionamiento en Google y reduccion de tasa de rebote del 15-20%."
+  },
+  "_score": 5.9,
+  "_nombre": "Carmen",
+  "_icp": "Performance",
+  "resumen": [
+    "alGenio es una agencia de marketing digital consolidada en Sevilla con mas de 15 anos de experiencia, certificacion Google Partner y clientes reconocidos como Pepe Jeans y South Summit. Su equipo, liderado por Carmen Fernandez Lara como CEO, se especializa en Google Ads, SEO y diseno web. Sin embargo, su propia web presenta incoherencias tecnicas: un LCP de 5.2s en desktop y un Speed Index de 5.1s penalizan activamente su posicionamiento.",
+    "El analisis revela una paradoja: alGenio consigue resultados extraordinarios para sus clientes (+850% en contactos cualificados, +300% en trafico organico) pero su escaparate digital obtiene solo 67 en Performance desktop y 77 en Best Practices. La web no aprovecha el potencial de social proof (9 de 10 clientes repiten mas de 4 anos) y los CTAs no estan optimizados.",
+    "<strong>Con ajustes tecnicos en LCP y Speed Index, reestructuracion de CTAs e integracion de datos cuantitativos de casos de exito, alGenio podria transformar su web en una maquina de captacion que refleje los resultados que consiguen para sus clientes.</strong>"
+  ]
+}

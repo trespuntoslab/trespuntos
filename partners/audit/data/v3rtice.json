@@ -3,28 +3,16 @@
   "web": "v3rtice.com",
   "lighthouse": {
     "desktop": {
-      "performance": 76,
+      "performance": 65,
       "accessibility": 80,
       "bestPractices": 69,
-      "seo": 92,
-      "fcp": "0.2 s",
-      "lcp": "1.3 s",
-      "tbt": "0 ms",
-      "cls": "0.397",
-      "speedIndex": "1.7 s",
-      "tti": "1.3 s"
+      "seo": 92
     },
     "mobile": {
-      "performance": 77,
+      "performance": 79,
       "accessibility": 85,
       "bestPractices": 73,
-      "seo": 92,
-      "fcp": "0.2 s",
-      "lcp": "1.7 s",
-      "tbt": "0 ms",
-      "cls": "0.616",
-      "speedIndex": "1.8 s",
-      "tti": "1.7 s"
+      "seo": 92
     }
   },
   "categorias": [

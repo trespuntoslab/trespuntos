@@ -312,27 +312,11 @@ if (!slug) {
 }
 
 function loadAuditData(id) {
-  // Strategy: 
-  // 1. Try n8n proxy (when Luca has it running)
-  // 2. Try static combined data.json (all agencies in one file)
-  // 3. Try individual static JSON /data/SLUG.json
-  // 4. Error
-
-  var proxyUrl = WEBHOOK_BASE ? WEBHOOK_BASE + '/audit-data?id=' + id : '';
-  var combinedUrl = 'data.json';
-  var individualUrl = 'data/' + id + '.json';
-
-  if (proxyUrl) {
-    fetch(proxyUrl).then(function(r){
-      if(!r.ok) throw new Error('proxy failed');
-      return r.json();
-    }).then(function(d){
-      if(d && d.agencia) renderAudit(d);
-      else tryCombinedJson(combinedUrl, id);
-    }).catch(function(){ tryCombinedJson(combinedUrl, id); });
-  } else {
-    tryCombinedJson(combinedUrl, id);
-  }
+  // Strategy:
+  // 1. Try individual static JSON /data/SLUG.json (fastest)
+  // 2. Try static combined data.json (fallback)
+  // 3. Error
+  tryIndividualJson(id);
 }
 
 function tryCombinedJson(url, id) {
@@ -520,8 +504,19 @@ var WEBHOOK_PATHS = {
   'declined': '/audit-dismiss'
 };
 
+// IPs excluidas del tracking (Jordi — no contaminar datos)
+var EXCLUDED_IPS = ['85.51.255.66'];
+var _visitorIP = null;
+(function(){
+  fetch('https://api.ipify.org?format=json')
+    .then(function(r){return r.json()})
+    .then(function(d){_visitorIP = d.ip})
+    .catch(function(){});
+})();
+
 function trackEvent(event, extra) {
   if (!WEBHOOK_BASE) { console.log('[Track]', event, slug); return; }
+  if (_visitorIP && EXCLUDED_IPS.indexOf(_visitorIP) !== -1) { console.log('[Track] IP excluida:', _visitorIP); return; }
   var path = WEBHOOK_PATHS[event] || '/audit-visit';
   var payload = {id: slug, ts: new Date().toISOString(), event: event};
   if (extra) { for (var k in extra) payload[k] = extra[k]; }

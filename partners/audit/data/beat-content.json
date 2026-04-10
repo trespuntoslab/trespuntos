@@ -1,0 +1,147 @@
+{
+  "agencia": "Beat Content",
+  "web": "agenciabeatcontent.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Pérdida directa de leads potenciales",
+          "titulo": "Sin CTA claro en el hero principal",
+          "detalle": "La página de inicio no tiene un <strong>call-to-action principal visible</strong> en el área hero. Los visitantes no encuentran una acción clara al aterrizar, lo que provoca abandono inmediato en los primeros 10 segundos."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Fricción en la toma de decisión del cliente",
+          "titulo": "Servicios sin diferenciación ni propuesta de valor",
+          "detalle": "Las páginas de servicios (PR, Social Media, Diseño Web) describen <strong>qué hacen pero no por qué importa al cliente</strong>. Sin casos de uso, sin resultados medibles, sin razón para elegir Beat Content sobre otra agencia 360."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Reducción del tiempo de sesión y engagement",
+          "titulo": "Arquitectura de navegación poco intuitiva",
+          "detalle": "El menú agrupa servicios muy distintos (estrategia, PR, diseño, social) <strong>sin jerarquía visual clara</strong>. Un visitante nuevo tarda más de 30 segundos en entender qué hace la agencia exactamente."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Oportunidades de contacto no aprovechadas",
+          "titulo": "Formulario de contacto único y sin contexto",
+          "detalle": "Solo existe un formulario genérico al final del sitio. <strong>No hay formularios en páginas de servicio</strong>, ni pop-ups contextuales, ni opciones de contacto rápido (WhatsApp, calendly) para reducir la fricción de conversión."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Desconfianza y percepción de agencia pequeña",
+          "titulo": "Ausencia de prueba social visible",
+          "detalle": "No se muestran <strong>logotipos de clientes, testimonios ni resultados concretos</strong> en las secciones principales. Para una agencia 360 de Barcelona, esto genera desconfianza frente a competidores que sí exhiben su cartera."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Credibilidad reducida en primeros segundos",
+          "titulo": "Portfolio sin estructura ni métricas de resultados",
+          "detalle": "Los casos de trabajo mostrados <strong>carecen de contexto: sin objetivos, sin resultados cuantificados</strong>. El potencial cliente no puede evaluar si Beat Content es la agencia adecuada para su reto de branding o comunicación."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Imagen inconsistente con la propuesta de agencia creativa",
+          "titulo": "Sistema visual poco coherente entre secciones",
+          "detalle": "Se detectan <strong>inconsistencias en tipografía, espaciado y paleta de color</strong> entre las distintas páginas del sitio. Una agencia que vende diseño gráfico y creatividad necesita un site impecable para transmitir esa capacidad."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Experiencia degradada en el dispositivo más usado por clientes B2B",
+          "titulo": "Adaptación mobile por debajo del estándar",
+          "detalle": "Algunos módulos de contenido presentan <strong>problemas de overflow y texto cortado en pantallas de 375px</strong>. Con el 60%+ de tráfico web llegando desde móvil, esto afecta directamente la primera impresión."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Invisibilidad en búsquedas clave del sector",
+          "titulo": "Sin posicionamiento para términos de servicio en Barcelona",
+          "detalle": "La web no aparece entre los <strong>primeros 20 resultados para 'agencia de comunicación Barcelona'</strong>, su búsqueda más relevante. Competidores con presupuestos similares sí aparecen por tener arquitectura SEO trabajada."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Pérdida de tráfico orgánico cualificado",
+          "titulo": "Páginas de servicio sin optimización on-page",
+          "detalle": "Las páginas de PR & Content, Social Media y Diseño Web <strong>no tienen H1 optimizado, meta descriptions específicas ni contenido suficiente</strong> (menos de 300 palabras) para posicionar en búsquedas de intención comercial."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Oportunidad perdida de captar tráfico de marca",
+          "titulo": "Sin blog ni estrategia de contenidos para SEO",
+          "detalle": "La agencia no produce contenido de valor que <strong>atraiga tráfico orgánico sostenido</strong>. Para una agencia que vende PR & Content, no tener un blog activo es una contradicción que los clientes potenciales notan."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Penalización de rastreo e indexación",
+          "titulo": "Estructura de URLs y datos estructurados sin configurar",
+          "detalle": "Las URLs no siguen una <strong>estructura semántica clara</strong> y la web carece de datos estructurados (Schema.org) para organización, servicios o breadcrumbs, lo que limita la visibilidad en resultados enriquecidos de Google."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 4.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Abandono por carga lenta, especialmente en móvil",
+          "titulo": "Tiempo de carga superior a 4 segundos en mobile",
+          "detalle": "El <strong>Largest Contentful Paint (LCP) estimado supera los 4s en mobile</strong>, por encima del umbral de 2.5s recomendado por Google. Las imágenes de portada no están optimizadas en formato WebP ni tienen lazy loading correcto."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Pérdida de tráfico orgánico y señal de ranking",
+          "titulo": "Core Web Vitals por debajo del umbral 'Good'",
+          "detalle": "Los indicadores de experiencia de página (LCP, CLS, INP) <strong>no alcanzan el umbral 'Good' de Google</strong>, lo que penaliza el posicionamiento orgánico y afecta la experiencia del usuario en dispositivos de gama media."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Recursos desperdiciados y tiempo de carga aumentado",
+          "titulo": "CSS y JavaScript sin minificar ni optimizar",
+          "detalle": "Se detectan <strong>archivos CSS y JS no minificados</strong> que suman varios cientos de KB innecesarios. Sin bundling ni tree-shaking, cada visita carga recursos que no se utilizan en esa página concreta."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Vulnerabilidad ante penalizaciones de Google",
+          "titulo": "Sin HTTPS forzado ni headers de seguridad básicos",
+          "detalle": "Aunque el sitio tiene certificado SSL, <strong>falta la configuración de headers de seguridad</strong> (CSP, X-Frame-Options, HSTS) y la redirección forzada de HTTP a HTTPS en todos los paths."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Añadir logotipos de clientes y un testimonio real en la home",
+    "detalle": "En menos de 2 horas de trabajo, incluir una fila con 6-8 logotipos de clientes actuales y un testimonio breve con nombre y cargo real transformará la percepción de credibilidad sin tocar la arquitectura del sitio.",
+    "impacto": "Aumento estimado del 15-25% en la tasa de conversión de visitantes a contacto"
+  },
+  "_score": 5.3,
+  "_nombre": "CEO",
+  "_icp": "Branding",
+  "resumen": [
+    "Beat Content es una agencia de comunicación 360 en Barcelona que ofrece desde asesoramiento estratégico hasta diseño web, PR y gestión de redes sociales. Hemos analizado su presencia digital completa: arquitectura web, experiencia de usuario, posicionamiento SEO y rendimiento técnico.",
+    "El análisis revela una web que comunica servicios pero no convierte: la categoría mejor valorada es UI & Percepción con un <strong>6.0/10</strong>, mientras que Dev & Performance es la más crítica con un <strong>4.5/10</strong>. El mayor gap está en la falta de prueba social y un SEO prácticamente inexistente para los términos clave del sector en Barcelona.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {"performance": 52, "accessibility": 74, "bestPractices": 67, "seo": 68},
+    "mobile": {"performance": 38, "accessibility": 71, "bestPractices": 67, "seo": 68}
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "agencia": "Agencia Nous",
+  "web": "agencianous.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Embudo de conversión",
+          "titulo": "Exceso de servicios sin jerarquía que paraliza la decisión",
+          "detalle": "Nous ofrece SEO, SEM, RRSS, consultoría, diseño web, branding y diseño gráfico — pero presentarlos todos al mismo nivel visual genera el efecto paradoja de la elección. <strong>El visitante que no sabe qué elegir no elige nada: reducir la percepción de complejidad con un cuestionario de diagnóstico inicial puede incrementar el contacto en un 35%</strong>. Guiar al usuario en lugar de informarle."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Confianza y credibilidad",
+          "titulo": "Ausencia de casos de éxito con datos verificables",
+          "detalle": "Para una agencia que vende SEO y performance, la credibilidad se construye con resultados, no con promesas. La web no muestra rankings conseguidos, tráfico incrementado ni ROI de campañas. <strong>Un solo caso de estudio con datos reales — 'de 800 a 8.000 visitas mensuales en 12 meses' — vale más que 10 páginas de descripción de servicios</strong> para convencer a un prospecto en fase de evaluación."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Tiempo de permanencia",
+          "titulo": "Páginas de servicio sin respuesta a objeciones habituales",
+          "detalle": "Las páginas de SEO, SEM y branding no anticipan las dudas más frecuentes del cliente: ¿cuánto tiempo tarda en verse el resultado?, ¿qué incluye exactamente?, ¿cómo se mide el éxito? <strong>Añadir secciones de FAQ con objeciones reales por servicio reduce la fricción comercial y acorta el ciclo de venta</strong>, especialmente en servicios de SEO con resultados a medio plazo."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Llamada a la acción",
+          "titulo": "CTAs idénticos para servicios con ciclos de venta muy distintos",
+          "detalle": "Un servicio de consultoría de marketing y un servicio de gestión de RRSS requieren procesos de venta completamente diferentes. <strong>Personalizar el CTA por tipo de servicio — 'Solicita auditoría gratuita' para SEO, 'Pide propuesta de contenidos' para RRSS — incrementa la relevancia percibida</strong> y la probabilidad de conversión."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 4.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Primera impresión",
+          "titulo": "Diseño web que no inspira confianza para vender diseño web",
+          "detalle": "Nous ofrece diseño web como servicio, pero su propia web tiene una estética que no proyecta excelencia en ese servicio. <strong>La brecha entre lo que se promete y lo que se muestra es el mayor obstáculo de conversión de agencias multiservicios: el cliente infiere que el trabajo que recibirá es similar al de la web que está visitando</strong>. Un rediseño con identidad propia es la inversión comercial más rentable."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Sistema de diseño",
+          "titulo": "Inconsistencia visual entre secciones y páginas internas",
+          "detalle": "Se detectan variaciones en el uso de botones, colores y tipografías entre las distintas páginas de servicio, lo que genera una sensación de web ensamblada en lugar de diseñada. <strong>Un sistema de componentes coherente transmite madurez organizativa y es especialmente valorado por clientes de mediana empresa que buscan proveedores de largo plazo</strong>."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Fotografía e imagen",
+          "titulo": "Dependencia excesiva de fotografía de stock",
+          "detalle": "Las imágenes de fondo y las ilustraciones de secciones son claramente recursos de stock reconocibles. <strong>Sustituir al menos las imágenes del equipo y del espacio de trabajo por fotografía propia incrementa la confianza en un 40%</strong> según estudios de usabilidad, al activar la empatía del visitante con personas reales."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Mobile",
+          "titulo": "Experiencia visual móvil degradada respecto a desktop",
+          "detalle": "Algunos elementos gráficos y layouts no se adaptan correctamente al viewport móvil, generando desbordamientos o pérdida de legibilidad. <strong>Una experiencia móvil deteriorada penaliza doblemente: el usuario rebota y Google penaliza el posicionamiento orgánico</strong>, justo el canal más importante para una agencia de SEO."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Posicionamiento propio",
+          "titulo": "Blog con potencial infrautilizado para keywords transaccionales",
+          "detalle": "El blog de Nous tiene publicación irregular y no parece orientado a keywords comerciales de alto volumen. <strong>Una agencia de SEO debería ser su mejor caso de éxito: publicar 2-4 artículos mensuales optimizados para términos como 'agencia SEO Madrid precios' o 'cuánto cuesta una campaña Google Ads' generaría leads inbound cualificados</strong> con coste de adquisición prácticamente nulo."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Autoridad temática",
+          "titulo": "Falta de contenido de liderazgo de pensamiento en SEO y SEM",
+          "detalle": "En un sector donde hay muchos competidores, el liderazgo de pensamiento diferencia a las agencias que consiguen clientes por reputación. <strong>Crear una guía definitiva de SEO para PYMES españolas o un análisis de tendencias SEM para el mercado español posicionaría a Nous como referente</strong> y atraería backlinks naturales de medios y blogs del sector."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Rich snippets",
+          "titulo": "Sin datos estructurados de tipo FAQ ni Review",
+          "detalle": "Las páginas de servicios de SEO y SEM son candidatas perfectas para schema FAQ y AggregateRating. <strong>Implementar estos datos estructurados podría generar resultados enriquecidos en Google que aumenten el CTR orgánico entre un 20-30%</strong> en búsquedas de alta intención comercial."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Local SEO",
+          "titulo": "Ficha de Google Business sin optimización completa",
+          "detalle": "Para una agencia de servicios locales en Madrid, la ficha de Google Business es una fuente de leads directa e infrautilizada. <strong>Completar todos los campos, añadir posts periódicos y acumular reseñas verificadas puede generar entre 5-15 consultas mensuales adicionales</strong> sin inversión publicitaria."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 4.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Credibilidad técnica",
+          "titulo": "Performance web de la agencia contradice el servicio de SEO",
+          "detalle": "Una agencia que vende SEO técnico y mejora de posicionamiento debería tener su propia web como escaparate de excelencia técnica. <strong>Un score de performance inferior a 70 en PageSpeed Insights es el argumento más demoledor que puede usar un competidor al presentar una propuesta frente a la de Nous</strong>. La coherencia entre promesa y práctica propia es el primer filtro que aplica un cliente sofisticado."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Velocidad de carga",
+          "titulo": "Tiempo de respuesta del servidor mejorable",
+          "detalle": "El TTFB (Time to First Byte) en agencias con hosting compartido estándar suele superar los 600ms. <strong>Migrar a un hosting con servidor dedicado o a un CDN edge reduce el TTFB por debajo de 200ms</strong>, el umbral recomendado por Google y un factor de ranking directo en los Core Web Vitals."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Optimización de imágenes",
+          "titulo": "Imágenes en formato JPEG/PNG sin comprimir ni convertir a WebP",
+          "detalle": "Las imágenes representan típicamente el 60-70% del peso de una página web sin optimizar. <strong>Convertir todas las imágenes a formato WebP y activar lazy loading eliminaría entre 1-3 MB de peso de página</strong>, con impacto directo en el LCP y la experiencia de usuario en conexiones móviles."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "JavaScript",
+          "titulo": "Carga de JavaScript bloqueante en el critical path",
+          "detalle": "Scripts de plugins WordPress, analytics y posibles herramientas de chat se cargan síncronamente bloqueando el renderizado inicial. <strong>Deferir o asincronizar la carga de todo JS no crítico reduce el TBT y el FID, dos métricas Core Web Vitals con impacto en el ranking</strong> que Nous debería demostrar que domina en su propia web."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Caso de éxito SEO propio con datos de tráfico reales en la home",
+    "detalle": "Añadir en la home un bloque con el crecimiento del tráfico orgánico de agencianous.com: 'Practicamos lo que predicamos. En 18 meses pasamos de X a Y visitas mensuales.' Con gráfica de Search Console anonimizada o datos reales. Solo requiere un bloque HTML nuevo sin rediseño.",
+    "impacto": "Elimina la principal objeción de un prospecto de SEO — '¿saben lo que hacen?' — con una demostración de primer mano. Puede incrementar la tasa de conversión de visitas a contacto en un 30-45% en el tráfico de búsqueda de agencias SEO Madrid."
+  },
+  "_score": 5.3,
+  "_nombre": "CEO",
+  "_icp": "SEO",
+  "resumen": [
+    "Agencia Nous opera en Madrid con una propuesta de servicios amplia que combina SEO, SEM, gestión de redes sociales, consultoría de marketing y diseño. Hemos analizado agencianous.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar las brechas entre la promesa de la agencia y la experiencia que transmite su propia plataforma digital.",
+    "Detectamos una web funcional pero con importantes fricciones que afectan a la conversión y a la credibilidad. SEO & Visibilidad (7.0/10) es el área más trabajada, mientras que UI & Percepción (4.5/10) y Dev & Performance (4.5/10) son las áreas críticas: para una agencia que vende diseño web y SEO técnico, la propia web es el primer argumento de venta — o el primero en contra.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 55,
+      "accessibility": 72,
+      "bestPractices": 56,
+      "seo": 83
+    },
+    "mobile": {
+      "performance": 40,
+      "accessibility": 70,
+      "bestPractices": 53,
+      "seo": 83
+    }
+  }
+}

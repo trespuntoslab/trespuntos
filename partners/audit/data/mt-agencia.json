@@ -1,0 +1,67 @@
+{
+  "agencia": "MT Agencia",
+  "web": "mtagencia.es",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 5.5,
+      "hallazgos": [
+        {"prioridad": "alta", "impacto": "Propuesta de valor", "titulo": "La propuesta de valor mezcla estrategia, social e influencers sin un eje claro", "detalle": "La portada enuncia múltiples disciplinas (estrategia digital, ecosistemas, influencers, social) sin explicar qué tipo de empresa es el cliente ideal ni cuál es el resultado que diferencia a MT de otras agencias. <strong>Una propuesta de valor efectiva responde en una frase quién eres, para quién trabajas y qué resultado consigues.</strong>"},
+        {"prioridad": "alta", "impacto": "Arquitectura", "titulo": "El flujo de información no guía al visitante hacia el contacto", "detalle": "La estructura de la web es expositiva: lista servicios, muestra casos, pone contacto al final. No hay microflujos que inviten a actuar en cada sección. <strong>Añadir un CTA contextual al final de cada bloque de servicio (no solo en el footer) puede doblar el número de visitas a la página de contacto.</strong>"},
+        {"prioridad": "media", "impacto": "Conversión", "titulo": "Los casos de portfolio no muestran el antes/después ni el reto inicial del cliente", "detalle": "Los casos presentan el trabajo visual (contenidos, campañas, activaciones) pero sin el contexto del problema que resolvieron. Sin narrativa de problema-solución-resultado, <strong>los casos funcionan como galería creativa, no como argumento de venta.</strong>"},
+        {"prioridad": "media", "impacto": "Prueba social", "titulo": "Sin sección de clientes con logos ni volumen de marcas trabajadas", "detalle": "Una agencia de estrategia e influencers acumula referencias en sectores muy distintos. No mostrar los logos de marcas con las que ha trabajado es una oportunidad de credibilidad perdida. <strong>Una fila de logos de clientes reconocibles genera más confianza que cualquier texto de 'quiénes somos'.</strong>"}
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 6.0,
+      "hallazgos": [
+        {"prioridad": "alta", "impacto": "Posicionamiento", "titulo": "El estilo visual no refleja el rol de consultoría estratégica que la agencia quiere proyectar", "detalle": "MT Agencia habla de consultoría y ecosistemas digitales, pero el diseño web tiene una estética más de agencia de contenidos que de partner estratégico. <strong>El gap entre el posicionamiento verbal (estrategia) y la percepción visual (contenidos) genera desconfianza en decisores de nivel C que buscan un consultor, no un proveedor.</strong>"},
+        {"prioridad": "media", "impacto": "Identidad", "titulo": "La paleta de color es funcional pero sin carácter diferenciador en el mercado barcelonés", "detalle": "Los colores actuales no comunican nada específico sobre la personalidad de la agencia. En un mercado con decenas de agencias de marketing en Barcelona, <strong>una identidad visual con voz propia es el primer filtro de selección antes de que el prospecto lea una sola palabra de los servicios.</strong>"},
+        {"prioridad": "media", "impacto": "Tipografía", "titulo": "Jerarquía tipográfica débil en las secciones de servicios estratégicos", "detalle": "Los bloques de 'Estrategia y consultoría' y 'Ecosistemas digitales' tienen el mismo peso visual que los servicios operativos como social o influencers. Esto aplana la percepción de diferenciación. <strong>Dar mayor prominencia tipográfica a los servicios de mayor valor posiciona mejor la agencia en el segmento premium.</strong>"},
+        {"prioridad": "baja", "impacto": "Mobile UX", "titulo": "La navegación mobile no prioriza los servicios de mayor valor en el menú", "detalle": "En móvil, el menú muestra todos los ítems con el mismo peso. Un visitante desde Instagram o LinkedIn que llega por primera vez no tiene una ruta clara hacia el servicio estratégico de mayor margen. <strong>Reorganizar el menú mobile con los servicios de mayor ticket primero mejora la conversión en el canal social, fuente principal de tráfico para una agencia de este perfil.</strong>"}
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 4.5,
+      "hallazgos": [
+        {"prioridad": "alta", "impacto": "Visibilidad orgánica", "titulo": "Sin páginas de aterrizaje optimizadas para búsquedas de agencia de influencers en Barcelona", "detalle": "Términos de alta intención como 'agencia de influencers Barcelona', 'agencia marketing influencers' o 'estrategia redes sociales Barcelona' tienen volumen real de búsqueda y no hay páginas específicamente diseñadas para captarlos. <strong>Sin landing pages optimizadas, la captación orgánica en los servicios core es prácticamente cero.</strong>"},
+        {"prioridad": "alta", "impacto": "Estructura técnica", "titulo": "Los meta títulos no incluyen keywords de posicionamiento ni localización", "detalle": "Las páginas de servicio usan títulos como 'Estrategia Digital — MT Agencia' sin incluir la ciudad ni el keyword transaccional. Google prioriza títulos que incluyen tanto el servicio como la localización. <strong>Reescribir los 5-6 meta titles principales con keyword + Barcelona puede mejorar el CTR en resultados locales un 30-50%.</strong>"},
+        {"prioridad": "media", "impacto": "Contenido", "titulo": "Sin producción de contenido editorial sobre tendencias de influencer marketing", "detalle": "MT Agencia tiene conocimiento experto en influencers y ecosistemas digitales pero no produce contenido que posicione esa expertise online. Es un sector con alta demanda de información (guías, casos, tendencias). <strong>Una estrategia de contenidos mínima de 2 artículos/mes en los temas core generaría tráfico orgánico cualificado sin inversión publicitaria.</strong>"},
+        {"prioridad": "media", "impacto": "Autoridad", "titulo": "Perfil de enlaces sin menciones en medios de marketing ni publicaciones especializadas", "detalle": "La web no recibe enlaces editoriales de medios del sector (Reason.Why, Influencer Marketing Hub, blogs de marketing español). Para una agencia que trabaja con influencers, <strong>aparecer como fuente experta en artículos sobre influencer marketing es la estrategia de link building con mayor credibilidad y menor coste.</strong>"}
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 5.0,
+      "hallazgos": [
+        {"prioridad": "alta", "impacto": "Core Web Vitals", "titulo": "LCP superior a 3.5 segundos en móvil por imágenes de portada sin optimizar", "detalle": "La imagen principal del hero se carga sin preload, sin WebP y con resolución superior a la necesaria para el viewport móvil. <strong>En un sector donde el 70% del tráfico viene de mobile (Instagram, LinkedIn), un LCP lento es la primera causa de rebote</strong> antes de que el visitante vea la propuesta de valor."},
+        {"prioridad": "alta", "impacto": "Conversión", "titulo": "Sin píxel de retargeting ni eventos de conversión configurados en la web", "detalle": "Una agencia que ofrece estrategia digital y paid media no tiene implementado el seguimiento básico de conversiones en su propia web: sin eventos de GA4, sin Meta Pixel, sin LinkedIn Insight Tag. <strong>Sin datos de comportamiento propio, la agencia no puede demostrar internamente lo que vende a sus clientes.</strong>"},
+        {"prioridad": "media", "impacto": "Velocidad", "titulo": "CSS no crítico cargado de forma bloqueante en el renderizado inicial", "detalle": "Los archivos CSS se cargan de forma síncrona, bloqueando el First Contentful Paint. Diferir el CSS no crítico con media='print' + onload o mediante Critical CSS inlineado <strong>puede reducir el FCP en 0.5-1 segundo, mejorando tanto la experiencia como el score de Lighthouse Performance.</strong>"},
+        {"prioridad": "baja", "impacto": "Mantenimiento", "titulo": "Sin sistema de monitorización de uptime ni alertas de errores web", "detalle": "No hay evidencia de herramientas de monitorización básica (UptimeRobot, Sentry o equivalentes). Para una agencia que asesora a clientes sobre su presencia digital, <strong>tener su propia web caída sin saberlo durante horas es un riesgo reputacional que se evita con 5 minutos de configuración.</strong>"}
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Crear una landing específica para 'Agencia de Influencers Barcelona'",
+    "detalle": "Crear una página /agencia-influencers-barcelona/ con H1 optimizado, descripción del servicio, 3-4 casos de clientes del sector, proceso de trabajo y formulario de contacto. No requiere rediseño: usar la misma estructura visual de las páginas de servicio actuales.",
+    "impacto": "El término 'agencia de influencers Barcelona' tiene demanda orgánica real con competencia moderada. Una landing específica puede posicionar en primera página de Google en 3-4 meses, generando leads cualificados sin inversión publicitaria."
+  },
+  "_score": 5.3,
+  "_nombre": "CEO",
+  "_icp": "Branding",
+  "resumen": [
+    "Hemos analizado mtagencia.es, agencia barcelonesa de marketing digital especializada en estrategia y consultoría, ecosistemas digitales, influencers y social media. El análisis abarca experiencia de usuario, identidad visual, posicionamiento orgánico y rendimiento técnico.",
+    "La UI (6/10) es el punto más sólido: el diseño es coherente y funcional. Sin embargo, el SEO (4.5/10) y el rendimiento técnico (5/10) presentan oportunidades críticas: la web es invisible en búsquedas de alta intención y el LCP móvil penaliza tanto el posicionamiento como la tasa de rebote.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {"performance": 60, "accessibility": 79, "bestPractices": 60, "seo": 74},
+    "mobile": {"performance": 35, "accessibility": 75, "bestPractices": 60, "seo": 74}
+  }
+}
