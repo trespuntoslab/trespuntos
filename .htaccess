@@ -1,6 +1,6 @@
 # ============================================================
 # TRES PUNTOS — Apache Configuration
-# Deploy on Hostinger shared hosting
+# Deploy on Nominalia shared hosting (www.trespuntoscomunicacion.es)
 # ============================================================
 
 # ── Force HTTPS + www (single redirect) ─────────────────────
@@ -12,7 +12,13 @@
     RewriteCond %{HTTP_HOST} !\.trespuntos-lab\.com$ [NC]
 
     # HTTP + no-www → https://www in 1 hop
-    RewriteCond %{HTTPS} off [OR]
+    # Check both %{HTTPS} and X-Forwarded-Proto (Nominalia nginx terminates SSL)
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+    RewriteRule ^(.*)$ https://www.trespuntoscomunicacion.es/$1 [L,R=301]
+
+    # no-www → www (separate rule, only hostname check)
+    RewriteCond %{HTTP_HOST} !\.trespuntos-lab\.com$ [NC]
     RewriteCond %{HTTP_HOST} !^www\. [NC]
     RewriteRule ^(.*)$ https://www.trespuntoscomunicacion.es/$1 [L,R=301]
 </IfModule>
@@ -62,6 +68,8 @@
     RewriteRule ^quienes-somos/?$ /nosotros/ [R=301,L]
     RewriteRule ^metodologia/?$ /arquitectura-digital-conversion/ [R=301,L]
     RewriteRule ^casos-exito/?$ /casos-de-negocio/ [R=301,L]
+    RewriteRule ^casos/?$ /casos-de-negocio/ [R=301,L]
+    RewriteRule ^casos-de-exito/?$ /casos-de-negocio/ [R=301,L]
 
     # Portfolio → Casos de negocio (individual + hub)
     RewriteRule ^portfolio/(.+)/?$ /casos-de-negocio/$1/ [R=301,L]

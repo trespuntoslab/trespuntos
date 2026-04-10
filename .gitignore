@@ -33,3 +33,6 @@ Thumbs.db
 
 # Backups
 *.bak
+*.zip
+*.backup
+js/*.backup
