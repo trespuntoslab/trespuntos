@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <meta name="robots" content="noindex,nofollow"/>
 <title id="pageTitle">Análisis de arquitectura digital — Tres Puntos</title>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ERX855WTHN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-ERX855WTHN");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
@@ -491,6 +494,8 @@ function switchTab(id, el) {
   if(el) el.classList.add('active');
   var panel = document.getElementById('tab-' + id);
   if(panel) panel.classList.add('on');
+  if (_tabsViewed.indexOf(id) === -1) _tabsViewed.push(id);
+  trackEvent('tab_view', {tab: id});
 }
 
 // Calendly
@@ -511,7 +516,7 @@ function openWA() {
 var WEBHOOK_PATHS = {
   'page_view': '/audit-visit',
   'calendly_open': '/audit-calendly',
-  'whatsapp_open': '/audit-visit',
+  'whatsapp_open': '/audit-whatsapp',
   'declined': '/audit-dismiss'
 };
 
@@ -526,6 +531,35 @@ function trackEvent(event, extra) {
     body: JSON.stringify(payload)
   }).catch(function(){});
 }
+
+
+// ENGAGEMENT TRACKING - time on page, scroll depth, tabs
+var _pageStart = Date.now();
+var _maxScroll = 0;
+var _tabsViewed = [];
+
+window.addEventListener('scroll', function() {
+  var scrollPct = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+  if (scrollPct > _maxScroll) _maxScroll = scrollPct;
+}, {passive: true});
+
+function sendEngagement() {
+  if (!WEBHOOK_BASE || !slug) return;
+  var duration = Math.round((Date.now() - _pageStart) / 1000);
+  if (duration < 2) return;
+  var payload = {
+    id: slug, ts: new Date().toISOString(), event: 'engagement',
+    duration_seconds: duration, scroll_depth: _maxScroll,
+    tabs_viewed: _tabsViewed.length, tabs_list: _tabsViewed.join(',')
+  };
+  if (navigator.sendBeacon) {
+    navigator.sendBeacon(WEBHOOK_BASE + '/audit-engagement', new Blob([JSON.stringify(payload)], {type: 'application/json'}));
+  } else {
+    fetch(WEBHOOK_BASE + '/audit-engagement', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload), keepalive: true}).catch(function(){});
+  }
+}
+document.addEventListener('visibilitychange', function() { if (document.visibilityState === 'hidden') sendEngagement(); });
+window.addEventListener('beforeunload', sendEngagement);
 
 // Decline
 function showDec() {
