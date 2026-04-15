@@ -104,10 +104,27 @@
     }
   }
 
+  // ── form_start: dispara la primera vez que el usuario interactúa con el form ──
+  var formStarted = false;
+  function fireFormStart() {
+    if (formStarted) return;
+    formStarted = true;
+    try {
+      if (window.tpTrack) {
+        window.tpTrack('form_start', {
+          form_type: 'cta',
+          pagina_origen: window.location.pathname
+        });
+      }
+    } catch (e) { /* fail-safe */ }
+  }
+
   // ── Real-time validation on input ──
   ['nombre', 'email', 'tel'].forEach(function (key) {
     if (!fields[key].el) return;
+    fields[key].el.addEventListener('focus', fireFormStart, { once: true });
     fields[key].el.addEventListener('input', function () {
+      fireFormStart();
       if (userTriedSubmit) {
         var msg = validators[key]();
         showError(key, msg);

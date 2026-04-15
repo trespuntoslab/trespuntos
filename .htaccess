@@ -59,7 +59,6 @@
     RewriteRule ^consultoria-digital-barcelona/?$ /servicios/consultoria-digital-barcelona/ [R=301,L]
     RewriteRule ^consultoria-digital/?$ /servicios/consultoria-digital-barcelona/ [R=301,L]
     RewriteRule ^design-engineer-barcelona/?$ /servicios/design-engineer-barcelona/ [R=301,L]
-    RewriteRule ^servicios/?$ /servicios/ [R=301,L]
 
     # Old pages
     RewriteRule ^hablamos/?$ /contacto/ [R=301,L]
@@ -79,17 +78,52 @@
     RewriteRule ^servicio/consultoria-digital/?$ /servicios/consultoria-digital-barcelona/ [R=301,L]
     RewriteRule ^servicio/design-engineer-barcelona/?$ /servicios/design-engineer-barcelona/ [R=301,L]
     RewriteRule ^servicio/ia-generativa/?$ /servicios/ia-generativa-empresas/ [R=301,L]
+    RewriteRule ^servicio/web-a-medida-barcelona/?$ /servicios/desarrollo-web-a-medida-barcelona/ [R=301,L]
+    RewriteRule ^servicio/web-corporativa-barcelona/?$ /servicios/web-corporativa-barcelona/ [R=301,L]
 
     # Blog posts: old root URLs → /blog/ prefix
     RewriteRule ^tips-ux-ui/?$ /blog/ [R=301,L]
     RewriteRule ^tips-ux-ui/(.+)/?$ /blog/$1/ [R=301,L]
 
-    # Blog posts con trafico (URLs raiz antiguas de WordPress)
-    RewriteRule ^scope-canvas-el-punto-de-partida-de-lean-ux/?$ /blog/scope-canvas-el-punto-de-partida-de-lean-ux/ [R=301,L]
-    RewriteRule ^metodologias-para-el-diseno-de-productos-digitales/?$ /blog/metodologias-para-el-diseno-de-productos-digitales/ [R=301,L]
-    RewriteRule ^tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/?$ /blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/ [R=301,L]
+    # Blog posts: ALL root-level WP slugs → /blog/{slug}/ (GSC 404 fix 2026-04-12)
+    RewriteRule ^10-cambios-estructurales-en-ux-que-redefinen-el-diseno-digital-en-2026/?$ /blog/10-cambios-estructurales-en-ux-que-redefinen-el-diseno-digital-en-2026/ [R=301,L]
+    RewriteRule ^actualizacion-web-la-importancia-de-mantener-tu-sitio-al-dia/?$ /blog/actualizacion-web-la-importancia-de-mantener-tu-sitio-al-dia/ [R=301,L]
+    RewriteRule ^agencia-ux-ui-en-barcelona-claves-para-un-diseno-ganador/?$ /blog/agencia-ux-ui-en-barcelona-claves-para-un-diseno-ganador/ [R=301,L]
+    RewriteRule ^agencia-ux-ui-en-barcelona-claves-para-un-diseno-ganador-2/?$ /blog/agencia-ux-ui-en-barcelona-claves-para-un-diseno-ganador-2/ [R=301,L]
+    RewriteRule ^agencia-ux-ui-en-barcelona-ia-al-rescate-de-tu-diseno/?$ /blog/agencia-ux-ui-en-barcelona-ia-al-rescate-de-tu-diseno/ [R=301,L]
+    RewriteRule ^arquitectura-frontend-2026-escalabilidad-b2b-y-cero-deuda-tecnica/?$ /blog/arquitectura-frontend-2026-escalabilidad-b2b-y-cero-deuda-tecnica/ [R=301,L]
+    RewriteRule ^atomic-design-ultima-tendencia-en-diseno-web/?$ /blog/atomic-design-ultima-tendencia-en-diseno-web/ [R=301,L]
+    RewriteRule ^beneficios-de-la-arquitectura-de-informacion-en-el-diseno-web/?$ /blog/beneficios-de-la-arquitectura-de-informacion-en-el-diseno-web/ [R=301,L]
+    RewriteRule ^blog-diseno-web-elaborado-con-amor/?$ /blog/blog-diseno-web-elaborado-con-amor/ [R=301,L]
+    RewriteRule ^como-la-inteligencia-artificial-esta-cambiando-los-comportamientos-de-busqueda-online/?$ /blog/como-la-inteligencia-artificial-esta-cambiando-los-comportamientos-de-busqueda-online/ [R=301,L]
+    RewriteRule ^como-mejorar-la-experiencia-de-usuario-en-e-commerce-mediante-diseno-ux-ui-eficaz/?$ /blog/como-mejorar-la-experiencia-de-usuario-en-e-commerce-mediante-diseno-ux-ui-eficaz/ [R=301,L]
+    RewriteRule ^como-mejorar-la-velocidad-de-carga-de-tu-sitio-web/?$ /blog/como-mejorar-la-velocidad-de-carga-de-tu-sitio-web/ [R=301,L]
+    RewriteRule ^desarrollo-de-tiendas-optimizando-la-experiencia-de-usuario-en-e-commerce/?$ /blog/desarrollo-de-tiendas-optimizando-la-experiencia-de-usuario-en-e-commerce/ [R=301,L]
+    RewriteRule ^diseno-web-en-barcelona-como-elegir-tu-agencia/?$ /blog/diseno-web-en-barcelona-como-elegir-tu-agencia/ [R=301,L]
+    RewriteRule ^el-efecto-einstellung/?$ /blog/el-efecto-einstellung/ [R=301,L]
+    RewriteRule ^errores-comunes-en-el-diseno-de-e-commerce-y-como-evitarlos/?$ /blog/errores-comunes-en-el-diseno-de-e-commerce-y-como-evitarlos/ [R=301,L]
+    RewriteRule ^errores-comunes-en-iconos-y-como-optimizarlos-para-tu-web/?$ /blog/errores-comunes-en-iconos-y-como-optimizarlos-para-tu-web/ [R=301,L]
     RewriteRule ^experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web/?$ /blog/experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web/ [R=301,L]
+    RewriteRule ^figma-make-da-vida-a-tus-prototipos-con-magia-y-ux-ui/?$ /blog/figma-make-da-vida-a-tus-prototipos-con-magia-y-ux-ui/ [R=301,L]
+    RewriteRule ^figma-make-y-la-nueva-era-ai-en-tu-agencia-ux-ui/?$ /blog/figma-make-y-la-nueva-era-ai-en-tu-agencia-ux-ui/ [R=301,L]
+    RewriteRule ^google-labs-stitch-desata-tu-creatividad-ux-ui/?$ /blog/google-labs-stitch-desata-tu-creatividad-ux-ui/ [R=301,L]
+    RewriteRule ^guia-para-crear-un-menu-de-navegacion-intuitivo-en-tu-sitio-web/?$ /blog/guia-para-crear-un-menu-de-navegacion-intuitivo-en-tu-sitio-web/ [R=301,L]
+    RewriteRule ^inteligencia-artificial-y-ux-ui-guia-completa/?$ /blog/inteligencia-artificial-y-ux-ui-guia-completa/ [R=301,L]
+    RewriteRule ^la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas/?$ /blog/la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas/ [R=301,L]
+    RewriteRule ^la-experiencia-de-usuario-y-el-diseno-de-interfaz-en-tu-pagina-web/?$ /blog/la-experiencia-de-usuario-y-el-diseno-de-interfaz-en-tu-pagina-web/ [R=301,L]
+    RewriteRule ^la-importancia-de-tener-un-sitio-web-optimizado/?$ /blog/la-importancia-de-tener-un-sitio-web-optimizado/ [R=301,L]
+    RewriteRule ^las-estadisticas-de-diseno-web-que-evidencian-fallos-estructurales-en-ux-corporativa/?$ /blog/las-estadisticas-de-diseno-web-que-evidencian-fallos-estructurales-en-ux-corporativa/ [R=301,L]
+    RewriteRule ^las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario/?$ /blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario/ [R=301,L]
+    RewriteRule ^mejores-practicas-desarrollo-web-live-coding-mejores-practicas-en-desarrollo-web-2026/?$ /blog/mejores-practicas-desarrollo-web-live-coding-mejores-practicas-en-desarrollo-web-2026/ [R=301,L]
+    RewriteRule ^metodologias-para-el-diseno-de-productos-digitales/?$ /blog/metodologias-para-el-diseno-de-productos-digitales/ [R=301,L]
+    RewriteRule ^proceso-para-un-buen-diseno-web-a-medida/?$ /blog/proceso-para-un-buen-diseno-web-a-medida/ [R=301,L]
+    RewriteRule ^scope-canvas-el-punto-de-partida-de-lean-ux/?$ /blog/scope-canvas-el-punto-de-partida-de-lean-ux/ [R=301,L]
+    RewriteRule ^tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica/?$ /blog/tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica/ [R=301,L]
+    RewriteRule ^tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/?$ /blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/ [R=301,L]
+    RewriteRule ^tendencias-ux-ui-2026-la-consolidacion-del-diseno-predictivo-y-la-eficiencia-tecnica/?$ /blog/tendencias-ux-ui-2026-la-consolidacion-del-diseno-predictivo-y-la-eficiencia-tecnica/ [R=301,L]
     RewriteRule ^tests-de-usuarios-de-guerrilla/?$ /blog/tests-de-usuarios-de-guerrilla/ [R=301,L]
+    RewriteRule ^unir-el-pensamiento-lean-startup-con-diseno-lean-design/?$ /blog/unir-el-pensamiento-lean-startup-con-diseno-lean-design/ [R=301,L]
+    RewriteRule ^wcag-2-2-que-cambia-y-como-aplicarlo-en-tu-diseno-web-en-barcelona/?$ /blog/wcag-2-2-que-cambia-y-como-aplicarlo-en-tu-diseno-web-en-barcelona/ [R=301,L]
     # Slugs planificados que nunca existieron — redirigir al hub del blog
     RewriteRule ^que-es-diseno-ux/?$ /blog/ [R=301,L]
     RewriteRule ^ux-en-ecommerce/?$ /blog/ [R=301,L]
@@ -138,9 +172,23 @@
     # --- Bergedorfer (contenido huérfano WordPress) ---
     RewriteRule ^bergedorfer-(.*)$ /blog/ [R=301,L]
 
+    # --- WordPress index.php ---
+    RewriteRule ^index\.php$ / [R=301,L]
+
+    # --- tipsuxui (sin guión, variante antigua) ---
+    RewriteRule ^tipsuxui/?$ /blog/ [R=301,L]
+    RewriteRule ^tipsuxui/(.+)/?$ /blog/ [R=301,L]
+    RewriteRule ^tipsux-ui/?$ /blog/ [R=301,L]
+
+    # --- Lleure (sección antigua) ---
+    RewriteRule ^lleure(/.*)?$ / [R=301,L]
+
     # --- WordPress feeds ---
     RewriteRule ^feed(/.*)?$ /blog/ [R=301,L]
     RewriteRule ^comments/feed(/.*)?$ /blog/ [R=301,L]
+
+    # --- Blog post feeds (post-level /feed/) ---
+    RewriteRule ^(.+)/feed/?$ /blog/$1/ [R=301,L]
 </IfModule>
 
 # ── Security Headers ─────────────────────────────────────────

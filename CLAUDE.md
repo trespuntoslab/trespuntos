@@ -293,6 +293,67 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
 - **`.htaccess` — loop en /servicios/**: Línea `RewriteRule ^servicios/?$ /servicios/ [R=301,L]` crea un no-op loop 301 entre http/https. **PREEXISTENTE** (no introducido hoy). `curl` a https://www.trespuntoscomunicacion.es/servicios/ hace timeout. Pendiente de decisión de Jordi
 - **`politica-cookies/index.html`**: Sigue cargando el script `CookieDeclaration` de Cookiebot (es la tabla legal automática, no el banner). Aceptable mientras no haya alternativa — o reemplazar por tabla estática manual
 
+### Cambios aplicados (2026-04-16) — Tracking GA4 (Paso 1 estrategia analytics)
+
+#### Decisión arquitectónica
+- **Ubicación dashboard**: el dashboard de control central es `https://dash.trespuntos-lab.com/dashboard.html` (vanilla JS + Supabase auth + tabs Equipo/Captación/Keywords/Leads/Reuniones/Finanzas/Sistema). NO se usa Looker Studio externo. La estrategia analytics añade una pestaña "Web" en este dashboard, alimentada por una tabla `web_metrics` en Supabase que un workflow n8n actualiza desde GA4 Data API + GSC + Airtable + logs de bots IA
+- **Stack final**: GA4 + Search Console + Microsoft Clarity (pendiente) + tabla Supabase + workflow n8n. Sin Plausible, sin PostHog, sin Looker Studio
+
+#### Helpers globales (assets/cookieconsent/cookieconsent-init.js)
+Tres funciones añadidas al inicio del IIFE, disponibles en las 89 páginas:
+- **`window.tpTrack(eventName, params)`**: dispara `gtag('event', ...)` con fail-safe try/catch. Consent Mode v2 lo bloquea automáticamente si analytics_storage está denied
+- **`window.tpClientId()`**: devuelve el client_id de GA4 (cookie `_ga`) o un fallback persistente en localStorage `tp_client_id`. Permite correlacionar leads en Airtable/Supabase con sesiones GA4 vía Measurement Protocol (Paso 2)
+- **`window.tpPresupuestoToValue(p)`**: mapea labels de presupuesto a valor EUR estimado (mas-50000→50000, 25000-50000→37500, mas-20k→25000, 15k-20k/15000-25000→17500, 10k-15k→12500, 5k-10k→7500, default→3000)
+
+#### 13 eventos GA4 implementados
+
+**Formularios** (`js/supabase-forms.js` — 4 handlers + ga_client_id en payload n8n):
+- `generate_lead` × 4 form_type: `cta`, `caso`, `email`, `briefing`. Params: lead_score, lead_quality, value (EUR), currency, servicio, pagina_origen, presupuesto/timeline/tipo_proyecto en briefing
+- Todos los handlers ahora envían `ga_client_id` al webhook n8n para Measurement Protocol futuro
+
+**Validación** (`js/form-validation.js`):
+- `form_start` al primer focus o input en cualquier campo del form CTA. Se dispara una sola vez con flag `formStarted`. Params: form_type, pagina_origen
+
+**Widget Jordan v6** (`assets/jordan/jordan-widget-v6.js` — 8 eventos via método helper `_track()`):
+- `jordan_open` — solo en modo flotante (filtrado por `!this._isEmbedded`). Params: messages_count
+- `jordan_close` — solo flotante. Params: messages_count, user_messages_count, duration_seconds, lead_captured
+- `jordan_first_message` — primer mensaje del usuario (señal real de engagement, vale flotante y embed). Params: message_length, via
+- `jordan_email_captured` — primera vez que `_extractData` captura email. Params: is_corporate, messages_at_capture
+- `jordan_phone_captured` — primera vez que `_extractData` captura teléfono. Params: messages_at_capture
+- `jordan_calendly_shown` — al renderizar quick replies con slots reales. Params: slots_count, source, has_email, has_phone
+- `jordan_calendly_click` — click en slot Calendly (conversión clave). Params: slot_label, messages_count, has_email, has_phone
+- `jordan_lead_captured` — tras `_leadSent = true` en `_sendLeadWebhook`. Params: has_email, has_phone, has_name, tipo_proyecto, presupuesto, rol, user_messages_count, duration_seconds
+- Payload del widget al webhook n8n ahora incluye `ga_client_id`
+
+**Todos los eventos Jordan incluyen automáticamente** (vía `_track()`): session_id, pagina_origen, embed_mode
+
+**Privacidad**: ningún evento envía PII (nunca email/teléfono/nombre como param, solo flags booleanos `has_email`/`has_phone`/`has_name`)
+
+#### Migración v5 → v6 del widget Jordan
+- `assets/jordan/jordan-widget-v5.js` borrado
+- `assets/jordan/jordan-widget-v6.js` nuevo (instrumentado)
+- 42 HTMLs actualizados con `<script async src="/assets/jordan/jordan-widget-v6.js">` (script batch sed)
+- Cache-bust automático: usuarios con v5 cacheada cargan v6 inmediatamente al volver a visitar
+
+#### Conversiones a marcar manualmente en GA4 admin (pendiente para Jordi)
+1. `generate_lead` — todos los form submits (cualquier form_type)
+2. `jordan_lead_captured` — leads del chat IA con datos de contacto
+3. `jordan_calendly_click` — la conversión "premium" (intent de reunión)
+
+#### QA local realizado (preview server)
+- Helpers cargados en 100% de páginas (verificado en `/` y `/contacto/`)
+- `tpClientId()` genera client_id válido formato GA4 (ej: `1833890661.1773422535`)
+- `tpPresupuestoToValue('15k-20k')` → 17500 ✓
+- 13 eventos validados llegando al dataLayer con forma correcta
+- Modo embed filtra correctamente: `JordanAPI.open()` en `/contacto/` NO dispara `jordan_open` (evita ruido)
+- Sin errores de consola
+
+#### Pendiente Paso 2 (próxima sesión)
+- Crear tabla `web_metrics` en Supabase (esquema: id, metric_date, metric_hour, source, metric_key, dimension_1/2, value, meta jsonb)
+- Workflow n8n `web-metrics-sync` (cron 1h, 4 ramas paralelas: GA4 Data API + GSC + Airtable + logs bots IA)
+- Nodo HTTP Measurement Protocol en workflow `leads-trespuntos`: cuando llega lead cualificado (score≥60), dispara conversion `qualified_lead` en GA4 con `client_id` recibido en el payload
+- Pestaña "Web" en `dash.trespuntos-lab.com/dashboard.html` con sub-secciones Resumen / Funnel / Páginas / SEO / Jordan / GEO-AEO
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
@@ -338,12 +399,12 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
 
 ### Arquitectura
 ```
-Widget (jordan-widget-v5.js) → n8n Proxy (jordan-chat-proxy) → Anthropic API (claude-haiku-4-5)
+Widget (jordan-widget-v6.js) → n8n Proxy (jordan-chat-proxy) → Anthropic API (claude-haiku-4-5)
                              → n8n Webhook (jordan-chat-leads) → Scoring IA → Airtable + Telegram + Emails
 ```
 
 ### Archivos
-- `/assets/jordan/jordan-widget-v5.js` — Widget v5.0, Shadow DOM cerrado (`mode: 'closed'`), ~2180 líneas. Incluye modo flotante + modo embed
+- `/assets/jordan/jordan-widget-v6.js` — Widget v6.0, Shadow DOM cerrado (`mode: 'closed'`), ~2200 líneas. Incluye modo flotante + modo embed + 8 eventos GA4
 - `/assets/jordan/jordan-avatar.png` — Avatar de Jordan (526KB)
 - System prompt v10.0 embebido en el widget (~148 líneas)
 - Documento maestro: `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v10.0-master.md` — fuente única de verdad expandida
@@ -406,7 +467,7 @@ Widget (jordan-widget-v5.js) → n8n Proxy (jordan-chat-proxy) → Anthropic API
 ```
 
 ### Carga en HTMLs
-- Script async en 42 páginas: `<script async src="/assets/jordan/jordan-widget-v5.js"></script>`
+- Script async en 42 páginas: `<script async src="/assets/jordan/jordan-widget-v6.js"></script>`
 - Cache-busting: renombrar a `jordan-widget-v6.js` etc. para futuras versiones (y actualizar las 42 páginas)
 - **Modo flotante** (40 páginas — home, servicios, casos, blog, nosotros):
 ```html
@@ -486,13 +547,13 @@ window.JordanConfig = {
 - **NUNCA** usar Sonnet ni Opus para Jordan — siempre Haiku
 - **NUNCA** enviar email al usuario a mitad de conversación — solo al cerrar
 - **SIEMPRE** renombrar el archivo (incrementar versión) al actualizar el widget para evitar cache
-- **SIEMPRE** sincronizar cambios entre `/assets/jordan/jordan-widget-v5.js` y `/jordan/tres-puntos-agent/`
+- **SIEMPRE** sincronizar cambios entre `/assets/jordan/jordan-widget-v6.js` y `/jordan/tres-puntos-agent/`
 - Al generar ZIPs para subir, **NO excluir** `assets/jordan/` — contiene el widget y avatar
 
 ### Regla de actualización Jordan — OBLIGATORIA
-**Cuando se modifique CUALQUIER cosa del widget Jordan (`jordan-widget-v5.js`), se DEBEN actualizar TODAS las referencias:**
-1. **Un solo archivo fuente**: `/assets/jordan/jordan-widget-v5.js` — es la ÚNICA fuente de verdad
-2. **42 páginas lo cargan**: Todas con `<script async src="/assets/jordan/jordan-widget-v5.js"></script>`
+**Cuando se modifique CUALQUIER cosa del widget Jordan (`jordan-widget-v6.js`), se DEBEN actualizar TODAS las referencias:**
+1. **Un solo archivo fuente**: `/assets/jordan/jordan-widget-v6.js` — es la ÚNICA fuente de verdad
+2. **42 páginas lo cargan**: Todas con `<script async src="/assets/jordan/jordan-widget-v6.js"></script>`
 3. **Contacto e iniciar-proyecto** usan embed mode (`embedTarget: '#jordan-embed'`) — verificar que sigue funcionando tras cambios
 4. **Si se cambia el system prompt**: Actualizar el prompt dentro del widget Y el documento maestro en `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/`
 5. **Si se incrementa versión** (ej. v5→v6): Buscar y reemplazar en las 42 páginas HTML + actualizar esta sección de CLAUDE.md
@@ -551,7 +612,7 @@ window.JordanConfig = {
 - **Segundo event type**: `tres-puntos` (60 min, Google Meet) — no usar para Jordan
 
 ### Sincronización de archivos
-- Widget v5: `/assets/jordan/jordan-widget-v5.js` — prompt v10.0 + embed mode (2026-04-06)
+- Widget v6: `/assets/jordan/jordan-widget-v6.js` — prompt v10.0 + embed mode + 8 eventos GA4 (2026-04-16)
 - 42 páginas cargan v5 (flotante en 40, embed en contacto + iniciar-proyecto)
 - Contacto: `/contacto/index.html` — usa embed mode con `embedTarget: '#jordan-embed'`
 - Iniciar proyecto: `/iniciar-proyecto/index.html` — usa embed mode con `embedTarget: '#jordan-embed'`

@@ -1,8 +1,8 @@
 /**
  * Jordan — Agente Conversacional Tres Puntos
- * Widget embebible v5.0 — Mobile-first overlay chat + embed mode
+ * Widget embebible v6.0 — Mobile-first overlay chat + embed mode + GA4 events
  *
- * Uso: <script async src="/assets/jordan/jordan-widget-v5.js"></script>
+ * Uso: <script async src="/assets/jordan/jordan-widget-v6.js"></script>
  *
  * Configuracion (antes del script):
  * window.JordanConfig = {
@@ -1051,6 +1051,21 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       }
     }
 
+    // -- Analytics tracking (GA4 vía window.tpTrack) --
+    // Helper fail-safe. No envía PII (nunca email/teléfono/nombre como param).
+    _track(eventName, params) {
+      try {
+        if (typeof window.tpTrack === 'function') {
+          const baseParams = {
+            session_id: this.sessionId,
+            pagina_origen: this._pageOrigin || window.location.pathname,
+            embed_mode: !!this._isEmbedded
+          };
+          window.tpTrack(eventName, Object.assign(baseParams, params || {}));
+        }
+      } catch (e) { /* fail-safe */ }
+    }
+
     // -- Init --
 
     _init() {
@@ -1268,6 +1283,14 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
 
     open() {
       this.isOpen = true;
+      this._openedAt = Date.now();
+
+      // GA4: solo trackeamos open en modo flotante (en embed siempre está abierto)
+      if (!this._isEmbedded) {
+        this._track('jordan_open', {
+          messages_count: this.messages.length
+        });
+      }
 
       if (!this._isEmbedded) {
         this._hideTeaser();
@@ -1302,6 +1325,17 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
 
     close() {
       this.isOpen = false;
+
+      // GA4: trackeo close (en flotante; en embed se trackea en _sendLeadWebhook)
+      if (!this._isEmbedded) {
+        const userMessages = this.messages.filter(m => m.role === 'user').length;
+        this._track('jordan_close', {
+          messages_count: this.messages.length,
+          user_messages_count: userMessages,
+          duration_seconds: this._openedAt ? Math.round((Date.now() - this._openedAt) / 1000) : 0,
+          lead_captured: !!(this.extracted.email || this.extracted.telefono)
+        });
+      }
 
       if (this._isEmbedded) {
         // Embed mode: notify page, send lead
@@ -1564,6 +1598,14 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
             this.extracted.calendly_reservado = true;
             this._saveSession();
 
+            // GA4: conversión clave — click en slot Calendly
+            this._track('jordan_calendly_click', {
+              slot_label: typeof btn === 'object' ? (btn.label || '') : '',
+              messages_count: this.messages.length,
+              has_email: !!this.extracted.email,
+              has_phone: !!this.extracted.telefono
+            });
+
             window.open(fullUrl, '_blank');
             return;
           }
@@ -1721,6 +1763,14 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
             { label: 'Que me llaméis', sub: 'Os dejo mi teléfono', value: 'Prefiero que me llaméis, os dejo mi teléfono.' }
           );
 
+          // GA4: slots reales mostrados al usuario
+          this._track('jordan_calendly_shown', {
+            slots_count: data.slots.length,
+            source: 'real_slots',
+            has_email: !!this.extracted.email,
+            has_phone: !!this.extracted.telefono
+          });
+
           setTimeout(() => this._renderQuickReplies(slotButtons), 300);
         } else {
           // Fallback: static options
@@ -1749,6 +1799,15 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     async _sendMessage() {
       const text = this.textarea.value.trim();
       if (!text || this.isLoading) return;
+
+      // GA4: jordan_first_message — primer mensaje del usuario (señal real de engagement)
+      const isFirstUserMessage = this.messages.filter(m => m.role === 'user').length === 0;
+      if (isFirstUserMessage) {
+        this._track('jordan_first_message', {
+          message_length: text.length,
+          via: 'textarea'
+        });
+      }
 
       this._removeQuickReplies();
       this._addMessage('user', text);
@@ -1814,7 +1873,19 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     _extractData(text) {
       // Email
       const emailMatch = text.match(/[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/);
-      if (emailMatch) this.extracted.email = emailMatch[0];
+      if (emailMatch) {
+        const wasEmpty = !this.extracted.email;
+        this.extracted.email = emailMatch[0];
+        // GA4: trackeo solo la primera vez que se captura email (no en cada mensaje)
+        if (wasEmpty) {
+          const emailDomain = (emailMatch[0].split('@')[1] || '').toLowerCase();
+          const freeEmails = ['gmail.com','hotmail.com','yahoo.com','outlook.com','live.com','icloud.com'];
+          this._track('jordan_email_captured', {
+            is_corporate: emailDomain && freeEmails.indexOf(emailDomain) === -1,
+            messages_at_capture: this.messages.length
+          });
+        }
+      }
 
       // Phone — multiple Spanish formats
       const phonePatterns = [
@@ -1823,7 +1894,17 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       ];
       for (const p of phonePatterns) {
         const m = text.match(p);
-        if (m) { this.extracted.telefono = m[1].replace(/[\s.\-]/g, ''); break; }
+        if (m) {
+          const wasEmpty = !this.extracted.telefono;
+          this.extracted.telefono = m[1].replace(/[\s.\-]/g, '');
+          // GA4: trackeo solo la primera vez que se captura teléfono
+          if (wasEmpty) {
+            this._track('jordan_phone_captured', {
+              messages_at_capture: this.messages.length
+            });
+          }
+          break;
+        }
       }
 
       // Name patterns
@@ -1970,7 +2051,10 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
         url_origen: pageOrigin || window.location.pathname,
         mensajes_totales: messages.length,
         duracion_segundos: Math.round((Date.now() - (this._startedAt || Date.now())) / 1000),
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+
+        // GA4 client_id para correlación con sesión web (Measurement Protocol)
+        ga_client_id: (typeof window.tpClientId === 'function' ? window.tpClientId() : '')
       };
     }
 
@@ -1983,6 +2067,19 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
 
       this._leadSent = true;
       this._saveSession(); // Mark as sent in localStorage
+
+      // GA4: conversión — lead capturado y enviado al backend
+      const userMessages = this.messages.filter(m => m.role === 'user').length;
+      this._track('jordan_lead_captured', {
+        has_email: !!this.extracted.email,
+        has_phone: !!this.extracted.telefono,
+        has_name: !!this.extracted.nombre,
+        tipo_proyecto: this.extracted.tipo_proyecto || '',
+        presupuesto: this.extracted.presupuesto || '',
+        rol: this.extracted.rol || '',
+        user_messages_count: userMessages,
+        duration_seconds: Math.round((Date.now() - this._startedAt) / 1000)
+      });
 
       const payload = this._buildPayload(this.messages, this.extracted, this.sessionId, this._pageOrigin);
 

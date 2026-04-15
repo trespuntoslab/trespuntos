@@ -21,6 +21,49 @@
     wait_for_update: 500
   });
 
+  // --- Tres Puntos Tracking Helpers (siempre disponibles, fail-safe) ---
+  // tpTrack: dispara evento GA4. Consent Mode v2 lo bloquea automáticamente
+  // si el usuario rechaza analytics_storage (no enviamos PII en params).
+  window.tpTrack = function (eventName, params) {
+    try {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, params || {});
+      }
+    } catch (e) { /* fail-safe */ }
+  };
+
+  // tpClientId: devuelve el client_id de GA4 (cookie _ga) o un fallback
+  // persistente en localStorage. Sirve para correlacionar leads en
+  // Airtable/Supabase con sesiones GA4 vía Measurement Protocol.
+  window.tpClientId = function () {
+    try {
+      var m = document.cookie.match(/_ga=GA\d\.\d\.(\d+\.\d+)/);
+      if (m) return m[1];
+      var id = localStorage.getItem('tp_client_id');
+      if (!id) {
+        id = Math.floor(Math.random() * 2147483647) + '.' + Math.floor(Date.now() / 1000);
+        localStorage.setItem('tp_client_id', id);
+      }
+      return id;
+    } catch (e) { return ''; }
+  };
+
+  // tpPresupuestoToValue: mapea labels de presupuesto a valor numérico
+  // estimado en EUR. Permite usar el campo "value" de GA4 para conversion
+  // value reporting y futuras integraciones con Ads.
+  window.tpPresupuestoToValue = function (p) {
+    switch ((p || '').toLowerCase()) {
+      case 'mas-50000': return 50000;
+      case '25000-50000': return 37500;
+      case 'mas-20k': return 25000;
+      case '15k-20k':
+      case '15000-25000': return 17500;
+      case '10k-15k': return 12500;
+      case '5k-10k': return 7500;
+      default: return 3000;
+    }
+  };
+
   // --- Inicializar CookieConsent cuando esté cargado ---
   function initCC() {
     if (!window.CookieConsent) return setTimeout(initCC, 50);
