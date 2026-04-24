@@ -1561,6 +1561,157 @@
       "<strong>Hemos identificado 17 hallazgos concretos y un quick win de implementación rápida.</strong> Prioridades: resolver Best Practices (Dev 5.0/10), mejorar accesibilidad móvil (67/100), y aprovechar el posicionamiento como 'departamento externo' que hoy no se traduce en diferenciación visual (UI 6.5/10)."
     ]
   },
+  "estrategika-digital": {
+    "agencia": "Estrategika Digital",
+    "web": "estrategikadigital.com",
+    "lighthouse": {
+      "desktop": {
+        "performance": 100,
+        "accessibility": 95,
+        "bestPractices": 96,
+        "seo": 100
+      },
+      "mobile": {
+        "performance": 100,
+        "accessibility": 95,
+        "bestPractices": 100,
+        "seo": 100
+      }
+    },
+    "categorias": [
+      {
+        "id": "ux",
+        "nombre": "UX & Conversión",
+        "score": 5.5,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Prueba social",
+            "titulo": "Cero testimonios ni casos de éxito verificables en la home",
+            "detalle": "La home menciona métricas genéricas (+300% tráfico, -40% CPL) sin cliente identificado ni sector concreto. <strong>Un solo caso de éxito con nombre real, logo y métricas verificables multiplicaría por 3 la tasa de conversión de visitantes en leads</strong>. En servicios B2B de marketing, la prueba social específica es el argumento de venta más poderoso frente a cualquier claim genérico."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Propuesta de valor",
+            "titulo": "Hero con mensaje amplio que no diferencia frente a la competencia",
+            "detalle": "\"Te ayudamos a que te encuentren y te elijan\" es una propuesta intercambiable con cualquier agencia de marketing en España. <strong>Especificar el segmento objetivo, el mercado y la ventaja competitiva real en el hero</strong> reduciría la tasa de rebote y atraería leads más cualificados. Con 12 años de historial y un director con perfil académico, hay material más diferenciador que no se está usando."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Cualificación de leads",
+            "titulo": "Formulario de contacto sin preguntas de cualificación",
+            "detalle": "El formulario recoge datos básicos sin segmentar por tipo de empresa, presupuesto ni urgencia. <strong>Añadir 2-3 campos de cualificación reduciría el volumen de leads no cualificados en un 40-60%</strong> y permitiría priorizar el seguimiento comercial — especialmente relevante para una agencia con un único interlocutor como punto de contacto central."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Captación en awareness",
+            "titulo": "Sin contenido de valor para leads en fase de consideración",
+            "detalle": "La web está diseñada para captar a quien ya quiere contratar. <strong>Añadir recursos como guías descargables, calculadoras de ROI o diagnósticos gratuitos captaría tráfico en fases más tempranas del funnel</strong> y permitiría nutrir leads mediante email marketing automatizado, aumentando el volumen total de oportunidades sin incrementar el presupuesto de captación."
+          }
+        ]
+      },
+      {
+        "id": "ui",
+        "nombre": "UI & Percepción Visual",
+        "score": 5.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "Credibilidad y confianza",
+            "titulo": "Equipo invisible: sin fotos ni perfiles del director ni del equipo",
+            "detalle": "Ninguna sección de la web muestra a Gonzalo de Anta ni al equipo con nombre y foto real. En consultoría B2B, <strong>mostrar al equipo con fotografía profesional y una breve bio genera un 40-60% más de confianza</strong> que una web corporativa anónima. Para una agencia cuyo director es profesor universitario y referente verificable, la anonimidad es un activo que se desperdicia."
+          },
+          {
+            "prioridad": "alta",
+            "impacto": "Diferenciación visual",
+            "titulo": "Diseño funcional pero sin identidad visual diferenciadora",
+            "detalle": "El site sigue el patrón visual estándar de agencia de marketing digital: degradados azules, iconos outline, imágenes de stock de ordenadores y gráficas. <strong>Para una agencia que factura sobre credibilidad y expertise, la web debería proyectar el mismo nivel de sofisticación que exige a sus clientes</strong>. La identidad visual actual no comunica los 12 años de trayectoria ni la solidez del equipo."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Escaneabilidad",
+            "titulo": "Páginas de servicio con exceso de texto y baja jerarquía visual",
+            "detalle": "Las landing pages de servicio presentan bloques extensos de texto sin suficiente variación tipográfica ni elementos visuales que guíen la lectura. <strong>Reestructurar cada página con beneficios en formato visual, un flujo de proceso o una tabla comparativa mejora la retención y el tiempo en página</strong> de forma significativa — y reduce el esfuerzo cognitivo del potencial cliente."
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Autoridad institucional",
+            "titulo": "Sin logos de certificaciones, partners ni asociaciones en la home",
+            "detalle": "Colaboran con Media Diamond y partners especializados, y tienen un director con cátedra universitaria. <strong>Mostrar los logos de Google Partner, asociaciones del sector y partners en la home transmite autoridad institucional</strong> que actualmente no se aprovecha en la comunicación visual de la agencia."
+          }
+        ]
+      },
+      {
+        "id": "dev",
+        "nombre": "Desarrollo & Rendimiento",
+        "score": 9.5,
+        "hallazgos": [
+          {
+            "prioridad": "baja",
+            "impacto": "Accesibilidad",
+            "titulo": "Score de accesibilidad 95/100: ajustes menores en contraste y ARIA",
+            "detalle": "Con 95/100 en accesibilidad, quedan pequeños ajustes pendientes, probablemente en ratio de contraste de texto sobre fondos de color o atributos aria-label en elementos interactivos. <strong>Alcanzar el 100/100 tiene impacto positivo en SEO técnico y es requisito creciente para licitaciones y contratación pública</strong> — un mercado donde una agencia de consultoría digital puede crecer."
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Best Practices",
+            "titulo": "96/100 en Best Practices desktop: posibles errores de consola residuales",
+            "detalle": "El punto perdido en Best Practices (96 vs 100 en mobile) suele corresponder a errores en consola JavaScript o uso de APIs obsoletas. <strong>Auditarlo y corregirlo es una inversión de 1-2h con impacto positivo en la puntuación global</strong>, que ya es un activo de credibilidad para una agencia que presume de resultados técnicos."
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Mantenimiento",
+            "titulo": "Rendimiento técnico excelente que requiere monitorización activa",
+            "detalle": "El site tiene métricas técnicas ejemplares: LCP 0.7s, TBT 0ms, CLS 0.004 en desktop. <strong>Sin monitorización continua, la incorporación de nuevos scripts de terceros, pixels o plugins puede degradar rápidamente estos scores</strong>. Implementar alertas automáticas con Lighthouse CI protege el rendimiento ganado a largo plazo."
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "nombre": "SEO & Contenido",
+        "score": 8.0,
+        "hallazgos": [
+          {
+            "prioridad": "alta",
+            "impacto": "E-E-A-T",
+            "titulo": "Perfil de autoridad del director desconectado de la web",
+            "detalle": "Gonzalo de Anta es profesor universitario con experiencia verificable, pero su perfil no está vinculado a la web con autoría de artículos, entrevistas ni schema Person. <strong>Para Google, la E-E-A-T es un factor de ranking crítico en nichos de consultoría y marketing</strong>. Conectar el perfil del director a los contenidos del site mejoraría el posicionamiento en búsquedas informacionales donde la competencia ya lo usa."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Arquitectura de contenidos",
+            "titulo": "Blog presente pero sin estructura de contenido en pilares temáticos",
+            "detalle": "El blog existe pero los artículos parecen publicaciones aisladas sin una arquitectura de topic clusters. <strong>Organizar el contenido en pilares temáticos (SEO técnico, SEM, Analytics, Consultoría) con páginas pilar y artículos satélite mejoraría el posicionamiento para cientos de longtail keywords adicionales</strong> y aumentaría la autoridad temática del dominio frente a competidores con mayor volumen de contenido."
+          },
+          {
+            "prioridad": "media",
+            "impacto": "Rich snippets",
+            "titulo": "Ausencia de Schema.org completo para agencia de servicios locales",
+            "detalle": "Para una agencia con servicios locales en Madrid, presencia universitaria del director y resultados verificables, <strong>implementar schemas de tipo LocalBusiness, Service, Person y FAQPage ampliaría la visibilidad en SERPs con rich snippets</strong>: estrellas, FAQ enriquecidas, perfil de experto y horarios. Directamente relevante para búsquedas locales de \"agencia marketing Madrid\"."
+          },
+          {
+            "prioridad": "baja",
+            "impacto": "Autoridad de dominio",
+            "titulo": "Interlinking entre páginas de servicio mejorable",
+            "detalle": "Las landing pages de SEO, Google Ads y Social Ads no referencian naturalmente los servicios complementarios entre sí. <strong>Añadir secciones de servicios complementarios con CTAs internos distribuiría mejor la autoridad del dominio</strong> y aumentaría el tiempo en site al guiar al visitante por el ecosistema de servicios de la agencia."
+          }
+        ]
+      }
+    ],
+    "quickWin": {
+      "titulo": "Añadir 3 casos de éxito con datos reales en la home",
+      "detalle": "Sustituir las métricas genéricas actuales (+300% tráfico, -40% CPL) por 3 mini casos de éxito con nombre del sector, logo anonimizado si es necesario, y resultados específicos en formato de tarjeta visual. No requiere rediseño — basta con 3 tarjetas con icono de sector, resultado principal y un testimonio corto del cliente.",
+      "impacto": "Incremento estimado del 30-50% en la tasa de conversión de visitantes en contactos. La prueba social verificable es el argumento más persuasivo para una agencia de marketing que pide confianza a sus propios clientes."
+    },
+    "_score": 7.0,
+    "_nombre": "Gonzalo",
+    "_icp": "Performance",
+    "resumen": [
+      "Estrategika Digital lleva 12 años construyendo una reputación sólida en el marketing de resultados en España. Su web técnicamente es impecable — Lighthouse 100/100 en rendimiento y SEO, una rareza en el sector que demuestra que conocen el oficio. Hemos analizado las cuatro dimensiones que determinan si una web capta o pierde clientes.",
+      "El diagnóstico revela una paradoja: una agencia que vende resultados y credibilidad no tiene testimonios verificables, no muestra al equipo y presenta un diseño que no la diferencia de cientos de competidores. La fortaleza técnica (Desarrollo 9.5/10) contrasta con UX & Conversión (5.5/10) y UI & Percepción Visual (5.0/10), donde hay un gap significativo entre lo que la agencia es y lo que comunica.",
+      "<strong>Hemos identificado 14 hallazgos concretos y un quick win de implementación inmediata.</strong> El mayor potencial está en convertir la credibilidad no comunicada en prueba social activa — algo que, bien ejecutado, multiplicaría la captación orgánica sin aumentar ni un euro la inversión en tráfico."
+    ]
+  },
   "firma-innovation-branding": {
     "agencia": "Firma Innovation & Branding",
     "web": "wearefirma.com",
