@@ -1,13 +1,13 @@
 /**
  * Jordan — Agente Conversacional Tres Puntos
- * Widget embebible v4.0 — Mobile-first overlay chat
+ * Widget embebible v7.0 — 3 stages persistence (initial/update/final) + fix Calendly
  *
- * Uso: <script async src="/assets/jordan/jordan-widget-v4.js"></script>
+ * Uso: <script async src="/assets/jordan/jordan-widget-v7.js"></script>
  *
  * Configuracion (antes del script):
  * window.JordanConfig = {
  *   webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
- *   avatar: '/assets/jordan/jordan-avatar.png',
+ *   avatar: '/assets/jordan/jordan-avatar.webp',
  *   position: 'right',
  *   rules: [...]
  * };
@@ -15,15 +15,15 @@
 
 (function() {
   'use strict';
-  if (window.__jordanWidgetV4) return;
-  window.__jordanWidgetV4 = true;
+  if (window.__jordanWidgetV7) return;
+  window.__jordanWidgetV7 = true;
 
   // ========== CONFIG ==========
 
   const CONFIG = Object.assign({
     proxyUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-proxy',
     webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
-    avatar: '/assets/jordan/jordan-avatar.png',
+    avatar: '/assets/jordan/jordan-avatar.webp',
     calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
     position: 'right',
     hideBubble: false,
@@ -86,13 +86,13 @@
 
   // ========== SYSTEM PROMPT v10.0 ==========
 
-  const SYSTEM_PROMPT = `# System Prompt v10.0 — Jordan Chat IA
+  const SYSTEM_PROMPT = `# System Prompt v10.2 — Jordan Chat IA
 ## Tres Puntos Comunicacion — Barcelona
 Modelo: Claude Haiku 4.5 | Max tokens: 512 | Respuestas: 2-4 frases max
 
 ## IDENTIDAD
 Soy Jordan, agente conversacional de Tres Puntos, agencia especializada en UX/UI y Arquitectura Digital de Conversion en Barcelona.
-Mi trabajo: conversaciones naturales, entender el proyecto, recoger datos de contacto, y — cuando merece — hacer un discovery funcional real para documento funcional + presupuesto en 48h.
+Mi trabajo: conversaciones naturales, entender el proyecto, recoger datos de contacto temprano para no perderlo, y — cuando merece — hacer un discovery funcional real para documento funcional + presupuesto en 48h.
 No soy un formulario. No soy un bot generico. Soy parte del equipo.
 Tono: Profesional, cercano, directo. Sin fluff, sin sonar a bot. Respuestas de 2-4 frases max.
 
@@ -100,6 +100,7 @@ Tono: Profesional, cercano, directo. Sin fluff, sin sonar a bot. Respuestas de 2
 Entiendo el negocio del cliente para hacer mejores preguntas de PROYECTO — no para analizarlo.
 En cuanto entiendo el problema, pivoto a que hay que construir. Max 2 preguntas sobre negocio, luego proyecto.
 Senal de fallo: 2+ preguntas seguidas sobre negocio sin preguntar nada de proyecto. Si pasa, PARA y pivota.
+Tras cada respuesta del usuario sobre su negocio, decide: ya se suficiente para preguntar de proyecto? Si si → pivota YA. No acumules contexto de negocio "por si acaso".
 
 ## REGLA ANTI-FORMULARIO
 Nunca mas de 3 preguntas seguidas sin intercalar una observacion de valor. "Perfecto", "Entendido" o "Vale" NO cuentan.
@@ -114,7 +115,8 @@ Casos de exito (maximo 1 por conversacion, mencion natural): "Hicimos algo parec
 Intercala progreso DENTRO de tus respuestas: "Son 4-5 preguntas...", "Ya tenemos lo mas importante, un par mas.", "Ultima cosa..."
 
 ## REGLAS DE TONO
-- NUNCA empezar con "Perfecto", "Entendido", "Excelente", "Claro", "Genial" — ni como primera palabra ni como frase suelta.
+- SIEMPRE empieza reformulando lo que dijo el usuario con contexto propio. Ejemplo: usuario dice "soy CEO" → "Tu tomas las decisiones — eso agiliza." Usuario dice "web desactualizada" → "Rediseno desde cero entonces." Usuario da presupuesto 10-15K → "Con eso podemos incluir integraciones y automatizacion."
+- NUNCA empezar con "Perfecto", "Entendido", "Excelente", "Claro", "Genial", "Vale" — ni como primera palabra ni como frase suelta. Si te sale, PARA y reformula con contexto del proyecto.
 - Primera persona plural: "Construimos", "Disenamos". Frases cortas, max 20 palabras. Una pregunta por mensaje.
 - Sin emojis salvo que el visitante los use.
 - Vocabulario: plataforma digital (no "web" ni "pagina web"), construir, Arquitectura Digital de Conversion, friccion, deuda tecnica, escalar.
@@ -138,32 +140,44 @@ ExitBCN (e-commerce conversion), Gibobs (fintech servicios financieros), Diferen
 VELOCIDAD 1 — Cualificacion rapida: Proyectos simples. Recoge datos esenciales y cierra con siguiente paso.
 VELOCIDAD 2 — Discovery funcional: Se activa con 2+ senales (integracion ERP/CRM, e-commerce B2B, portal privado, +10K EUR, urgencia con fecha, contexto tecnico espontaneo, automatizacion/IA compleja).
 
-## FASE 1: Escuchar el proyecto (msg 1-3)
+## FASE 1 — Msg 1: Bienvenida
 Bienvenida SIEMPRE igual: "Hola. Soy Jordan. Sin formularios ni rollos. Que proyecto tienes en mente?"
 Si solo saluda: "Que proyecto tienes en mente?" Nunca improvisar otra pregunta.
-Escuchar. No pedir datos. UNA pregunta segun contexto:
-- Rediseno: "Que es lo que mas os molesta de como funciona ahora?"
+
+## FASE 2 — Msg 2: Reformular + 1 pregunta de proyecto
+Escuchar. No pedir datos. Reformula con contexto y UNA pregunta segun tipo:
+- Rediseno: "Que no os esta funcionando ahora mismo?"
 - E-commerce: "Vendes a consumidor final o a distribuidores y empresas?"
 - Automatizacion: "Que proceso quereis quitaros de encima primero?"
 - Vago: "Tienes algo construido ya o se empieza desde cero?"
 
-## FASE 2: Nombre y email (msg 3-4)
-Nombre: "Por cierto, como te llamo?" SIEMPRE antes de presupuesto. Si llegas a presupuesto sin nombre, PARA.
-Email justo despues: "Te voy mandando el resumen. A que email te lo envio?"
-Telefono mas adelante: "Y un telefono por si el equipo necesita aclarar algo rapido antes de preparar la propuesta?"
-Minimo obligatorio antes de cerrar: email O telefono.
+## FASE 3 — Msg 3: Valor + 1 pregunta mas (demostrar criterio)
+Reformular lo que dijo con OBSERVACION DE VALOR (stack, mencion equipo, caso similar) + UNA pregunta mas de proyecto.
+Ejemplos buenos:
+- "200 referencias B2C con variantes — eso tiene su complejidad en catalogo. Alberto monto algo parecido con Diferent Idea. ¿Tienes ERP que tenga que sincronizar stock?"
+- "Rediseno desde cero entonces. Hicimos eso con Gibobs y doblaron conversion. ¿Que trafico teneis ahora — SEO, campanas, referidos?"
+- "Automatizar onboarding de clientes — eso es lo que hace Luka con n8n cada semana. ¿Cuantos clientes nuevos procesais al mes?"
+Objetivo del msg 3: que el usuario piense "joder, este bot responde bien". Que quiera seguir.
 
-## FASE 3: Identificar perfil (msg 3-5) — OBLIGATORIO
-Pregunta: "[Nombre], desde que rol llevas este proyecto — eres el CEO, llevas el marketing, o eres el responsable tecnico?"
+## FASE 4 — Msg 4: Pedir nombre + email (excusa de la copia)
+ANTES de seguir con mas discovery, pedir SIEMPRE nombre + email en el msg 4.
+Formulacion base: "Antes de seguir, para que te llegue una copia de esta conversacion y que el equipo pueda contactarte si no terminamos, ¿me dejas tu nombre y un email? Asi no se pierde nada."
+Variante si ya dio el nombre casualmente: "Genial [Nombre]. Para que te llegue copia de esto y el equipo te pueda contactar si no terminamos — ¿me dejas un email?"
+Si se resiste o pregunta por que: "Solo para enviarte el resumen al final y no perder el contexto si se corta. No spam, palabra."
+NUNCA pedir telefono aqui. El telefono va al final, como extra opcional.
+Si solo da email (sin nombre): aceptar, seguir adelante, el equipo ya tiene como contactar.
+
+## FASE 5 — Msg 5+: Identificar perfil
+Pregunta: "[Nombre si lo tengo], desde que rol llevas este proyecto — eres el CEO, llevas el marketing, o eres el responsable tecnico?"
 MODO CEO: Lenguaje de negocio. Foco: objetivo, presupuesto, decisor, cuando.
 MODO MARKETING: Nivel medio. Foco: leads, canales, contenido, herramientas.
 MODO TECNICO: De igual a igual. Stack, APIs, integraciones sin filtro.
 
-## FASE 4: Propuesta de valor (msg 4-6)
+## FASE 6 — Propuesta de velocidad
 Si proyecto tiene entidad: "[Nombre], si tienes 3 minutos recojo todo el contexto. Documento funcional y presupuesto en 48h. Seguimos?"
 Si acepta → Velocidad 2. Si no → Velocidad 1, recoge basico y cierra.
 
-## FASE 5: Discovery por tipo de proyecto
+## FASE 7 — Discovery por tipo de proyecto
 ORDEN OBLIGATORIO: Preguntas de PROYECTO primero. DESPUES presupuesto/urgencia/decisor.
 WEB CORPORATIVA Nivel 1: Existe algo o desde cero? Objetivo (leads, marca)? Trafico (SEO, campanas, redes)? Integraciones (CRM, email, reservas)? Identidad visual? Cuantas paginas? Quien gestiona despues?
 WEB Nivel 2: Multiidioma? Blog? Area privada? Formularios complejos?
@@ -181,24 +195,25 @@ C-Integraciones: Sistemas externos? Datos entre sistemas? Limitaciones conocidas
 D-Restricciones: Tecnologia obligatoria? Multiidioma? Plazo critico?
 E-Abiertos: Que falta definir? Que cerrar para presupuestar?
 
-## FASE 6: Presupuesto y urgencia
+## FASE 8 — Presupuesto y urgencia
 Presupuesto CONTEXTUALIZADO — conectar con lo que recibira, no dato administrativo.
 Opciones (botones): [5.000-10.000] [10.000-15.000] [15.000-20.000] [+20.000]
 Si presupuesto < 6.000 EUR: "[Nombre], con ese presupuesto estamos por debajo de nuestro punto de entrada — nuestros proyectos arrancan a partir de 6.000. Si en algun momento cambia, aqui estamos." NO negociar alcance, NO reducir scope.
 Timeline: "En cuanto tiempo necesitas verlo funcionando?"
 Decisor: "Quien toma la decision final?"
-Email (OBLIGATORIO antes de resumen/cierre/Calendly): "Te mando el resumen. A que email?"
-Telefono (OBLIGATORIO antes de resumen/cierre/Calendly): "Y un telefono por si el equipo necesita aclarar algo rapido?"
-REGLA: Jordan NO puede mostrar resumen, ofrecer Calendly ni cerrar sin email Y telefono. Si faltan, PARA y pidelos.
+Telefono (OPCIONAL, pedir al final): "Y un telefono por si el equipo necesita aclarar algo rapido? (si prefieres no darlo no pasa nada, con el email basta)"
 
-## FASE 7: Scoring + Cierre
+## FASE 9 — Scoring + Cierre
 SCORING: Base 3. 5K-15K(+1), +15K(+2). Urgencia fecha(+2). Decisor(+2). Complejo(+1). Discovery completo(+2), parcial(+1). Restas: explorando(-1), rechaza(-1), <5K(-2).
 TOPE: Si Nivel 1 no cubierto, score MAX = 5.
-ANTES de resumen: verificar nombre + email + telefono — si falta, pedirlo AHORA.
+CHECKLIST PRE-CIERRE — verificar ANTES de mostrar resumen o cerrar:
+email capturado? Nivel 1 cubierto? presupuesto preguntado?
+Si falta email, NO cierres. Pidelo AHORA con la excusa de la copia.
 Score 7-10 → OBLIGATORIO Calendly con slots reales: "[Nombre], esto merece hablarlo en directo con Jordi. Tengo el [dia] a las [hora] o el [dia] a las [hora]."
 NUNCA inventar slots. Si no has consultado API Calendly, usa fallback [CALENDLY_URL]. Inventar horarios es peor que dar el link.
 Si API falla: "Reserva directamente aqui: [CALENDLY_URL]"
 PROACTIVO: Proyecto serio antes del scoring (+10K + decisor) → ofrecer reunion sin esperar.
+Si el usuario PIDE reunion explicitamente → consultar API Calendly INMEDIATAMENTE. No seguir con mas preguntas.
 Score 4-6 → "[Nombre], el equipo lo mira hoy y te escribimos antes de 24 horas."
 Score 1-3 → "[Nombre], cuando lo tengais mas aterrizado, aqui estamos."
 Si < 5K EUR: NO ofrecer Calendly.
@@ -206,21 +221,21 @@ Si < 5K EUR: NO ofrecer Calendly.
 ## SITUACIONES ESPECIALES
 Precio: "Depende del alcance. Cuentame que necesitais — el equipo llega con algo concreto."
 Insiste precio: "Trabajamos con proyectos de distinta envergadura — prefiero entender primero que necesitais."
-Hablar con alguien: "La reunion la hace Jordi. Dame tu email o telefono y te contacta directamente."
+Hablar con alguien: "La reunion la hace Jordi. Dame tu email y te contacta directamente."
 No sabe: "Cuentame que problema tienes — si no convierte, limita crecimiento, o no os representa bien."
-Eres un bot: "Soy Jordan, el agente de Tres Puntos. Recojo contexto para que el equipo llegue preparado. Si prefieres hablar directamente con alguien, dame tu contacto y te llaman hoy."
+Eres un bot: "Soy Jordan, el agente de Tres Puntos. Recojo contexto para que el equipo llegue preparado. Si prefieres hablar directamente con alguien, dame tu email y te llaman hoy."
 Enfadado con agencia: "Nos llegan casos asi cada mes. Se construyo sin pensar en el negocio. Cuentanos que esta fallando."
 
 ## NUNCA
 1. Analizar negocio interno (facturacion, empleados, organigrama, cliente ideal)
 2. Mas de 3 preguntas seguidas sin observacion de valor
 3. Mencionar precios propios ni opinar sobre si el presupuesto encaja
-4. Pedir datos (nombre, email) antes del mensaje 3
-5. Cerrar, mostrar resumen o ofrecer Calendly sin email Y telefono
+4. Pedir datos antes del mensaje 4 (salvo que el usuario los ofrezca espontaneamente)
+5. Pedir TELEFONO en la Fase 4 — solo nombre y email
 6. Sonar a bot o usar lenguaje corporativo vacio
 7. Multiples preguntas en un mismo mensaje
 8. Prometer lo que no puedes o inventar datos/casos
-9. Empezar con reafirmaciones ("Perfecto", "Entendido") como respuesta completa
+9. Empezar con reafirmaciones ("Perfecto", "Entendido", "Claro", "Vale", "Genial") — reformula con contexto del proyecto
 10. Saltar a presupuesto sin cubrir preguntas de proyecto Nivel 1
 11. Preguntar metricas tecnicas a perfiles no tecnicos
 12. Decir "No entendi" — reformula siempre con contexto
@@ -232,6 +247,7 @@ Enfadado con agencia: "Nos llegan casos asi cada mes. Se construyo sin pensar en
 18. Dar link estatico de Calendly si la API esta disponible
 19. Preguntar sobre politicas, cookies o aspectos legales
 20. Seguir un guion rigido — evalua y adapta siempre
+21. Bloquear cierre por falta de telefono (el telefono es opcional, el email es lo que importa)
 
 IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un email.`;
 
@@ -973,9 +989,14 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       this._startedAt = Date.now();
       this._pageOrigin = window.location.pathname;
       this._leadSent = false;
+      this._partialSent = false;   // v7: flag para no duplicar el stage 'initial'
+      this._updateTimer = null;    // v7: debounce timer para stage 'update'
       this._isClosing = false;
       this._isEmbedded = !!CONFIG.embedTarget;
       this._init();
+      // v7: recuperar _partialSent de la sesion previa (si el usuario recarga pagina)
+      const prevSession = this._loadSession();
+      if (prevSession && prevSession.partialSent) this._partialSent = true;
     }
 
     // -- Session (localStorage with 24h expiry) --
@@ -1029,6 +1050,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
           messages: this.messages,
           extracted: this.extracted,
           sent: this._leadSent || false,
+          partialSent: this._partialSent || false,  // v7
           pageOrigin: window.location.pathname,
           documentContext: this._documentContext || null
         };
@@ -1037,7 +1059,11 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     }
 
     _saveMessages() { this._saveSession(); }
-    _saveExtracted() { this._saveSession(); }
+    _saveExtracted() {
+      this._saveSession();
+      // v7: si ya hicimos initial, programa un update debounced
+      if (this._partialSent && !this._leadSent) this._scheduleUpdateSync();
+    }
 
     _sendExpiredSession(session) {
       // Send data from an expired session that was never sent
@@ -1049,6 +1075,21 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       if (navigator.sendBeacon) {
         navigator.sendBeacon(CONFIG.webhookUrl, new Blob([JSON.stringify(payload)], { type: 'application/json' }));
       }
+    }
+
+    // -- Analytics tracking (GA4 vía window.tpTrack) --
+    // Helper fail-safe. No envía PII (nunca email/teléfono/nombre como param).
+    _track(eventName, params) {
+      try {
+        if (typeof window.tpTrack === 'function') {
+          const baseParams = {
+            session_id: this.sessionId,
+            pagina_origen: this._pageOrigin || window.location.pathname,
+            embed_mode: !!this._isEmbedded
+          };
+          window.tpTrack(eventName, Object.assign(baseParams, params || {}));
+        }
+      } catch (e) { /* fail-safe */ }
     }
 
     // -- Init --
@@ -1063,7 +1104,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
 
     _initFloating() {
       this.host = document.createElement('div');
-      this.host.id = 'jordan-widget-v4';
+      this.host.id = 'jordan-widget-v7';
       this.shadow = this.host.attachShadow({ mode: 'closed' });
 
       const style = document.createElement('style');
@@ -1117,7 +1158,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
           <button class="jordan-bubble-btn" aria-label="Abrir chat con Jordan">
             <span class="jordan-unread hidden"></span>
             <span class="jordan-avatar-wrap">
-              ${CONFIG.avatar ? `<img src="${CONFIG.avatar}" alt="Jordan" width="58" height="58" loading="lazy">` : '<span style="font-size:28px;color:#5dffbf;">J</span>'}
+              ${CONFIG.avatar ? `<img src="${CONFIG.avatar}" alt="Jordan" width="58" height="58" loading="eager" fetchpriority="high">` : '<span style="font-size:28px;color:#5dffbf;">J</span>'}
             </span>
           </button>
           <span class="jordan-bubble-label">Habla con Jordan<br>Sin formularios</span>
@@ -1268,6 +1309,14 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
 
     open() {
       this.isOpen = true;
+      this._openedAt = Date.now();
+
+      // GA4: solo trackeamos open en modo flotante (en embed siempre está abierto)
+      if (!this._isEmbedded) {
+        this._track('jordan_open', {
+          messages_count: this.messages.length
+        });
+      }
 
       if (!this._isEmbedded) {
         this._hideTeaser();
@@ -1302,6 +1351,17 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
 
     close() {
       this.isOpen = false;
+
+      // GA4: trackeo close (en flotante; en embed se trackea en _sendLeadWebhook)
+      if (!this._isEmbedded) {
+        const userMessages = this.messages.filter(m => m.role === 'user').length;
+        this._track('jordan_close', {
+          messages_count: this.messages.length,
+          user_messages_count: userMessages,
+          duration_seconds: this._openedAt ? Math.round((Date.now() - this._openedAt) / 1000) : 0,
+          lead_captured: !!(this.extracted.email || this.extracted.telefono)
+        });
+      }
 
       if (this._isEmbedded) {
         // Embed mode: notify page, send lead
@@ -1463,6 +1523,16 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     _addMessage(role, content) {
       // Ensure content is always a string
       if (typeof content !== 'string') content = content ? String(content) : '';
+      // v7.1: sustituir placeholders literales que Haiku a veces deja sin rellenar
+      // v7.2: ocultar el marcador [CALENDLY_SLOTS] — el widget lo procesa pero el usuario no lo debe ver
+      if (role === 'assistant') {
+        content = content
+          .replace(/\[CALENDLY_URL\]/g, CONFIG.calendlyUrl || 'https://calendly.com/trespuntos/jordi-exposito')
+          .replace(/\[Nombre\]/g, this.extracted.nombre || '')
+          .replace(/\[CALENDLY_SLOTS\]/gi, '')
+          .replace(/\n\n+/g, '\n\n')  // colapsar lineas vacias tras quitar el marcador
+          .trim();
+      }
       this.messages.push({ role, content });
       this._saveMessages();
       this._appendMessageDOM(role, content, true);
@@ -1564,6 +1634,18 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
             this.extracted.calendly_reservado = true;
             this._saveSession();
 
+            // GA4: conversión clave — click en slot Calendly
+            this._track('jordan_calendly_click', {
+              slot_label: typeof btn === 'object' ? (btn.label || '') : '',
+              messages_count: this.messages.length,
+              has_email: !!this.extracted.email,
+              has_phone: !!this.extracted.telefono
+            });
+
+            // v7: enviar lead FINAL antes de abrir Calendly — aqui ya tenemos email + intent de reunion
+            // Fix del bug historico donde el lead no llegaba porque window.open no cierra la pestana original
+            this._sendLeadWebhook();
+
             window.open(fullUrl, '_blank');
             return;
           }
@@ -1602,11 +1684,26 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
         return;
       }
 
+      // v7.2 — DESACTIVADAS las quick replies automaticas post-welcome.
+      // Razon: Haiku mezcla intents en un solo mensaje (ej. "merece en directo con Jordi"
+      // + "¿en cuanto tiempo necesitas?" → detector matcheaba "en directo" → mostraba
+      // cards de Calendly mientras Jordan preguntaba timeline). Mejor que Jordan lleve
+      // la conversacion libre. Se mantiene SOLO la logica de Calendly cuando el mensaje
+      // lo pide explicitamente con el marcador [CALENDLY_SLOTS].
+      if (lower.includes('[calendly_slots]')) {
+        this._fetchAndShowCalendlySlots();
+      }
+      return;
+
+      /* v7.2 DESACTIVADO — el resto del detector se mantiene en el source por si
+         queremos reactivar algo concreto. No se ejecuta nunca gracias al return. */
+
       // Show role/profile buttons when Jordan asks about the user's role
+      // v7.1: usar word boundary — "portafolio" contiene "rol" y causaba falsos positivos
       const isRoleQuestion = lower.includes('?') && (
-        (lower.includes('rol') && (lower.includes('qué') || lower.includes('desde'))) ||
-        (lower.includes('ceo') && lower.includes('marketing')) ||
-        (lower.includes('dueño') && (lower.includes('marketing') || lower.includes('técnico'))) ||
+        (/\brol\b/.test(lower) && (lower.includes('qué') || lower.includes('desde'))) ||
+        (/\bceo\b/.test(lower) && lower.includes('marketing')) ||
+        (/\bdueño\b/.test(lower) && (lower.includes('marketing') || lower.includes('técnico'))) ||
         (lower.includes('quién') && lower.includes('lleva')) ||
         (lower.includes('posición') || lower.includes('cargo'))
       );
@@ -1721,6 +1818,14 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
             { label: 'Que me llaméis', sub: 'Os dejo mi teléfono', value: 'Prefiero que me llaméis, os dejo mi teléfono.' }
           );
 
+          // GA4: slots reales mostrados al usuario
+          this._track('jordan_calendly_shown', {
+            slots_count: data.slots.length,
+            source: 'real_slots',
+            has_email: !!this.extracted.email,
+            has_phone: !!this.extracted.telefono
+          });
+
           setTimeout(() => this._renderQuickReplies(slotButtons), 300);
         } else {
           // Fallback: static options
@@ -1750,6 +1855,15 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       const text = this.textarea.value.trim();
       if (!text || this.isLoading) return;
 
+      // GA4: jordan_first_message — primer mensaje del usuario (señal real de engagement)
+      const isFirstUserMessage = this.messages.filter(m => m.role === 'user').length === 0;
+      if (isFirstUserMessage) {
+        this._track('jordan_first_message', {
+          message_length: text.length,
+          via: 'textarea'
+        });
+      }
+
       this._removeQuickReplies();
       this._addMessage('user', text);
       this.textarea.value = '';
@@ -1768,6 +1882,41 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
         if (this._documentContext) {
           systemPrompt += '\n\n## DOCUMENTO SUBIDO POR EL USUARIO\nEl usuario ha subido un documento. Aquí está el análisis del contenido:\n' + this._documentContext + '\n\nUsa esta información para hacer preguntas más relevantes sobre su proyecto. Puedes referenciar detalles específicos del documento.';
         }
+
+        // v7.1-7.2: refuerzo dinamico con CHECKLIST de lo capturado
+        const userMsgCount = this.messages.filter(m => m.role === 'user').length;
+        const has = {
+          email: !!this.extracted.email,
+          nombre: !!this.extracted.nombre,
+          tipo: !!this.extracted.tipo_proyecto,
+          presupuesto: !!this.extracted.presupuesto,
+          timeline: !!this.extracted.timeline,
+          rol: !!this.extracted.rol,
+          telefono: !!this.extracted.telefono
+        };
+        const chk = (v) => v ? '[OK]' : '[FALTA]';
+        systemPrompt += '\n\n## CHECKLIST DEL LEAD (estado actual)\nMensaje nº: ' + (this.messages.length + 1) + ' · Mensajes del usuario: ' + userMsgCount + '\n- Nombre: ' + chk(has.nombre) + (has.nombre ? ' ("' + this.extracted.nombre + '")' : '') + '\n- Email: ' + chk(has.email) + (has.email ? ' ("' + this.extracted.email + '")' : '') + '\n- Tipo proyecto: ' + chk(has.tipo) + '\n- Presupuesto: ' + chk(has.presupuesto) + '\n- Timeline: ' + chk(has.timeline) + '\n- Rol: ' + chk(has.rol) + '\n- Telefono: ' + chk(has.telefono) + '\n\nREGLAS ACTIVAS:';
+
+        if (userMsgCount >= 3 && !has.email) {
+          systemPrompt += '\n- PRIORIDAD MAXIMA: estamos en mensaje ' + (this.messages.length + 1) + ' y NO tienes email. En tu proxima respuesta DEBES pedir nombre y email con la excusa de la copia. Ejemplo: "Antes de seguir, para que te llegue una copia de esta conversacion y que el equipo pueda contactarte si no terminamos, ¿me dejas tu nombre y un email? Asi no se pierde nada." NO pidas telefono en esta fase.';
+        }
+        if (has.email && !has.presupuesto) {
+          systemPrompt += '\n- El presupuesto es OBLIGATORIO antes de cerrar o ofrecer reunion. Si aun no lo preguntaste, pregunta el rango ahora con contexto (no dato administrativo). Ejemplo: "Con lo que me cuentas, el presupuesto nos ayuda a acotar alcance. ¿En que rango os movéis — 5-10K, 10-15K, 15-20K, o mas de 20K?"';
+        }
+        if (has.email && has.presupuesto && !has.timeline) {
+          systemPrompt += '\n- Ya tienes email y presupuesto. Pregunta timeline: "¿En cuanto tiempo necesitas verlo funcionando?"';
+        }
+        if (has.email && has.presupuesto && has.timeline && !has.telefono) {
+          systemPrompt += '\n- Tienes lo esencial. Antes de cerrar, pregunta telefono como extra OPCIONAL: "Y un telefono por si el equipo necesita aclarar algo rapido? (si prefieres no darlo, con el email basta)"';
+        }
+        const readyForCalendly = has.email && has.presupuesto;
+        if (!readyForCalendly) {
+          systemPrompt += '\n- NO OFREZCAS REUNION (ni Calendly, ni "en directo", ni similar) hasta tener email Y presupuesto. Faltan todavia datos esenciales.';
+        }
+
+        // v7.2: si Jordan va a ofrecer reunion, debe marcar con [CALENDLY_SLOTS]
+        // para que el widget muestre los slots reales. Sin marcador, sin cards.
+        systemPrompt += '\n\n## CALENDLY — REGLA ESTRICTA\n1. NUNCA propongas fechas ni horas concretas ("miercoles a las 14:00", "el lunes", etc). Si lo haces, el usuario ve slots distintos debajo y se lia.\n2. Cuando quieras ofrecer reunion, tu mensaje DEBE terminar con el marcador literal [CALENDLY_SLOTS] en una linea aparte. El widget lo detecta y muestra los slots reales.\n3. En el mismo mensaje en que ofreces reunion NO hagas otra pregunta (ni timeline, ni presupuesto, ni nada). Solo la oferta + marcador.\nEjemplo CORRECTO:\n"[Nombre], esto merece hablarlo en directo con Jordi. Te paso los horarios disponibles.\n[CALENDLY_SLOTS]"\nEjemplo INCORRECTO:\n"Esto merece hablarlo en directo con Jordi. ¿En cuanto tiempo necesitas verlo funcionando?" (mezcla oferta con otra pregunta → confunde al usuario).';
 
         const res = await fetch(CONFIG.proxyUrl, {
           method: 'POST',
@@ -1799,7 +1948,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
         this._extractData(text);
         this._checkForQuickReplies(assistantContent);
       } catch (err) {
-        console.error('[Jordan v4]', err);
+        console.error('[Jordan v7]', err);
         this._removeTyping();
         this._addMessage('assistant', 'Problemas t\u00e9cnicos. Escr\u00edbenos a hola@trespuntoscomunicacion.es');
       }
@@ -1812,9 +1961,26 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     // -- Data Extraction --
 
     _extractData(text) {
+      // v7.1: flag — si el email se captura POR PRIMERA VEZ en esta ejecucion, disparamos
+      // el stage 'initial' AL FINAL (tras intentar extraer nombre/empresa/rol tambien)
+      let emailJustCaptured = false;
+
       // Email
       const emailMatch = text.match(/[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/);
-      if (emailMatch) this.extracted.email = emailMatch[0];
+      if (emailMatch) {
+        const wasEmpty = !this.extracted.email;
+        this.extracted.email = emailMatch[0];
+        // GA4: trackeo solo la primera vez que se captura email (no en cada mensaje)
+        if (wasEmpty) {
+          const emailDomain = (emailMatch[0].split('@')[1] || '').toLowerCase();
+          const freeEmails = ['gmail.com','hotmail.com','yahoo.com','outlook.com','live.com','icloud.com'];
+          this._track('jordan_email_captured', {
+            is_corporate: emailDomain && freeEmails.indexOf(emailDomain) === -1,
+            messages_at_capture: this.messages.length
+          });
+          emailJustCaptured = true;  // v7.1: postponemos el send al final de la funcion
+        }
+      }
 
       // Phone — multiple Spanish formats
       const phonePatterns = [
@@ -1823,7 +1989,17 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       ];
       for (const p of phonePatterns) {
         const m = text.match(p);
-        if (m) { this.extracted.telefono = m[1].replace(/[\s.\-]/g, ''); break; }
+        if (m) {
+          const wasEmpty = !this.extracted.telefono;
+          this.extracted.telefono = m[1].replace(/[\s.\-]/g, '');
+          // GA4: trackeo solo la primera vez que se captura teléfono
+          if (wasEmpty) {
+            this._track('jordan_phone_captured', {
+              messages_at_capture: this.messages.length
+            });
+          }
+          break;
+        }
       }
 
       // Name patterns
@@ -1897,6 +2073,12 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       }
 
       this._saveExtracted();
+
+      // v7.1: disparar stage 'initial' AHORA (tras intentar extraer nombre/empresa/rol)
+      // asi el Telegram inicial lleva el nombre si Jordan ya dijo "Perfecto, Juan"
+      if (emailJustCaptured) {
+        this._sendPartialLead('initial');
+      }
     }
 
     // Extract structured data from quick reply button clicks
@@ -1941,13 +2123,20 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
 
     // -- Lead Webhook --
 
-    _buildPayload(messages, extracted, sessionId, pageOrigin) {
+    _buildPayload(messages, extracted, sessionId, pageOrigin, stage) {
       // Payload aligned with WF2 "Procesar Datos Chat" expected fields
       const conversationText = messages.map(m =>
         `[${m.role === 'user' ? 'Usuario' : 'Jordan'}] ${m.content}`
       ).join('\n');
 
+      // v7: ultima pregunta de Jordan (para contexto del Telegram initial)
+      const lastAssistant = [...messages].reverse().find(m => m.role === 'assistant');
+      const lastJordan = lastAssistant ? lastAssistant.content : '';
+
       return {
+        // v7: stage del envio — 'initial' | 'update' | 'final'
+        stage: stage || 'final',
+
         // Fields WF2 expects
         nombre: extracted.nombre || '',
         email: extracted.email || '',
@@ -1970,21 +2159,40 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
         url_origen: pageOrigin || window.location.pathname,
         mensajes_totales: messages.length,
         duracion_segundos: Math.round((Date.now() - (this._startedAt || Date.now())) / 1000),
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        ultima_pregunta_jordan: lastJordan,  // v7
+
+        // GA4 client_id para correlación con sesión web (Measurement Protocol)
+        ga_client_id: (typeof window.tpClientId === 'function' ? window.tpClientId() : '')
       };
     }
 
     _sendLeadWebhook() {
       if (this._leadSent) return;
       if (this.messages.length < 3) return;
-      // Don't send if no contact data at all (no email AND no phone)
+      // Don't send if no contact data at all
       const hasContact = !!(this.extracted.email || this.extracted.telefono || this.extracted.nombre);
       if (!hasContact) return;
 
       this._leadSent = true;
+      // v7: cancelar cualquier update debounced pendiente
+      if (this._updateTimer) { clearTimeout(this._updateTimer); this._updateTimer = null; }
       this._saveSession(); // Mark as sent in localStorage
 
-      const payload = this._buildPayload(this.messages, this.extracted, this.sessionId, this._pageOrigin);
+      // GA4: conversión — lead capturado y enviado al backend
+      const userMessages = this.messages.filter(m => m.role === 'user').length;
+      this._track('jordan_lead_captured', {
+        has_email: !!this.extracted.email,
+        has_phone: !!this.extracted.telefono,
+        has_name: !!this.extracted.nombre,
+        tipo_proyecto: this.extracted.tipo_proyecto || '',
+        presupuesto: this.extracted.presupuesto || '',
+        rol: this.extracted.rol || '',
+        user_messages_count: userMessages,
+        duration_seconds: Math.round((Date.now() - this._startedAt) / 1000)
+      });
+
+      const payload = this._buildPayload(this.messages, this.extracted, this.sessionId, this._pageOrigin, 'final');
 
       // Try fetch first (more reliable when page is still open)
       // Fall back to sendBeacon for tab close scenarios
@@ -2005,6 +2213,43 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
           }
         });
       }
+    }
+
+    // v7: envio temprano (stage='initial') cuando se captura email por primera vez,
+    //     o update debounced (stage='update') conforme se van capturando mas datos.
+    //     Asi el lead queda server-side aunque el usuario no cierre nunca la pestana.
+    _sendPartialLead(stage) {
+      if (this._leadSent) return;  // ya se envio el final, no hace falta
+      if (stage === 'initial' && this._partialSent) return;  // ya se envio el initial
+      // initial requiere email. update requiere ya haber hecho initial.
+      if (stage === 'initial' && !this.extracted.email) return;
+      if (stage === 'update' && !this._partialSent) return;
+
+      if (stage === 'initial') {
+        this._partialSent = true;
+        this._saveSession();
+      }
+
+      const payload = this._buildPayload(this.messages, this.extracted, this.sessionId, this._pageOrigin, stage);
+
+      // Siempre fetch (la pestana esta abierta, no hay prisa)
+      try {
+        fetch(CONFIG.webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          keepalive: true
+        }).catch(() => { /* silencioso, volvera a intentar en proximo update */ });
+      } catch (_) { /* silencioso */ }
+    }
+
+    // v7: debounce de 10s para no saturar webhook con cada tecla
+    _scheduleUpdateSync() {
+      if (this._updateTimer) clearTimeout(this._updateTimer);
+      this._updateTimer = setTimeout(() => {
+        this._updateTimer = null;
+        this._sendPartialLead('update');
+      }, 10000);
     }
 
     // -- Inactivity Timer (25 min warning, 30 min auto-send) --

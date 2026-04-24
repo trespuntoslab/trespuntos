@@ -33,7 +33,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agencia UX/UI Barcelona | Arquitectura Digital de Conversión · Tres Puntos</title>
   <meta name="description"
-    content="Agencia de UX/UI y desarrollo web en Barcelona con 13 años construyendo plataformas que convierten. Desarrollo a medida, e-commerce y Design Engineering para empresas que no pueden perder tráfico." />
+    content="Agencia UX/UI y desarrollo web en Barcelona. 13 años construyendo plataformas que convierten: desarrollo a medida, e-commerce y Design Engineering." />
   
   <link rel="canonical" href="https://www.trespuntoscomunicacion.es/" />
   <meta property="og:title" content="Agencia UX/UI y Desarrollo Web Barcelona | Tres Puntos" />
@@ -60,19 +60,39 @@
       "logo": "https://www.trespuntoscomunicacion.es/img/logos/tp-logo.svg",
       "description": "Agencia UX/UI y desarrollo web en Barcelona especializada en Arquitectura Digital de Conversión.",
       "foundingDate": "2011",
-      "priceRange": "€€€",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "09:00",
+          "closes": "14:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "12",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Barcelona",
-        "addressLocality": "Barcelona",
+        "streetAddress": "Carrer de Sant Josep",
+        "addressLocality": "Santa Coloma de Gramenet",
         "addressRegion": "Catalunya",
-        "postalCode": "08000",
+        "postalCode": "08921",
         "addressCountry": "ES"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "41.3874",
-        "longitude": "2.1686"
+        "latitude": "41.4515",
+        "longitude": "2.2086"
       },
       "contactPoint": {
         "@type": "ContactPoint",
@@ -615,7 +635,7 @@
       <div class="container-main">
         <div class="propuesta-header reveal">
           <span class="section-badge reveal">Servicios</span>
-          <h2 class="section-h2 reveal">Servicios que construyen<br />plataformas que funcionan.</h2>
+          <h2 class="section-h2 reveal">Servicios que construyen <br />plataformas que funcionan.</h2>
           <p class="section-sub"></p>
         </div>
         <div class="servicios-stack">
@@ -1336,7 +1356,7 @@
           <div class="section-badge">Clientes</div>
           <h2 id="testimonios-heading" class="section-h2">Los que <span
               style="background:var(--gradient-brand);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:aurora 8s ease infinite;display:inline;">ya
-              escalaron</span><br />hablan por nosotros</h2>
+              escalaron</span> <br />hablan por nosotros</h2>
           <p class="section-sub">Directivos que tenían un cuello de botella tecnológico. Ahora tienen una plataforma que
             trabaja para ellos.</p>
           <div class="google-rating" aria-label="Valoración 5 estrellas en Google">
@@ -2171,7 +2191,7 @@
   <script src="/js/components.js?v=27" defer></script>
   <script src="/js/main.js" defer></script>
   <script src="/js/service-page.js" defer></script>
-  <script src="/js/supabase-forms.js" defer></script>
+  <script src="/js/supabase-forms.js?v=20260416" defer></script>
   <script src="/js/form-validation.js" defer></script>
   <script>document.addEventListener('DOMContentLoaded',function(){try{try{TP.navbar();}catch(e){}}catch(e){console.warn('navbar:',e);}try{try{/* ctaForm inline */;}catch(e){}}catch(e){console.warn('ctaForm:',e);}try{try{TP.initJS();}catch(e){}}catch(e){console.warn('initJS:',e);}});</script>
 
@@ -2198,7 +2218,7 @@
     ]
   };
   </script>
-  <script async src="/assets/jordan/jordan-widget-v6.js"></script>
+  <script async src="/assets/jordan/jordan-widget-v7.js"></script>
 </body>
 
 </html>
