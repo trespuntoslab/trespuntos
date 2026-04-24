@@ -1,15 +1,68 @@
 # Tres Puntos Web — Normas de desarrollo
 
+## Rol de Claudio — Responsable del ecosistema Tres Puntos
+
+Claudio (el asistente IA) es el **responsable del ecosistema técnico y de sistemas de Tres Puntos Comunicación**. No es un ejecutor pasivo: es el arquitecto que vela por la coherencia, la deuda técnica, la seguridad, la performance y la evolución del stack.
+
+### Responsabilidades
+- **Proactividad**: detectar desincronizaciones (ej. FTP ≠ git), deuda técnica, pendientes olvidados, riesgos de seguridad, regresiones de performance — y proponerlos aunque Jordi no los pida.
+- **Propuesta de mejoras**: sugerir sistemas, agentes, automatizaciones, refactors o skills que encajen con la visión de Tres Puntos (agencia UX/UI + dev + automatización IA).
+- **Diseño de agentes y rutinas**: proponer subagentes Claude Code, scheduled-tasks, workflows n8n, skills nuevas cuando aporten valor medible.
+- **Documentación viva**: mantener este CLAUDE.md actualizado con cada cambio estructural. Es la memoria del proyecto.
+- **Criterio de ingeniería**: decir "no" a lo que no tenga sentido técnico o suba deuda sin valor claro.
+
+### Alcance del ecosistema
+- Web pública `trespuntoscomunicacion.es` (repo `Trespuntos-web-cloude`, deploy FTP a Nominalia + Cloudflare)
+- Dashboard `dash.trespuntos-lab.com` (VPS, vanilla JS + Supabase)
+- n8n `n8n.trespuntos-lab.com` (workflows críticos: leads, partners, Jordan, Kobe, Bird, sync)
+- Airtable (fuente de verdad de leads, CRM, auditorías partners)
+- Supabase (schema `trespuntos`, tabla `web_metrics`, auth)
+- Jordan widget v6 (42 páginas)
+- Documentos funcionales (`doc.trespuntos-lab.com`)
+- Sistema de casos de estudio (9 casos activos)
+- Agentes: Jordan, Magic, Kobe, Bird, Curry, Luka, Rodman (coordinados desde Claudio)
+
+### Autonomía operativa
+- **Puede** proponer ramas git con nombres descriptivos (`feat/`, `fix/`, `chore/`, `seo/`, `perf/`)
+- **Puede** proponer cambios estructurales, nuevas skills, scheduled-tasks, workflows n8n
+- **Puede** sugerir refactors, limpieza de código muerto, actualizaciones de dependencias
+- **Puede** crear issues o PRs en GitHub con propuestas
+- **Debe** esperar autorización explícita de Jordi para: `git push`, FTP upload, purga Cloudflare, ejecución de workflows destructivos, borrado de datos
+
+### Principio operativo
+> "Si hay algo desincronizado, sin documentar, con riesgo o con mejor forma de resolverse — dilo antes de que Jordi tenga que preguntarlo."
+
 ## Deploy — Regla crítica
 **NUNCA hacer `git push` ni subir archivos al servidor sin permiso EXPLÍCITO de Jordi en el chat.**
 - Claude recomienda cuándo hacer push (tras cambios significativos, al final de una sesión de trabajo, etc.)
 - Jordi debe confirmar ("sí", "sube", "dale", "push") antes de ejecutar cualquier `git push` o upload
 - Esto aplica a git push, FTP, SCP, rsync, o cualquier método de transferencia a producción
 
-### Flujo de deploy actual (desde 2026-04-07)
+### Flujo de deploy actual (desde 2026-04-17)
 1. **Git push**: `git push origin main` → sube al repositorio `git@github.com:trespuntoslab/trespuntos.git`
 2. **FTP a producción**: Subir archivos modificados por FTP a `www.trespuntoscomunicacion.es` (Nominalia)
-3. No se necesita paso adicional — los archivos están en producción directamente tras el FTP
+3. **⚠️ Purgar caché de Cloudflare** — PASO OBLIGATORIO tras cada FTP. Si no se hace, los usuarios verán la versión antigua hasta 2h (TTL del edge cache)
+
+### ⚠️ Purga de caché Cloudflare — OBLIGATORIO tras cada deploy FTP
+Desde 2026-04-17 la web pasa por Cloudflare con **Cache Rule de 2h** (HTML cacheado en edge). Tras CUALQUIER subida FTP a Nominalia:
+
+1. Entrar en Cloudflare → dominio `trespuntoscomunicacion.es`
+2. Menú izquierdo → **Caching → Configuration**
+3. Opciones:
+   - **Purge Everything** → si se han subido muchos archivos o no se sabe cuáles exactamente
+   - **Custom Purge → Purge by URL** → si solo cambiaron 1-5 archivos concretos (más eficiente, no tira toda la caché)
+4. Esperar ~10 segundos y verificar con: `curl -I https://www.trespuntoscomunicacion.es/ruta/` → debe aparecer `cf-cache-status: MISS` en la primera request post-purga, luego `HIT` en las siguientes
+
+**Regla para Claude**: Cada vez que se suba cualquier archivo por FTP a producción, recordar a Jordi al final del deploy: *"⚠️ Recuerda purgar el cache de Cloudflare (Caching → Configuration → Purge Everything) o los cambios no se verán hasta 2h"*.
+
+### Stack frontal (desde 2026-04-17) — Cloudflare + Nominalia
+- **DNS + Proxy**: Cloudflare (nameservers `ruben.ns.cloudflare.com` + `surina.ns.cloudflare.com`)
+- **SSL mode**: Full (no Flexible — Flexible causa bucle de redirects)
+- **Always Use HTTPS**: ON
+- **Automatic HTTPS Rewrites**: ON
+- **Cache Rule activa**: "Cache HTML estático" → All incoming requests → Eligible for cache → Edge TTL 2h (Ignore cache-control header)
+- **TTFB medido**: 65-80ms (antes 6.000ms sin Cloudflare)
+- **Origen**: Nominalia (FTP) — Cloudflare hace de proxy/cache delante
 
 ### Producción — www.trespuntoscomunicacion.es (Nominalia)
 - **URL**: `https://www.trespuntoscomunicacion.es`
@@ -39,13 +92,15 @@ El formulario es un **componente reutilizable** idéntico en todas las páginas.
 
 ### Flujo de automatización
 ```
-Cualquier página → Form CTA → Supabase (web_contactos) + n8n (leads-trespuntos) → Airtable
+Cualquier página → Form CTA → n8n (webhook leads-trespuntos) → Airtable (tabla "Formulario")
                              → Redirect a /form-v3/gracias.html
                              → gracias.html da acceso al briefing completo (/form-v3/form-step1.html)
 ```
 
+**Fuente única de verdad: Airtable** (base `appR9SHmsc6CZ7VJj`, tabla `tblqbhaPtZlsPbsYs`). El dashboard lee de ahí vía `/api/form-leads`. No hay insert a Supabase desde el form (histórico: antes se intentaba en paralelo pero fallaba silenciosamente por schema `trespuntos` no expuesto en Kong — código muerto eliminado el 2026-04-21).
+
 ### Archivos JS del formulario (3 scripts, siempre en este orden)
-1. `/js/supabase-forms.js` (defer) — Conexión Supabase + n8n, honeypot check, rate limiting 30s, Turnstile token, lead scoring
+1. `/js/supabase-forms.js` (defer) — Submit handlers, n8n webhook, honeypot, rate limiting 30s, Turnstile token, lead scoring (nombre conservado por histórico — NO inserta en Supabase)
 2. `/js/form-validation.js` (defer) — Validación en tiempo real, custom-select, service cards multi-select, shake en errores, tracking UTM
 3. Ambos deben cargarse DESPUÉS de `components.js`
 
@@ -95,7 +150,7 @@ Cualquier página → Form CTA → Supabase (web_contactos) + n8n (leads-trespun
 - `/js/components.js` — Navbar, footer, carousel, IntersectionObserver (cargar con `defer`)
 - `/js/main.js` (defer) — Hero canvas particles, counters, scroll progress, animaciones de servicio
 - `/js/form-validation.js` (defer) — Validación formulario CTA, custom-select, service cards
-- `/js/supabase-forms.js` (defer) — Submit handlers, Supabase + n8n + Turnstile
+- `/js/supabase-forms.js` (defer) — Submit handlers, n8n + Turnstile (envía solo a n8n, no a Supabase directo — ver sección "Formulario CTA")
 - `/js/service-page.js` (defer) — Animaciones específicas de páginas de servicio
 
 ### Performance (home)
@@ -335,10 +390,12 @@ Tres funciones añadidas al inicio del IIFE, disponibles en las 89 páginas:
 - 42 HTMLs actualizados con `<script async src="/assets/jordan/jordan-widget-v6.js">` (script batch sed)
 - Cache-bust automático: usuarios con v5 cacheada cargan v6 inmediatamente al volver a visitar
 
-#### Conversiones a marcar manualmente en GA4 admin (pendiente para Jordi)
-1. `generate_lead` — todos los form submits (cualquier form_type)
-2. `jordan_lead_captured` — leads del chat IA con datos de contacto
-3. `jordan_calendly_click` — la conversión "premium" (intent de reunión)
+#### Conversiones marcadas como evento clave en GA4 admin (2026-04-16)
+1. `generate_lead` — todos los form submits (cualquier form_type) ✅
+2. `jordan_lead_captured` — leads del chat IA con datos de contacto ✅
+3. `jordan_calendly_click` — la conversión "premium" (intent de reunión) ✅
+- Propiedad: `TresPuntos.es - GA4` (a56947166p392606096), cuenta "Tres Puntos comunicac..."
+- Datos de conversiones cuentan desde 2026-04-16 (no retroactivo)
 
 #### QA local realizado (preview server)
 - Helpers cargados en 100% de páginas (verificado en `/` y `/contacto/`)
@@ -348,11 +405,263 @@ Tres funciones añadidas al inicio del IIFE, disponibles en las 89 páginas:
 - Modo embed filtra correctamente: `JordanAPI.open()` en `/contacto/` NO dispara `jordan_open` (evita ruido)
 - Sin errores de consola
 
-#### Pendiente Paso 2 (próxima sesión)
-- Crear tabla `web_metrics` en Supabase (esquema: id, metric_date, metric_hour, source, metric_key, dimension_1/2, value, meta jsonb)
-- Workflow n8n `web-metrics-sync` (cron 1h, 4 ramas paralelas: GA4 Data API + GSC + Airtable + logs bots IA)
-- Nodo HTTP Measurement Protocol en workflow `leads-trespuntos`: cuando llega lead cualificado (score≥60), dispara conversion `qualified_lead` en GA4 con `client_id` recibido en el payload
-- Pestaña "Web" en `dash.trespuntos-lab.com/dashboard.html` con sub-secciones Resumen / Funnel / Páginas / SEO / Jordan / GEO-AEO
+### Cambios aplicados (2026-04-16) — Analytics Paso 2 (dashboard + sync + Measurement Protocol)
+
+#### 1. Tabla `trespuntos.web_metrics` en Supabase
+- Esquema: `id` (bigserial), `metric_date` (date), `metric_hour` (smallint), `source` (ga4|gsc|airtable|jordan|clarity|system), `metric_key` (text), `dimension_1` (text), `dimension_2` (text), `value` (numeric), `meta` (jsonb), `created_at` (timestamptz)
+- 3 índices: (date, source), metric_key, (date, key)
+- Permisos: anon + authenticated con SELECT + INSERT
+- Owner: `supabase_admin` (schema `trespuntos`)
+
+#### 2. Endpoint `/api/web` en server.py (VPS)
+- 6 queries GA4 Data API por llamada: events, daily, pages (top 20), sources (channels), devices, countries
+- Eventos rastreados: `generate_lead`, `form_start`, `jordan_open`, `jordan_close`, `jordan_first_message`, `jordan_email_captured`, `jordan_phone_captured`, `jordan_calendly_shown`, `jordan_calendly_click`, `jordan_lead_captured`, `page_view`, `session_start`
+- Cache 60s automático (sistema existente del dashboard)
+- Error handling con detección de reauth
+
+#### 3. Endpoint `/api/web-sync` en server.py (VPS)
+- Llama a `/api/web` + `/api/gsc` internamente (datos cacheados)
+- Transforma los datos en ~38 filas INSERT para `web_metrics`
+- Inserta via `docker exec psql` directo a Supabase
+- Devuelve `{ ok, rows, hour, date }`
+- Nota: PostgREST no expone el schema `trespuntos` vía Kong (solo public, jordi, agentes). Se usa psql directo como workaround.
+
+#### 4. Workflow n8n `📊 Web Metrics Sync — Hourly` (ID: `2hSkRO4tBO4VZwdx`)
+- Cron: cada hora al minuto :05
+- Nodos: Schedule Trigger → HTTP GET `/api/web-sync` → IF ok → (error) Telegram alert
+- Telegram notifica errores al chat `7313439878`
+- **Activo** en producción desde 2026-04-16
+
+#### 5. Pestaña "Web" en dashboard.html (VPS)
+- Nuevo tab button "Web" con badge dinámico (total sessions)
+- 6 sub-secciones con sub-nav (`switchWeb()`): Resumen / Funnel / Páginas / SEO / Jordan / GEO
+- **Resumen**: 6 KPIs (sessions, users, new, engaged, bounce, duration) + sparkline sessions 30d + canales tráfico + dispositivos
+- **Funnel**: Embudo visual Sessions → Form starts → Generate lead → Jordan opens → Jordan 1er msg → Jordan leads → Calendly clicks. Con barras proporcionales y % conversión entre pasos
+- **Páginas**: Tabla top 20 con sessions, views, duration, bounce, engagement rate (color-coded)
+- **SEO**: KPIs GSC (clicks, impressions, CTR, position) + tabla queries + tabla páginas SEO
+- **Jordan**: 5 KPIs (opens, 1er msg, emails, leads, calendly) + funnel Jordan detallado (7 pasos)
+- **GEO**: Barras horizontales por país + placeholder GEO/AEO para tracking IA (futuro)
+- `renderWeb(webData, ga4Data, gscData)` integrado en `initDashboard()` con `Promise.allSettled`
+
+#### 6. Measurement Protocol en `Pipeline v2.5 — Leads Trespuntos` (ID: `fxiAWMB3S0eWc1aM`)
+- Nodo `Mapear datos lead` actualizado a v5: ahora pasa `ga_client_id` del payload del formulario
+- Nuevo nodo `GA4 Qualified Lead` (Code, continueOnFail): conectado desde `Preparar Airtable`
+  - Condición: `lead_score >= 60` AND `ga_client_id` presente AND API secret configurado
+  - Evento: `qualified_lead` con params: lead_score, lead_quality, value (EUR), servicio, pagina_origen, form_type
+  - Value mapeado desde presupuesto: +20K€→25000, 15K-20K€→17500, 10K-15K€→12500, 5K-10K€→7500, default→3000
+  - **⚠️ PENDIENTE**: Crear API secret en GA4 Admin → Data Streams → `G-ERX855WTHN` → Measurement Protocol API secrets → Create. Luego reemplazar `SET_YOUR_API_SECRET_HERE` en el nodo.
+
+#### Pendiente Paso 3
+- Crear el GA4 Measurement Protocol API secret y configurarlo en el nodo `GA4 Qualified Lead`
+- Marcar `qualified_lead` como evento clave en GA4 admin
+- Exponer schema `trespuntos` en Kong/PostgREST (actualmente usa psql directo como workaround)
+- Microsoft Clarity integration (heatmaps, session recordings)
+- GEO/AEO: tracking de menciones en ChatGPT, Perplexity, Gemini, Claude
+- Pestaña "Web" en dashboard: añadir gráficos históricos desde `web_metrics` (tendencias 7d/30d/90d)
+
+### Cambios aplicados (2026-04-17) — SEO: Fix canibalización + redirects 301
+
+#### 1. Redirects 301 absolutos (.htaccess)
+- **109 reglas** convertidas de rutas relativas (`/blog/slug/`) a absolutas (`https://www.trespuntoscomunicacion.es/blog/slug/`)
+- **Motivo**: Nominalia termina SSL en nginx → Apache veía HTTP → construía redirects con `http://` → cadena doble HTTPS→HTTP→HTTPS que penalizaba SEO
+- Afectaba a: blog posts WP, servicios antiguos, páginas WP, categorías, tags, feeds, formularios
+
+#### 2. Fix URL "endencias" rota (404 → 301)
+- `/endencias-ux-ui-2026*` (5ª página más visitada, 63 sesiones/mes, devolvía 404) ahora redirige a `/blog/tendencias-ux-ui-2026-...`
+- Era un typo indexado por Google (faltaba la "t" en "tendencias")
+
+#### 3. Redirects servicios cortos
+- `/servicios/desarrollo-web/` → `/servicios/desarrollo-web-a-medida-barcelona/`
+- `/servicios/consultoria-ux/` → `/servicios/consultoria-digital-barcelona/`
+- `/servicios/design-engineer/` → `/servicios/design-engineer-barcelona/`
+- `/servicios/tienda-online/` → `/servicios/tienda-online-barcelona/`
+
+#### 4. Meta description en contacto
+- Añadida: "Habla con Jordan, nuestro asistente IA, o envíanos un mensaje..."
+
+#### 5. Descanibalización SEO — "agencia ux ui barcelona"
+- **Problema**: 6 páginas competían por el mismo keyword (home, UX/UI BCN, servicios hub, nosotros, contacto, blog). Google alternaba entre home (pos 3) y servicio UX/UI (pos 12), promediando ~9.8 en herramientas de tracking
+- **Verificación SERP real (17 abril)**: Home en posición 3, servicio UX/UI en posición ~12 (pág 2). "Desarrollo web a medida barcelona" en posición 1 (servicio desarrollo web)
+- **Solución**: Cada keyword tiene un solo dueño:
+
+| Keyword | Página dueña | Cambio |
+|---------|-------------|--------|
+| "agencia ux ui barcelona" | Home (`/`) | Sin cambio — es la URL que rankea |
+| "desarrollo web a medida barcelona" | `/servicios/desarrollo-web-a-medida-barcelona/` | Sin cambio — posición 1 |
+| "diseño interfaces barcelona" | `/servicios/diseno-ux-ui-barcelona/` | Title/H1/meta desc diferenciados |
+| "arquitectura digital" | `/nosotros/` | Title/H1/meta desc diferenciados |
+| (transaccional) | `/contacto/` | Title genérico sin keywords competitivos |
+| (hub) | `/servicios/` | Title sin "UX/UI" ni "desarrollo web" |
+
+- **Titles cambiados**:
+  - Servicios hub: "Servicios de Arquitectura Digital y Tecnología Web · Tres Puntos Barcelona"
+  - UX/UI BCN: "Diseño de Interfaces y Experiencia de Usuario en Barcelona · Tres Puntos"
+  - Nosotros: "Nosotros | Tres Puntos — Estudio de Arquitectura Digital en Barcelona"
+  - Contacto: "Contacto | Tres Puntos — Hablemos de tu Proyecto Digital"
+- **H1 cambiados**: UX/UI BCN ("Diseño de interfaces para plataformas..."), Nosotros ("Arquitectura digital de conversión en Barcelona")
+- **REGLA CRÍTICA**: NUNCA poner "agencia UX/UI Barcelona" en el title de ninguna página que no sea la home. NUNCA poner "desarrollo web" en titles de páginas que no sean la de servicio de desarrollo web.
+- **Deploy**: 5 archivos subidos por FTP a producción (2026-04-17)
+
+### Cambios aplicados (2026-04-21) — Fix UTM tracking + limpieza Supabase muerto
+
+#### Contexto
+Jordan detectó que el KPI "UTMs no capturados = 0%" del dashboard estaba hardcodeado y que, aunque el JS del form leía UTMs de la URL, no los pasaba al destino final. Investigación reveló dos problemas distintos: (1) JS no incluía UTMs en el payload Supabase, (2) el insert a Supabase **nunca había funcionado** porque el schema `trespuntos` no está expuesto en Kong/PostgREST y el error se tragaba con `.catch(()=>{})` silencioso.
+
+#### Decisión
+**Airtable queda como fuente única de verdad para leads del formulario.** No se expone el schema `trespuntos` en Kong (opción A descartada por riesgo de exponer tablas sensibles como `cerebro_documents`, `token_usage`, `client_instructions` sin auditar RLS). Se elimina el código muerto del JS (opción C).
+
+#### Cambios realizados
+1. **`js/supabase-forms.js` limpiado** — eliminadas constantes `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SCHEMA`, función `supabaseInsert()` y sus 4 llamadas (cta, caso, email, briefing). Solo queda n8n webhook + Turnstile + tracking GA4. Archivo 18KB → 17KB.
+2. **Revertidas las columnas UTM añadidas durante la investigación** en `trespuntos.web_contactos` (utm_source, utm_medium, utm_campaign, pagina_referrer) y `trespuntos.leads` (las 4 anteriores + pagina_origen). Dropped via `supabase_admin`.
+3. **Dashboard `/root/dashboard.html`**: sustituido el KPI `0%` hardcodeado por cálculo dinámico que lee de Airtable. IDs añadidos: `kpi-utm-pct`, `kpi-utm-sub`, `kpi-utm-badge`, `utm-alert-box`, `utm-alert-title`, `utm-alert-msg`. Lógica en `renderLeads()`: `% = leads con UTM Source/Medium/Campaign != '' / total leads form`. Colores: verde ≥50%, amber ≥20%, rojo <20%. Copy del alert banner adapta al tramo.
+4. **Test end-to-end real** hecho en producción desde Chrome: form enviado con UTMs sintéticos → Airtable recibió registro con `UTM Source=claude-test`, `UTM Medium=verificacion`, `UTM Campaign=fix-utm-20260421`. Record de test borrado tras verificación.
+5. **n8n NO tocado** — los 4 campos UTM ya estaban correctamente mapeados en los nodos "Mapear datos lead", "Preparar Airtable" y "Upsert AT Briefing" desde hace meses. Los campos también existían en Airtable (`fldMEBQ9tgkpUx7br`, `fld9la2hMHFAxWksz`, `fldJWTwMbc2LF70Ht`, `fldwtbiGLdWUFIwO0`). Todo el backend ya estaba preparado, solo fallaba el JS del front.
+
+#### Hallazgos importantes
+- **El schema `trespuntos` de Supabase NO está expuesto en PostgREST/Kong** (solo `public`, `jordi`, `agentes`). Cualquier intento del frontend de escribir con `Content-Profile: trespuntos` falla con `PGRST106`. Las tablas `web_contactos` y `leads` de ese schema están vacías o desactualizadas.
+- **El `.catch(function(){})` vacío que había en el JS es un patrón peligroso** — tragó errores reales durante 6+ meses. Lección: siempre loguear a consola al menos, aunque sea silencioso para el usuario.
+- **Dashboard en `/root/dashboard.html` del VPS** (n8n.trespuntos-lab.com) sirve `dash.trespuntos-lab.com` — no está en Hostinger como decía una referencia antigua. Backups en `/root/dashboard.html.bak-*`.
+
+### Cambios aplicados (2026-04-24) — Jordan widget v7: persistencia en 3 stages + fix Calendly + system prompt v10.2
+
+#### Contexto (bug crítico descubierto)
+Jordi testeó el chat de Jordan desde móvil, reservó en Calendly, y no llegó nada: ni Telegram, ni email, ni Airtable. Causa raíz: el widget v6 solo enviaba el lead al cerrar chat / beforeunload / 30min inactividad. Al clicar slot Calendly, `window.open(fullUrl, '_blank')` abría nueva pestaña → la original quedaba abierta → nunca se disparaba `beforeunload` → lead perdido en localStorage. Desde el 16 abril, **8 días sin ninguna ejecución real** en el workflow `jordan-chat-leads`. Toda conversación que terminaba en Calendly sin cerrar pestaña se perdió.
+
+#### Arquitectura nueva — 3 stages de envío
+```
+Widget Jordan v7
+├─ msg 4: usuario da email
+│  └─ _sendPartialLead('initial')
+│     └─ n8n: Airtable Upsert (Session ID) + Telegram 🟡 "Hablando con alguien"
+├─ Cada nuevo dato capturado (debounce 10s)
+│  └─ _sendPartialLead('update')
+│     └─ n8n: Airtable Upsert (mismo Session ID, sin IA, sin Telegram)
+└─ Final (cierre chat / beforeunload / 30min / click Calendly)
+   └─ _sendLeadWebhook('final')
+      └─ n8n: Scoring IA + Airtable Upsert + Email Jordi + Email Lead + Telegram 💬 scoring
+```
+
+**Ventaja clave**: en cuanto Jordan captura el email, el lead queda server-side. Aunque el móvil se apague, aunque nunca cierre el chat, **el contacto ya no se pierde**.
+
+#### Cambios técnicos
+
+**Widget `/assets/jordan/jordan-widget-v7.js` (100 KB, ~2400 líneas)**
+- Nuevo flag global `__jordanWidgetV7` + host id `jordan-widget-v7`
+- Nuevos estados: `_partialSent` (flag initial ya enviado), `_updateTimer` (debounce 10s), `emailJustCaptured` (trigger diferido)
+- Nuevo método `_sendPartialLead(stage)` + `_scheduleUpdateSync()` (debounce)
+- `_extractData()`: el trigger de `initial` se mueve al FINAL de la función (tras intentar extraer nombre/empresa/rol) — evita Telegrams sin nombre
+- `_saveExtracted()`: si ya se hizo `initial`, programa `update` debounced
+- `_sendLeadWebhook()`: payload con `stage='final'`, cancela updates pendientes
+- **Fix bug Calendly**: `_sendLeadWebhook()` se llama ANTES de `window.open(fullUrl)` — así no se pierde aunque el usuario no cierre la pestaña
+- `_buildPayload()`: acepta `stage`, incluye `ultima_pregunta_jordan` (contexto del Telegram inicial)
+- `_loadSession()`: recupera `_partialSent` del localStorage si el usuario recarga página
+
+**System prompt v10.2 (embebido en widget)**
+- Fase 1 msg 1: bienvenida igual
+- Fase 2 msg 2: reformular + 1 pregunta de proyecto
+- **Fase 3 msg 3: reformular + observación de valor (stack/equipo/caso) + 1 pregunta más** — objetivo: que el usuario piense "este bot responde bien"
+- **Fase 4 msg 4: pedir nombre + email con excusa de la copia** — *"Antes de seguir, para que te llegue una copia de esta conversación y que el equipo pueda contactarte si no terminamos, ¿me dejas tu nombre y un email? Así no se pierde nada."*
+- Teléfono movido al final (opcional, no bloqueante)
+- NUNCA #4: no pedir datos antes de msg 4
+- NUNCA #5 nuevo: no pedir teléfono en Fase 4
+- NUNCA #21 nuevo: no bloquear cierre por falta de teléfono
+
+**Inyecciones dinámicas al prompt (por cada request al proxy)**
+El widget calcula en cada llamada qué datos hay y qué faltan, e inyecta al system prompt un **checklist dinámico** + **reglas activas**:
+```
+## CHECKLIST DEL LEAD (estado actual)
+Mensaje nº: 5 · Mensajes del usuario: 3
+- Nombre: [OK] ("Juan")
+- Email: [FALTA]
+- Tipo proyecto: [OK]
+- Presupuesto: [FALTA]
+- Timeline: [FALTA]
+- Rol: [OK]
+- Telefono: [FALTA]
+
+REGLAS ACTIVAS:
+- PRIORIDAD MAXIMA: ...pedir email ahora con excusa de la copia
+- El presupuesto es OBLIGATORIO antes de cerrar o ofrecer reunion
+- NO OFREZCAS REUNION hasta tener email Y presupuesto
+```
+Haiku ve esto en cada request → sigue la lógica de captura sin depender solo del prompt estático.
+
+**Marcador `[CALENDLY_SLOTS]`**
+- Jordan solo dispara tarjetas Calendly escribiendo literal `[CALENDLY_SLOTS]` al final del mensaje
+- El widget lo detecta (`lower.includes('[calendly_slots]')`) → llama API Calendly → muestra slots reales
+- Se oculta del mensaje visible (`_addMessage` reemplaza por `''`)
+- Prohibido mezclar oferta de reunión con otra pregunta en el mismo mensaje (causaba cards Calendly mientras Jordan preguntaba timeline)
+
+**Placeholders literales sustituidos en `_addMessage`**
+Haiku a veces deja sin rellenar `[CALENDLY_URL]` o `[Nombre]`. El widget ahora los reemplaza automáticamente:
+- `[CALENDLY_URL]` → `CONFIG.calendlyUrl` (`https://calendly.com/trespuntos/jordi-exposito`)
+- `[Nombre]` → `this.extracted.nombre` o vacío
+- `[CALENDLY_SLOTS]` → vacío (solo el widget lo usa)
+
+**Quick replies automáticas DESACTIVADAS (salvo welcome inicial)**
+Motivo: Haiku mezcla intents en un mismo mensaje (ej. "merece hablarlo en directo" + "¿en cuánto tiempo necesitas?") y el detector `_checkForQuickReplies` matcheaba mal:
+- "portafolio" contenía "rol" → cards de CEO/Marketing en pregunta de tipo de web
+- "en directo" → cards Calendly mientras Jordan preguntaba timeline
+La welcome inicial sí mantiene cards (onboarding). El resto lo lleva Jordan en conversación libre, disparando Calendly solo con `[CALENDLY_SLOTS]`.
+
+**Workflow n8n `jordan-chat-leads` (ID: `2a6ZaK3pw9j7LPEc`) — 12 nodos → 16 nodos**
+- `Procesar Datos Chat`: lee `stage` y `session_id` del body
+- Nuevo IF **`Es Final?`** (condición `$json.stage === 'final'`):
+  - TRUE → Scoring IA → Procesar Respuesta IA → [Telegram 💬 final, Airtable Upsert, Email Jordi, Email Lead]
+  - FALSE → flow parcial
+- Nuevo HTTP PATCH **`Upsert Airtable Parcial`**:
+  - `performUpsert: {"fieldsToMergeOn": ["fld8Gkqh8tKlJqCK7"]}` — por Session ID
+  - Solo 10 campos básicos (nombre, email, tel, empresa, rol, tipo, presupuesto, conversación, fuente + Session ID)
+  - Sin IA, sin email, sin scoring
+- Nuevo IF **`Es Initial?`** (tras upsert parcial):
+  - TRUE → Preparar Telegram Initial → Enviar Telegram
+  - FALSE → fin (era un `update`, no notificación)
+- Nuevo Code **`Preparar Telegram Initial`**:
+  - Mensaje 🟡 "Hablando con alguien" con nombre, email, URL origen, última pregunta de Jordan, 2 primeros mensajes del usuario
+  - "La conversación sigue abierta. Te aviso con el resumen completo cuando termine."
+- **`Guardar en Airtable`** modificado de POST → PATCH con `performUpsert fieldsToMergeOn Session ID` — ya no crea duplicados, actualiza el mismo registro que el initial
+
+**Airtable tabla `Jordan — Chat Leads` (base `appR9SHmsc6CZ7VJj`, `tblU72kaxQq7222Do`)**
+- Campo nuevo **Session ID** (`fld8Gkqh8tKlJqCK7`, singleLineText) — clave de upsert
+
+#### Tests end-to-end realizados (2026-04-24)
+- **Workflow aislado con curl**: stage `initial` creó `recVAwhcM7OUjrBvh` + Telegram 🟡 llegó. Stage `final` (mismo SID) hizo UPDATE del mismo record (`updatedRecords`) + Telegram 💬 con score 8/10. Sin duplicados. ✅
+- **Test real desde móvil de Jordi**: el Telegram 🟡 llegó correctamente tras dar email (bug identificado: llegó con "Sin nombre" aunque el usuario dio "Juan" — causa: `_sendPartialLead` se disparaba ANTES de la extracción de nombre. Fix aplicado en iteración 2).
+
+#### Iteración de bugs tras test real
+
+**v7.1 — 4 fixes** (aplicados + subidos por FTP)
+1. **Bug rol/portafolio**: `_checkForQuickReplies` hacía `lower.includes('rol')` → "portafolio" matcheaba → cards de CEO en pregunta de tipo de web. Fix: `/\brol\b/` con word boundary.
+2. **Telegram sin nombre**: `_sendPartialLead('initial')` se disparaba dentro del bloque de email, antes de que corriera la extracción de nombre. Fix: flag `emailJustCaptured` + mover el send al FINAL de `_extractData`.
+3. **Jordan no pedía datos en msg 4**: Haiku rebelde ante el prompt estático. Fix: inyección dinámica en system prompt si `userMsgCount >= 3 && !email`.
+4. **`[CALENDLY_URL]` literal + miércoles inventado**: Jordan escribía "[CALENDLY_URL]" sin sustituir y proponía fechas inventadas. Fix widget: `_addMessage` reemplaza el placeholder por el URL real. Fix prompt: nueva sección `## CALENDLY — REGLA ESTRICTA` prohibiendo inventar fechas.
+
+**v7.2 — 3 fixes más** (aplicados + subidos)
+1. **Quick replies automáticas desactivadas post-welcome**: evitaba mismatches por intents mezclados.
+2. **Marcador `[CALENDLY_SLOTS]`**: Jordan debe escribirlo explícitamente al final del mensaje para que el widget muestre slots. Sin marcador, sin cards fantasma. En el mismo mensaje con Calendly NO se hacen otras preguntas.
+3. **Checklist dinámico con presupuesto obligatorio**: Haiku no pedía presupuesto antes de ofrecer Calendly. Fix: inyección de checklist `[OK]/[FALTA]` con reglas condicionales:
+   - Si email sin presupuesto → pregunta presupuesto contextualizado
+   - Si no presupuesto → NO OFREZCAS REUNION (bloqueo explícito)
+
+#### Deploy realizado (2026-04-24)
+- ✅ Airtable field `Session ID` creado
+- ✅ Workflow n8n modificado (16 nodos) — activo en producción
+- ✅ `jordan-widget-v7.js` subido por FTP a Nominalia (3 iteraciones: v7, v7.1 patched, v7.2 patched)
+- ✅ 42 HTMLs actualizados con `jordan-widget-v7.js`
+- ⚠️ **FTP via `ftp.trespuntoscomunicacion.es` (185.2.4.34) bypassing Cloudflare** — el dominio principal `trespuntoscomunicacion.es` resuelve a Cloudflare (104.21.x.x, 172.67.x.x) que no proxia FTP port 21. Usar siempre `ftp.trespuntoscomunicacion.es` para futuros FTP.
+- ⚠️ **Cloudflare purge necesario tras CADA iteración** — el JS se cachea con `cache-control: max-age=31536000` (1 año). Sin purge, los usuarios siguen cargando la versión anterior.
+
+#### Pendientes Jordan v7 (futuras iteraciones)
+- Validar test 3ª ronda tras deploy v7.2
+- Si Haiku sigue sin respetar orden de preguntas → migrar parte de la lógica a Kobe o añadir un paso intermedio de "validador" entre Haiku y el widget
+- Reactivar quick replies post-welcome cuando el detector sea más robusto (ahora mismo solo welcome + Calendly explícito via marcador)
+- Eliminar `jordan-widget-v6.js` del servidor tras confirmar que nadie lo usa (~1 semana)
+
+#### Archivos tocados
+- `/assets/jordan/jordan-widget-v7.js` (nuevo, derivado de v6)
+- 42 HTMLs (home, servicios/*, casos/*, blog, contacto, iniciar-proyecto, nosotros)
+- Workflow n8n `2a6ZaK3pw9j7LPEc`
+- Airtable tabla `tblU72kaxQq7222Do` (campo Session ID)
 
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
@@ -365,6 +674,11 @@ Tres funciones añadidas al inicio del IIFE, disponibles en las 89 páginas:
 - ✅ ~~Páginas legales con contenido real del WP~~ COMPLETADO (2026-04-08): 4 páginas legales + Cookiebot en 89 páginas
 - ✅ ~~Migrar Cookiebot → CookieConsent v3 self-hosted~~ COMPLETADO (2026-04-10): 89 HTMLs, Consent Mode v2, GA4 condicional
 - ✅ ~~Fix FOUC + CLS 0.49~~ COMPLETADO (2026-04-10): CSS síncrono en 88 HTMLs, CLS 0.49 → 0.005
+- ✅ ~~Tracking GA4 Paso 1 (13 eventos + helpers + conversiones)~~ COMPLETADO (2026-04-16): 13 eventos, 3 helpers, ga_client_id en payloads, 3 conversiones marcadas en GA4 admin
+- ✅ ~~Analytics Paso 2 (dashboard + sync + Measurement Protocol)~~ COMPLETADO (2026-04-16): tabla web_metrics, endpoints /api/web + /api/web-sync, pestaña Web con 6 sub-secciones, workflow n8n hourly sync, nodo Measurement Protocol en leads-trespuntos
+- ✅ ~~SEO: Fix canibalización "agencia ux ui barcelona" + redirects 301~~ COMPLETADO (2026-04-17): Ver sección "Cambios aplicados (2026-04-17)"
+- ✅ ~~Fix UTM tracking end-to-end + limpieza código Supabase muerto~~ COMPLETADO (2026-04-21): Ver sección "Cambios aplicados (2026-04-21)"
+- ✅ ~~Jordan widget v7: persistencia en 3 stages + fix Calendly bug + system prompt v10.2~~ COMPLETADO (2026-04-24): Ver sección "Cambios aplicados (2026-04-24)". Stages initial/update/final con upsert por Session ID. Fix del bug que perdía leads cuando el usuario clicaba Calendly. Iteraciones v7 → v7.1 → v7.2 tras feedback de tests reales.
 - Fix botón "Rechazar" del banner (sigue en mint, debería ser outline)
 - Investigar discrepancia PSI público (67-69) vs Lighthouse local (95)
 - Decidir qué hacer con loop `.htaccess` en `/servicios/` (preexistente)
@@ -376,6 +690,93 @@ Tres funciones añadidas al inicio del IIFE, disponibles en las 89 páginas:
 - Kobe workflow: reemplazar nodo HTTP "Notificar Jordan" por nodo nativo Telegram (para eliminar token del URL)
 - Configurar dominio en Cookiebot panel para que el banner aparezca en producción (trespuntoscomunicacion.es)
 - Actualizar textos legales a RGPD/LOPDGDD (actualmente referencian LOPD 15/1999 del WP antiguo)
+- **Sync Notion ↔ archivos locales (Cerebro Digital)** — Ver plan completo abajo
+
+## Plan pendiente · Sync Notion ↔ Archivos locales (Cerebro Digital)
+
+**Contexto (2026-04-22):** Creada la DB `🧠 Identidad & Cerebro Digital` en Notion dentro de la página Cerebro (`https://www.notion.so/64a93adb48314c908fed3fe74715a1f4`). 8 registros iniciales: Design System Web (Dark), Design System Docs (Light+Dark), Tono de voz, Brand Voice Exit BCN, Logos & Marca, Stack técnico, Automatización Pipeline de Leads, Cerebro Digital repo. Schema con campos: Nombre, Tipo, Tema, Estado, Proyecto, Audiencia, URL/Recurso, Ruta local, Tags, Responsable, Descripción, Última actualización.
+
+**Objetivo:** Mantener los registros de Notion sincronizados automáticamente con los archivos fuente locales (CSS, JSON, SVG, MD) para que todos los agentes IA (Claudio, Jordan, Magic, Kobe, Bird, Curry, Luka, Rodman) consulten siempre la versión vigente.
+
+### Fase 1 · Hook local Claude Code (10 min) — HACER PRIMERO
+Hook `PostToolUse` en `~/.claude/settings.json` que detecta ediciones a archivos mapeados y me sugiere actualizar Notion en el mismo turno.
+
+**Archivos a vigilar** (mapeo archivo → registro Notion):
+| Path local | Registro Notion (ID) |
+|---|---|
+| `/Trespuntos-web-cloude/css/design-system.css` | Design System Web Dark (`34a1b33b-8b21-8150-a8d0-f451246ef31b`) |
+| `/Trespuntos-web-cloude/css/components.css` | Design System Web Dark |
+| `/Trespuntos-web-cloude/css/case-study.css` | Design System Web Dark |
+| `/documentos_funcionales_trespuntos/master/doc-library.css` | Design System Docs (`34a1b33b-8b21-81bb-ac3a-d88b5fa73d3c`) |
+| `/documentos_funcionales_trespuntos/design-tokens.json` | Design System Docs |
+| `/documentos_funcionales_trespuntos/master/05-design-tokens.md` | Design System Docs |
+| `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v10.0-master.md` | Tono de voz (`34a1b33b-8b21-810e-b45d-dceaf0d5dc0b`) |
+| `/Desktop/Tres Puntos/logo-*.svg` | Logos & Marca Oficial (`34a1b33b-8b21-8163-bffb-efe6ba550de2`) |
+
+**Pasos:**
+1. Añadir hook `PostToolUse` al `settings.json` global que corra un script bash con el path editado
+2. Script bash: compara el path contra la lista mapeada; si coincide, inyecta un reminder al siguiente turno de Claudio con el ID del registro Notion a actualizar
+3. Claudio, al ver el reminder, lee el archivo, resume el cambio y llama a MCP Notion para actualizar la Descripción + timestamp
+
+**Pros:** Setup mínimo, aprovecha MCP Notion ya conectado, cubre el 80% de los cambios (los que hago desde Claude Code).
+**Contras:** Solo se dispara si editamos vía Claude Code. Ediciones directas en VS Code sin Claudio no se capturan.
+
+### Fase 2 · Workflow n8n + GitHub webhook (~2 h) — HACER DESPUÉS
+Automatización completa para archivos del repo `trespuntoslab/trespuntos`.
+
+**Arquitectura:**
+```
+git push origin main
+  └→ GitHub webhook (repo trespuntoslab/trespuntos, evento push)
+     └→ n8n workflow "Notion Sync — Cerebro Digital"
+        ├─ Webhook trigger
+        ├─ Filter: ¿algún archivo cambiado está en lista vigilada? (/css/*.css, design-system.html)
+        ├─ GitHub API: descargar contenido nuevo del archivo
+        ├─ Code node: extraer tokens CSS (regex sobre --tp-mint, --bg-base, etc.)
+        ├─ Anthropic Haiku (claude-haiku-4-5): "resume en 3 frases qué cambió vs versión anterior"
+        ├─ Notion API: buscar registro por URL/Ruta local (filter query)
+        └─ Notion API: actualizar campos:
+             · Descripción (resumen nuevo)
+             · Última actualización (auto)
+             · Comentario con diff resumido
+  └→ Telegram grupo Mesa 3P (-4999298972): "✅ Notion actualizado: Design System Web. 3 tokens nuevos, 1 componente."
+```
+
+**Pasos:**
+1. Crear Notion integration token + añadir integración a la DB `🧠 Identidad & Cerebro Digital`
+2. Crear workflow n8n "Notion Sync — Cerebro Digital" (usar webhook público)
+3. Configurar GitHub webhook en repo `trespuntoslab/trespuntos` → URL del webhook n8n, evento `push`, secret para validar
+4. Mapear paths locales a page IDs de Notion en un nodo Code del workflow
+5. Testear con un commit dummy que toque `/css/design-system.css`
+
+### Fase 3 · Repos fuera de git + Dropbox cron (opcional)
+`/documentos_funcionales_trespuntos/` vive en Dropbox, no en GitHub. Dos opciones:
+
+**Opción A (recomendada):** Crear repo privado `trespuntoslab/docs-funcionales` → el workflow n8n de Fase 2 lo vigila igual. Ganas versionado.
+**Opción B:** n8n cron cada hora → Dropbox API → detecta cambios por hash → actualiza Notion. Más frágil.
+
+### Otros candidatos a sincronizar (ampliar DB Notion en Fase 2-3)
+- Copywriting por servicio (22 páginas de servicio)
+- Plantillas email (pipeline leads, partners, Jordan)
+- Voz por marca (Nextica, Intek Medical, etc.)
+- SEO keywords core + descanibalización
+- Brand voice por cliente
+- n8n workflows documentados (cada workflow activo → un registro)
+
+### Registros Notion creados (referencia rápida)
+| Registro | Page ID |
+|---|---|
+| Design System — Web (Dark) | `34a1b33b-8b21-8150-a8d0-f451246ef31b` |
+| Design System — Docs (Light+Dark) | `34a1b33b-8b21-81bb-ac3a-d88b5fa73d3c` |
+| Tono de Voz — Tres Puntos | `34a1b33b-8b21-810e-b45d-dceaf0d5dc0b` |
+| Brand Voice — Exit BCN (cross-link) | `34a1b33b-8b21-811f-b626-c3fab49a3a6e` |
+| Logos & Marca Oficial | `34a1b33b-8b21-8163-bffb-efe6ba550de2` |
+| Stack Técnico | `34a1b33b-8b21-81b7-9203-dd5a20c3a066` |
+| Automatización — Pipeline Leads | `34a1b33b-8b21-81bf-a58f-ee5bfc08587b` |
+| Cerebro Digital — Repo Contexto | `34a1b33b-8b21-8177-bd26-c49192b689a0` |
+
+**DB data source ID:** `71eabba2-dff7-485d-9a4b-00c0e8006173`
+**DB URL:** `https://www.notion.so/64a93adb48314c908fed3fe74715a1f4`
 
 ## Documentación de automatización
 **IMPORTANTE: Antes de tocar CUALQUIER cosa relacionada con formularios, webhooks, o el flujo de envío, leer OBLIGATORIAMENTE:**
@@ -612,8 +1013,9 @@ window.JordanConfig = {
 - **Segundo event type**: `tres-puntos` (60 min, Google Meet) — no usar para Jordan
 
 ### Sincronización de archivos
-- Widget v6: `/assets/jordan/jordan-widget-v6.js` — prompt v10.0 + embed mode + 8 eventos GA4 (2026-04-16)
-- 42 páginas cargan v5 (flotante en 40, embed en contacto + iniciar-proyecto)
+- **Widget v7 (actual)**: `/assets/jordan/jordan-widget-v7.js` — persistencia en 3 stages (initial/update/final), fix bug Calendly, prompt v10.2, checklist dinámico, marcador [CALENDLY_SLOTS] (2026-04-24)
+- Widget v6 (obsoleto): `/assets/jordan/jordan-widget-v6.js` — prompt v10.0 + embed mode + 8 eventos GA4 (2026-04-16)
+- 42 páginas cargan v7 (flotante en 40, embed en contacto + iniciar-proyecto)
 - Contacto: `/contacto/index.html` — usa embed mode con `embedTarget: '#jordan-embed'`
 - Iniciar proyecto: `/iniciar-proyecto/index.html` — usa embed mode con `embedTarget: '#jordan-embed'`
 - System prompt maestro (v10.0): `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v10.0-master.md` — fuente única expandida
@@ -628,6 +1030,7 @@ window.JordanConfig = {
 | v9.4 | 2026-03-29 | Problema Calendly no se activa | 2 cambios: Calendly dentro de Fase 4 como paso obligatorio, trigger explícito en scoring |
 | v9.5 | 2026-03-30 | Contacto sin email/teléfono | 3 cambios: email+tel obligatorios antes de cierre/Calendly, verificación en Fase 4, nuevo punto NUNCA |
 | v10.0 | 2026-04-03 | Reescritura completa master | 7 fases, dos velocidades, equipo actualizado, engagement rules, white-label, filtro <6K€, 20 NUNCA, no inventar slots Calendly |
+| v10.2 | 2026-04-24 | Bug leads perdidos + captura temprana | 9 fases (era 7). Fase 3 msg 3: valor + 1 pregunta (demuestra criterio). Fase 4 msg 4: pedir nombre + email con excusa de la copia. Teléfono movido al final opcional. Sección `## CALENDLY — REGLA ESTRICTA` (prohibido inventar fechas, marcador [CALENDLY_SLOTS] obligatorio, no mezclar con otra pregunta). Checklist dinámico inyectado en cada request con `[OK]/[FALTA]` + reglas condicionales (email→presupuesto→timeline→teléfono). NUNCA #4, #5, #21 nuevos. |
 
 ### Test end-to-end v9.4 (2026-03-29)
 - ✅ **Proxy Claude**: Haiku responde con prompt v9.4 completo (145 líneas)
