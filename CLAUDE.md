@@ -17,7 +17,7 @@ Claudio (el asistente IA) es el **responsable del ecosistema técnico y de siste
 - n8n `n8n.trespuntos-lab.com` (workflows críticos: leads, partners, Jordan, Kobe, Bird, sync)
 - Airtable (fuente de verdad de leads, CRM, auditorías partners)
 - Supabase (schema `trespuntos`, tabla `web_metrics`, auth)
-- Jordan widget v6 (42 páginas)
+- Jordan widget v7 (42 páginas, persistencia 3 stages)
 - Documentos funcionales (`doc.trespuntos-lab.com`)
 - Sistema de casos de estudio (9 casos activos)
 - Agentes: Jordan, Magic, Kobe, Bird, Curry, Luka, Rodman (coordinados desde Claudio)
