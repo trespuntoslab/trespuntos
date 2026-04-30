@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Blog · Componentes (preview)</title>
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/blog-article.css" />
+  <style>
+    body { background:#0e0e0e; color:#f5f5f5 }
+    .preview-section { max-width:900px; margin:0 auto; padding:3rem 1.5rem; border-bottom:1px dashed rgba(93,255,191,.1) }
+    .preview-section:last-of-type { border-bottom:none }
+    .preview-label {
+      font-family:var(--font-mono); font-size:.7rem; letter-spacing:.1em;
+      text-transform:uppercase; color:var(--mint); opacity:.7; margin-bottom:.5rem
+    }
+    .preview-title {
+      font-family:var(--font-heading); font-size:1.75rem; font-weight:700;
+      margin:0 0 .35rem; letter-spacing:-.02em
+    }
+    .preview-desc {
+      font-size:.9rem; color:var(--text-secondary); margin:0 0 1.75rem; line-height:1.6
+    }
+    .preview-hero {
+      max-width:900px; margin:0 auto; padding:5rem 1.5rem 2rem;
+      border-bottom:1px solid rgba(93,255,191,.08)
+    }
+    .preview-hero h1 {
+      font-family:var(--font-heading); font-size:2.25rem; font-weight:800;
+      letter-spacing:-.03em; margin:0 0 .5rem
+    }
+    .preview-hero p { color:var(--text-secondary); font-size:1rem; line-height:1.7; margin:0 }
+  </style>
+</head>
+<body>
+
+  <header class="preview-hero">
+    <h1>Componentes del blog</h1>
+    <p>Design system del blog de Tres Puntos — todos los componentes que pueden usarse en un artículo, en un solo sitio. Página interna, no indexable.</p>
+  </header>
+
+  <!-- ════════ SIGNAL-CARDS (alerta ámbar) ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">signal-cards</div>
+    <h2 class="preview-title">Signal cards — señales de alerta</h2>
+    <p class="preview-desc">Síntomas o señales de problema. Icono ámbar, fondo sutil. Stack vertical, stagger al entrar.</p>
+    <div class="signal-cards">
+      <div class="signal-card visible">
+        <div class="signal-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+        </div>
+        <div class="signal-card-content">
+          <div class="signal-card-title">Código sin documentar</div>
+          <div class="signal-card-desc">La agencia entrega una plataforma que funciona, pero las decisiones técnicas no están explicadas en ninguna parte.</div>
+        </div>
+      </div>
+      <div class="signal-card visible">
+        <div class="signal-card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <div class="signal-card-content">
+          <div class="signal-card-title">Métricas en aspirin</div>
+          <div class="signal-card-desc">Te dicen que mejoraron la conversión pero no enseñan el dashboard ni cómo se mide.</div>
+        </div>
+      </div>
+      <div class="signal-card visible">
+        <div class="signal-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0ZM12 16v-4M12 8h.01"/></svg>
+        </div>
+        <div class="signal-card-content">
+          <div class="signal-card-title">Mantenimiento atado</div>
+          <div class="signal-card-desc">El contrato de mantenimiento es la única forma de tocar el código. Si te vas, vuelves a empezar.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ PAIN-BLOCKS (diagnóstico mint) ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">pain-blocks</div>
+    <h2 class="preview-title">Pain blocks — diagnóstico del lector</h2>
+    <p class="preview-desc">"Esto es lo que te está pasando". Grid de 3 columnas en desktop, mint, icon + title + desc. Stagger al entrar.</p>
+    <div class="pain-blocks">
+      <div class="pain-block visible">
+        <div class="pain-block-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="pain-block-title">Tres propuestas, todas iguales</div>
+        <div class="pain-block-desc">No sabes cómo distinguir entre la agencia que va a entregar y la que va a desaparecer al mes 3.</div>
+      </div>
+      <div class="pain-block visible">
+        <div class="pain-block-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="pain-block-title">Plazos que no cuadran</div>
+        <div class="pain-block-desc">"6 semanas" para algo que sabes que requiere 4 meses. O "6 meses" para algo que debería ser un sprint.</div>
+      </div>
+      <div class="pain-block visible">
+        <div class="pain-block-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="pain-block-title">Stack opaco</div>
+        <div class="pain-block-desc">Te hablan de tecnologías que no entiendes y nadie te explica las consecuencias de cada decisión.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ STAT-CALLOUT (dato grande) ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">stat-callout</div>
+    <h2 class="preview-title">Stat callout — dato grande</h2>
+    <p class="preview-desc">Número grande con counter animado al entrar. Variante centrada y variante row (50/50). Usar <code>data-target</code> + <code>data-suffix</code> + <code>data-prefix</code>.</p>
+
+    <div class="stat-callout visible">
+      <div class="stat-callout-number" data-target="73" data-suffix="%">73%</div>
+      <div class="stat-callout-label">de las tiendas online en Barcelona pierden ventas en el checkout por fricciones que se podrían arreglar en 2 semanas</div>
+      <div class="stat-callout-source">Fuente: auditorías Tres Puntos 2025</div>
+    </div>
+
+    <div class="stat-callout row visible" style="margin-top:1.5rem">
+      <div class="stat-callout-number" data-target="2.4" data-decimals="1" data-suffix="x" data-prefix="">2.4x</div>
+      <div>
+        <div class="stat-callout-label" style="text-align:left">Más conversión en mobile cuando el formulario tiene autofocus en el primer campo y el teclado correcto</div>
+        <div class="stat-callout-source" style="text-align:left">A/B test sobre 4 ecommerces fashion · Q2 2025</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ STAT-GRID (3 stats en línea) ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">stat-grid</div>
+    <h2 class="preview-title">Stat grid — 3 stats en fila</h2>
+    <p class="preview-desc">Resumen visual de 3 o 4 datos juntos. Cada uno con número grande mint + label.</p>
+    <div class="stat-grid">
+      <div class="stat-grid-item">
+        <span class="stat-grid-num">+38%</span>
+        <div class="stat-grid-label">Conversión post-rediseño Gibobs</div>
+      </div>
+      <div class="stat-grid-item">
+        <span class="stat-grid-num">12s</span>
+        <div class="stat-grid-label">→ 1.8s tiempo de carga</div>
+      </div>
+      <div class="stat-grid-item">
+        <span class="stat-grid-num">9</span>
+        <div class="stat-grid-label">Casos de éxito B2B en producción</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ COMPARISON TABLE + badges ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">comparison-table-wrap</div>
+    <h2 class="preview-title">Comparison table — tabla con badges</h2>
+    <p class="preview-desc">Para comparaciones de criterios o opciones. 4 variantes de badge: ok / warn / bad / neutral.</p>
+    <div class="comparison-table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Plantilla maquillada</th>
+            <th>Desarrollo a medida</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tiempo de entrega</td>
+            <td><span class="badge badge-ok">2-3 semanas</span></td>
+            <td><span class="badge badge-warn">8-12 semanas</span></td>
+          </tr>
+          <tr>
+            <td>Coste inicial</td>
+            <td><span class="badge badge-ok">Bajo</span></td>
+            <td><span class="badge badge-warn">Medio-alto</span></td>
+          </tr>
+          <tr>
+            <td>Escalabilidad</td>
+            <td><span class="badge badge-bad">Limitada</span></td>
+            <td><span class="badge badge-ok">Alta</span></td>
+          </tr>
+          <tr>
+            <td>Coste de mantenimiento (3 años)</td>
+            <td><span class="badge badge-bad">Crece con cada bug</span></td>
+            <td><span class="badge badge-ok">Predecible</span></td>
+          </tr>
+          <tr>
+            <td>Tiempo a una mejora pequeña</td>
+            <td><span class="badge badge-neutral">Variable</span></td>
+            <td><span class="badge badge-ok">Horas</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ════════ QUESTION-BLOCK ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">question-block</div>
+    <h2 class="preview-title">Question block — frase de impacto</h2>
+    <p class="preview-desc">Pregunta o afirmación centrada que rompe el muro de texto. Reveal al entrar.</p>
+    <div class="question-block visible">
+      <p>Si tu agencia no te enseña cómo se va a medir el éxito, ¿cómo vas a saber si lo conseguiste?</p>
+    </div>
+  </section>
+
+  <!-- ════════ MINI-CHART (barras CSS) ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">mini-chart</div>
+    <h2 class="preview-title">Mini chart — barras CSS comparativas</h2>
+    <p class="preview-desc">Barras puras CSS con animación de fill al entrar. Soporta variante neutra y warn.</p>
+    <div class="mini-chart">
+      <div class="mini-chart-title">Tasa de conversión por dispositivo (Q1 2025)</div>
+      <div class="mini-chart-row">
+        <div class="mini-chart-row-head"><span>Desktop</span><strong>4.2%</strong></div>
+        <div class="mini-chart-bar"><div class="mini-chart-bar-fill" data-pct="84" style="width:84%"></div></div>
+      </div>
+      <div class="mini-chart-row">
+        <div class="mini-chart-row-head"><span>Tablet</span><strong>2.1%</strong></div>
+        <div class="mini-chart-bar"><div class="mini-chart-bar-fill warn" data-pct="42" style="width:42%"></div></div>
+      </div>
+      <div class="mini-chart-row">
+        <div class="mini-chart-row-head"><span>Mobile</span><strong>1.4%</strong></div>
+        <div class="mini-chart-bar"><div class="mini-chart-bar-fill muted" data-pct="28" style="width:28%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ CHECKLIST-BOX ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">checklist-box</div>
+    <h2 class="preview-title">Checklist box — lista con check mint</h2>
+    <p class="preview-desc">Lista de criterios o items a verificar. Check pintado en mint dentro de cada item.</p>
+    <div class="checklist-box">
+      <div class="checklist-box-title">Antes de firmar la propuesta, comprueba que la agencia te entrega:</div>
+      <ul>
+        <li>Repositorio Git desde el día 1, con tu cuenta como collaborator</li>
+        <li>Documentación técnica de cada decisión arquitectónica relevante</li>
+        <li>Acceso a todos los servicios cloud a tu nombre, no al de ellos</li>
+        <li>Plan de mantenimiento desligado del desarrollo (puedes irte sin perder soporte)</li>
+        <li>Plan de migración SEO si hay URLs antiguas con tráfico</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════ QUOTE-PULL ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">quote-pull</div>
+    <h2 class="preview-title">Quote pull — cita destacada</h2>
+    <p class="preview-desc">Cita editorial con avatar. Usar para citar a Jordi o miembros del equipo dentro del cuerpo.</p>
+    <blockquote class="quote-pull visible">
+      <img class="quote-pull-avatar" src="/img/jordi-avatar.png" alt="Jordi Expósito" onerror="this.style.display='none'">
+      <div class="quote-pull-body">
+        <p class="quote-pull-text">El precio que te dan en la propuesta es la mitad del precio total. La otra mitad la pagarás en mantenimiento durante los siguientes tres años.</p>
+        <div class="quote-pull-author">JORDI EXPÓSITO · Digital Project Lead</div>
+      </div>
+    </blockquote>
+  </section>
+
+  <!-- ════════ TIMELINE-MINI ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">timeline-mini</div>
+    <h2 class="preview-title">Timeline mini — hitos en horizontal</h2>
+    <p class="preview-desc">3-4 pasos horizontales con scroll lateral en mobile. Numerados.</p>
+    <div class="timeline-mini">
+      <div class="timeline-mini-step visible">
+        <div class="timeline-mini-step-num">FASE 01</div>
+        <div class="timeline-mini-step-title">Discovery</div>
+        <div class="timeline-mini-step-desc">2 semanas: entrevistas, datos, hipótesis del scope real</div>
+      </div>
+      <div class="timeline-mini-step visible">
+        <div class="timeline-mini-step-num">FASE 02</div>
+        <div class="timeline-mini-step-title">Diseño</div>
+        <div class="timeline-mini-step-desc">3-4 semanas: arquitectura, wireframes, sistema visual</div>
+      </div>
+      <div class="timeline-mini-step visible">
+        <div class="timeline-mini-step-num">FASE 03</div>
+        <div class="timeline-mini-step-title">Build</div>
+        <div class="timeline-mini-step-desc">6-10 semanas: desarrollo iterativo con QA continuo</div>
+      </div>
+      <div class="timeline-mini-step visible">
+        <div class="timeline-mini-step-num">FASE 04</div>
+        <div class="timeline-mini-step-title">Lanzamiento</div>
+        <div class="timeline-mini-step-desc">1 semana: deploy, migración, monitorización</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ ICON-GRID ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">icon-grid</div>
+    <h2 class="preview-title">Icon grid — resumen visual</h2>
+    <p class="preview-desc">Grid de 3-4 iconos con label corto. Para resumir capacidades o pilares.</p>
+    <div class="icon-grid">
+      <div class="icon-grid-item visible">
+        <div class="icon-grid-item-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="icon-grid-item-label">Discovery real, no encuesta</div>
+      </div>
+      <div class="icon-grid-item visible">
+        <div class="icon-grid-item-icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="icon-grid-item-label">Stack abierto y documentado</div>
+      </div>
+      <div class="icon-grid-item visible">
+        <div class="icon-grid-item-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div class="icon-grid-item-label">Plazos honestos</div>
+      </div>
+      <div class="icon-grid-item visible">
+        <div class="icon-grid-item-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="icon-grid-item-label">Mantenimiento desligado</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ BEFORE-AFTER ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">before-after</div>
+    <h2 class="preview-title">Before / after — split problema → solución</h2>
+    <p class="preview-desc">Dos columnas: izquierda problema (rojo), derecha solución (mint).</p>
+    <div class="before-after">
+      <div class="before-after-side before-after-before visible">
+        <div class="before-after-label">Antes</div>
+        <div class="before-after-title">Sin briefing real, propuesta a ojo</div>
+        <div class="before-after-desc">Recibes un PDF con 3 packs y precio cerrado. Cuando empezáis, todo cambia y los costes suben.</div>
+      </div>
+      <div class="before-after-side before-after-after visible">
+        <div class="before-after-label">Con Tres Puntos</div>
+        <div class="before-after-title">Discovery primero, propuesta después</div>
+        <div class="before-after-desc">2 semanas de discovery cobradas aparte. Después, propuesta con números reales y márgenes claros para imprevistos.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ ARTICLE-CTA-INLINE ════════ -->
+  <section class="preview-section article-content">
+    <div class="preview-label">article-cta-inline</div>
+    <h2 class="preview-title">CTA inline — entre H2s</h2>
+    <p class="preview-desc">CTA intermedio sobrio. Para usar en mitad del artículo, no al final.</p>
+    <div class="article-cta-inline">
+      <div class="article-cta-inline-text">¿Tienes dudas con tu propuesta actual? Te damos una segunda opinión gratis.</div>
+      <a href="/iniciar-proyecto/" class="article-cta-inline-btn">Hablemos →</a>
+    </div>
+  </section>
+
+  <!-- ════════ ARTICLE-CTA (final) ════════ -->
+  <section class="article-cta">
+    <div class="article-cta-eyebrow">CIERRE DEL ARTÍCULO</div>
+    <h2>¿Tienes propuestas sobre la mesa?</h2>
+    <p>Te damos una segunda opinión gratis sobre cualquier propuesta que tengas. Sin compromiso, en 48 horas.</p>
+    <a href="/iniciar-proyecto/" class="article-cta-btn">Empezar →</a>
+  </section>
+
+  <script src="/js/blog-article.js" defer></script>
+</body>
+</html>
