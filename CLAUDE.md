@@ -38,10 +38,45 @@ Claudio (el asistente IA) es el **responsable del ecosistema técnico y de siste
 - Jordi debe confirmar ("sí", "sube", "dale", "push") antes de ejecutar cualquier `git push` o upload
 - Esto aplica a git push, FTP, SCP, rsync, o cualquier método de transferencia a producción
 
+## ⚠️ Regla crítica de versionado — git es la única fuente de verdad
+
+**Producción NUNCA debe contener archivos que no estén en git.** Cualquier divergencia entre git y producción es un bug y debe corregirse en el momento.
+
+### Por qué (incidente 2026-04-30)
+Durante meses se subieron archivos por FTP sin commitearlos en git: el sistema OG completo (102 imágenes + 6 scripts + 87 HTMLs con meta tags), 16 páginas de `/sectores/`, 3 posts de blog, el logo dark y otros assets. Resultado: 212 cambios pendientes acumulados en local y un post (`blog/desarrollo-web-a-medida-cuando-es-la-decision-correcta/`) que existía en producción pero **no en el repo** — cualquier deploy futuro que sincronizara repo→producción lo habría borrado. Riesgo real de pérdida de trabajo.
+
+### Flujo de deploy obligatorio (orden estricto)
+1. **Editar** archivos en local
+2. **Verificar** (preview server, Lighthouse, links, etc.)
+3. **`git add` + `git commit`** — agrupar cambios por feature/fix, mensajes con prefijo (`feat:`, `fix:`, `chore:`, `docs:`, `seo:`, `perf:`)
+4. **`git push origin main`** — pedir autorización explícita a Jordi (regla "Deploy" de abajo)
+5. **`git status` debe estar LIMPIO** antes del paso siguiente. Si no lo está → STOP. No se sube nada.
+6. **FTP** los archivos modificados a Nominalia (origen)
+7. **Anotar el SHA en `DEPLOY_LOG.md`** con fecha, archivos subidos y purga de Cloudflare aplicada
+8. **Purgar Cloudflare** (Custom URL si <5 archivos, Purge Everything si más)
+9. **Verificar en producción** (curl + browser)
+
+### Reglas inviolables
+- **NUNCA hacer FTP con `git status` sucio** — si hay cambios sin commitear, primero commit, después FTP. No al revés.
+- **NUNCA editar archivos directamente en el servidor** (vía panel Nominalia, SSH, etc.) sin replicar el cambio en git acto seguido.
+- **Cada FTP debe corresponderse con un commit existente** — el SHA del commit queda en `DEPLOY_LOG.md`.
+- **Si detectas drift** (un archivo en producción que no está en git, o viceversa): para todo, descarga el archivo de producción, commitealo (o bórralo), y solo entonces continúa.
+
+### Detección de drift (ejecutar mensualmente o ante sospecha)
+```bash
+# Comparar lista de HTMLs en repo vs producción (FTP listing)
+git ls-files '*.html' | sort > /tmp/git-htmls.txt
+curl -s -k --ftp-pasv -l "ftp://claude%40trespuntoscomunicacion.es:Y20pC%267L%214z%28%24%256g@ftp.trespuntoscomunicacion.es/" \
+  | grep "\.html$" | sort > /tmp/prod-htmls.txt
+diff /tmp/git-htmls.txt /tmp/prod-htmls.txt
+```
+Si hay diferencias → investigar y reconciliar antes de cualquier deploy.
+
 ### Flujo de deploy actual (desde 2026-04-17)
 1. **Git push**: `git push origin main` → sube al repositorio `git@github.com:trespuntoslab/trespuntos.git`
-2. **FTP a producción**: Subir archivos modificados por FTP a `www.trespuntoscomunicacion.es` (Nominalia)
-3. **⚠️ Purgar caché de Cloudflare** — PASO OBLIGATORIO tras cada FTP. Si no se hace, los usuarios verán la versión antigua hasta 2h (TTL del edge cache)
+2. **FTP a producción**: Subir archivos modificados por FTP a `www.trespuntoscomunicacion.es` (Nominalia) — solo si `git status` está limpio
+3. **Anotar deploy** en `DEPLOY_LOG.md` (SHA, fecha, archivos, purga aplicada)
+4. **⚠️ Purgar caché de Cloudflare** — PASO OBLIGATORIO tras cada FTP. Si no se hace, los usuarios verán la versión antigua hasta 2h (TTL del edge cache)
 
 ### ⚠️ Purga de caché Cloudflare — OBLIGATORIO tras cada deploy FTP
 Desde 2026-04-17 la web pasa por Cloudflare con **Cache Rule de 2h** (HTML cacheado en edge). Tras CUALQUIER subida FTP a Nominalia:
@@ -68,11 +103,10 @@ Desde 2026-04-17 la web pasa por Cloudflare con **Cache Rule de 2h** (HTML cache
 - **URL**: `https://www.trespuntoscomunicacion.es`
 - **Host FTP**: `trespuntoscomunicacion.es`
 - **Usuario**: `claude@trespuntoscomunicacion.es`
-- **Password**: `N63aCg5%&9xÑ(Atk5R`
+- **Password**: `Y20pC&7L!4z($%6g`
 - **Directorio raíz**: `/home/tres/public_html`
 - **Protocolo**: FTP — usar `curl -k --ftp-pasv` (sin --ftp-ssl, causa error 451 en algunos archivos)
-- **Comando base**: `curl -k --ftp-pasv "ftp://claude%40trespuntoscomunicacion.es:N63aCg5%25%269xÑ(Atk5R@trespuntoscomunicacion.es/"`
-- **Nota**: La Ñ en la password requiere encoding UTF-8 directo (no percent-encode)
+- **Comando base**: `curl -k --ftp-pasv "ftp://claude%40trespuntoscomunicacion.es:Y20pC%267L%214z%28%24%256g@trespuntoscomunicacion.es/"`
 - **Elementos a preservar siempre**: `db-clientes/`, `intekmedical-reporte/`, `proyectos/`, `img_firma/`, `phpMyAdmin/`, `.well-known/`, `cgi-bin/`, archivos verificación Google
 
 ### ⚠️ Deprecado — tres.trespuntos-lab.com (Hostinger)
@@ -663,6 +697,155 @@ La welcome inicial sí mantiene cards (onboarding). El resto lo lleva Jordan en 
 - Workflow n8n `2a6ZaK3pw9j7LPEc`
 - Airtable tabla `tblU72kaxQq7222Do` (campo Session ID)
 
+## Sistema OG (Open Graph) — Imágenes para redes sociales (2026-04-29)
+
+### Qué es
+Sistema unificado para generar **imágenes Open Graph** (1200×630 PNG) automáticamente para todas las páginas del sitio. Cuando alguien comparte cualquier URL en LinkedIn, X, WhatsApp, Telegram, Facebook, Slack, etc., aparece una tarjeta visual coherente con la marca: **logo Tres Puntos (dark) + badge categoría + título + descripción**.
+
+Cobertura actual: **102 páginas** (home, blog hub + 38 posts, casos hub + 9 casos, servicios hub + 22 servicios, sectores hub + 16 sectores/análisis, contacto, nosotros, iniciar-proyecto, arquitectura-digital-conversion, 4 legales).
+
+### Arquitectura
+```
+scripts/og/og-template.html        ← Plantilla universal (HTML+CSS+JS, lee params via URL hash)
+scripts/og/generate-og.py          ← Recorre todos los index.html, extrae meta, renderiza con Chrome headless
+scripts/og/update-html.py          ← Reemplaza og:image, twitter:image, JSON-LD image en todos los HTMLs
+scripts/og/ftp-upload.sh           ← Sube imágenes + HTMLs por FTP a Nominalia
+scripts/og/manifest.json           ← Mapping rel_path → slug → category → title → output
+img/og/{slug}.png                  ← 102 imágenes generadas (~225-250 KB cada una)
+img/blog/og-default.jpg            ← Fallback genérico (JPG, copia de home.png convertida)
+```
+
+### Convención de slugs
+| Sección | Slug pattern | Ejemplo |
+|---|---|---|
+| Home (`/`) | `home` | `home.png` |
+| Blog hub | `blog` | `blog.png` |
+| Blog post | `blog-{slug}` | `blog-arquitectura-frontend-2026-...png` |
+| Casos hub | `casos` | `casos.png` |
+| Caso | `caso-{slug}` | `caso-gibobs.png` |
+| Servicios hub | `servicios` | `servicios.png` |
+| Servicio | `servicio-{slug}` | `servicio-desarrollo-web-a-medida-barcelona.png` |
+| Sectores hub | `sectores` | `sectores.png` |
+| Sector vertical | `sector-{vertical}` | `sector-fintech.png` |
+| Análisis sector | `analisis-{client}` | `analisis-circulantis.png` |
+| Páginas singulares | `{path}` | `nosotros.png`, `contacto.png`, `aviso-legal.png` |
+
+### Categorización del badge (top-left de la tarjeta)
+La función `categorize()` en `generate-og.py` decide el badge según el path:
+- Home → `AGENCIA UX/UI · BARCELONA`
+- Blog post → `BLOG · {data-category extraído de blog/index.html}` (ej. `BLOG · DESARROLLO WEB`)
+- Caso → `CASO DE ÉXITO · {CLIENTE}` (mapping cliente: gibobs→GIBOBS, exitbcn→EXITBCN, etc.)
+- Servicio con ciudad → `SERVICIO · {CIUDAD}` (BARCELONA/MADRID/BILBAO/SEVILLA)
+- Sector vertical → `SECTOR · {NOMBRE}` (FINTECH, INMOBILIARIA, SAAS B2B, SALUD)
+- Análisis sector → `ANÁLISIS · {CLIENTE}`
+- Legales → `LEGAL · {TIPO}`
+- Nosotros → `AGENCIA · NOSOTROS`
+- Contacto → `CONTACTO · TRES PUNTOS`
+
+### Limpieza de títulos (función `clean_title`)
+Estrategia universal: extraer la **value prop** del title del HTML, eliminando ruido como `| Tres Puntos`, `| Blog`, `| Caso XYZ`:
+
+| Patrón title | Resultado en OG |
+|---|---|
+| `Agencia UX/UI Barcelona \| Arquitectura Digital de Conversión · Tres Puntos` | `Arquitectura Digital de Conversión` (tras `\|`, antes de Tres Puntos) |
+| `Desarrollo de Tiendas Online: UX en E-commerce \| Blog \| Tres Puntos` | `Desarrollo de Tiendas Online: UX en E-commerce` (chunk 1) |
+| `Desarrollo plataforma fintech \| Caso Gibobs · Tres Puntos` | `Desarrollo plataforma fintech` (chunk 1) |
+| `Nosotros \| Tres Puntos — Estudio de Arquitectura Digital en Barcelona` | `Estudio de Arquitectura Digital en Barcelona` (después de `Tres Puntos —`) |
+| `Blog \| Tres Puntos — UX/UI, Arquitectura Digital y Desarrollo Web` | `UX/UI, Arquitectura Digital y Desarrollo Web` (después de `Tres Puntos —`) |
+
+**Regla universal**: si el title contiene `Tres Puntos —` (o `Tres Puntos –`), el contenido **después del em-dash** se prefiere como title (es la value prop). Si no, se eliminan sufijos `| Tres Puntos`, `| Blog`, `| Caso XYZ` y se toma el primer chunk antes del primer `|`.
+
+### Plantilla visual (`og-template.html`)
+- Fondo: gradiente radial `#1a2520` (mint subtle) → `#0e0e0e`
+- Grid sutil de líneas mint con máscara radial
+- Glow mint a la derecha
+- Logo Tres Puntos dark (`logo-trespuntos-dark.svg`) arriba-izquierda + dominio `trespuntoscomunicacion.es`
+- Badge mint pill con punto luminoso: categoría
+- Title Plus Jakarta Sans 700, 64px (auto-shrink a 56px si >55 chars, 50px si >80 chars)
+- Subtitle Inter regular 22px, color `rgba(255,255,255,.72)`, max 2 líneas
+- Footer: autor Jordi Expósito + Tres Puntos + barra mint accent
+
+Parámetros vía URL hash: `og-template.html#cat=...&title=...&sub=...` (URL-encoded). El JS dentro del template los lee y los inyecta antes de renderizar.
+
+### Cómo generar OG para una página NUEVA (1 sola)
+Cuando crees un blog post / servicio / caso nuevo:
+
+1. Asegúrate que el `index.html` está en su carpeta local + tiene `<title>` y `<meta name="description">` correctos
+2. Ejecutar el generador (regenera todas, pero es rápido — 4-5 min para 100+ páginas):
+   ```bash
+   python3 /Users/jordi/.../scripts/og/generate-og.py
+   ```
+   O para una sola página, llamada directa a Chrome headless:
+   ```bash
+   python3 -c "
+   import urllib.parse, subprocess
+   params = urllib.parse.urlencode({
+     'cat': 'BLOG · DESARROLLO WEB',
+     'title': 'Tu título limpio',
+     'sub': 'Tu meta description'
+   })
+   url = 'file:///path/to/scripts/og/og-template.html#' + params
+   subprocess.run(['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+     '--headless=new','--disable-gpu','--hide-scrollbars','--window-size=1200,630',
+     '--virtual-time-budget=3000','--screenshot=/path/to/img/og/SLUG.png',
+     '--default-background-color=00000000', url], check=True)
+   "
+   ```
+3. Actualizar el HTML del post con las 4 etiquetas:
+   ```html
+   <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og/SLUG.png" />
+   <meta property="og:image:width" content="1200" />
+   <meta property="og:image:height" content="630" />
+   <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og/SLUG.png" />
+   ```
+   (más `twitter:card` debe ser `summary_large_image`)
+4. FTP del PNG a `/img/og/` + del HTML
+5. **Purgar Cloudflare** (URL del HTML, NO la imagen — las imágenes nuevas no estaban cacheadas)
+
+### Cómo regenerar TODAS de una vez
+```bash
+# 1. Generar todas las imágenes (~5 min, 102 páginas)
+python3 scripts/og/generate-og.py
+
+# 2. Actualizar las etiquetas en los 102 HTMLs
+python3 scripts/og/update-html.py
+
+# 3. Subir todo por FTP (102 PNG + 102 HTML, ~6 min)
+bash scripts/og/ftp-upload.sh
+
+# 4. Purgar Cloudflare (Purge Everything)
+```
+
+### Validar OG en producción
+- **LinkedIn Post Inspector**: https://www.linkedin.com/post-inspector/ (forzar Re-fetch si cachea vieja, ~7 días TTL)
+- **Facebook Sharing Debugger**: https://developers.facebook.com/tools/debug/ (también para WhatsApp y Telegram)
+- **X/Twitter Card Validator**: https://cards-dev.twitter.com/validator (deprecado pero útil)
+
+### Reglas críticas
+- **NUNCA** acortar precisión decimal de los paths SVG del logo — usar SIEMPRE el SVG completo de `/img/logo-trespuntos-dark.svg`
+- **NUNCA** apuntar `og:image` a un archivo que no exista en producción (rompe previews en redes)
+- **SIEMPRE** dimensiones declaradas (`og:image:width=1200`, `og:image:height=630`) — ayuda a render rápido
+- **SIEMPRE** `twitter:card=summary_large_image` (no `summary` que da tarjeta pequeña)
+- **SIEMPRE** URL absoluta en `og:image` (con `https://www.trespuntoscomunicacion.es/...`)
+- **NUNCA** modificar la plantilla `og-template.html` sin regenerar TODAS las imágenes (deuda visual entre páginas)
+- Si añades una página nueva fuera del local repo (FTP directo): descargar el HTML, generar OG, parchearlo, re-subir
+- El logo correcto es `logo-trespuntos-dark.svg` (3 anillos mint con centros blancos `#f8f8f8`) — NO el `logo-trespuntos-light.svg` (centros oscuros, para fondos claros)
+
+### Estado actual (2026-04-29)
+- ✅ 102 imágenes OG generadas y subidas a `/img/og/`
+- ✅ 102 HTMLs actualizados con `og:image`, `twitter:image`, `og:image:width/height`, `twitter:card=summary_large_image`
+- ✅ `og-default.jpg` reemplazado con versión correcta (logo dark)
+- ✅ Cloudflare purgado, todo verificado en producción
+- ✅ Scripts en `/scripts/og/` (no en `/tmp`, persistentes en repo)
+
+### Pendientes Sistema OG
+- Crear skill `/og-generate {ruta}` que ejecute el flujo completo para una página nueva (generar + actualizar HTML + FTP + recordatorio purga). Reduciría el setup futuro a 1 comando
+- Añadir hook `PostToolUse` que detecte cuando se crea un nuevo `blog/{slug}/index.html` o `casos-de-negocio/{slug}/index.html` y sugiera regenerar OG
+- Convertir PNG a JPG (~50% más pequeño) si Lighthouse o PSI detectan los OG como problema de bytes (poco probable, no se cargan en página, solo al compartir)
+- Variantes A/B: probar otra disposición (logo abajo en lugar de arriba, título más grande sin subtítulo) para ver si mejora CTR en redes
+
+---
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
@@ -679,6 +862,7 @@ La welcome inicial sí mantiene cards (onboarding). El resto lo lleva Jordan en 
 - ✅ ~~SEO: Fix canibalización "agencia ux ui barcelona" + redirects 301~~ COMPLETADO (2026-04-17): Ver sección "Cambios aplicados (2026-04-17)"
 - ✅ ~~Fix UTM tracking end-to-end + limpieza código Supabase muerto~~ COMPLETADO (2026-04-21): Ver sección "Cambios aplicados (2026-04-21)"
 - ✅ ~~Jordan widget v7: persistencia en 3 stages + fix Calendly bug + system prompt v10.2~~ COMPLETADO (2026-04-24): Ver sección "Cambios aplicados (2026-04-24)". Stages initial/update/final con upsert por Session ID. Fix del bug que perdía leads cuando el usuario clicaba Calendly. Iteraciones v7 → v7.1 → v7.2 tras feedback de tests reales.
+- ✅ ~~Sistema OG (Open Graph) — imágenes para redes sociales en TODAS las páginas~~ COMPLETADO (2026-04-29): 102 imágenes 1200×630 PNG generadas con plantilla universal (logo dark + badge categoría + título + descripción), 102 HTMLs actualizados con `og:image`, `twitter:image`, dimensiones declaradas y `summary_large_image`. Ver sección "Sistema OG (Open Graph)". Scripts en `/scripts/og/`.
 - Fix botón "Rechazar" del banner (sigue en mint, debería ser outline)
 - Investigar discrepancia PSI público (67-69) vs Lighthouse local (95)
 - Decidir qué hacer con loop `.htaccess` en `/servicios/` (preexistente)
