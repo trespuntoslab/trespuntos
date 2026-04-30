@@ -1,0 +1,214 @@
+{
+  "name": "Sectores Outreach — WF3 Envío Secuencial",
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "nodes": [
+    {
+      "id": "wf3s-001",
+      "name": "Schedule 9am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-1700, 300],
+      "parameters": { "rule": { "interval": [ { "field": "cronExpression", "expression": "0 9 * * *" } ] } },
+      "notes": "TODO: Cron 9am Madrid diario. WORKFLOW DESACTIVADO por defecto - Jordi aprueba manualmente cada envio."
+    },
+    {
+      "id": "wf3s-002",
+      "name": "Verificar Horario",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-1480, 300],
+      "parameters": {
+        "jsCode": "const now = new Date();\nconst fmt = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Madrid', hour: 'numeric', hour12: false, weekday: 'short' });\nconst parts = fmt.formatToParts(now);\nconst madridHour = parseInt(parts.find(p => p.type === 'hour').value);\nconst dayName = parts.find(p => p.type === 'weekday').value;\nconst weekdays = ['Mon','Tue','Wed','Thu','Fri'];\nconst isWeekday = weekdays.includes(dayName);\nconst isValid = isWeekday && madridHour >= 8 && madridHour < 19;\nreturn [{ json: { isValid, madridHour, dayName } }];"
+      }
+    },
+    {
+      "id": "wf3s-003",
+      "name": "IF Horario Valido",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [-1260, 300],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "typeValidation": "strict" },
+          "conditions": [ { "id": "c1", "leftValue": "={{ $json.isValid }}", "operator": { "type": "boolean", "operation": "true", "singleValue": true } } ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "wf3s-004",
+      "name": "Fuera de horario",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [-1040, 500],
+      "parameters": {}
+    },
+    {
+      "id": "wf3s-005",
+      "name": "Leer Secuencias Aprobadas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [-1040, 220],
+      "parameters": {
+        "url": "https://api.airtable.com/v0/applQhJtxCkCGoVnX/tblCPkfja3rjKfztB",
+        "sendQuery": true,
+        "queryParameters": { "parameters": [ { "name": "filterByFormula", "value": "={Pipeline}=\"✅ Aprobado\"" } ] },
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [ { "name": "Authorization", "value": "Bearer <AIRTABLE_PAT_REDACTED>" } ] },
+        "options": {}
+      },
+      "continueOnFail": true,
+      "notes": "Filtra Pipeline = Aprobado. Filtros adicionales (Estado=Prospecto, Prioridad=A, Fecha proxima accion <= today) se aplican en Combinar Datos."
+    },
+    {
+      "id": "wf3s-006",
+      "name": "Procesar Secuencias",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-820, 220],
+      "parameters": {
+        "jsCode": "const MAX_PER_CYCLE = 7;\nconst records = $input.first().json.records || [];\nconst results = [];\nfor (const rec of records) {\n  const f = rec.fields || {};\n  if ((f.Pipeline || '') !== '✅ Aprobado') continue;\n  const empresaIds = f['Empresa link'] || [];\n  const empresaId = empresaIds[0] || '';\n  if (!empresaId) continue;\n  results.push({ json: {\n    recordId: rec.id,\n    empresaId,\n    asunto: f.Asunto || '',\n    email1Body: f['Email 1 Body'] || '',\n    slug: f.Slug || '',\n    action: 'send_email_1'\n  }});\n}\nreturn results.slice(0, MAX_PER_CYCLE);"
+      }
+    },
+    {
+      "id": "wf3s-007",
+      "name": "Obtener Empresa",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [-600, 220],
+      "parameters": {
+        "url": "=https://api.airtable.com/v0/applQhJtxCkCGoVnX/tblsP9bukhbTTMmpz/{{ $json.empresaId }}",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [ { "name": "Authorization", "value": "Bearer <AIRTABLE_PAT_REDACTED>" } ] },
+        "options": {}
+      },
+      "continueOnFail": true
+    },
+    {
+      "id": "wf3s-008",
+      "name": "Combinar Datos",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-380, 220],
+      "parameters": {
+        "jsCode": "const allPrev = $('Procesar Secuencias').all();\nconst allInput = $input.all();\nconst today = new Date(); today.setHours(0,0,0,0);\nconst firma = '<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background:none;border:0;margin:0;padding:0;background-color:#FFFFFF;padding-top:20px\"><tbody><tr><td valign=\"top\" style=\"width:190px;padding:0 7px 0 0;border-right:solid 3px #5DFFBF\"><img src=\"https://trespuntoscomunicacion.es/img_firma/new-logo.jpg\"></td><td style=\"padding:0 0 0 12px\"><table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background:none;border:0;margin:0;padding:0\"><tbody><tr><td colspan=\"2\" style=\"padding-bottom:5px;color:#5DFFBF;font-size:18px;font-weight:800;font-family:Oswald,Helvetica,sans-serif\">Tres Puntos | Agencia diseno web UX/UI</td></tr><tr><td colspan=\"2\" style=\"padding-bottom:5px;color:#2A2A2A;font-size:16px;font-family:Oswald,Helvetica,sans-serif\">Jordi Exposito | Founder &amp; Digital Experience Manager</td></tr><tr><td colspan=\"2\" style=\"padding-bottom:5px;color:#2A2A2A;font-size:16px;font-family:Oswald,Helvetica,sans-serif\">Email: <a href=\"mailto:jordi@trespuntoscomunicacion.es\" style=\"color:#5DFFBF;text-decoration:none;font-size:16px\">jordi@trespuntoscomunicacion.es</a></td></tr><tr><td colspan=\"2\" style=\"padding-bottom:5px;color:#2A2A2A;font-size:16px;font-family:Oswald,Helvetica,sans-serif\">Web: <a href=\"https://www.trespuntoscomunicacion.es\" style=\"color:#5DFFBF;text-decoration:none;font-size:16px\">www.trespuntoscomunicacion.es</a></td></tr><tr><td colspan=\"2\" style=\"padding-bottom:5px;color:#2A2A2A;font-size:16px;font-family:Oswald,Helvetica,sans-serif\">Telefono: <a href=\"tel://654057176\" style=\"color:#2A2A2A;text-decoration:none;font-size:16px\">654 057 176</a></td></tr><tr><td colspan=\"2\" style=\"padding-bottom:5px;color:#2A2A2A;font-size:16px;font-family:Oswald,Helvetica,sans-serif\">Nos reunimos? <a href=\"https://calendly.com/trespuntos/tres-puntos\" style=\"color:#5DFFBF;text-decoration:none\">Reserva cita ahora</a></td></tr></tbody></table></td></tr></tbody></table>';\nconst results = [];\nfor (let i = 0; i < allInput.length; i++) {\n  const prev = allPrev[i]?.json || allPrev[0]?.json || {};\n  const empresa = allInput[i].json.fields || {};\n  const estado = empresa.Estado || '';\n  const prioridad = empresa.Prioridad || '';\n  const fechaProx = empresa['Fecha próxima acción'] ? new Date(empresa['Fecha próxima acción']) : null;\n  if (estado !== 'Prospecto') continue;\n  if (prioridad !== 'A') continue;\n  if (fechaProx && fechaProx > today) continue;\n  const slug = prev.slug || empresa.Slug || '';\n  results.push({ json: {\n    ...prev,\n    toEmail: empresa.Email || '',\n    decisor: empresa['Contacto nombre'] || '',\n    empresaNombre: empresa.Nombre || '',\n    sector: empresa.Sector || '',\n    empresaRecordId: allInput[i].json.id || prev.empresaId || '',\n    slug,\n    firma\n  }});\n}\nreturn results;"
+      },
+      "notes": "TODO Agente A: cuando exista /partners/campana/firma-email-sectores.html, sustituir la firma inline."
+    },
+    {
+      "id": "wf3s-009",
+      "name": "IF Email 1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [-160, 220],
+      "parameters": {
+        "conditions": {
+          "conditions": [ { "id": "c-e1", "leftValue": "={{ $json.action }}", "rightValue": "send_email_1", "operator": { "type": "string", "operation": "equals" } } ],
+          "combinator": "and",
+          "options": { "caseSensitive": true, "typeValidation": "strict" }
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "wf3s-010",
+      "name": "Build MIME E1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [60, 220],
+      "parameters": {
+        "jsCode": "return $input.all().map(item => {\n  const d = item.json;\n  const trackUrl = 'https://go.trespuntoscomunicacion.es/s/' + (d.slug || '') + '?e=1';\n  let body = (d.email1Body || '').toString();\n  body = body.replace(/https?:\\/\\/(?:www\\.)?trespuntoscomunicacion\\.es\\/sectores\\/analisis\\/[a-z0-9-]+\\/?/gi, trackUrl);\n  body = body.replace(/https?:\\/\\/go\\.trespuntoscomunicacion\\.es\\/s\\/[a-z0-9-]+\\/?(\\?[^\\s]*)?/gi, trackUrl);\n  body = body.replace(/\\[([^\\]]+)\\]\\((https?:\\/\\/[^\\)]+trespuntoscomunicacion\\.es\\/sectores[^\\)]*)\\)/gi, '<a href=\"' + trackUrl + '\">$1</a>');\n  const paragraphs = body.split(/\\n\\s*\\n/).map(p => '<p style=\"margin:0 0 14px 0;\">' + p.replace(/\\n/g, '<br>') + '</p>').join('');\n  const customMsgId = '<' + d.recordId + '-e1-sectores@trespuntos-lab.com>';\n  const htmlBody = '<div style=\"font-family:Arial,sans-serif;font-size:14px;color:#2A2A2A;line-height:1.6\">' + paragraphs + '<br>' + d.firma + '</div>';\n  const subject = d.asunto || '';\n  const mimeLines = [\n    'From: =?UTF-8?B?' + Buffer.from('Jordi Exposito').toString('base64') + '?= <jordi@trespuntoscomunicacion.es>',\n    'Reply-To: jordi@trespuntoscomunicacion.es',\n    'To: ' + d.toEmail,\n    'Subject: =?UTF-8?B?' + Buffer.from(subject).toString('base64') + '?=',\n    'Message-ID: ' + customMsgId,\n    'MIME-Version: 1.0',\n    'Content-Type: text/html; charset=UTF-8',\n    '',\n    htmlBody\n  ];\n  const mime = mimeLines.join('\\r\\n');\n  const raw = Buffer.from(mime).toString('base64').replace(/\\+/g,'-').replace(/\\//g,'_').replace(/=+$/,'');\n  return { json: { ...d, raw, customMsgId, trackUrl } };\n});"
+      }
+    },
+    {
+      "id": "wf3s-011",
+      "name": "Enviar Email 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [280, 220],
+      "parameters": {
+        "method": "POST",
+        "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages/send",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "gmailOAuth2",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"raw\": \"{{ $json.raw }}\"}",
+        "options": {}
+      },
+      "credentials": { "gmailOAuth2": { "id": "mZrY6QLz18g6MESS", "name": "jordi@trespuntoscomunicacion.es" } },
+      "continueOnFail": true
+    },
+    {
+      "id": "wf3s-012",
+      "name": "Update Secuencia E1 Enviado",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [500, 220],
+      "parameters": {
+        "method": "PATCH",
+        "url": "https://api.airtable.com/v0/applQhJtxCkCGoVnX/tblCPkfja3rjKfztB",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [ { "name": "Authorization", "value": "Bearer <AIRTABLE_PAT_REDACTED>" }, { "name": "Content-Type", "value": "application/json" } ] },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={ \"records\": [{ \"id\": \"{{ $('IF Email 1').item.json.recordId }}\", \"fields\": { \"fldisny1PViCsODXB\": \"📧 E1 Enviado\", \"fldtPtP3XyZCXa174\": \"{{ new Date().toISOString().split('T')[0] }}\" } }] }",
+        "options": { "timeout": 10000 }
+      },
+      "continueOnFail": true
+    },
+    {
+      "id": "wf3s-013",
+      "name": "Update Empresa Contactado",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [720, 220],
+      "parameters": {
+        "method": "PATCH",
+        "url": "https://api.airtable.com/v0/applQhJtxCkCGoVnX/tblsP9bukhbTTMmpz",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [ { "name": "Authorization", "value": "Bearer <AIRTABLE_PAT_REDACTED>" }, { "name": "Content-Type", "value": "application/json" } ] },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={ \"records\": [{ \"id\": \"{{ $('IF Email 1').item.json.empresaId }}\", \"fields\": { \"fldIkXAMIwPlgXxEE\": \"Contactado\" } }] }",
+        "options": { "timeout": 10000 }
+      },
+      "continueOnFail": true
+    },
+    {
+      "id": "wf3s-014",
+      "name": "Telegram Mesa 3P E1 enviado",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [940, 220],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.telegram.org/bot<TELEGRAM_BOT_TOKEN_REDACTED>/sendMessage",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"chat_id\": \"-4999298972\", \"text\": \"📧 Sectores E1 enviado — {{ $('Combinar Datos').item.json.empresaNombre }} ({{ $('Combinar Datos').item.json.sector }}) — {{ $('Combinar Datos').item.json.decisor }}\\n\\n📧 {{ $('Combinar Datos').item.json.toEmail }}\\n📝 {{ $('Combinar Datos').item.json.asunto }}\\n\\n🔗 https://airtable.com/applQhJtxCkCGoVnX/tblCPkfja3rjKfztB/{{ $('Combinar Datos').item.json.recordId }}\"}",
+        "options": {}
+      },
+      "continueOnFail": true
+    }
+  ],
+  "connections": {
+    "Schedule 9am": { "main": [[ { "node": "Verificar Horario", "type": "main", "index": 0 } ]] },
+    "Verificar Horario": { "main": [[ { "node": "IF Horario Valido", "type": "main", "index": 0 } ]] },
+    "IF Horario Valido": { "main": [[ { "node": "Leer Secuencias Aprobadas", "type": "main", "index": 0 } ], [ { "node": "Fuera de horario", "type": "main", "index": 0 } ]] },
+    "Leer Secuencias Aprobadas": { "main": [[ { "node": "Procesar Secuencias", "type": "main", "index": 0 } ]] },
+    "Procesar Secuencias": { "main": [[ { "node": "Obtener Empresa", "type": "main", "index": 0 } ]] },
+    "Obtener Empresa": { "main": [[ { "node": "Combinar Datos", "type": "main", "index": 0 } ]] },
+    "Combinar Datos": { "main": [[ { "node": "IF Email 1", "type": "main", "index": 0 } ]] },
+    "IF Email 1": { "main": [[ { "node": "Build MIME E1", "type": "main", "index": 0 } ]] },
+    "Build MIME E1": { "main": [[ { "node": "Enviar Email 1", "type": "main", "index": 0 } ]] },
+    "Enviar Email 1": { "main": [[ { "node": "Update Secuencia E1 Enviado", "type": "main", "index": 0 } ]] },
+    "Update Secuencia E1 Enviado": { "main": [[ { "node": "Update Empresa Contactado", "type": "main", "index": 0 } ]] },
+    "Update Empresa Contactado": { "main": [[ { "node": "Telegram Mesa 3P E1 enviado", "type": "main", "index": 0 } ]] }
+  }
+}
