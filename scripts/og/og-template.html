@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>OG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mint: #5DFFBF;
+    --bg-base: #0e0e0e;
+    --bg-card: #1a1a1a;
+    --text: #ffffff;
+    --text-muted: #8a8a8a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1200px; height:630px; overflow:hidden; }
+  body {
+    background: radial-gradient(ellipse at top right, #1a2520 0%, var(--bg-base) 55%);
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    position: relative;
+  }
+  /* subtle grid */
+  body::before {
+    content:'';
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(93,255,191,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(93,255,191,.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at right, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at right, black 0%, transparent 70%);
+    pointer-events:none;
+  }
+  /* glow accent */
+  body::after {
+    content:'';
+    position:absolute;
+    right:-150px; top:50%;
+    transform:translateY(-50%);
+    width:500px; height:500px;
+    background: radial-gradient(circle, rgba(93,255,191,.18) 0%, transparent 65%);
+    filter: blur(20px);
+    pointer-events:none;
+  }
+  .frame {
+    position:absolute; inset:0;
+    padding: 64px 72px;
+    display:flex; flex-direction:column;
+    justify-content:space-between;
+  }
+  /* TOP: logo */
+  .top { display:flex; align-items:center; gap:18px; z-index:2; }
+  .logo svg { display:block; height:46px; width:auto; }
+  .domain {
+    color: var(--text-muted);
+    font-size: 16px;
+    letter-spacing: .04em;
+    margin-left: 4px;
+    border-left: 1px solid rgba(255,255,255,.15);
+    padding-left: 18px;
+  }
+  /* MIDDLE: content */
+  .content { z-index:2; max-width: 920px; }
+  .badge {
+    display:inline-flex;
+    align-items:center; gap:10px;
+    padding: 8px 18px;
+    border: 1px solid rgba(93,255,191,.4);
+    border-radius: 999px;
+    color: var(--mint);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    background: rgba(93,255,191,.06);
+  }
+  .badge-dot {
+    width:8px; height:8px; border-radius:50%;
+    background: var(--mint);
+    box-shadow: 0 0 12px var(--mint);
+  }
+  .title {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 1.08;
+    letter-spacing: -.02em;
+    color: var(--text);
+    margin-bottom: 22px;
+  }
+  .title .accent { color: var(--mint); }
+  .subtitle {
+    font-size: 22px;
+    line-height: 1.45;
+    color: rgba(255,255,255,.72);
+    font-weight: 400;
+    max-width: 820px;
+  }
+  /* BOTTOM */
+  .bottom {
+    display:flex; align-items:center; justify-content:space-between;
+    z-index:2;
+  }
+  .author {
+    display:flex; align-items:center; gap:14px;
+    color: var(--text-muted);
+    font-size: 16px;
+  }
+  .author strong { color: var(--text); font-weight:600; }
+  .accent-bar {
+    height: 4px; width: 80px;
+    background: linear-gradient(90deg, var(--mint), transparent);
+    border-radius: 4px;
+  }
+  /* size variants by title length */
+  .title.long { font-size: 56px; }
+  .title.xlong { font-size: 50px; }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="top">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.303 99.928">
+          <g transform="translate(-143.8 -26.1)">
+            <path d="M243.558,44.827a30.774,30.774,0,0,1,23.994,11.412,61.579,61.579,0,0,1,9.364-17.264,49.651,49.651,0,0,0-66.716,0,61.58,61.58,0,0,1,9.364,17.264,31.238,31.238,0,0,1,23.994-11.412Z" transform="translate(30.748 0)" fill="#5dffbf"/>
+            <path d="M355.213,26.1a49.114,49.114,0,0,0-33.358,12.875,45.236,45.236,0,0,0-7.023,7.9,49.619,49.619,0,0,0-9.364,28.969,31.1,31.1,0,0,1-31.017,31.163A30.774,30.774,0,0,1,250.457,95.6a31.275,31.275,0,0,1-7.023-19.751,49.618,49.618,0,0,0-9.364-28.969,45.233,45.233,0,0,0-7.023-7.9A49.114,49.114,0,0,0,193.691,26.1a49.891,49.891,0,0,0,0,99.781,49.114,49.114,0,0,0,33.358-12.875,61.579,61.579,0,0,1-9.364-17.264,30.876,30.876,0,1,1,7.023-19.459,49.618,49.618,0,0,0,9.364,28.969,45.231,45.231,0,0,0,7.023,7.9,49.651,49.651,0,0,0,66.716,0,45.232,45.232,0,0,0,7.023-7.9A49.619,49.619,0,0,0,324.2,76.283a31.1,31.1,0,1,1,7.023,19.459,61.579,61.579,0,0,1-9.364,17.264,49.113,49.113,0,0,0,33.358,12.875,49.891,49.891,0,1,0,0-99.781Z" transform="translate(0 0)" fill="#5dffbf"/>
+            <circle cx="16.24" cy="16.24" r="16.24" transform="translate(177.158 59.751)" fill="#f8f8f8"/>
+            <circle cx="16.24" cy="16.24" r="16.24" transform="translate(258.065 59.751)" fill="#f8f8f8"/>
+            <circle cx="16.24" cy="16.24" r="16.24" transform="translate(338.973 59.751)" fill="#f8f8f8"/>
+          </g>
+        </svg>
+      </div>
+      <div class="domain">trespuntoscomunicacion.es</div>
+    </div>
+
+    <div class="content">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span id="og-category">BLOG · DESARROLLO WEB</span>
+      </div>
+      <h1 class="title" id="og-title">Desarrollo web a medida: cuándo es la decisión correcta</h1>
+      <p class="subtitle" id="og-subtitle">WordPress tiene su momento. Te explicamos cuándo el desarrollo a medida es la única respuesta rentable para tu negocio.</p>
+    </div>
+
+    <div class="bottom">
+      <div class="author">
+        <span><strong>Jordi Expósito</strong> · Tres Puntos Comunicación</span>
+      </div>
+      <div class="accent-bar"></div>
+    </div>
+  </div>
+
+  <script>
+    // read params from URL hash: #cat=...&title=...&sub=...
+    (function(){
+      var hash = location.hash.replace(/^#/, '');
+      if (hash) {
+        var params = {};
+        hash.split('&').forEach(function(kv){
+          var eq = kv.indexOf('=');
+          if (eq > -1) params[kv.slice(0,eq)] = decodeURIComponent(kv.slice(eq+1).replace(/\+/g,' '));
+        });
+        if (params.cat) document.getElementById('og-category').textContent = params.cat;
+        if (params.title) document.getElementById('og-title').textContent = params.title;
+        if (params.sub !== undefined) {
+          var subEl = document.getElementById('og-subtitle');
+          if (params.sub) subEl.textContent = params.sub;
+          else subEl.style.display = 'none';
+        }
+      }
+      // auto-fit title font based on length
+      var t = document.getElementById('og-title');
+      var len = t.textContent.length;
+      if (len > 80) t.classList.add('xlong');
+      else if (len > 55) t.classList.add('long');
+    })();
+  </script>
+</body>
+</html>

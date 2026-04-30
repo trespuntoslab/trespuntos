@@ -1,0 +1,911 @@
+[
+  {
+    "rel_path": "arquitectura-digital-conversion/index.html",
+    "slug": "arquitectura-digital-conversion",
+    "category": "ARQUITECTURA DIGITAL",
+    "title": "Arquitectura Digital de Conversión",
+    "subtitle": "¿Qué es la Arquitectura Digital de Conversión? Nuestra metodología para diagnosticar pérdidas y construir plataformas que convierten.",
+    "output": "/img/og/arquitectura-digital-conversion.png",
+    "ok": true
+  },
+  {
+    "rel_path": "aviso-legal/index.html",
+    "slug": "aviso-legal",
+    "category": "LEGAL · AVISO LEGAL",
+    "title": "Aviso Legal",
+    "subtitle": "Aviso Legal de Tres Puntos Comunicación S.L. Información legal, protección de datos y condiciones de uso del sitio web.",
+    "output": "/img/og/aviso-legal.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/10-cambios-estructurales-en-ux-que-redefinen-el-diseno-digital-en-2026/index.html",
+    "slug": "blog-10-cambios-estructurales-en-ux-que-redefinen-el-diseno-digital-en-2026",
+    "category": "BLOG · UX/UI",
+    "title": "10 cambios UX que redefinen el diseño digital en 2026",
+    "subtitle": "Muchos productos digitales están quedando obsoletos por arquitecturas UX rígidas. Analizamos los cambios de UX que dominarán 2026 y cómo adaptar tu…",
+    "output": "/img/og/blog-10-cambios-estructurales-en-ux-que-redefinen-el-diseno-digital-en-2026.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/actualizacion-web-la-importancia-de-mantener-tu-sitio-al-dia/index.html",
+    "slug": "blog-actualizacion-web-la-importancia-de-mantener-tu-sitio-al-dia",
+    "category": "BLOG · DESARROLLO WEB",
+    "title": "Actualización Web: La Importancia de Mantener tu Sitio al Día",
+    "subtitle": "En la era digital actual, la actualización web es un aspecto crucial para garantizar el éxito de tu presencia en línea. Mantener tu sitio actualizado no...",
+    "output": "/img/og/blog-actualizacion-web-la-importancia-de-mantener-tu-sitio-al-dia.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/agencia-ux-ui-en-barcelona-claves-para-un-diseno-ganador/index.html",
+    "slug": "blog-agencia-ux-ui-en-barcelona-claves-para-un-diseno-ganador",
+    "category": "BLOG · UX/UI",
+    "title": "Agencia UX/UI en Barcelona: claves para un diseño ganador",
+    "subtitle": "Optimiza tu web con nuestra agencia UX/UI en Barcelona. Expertos en diseño web, experiencia de usuario y desarrollo web a medida.",
+    "output": "/img/og/blog-agencia-ux-ui-en-barcelona-claves-para-un-diseno-ganador.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/agencia-ux-ui-en-barcelona-claves-para-un-diseno-ganador-2/index.html",
+    "slug": "blog-agencia-ux-ui-en-barcelona-claves-para-un-diseno-ganador-2",
+    "category": "BLOG · UX/UI",
+    "title": "Claves para un diseño UX/UI ganador en Barcelona (II): el sesgo del conocimiento común",
+    "subtitle": "Cómo el Common Knowledge Effect mata la creatividad en equipos UX/UI. Técnicas de brainstorming y casos reales de Google, Amazon y Apple para superarlo.",
+    "output": "/img/og/blog-agencia-ux-ui-en-barcelona-claves-para-un-diseno-ganador-2.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/agencia-ux-ui-en-barcelona-ia-al-rescate-de-tu-diseno/index.html",
+    "slug": "blog-agencia-ux-ui-en-barcelona-ia-al-rescate-de-tu-diseno",
+    "category": "BLOG · IA Y AUTOMATIZACIÓN",
+    "title": "Agencia UX/UI en Barcelona: IA al rescate de tu diseño",
+    "subtitle": "Descubre cómo la IA potencia la experiencia de usuario y revoluciona tu diseño web. Tres Puntos, la agencia UX/UI en Barcelona que marca la diferencia.",
+    "output": "/img/og/blog-agencia-ux-ui-en-barcelona-ia-al-rescate-de-tu-diseno.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/arquitectura-frontend-2026-escalabilidad-b2b-y-cero-deuda-tecnica/index.html",
+    "slug": "blog-arquitectura-frontend-2026-escalabilidad-b2b-y-cero-deuda-tecnica",
+    "category": "BLOG · ARQUITECTURA DIGITAL",
+    "title": "Arquitectura Frontend 2026: Escalabilidad B2B y Cero Deuda Técnica",
+    "subtitle": "La rigidez de tu interfaz destruye la rentabilidad. Descubre cómo las arquitecturas headless, micro-frontends y GenUI garantizan la escalabilidad B2B en 2026.",
+    "output": "/img/og/blog-arquitectura-frontend-2026-escalabilidad-b2b-y-cero-deuda-tecnica.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/atomic-design-ultima-tendencia-en-diseno-web/index.html",
+    "slug": "blog-atomic-design-ultima-tendencia-en-diseno-web",
+    "category": "BLOG · DESARROLLO WEB",
+    "title": "Atomic Design, última tendencia en diseño web",
+    "subtitle": "¿Qué es Atomic Design? Atomic Design es un modo de diseñar aplicaciones y sitios web, comenzando desde lo más particular para poder cambiar de forma...",
+    "output": "/img/og/blog-atomic-design-ultima-tendencia-en-diseno-web.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/beneficios-de-la-arquitectura-de-informacion-en-el-diseno-web/index.html",
+    "slug": "blog-beneficios-de-la-arquitectura-de-informacion-en-el-diseno-web",
+    "category": "BLOG · ARQUITECTURA DIGITAL",
+    "title": "Beneficios de la arquitectura de información en el diseño web",
+    "subtitle": "Descubre los beneficios de la arquitectura de información en el diseño web y optimiza la experiencia del usuario. Mejora la usabilidad y la conversión",
+    "output": "/img/og/blog-beneficios-de-la-arquitectura-de-informacion-en-el-diseno-web.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/blog-diseno-web-elaborado-con-amor/index.html",
+    "slug": "blog-blog-diseno-web-elaborado-con-amor",
+    "category": "BLOG · UX/UI",
+    "title": "Elaborado con amor",
+    "subtitle": "Una genial campaña publicitaria de una marca de cervezas que muestra a los hombres acunando a sus panza al igual que las mujeres embarazadas Todos sabemos...",
+    "output": "/img/og/blog-blog-diseno-web-elaborado-con-amor.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/como-la-inteligencia-artificial-esta-cambiando-los-comportamientos-de-busqueda-online/index.html",
+    "slug": "blog-como-la-inteligencia-artificial-esta-cambiando-los-comportamientos-de-busqueda-online",
+    "category": "BLOG · IA Y AUTOMATIZACIÓN",
+    "title": "IA y Búsqueda Online: Cómo Cambia el Comportamiento del Usuario",
+    "subtitle": "Descubre cómo la IA generativa está transformando los hábitos de búsqueda y qué implica para tu estrategia digital. Guía práctica desde nuestra agencia UX/UI…",
+    "output": "/img/og/blog-como-la-inteligencia-artificial-esta-cambiando-los-comportamientos-de-busqueda-online.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/como-mejorar-la-experiencia-de-usuario-en-e-commerce-mediante-diseno-ux-ui-eficaz/index.html",
+    "slug": "blog-como-mejorar-la-experiencia-de-usuario-en-e-commerce-mediante-diseno-ux-ui-eficaz",
+    "category": "BLOG · E-COMMERCE",
+    "title": "UX/UI en E-commerce: Cómo Mejorar la Experiencia de Usuario",
+    "subtitle": "Optimiza la experiencia de usuario en e-commerce con diseño UX/UI técnico. Reduce fricción, mejora el INP y escala ventas. Solicita tu auditoría…",
+    "output": "/img/og/blog-como-mejorar-la-experiencia-de-usuario-en-e-commerce-mediante-diseno-ux-ui-eficaz.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/como-mejorar-la-velocidad-de-carga-de-tu-sitio-web/index.html",
+    "slug": "blog-como-mejorar-la-velocidad-de-carga-de-tu-sitio-web",
+    "category": "BLOG · DESARROLLO WEB",
+    "title": "Cómo mejorar la velocidad de carga de tu sitio web",
+    "subtitle": "Descubre cómo acelerar la velocidad de carga de tu sitio web y mejora la experiencia de tus usuarios. Implementa cambios significativos y optimiza tu rendimi...",
+    "output": "/img/og/blog-como-mejorar-la-velocidad-de-carga-de-tu-sitio-web.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/desarrollo-de-tiendas-optimizando-la-experiencia-de-usuario-en-e-commerce/index.html",
+    "slug": "blog-desarrollo-de-tiendas-optimizando-la-experiencia-de-usuario-en-e-commerce",
+    "category": "BLOG · E-COMMERCE",
+    "title": "Desarrollo de Tiendas Online: UX en E-commerce",
+    "subtitle": "En el mundo digital actual, el desarrollo de tiendas online se ha convertido en una parte fundamental para las empresas que buscan expandir su alcance y...",
+    "output": "/img/og/blog-desarrollo-de-tiendas-optimizando-la-experiencia-de-usuario-en-e-commerce.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/diseno-web-en-barcelona-como-elegir-tu-agencia/index.html",
+    "slug": "blog-diseno-web-en-barcelona-como-elegir-tu-agencia",
+    "category": "BLOG · UX/UI",
+    "title": "Diseño web en Barcelona – Cómo elegir tu agencia",
+    "subtitle": "Seguro que ya te habrás dado cuenta de la gran oferta de agencias de diseño web que existen en Barcelona, con este post vamos a solucionarte las dudas.",
+    "output": "/img/og/blog-diseno-web-en-barcelona-como-elegir-tu-agencia.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/el-efecto-einstellung/index.html",
+    "slug": "blog-el-efecto-einstellung",
+    "category": "BLOG · UX/UI",
+    "title": "El efecto einstellung",
+    "subtitle": "El llamado efecto Einstellung se define como la tendencia del cerebro humano a aferrarse a la solución más conocida, es decir, la primera que llega a la...",
+    "output": "/img/og/blog-el-efecto-einstellung.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/errores-comunes-en-el-diseno-de-e-commerce-y-como-evitarlos/index.html",
+    "slug": "blog-errores-comunes-en-el-diseno-de-e-commerce-y-como-evitarlos",
+    "category": "BLOG · E-COMMERCE",
+    "title": "Errores comunes en el diseño de e-commerce y cómo evitarlos",
+    "subtitle": "Descubre los errores comunes en el diseño de e-commerce y cómo evitarlos para potenciar tus ventas y mejorar la experiencia del usuario. ¡Optimiza tu tienda!",
+    "output": "/img/og/blog-errores-comunes-en-el-diseno-de-e-commerce-y-como-evitarlos.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/errores-comunes-en-iconos-y-como-optimizarlos-para-tu-web/index.html",
+    "slug": "blog-errores-comunes-en-iconos-y-como-optimizarlos-para-tu-web",
+    "category": "BLOG · UX/UI",
+    "title": "Errores comunes en iconos y cómo optimizarlos para tu web",
+    "subtitle": "Descubre cómo evitar iconos confusos y mejorar la experiencia de usuario en tu diseño web en Barcelona con ejemplos y consejos.",
+    "output": "/img/og/blog-errores-comunes-en-iconos-y-como-optimizarlos-para-tu-web.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web/index.html",
+    "slug": "blog-experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web",
+    "category": "BLOG · UX/UI",
+    "title": "Experiencia de usuario: 10 heurísticas de Nielsen para tu web",
+    "subtitle": "Descubre cómo las 10 heurísticas de usabilidad de Nielsen revolucionan tu experiencia de usuario. Tips frescos desde Barcelona para tu estudio creativo digital.",
+    "output": "/img/og/blog-experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/figma-make-da-vida-a-tus-prototipos-con-magia-y-ux-ui/index.html",
+    "slug": "blog-figma-make-da-vida-a-tus-prototipos-con-magia-y-ux-ui",
+    "category": "BLOG · UX/UI",
+    "title": "Figma Make: da vida a tus prototipos con magia y UX/UI",
+    "subtitle": "Figma Make convierte tus prototipos estáticos en experiencias interactivas. Aprende a dar vida a tus diseños UX/UI con esta herramienta de prototipado.",
+    "output": "/img/og/blog-figma-make-da-vida-a-tus-prototipos-con-magia-y-ux-ui.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/figma-make-y-la-nueva-era-ai-en-tu-agencia-ux-ui/index.html",
+    "slug": "blog-figma-make-y-la-nueva-era-ai-en-tu-agencia-ux-ui",
+    "category": "BLOG · IA Y AUTOMATIZACIÓN",
+    "title": "Figma Make y la nueva era AI en tu agencia UX/UI",
+    "subtitle": "Figma Make integra inteligencia artificial en tu flujo de diseño UX/UI. Descubre cómo esta nueva era AI transforma el trabajo en agencias creativas.",
+    "output": "/img/og/blog-figma-make-y-la-nueva-era-ai-en-tu-agencia-ux-ui.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/google-labs-stitch-desata-tu-creatividad-ux-ui/index.html",
+    "slug": "blog-google-labs-stitch-desata-tu-creatividad-ux-ui",
+    "category": "BLOG · UX/UI",
+    "title": "Google Labs Stitch desata tu creatividad UX/UI",
+    "subtitle": "Explora Google Labs Stitch, la herramienta de IA generativa de Google para crear composiciones visuales y potenciar tu proceso creativo UX/UI.",
+    "output": "/img/og/blog-google-labs-stitch-desata-tu-creatividad-ux-ui.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/guia-para-crear-un-menu-de-navegacion-intuitivo-en-tu-sitio-web/index.html",
+    "slug": "blog-guia-para-crear-un-menu-de-navegacion-intuitivo-en-tu-sitio-web",
+    "category": "BLOG · UX/UI",
+    "title": "Guía para crear un menú de navegación intuitivo en tu sitio web",
+    "subtitle": "Descubre cómo crear un menú de navegación intuitivo en tu sitio web para mejorar la experiencia de usuario y optimizar la estructura de tu página.",
+    "output": "/img/og/blog-guia-para-crear-un-menu-de-navegacion-intuitivo-en-tu-sitio-web.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/index.html",
+    "slug": "blog",
+    "category": "BLOG · TRES PUNTOS",
+    "title": "UX/UI, Arquitectura Digital y Desarrollo Web",
+    "subtitle": "Artículos sobre UX/UI, arquitectura digital, desarrollo web, e-commerce e IA para empresas. Recursos técnicos para decisores digitales.",
+    "output": "/img/og/blog.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/inteligencia-artificial-y-ux-ui-guia-completa/index.html",
+    "slug": "blog-inteligencia-artificial-y-ux-ui-guia-completa",
+    "category": "BLOG · IA Y AUTOMATIZACIÓN",
+    "title": "Inteligencia artificial y UX/UI – Guía Completa",
+    "subtitle": "Descubre cómo la inteligencia artificial y UX/UI se unen para crear experiencias de usuario excepcionales en esta guía completa. ¡Potencia tu diseño web ahora!",
+    "output": "/img/og/blog-inteligencia-artificial-y-ux-ui-guia-completa.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas/index.html",
+    "slug": "blog-la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas",
+    "category": "BLOG · TRES PUNTOS",
+    "title": "La deuda de arquitectura UX en plataformas B2B modernas",
+    "subtitle": "Interfaces B2B lentas, rígidas y costosas suelen ocultar deuda de arquitectura UX. Analizamos su impacto técnico y cómo resolverla con diseño y desarrollo…",
+    "output": "/img/og/blog-la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/la-experiencia-de-usuario-y-el-diseno-de-interfaz-en-tu-pagina-web/index.html",
+    "slug": "blog-la-experiencia-de-usuario-y-el-diseno-de-interfaz-en-tu-pagina-web",
+    "category": "BLOG · UX/UI",
+    "title": "La experiencia de usuario y el diseño de interfaz en tu página web",
+    "subtitle": "Siempre es importante contar con una buena compañía de diseño web y desarrollo web en Barcelona. Y es que estas te abren la puerta para conseguir una...",
+    "output": "/img/og/blog-la-experiencia-de-usuario-y-el-diseno-de-interfaz-en-tu-pagina-web.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/la-importancia-de-tener-un-sitio-web-optimizado/index.html",
+    "slug": "blog-la-importancia-de-tener-un-sitio-web-optimizado",
+    "category": "BLOG · CONVERSIÓN",
+    "title": "La importancia de tener un sitio web optimizado",
+    "subtitle": "A todos nos gusta navegar rápidamente Cuando navegamos por internet nos encanta ver aparecer la información en nuestro navegador a gran velocidad y lo...",
+    "output": "/img/og/blog-la-importancia-de-tener-un-sitio-web-optimizado.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/las-estadisticas-de-diseno-web-que-evidencian-fallos-estructurales-en-ux-corporativa/index.html",
+    "slug": "blog-las-estadisticas-de-diseno-web-que-evidencian-fallos-estructurales-en-ux-corporativa",
+    "category": "BLOG · TRES PUNTOS",
+    "title": "Estadísticas de Diseño Web: Fallos Estructurales en UX Corporativa",
+    "subtitle": "El diseño web corporativo suele evaluarse desde una perspectiva estética. Sin embargo, en entornos B2B la variable crítica no es la apariencia sino la...",
+    "output": "/img/og/blog-las-estadisticas-de-diseno-web-que-evidencian-fallos-estructurales-en-ux-corporativa.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario/index.html",
+    "slug": "blog-las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario",
+    "category": "BLOG · UX/UI",
+    "title": "Las Leyes de UX: Manual del Diseño Centrado en el Usuario",
+    "subtitle": "Conoce las leyes fundamentales de UX que todo diseñador debe aplicar: Hick, Fitts, Jakob y más. Guía práctica de diseño centrado en el usuario.",
+    "output": "/img/og/blog-las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/mejores-practicas-desarrollo-web-live-coding-mejores-practicas-en-desarrollo-web-2026/index.html",
+    "slug": "blog-mejores-practicas-desarrollo-web-live-coding-mejores-practicas-en-desarrollo-web-2026",
+    "category": "BLOG · DESARROLLO WEB",
+    "title": "7 Errores de UX/UI que Destruyen el ROI de tu Empresa (2026)",
+    "subtitle": "¿Tu tasa de rebote es alarmante a pesar de tener una web",
+    "output": "/img/og/blog-mejores-practicas-desarrollo-web-live-coding-mejores-practicas-en-desarrollo-web-2026.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/metodologias-para-el-diseno-de-productos-digitales/index.html",
+    "slug": "blog-metodologias-para-el-diseno-de-productos-digitales",
+    "category": "BLOG · UX/UI",
+    "title": "Metodologías para el diseño de productos digitales",
+    "subtitle": "Continuando con nuestros tipos sobre UX /UI, hoy os mostramos 4 metodologías que te ayudaran a desarrollar tus productos digitales. DCU: Diseño centrado...",
+    "output": "/img/og/blog-metodologias-para-el-diseno-de-productos-digitales.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/proceso-para-un-buen-diseno-web-a-medida/index.html",
+    "slug": "blog-proceso-para-un-buen-diseno-web-a-medida",
+    "category": "BLOG · DESARROLLO WEB",
+    "title": "Proceso para un buen diseño web a medida",
+    "subtitle": "Te mostramos como obtener un proyecto web de diseño web a medida exitoso y rentable",
+    "output": "/img/og/blog-proceso-para-un-buen-diseno-web-a-medida.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/scope-canvas-el-punto-de-partida-de-lean-ux/index.html",
+    "slug": "blog-scope-canvas-el-punto-de-partida-de-lean-ux",
+    "category": "BLOG · UX/UI",
+    "title": "Scope Canvas, el punto de partida de Lean UX",
+    "subtitle": "Scope Canvas, un canvas especializado en conectar las necesidades de los usuarios con los objetivos de negocio en la organización.",
+    "output": "/img/og/blog-scope-canvas-el-punto-de-partida-de-lean-ux.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica/index.html",
+    "slug": "blog-tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica",
+    "category": "BLOG · DESARROLLO WEB",
+    "title": "Tendencias Desarrollo Web 2026: Rentabilidad y Escala Técnica",
+    "subtitle": "Análisis crítico de las tendencias de desarrollo web para 2026: IA, WebAssembly y arquitecturas Edge. Prepara tu stack tecnológico para la rentabilidad futura…",
+    "output": "/img/og/blog-tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/index.html",
+    "slug": "blog-tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion",
+    "category": "BLOG · UX/UI",
+    "title": "Tendencias de Diseño Web 2026: Rendimiento, UX y Conversión",
+    "subtitle": "¿Tu web convierte o solo decora? Analizamos las tendencias de diseño web 2026 priorizando INP, Core Web Vitals y arquitectura modular. Auditoría aquí.",
+    "output": "/img/og/blog-tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/tendencias-ux-ui-2026-la-consolidacion-del-diseno-predictivo-y-la-eficiencia-tecnica/index.html",
+    "slug": "blog-tendencias-ux-ui-2026-la-consolidacion-del-diseno-predictivo-y-la-eficiencia-tecnica",
+    "category": "BLOG · UX/UI",
+    "title": "Tendencias UX/UI 2026: Diseño Predictivo y Eficiencia Técnica",
+    "subtitle": "Descubre las Tendencias UX/UI 2026 críticas para la conversión. Análisis técnico sobre IA generativa, INP y accesibilidad avanzada. Solicita tu auditoría hoy.",
+    "output": "/img/og/blog-tendencias-ux-ui-2026-la-consolidacion-del-diseno-predictivo-y-la-eficiencia-tecnica.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/tests-de-usuarios-de-guerrilla/index.html",
+    "slug": "blog-tests-de-usuarios-de-guerrilla",
+    "category": "BLOG · UX/UI",
+    "title": "Tests de usuarios de guerrilla",
+    "subtitle": "El test de usuarios de guerrilla lo ha definido el diseñador Martin Belam lo definió como",
+    "output": "/img/og/blog-tests-de-usuarios-de-guerrilla.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/unir-el-pensamiento-lean-startup-con-diseno-lean-design/index.html",
+    "slug": "blog-unir-el-pensamiento-lean-startup-con-diseno-lean-design",
+    "category": "BLOG · UX/UI",
+    "title": "Unir el pensamiento Lean Startup con Diseño: LEAN DESIGN",
+    "subtitle": "Unir el pensamiento Lean Startup con Diseño ¿Quien hoy en día no ha escuchado o aplicado el pensamiento Lean Startup en sus proyectos? En Tres Puntos...",
+    "output": "/img/og/blog-unir-el-pensamiento-lean-startup-con-diseno-lean-design.png",
+    "ok": true
+  },
+  {
+    "rel_path": "blog/wcag-2-2-que-cambia-y-como-aplicarlo-en-tu-diseno-web-en-barcelona/index.html",
+    "slug": "blog-wcag-2-2-que-cambia-y-como-aplicarlo-en-tu-diseno-web-en-barcelona",
+    "category": "BLOG · DESARROLLO WEB",
+    "title": "WCAG 2.2: Cambios y Cómo Aplicarlo en tu Web en Barcelona",
+    "subtitle": "Guía práctica de WCAG 2.2 para mejorar accesibilidad, usabilidad y experiencia de usuario en proyectos digitales.",
+    "output": "/img/og/blog-wcag-2-2-que-cambia-y-como-aplicarlo-en-tu-diseno-web-en-barcelona.png",
+    "ok": true
+  },
+  {
+    "rel_path": "casos-de-negocio/diferentidea/index.html",
+    "slug": "caso-diferentidea",
+    "category": "CASO DE ÉXITO · DIFERENT IDEA",
+    "title": "Caso Diferent Idea",
+    "subtitle": "Cómo rediseñamos la arquitectura digital de Diferent Idea para convertir su web en una herramienta de negocio.",
+    "output": "/img/og/caso-diferentidea.png",
+    "ok": true
+  },
+  {
+    "rel_path": "casos-de-negocio/exitbcn/index.html",
+    "slug": "caso-exitbcn",
+    "category": "CASO DE ÉXITO · EXITBCN",
+    "title": "Exitbcn",
+    "subtitle": "Exitbcn: e-commerce de moda premium que conecta la tienda física de Granollers con experiencia digital. Descubre cómo Tres Puntos diseñó una plataforma de…",
+    "output": "/img/og/caso-exitbcn.png",
+    "ok": true
+  },
+  {
+    "rel_path": "casos-de-negocio/gibobs/index.html",
+    "slug": "caso-gibobs",
+    "category": "CASO DE ÉXITO · GIBOBS",
+    "title": "Desarrollo plataforma fintech",
+    "subtitle": "Cómo diseñamos y desarrollamos una plataforma fintech enfocada en conversión y escalabilidad.",
+    "output": "/img/og/caso-gibobs.png",
+    "ok": true
+  },
+  {
+    "rel_path": "casos-de-negocio/index.html",
+    "slug": "casos",
+    "category": "CASOS DE ÉXITO · TRES PUNTOS",
+    "title": "Proyectos Web Realizados",
+    "subtitle": "Casos de éxito en UX/UI, desarrollo web y arquitectura digital. Proyectos realizados para empresas que necesitaban convertir más.",
+    "output": "/img/og/casos.png",
+    "ok": true
+  },
+  {
+    "rel_path": "casos-de-negocio/nomade-rent/index.html",
+    "slug": "caso-nomade-rent",
+    "category": "CASO DE ÉXITO · NOMADE RENT",
+    "title": "Caso Nomade Rent",
+    "subtitle": "Cómo rediseñamos la arquitectura digital de Nomade Rent para mejorar su plataforma de alquiler y eliminar fricciones.",
+    "output": "/img/og/caso-nomade-rent.png",
+    "ok": true
+  },
+  {
+    "rel_path": "casos-de-negocio/nomadevans/index.html",
+    "slug": "caso-nomadevans",
+    "category": "CASO DE ÉXITO · NOMADE VANS",
+    "title": "Web de reservas camper",
+    "subtitle": "Cómo transformamos una web inspiracional en un sistema de reservas que convierte. UX/UI, desarrollo web a medida y arquitectura digital.",
+    "output": "/img/og/caso-nomadevans.png",
+    "ok": true
+  },
+  {
+    "rel_path": "casos-de-negocio/penguinaula/index.html",
+    "slug": "caso-penguinaula",
+    "category": "CASO DE ÉXITO · PENGUIN AULA",
+    "title": "Rediseño UX plataforma educativa",
+    "subtitle": "Cómo rediseñamos la experiencia de uso de una plataforma educativa digital para hacerla más clara, usable y eficiente.",
+    "output": "/img/og/caso-penguinaula.png",
+    "ok": true
+  },
+  {
+    "rel_path": "casos-de-negocio/tsp/index.html",
+    "slug": "caso-tsp",
+    "category": "CASO DE ÉXITO · TALENT SEARCH PEOPLE",
+    "title": "Talent Search People",
+    "subtitle": "Rediseño UX completo y arquitectura digital para Talent Search People. Transformamos un portal de recruitment genérico en una plataforma que conecta talento…",
+    "output": "/img/og/caso-tsp.png",
+    "ok": true
+  },
+  {
+    "rel_path": "casos-de-negocio/tusolucionhipotecaria/index.html",
+    "slug": "caso-tusolucionhipotecaria",
+    "category": "CASO DE ÉXITO · TU SOLUCIÓN HIPOTECARIA",
+    "title": "Web de captación hipotecaria",
+    "subtitle": "Cómo transformamos una web informativa en un sistema de captación cualificada para una empresa de intermediación hipotecaria.",
+    "output": "/img/og/caso-tusolucionhipotecaria.png",
+    "ok": true
+  },
+  {
+    "rel_path": "casos-de-negocio/zimconnections/index.html",
+    "slug": "caso-zimconnections",
+    "category": "CASO DE ÉXITO · ZIM CONNECTIONS",
+    "title": "Caso ZIM Connections",
+    "subtitle": "Cómo rediseñamos ZIM Connections para convertir su web en una herramienta de captación más clara y eficaz.",
+    "output": "/img/og/caso-zimconnections.png",
+    "ok": true
+  },
+  {
+    "rel_path": "contacto/index.html",
+    "slug": "contacto",
+    "category": "CONTACTO · TRES PUNTOS",
+    "title": "Hablemos de tu Proyecto Digital",
+    "subtitle": "Habla con Jordan, nuestro asistente IA, o envíanos un mensaje. Agencia UX/UI y desarrollo web en Barcelona — respuesta en menos de 24h.",
+    "output": "/img/og/contacto.png",
+    "ok": true
+  },
+  {
+    "rel_path": "index.html",
+    "slug": "home",
+    "category": "AGENCIA UX/UI · BARCELONA",
+    "title": "Arquitectura Digital de Conversión",
+    "subtitle": "Agencia UX/UI y desarrollo web en Barcelona. 13 años construyendo plataformas que convierten: desarrollo a medida, e-commerce y Design Engineering.",
+    "output": "/img/og/home.png",
+    "ok": true
+  },
+  {
+    "rel_path": "iniciar-proyecto/index.html",
+    "slug": "iniciar-proyecto",
+    "category": "INICIA TU PROYECTO",
+    "title": "Cuéntanos tu proyecto",
+    "subtitle": "",
+    "output": "/img/og/iniciar-proyecto.png",
+    "ok": true
+  },
+  {
+    "rel_path": "nosotros/index.html",
+    "slug": "nosotros",
+    "category": "AGENCIA · NOSOTROS",
+    "title": "Estudio de Arquitectura Digital en Barcelona",
+    "subtitle": "Somos Tres Puntos, un estudio especializado en arquitectura digital de conversión en Barcelona. +13 años construyendo plataformas que funcionan.",
+    "output": "/img/og/nosotros.png",
+    "ok": true
+  },
+  {
+    "rel_path": "politica-cookies/index.html",
+    "slug": "politica-cookies",
+    "category": "LEGAL · POLÍTICA DE COOKIES",
+    "title": "Política de Cookies",
+    "subtitle": "Política de Cookies de Tres Puntos Comunicación S.L. Información sobre las cookies y tecnologías de seguimiento utilizadas en nuestro sitio.",
+    "output": "/img/og/politica-cookies.png",
+    "ok": true
+  },
+  {
+    "rel_path": "politica-privacidad/index.html",
+    "slug": "politica-privacidad",
+    "category": "LEGAL · POLÍTICA DE PRIVACIDAD",
+    "title": "Política de Privacidad",
+    "subtitle": "Política de Privacidad de Tres Puntos Comunicación S.L. Información sobre protección de datos personales, derechos de los usuarios y seguridad.",
+    "output": "/img/og/politica-privacidad.png",
+    "ok": true
+  },
+  {
+    "rel_path": "politica-redes-sociales/index.html",
+    "slug": "politica-redes-sociales",
+    "category": "LEGAL · REDES SOCIALES",
+    "title": "Política de Privacidad en Redes Sociales",
+    "subtitle": "Política de privacidad en redes sociales de Tres Puntos Comunicación S.L. Información sobre el tratamiento de datos en nuestros perfiles sociales.",
+    "output": "/img/og/politica-redes-sociales.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/analisis/circulantis/index.html",
+    "slug": "analisis-circulantis",
+    "category": "ANÁLISIS · CIRCULANTIS",
+    "title": "Análisis de circulantis.com",
+    "subtitle": "Análisis preparado para Guillermo González-Fleitas. 3 oportunidades concretas con impacto cuantificado.",
+    "output": "/img/og/analisis-circulantis.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/analisis/clinica-birbe/index.html",
+    "slug": "analisis-clinica-birbe",
+    "category": "ANÁLISIS · CLINICA BIRBE",
+    "title": "Análisis de clinicabirbe.com",
+    "subtitle": "Análisis preparado para Joan Birbe. 3 oportunidades concretas con impacto cuantificado.",
+    "output": "/img/og/analisis-clinica-birbe.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/analisis/clinica-frontela/index.html",
+    "slug": "analisis-clinica-frontela",
+    "category": "ANÁLISIS · CLINICA FRONTELA",
+    "title": "Análisis de injertocapilarfrontela.com",
+    "subtitle": "Análisis preparado para Javier Frontela. 3 oportunidades concretas con impacto cuantificado.",
+    "output": "/img/og/analisis-clinica-frontela.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/analisis/coverfy/index.html",
+    "slug": "analisis-coverfy",
+    "category": "ANÁLISIS · COVERFY",
+    "title": "Análisis de coverfy.com",
+    "subtitle": "Análisis preparado para Vicente Arias. 3 oportunidades concretas con impacto cuantificado.",
+    "output": "/img/og/analisis-coverfy.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/analisis/dorsia/index.html",
+    "slug": "analisis-dorsia",
+    "category": "ANÁLISIS · DORSIA",
+    "title": "Análisis de dorsia.es",
+    "subtitle": "Análisis preparado para Fadela Hamza. 3 oportunidades concretas con impacto cuantificado.",
+    "output": "/img/og/analisis-dorsia.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/analisis/factorial-hr/index.html",
+    "slug": "analisis-factorial-hr",
+    "category": "ANÁLISIS · FACTORIAL HR",
+    "title": "Análisis de factorialhr.com",
+    "subtitle": "Análisis preparado para Jordi Romero. 3 oportunidades concretas con impacto cuantificado.",
+    "output": "/img/og/analisis-factorial-hr.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/analisis/fincas-blanco/index.html",
+    "slug": "analisis-fincas-blanco",
+    "category": "ANÁLISIS · FINCAS BLANCO",
+    "title": "Análisis de fincasblanco.com",
+    "subtitle": "Análisis preparado para Mercedes Blanco González. 3 oportunidades concretas con impacto cuantificado.",
+    "output": "/img/og/analisis-fincas-blanco.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/analisis/finques-feliu/index.html",
+    "slug": "analisis-finques-feliu",
+    "category": "ANÁLISIS · FINQUES FELIU",
+    "title": "Análisis de finquesfeliu.com",
+    "subtitle": "Análisis preparado para Joan Maria Feliu Bohera. 3 oportunidades concretas con impacto cuantificado.",
+    "output": "/img/og/analisis-finques-feliu.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/analisis/kronos-homes/index.html",
+    "slug": "analisis-kronos-homes",
+    "category": "ANÁLISIS · KRONOS HOMES",
+    "title": "Análisis de kronoshomes.com",
+    "subtitle": "Análisis preparado para Saïd Hejal. 3 oportunidades concretas con impacto cuantificado.",
+    "output": "/img/og/analisis-kronos-homes.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/analisis/novicap/index.html",
+    "slug": "analisis-novicap",
+    "category": "ANÁLISIS · NOVICAP",
+    "title": "Análisis de novicap.com",
+    "subtitle": "Análisis preparado para Loïs Duhourcau. 3 oportunidades concretas con impacto cuantificado.",
+    "output": "/img/og/analisis-novicap.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/analisis/okticket/index.html",
+    "slug": "analisis-okticket",
+    "category": "ANÁLISIS · OKTICKET",
+    "title": "Análisis de okticket.es",
+    "subtitle": "Análisis preparado para Iván Rodríguez Álvarez. 3 oportunidades concretas con impacto cuantificado.",
+    "output": "/img/og/analisis-okticket.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/fintech/index.html",
+    "slug": "sector-fintech",
+    "category": "SECTOR · FINTECH",
+    "title": "Fintech · UX y arquitectura web",
+    "subtitle": "Web para fintechs reguladas: confianza regulatoria, landings por perfil pyme/inversor y onboarding dual que reduce CAC.",
+    "output": "/img/og/sector-fintech.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/index.html",
+    "slug": "sectores",
+    "category": "SECTORES · TRES PUNTOS",
+    "title": "Sectores",
+    "subtitle": "Arquitectura digital para fintech, inmobiliaria, salud y SaaS B2B. Caso, propuesta y diagnóstico inicial sin coste.",
+    "output": "/img/og/sectores.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/inmobiliaria/index.html",
+    "slug": "sector-inmobiliaria",
+    "category": "SECTOR · INMOBILIARIA",
+    "title": "Inmobiliaria · UX y arquitectura web",
+    "subtitle": "Web para inmobiliarias con 5-30 oficinas: captación dual propietario/comprador, SEO local por sede y ficha de propiedad premium.",
+    "output": "/img/og/sector-inmobiliaria.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/saas-b2b/index.html",
+    "slug": "sector-saas-b2b",
+    "category": "SECTOR · SAAS B2B",
+    "title": "SaaS B2B · UX y arquitectura web",
+    "subtitle": "Web para SaaS B2B: landings por vertical, sales-enablement vivo y arquitectura demo→trial que convierte.",
+    "output": "/img/og/sector-saas-b2b.png",
+    "ok": true
+  },
+  {
+    "rel_path": "sectores/salud/index.html",
+    "slug": "sector-salud",
+    "category": "SECTOR · SALUD",
+    "title": "Salud · UX y arquitectura web",
+    "subtitle": "Web para clínicas multisede: reserva online real, SEO local por tratamiento × ciudad y confianza clínica frente a low-cost.",
+    "output": "/img/og/sector-salud.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/automatizacion-agentes-ia-empresas/index.html",
+    "slug": "servicio-automatizacion-agentes-ia-empresas",
+    "category": "SERVICIO · TRES PUNTOS",
+    "title": "IA para empresas",
+    "subtitle": "Automatizamos procesos y creamos agentes IA para empresas que quieren eliminar tareas manuales y escalar operaciones.",
+    "output": "/img/og/servicio-automatizacion-agentes-ia-empresas.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/consultoria-digital-barcelona/index.html",
+    "slug": "servicio-consultoria-digital-barcelona",
+    "category": "SERVICIO · BARCELONA",
+    "title": "Consultoría Digital Barcelona",
+    "subtitle": "Consultoría digital especializada en arquitectura de conversión. Analizamos y diagnosticamos cuellos de botella en tu plataforma digital.",
+    "output": "/img/og/servicio-consultoria-digital-barcelona.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/consultoria-digital-bilbao/index.html",
+    "slug": "servicio-consultoria-digital-bilbao",
+    "category": "SERVICIO · BILBAO",
+    "title": "Consultoría Digital Bilbao",
+    "subtitle": "Consultoría digital en Bilbao para industria, manufactura y servicios. Diagnosticamos cuellos de botella en tu plataforma y diseñamos arquitecturas escalables…",
+    "output": "/img/og/servicio-consultoria-digital-bilbao.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/consultoria-digital-madrid/index.html",
+    "slug": "servicio-consultoria-digital-madrid",
+    "category": "SERVICIO · MADRID",
+    "title": "Consultoría Digital Madrid",
+    "subtitle": "Consultoría digital en Madrid para empresas que necesitan decisiones tecnológicas rentables. Auditamos plataformas corporativas, eliminamos deuda técnica y…",
+    "output": "/img/og/servicio-consultoria-digital-madrid.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/consultoria-digital-sevilla/index.html",
+    "slug": "servicio-consultoria-digital-sevilla",
+    "category": "SERVICIO · SEVILLA",
+    "title": "Consultoría Digital Sevilla",
+    "subtitle": "Consultoría digital en Sevilla para empresas del ecosistema Cartuja, aeronáutica Airbus, agritech y turismo. Diagnosticamos fricciones técnicas y diseñamos…",
+    "output": "/img/og/servicio-consultoria-digital-sevilla.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/desarrollo-web-a-medida-barcelona/index.html",
+    "slug": "servicio-desarrollo-web-a-medida-barcelona",
+    "category": "SERVICIO · BARCELONA",
+    "title": "Desarrollo Web a Medida Barcelona",
+    "subtitle": "Desarrollo web personalizado sin limitaciones de plantillas. Construimos plataformas escalables preparadas para crecer con tu negocio.",
+    "output": "/img/og/servicio-desarrollo-web-a-medida-barcelona.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/desarrollo-web-bilbao/index.html",
+    "slug": "servicio-desarrollo-web-bilbao",
+    "category": "SERVICIO · BILBAO",
+    "title": "Desarrollo Web a Medida Bilbao",
+    "subtitle": "Plataformas web hechas específicamente para tu empresa, sin limitaciones de plantillas estándar. Construimos sistemas potentes y escalables listos para tu…",
+    "output": "/img/og/servicio-desarrollo-web-bilbao.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/desarrollo-web-madrid/index.html",
+    "slug": "servicio-desarrollo-web-madrid",
+    "category": "SERVICIO · MADRID",
+    "title": "Desarrollo Web a Medida Madrid",
+    "subtitle": "Plataformas web personalizadas sin restricciones de plantillas. Construimos sistemas robustos listos para que tu negocio crezca sin límites técnicos.",
+    "output": "/img/og/servicio-desarrollo-web-madrid.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/desarrollo-web-sevilla/index.html",
+    "slug": "servicio-desarrollo-web-sevilla",
+    "category": "SERVICIO · SEVILLA",
+    "title": "Desarrollo Web a Medida Sevilla",
+    "subtitle": "Plataformas digitales hechas a tu medida, sin limitaciones de soluciones genéricas. Construimos infraestructuras tecnológicas ágiles para que tu negocio escale.",
+    "output": "/img/og/servicio-desarrollo-web-sevilla.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/design-engineer-barcelona/index.html",
+    "slug": "servicio-design-engineer-barcelona",
+    "category": "SERVICIO · BARCELONA",
+    "title": "Design Engineer Barcelona",
+    "subtitle": "Diseño y desarrollo frontend integrados. Design Engineers que crean interfaces y las implementan con calidad técnica desde el primer día.",
+    "output": "/img/og/servicio-design-engineer-barcelona.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/design-engineer-bilbao/index.html",
+    "slug": "servicio-design-engineer-bilbao",
+    "category": "SERVICIO · BILBAO",
+    "title": "Design Engineer Bilbao",
+    "subtitle": "Design engineers en Bilbao para el sector industrial. Interfaces de control, dashboards IoT y portales de ingeniería implementados con precisión técnica desde…",
+    "output": "/img/og/servicio-design-engineer-bilbao.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/design-engineer-madrid/index.html",
+    "slug": "servicio-design-engineer-madrid",
+    "category": "SERVICIO · MADRID",
+    "title": "Design Engineer Madrid",
+    "subtitle": "Design engineers en Madrid para empresas que exigen interfaces pixel-perfect. Traducimos design systems corporativos a código frontend estable, accesible y…",
+    "output": "/img/og/servicio-design-engineer-madrid.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/design-engineer-sevilla/index.html",
+    "slug": "servicio-design-engineer-sevilla",
+    "category": "SERVICIO · SEVILLA",
+    "title": "Design Engineer Sevilla",
+    "subtitle": "Design engineers en Sevilla que traducen tu Figma a código nativo sin perder fidelidad. Frontend técnico para startups en Cartuja, plataformas turísticas y…",
+    "output": "/img/og/servicio-design-engineer-sevilla.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/diseno-ux-ui-barcelona/index.html",
+    "slug": "servicio-diseno-ux-ui-barcelona",
+    "category": "SERVICIO · BARCELONA",
+    "title": "Diseño de Interfaces y Experiencia de Usuario en Barcelona",
+    "subtitle": "Diseñamos interfaces y experiencias de usuario para plataformas digitales que necesitan mejorar conversión, claridad y rendimiento. Servicio especializado en…",
+    "output": "/img/og/servicio-diseno-ux-ui-barcelona.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/diseno-ux-ui-bilbao/index.html",
+    "slug": "servicio-diseno-ux-ui-bilbao",
+    "category": "SERVICIO · BILBAO",
+    "title": "Diseño UX/UI Bilbao",
+    "subtitle": "Diseño UX/UI en Bilbao para empresas que necesitan mejorar claridad de uso, reducir confusión y aumentar conversión en sus plataformas.",
+    "output": "/img/og/servicio-diseno-ux-ui-bilbao.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/diseno-ux-ui-madrid/index.html",
+    "slug": "servicio-diseno-ux-ui-madrid",
+    "category": "SERVICIO · MADRID",
+    "title": "Diseño UX/UI Madrid",
+    "subtitle": "Diseño UX/UI en Madrid para empresas que necesitan mejorar claridad, reducir fricciones y potenciar conversión en su plataforma digital.",
+    "output": "/img/og/servicio-diseno-ux-ui-madrid.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/diseno-ux-ui-sevilla/index.html",
+    "slug": "servicio-diseno-ux-ui-sevilla",
+    "category": "SERVICIO · SEVILLA",
+    "title": "Diseño UX/UI Sevilla",
+    "subtitle": "Diseño UX/UI en Sevilla para empresas que necesitan mejorar usabilidad, reducir fricciones y aumentar conversión en su plataforma digital.",
+    "output": "/img/og/servicio-diseno-ux-ui-sevilla.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/ia-empresas-barcelona/index.html",
+    "slug": "servicio-ia-empresas-barcelona",
+    "category": "SERVICIO · BARCELONA",
+    "title": "IA Generativa para Empresas en Barcelona",
+    "subtitle": "Implementamos IA generativa en empresas de Barcelona. Agentes inteligentes, automatización de procesos y cerebros digitales que reducen costes operativos y…",
+    "output": "/img/og/servicio-ia-empresas-barcelona.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/ia-empresas-bilbao/index.html",
+    "slug": "servicio-ia-empresas-bilbao",
+    "category": "SERVICIO · BILBAO",
+    "title": "IA Generativa para Empresas en Bilbao",
+    "subtitle": "Integración de IA generativa en Bilbao para automatizar procesos empresariales. Agentes inteligentes y soluciones de automatización adaptadas a tu negocio sin…",
+    "output": "/img/og/servicio-ia-empresas-bilbao.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/ia-empresas-madrid/index.html",
+    "slug": "servicio-ia-empresas-madrid",
+    "category": "SERVICIO · MADRID",
+    "title": "IA Generativa para Empresas en Madrid",
+    "subtitle": "Integración de IA generativa en Madrid para automatizar procesos empresariales. Agentes inteligentes y soluciones de automatización adaptadas a tu negocio sin…",
+    "output": "/img/og/servicio-ia-empresas-madrid.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/ia-empresas-sevilla/index.html",
+    "slug": "servicio-ia-empresas-sevilla",
+    "category": "SERVICIO · SEVILLA",
+    "title": "IA Generativa para Empresas en Sevilla",
+    "subtitle": "Integración de IA generativa en Sevilla para automatizar procesos empresariales. Agentes inteligentes y soluciones de automatización adaptadas a tu negocio sin…",
+    "output": "/img/og/servicio-ia-empresas-sevilla.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/ia-generativa-empresas/index.html",
+    "slug": "servicio-ia-generativa-empresas",
+    "category": "SERVICIO · TRES PUNTOS",
+    "title": "IA Generativa para Empresas",
+    "subtitle": "Integración de IA generativa en tu plataforma digital. Automatización inteligente y chatbots personalizados para mejorar la experiencia del usuario.",
+    "output": "/img/og/servicio-ia-generativa-empresas.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/index.html",
+    "slug": "servicios",
+    "category": "SERVICIOS · TRES PUNTOS",
+    "title": "Servicios de Arquitectura Digital y Tecnología Web",
+    "subtitle": "Servicios de arquitectura digital, desarrollo web a medida, consultoría, diseño de interfaces, e-commerce e IA generativa en Barcelona para empresas que…",
+    "output": "/img/og/servicios.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/tienda-online-barcelona/index.html",
+    "slug": "servicio-tienda-online-barcelona",
+    "category": "SERVICIO · BARCELONA",
+    "title": "Tienda Online Barcelona",
+    "subtitle": "Desarrollo de tiendas online a medida en Barcelona. E-commerce optimizado para convertir tráfico en ventas y escalar el negocio.",
+    "output": "/img/og/servicio-tienda-online-barcelona.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/tienda-online-bilbao/index.html",
+    "slug": "servicio-tienda-online-bilbao",
+    "category": "SERVICIO · BILBAO",
+    "title": "Tienda Online Bilbao",
+    "subtitle": "Desarrollo de tiendas online a medida en Bilbao. E-commerce industrial y B2B con integraciones ERP, catálogos técnicos y arquitectura preparada para escalar.",
+    "output": "/img/og/servicio-tienda-online-bilbao.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/tienda-online-madrid/index.html",
+    "slug": "servicio-tienda-online-madrid",
+    "category": "SERVICIO · MADRID",
+    "title": "Tienda Online Madrid",
+    "subtitle": "Diseño y desarrollo de tiendas online a medida en Madrid. Plataformas e-commerce preparadas para integrar ERP, automatizar procesos y escalar ventas.",
+    "output": "/img/og/servicio-tienda-online-madrid.png",
+    "ok": true
+  },
+  {
+    "rel_path": "servicios/tienda-online-sevilla/index.html",
+    "slug": "servicio-tienda-online-sevilla",
+    "category": "SERVICIO · SEVILLA",
+    "title": "Tienda Online Sevilla",
+    "subtitle": "Tiendas online a medida en Sevilla. Desarrollo e-commerce para pymes que necesitan vender online con arquitectura profesional, sin depender de plantillas.",
+    "output": "/img/og/servicio-tienda-online-sevilla.png",
+    "ok": true
+  }
+]
