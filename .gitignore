@@ -2,6 +2,13 @@
 .mcp.json
 .claude/
 
+# Workflows n8n exportados (suelen contener API keys hardcoded en headers/URLs)
+# Si necesitas commitear un backup, sanitízalo PRIMERO con sed antes del git add.
+**/workflows-backup/*.json
+**/n8n-export/*.json
+*.workflow.json
+*.n8n.json
+
 # Auditorias y documentacion interna (no subir a produccion)
 AUDITORIA-PRE-LANZAMIENTO.md
 SEO-AUDIT.md

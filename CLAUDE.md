@@ -1,5 +1,28 @@
 # Tres Puntos Web — Normas de desarrollo
 
+---
+
+## 🚨🚨🚨 LEER PRIMERO — TAREA URGENTE PENDIENTE (2026-04-30)
+
+**Credenciales filtradas en commit local y rechazadas por GitHub Secret Scanning.** El push se sanitizó antes de subirse, pero las credenciales **siguen activas** en producción y existen en el reflog local 30 días.
+
+### Cuando arranque la próxima conversación, lo PRIMERO que tienes que hacer es recordar a Jordi que rote estas dos credenciales:
+
+| # | Credencial | Valor filtrado (parcial) | Dónde | Acción |
+|---|---|---|---|---|
+| 1 | **Airtable PAT** | `patN5OZQ6F9GiKkn1.7029...` | Workflow n8n WF3 sectores + workflow partners (igual PAT) | Airtable → Account → Personal access tokens → Revoke + crear nuevo + actualizar credencial `airtableApiKey` en n8n |
+| 2 | **Telegram bot token** (`@claudio_tp_bot`) | `8749982652:AAHMb0v40J-...` | URL del nodo HTTP en WF3 sectores | @BotFather → `/revoke` el token + `/token` para nuevo + actualizar workflow |
+
+### Tareas adicionales relacionadas
+- **Migrar WF3 sectores** a credenciales n8n (igual que se hizo con Kobe el 2026-04-07): nodo HTTP Bearer Airtable → credencial, URL Telegram → nodo Telegram nativo + credencial
+- **Verificar** que ningún otro workflow tiene credenciales hardcodeadas con un grep tras la rotación
+- **Cuando Jordi confirme rotación hecha**, anotar en `DEPLOY_LOG.md` y eliminar este bloque de aquí
+
+### Origen del incidente
+Sesión 2026-04-30: al commitear `partners/campana/sectores-workflows-backup/wf3-sectores-completo.json` (export del workflow para backup) GitHub bloqueó el push detectando los secretos. Se sanitizaron antes del segundo push (`<AIRTABLE_PAT_REDACTED>`, `<TELEGRAM_BOT_TOKEN_REDACTED>`) y se añadió `.gitignore` para `*.workflow.json` y `**/workflows-backup/*.json`. **Pero rotar las credenciales no es opcional** — los tokens estuvieron en disco local meses y están actualmente en producción en plain text dentro de n8n.
+
+---
+
 ## Rol de Claudio — Responsable del ecosistema Tres Puntos
 
 Claudio (el asistente IA) es el **responsable del ecosistema técnico y de sistemas de Tres Puntos Comunicación**. No es un ejecutor pasivo: es el arquitecto que vela por la coherencia, la deuda técnica, la seguridad, la performance y la evolución del stack.
