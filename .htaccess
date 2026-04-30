@@ -78,7 +78,10 @@
     RewriteRule ^casos-de-exito/?$ https://www.trespuntoscomunicacion.es/casos-de-negocio/ [R=301,L]
 
     # Portfolio → Casos de negocio (individual + hub)
-    RewriteRule ^portfolio/(.+)/?$ https://www.trespuntoscomunicacion.es/casos-de-negocio/$1/ [R=301,L]
+    # NOTA: ([^/]+) evita capturar la barra final → no genera doble slash en destino
+    # Casos WP antiguos no migrados → al hub directamente (1csoft, etc.)
+    RewriteRule ^portfolio/1csoft/?$ https://www.trespuntoscomunicacion.es/casos-de-negocio/ [R=301,L]
+    RewriteRule ^portfolio/([^/]+)/?$ https://www.trespuntoscomunicacion.es/casos-de-negocio/$1/ [R=301,L]
     RewriteRule ^portfolio/?$ https://www.trespuntoscomunicacion.es/casos-de-negocio/ [R=301,L]
 
     # Services: old WordPress /servicio/ slugs missing
@@ -86,14 +89,27 @@
     RewriteRule ^servicio/design-engineer-barcelona/?$ https://www.trespuntoscomunicacion.es/servicios/design-engineer-barcelona/ [R=301,L]
     RewriteRule ^servicio/ia-generativa/?$ https://www.trespuntoscomunicacion.es/servicios/ia-generativa-empresas/ [R=301,L]
     RewriteRule ^servicio/web-a-medida-barcelona/?$ https://www.trespuntoscomunicacion.es/servicios/desarrollo-web-a-medida-barcelona/ [R=301,L]
-    RewriteRule ^servicio/web-corporativa-barcelona/?$ https://www.trespuntoscomunicacion.es/servicios/web-corporativa-barcelona/ [R=301,L]
+    # /servicios/web-corporativa-barcelona/ no existe → mapear a desarrollo-web-a-medida
+    RewriteRule ^servicio/web-corporativa-barcelona/?$ https://www.trespuntoscomunicacion.es/servicios/desarrollo-web-a-medida-barcelona/ [R=301,L]
+    # /servicio/diseno-web-barcelona/ — slug WP antiguo → diseño UX/UI Barcelona
+    RewriteRule ^servicio/diseno-web-barcelona/?$ https://www.trespuntoscomunicacion.es/servicios/diseno-ux-ui-barcelona/ [R=301,L]
+    # Catch-all servicios viejos sin mapping específico → hub
+    RewriteRule ^servicio/?$ https://www.trespuntoscomunicacion.es/servicios/ [R=301,L]
+    RewriteRule ^servicio/([^/]+)/?$ https://www.trespuntoscomunicacion.es/servicios/ [R=301,L]
+
+    # Páginas WP antiguas que rankean (agencia diseño/ux ui) → home (es la dueña del keyword)
+    RewriteRule ^agencia-diseno-web-ux-ui-barcelona/?$ https://www.trespuntoscomunicacion.es/ [R=301,L]
+    RewriteRule ^agencia-ux-ui-barcelona/?$ https://www.trespuntoscomunicacion.es/ [R=301,L]
+    RewriteRule ^agencia-diseno-web-barcelona/?$ https://www.trespuntoscomunicacion.es/ [R=301,L]
 
     # Typo URL indexed by Google (missing 't' in tendencias)
     RewriteRule ^endencias-ux-ui-2026(.*)$ https://www.trespuntoscomunicacion.es/blog/tendencias-ux-ui-2026-la-consolidacion-del-diseno-predictivo-y-la-eficiencia-tecnica/ [R=301,L]
 
     # Blog posts: old root URLs → /blog/ prefix
+    # /tips-ux-ui/page/N/ no existe en estructura nueva → todas al hub
+    RewriteRule ^tips-ux-ui/page/.*$ https://www.trespuntoscomunicacion.es/blog/ [R=301,L]
     RewriteRule ^tips-ux-ui/?$ https://www.trespuntoscomunicacion.es/blog/ [R=301,L]
-    RewriteRule ^tips-ux-ui/(.+)/?$ https://www.trespuntoscomunicacion.es/blog/$1/ [R=301,L]
+    RewriteRule ^tips-ux-ui/([^/]+)/?$ https://www.trespuntoscomunicacion.es/blog/$1/ [R=301,L]
 
     # Blog posts: ALL root-level WP slugs → /blog/{slug}/ (GSC 404 fix 2026-04-12)
     RewriteRule ^10-cambios-estructurales-en-ux-que-redefinen-el-diseno-digital-en-2026/?$ https://www.trespuntoscomunicacion.es/blog/10-cambios-estructurales-en-ux-que-redefinen-el-diseno-digital-en-2026/ [R=301,L]
@@ -122,6 +138,8 @@
     RewriteRule ^la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas/?$ https://www.trespuntoscomunicacion.es/blog/la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas/ [R=301,L]
     RewriteRule ^la-experiencia-de-usuario-y-el-diseno-de-interfaz-en-tu-pagina-web/?$ https://www.trespuntoscomunicacion.es/blog/la-experiencia-de-usuario-y-el-diseno-de-interfaz-en-tu-pagina-web/ [R=301,L]
     RewriteRule ^la-importancia-de-tener-un-sitio-web-optimizado/?$ https://www.trespuntoscomunicacion.es/blog/la-importancia-de-tener-un-sitio-web-optimizado/ [R=301,L]
+    # Post WP antiguo que ya no existe — redirigir al hub del blog
+    RewriteRule ^la-transicion-hacia-experiencias-multimodales-en-productos-digitales-complejos/?$ https://www.trespuntoscomunicacion.es/blog/ [R=301,L]
     RewriteRule ^las-estadisticas-de-diseno-web-que-evidencian-fallos-estructurales-en-ux-corporativa/?$ https://www.trespuntoscomunicacion.es/blog/las-estadisticas-de-diseno-web-que-evidencian-fallos-estructurales-en-ux-corporativa/ [R=301,L]
     RewriteRule ^las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario/?$ https://www.trespuntoscomunicacion.es/blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario/ [R=301,L]
     RewriteRule ^mejores-practicas-desarrollo-web-live-coding-mejores-practicas-en-desarrollo-web-2026/?$ https://www.trespuntoscomunicacion.es/blog/mejores-practicas-desarrollo-web-live-coding-mejores-practicas-en-desarrollo-web-2026/ [R=301,L]
