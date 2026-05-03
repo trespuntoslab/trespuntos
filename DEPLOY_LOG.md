@@ -42,3 +42,30 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
   - `.gitignore` actualizado con reglas `**/workflows-backup/*.json`, `**/n8n-export/*.json`, `*.workflow.json`, `*.n8n.json` para evitar repetir el incidente.
 
 ---
+
+## 2026-05-03 — Auditoría de credenciales hardcoded en workflows n8n (sin deploy a producción)
+
+- **Commits:** ninguno (solo actualización de docs locales: CLAUDE.md, memoria, DEPLOY_LOG)
+- **Acción:** auditoría completa vía MCP n8n de los 88 workflows en `n8n.trespuntos-lab.com`
+- **Cobertura:** 15 workflows descargados completos + extracción de metadatos. Cobertura priorizada en familia partners + sectores + research (los más sospechosos).
+- **Hallazgo:** El problema es 4-5x más grande de lo reportado el 2026-04-30:
+  - **No son 2 credenciales filtradas, son 5**: Airtable PAT + Telegram bot + OpenAI key + Anthropic key + Serper key
+  - **No es 1 workflow afectado, son 9** workflows (7 activos + 2 inactivos):
+    - WF6 Discovery Partners (`SRai7Mly38uCOVO7`)
+    - WF-Research-Daily (`AaghmTTXD5Kd4ODe`)
+    - WF3 Partner Envío (`ofNEs2v9y3angTDz`)
+    - WF4 Partner Detección (`0EMRAOvITiVjlw8y`)
+    - WF5 Partner Tracking (`brFpHdEdYYOQ00q8`)
+    - WF4 Sectores Detección (`4DeHrw1yL4kVMsCZ`)
+    - Research Agencias (`krNI9bFxAhAAjQi1`)
+    - WF3 Sectores Envío (`s7rw3nSvqKyujlBQ`) — inactivo
+    - WF3-test Gmail (`ICoeXKSd5NQoVsZS`) — inactivo
+- **Workflows ya correctos:** `o8dV7unLeUuOrqXo` (Partner WF5 antiguo, archived) usa `{{$credentials.xxx}}` correctamente — modelo a seguir
+- **Workflows verificados sin secretos:** Briefing→Doc Funcional, Pipeline Briefing v1, SEO Audit Multi-Agent, SEO Audit Semanal, Email Recordatorio, Jordan Leads Chat Web
+- **No auditados:** 73 workflows restantes (paneles exitbcn, share drive, sync mensual, calendly, healthcheck, etc.). Probabilidad baja de tener secretos pero conviene auditar tras rotar.
+- **Notas:**
+  - Bloque "🚨 LEER PRIMERO" de CLAUDE.md actualizado con las 5 credenciales (no 2) + tabla de 9 workflows + plan de sanitización por workflow
+  - Memoria del proyecto (`project_credentials_to_rotate.md`) actualizada igual
+  - Producción n8n NO modificada — la auditoría fue solo lectura
+
+---

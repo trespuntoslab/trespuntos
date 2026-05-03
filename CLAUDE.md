@@ -2,24 +2,51 @@
 
 ---
 
-## 🚨🚨🚨 LEER PRIMERO — TAREA URGENTE PENDIENTE (2026-04-30)
+## 🚨🚨🚨 LEER PRIMERO — TAREA URGENTE PENDIENTE (2026-05-03, ampliada)
 
-**Credenciales filtradas en commit local y rechazadas por GitHub Secret Scanning.** El push se sanitizó antes de subirse, pero las credenciales **siguen activas** en producción y existen en el reflog local 30 días.
+**5 credenciales filtradas hardcoded en al menos 9 workflows n8n activos.** Auditoría completa hecha el 2026-05-03 vía MCP n8n. El primer descubrimiento (sesión 2026-04-30) fue solo la punta del iceberg: GitHub Secret Scanning bloqueó el push de un backup de WF3 sectores, pero las MISMAS credenciales están hardcoded en otros 8 workflows más + se descubrieron 3 credenciales adicionales (OpenAI, Anthropic, Serper).
 
-### Cuando arranque la próxima conversación, lo PRIMERO que tienes que hacer es recordar a Jordi que rote estas dos credenciales:
+### Cuando arranque la próxima conversación, lo PRIMERO que tienes que hacer es recordar a Jordi que rote ESTAS 5 credenciales (no 2 como decía la versión anterior de este bloque):
 
-| # | Credencial | Valor filtrado (parcial) | Dónde | Acción |
-|---|---|---|---|---|
-| 1 | **Airtable PAT** | `patN5OZQ6F9GiKkn1.7029...` | Workflow n8n WF3 sectores + workflow partners (igual PAT) | Airtable → Account → Personal access tokens → Revoke + crear nuevo + actualizar credencial `airtableApiKey` en n8n |
-| 2 | **Telegram bot token** (`@claudio_tp_bot`) | `8749982652:AAHMb0v40J-...` | URL del nodo HTTP en WF3 sectores | @BotFather → `/revoke` el token + `/token` para nuevo + actualizar workflow |
+| # | Credencial | Valor filtrado (parcial) | Cómo rotar |
+|---|---|---|---|
+| 1 | **Airtable PAT** | `patN5OZQ6F9GiKkn1.7029...` | Airtable → Account → Personal access tokens → **Revoke** + crear nuevo + actualizar credencial `airtableApiKey` (`zQer745cZNd0kQyb`) en n8n |
+| 2 | **Telegram bot `@claudio_tp_bot`** | `8749982652:AAHMb0v40J-...` | @BotFather → `/revoke` → `/token` → nuevo + crear/actualizar credencial Telegram en n8n |
+| 3 | **OpenAI API key** | `sk-proj-fWYIB0c1XLXaul9SWFsPJWQ83Ugbg...` | platform.openai.com → API keys → Revoke este → crear nuevo → actualizar credencial `OpenAi account 2` en n8n (la que ya usa Kobe) |
+| 4 | **Anthropic API key** | `sk-ant-...` (en WF-Research-Daily) | console.anthropic.com → API Keys → Revoke + crear nueva + actualizar credencial Anthropic en n8n |
+| 5 | **Serper.dev API key** | `8033979a8387e633324eb57fcf4aa976d66aba0f` | serper.dev → Dashboard → Reset API key → actualizar en workflows |
 
-### Tareas adicionales relacionadas
-- **Migrar WF3 sectores** a credenciales n8n (igual que se hizo con Kobe el 2026-04-07): nodo HTTP Bearer Airtable → credencial, URL Telegram → nodo Telegram nativo + credencial
-- **Verificar** que ningún otro workflow tiene credenciales hardcodeadas con un grep tras la rotación
-- **Cuando Jordi confirme rotación hecha**, anotar en `DEPLOY_LOG.md` y eliminar este bloque de aquí
+### Workflows que hay que sanitizar tras rotar (9 confirmados, todos activos salvo nota)
+
+| Workflow | ID | Activo | Credenciales hardcoded |
+|---|---|---|---|
+| WF6 Discovery Partners | `SRai7Mly38uCOVO7` | sí | Airtable + Telegram + **OpenAI** + **Serper** |
+| WF-Research-Daily Discovery | `AaghmTTXD5Kd4ODe` | sí | Airtable + Telegram + **Anthropic** + **Serper** |
+| WF3 Partner Envío Secuencial | `ofNEs2v9y3angTDz` | sí | Airtable + Telegram |
+| WF4 Partner Detección Respuestas | `0EMRAOvITiVjlw8y` | sí | Airtable + Telegram |
+| WF5 Partner Tracking Auditoría | `brFpHdEdYYOQ00q8` | sí | Airtable + Telegram |
+| WF4 Sectores Detección Respuestas | `4DeHrw1yL4kVMsCZ` | sí | Airtable + Telegram |
+| Research Agencias | `krNI9bFxAhAAjQi1` | sí | Airtable + Telegram |
+| WF3 Sectores Envío Secuencial | `s7rw3nSvqKyujlBQ` | NO | Airtable + Telegram |
+| WF3-test Gmail (sin footer) | `ICoeXKSd5NQoVsZS` | NO | Airtable + Telegram |
+
+### Cómo sanitizar cada workflow (patrón único)
+1. Reemplazar `Authorization: Bearer patN5OZQ...` (header HTTP Request) → `authentication: predefinedCredentialType` con credencial `airtableApi`
+2. Reemplazar URL `https://api.telegram.org/bot{token}/sendMessage` → nodo nativo Telegram con credencial bot
+3. Reemplazar `Authorization: Bearer sk-proj-...` → credencial OpenAI
+4. Reemplazar `Authorization: Bearer sk-ant-...` → credencial Anthropic
+5. Reemplazar header `X-API-KEY: 8033979a...` → variable de entorno o credencial custom Serper
+
+**Modelo a seguir:** `o8dV7unLeUuOrqXo` (Partner WF5 antiguo, archivado) usa `{{$credentials.airtableApiKey}}` correctamente.
+
+### Workflows pendientes de auditar (73 restantes)
+Tras rotar las 5 credenciales, ejecutar grep server-side en TODOS los workflows para buscar más casos. La auditoría del 2026-05-03 cubrió los más sospechosos (partners + sectores + research) pero no los 88 totales. Los paneles exitbcn, share drive, calendly, healthcheck probablemente están limpios pero conviene confirmar.
+
+### Cuando Jordi confirme cada credencial rotada
+Marcar con ✅ en este bloque. Cuando todas las 5 estén rotadas Y los 9 workflows sanitizados → eliminar este bloque y anotar en `DEPLOY_LOG.md`.
 
 ### Origen del incidente
-Sesión 2026-04-30: al commitear `partners/campana/sectores-workflows-backup/wf3-sectores-completo.json` (export del workflow para backup) GitHub bloqueó el push detectando los secretos. Se sanitizaron antes del segundo push (`<AIRTABLE_PAT_REDACTED>`, `<TELEGRAM_BOT_TOKEN_REDACTED>`) y se añadió `.gitignore` para `*.workflow.json` y `**/workflows-backup/*.json`. **Pero rotar las credenciales no es opcional** — los tokens estuvieron en disco local meses y están actualmente en producción en plain text dentro de n8n.
+Sesión 2026-04-30: GitHub Secret Scanning bloqueó push de `partners/campana/sectores-workflows-backup/wf3-sectores-completo.json` detectando 2 secretos. Se sanitizaron antes del segundo push y se añadió `.gitignore` para `*.workflow.json`. Sesión 2026-05-03: auditoría completa vía MCP n8n descubrió que el problema era 4-5x más grande de lo reportado y afecta a 9 workflows + 3 credenciales adicionales. **Rotar no es opcional** — los tokens estuvieron en disco local meses, están actualmente en producción en plain text dentro de n8n, y cualquier export de cualquiera de estos 9 workflows reproduciría la fuga.
 
 ---
 
