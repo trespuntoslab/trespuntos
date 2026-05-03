@@ -1,0 +1,324 @@
+{
+  "meta": {
+    "slug": "paradise",
+    "title": "Marketplace de despedidas online | Caso Paradise · Tres Puntos",
+    "description": "Diseño UX/UI, desarrollo WordPress y área privada en Angular + Laravel para Paradise Despedidas, marketplace de despedidas en España y Portugal.",
+    "canonical": "/casos-de-negocio/paradise/",
+    "og": {
+      "title": "Caso Paradise | Marketplace de despedidas con área privada a medida",
+      "description": "Estrategia digital, UX/UI, WordPress, área privada en Angular + Laravel y pasarela de pago para diferenciar a Paradise Despedidas en un sector saturado.",
+      "image": "https://www.trespuntoscomunicacion.es/img/og/caso-paradise.png"
+    },
+    "schema_type": "Article",
+    "date_published": "2026-05-03",
+    "date_modified": "2026-05-03",
+    "keywords": [
+      "marketplace despedidas online",
+      "ux ui ecommerce experiencias",
+      "desarrollo wordpress a medida",
+      "área privada angular laravel",
+      "pasarela de pago marketplace"
+    ]
+  },
+  "faq_schema": [
+    {
+      "question": "¿Qué tipo de proyecto era?",
+      "answer": "Un marketplace de despedidas de soltero y soltera para España y Portugal. Combina catálogo público (WordPress) con un área privada construida en Angular y Laravel para gestionar reservas, packs y contenidos."
+    },
+    {
+      "question": "¿Qué se trabajó principalmente?",
+      "answer": "Estrategia digital, diseño UX/UI completo, desarrollo del frontal en WordPress, área privada en Angular sobre API Laravel, integración de pasarela de pago y arquitectura de fichas de producto complejas."
+    },
+    {
+      "question": "¿Por qué un stack mixto WordPress + Angular?",
+      "answer": "WordPress da agilidad para SEO y gestión de contenido público (ciudades, packs, blog). Angular + Laravel resuelve el área privada, donde la lógica de reservas, calendarios y pagos pedía una arquitectura más controlada."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero-split",
+      "sector": "Marketplace · Despedidas online",
+      "h1": "El marketplace que organiza la",
+      "h1_highlight": "despedida que siempre soñaste",
+      "intro": "Un sector saturado de webs genéricas pedía un marketplace claro, con fichas ricas y reservas online sin fricción.",
+      "intro_emphasis": "Diseño y arquitectura para diferenciarse de la competencia.",
+      "meta": [
+        { "label": "Cliente", "value": "Paradise Despedidas" },
+        { "label": "Sector", "value": "Eventos · Ocio" },
+        { "label": "Servicios", "value": "UX/UI · WordPress · Angular + Laravel" }
+      ],
+      "video_src": "/img/casos/paradise/desktop-recording.mp4",
+      "browser_url": "paradise.es",
+      "browser_image": "/img/casos/paradise/home-hero.webp",
+      "browser_alt": "Home de Paradise Despedidas — marketplace de despedidas con buscador por ciudad y categoría"
+    },
+    {
+      "type": "overview",
+      "variant": "narrative",
+      "badge": "Contexto del proyecto",
+      "heading": "Un marketplace de despedidas con ambición de plataforma de referencia",
+      "paragraphs": [
+        "Paradise Despedidas opera en un mercado donde casi todas las webs venden lo mismo: packs cerrados, fichas planas y un formulario para que llamen a un comercial. La conversión existía, pero la experiencia no diferenciaba.",
+        "El reto no era reescribir el modelo de negocio. Era trasladarlo a una arquitectura digital que tratara cada ficha de producto como una página decisión: qué incluye, qué no, qué se puede cambiar, qué pasa si lo reservo. Y que toda esa profundidad se entendiera en 30 segundos."
+      ],
+      "meta": [
+        { "label": "Cliente", "value": "Paradise Despedidas" },
+        { "label": "Sector", "value": "Eventos · Ocio · Marketplace" },
+        {
+          "label": "Servicios",
+          "value": null,
+          "value_tags": ["Estrategia digital", "Diseño UX/UI", "Desarrollo WordPress", "Área privada Angular + Laravel", "Pasarela de pago"]
+        },
+        {
+          "label": "Visitar",
+          "value": "paradise.es ↗",
+          "url": "https://paradise.es/despedidas/"
+        }
+      ]
+    },
+    {
+      "type": "marquee",
+      "words": ["Despedidas online", "Soltero y soltera", "Packs por ciudad", "+200 actividades", "España y Portugal", "Reserva sin llamadas", "Cancelación gratuita"]
+    },
+    {
+      "type": "challenge",
+      "badge": "El problema",
+      "heading": "Fichas complejas con mucha información que el usuario no leía",
+      "paragraphs": [
+        "El catálogo de Paradise no es un producto físico. Cada pack incluye actividades, alojamiento, extras, condiciones de reserva, calendarios y reglas de cancelación.",
+        "La web anterior ya convertía. Pero metía toda esa información en bloques densos, sin jerarquía clara y sin diferenciarse del resto del sector. El reto era doble: hacer entendibles fichas muy ricas y, al mismo tiempo, que la marca dejara de competir solo por precio."
+      ],
+      "signals_title": "Lo que detectamos en el sector",
+      "signals": [
+        {
+          "title": "Fichas-tocho indescifrables",
+          "description": "Listados largos sin jerarquía. El usuario abandona antes de entender qué está reservando."
+        },
+        {
+          "title": "Cero confianza online",
+          "description": "Reservas que dependían de llamadas o WhatsApp. La pasarela de pago real era la excepción, no la norma."
+        },
+        {
+          "title": "Webs intercambiables",
+          "description": "Misma propuesta visual y misma estructura en toda la competencia. Difícil justificar un precio diferencial."
+        }
+      ]
+    },
+    {
+      "type": "browser-fullwidth",
+      "bg": "base",
+      "browser_url": "paradise.es/despedidas/lisboa",
+      "image": "/img/casos/paradise/packs-lisboa.webp",
+      "alt": "Listado de packs de despedida en Lisboa con filtros por categoría y resultados ordenados"
+    },
+    {
+      "type": "approach-cards",
+      "badge": "Cómo lo abordamos",
+      "heading": "Tres palancas para construir un marketplace que se entienda y reserve",
+      "intro": "Estrategia digital, sistema de fichas y stack mixto WordPress + Angular para que cada parte de la plataforma haga lo que mejor sabe hacer.",
+      "cards": [
+        {
+          "number": "01",
+          "title": "Arquitectura de fichas",
+          "items": [
+            "Jerarquía clara: qué reservas, dónde y por cuánto",
+            "Bloques colapsables para condiciones, extras y horarios",
+            "Microcopy honesto que reduce dudas antes del pago"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Frontal en WordPress",
+          "items": [
+            "Catálogo público de ciudades, packs y actividades",
+            "SEO técnico y estructura escalable a +200 actividades",
+            "Editorial autonomía para el equipo de Paradise"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Área privada Angular + Laravel",
+          "items": [
+            "Gestión de reservas, calendarios y disponibilidad",
+            "API Laravel desacoplada, preparada para crecer",
+            "Pasarela de pago integrada de extremo a extremo"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "statement",
+      "bg": "subtle",
+      "show_divider": true,
+      "text": "Cada despedida es <em>única.</em>",
+      "sub": "La plataforma también tenía que serlo. Diseño y stack se eligieron para que Paradise pudiera mover precios, packs y ciudades sin pelearse con la herramienta."
+    },
+    {
+      "type": "combo-layout",
+      "bg": "surface",
+      "badge": "Coherencia desktop ↔ mobile",
+      "heading": "Misma experiencia, dos dispositivos",
+      "browser_url": "paradise.es",
+      "browser_image": "/img/casos/paradise/preparar.webp",
+      "browser_alt": "Sección 'Te ayudamos a preparar la despedida de tus sueños' en desktop",
+      "phone_image": "/img/casos/paradise/m-preparar.webp",
+      "phone_alt": "Misma sección en mobile, con jerarquía adaptada"
+    },
+    {
+      "type": "phone-carousel",
+      "bg": "subtle",
+      "badge": "El catálogo en la mano",
+      "heading": "Pensado mobile-first porque ahí decide el grupo",
+      "intro": "El que organiza la despedida lo hace desde el sofá, en el chat del grupo. Cada pantalla está pensada para que se pueda compartir, defender y cerrar la decisión sin abrir el portátil.",
+      "phones": [
+        { "src": "/img/casos/paradise/m-home.webp", "alt": "Home mobile Paradise Despedidas" },
+        { "src": "/img/casos/paradise/m-buscador.webp", "alt": "Buscador con filtros de ciudad y categoría" },
+        { "src": "/img/casos/paradise/m-listado.webp", "alt": "Listado de packs filtrado" },
+        { "src": "/img/casos/paradise/m-destinos.webp", "alt": "Destinos top con cards visuales" },
+        { "src": "/img/casos/paradise/m-ficha-pack.webp", "alt": "Ficha de Pack 1 Lisboa con tabs" },
+        { "src": "/img/casos/paradise/m-actividades-elegir.webp", "alt": "Selección de dos actividades a elegir" },
+        { "src": "/img/casos/paradise/m-actividades.webp", "alt": "Hero de actividades para despedida" },
+        { "src": "/img/casos/paradise/m-barcelona.webp", "alt": "Página de despedida en Barcelona" },
+        { "src": "/img/casos/paradise/m-preparar.webp", "alt": "Sección preparar la despedida" },
+        { "src": "/img/casos/paradise/m-camisetas.webp", "alt": "Extras: camisetas y pañoletas" },
+        { "src": "/img/casos/paradise/m-faq.webp", "alt": "Hub de preguntas frecuentes" },
+        { "src": "/img/casos/paradise/m-faq-detalle.webp", "alt": "FAQ específica de Finca Atarfe Granada" }
+      ]
+    },
+    {
+      "type": "video-phones",
+      "badge": "Reserva real en mobile",
+      "heading": "De buscar ciudad a confirmar pago, sin llamar a nadie",
+      "intro": "Grabación real de la app. Buscar, filtrar, leer ficha, elegir actividades, pagar.",
+      "videos": [
+        "/img/casos/paradise/mobile-recording.mp4"
+      ]
+    },
+    {
+      "type": "platform-gallery",
+      "bg": "base",
+      "badge": "Vistas de la plataforma",
+      "heading": "Un sistema de páginas que sostiene catálogo, ciudades y conversión",
+      "intro": "Cada plantilla resuelve un trabajo distinto: convencer, listar, comparar y reservar.",
+      "browsers": [
+        {
+          "url": "paradise.es/despedidas/actividades",
+          "image": "/img/casos/paradise/actividades.webp",
+          "alt": "Hub de actividades con filtros visuales y cards"
+        },
+        {
+          "url": "paradise.es/despedidas/preparar",
+          "image": "/img/casos/paradise/preparar.webp",
+          "alt": "Sección 'Te ayudamos a preparar la despedida de tus sueños'"
+        },
+        {
+          "url": "paradise.es/despedidas",
+          "image": "/img/casos/paradise/features.webp",
+          "alt": "Bloque de ventajas: 4,7★, reserva fácil, atención 24/7, cancelación gratuita"
+        }
+      ]
+    },
+    {
+      "type": "impact-grid",
+      "bg": "surface",
+      "badge": "Lo que entregamos",
+      "heading": "Una plataforma con cara pública y motor privado, lista para escalar",
+      "cards": [
+        {
+          "icon": "paintbrush",
+          "title": "Sistema de fichas claro",
+          "description": "Plantilla de pack con jerarquía, tabs y resúmenes. La información sigue siendo mucha, pero el usuario sabe siempre qué está mirando."
+        },
+        {
+          "icon": "code",
+          "title": "Stack que respeta a cada equipo",
+          "description": "WordPress para que marketing publique sin pedir permiso. Angular + Laravel para que la operativa de reservas tenga la lógica que necesita."
+        },
+        {
+          "icon": "shield",
+          "title": "Pasarela de pago real",
+          "description": "Reserva online de extremo a extremo. Adiós a depender solo de WhatsApp y a perder leads que querían pagar el viernes a las 23:00."
+        },
+        {
+          "icon": "rocket",
+          "title": "Listo para crecer",
+          "description": "Arquitectura preparada para añadir ciudades, idiomas y nuevos formatos de pack sin tocar el frontal cada vez."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "quote": "Cuando la ficha es compleja, no la simplifiques. Estructúrala.",
+      "body": "En Paradise no podíamos quitar información: el usuario la necesita para decidir. Lo que hicimos fue darle un orden. Tabs, resúmenes y bloques colapsables. La misma profundidad de antes, pero sin pedirle al usuario que lea un PDF antes de pagar.",
+      "author": "Jordi Expósito",
+      "role": "UX/UI & Digital Architecture",
+      "avatar": "/img/jordi-exposito.webp"
+    },
+    {
+      "type": "services",
+      "badge": "Servicios aplicados",
+      "heading": "Capacidades que hicieron posible este proyecto",
+      "links": [
+        {
+          "href": "/servicios/diseno-ux-ui-barcelona",
+          "icon": "paintbrush",
+          "title": "Diseño UX/UI",
+          "description": "Sistema de fichas, jerarquía de información y diferenciación visual frente a la competencia del sector."
+        },
+        {
+          "href": "/servicios/desarrollo-web-a-medida-barcelona",
+          "icon": "code",
+          "title": "Desarrollo web a medida",
+          "description": "Frontal en WordPress y área privada en Angular + Laravel con API desacoplada y pasarela de pago integrada."
+        },
+        {
+          "href": "/servicios/tienda-online-barcelona",
+          "icon": "monitor",
+          "title": "E-commerce / Marketplace",
+          "description": "Catálogo de packs, ciudades y actividades con reserva online, calendarios y gestión de disponibilidad."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "badge": "FAQ",
+      "heading": "Preguntas frecuentes sobre este proyecto",
+      "items": [
+        {
+          "question": "¿Qué tipo de proyecto era?",
+          "answer": "Un marketplace de despedidas de soltero y soltera para España y Portugal. Combina catálogo público en WordPress con un área privada en Angular sobre Laravel para reservas, packs y operativa interna."
+        },
+        {
+          "question": "¿Qué se trabajó principalmente?",
+          "answer": "Estrategia digital, diseño UX/UI completo, desarrollo del frontal en WordPress, área privada en Angular sobre API Laravel, integración de pasarela de pago y arquitectura de fichas de producto complejas."
+        },
+        {
+          "question": "¿Por qué un stack mixto WordPress + Angular?",
+          "answer": "WordPress da agilidad para SEO y gestión de contenido público. Angular + Laravel resuelve el área privada, donde la lógica de reservas, calendarios y pagos pedía una arquitectura más controlada y desacoplada."
+        },
+        {
+          "question": "¿Cuánto duró el proyecto?",
+          "answer": "Es un proyecto vivo lanzado en 2026. Después del lanzamiento seguimos iterando fichas, ciudades y nuevas plantillas a medida que el catálogo crece."
+        }
+      ]
+    },
+    {
+      "type": "next-project",
+      "label": "Caso relacionado",
+      "title": "Gibobs",
+      "href": "/casos-de-negocio/gibobs/"
+    },
+    {
+      "type": "cta-form",
+      "heading_prefix": "¿Tu plataforma tiene",
+      "heading_highlight": "fichas complejas",
+      "sub": "Si tu producto es rico en información y la web no lo está aprovechando, el problema no es de copy.<br>Es de arquitectura.<br><br>Cuéntanos tu proyecto.",
+      "reasons": [
+        "Sin reunión de ventas previa. Formulario directo en 3 minutos.",
+        "Respondemos en menos de 24h con una primera valoración de alcance.",
+        "Si no encajamos con lo que necesitas, te lo decimos sin rodeos.",
+        "El proyecto empieza con diagnóstico, no con propuesta económica genérica."
+      ]
+    }
+  ]
+}
