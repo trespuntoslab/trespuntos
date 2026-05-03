@@ -16,6 +16,31 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
 
 ---
 
+## 2026-05-03 — Caso Paradise + 2 posts blog + Jordan widget v7.3
+
+- **Commits:**
+  - `28d57c4` — feat(casos): caso Paradise Despedidas — marketplace UX/UI + Angular + Laravel
+  - `2d88354` — feat(blog+jordan): 2 posts blog + Jordan widget v7.3 test mode
+- **Archivos subidos por FTP:**
+  - `casos-de-negocio/paradise/index.html`
+  - `casos-de-negocio/paradise/config.json`
+  - `casos-de-negocio/index.html` (hub actualizado con tarjeta Paradise)
+  - `img/casos/paradise/` — 14 imágenes WebP + 2 vídeos MP4
+  - `img/casos/paradise.webp` (card hub)
+  - `img/og/caso-paradise.png`
+  - `blog/agencia-diseno-ux-ui-evaluar-propuestas/index.html`
+  - `blog/tiendas-online-barcelona-puntos-friccion-conversion/index.html`
+  - `img/og/blog-agencia-diseno-ux-ui-evaluar-propuestas.png`
+  - `img/og/blog-tiendas-online-barcelona-puntos-friccion-conversion.png`
+  - `assets/jordan/jordan-widget-v7.js` (v7.3 — test mode detection)
+- **Cloudflare:** ⚠️ PENDIENTE — Purge Everything (404 cacheado en /casos-de-negocio/paradise/ por error de ruta en primer intento FTP)
+- **Verificación:** casos-de-negocio/ → 200 ✓ | blog posts → 200 ✓ | paradise/ → 404 HIT (pendiente purge)
+- **Notas:**
+  - Primera vez que se usa la ruta FTP correcta (raíz del FTP = web root). CLAUDE.md decía `/home/tres/public_html` que era incorrecto — la raíz del FTP es directamente el web root.
+  - Se crearon carpetas fantasma en `/home/tres/public_html/` en el servidor — limpiar en próxima sesión si procede.
+
+---
+
 ## 2026-04-30 — Fix redirects 404 + sistema OG versionado en git
 
 - **Commits:**

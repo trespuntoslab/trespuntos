@@ -154,9 +154,10 @@ Desde 2026-04-17 la web pasa por Cloudflare con **Cache Rule de 2h** (HTML cache
 - **Host FTP**: `trespuntoscomunicacion.es`
 - **Usuario**: `claude@trespuntoscomunicacion.es`
 - **Password**: `Y20pC&7L!4z($%6g`
-- **Directorio raíz**: `/home/tres/public_html`
+- **Directorio raíz**: raíz del FTP (`/`) = web root directamente. **NO usar `/home/tres/public_html`** — ese path crearía subdirectorios fantasma dentro del web root.
 - **Protocolo**: FTP — usar `curl -k --ftp-pasv` (sin --ftp-ssl, causa error 451 en algunos archivos)
-- **Comando base**: `curl -k --ftp-pasv "ftp://claude%40trespuntoscomunicacion.es:Y20pC%267L%214z%28%24%256g@trespuntoscomunicacion.es/"`
+- **Comando base**: `curl -k --ftp-pasv "ftp://claude%40trespuntoscomunicacion.es:Y20pC%267L%214z%28%24%256g@ftp.trespuntoscomunicacion.es/"` (usar `ftp.` en el host, no el dominio raíz)
+- **Subir un archivo**: `curl -sk --ftp-pasv --ftp-create-dirs -T local/path "ftp://claude%40trespuntoscomunicacion.es:Y20pC%267L%214z%28%24%256g@ftp.trespuntoscomunicacion.es/ruta/en/servidor"`
 - **Elementos a preservar siempre**: `db-clientes/`, `intekmedical-reporte/`, `proyectos/`, `img_firma/`, `phpMyAdmin/`, `.well-known/`, `cgi-bin/`, archivos verificación Google
 
 ### ⚠️ Deprecado — tres.trespuntos-lab.com (Hostinger)
