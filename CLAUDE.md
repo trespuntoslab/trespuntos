@@ -17,7 +17,7 @@
   - `TELEGRAM_BOT_TOKEN`, `OPENAI_API_KEY`, `SERPER_API_KEY`, `ANTHROPIC_API_KEY`
 - **Backup compose** en `docker-compose.yml.bak.<timestamp>` por si Dokploy las sobrescribe.
 
-### 9 workflows sanitizados
+### 11 workflows sanitizados (total)
 | Workflow | ID | Activo |
 |---|---|---|
 | WF3-test Gmail | `ICoeXKSd5NQoVsZS` | ❌ |
@@ -29,6 +29,8 @@
 | WF4 Sectores Detección | `4DeHrw1yL4kVMsCZ` | ✅ |
 | WF3 Sectores Envío | `s7rw3nSvqKyujlBQ` | ❌ |
 | WF5 Partner Tracking | `brFpHdEdYYOQ00q8` | ✅ |
+| Sectores Tracking — WF5 Landing Engagement | `bSJnIPaz172bivWY` | ✅ |
+| Sectores Tracking — /s/ Click E1 | `qWTpFhTaHUscC6Z0` | ✅ |
 
 ### ⚠️ Avisos importantes para el futuro
 
@@ -41,7 +43,7 @@
    - **Anthropic key** → console.anthropic.com → API Keys → Revoke + nueva → actualizar env var `ANTHROPIC_API_KEY`
    - **Serper key** → serper.dev → Dashboard → Reset API key → actualizar env var `SERPER_API_KEY`
 
-3. **Workflows restantes por auditar:** los 73 workflows que no se cubrieron en la auditoría del 2026-05-03 (paneles exitbcn, share drive, calendly, healthcheck, etc.) probablemente están limpios pero conviene confirmar con un grep masivo desde el MCP n8n.
+3. **Workflows restantes por auditar:** 71 workflows aún sin auditar al cierre del 2026-05-03 (paneles exitbcn, share drive, calendly, healthcheck, LinkedIn sync, dashboard, Curry SEO, etc.). Probablemente están limpios pero conviene confirmar con un grep masivo desde el MCP n8n. Al confirmar limpios o sanitizar, actualizar este número.
 
 ### Origen del incidente
 Sesión 2026-04-30: GitHub Secret Scanning bloqueó push de `partners/campana/sectores-workflows-backup/wf3-sectores-completo.json` detectando 2 secretos. Auditoría 2026-05-03: 9 workflows infectados + 5 credenciales filtradas (Airtable, Telegram, OpenAI, Anthropic, Serper). Tarde 2026-05-03: 68 updateNode + 24 más vía MCP n8n para migrar a `$env`. Configuración final: env vars en Dokploy + recreate del contenedor.

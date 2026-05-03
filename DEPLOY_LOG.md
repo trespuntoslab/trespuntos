@@ -43,6 +43,21 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
 
 ---
 
+## 2026-05-03 noche (cierre + extra audit) — 11 workflows sanitizados + verificación funcional
+
+- **Verificación funcional WF6 Discovery:**
+  - Disparado vía webhook manual (`curl -X POST .../webhook/discovery-manual`)
+  - Respuesta: HTTP 200 `{"message":"Workflow was started"}` ✓
+  - El workflow arrancó correctamente con las nuevas env vars
+- **Auditoría adicional de 3 workflows no cubiertos antes:**
+  - `Jt7ZmqaUXd7kEhQS` SEO Audit Tres Puntos → LIMPIO (usa credencial OpenAI nativa `OpenAi account` id `oSSG3CLxOxL6YQAt` + Google Drive cred)
+  - `bSJnIPaz172bivWY` Sectores Tracking — WF5 Landing Engagement → INFECTADO (Airtable PAT ×3 + Telegram ×2). **Sanitizado** vía MCP (4 ops).
+  - `qWTpFhTaHUscC6Z0` Sectores Tracking — /s/ Click E1 → INFECTADO (Airtable PAT ×3 + Telegram ×1). **Sanitizado** vía MCP (4 ops).
+- **Total workflows sanitizados ahora: 11** (los 9 originales + 2 sectores tracking)
+- **Pendiente:** auditar los 71 workflows restantes con grep masivo (paneles exitbcn, share drive, LinkedIn sync, Curry SEO, etc.). Probabilidad baja de tener secretos pero conviene confirmar.
+
+---
+
 ## 2026-05-03 noche (cierre) — Sistema n8n totalmente funcional con env vars
 
 - **Setup final aplicado:**
