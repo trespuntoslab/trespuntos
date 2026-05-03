@@ -2,51 +2,63 @@
 
 ---
 
-## 🚨🚨🚨 LEER PRIMERO — TAREA URGENTE PENDIENTE (2026-05-03, ampliada)
+## 🚨🚨🚨 LEER PRIMERO — ESTADO 2026-05-03 noche (CÓDIGO LIMPIO, credenciales no rotadas)
 
-**5 credenciales filtradas hardcoded en al menos 9 workflows n8n activos.** Auditoría completa hecha el 2026-05-03 vía MCP n8n. El primer descubrimiento (sesión 2026-04-30) fue solo la punta del iceberg: GitHub Secret Scanning bloqueó el push de un backup de WF3 sectores, pero las MISMAS credenciales están hardcoded en otros 8 workflows más + se descubrieron 3 credenciales adicionales (OpenAI, Anthropic, Serper).
+### ✅ COMPLETADO en esta sesión (2026-05-03 tarde)
+**Los 9 workflows n8n están sanitizados** — ningún token hardcoded en su código. Migración completa vía MCP n8n: 68 updateNode operations aplicadas.
 
-### Cuando arranque la próxima conversación, lo PRIMERO que tienes que hacer es recordar a Jordi que rote ESTAS 5 credenciales (no 2 como decía la versión anterior de este bloque):
+| # | Workflow | ID | Ops | Activo |
+|---|---|---|---|---|
+| 1 | WF3-test Gmail | `ICoeXKSd5NQoVsZS` | 9 | ❌ |
+| 2 | WF3 Partner Envío | `ofNEs2v9y3angTDz` | 9 | ✅ |
+| 3 | Research Agencias | `krNI9bFxAhAAjQi1` | 6 | ✅ |
+| 4 | WF-Research-Daily | `AaghmTTXD5Kd4ODe` | 11 | ✅ |
+| 5 | WF6 Discovery Partners | `SRai7Mly38uCOVO7` | 6 | ✅ |
+| 6 | WF4 Partner Detección | `0EMRAOvITiVjlw8y` | 4 | ❌ |
+| 7 | WF4 Sectores Detección | `4DeHrw1yL4kVMsCZ` | 5 | ✅ |
+| 8 | WF3 Sectores Envío | `s7rw3nSvqKyujlBQ` | 5 | ❌ |
+| 9 | WF5 Partner Tracking | `brFpHdEdYYOQ00q8` | 13 | ✅ |
 
-| # | Credencial | Valor filtrado (parcial) | Cómo rotar |
-|---|---|---|---|
-| 1 | **Airtable PAT** | `patN5OZQ6F9GiKkn1.7029...` | Airtable → Account → Personal access tokens → **Revoke** + crear nuevo + actualizar credencial `airtableApiKey` (`zQer745cZNd0kQyb`) en n8n |
-| 2 | **Telegram bot `@claudio_tp_bot`** | `8749982652:AAHMb0v40J-...` | @BotFather → `/revoke` → `/token` → nuevo + crear/actualizar credencial Telegram en n8n |
-| 3 | **OpenAI API key** | `sk-proj-fWYIB0c1XLXaul9SWFsPJWQ83Ugbg...` | platform.openai.com → API keys → Revoke este → crear nuevo → actualizar credencial `OpenAi account 2` en n8n (la que ya usa Kobe) |
-| 4 | **Anthropic API key** | `sk-ant-...` (en WF-Research-Daily) | console.anthropic.com → API Keys → Revoke + crear nueva + actualizar credencial Anthropic en n8n |
-| 5 | **Serper.dev API key** | `8033979a8387e633324eb57fcf4aa976d66aba0f` | serper.dev → Dashboard → Reset API key → actualizar en workflows |
+Patrón aplicado en todos:
+- **Airtable**: header `Authorization: Bearer pat...` → credencial `airtableApiKey` (id `zQer745cZNd0kQyb`) tipo `airtableApi`
+- **Telegram**: URL `bot{TOKEN}/sendMessage` → `bot{{ $vars.TELEGRAM_BOT_TOKEN }}/sendMessage`
+- **OpenAI**: header → `=Bearer {{ $vars.OPENAI_API_KEY }}`
+- **Anthropic**: header `x-api-key` → `={{ $vars.ANTHROPIC_API_KEY }}`
+- **Serper**: header `X-API-KEY` → `={{ $vars.SERPER_API_KEY }}`
 
-### Workflows que hay que sanitizar tras rotar (9 confirmados, todos activos salvo nota)
+### ⚠️ PENDIENTE de Jordi (CRÍTICO — sin esto los workflows fallan en runtime)
+Crear **4 variables n8n** en `Settings → Variables` (NO son credenciales, son variables globales). Valores: copiarlos de `partners/campana/sectores-workflows-backup/wf3-sectores-completo.json` (el archivo LOCAL antes de sanitizar — ya está en `.gitignore`, está en tu disco) o de cualquier nodo HTTP del backup local antes del sed.
 
-| Workflow | ID | Activo | Credenciales hardcoded |
-|---|---|---|---|
-| WF6 Discovery Partners | `SRai7Mly38uCOVO7` | sí | Airtable + Telegram + **OpenAI** + **Serper** |
-| WF-Research-Daily Discovery | `AaghmTTXD5Kd4ODe` | sí | Airtable + Telegram + **Anthropic** + **Serper** |
-| WF3 Partner Envío Secuencial | `ofNEs2v9y3angTDz` | sí | Airtable + Telegram |
-| WF4 Partner Detección Respuestas | `0EMRAOvITiVjlw8y` | sí | Airtable + Telegram |
-| WF5 Partner Tracking Auditoría | `brFpHdEdYYOQ00q8` | sí | Airtable + Telegram |
-| WF4 Sectores Detección Respuestas | `4DeHrw1yL4kVMsCZ` | sí | Airtable + Telegram |
-| Research Agencias | `krNI9bFxAhAAjQi1` | sí | Airtable + Telegram |
-| WF3 Sectores Envío Secuencial | `s7rw3nSvqKyujlBQ` | NO | Airtable + Telegram |
-| WF3-test Gmail (sin footer) | `ICoeXKSd5NQoVsZS` | NO | Airtable + Telegram |
+| Variable | Valor | Usada por |
+|---|---|---|
+| `TELEGRAM_BOT_TOKEN` | `8749982652:AAHMb0v40J-252cYJ3X68eGCG4ijtPANXO4` | 9 workflows (todos) |
+| `OPENAI_API_KEY` | `sk-proj-fWYIB0c1XLXaul9SWFsPJWQ83Ugbg...` | WF6 Discovery |
+| `ANTHROPIC_API_KEY` | `sk-ant-...` (la que estaba en WF-Research-Daily) | WF-Research-Daily |
+| `SERPER_API_KEY` | `8033979a8387e633324eb57fcf4aa976d66aba0f` | WF6 Discovery + WF-Research-Daily |
 
-### Cómo sanitizar cada workflow (patrón único)
-1. Reemplazar `Authorization: Bearer patN5OZQ...` (header HTTP Request) → `authentication: predefinedCredentialType` con credencial `airtableApi`
-2. Reemplazar URL `https://api.telegram.org/bot{token}/sendMessage` → nodo nativo Telegram con credencial bot
-3. Reemplazar `Authorization: Bearer sk-proj-...` → credencial OpenAI
-4. Reemplazar `Authorization: Bearer sk-ant-...` → credencial Anthropic
-5. Reemplazar header `X-API-KEY: 8033979a...` → variable de entorno o credencial custom Serper
+⏰ **Mientras no estén creadas, los nodos Telegram/OpenAI/Anthropic/Serper de los 9 workflows fallarán al ejecutarse.** El de Airtable sí funciona (usa credencial nativa).
 
-**Modelo a seguir:** `o8dV7unLeUuOrqXo` (Partner WF5 antiguo, archivado) usa `{{$credentials.airtableApiKey}}` correctamente.
+### Decisión Jordi 2026-05-03 (sobre rotación)
+Jordi decidió **NO rotar las 5 credenciales** ahora — solo limpiar el código. Los tokens siguen siendo válidos. Si en el futuro Jordi quiere rotar, las acciones serían:
 
-### Workflows pendientes de auditar (73 restantes)
-Tras rotar las 5 credenciales, ejecutar grep server-side en TODOS los workflows para buscar más casos. La auditoría del 2026-05-03 cubrió los más sospechosos (partners + sectores + research) pero no los 88 totales. Los paneles exitbcn, share drive, calendly, healthcheck probablemente están limpios pero conviene confirmar.
+| # | Credencial | Cómo rotar |
+|---|---|---|
+| 1 | Airtable PAT `patN5OZQ6F9GiKkn1.7029...` | Airtable → Account → Personal access tokens → Revoke + crear nuevo + actualizar valor de credencial `airtableApiKey` (id `zQer745cZNd0kQyb`) en n8n |
+| 2 | Telegram bot `@claudio_tp_bot` `8749982652:AAH...` | @BotFather → `/revoke` → `/token` → nuevo + actualizar variable n8n `TELEGRAM_BOT_TOKEN` |
+| 3 | OpenAI key `sk-proj-fWYIB...` | platform.openai.com → API keys → Revoke + crear nueva + actualizar variable `OPENAI_API_KEY` |
+| 4 | Anthropic key `sk-ant-...` | console.anthropic.com → API Keys → Revoke + crear nueva + actualizar variable `ANTHROPIC_API_KEY` |
+| 5 | Serper.dev key `8033979a...` | serper.dev → Dashboard → Reset API key + actualizar variable `SERPER_API_KEY` |
 
-### Cuando Jordi confirme cada credencial rotada
-Marcar con ✅ en este bloque. Cuando todas las 5 estén rotadas Y los 9 workflows sanitizados → eliminar este bloque y anotar en `DEPLOY_LOG.md`.
+Una sola vía única para rotar (variables n8n) — cero workflows tocan tokens directamente.
+
+### Workflows pendientes de auditar (73 restantes — futuro)
+La auditoría del 2026-05-03 cubrió los 9 más sospechosos (partners + sectores + research). Los 73 restantes (paneles exitbcn, share drive, calendly, healthcheck, etc.) probablemente están limpios pero conviene auditar en algún momento con un grep masivo desde el MCP.
 
 ### Origen del incidente
-Sesión 2026-04-30: GitHub Secret Scanning bloqueó push de `partners/campana/sectores-workflows-backup/wf3-sectores-completo.json` detectando 2 secretos. Se sanitizaron antes del segundo push y se añadió `.gitignore` para `*.workflow.json`. Sesión 2026-05-03: auditoría completa vía MCP n8n descubrió que el problema era 4-5x más grande de lo reportado y afecta a 9 workflows + 3 credenciales adicionales. **Rotar no es opcional** — los tokens estuvieron en disco local meses, están actualmente en producción en plain text dentro de n8n, y cualquier export de cualquiera de estos 9 workflows reproduciría la fuga.
+Sesión 2026-04-30: GitHub Secret Scanning bloqueó push de `partners/campana/sectores-workflows-backup/wf3-sectores-completo.json` detectando 2 secretos. Se sanitizaron antes del segundo push y se añadió `.gitignore` para `*.workflow.json`. Sesión 2026-05-03: auditoría descubrió 9 workflows infectados + 5 credenciales (no 2). Sesión 2026-05-03 tarde: 9 workflows sanitizados vía MCP n8n. Sesión 2026-05-03 noche (ahora): este resumen actualizado tras la sanitización.
+
+### Cuando se completen las 4 variables n8n + se decida rotar
+Eliminar este bloque entero del CLAUDE.md, dejar nota corta en `DEPLOY_LOG.md` con la fecha.
 
 ---
 
@@ -746,6 +758,84 @@ La welcome inicial sí mantiene cards (onboarding). El resto lo lleva Jordan en 
 - 42 HTMLs (home, servicios/*, casos/*, blog, contacto, iniciar-proyecto, nosotros)
 - Workflow n8n `2a6ZaK3pw9j7LPEc`
 - Airtable tabla `tblU72kaxQq7222Do` (campo Session ID)
+
+## LinkedIn Analytics — Importador semi-automático (2026-05-03)
+
+### Qué es
+Sistema para guardar las métricas de la **Company Page de LinkedIn** de Tres Puntos en Airtable, accesibles para todos los agentes IA. Reutiliza el patrón existente de la base **Analytics** (`app2vjuhe4kJkrH5u`) que ya alimenta el dashboard SEO multi-cliente.
+
+### Por qué semi-automático
+LinkedIn no expone analytics privados sin aprobación al **Marketing Developer Platform** (4-8 semanas). Scrapear con Playwright + cookie sería técnicamente viable pero supone riesgo alto de baneo de la cuenta admin de la página. Decisión: **export manual semanal del XLSX** + parser automatizado. Cuando llegue MDP (si Jordi decide aplicar), añadir un workflow n8n con OAuth y mantener la misma tabla destino.
+
+### Arquitectura
+```
+LinkedIn admin → Export XLSX (3 min/semana)
+   ↓
+~/Dropbox/Tres Puntos/LinkedIn Analytics/inbox/
+   ↓
+python3 scripts/linkedin/import-xlsx.py
+   ↓ (parsea 5 hojas, hace upsert por snapshot_id)
+Airtable Analytics → tabla LinkedIn_Snapshots → 1 fila por día
+   ↓
+Agentes IA (Claudio/Curry/Bird/Magic/Jordan) consultan vía MCP Airtable
+```
+
+### Estructura de datos
+- **Base**: `Analytics` (`app2vjuhe4kJkrH5u`)
+- **Tabla**: `LinkedIn_Snapshots` (`tbl7JxNjtOj4s3FYL`)
+- **Cliente**: `Tres Puntos` en `Clients` (slug `trespuntos`, recId `rec9UH6rTgxHykknV`) — añadido como cliente interno
+- **Convención**: `snapshot_id = YYYY-MM-DD_trespuntos` (mismo patrón que SEO_Snapshots, GA4_Snapshots, etc.)
+- **Campos diarios**: impressions, interactions, new_followers, engagement_rate
+- **Campos del rango (solo en `is_period_end=true`)**: members_reached, followers_total, top_posts_by_interactions_json (50 posts), top_posts_by_impressions_json, demo_jobtitles_json, demo_locations_json, demo_industries_json, demo_seniority_json, demo_company_size_json, demo_top_companies_json
+- **Filtrado de filas**: el parser solo inserta días con actividad (impresiones/interacciones/nuevos seguidores > 0) o el último día del rango. Días sin actividad se omiten para no inundar la tabla.
+
+### Carga inicial completada (2026-05-03)
+- 91 registros insertados (período 2025-09-02 → 2026-05-03)
+- Total seguidores actuales: **316**
+- Miembros alcanzados año: **1.363**
+- Top post del año por impresiones: 23-feb-2026 con **895 impresiones**
+- Top post por interacciones: 23-feb-2026 con **11 interacciones**
+- Demografía top: Barcelona (44.6%), Servicios de publicidad (15.8%), Sin experiencia (31.3%), Empresas 1-10 empleados (17.4%)
+- URL Airtable: https://airtable.com/app2vjuhe4kJkrH5u/tbl7JxNjtOj4s3FYL
+
+### Scripts y archivos
+- `/scripts/linkedin/import-xlsx.py` — parser principal. Soporta `--dry-run`, `--keep`, `--export-json out.json`
+- `~/Dropbox/Tres Puntos/LinkedIn Analytics/inbox/` — drop zone para XLSX nuevos
+- `~/Dropbox/Tres Puntos/LinkedIn Analytics/processed/` — XLSX ya procesados (con timestamp)
+- `~/Dropbox/Tres Puntos/LinkedIn Analytics/README.md` — instrucciones de export
+
+### Cómo usar (semanal)
+1. Lunes: entrar en `linkedin.com/company/tres-puntos-comunicacion/admin/analytics/content/`
+2. Seleccionar rango "últimos 7 días" → Export XLSX
+3. Arrastrar el archivo a `~/Dropbox/Tres Puntos/LinkedIn Analytics/inbox/`
+4. Ejecutar: `python3 scripts/linkedin/import-xlsx.py`
+5. El script hace upsert por snapshot_id (no duplica) y mueve el XLSX a `processed/`
+
+### Configuración del PAT (pendiente Jordi)
+El script necesita un Airtable PAT con permisos `data.records:read|write` sobre la base Analytics. Configurar de UNA de estas dos formas:
+
+**Opción 1 (recomendada)** — env var en tu shell profile (`~/.zshrc` o `~/.bashrc`):
+```bash
+export AIRTABLE_PAT='patXXXXXXXX...'
+```
+
+**Opción 2** — archivo de config:
+```bash
+mkdir -p ~/.config/tres-puntos
+echo 'AIRTABLE_PAT=patXXXXXXXX...' > ~/.config/tres-puntos/airtable.env
+chmod 600 ~/.config/tres-puntos/airtable.env
+```
+
+Mientras no haya PAT configurado, el script funciona en modo `--dry-run` y `--export-json`. La carga inicial del 2026-05-03 se hizo vía MCP Airtable (que tiene auth propia), no vía script.
+
+### Pendientes
+- Jordi configura PAT siguiendo una de las opciones de arriba (5 min)
+- Validar el flujo completo con un export real semanal (lunes próximo)
+- Decidir si aplicar al **Marketing Developer Platform** de LinkedIn para automatizar 100% (4-8 sem aprobación)
+- Cuando MDP esté aprobado: workflow n8n diario con OAuth → mismas tablas → no requiere intervención humana
+- Considerar añadir pestaña "LinkedIn" en `dash.trespuntos-lab.com` que lea de Airtable (aunque para Tres Puntos no es prioritario, ya está en Airtable directamente)
+
+---
 
 ## Sistema OG (Open Graph) — Imágenes para redes sociales (2026-04-29)
 

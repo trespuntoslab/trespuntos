@@ -43,6 +43,35 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
 
 ---
 
+## 2026-05-03 noche — Sanitización completa de los 9 workflows n8n (código limpio)
+
+- **Commits:** `chore(security)` pendiente de generar tras esta entrada
+- **Acción:** Los 9 workflows infectados sanitizados vía MCP n8n. 68 updateNode operations aplicadas.
+- **Patrón aplicado por credencial:**
+  - Airtable PAT → credencial `airtableApiKey` (id `zQer745cZNd0kQyb`, tipo `airtableApi`)
+  - Telegram bot → variable n8n `{{ $vars.TELEGRAM_BOT_TOKEN }}` en la URL
+  - OpenAI key → variable n8n `={{ $vars.OPENAI_API_KEY }}` en header Authorization
+  - Anthropic key → variable n8n `={{ $vars.ANTHROPIC_API_KEY }}` en header x-api-key
+  - Serper key → variable n8n `={{ $vars.SERPER_API_KEY }}` en header X-API-KEY (también disponible la credencial Header Auth `Serper API Key` creada hoy)
+- **Workflows sanitizados:**
+  - `ICoeXKSd5NQoVsZS` WF3-test Gmail (9 ops, inactivo)
+  - `ofNEs2v9y3angTDz` WF3 Partner Envío (9 ops, activo)
+  - `krNI9bFxAhAAjQi1` Research Agencias (6 ops, activo)
+  - `AaghmTTXD5Kd4ODe` WF-Research-Daily (11 ops, activo)
+  - `SRai7Mly38uCOVO7` WF6 Discovery Partners (6 ops, activo)
+  - `0EMRAOvITiVjlw8y` WF4 Partner Detección (4 ops, inactivo)
+  - `4DeHrw1yL4kVMsCZ` WF4 Sectores Detección (5 ops, activo)
+  - `s7rw3nSvqKyujlBQ` WF3 Sectores Envío (5 ops, inactivo)
+  - `brFpHdEdYYOQ00q8` WF5 Partner Tracking (13 ops, activo)
+- **Pendientes:**
+  - **CRÍTICO:** Jordi debe crear 4 variables n8n en Settings → Variables: `TELEGRAM_BOT_TOKEN`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `SERPER_API_KEY`. Hasta que se creen, los nodos fallan en runtime (excepto Airtable que ya usa credencial nativa).
+  - **DECISIÓN POR JORDI:** No rotar las 5 credenciales por ahora. Si en el futuro se rotan, basta con actualizar el valor de las 4 variables n8n + el valor de la credencial `airtableApiKey`.
+- **Notas:**
+  - El bloque "🚨 LEER PRIMERO" de CLAUDE.md actualizado para reflejar el estado real (código limpio, variables n8n pendientes).
+  - Memoria del proyecto actualizada igual.
+
+---
+
 ## 2026-05-03 — Auditoría de credenciales hardcoded en workflows n8n (sin deploy a producción)
 
 - **Commits:** ninguno (solo actualización de docs locales: CLAUDE.md, memoria, DEPLOY_LOG)
