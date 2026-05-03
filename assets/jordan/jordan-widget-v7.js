@@ -43,6 +43,37 @@
     ]
   }, window.JordanConfig || {});
 
+  // ========== TEST MODE DETECTION (v7.3) ==========
+  // Marca esta sesión como test si CUALQUIERA de estos triggers se cumple:
+  //   1. URL param ?jordan_test=1
+  //   2. Hostname localhost / 127.0.0.1 / *.local / *.test
+  //   3. Email capturado contiene +test@ o pertenece a dominios Tres Puntos
+  //   4. localStorage.jordan_force_test = '1'
+  // Cuando is_test=true: widget muestra etiqueta visual 🧪 TEST,
+  // n8n WF2 hace skip de Telegram + emails (pero sí guarda en Airtable con flag),
+  // GA4 marca todos los eventos con test_mode=true (excluibles del dashboard).
+
+  const TEST_HOSTS = /^(localhost|127\.0\.0\.1|0\.0\.0\.0)$/;
+  const TEST_HOST_SUFFIX = /\.(local|test|preview\.local)$/;
+  const TEST_EMAIL_INTERNAL = /@(trespuntos-lab\.com|trespuntoscomunicacion\.es)$/i;
+  const TEST_EMAIL_PLUS = /\+test@/i;
+
+  function _detectTestMode(extractedEmail) {
+    try {
+      // 1. URL param
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('jordan_test') === '1') return true;
+      // 2. Hostname
+      const h = window.location.hostname || '';
+      if (TEST_HOSTS.test(h) || TEST_HOST_SUFFIX.test(h)) return true;
+      // 4. localStorage flag (set manual via DevTools)
+      if (localStorage.getItem('jordan_force_test') === '1') return true;
+      // 3. Email capturado
+      if (extractedEmail && (TEST_EMAIL_PLUS.test(extractedEmail) || TEST_EMAIL_INTERNAL.test(extractedEmail))) return true;
+    } catch (_) {}
+    return false;
+  }
+
   // ========== PAGE MESSAGES ==========
 
   const PAGE_MESSAGES = {
@@ -993,6 +1024,8 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       this._updateTimer = null;    // v7: debounce timer para stage 'update'
       this._isClosing = false;
       this._isEmbedded = !!CONFIG.embedTarget;
+      // v7.3: test mode detection (URL param / hostname / localStorage / email)
+      this._testMode = _detectTestMode(this.extracted && this.extracted.email);
       this._init();
       // v7: recuperar _partialSent de la sesion previa (si el usuario recarga pagina)
       const prevSession = this._loadSession();
@@ -1077,6 +1110,36 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       }
     }
 
+    // -- v7.3: test mode (re-evalúa si el email cambió) --
+    _isTestMode() {
+      // Re-detect cada vez (el email puede haberse capturado después del init)
+      const fresh = _detectTestMode(this.extracted && this.extracted.email);
+      if (fresh !== this._testMode) {
+        this._testMode = fresh;
+        this._renderTestBadge();
+      }
+      return this._testMode;
+    }
+
+    _renderTestBadge() {
+      try {
+        if (!this.shadow) return;
+        const sub = this.shadow.querySelector('.jordan-header-sub');
+        if (!sub) return;
+        const existing = this.shadow.querySelector('.jordan-test-badge');
+        if (this._testMode && !existing) {
+          const badge = document.createElement('span');
+          badge.className = 'jordan-test-badge';
+          badge.textContent = '🧪 TEST';
+          badge.title = 'Modo prueba activo: este lead NO contará en métricas ni notificará.';
+          badge.style.cssText = 'display:inline-block;margin-left:6px;padding:1px 6px;border-radius:8px;background:#3a2e1a;color:#ffc060;font-size:9px;font-weight:700;letter-spacing:.5px;vertical-align:middle;font-family:ui-monospace,monospace;';
+          sub.appendChild(badge);
+        } else if (!this._testMode && existing) {
+          existing.remove();
+        }
+      } catch (_) { /* fail-safe */ }
+    }
+
     // -- Analytics tracking (GA4 vía window.tpTrack) --
     // Helper fail-safe. No envía PII (nunca email/teléfono/nombre como param).
     _track(eventName, params) {
@@ -1085,7 +1148,9 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
           const baseParams = {
             session_id: this.sessionId,
             pagina_origen: this._pageOrigin || window.location.pathname,
-            embed_mode: !!this._isEmbedded
+            embed_mode: !!this._isEmbedded,
+            // v7.3: marca todos los eventos como test → dashboard los excluye
+            test_mode: !!this._isTestMode()
           };
           window.tpTrack(eventName, Object.assign(baseParams, params || {}));
         }
@@ -1143,6 +1208,8 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
       this.chatEl.classList.add('jordan-embed');
 
       this._bindEvents();
+      // v7.3: render del badge TEST si aplica (en embed el chat está siempre abierto)
+      this._renderTestBadge();
       // No teaser in embed mode
     }
 
@@ -1310,6 +1377,9 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     open() {
       this.isOpen = true;
       this._openedAt = Date.now();
+
+      // v7.3: render del badge TEST si aplica
+      this._renderTestBadge();
 
       // GA4: solo trackeamos open en modo flotante (en embed siempre está abierto)
       if (!this._isEmbedded) {
@@ -1979,6 +2049,9 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
             messages_at_capture: this.messages.length
           });
           emailJustCaptured = true;  // v7.1: postponemos el send al final de la funcion
+          // v7.3: si el email es interno (@trespuntos-lab.com / @trespuntoscomunicacion.es)
+          //       o lleva +test, recalcula test mode + repinta el badge
+          this._isTestMode();
         }
       }
 
@@ -2163,8 +2236,29 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
         ultima_pregunta_jordan: lastJordan,  // v7
 
         // GA4 client_id para correlación con sesión web (Measurement Protocol)
-        ga_client_id: (typeof window.tpClientId === 'function' ? window.tpClientId() : '')
+        ga_client_id: (typeof window.tpClientId === 'function' ? window.tpClientId() : ''),
+
+        // v7.3: marca el lead como test → n8n WF2 hace skip Telegram + emails
+        // pero sí guarda en Airtable con flag para inspección.
+        is_test: !!this._isTestMode(),
+        test_triggers: this._isTestMode() ? this._testModeReasons() : []
       };
+    }
+
+    // v7.3: explica QUÉ trigger marcó la sesión como test (para Airtable + debug)
+    _testModeReasons() {
+      const reasons = [];
+      try {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('jordan_test') === '1') reasons.push('url_param');
+        const h = window.location.hostname || '';
+        if (TEST_HOSTS.test(h) || TEST_HOST_SUFFIX.test(h)) reasons.push('hostname:' + h);
+        if (localStorage.getItem('jordan_force_test') === '1') reasons.push('localstorage_flag');
+        const e = (this.extracted && this.extracted.email) || '';
+        if (TEST_EMAIL_PLUS.test(e)) reasons.push('email_plus_test');
+        if (TEST_EMAIL_INTERNAL.test(e)) reasons.push('email_internal_domain');
+      } catch (_) {}
+      return reasons;
     }
 
     _sendLeadWebhook() {
@@ -2414,7 +2508,19 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
     window.JordanAPI = {
       open: (msg) => { if (msg) widget.openWithMessage(msg); else widget.open(); },
       close: () => widget.close(),
-      isOpen: () => widget.isOpen
+      isOpen: () => widget.isOpen,
+      // v7.3: helpers de test — solo devuelven datos si la sesión está en modo test
+      // (protege contra inspección no autorizada en prod)
+      __test: {
+        isTestMode: () => widget._isTestMode(),
+        testReasons: () => widget._testModeReasons(),
+        // Devuelve un payload de muestra (lo que se enviaría al webhook ahora mismo)
+        previewPayload: (stage) => widget._isTestMode()
+          ? widget._buildPayload(widget.messages, widget.extracted, widget.sessionId, widget._pageOrigin, stage || 'final')
+          : { error: 'not in test mode' },
+        extracted: () => widget._isTestMode() ? widget.extracted : { error: 'not in test mode' },
+        messages: () => widget._isTestMode() ? widget.messages : { error: 'not in test mode' }
+      }
     };
   }
 
