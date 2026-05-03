@@ -1,0 +1,307 @@
+{
+  "meta": {
+    "slug": "1csoft",
+    "title": "Web SaaS para ERP de pymes | Caso 1CSoft · Tres Puntos",
+    "description": "Creación desde cero de la web de 1CSoft, ERP cloud para pymes. Arquitectura de información, UX/UI, WordPress a medida y conexión con el ERP central para captar demos cualificadas.",
+    "canonical": "/casos-de-negocio/1csoft/",
+    "og": {
+      "title": "Caso 1CSoft | Web SaaS para ERP cloud orientada a conversión",
+      "description": "Web desde cero para 1CSoft, ERP en la nube para pymes. UX/UI, arquitectura, WordPress a medida y conexión con el sistema central para escalar demos y contactos cualificados.",
+      "image": "https://www.trespuntoscomunicacion.es/img/og/caso-1csoft.png"
+    },
+    "schema_type": "Article",
+    "date_published": "2026-05-03",
+    "date_modified": "2026-05-03",
+    "keywords": [
+      "web saas erp pymes",
+      "ux ui software empresarial",
+      "wordpress a medida saas",
+      "landing erp conversión demos",
+      "arquitectura información software b2b"
+    ]
+  },
+  "faq_schema": [
+    {
+      "question": "¿Qué tipo de proyecto era 1CSoft?",
+      "answer": "Una web SaaS desde cero para 1CSoft, empresa de software ERP cloud para pymes. El objetivo era transformar visitas en demos y contactos cualificados, con conexión directa al sistema ERP central para activar pruebas en tiempo real."
+    },
+    {
+      "question": "¿Qué se trabajó principalmente?",
+      "answer": "Arquitectura de información para distintos perfiles (CEO, financiero, técnico), diseño UX/UI orientado a conversión, desarrollo WordPress a medida con bloques flexibles, conexión vía API al ERP central y landings específicas para captación de demos."
+    },
+    {
+      "question": "¿Por qué WordPress y no un framework moderno?",
+      "answer": "El equipo de 1CSoft necesitaba autonomía total para actualizar contenidos, lanzar nuevas funcionalidades y escalar por módulos sin depender de desarrollo. WordPress con bloques personalizados resolvía agilidad editorial; la API conecta cada CTA con el ERP central para arrancar la prueba sin fricción."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero-header",
+      "sector_label": "ERP · SaaS · Software empresarial",
+      "name": "1CSoft",
+      "services": "UX/UI · Arquitectura de información · Desarrollo WordPress a medida · Conexión ERP",
+      "brief": "Sin web previa. Un ERP potente que necesitaba traducirse en una propuesta clara para CEOs y responsables financieros de pymes, sin perder a los técnicos por el camino. Construimos toda la presencia digital desde cero, orientada a captar demos cualificadas.",
+      "meta_items": [
+        { "label": "Cliente", "value": "1CSoft" },
+        { "label": "Sector", "value": "ERP · SaaS B2B" },
+        { "label": "Servicios", "value": "UX/UI · WordPress · Conexión ERP" },
+        { "label": "Web", "value": "1csoft.es", "url": "https://1csoft.es" }
+      ]
+    },
+    {
+      "type": "hero-browser-mockup",
+      "browser_url": "1csoft.es",
+      "image": "/img/casos/1csoft/desktop-hero.webp",
+      "alt": "Home de 1CSoft con propuesta de valor del ERP cloud y CTA de prueba gratis"
+    },
+    {
+      "type": "statement",
+      "show_divider": true,
+      "text": "Cuando un ERP tiene 30 funcionalidades, el reto no es enseñarlas todas. Es que el decisor entienda en 8 segundos por qué le importan.",
+      "sub": "Cada sección, cada CTA y cada jerarquía pensada para convertir visitas en demos."
+    },
+    {
+      "type": "overview",
+      "variant": "narrative",
+      "badge": "Contexto",
+      "heading": "Una marca con 5 millones de usuarios y sin web propia que lo contara",
+      "paragraphs": [
+        "1CSoft llegó a Tres Puntos sin presencia digital. El producto era robusto —un ERP cloud usado por más de 5 millones de personas en todo el mundo— pero la conversación con el mercado español arrancaba siempre en frío, en llamadas o referencias, sin un canal digital que cualificara antes.",
+        "El reto no era estético. Era de arquitectura: cómo ordenar un ERP con 30 funcionalidades de forma que el CEO de una pyme entendiera el valor en segundos, el financiero viera la lógica contable y el técnico pudiera profundizar sin sentirse limitado.",
+        "Construimos la web desde la primera línea. Estrategia, contenidos, diseño, desarrollo y conexión con el ERP central. Una landing por cada perfil de buyer, un sistema de bloques editables para que el equipo de 1CSoft pudiera lanzar nuevas piezas sin depender de desarrollo, y formularios conectados directamente al ERP para arrancar pruebas gratuitas en tiempo real."
+      ],
+      "meta": [
+        { "label": "Stack", "value_tags": ["WordPress", "PHP", "API REST", "ERP central"] },
+        { "label": "Tipo de proyecto", "value": "Web SaaS desde cero · Captación de demos" },
+        { "label": "Audiencia", "value": "CEO, dirección financiera y técnicos de pymes 5-200 empleados" }
+      ]
+    },
+    {
+      "type": "challenge",
+      "badge": "El reto",
+      "heading": "Explicar un ERP potente sin abrumar",
+      "paragraphs": [
+        "El software ERP de 1CSoft cubre contabilidad, ventas, compras, almacén, tesorería, fiscalidad y más. Toda esa potencia, sin una arquitectura clara, se convierte en una avalancha de información que el decisor descarta en los primeros segundos.",
+        "Y al mismo tiempo: simplificar de más era el otro extremo. El técnico que evalúa el sistema necesita ver que la herramienta es seria, integrable y soporta multiusuario, multipuesto y conexión con la AEAT vía SII."
+      ],
+      "signals_title": "Las fricciones que detectamos",
+      "signals": [
+        { "title": "Sin presencia digital previa", "description": "La web era el último canal en lanzarse. Todo el inbound dependía de llamadas y referencias." },
+        { "title": "Producto técnico para audiencia mixta", "description": "CEO, financiero y técnico tomaban la decisión juntos, pero cada uno mira métricas distintas." },
+        { "title": "30 funcionalidades en un solo producto", "description": "Sin una jerarquía clara, el potencial cliente se perdía antes de pedir demo." },
+        { "title": "Captación dependiente del equipo comercial", "description": "Cada lead necesitaba intervención manual. La web tenía que cualificar por sí sola." }
+      ]
+    },
+    {
+      "type": "browser-fullwidth",
+      "bg": "surface",
+      "browser_url": "1csoft.es/funcionalidades",
+      "image": "/img/casos/1csoft/desktop-features.webp",
+      "alt": "Sección de funcionalidades de 1CSoft con tabs de control empresa y contabilidad"
+    },
+    {
+      "type": "approach-cards",
+      "badge": "El enfoque",
+      "heading": "Tres decisiones que ordenaron todo",
+      "intro": "Antes de tocar diseño, definimos arquitectura. Cada bloque de la web responde a una pregunta concreta del recorrido del decisor.",
+      "cards": [
+        {
+          "number": "01",
+          "title": "Arquitectura por perfil",
+          "items": [
+            "Home con propuesta directa para el decisor de pyme",
+            "Funcionalidades agrupadas por área (ventas, compras, almacén, contabilidad)",
+            "Sección técnica con integraciones, AEAT-SII y multipuesto",
+            "Comparativa Sage 50 vs 1CSoft para validar el sustituto natural"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "WordPress a medida con bloques flexibles",
+          "items": [
+            "Sistema de bloques propios (hero, features, pricing, testimonios)",
+            "Editor visual sin tocar código para el equipo de 1CSoft",
+            "Plantillas de landing por perfil (Crecimiento, Avanzado, Corporativo, Autónomo)",
+            "Performance optimizado: <2s LCP en mobile"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Conexión directa con el ERP central",
+          "items": [
+            "Formulario de prueba gratuita conectado vía API al ERP",
+            "Provisión automática de cuenta de prueba en tiempo real",
+            "Routing por plan elegido (Crecimiento, Avanzado, Corporativo)",
+            "Tracking end-to-end de visita → demo → activación"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "browser-fullwidth",
+      "browser_url": "1csoft.es/funcionalidades/sistema-de-gestion",
+      "image": "/img/casos/1csoft/desktop-system.webp",
+      "alt": "Sección Un sistema de gestión centrado en tus necesidades de 1CSoft"
+    },
+    {
+      "type": "statement",
+      "bg": "subtle",
+      "text": "El producto ya era potente. Lo que faltaba era una conversación clara con quien firma el cheque.",
+      "sub": "La web cualifica antes de que comercial coja el teléfono."
+    },
+    {
+      "type": "detail-phones",
+      "badge": "Mobile first · Detalle",
+      "heading": "Mismo recorrido, optimizado para mobile",
+      "intro": "El 60% de los decisores investigan desde el móvil antes de pedir una demo. Cada sección reflowa para que la propuesta llegue clara en 6 pulgadas.",
+      "phones": [
+        { "src": "/img/casos/1csoft/mobile-1347.webp", "alt": "Home mobile de 1CSoft con propuesta de valor", "label": "Home · Propuesta directa" },
+        { "src": "/img/casos/1csoft/mobile-1349.webp", "alt": "Carrusel de funcionalidades mobile", "label": "Funcionalidades · Carrusel" },
+        { "src": "/img/casos/1csoft/mobile-1350.webp", "alt": "Listado de áreas funcionales: ventas, compras, almacén, contabilidad", "label": "Áreas · Sistema de gestión" },
+        { "src": "/img/casos/1csoft/mobile-1348.webp", "alt": "Formulario de prueba gratuita 14 días", "label": "Signup · 14 días gratis" }
+      ]
+    },
+    {
+      "type": "video-phones",
+      "badge": "En movimiento",
+      "heading": "Recorrido completo en mobile",
+      "intro": "Captura real del scroll por la home: hero, propuesta de valor, funcionalidades, planes y CTA final.",
+      "videos": [
+        { "src": "/img/casos/1csoft/mobile-scroll.mp4", "poster": "/img/casos/1csoft/mobile-scroll-poster.webp" }
+      ]
+    },
+    {
+      "type": "browser-fullwidth",
+      "bg": "surface",
+      "browser_url": "1csoft.es/precios",
+      "image": "/img/casos/1csoft/desktop-pricing.webp",
+      "alt": "Página de precios de 1CSoft con planes Crecimiento, Avanzado y Corporativo"
+    },
+    {
+      "type": "marquee",
+      "words": [
+        "Arquitectura clara",
+        "Conversión",
+        "WordPress a medida",
+        "Conexión ERP",
+        "Demos cualificadas",
+        "Mobile first",
+        "API REST",
+        "Bloques editables",
+        "Performance",
+        "SaaS B2B"
+      ]
+    },
+    {
+      "type": "browser-fullwidth",
+      "browser_url": "1csoft.es/empezar-prueba",
+      "image": "/img/casos/1csoft/desktop-signup.webp",
+      "alt": "Formulario de prueba gratuita conectado al ERP central, con selector de producto"
+    },
+    {
+      "type": "impact-grid",
+      "badge": "El resultado",
+      "heading": "Lo que ganó 1CSoft",
+      "cards": [
+        {
+          "icon": "rocket",
+          "title": "Web desde cero, lista para escalar",
+          "description": "Presencia digital propia con arquitectura modular. El equipo lanza nuevas secciones sin depender de desarrollo."
+        },
+        {
+          "icon": "trending-up",
+          "title": "Funnel de demos automatizado",
+          "description": "Cada formulario abre una cuenta de prueba real en el ERP. La cualificación deja de depender solo del equipo comercial."
+        },
+        {
+          "icon": "code",
+          "title": "Sistema integrado con el ERP central",
+          "description": "API REST que conecta web ↔ ERP en tiempo real. Provisión automática, routing por plan y tracking end-to-end."
+        },
+        {
+          "icon": "monitor",
+          "title": "Editorial autónomo para el equipo",
+          "description": "Sistema de bloques personalizados en WordPress. Lanzamiento de landings y campañas sin tocar código."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "quote": "Cuando el producto es complejo, la web no puede ser otra capa de complejidad. Tiene que ser la traducción más simple que el decisor verá nunca.",
+      "body": "El reto de 1CSoft era el clásico de una pyme tecnológica: producto sólido, equipo comercial fuerte, pero ningún canal digital que cualificara antes. Decidimos no replicar la complejidad del ERP en la web. Ordenamos por perfil, no por funcionalidad. La home no enseña 30 cosas: enseña una promesa concreta, y deja que cada perfil baje al detalle que le interesa. La conexión directa al ERP cierra el círculo: una visita puede convertirse en una cuenta de prueba activa en menos de 2 minutos, sin intervención humana.",
+      "author": "Jordi Expósito",
+      "role": "Digital Project Lead · UX/UI Senior · Tres Puntos",
+      "avatar": "/img/jordi-exposito.webp"
+    },
+    {
+      "type": "services",
+      "badge": "Servicios aplicados",
+      "heading": "Qué se trabajó en este proyecto",
+      "links": [
+        {
+          "icon": "paintbrush",
+          "href": "/servicios/diseno-ux-ui-barcelona/",
+          "title": "Diseño UX/UI",
+          "description": "Arquitectura de información, jerarquía visual y diseño de interfaces orientado a conversión B2B."
+        },
+        {
+          "icon": "code",
+          "href": "/servicios/desarrollo-wordpress-a-medida/",
+          "title": "Desarrollo WordPress a medida",
+          "description": "Sistema de bloques flexibles, plantillas editoriales y performance optimizada."
+        },
+        {
+          "icon": "bolt",
+          "href": "/servicios/automatizacion-ia-n8n/",
+          "title": "Conexión sistemas y automatización",
+          "description": "API REST web ↔ ERP, provisión automática de cuentas y tracking end-to-end."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "badge": "Preguntas frecuentes",
+      "heading": "Lo que normalmente nos preguntan",
+      "items": [
+        {
+          "question": "¿Qué tipo de proyecto era 1CSoft?",
+          "answer": "Una web SaaS desde cero para 1CSoft, empresa de software ERP cloud para pymes. El objetivo era transformar visitas en demos y contactos cualificados, con conexión directa al sistema ERP central para activar pruebas en tiempo real."
+        },
+        {
+          "question": "¿Qué se trabajó principalmente?",
+          "answer": "Arquitectura de información para distintos perfiles (CEO, financiero, técnico), diseño UX/UI orientado a conversión, desarrollo WordPress a medida con bloques flexibles, conexión vía API al ERP central y landings específicas para captación de demos."
+        },
+        {
+          "question": "¿Por qué WordPress y no un framework moderno?",
+          "answer": "El equipo de 1CSoft necesitaba autonomía total para actualizar contenidos, lanzar nuevas funcionalidades y escalar por módulos sin depender de desarrollo. WordPress con bloques personalizados resolvía agilidad editorial; la API conecta cada CTA con el ERP central para arrancar la prueba sin fricción."
+        },
+        {
+          "question": "¿Cómo es la conexión web ↔ ERP?",
+          "answer": "Cada formulario de prueba dispara una llamada a la API del ERP central. El sistema provisiona la cuenta automáticamente según el plan elegido (Crecimiento, Avanzado, Corporativo o Autónomo) y devuelve credenciales en segundos. Sin intervención humana hasta que el lead está activo."
+        },
+        {
+          "question": "¿Cuánto tiempo llevó el proyecto?",
+          "answer": "Diseño + arquitectura + contenidos: 6 semanas. Desarrollo WordPress + integración con el ERP: 8 semanas. En paralelo, definición de perfiles y plantillas comerciales con el equipo de 1CSoft."
+        }
+      ]
+    },
+    {
+      "type": "next-project",
+      "label": "Siguiente caso",
+      "href": "/casos-de-negocio/paradise/",
+      "title": "Paradise — Marketplace de despedidas con WordPress + Angular"
+    },
+    {
+      "type": "cta-form",
+      "heading_prefix": "Tienes un producto B2B y la web no",
+      "heading_highlight": "lo está vendiendo",
+      "sub": "Si tu software, ERP o SaaS necesita una web que cualifique antes de la demo, hablemos. Te decimos en una sesión qué cambiaríamos primero y por qué.",
+      "reasons": [
+        "Arquitectura por buyer (CEO, financiero, técnico)",
+        "WordPress a medida con bloques editables",
+        "Conexión API con tu sistema central",
+        "Funnel automatizado web → demo → activación"
+      ]
+    }
+  ]
+}
