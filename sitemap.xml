@@ -510,4 +510,21 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Sectores (añadidos 2026-05-03) -->
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/saas-b2b/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/fintech/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/salud/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/inmobiliaria/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/analisis/circulantis/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/analisis/clinica-birbe/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/analisis/clinica-frontela/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/analisis/coverfy/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/analisis/dorsia/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/analisis/factorial-hr/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/analisis/fincas-blanco/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/analisis/finques-feliu/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/analisis/kronos-homes/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/analisis/novicap/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.trespuntoscomunicacion.es/sectores/analisis/okticket/</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

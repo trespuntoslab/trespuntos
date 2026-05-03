@@ -2,63 +2,49 @@
 
 ---
 
-## 🚨🚨🚨 LEER PRIMERO — ESTADO 2026-05-03 noche (CÓDIGO LIMPIO, credenciales no rotadas)
+## 🔐 Sanitización de credenciales en n8n (completada 2026-05-03 noche)
 
-### ✅ COMPLETADO en esta sesión (2026-05-03 tarde)
-**Los 9 workflows n8n están sanitizados** — ningún token hardcoded en su código. Migración completa vía MCP n8n: 68 updateNode operations aplicadas.
+**Estado:** ✅ COMPLETADO. Los 9 workflows n8n están limpios + 4 env vars inyectadas en el contenedor + workflows leen tokens vía `$env.X`.
 
-| # | Workflow | ID | Ops | Activo |
-|---|---|---|---|---|
-| 1 | WF3-test Gmail | `ICoeXKSd5NQoVsZS` | 9 | ❌ |
-| 2 | WF3 Partner Envío | `ofNEs2v9y3angTDz` | 9 | ✅ |
-| 3 | Research Agencias | `krNI9bFxAhAAjQi1` | 6 | ✅ |
-| 4 | WF-Research-Daily | `AaghmTTXD5Kd4ODe` | 11 | ✅ |
-| 5 | WF6 Discovery Partners | `SRai7Mly38uCOVO7` | 6 | ✅ |
-| 6 | WF4 Partner Detección | `0EMRAOvITiVjlw8y` | 4 | ❌ |
-| 7 | WF4 Sectores Detección | `4DeHrw1yL4kVMsCZ` | 5 | ✅ |
-| 8 | WF3 Sectores Envío | `s7rw3nSvqKyujlBQ` | 5 | ❌ |
-| 9 | WF5 Partner Tracking | `brFpHdEdYYOQ00q8` | 13 | ✅ |
+### Setup técnico final
+- **Tokens NO viven en código** de los workflows. Cada nodo HTTP usa:
+  - Airtable: credencial nativa `airtableApiKey` (id `zQer745cZNd0kQyb`)
+  - Telegram: URL con `{{ $env.TELEGRAM_BOT_TOKEN }}`
+  - OpenAI: header `=Bearer {{ $env.OPENAI_API_KEY }}`
+  - Anthropic: header `={{ $env.ANTHROPIC_API_KEY }}`
+  - Serper: header `={{ $env.SERPER_API_KEY }}`
+- **4 env vars inyectadas en el contenedor n8n vía Dokploy** (`/etc/dokploy/compose/n8n-n8nwithpostgres-cqx34s/code/docker-compose.yml`):
+  - `TELEGRAM_BOT_TOKEN`, `OPENAI_API_KEY`, `SERPER_API_KEY`, `ANTHROPIC_API_KEY`
+- **Backup compose** en `docker-compose.yml.bak.<timestamp>` por si Dokploy las sobrescribe.
 
-Patrón aplicado en todos:
-- **Airtable**: header `Authorization: Bearer pat...` → credencial `airtableApiKey` (id `zQer745cZNd0kQyb`) tipo `airtableApi`
-- **Telegram**: URL `bot{TOKEN}/sendMessage` → `bot{{ $vars.TELEGRAM_BOT_TOKEN }}/sendMessage`
-- **OpenAI**: header → `=Bearer {{ $vars.OPENAI_API_KEY }}`
-- **Anthropic**: header `x-api-key` → `={{ $vars.ANTHROPIC_API_KEY }}`
-- **Serper**: header `X-API-KEY` → `={{ $vars.SERPER_API_KEY }}`
-
-### ⚠️ PENDIENTE de Jordi (CRÍTICO — sin esto los workflows fallan en runtime)
-Crear **4 variables n8n** en `Settings → Variables` (NO son credenciales, son variables globales). Valores: copiarlos de `partners/campana/sectores-workflows-backup/wf3-sectores-completo.json` (el archivo LOCAL antes de sanitizar — ya está en `.gitignore`, está en tu disco) o de cualquier nodo HTTP del backup local antes del sed.
-
-| Variable | Valor | Usada por |
+### 9 workflows sanitizados
+| Workflow | ID | Activo |
 |---|---|---|
-| `TELEGRAM_BOT_TOKEN` | `8749982652:AAHMb0v40J-252cYJ3X68eGCG4ijtPANXO4` | 9 workflows (todos) |
-| `OPENAI_API_KEY` | `sk-proj-fWYIB0c1XLXaul9SWFsPJWQ83Ugbg...` | WF6 Discovery |
-| `ANTHROPIC_API_KEY` | `sk-ant-...` (la que estaba en WF-Research-Daily) | WF-Research-Daily |
-| `SERPER_API_KEY` | `8033979a8387e633324eb57fcf4aa976d66aba0f` | WF6 Discovery + WF-Research-Daily |
+| WF3-test Gmail | `ICoeXKSd5NQoVsZS` | ❌ |
+| WF3 Partner Envío | `ofNEs2v9y3angTDz` | ✅ |
+| Research Agencias | `krNI9bFxAhAAjQi1` | ✅ |
+| WF-Research-Daily | `AaghmTTXD5Kd4ODe` | ✅ |
+| WF6 Discovery Partners | `SRai7Mly38uCOVO7` | ✅ |
+| WF4 Partner Detección | `0EMRAOvITiVjlw8y` | ❌ |
+| WF4 Sectores Detección | `4DeHrw1yL4kVMsCZ` | ✅ |
+| WF3 Sectores Envío | `s7rw3nSvqKyujlBQ` | ❌ |
+| WF5 Partner Tracking | `brFpHdEdYYOQ00q8` | ✅ |
 
-⏰ **Mientras no estén creadas, los nodos Telegram/OpenAI/Anthropic/Serper de los 9 workflows fallarán al ejecutarse.** El de Airtable sí funciona (usa credencial nativa).
+### ⚠️ Avisos importantes para el futuro
 
-### Decisión Jordi 2026-05-03 (sobre rotación)
-Jordi decidió **NO rotar las 5 credenciales** ahora — solo limpiar el código. Los tokens siguen siendo válidos. Si en el futuro Jordi quiere rotar, las acciones serían:
+1. **Persistencia Dokploy:** las 4 env vars se editaron a mano en el compose. Si en algún momento se hace "Save" sobre el servicio n8n desde la UI de Dokploy, las 4 líneas pueden perderse. Mejor moverlas al panel "Environment" del servicio en la UI de Dokploy (sobrevive redeploys). Si se pierden → workflows fallan con `$env` vacío → repetir el flujo: pegar las 4 vars al compose (ver backup `.bak.*`) + recreate del contenedor.
 
-| # | Credencial | Cómo rotar |
-|---|---|---|
-| 1 | Airtable PAT `patN5OZQ6F9GiKkn1.7029...` | Airtable → Account → Personal access tokens → Revoke + crear nuevo + actualizar valor de credencial `airtableApiKey` (id `zQer745cZNd0kQyb`) en n8n |
-| 2 | Telegram bot `@claudio_tp_bot` `8749982652:AAH...` | @BotFather → `/revoke` → `/token` → nuevo + actualizar variable n8n `TELEGRAM_BOT_TOKEN` |
-| 3 | OpenAI key `sk-proj-fWYIB...` | platform.openai.com → API keys → Revoke + crear nueva + actualizar variable `OPENAI_API_KEY` |
-| 4 | Anthropic key `sk-ant-...` | console.anthropic.com → API Keys → Revoke + crear nueva + actualizar variable `ANTHROPIC_API_KEY` |
-| 5 | Serper.dev key `8033979a...` | serper.dev → Dashboard → Reset API key + actualizar variable `SERPER_API_KEY` |
+2. **Credenciales NO rotadas:** decisión de Jordi 2026-05-03. Los tokens siguen siendo válidos. Si en el futuro se rotan:
+   - **Airtable PAT** → Airtable Account → Personal access tokens → Revoke + crear nuevo + actualizar valor de credencial `airtableApiKey` (id `zQer745cZNd0kQyb`) en n8n
+   - **Telegram bot** → @BotFather → `/revoke` → `/token` → actualizar env var `TELEGRAM_BOT_TOKEN` en Dokploy
+   - **OpenAI key** → platform.openai.com → API keys → Revoke + nueva → actualizar env var `OPENAI_API_KEY`
+   - **Anthropic key** → console.anthropic.com → API Keys → Revoke + nueva → actualizar env var `ANTHROPIC_API_KEY`
+   - **Serper key** → serper.dev → Dashboard → Reset API key → actualizar env var `SERPER_API_KEY`
 
-Una sola vía única para rotar (variables n8n) — cero workflows tocan tokens directamente.
-
-### Workflows pendientes de auditar (73 restantes — futuro)
-La auditoría del 2026-05-03 cubrió los 9 más sospechosos (partners + sectores + research). Los 73 restantes (paneles exitbcn, share drive, calendly, healthcheck, etc.) probablemente están limpios pero conviene auditar en algún momento con un grep masivo desde el MCP.
+3. **Workflows restantes por auditar:** los 73 workflows que no se cubrieron en la auditoría del 2026-05-03 (paneles exitbcn, share drive, calendly, healthcheck, etc.) probablemente están limpios pero conviene confirmar con un grep masivo desde el MCP n8n.
 
 ### Origen del incidente
-Sesión 2026-04-30: GitHub Secret Scanning bloqueó push de `partners/campana/sectores-workflows-backup/wf3-sectores-completo.json` detectando 2 secretos. Se sanitizaron antes del segundo push y se añadió `.gitignore` para `*.workflow.json`. Sesión 2026-05-03: auditoría descubrió 9 workflows infectados + 5 credenciales (no 2). Sesión 2026-05-03 tarde: 9 workflows sanitizados vía MCP n8n. Sesión 2026-05-03 noche (ahora): este resumen actualizado tras la sanitización.
-
-### Cuando se completen las 4 variables n8n + se decida rotar
-Eliminar este bloque entero del CLAUDE.md, dejar nota corta en `DEPLOY_LOG.md` con la fecha.
+Sesión 2026-04-30: GitHub Secret Scanning bloqueó push de `partners/campana/sectores-workflows-backup/wf3-sectores-completo.json` detectando 2 secretos. Auditoría 2026-05-03: 9 workflows infectados + 5 credenciales filtradas (Airtable, Telegram, OpenAI, Anthropic, Serper). Tarde 2026-05-03: 68 updateNode + 24 más vía MCP n8n para migrar a `$env`. Configuración final: env vars en Dokploy + recreate del contenedor.
 
 ---
 
@@ -804,12 +790,47 @@ Agentes IA (Claudio/Curry/Bird/Magic/Jordan) consultan vía MCP Airtable
 - `~/Dropbox/Tres Puntos/LinkedIn Analytics/processed/` — XLSX ya procesados (con timestamp)
 - `~/Dropbox/Tres Puntos/LinkedIn Analytics/README.md` — instrucciones de export
 
-### Cómo usar (semanal)
-1. Lunes: entrar en `linkedin.com/company/tres-puntos-comunicacion/admin/analytics/content/`
-2. Seleccionar rango "últimos 7 días" → Export XLSX
-3. Arrastrar el archivo a `~/Dropbox/Tres Puntos/LinkedIn Analytics/inbox/`
-4. Ejecutar: `python3 scripts/linkedin/import-xlsx.py`
+### Cómo usar (semanal) — recomendado: skill `/linkedin-import`
+
+**Opción 1 — Skill automatizada (recomendado, NO requiere PAT)**
+Desde cualquier sesión Claude Code:
+- `/linkedin-import semana` → Claudio descarga el export de los últimos 7 días desde LinkedIn (vía Claude_in_Chrome con tu sesión real), parsea, upsert en Airtable, mueve a processed
+- `/linkedin-import mes` → últimos 28 días
+- `/linkedin-import año` → último año (export rico con 50 top posts + demografía completa)
+- `/linkedin-import` → solo procesa lo que ya esté en inbox (sin descargar nada)
+- `/linkedin-import status` → resumen rápido (qué hay en inbox + últimos snapshots en Airtable)
+
+La skill está definida en `.claude/commands/linkedin-import.md`. Usa MCP `Claude_in_Chrome` con el browser "Work" (deviceId `23e0a04f-35b1-43bf-bd75-fa5388f8dede`). NO usar Control_Chrome (está en otro profile sin sesión LinkedIn).
+
+URL del Creator Analytics que la skill usa para descargar:
+```
+https://www.linkedin.com/analytics/creator/content?timeRange={past_7_days|past_28_days|past_year}&dimension=INDUSTRY&metricType=IMPRESSIONS
+```
+
+El click en el botón "Exportar" descarga directamente sin modal. Filename auto-generado: `Contenido_{period_start}_{period_end}_TresPuntos.xlsxIDvoyager-api-premium...report.xlsx`. La skill renombra a algo limpio antes de moverlo a inbox.
+
+**Opción 2 — Manual sin Claude Code**
+1. Lunes: entrar en `linkedin.com/analytics/creator/content?timeRange=past_7_days&dimension=INDUSTRY&metricType=IMPRESSIONS`
+2. Click botón "Exportar" arriba a la derecha → descarga directa sin modal
+3. Arrastrar el archivo de `~/Downloads/` a `~/Dropbox/Tres Puntos/LinkedIn Analytics/inbox/`
+4. Ejecutar: `python3 scripts/linkedin/import-xlsx.py` (requiere PAT configurado, ver abajo)
 5. El script hace upsert por snapshot_id (no duplica) y mueve el XLSX a `processed/`
+
+### Edge case crítico: rango pequeño vs grande
+
+Si procesas un XLSX de rango pequeño (semanal) **después** de uno grande (anual), la fila `is_period_end=true` del último día del rango pequeño tiene datos POBRES (members_reached limitado, menos top posts, demografía solo de esa semana). Si se sobrescribe la fila existente, **se pierden los datos ricos del anual**.
+
+Comparativa real (mismo día 2026-05-03):
+| Campo | XLSX anual (rico) | XLSX semanal (pobre) |
+|---|---|---|
+| members_reached | 1.363 | 142 |
+| top_posts_by_impressions | 50 posts | 30 posts |
+| top_posts_by_interactions | 25 posts | 4 posts |
+| Demografía | acumulada año | solo última semana |
+
+**Cómo lo maneja la skill `/linkedin-import`**: antes de hacer upsert de una fila `is_period_end`, lee la fila existente en Airtable. Si ya existe Y tiene un rango MAYOR → modifica el JSON entrante: elimina los campos "del rango" (members_reached, followers_total, top_posts_*, demo_*) y cambia `is_period_end` a `false`. Solo se actualizan las métricas diarias (impressions, interactions, new_followers, engagement_rate). Esto preserva los datos ricos.
+
+**El script `import-xlsx.py` standalone NO tiene esta protección** — si ejecutas directamente con PAT, ten en cuenta el orden de procesamiento (procesar primero el rango grande, luego pequeños).
 
 ### Configuración del PAT (pendiente Jordi)
 El script necesita un Airtable PAT con permisos `data.records:read|write` sobre la base Analytics. Configurar de UNA de estas dos formas:
@@ -828,12 +849,57 @@ chmod 600 ~/.config/tres-puntos/airtable.env
 
 Mientras no haya PAT configurado, el script funciona en modo `--dry-run` y `--export-json`. La carga inicial del 2026-05-03 se hizo vía MCP Airtable (que tiene auth propia), no vía script.
 
+### Validación end-to-end realizada (2026-05-03)
+
+Hallazgos técnicos del test manual con el Chrome real de Jordi:
+
+**Browser correcto**: `Claude_in_Chrome` con browser "Work" (deviceId `23e0a04f-35b1-43bf-bd75-fa5388f8dede`). El otro MCP `Control_Chrome` resultó estar en otro profile sin sesión LinkedIn — daba authwall continuamente. La skill `/linkedin-import` siempre debe usar Claude_in_Chrome.
+
+**Flujo de export manual confirmado**:
+1. Navegar a `https://www.linkedin.com/analytics/creator/content?timeRange={X}&dimension=INDUSTRY&metricType=IMPRESSIONS`
+2. `find` busca "botón Exportar o Export" → devuelve un `ref_NN` (ej. `ref_87`)
+3. `computer left_click` con ese ref → **descarga directa sin modal** (no se abre ningún diálogo)
+4. Esperar ~2-3s → archivo aparece en `~/Downloads/` con filename auto-generado tipo:
+   ```
+   Contenido_{period_start}_{period_end}_TresPuntos.xlsxIDvoyager-api-premium premium.edge.insights.analytics.dash.impl.powercreator.content_analytics.report.xlsx
+   ```
+   (con sufijo `(1)`, `(2)`... si ya existe). La skill renombra a `Contenido_{period_start}_{period_end}_TresPuntos.xlsx` antes de mover a inbox.
+5. `python3 scripts/linkedin/import-xlsx.py --export-json /tmp/...json` parsea las 5 hojas
+6. Filtrar a útiles (días con actividad O is_period_end)
+7. Para cada is_period_end: comprobar Airtable y aplicar protección de "rango grande gana"
+8. Batches de 25 → MCP Airtable `update_records_for_table` con `performUpsert`
+9. Mover XLSX a `processed/` con prefijo timestamp
+
+**Validación numérica**: el export semanal del 27/4-3/5 que descargué con `Claude_in_Chrome` coincidió EXACTAMENTE con los números que ya teníamos del export anual para esos mismos días (35, 90, 77, 49, 17, 9, 13/15 impresiones), confirmando que el flujo es fiable.
+
+### Decisión pendiente: nivel de automatización
+
+Tras la sesión 2026-05-03, hay 4 caminos posibles para automatizar más allá del flujo manual `/linkedin-import semana`:
+
+| Camino | Setup | Coste | Automatización | Riesgo |
+|---|---|---|---|---|
+| **A. Routines remotas tipo recordatorio** | 10 min | 0€ | 95% (tú escribes el comando) | 🟢 Nulo |
+| **B. launchd local + Playwright Python** | 1-2 días | 0€ | 100% si tu Mac está encendido | 🟡 Cookies LinkedIn invalidan cada 2-3 meses |
+| **C. Browserless + n8n cron** | 4-6h | ~$50/mes | 100% server-side | 🟡 Mismo problema cookies + dependencia tercero |
+| **D. LinkedIn Marketing Developer Platform (oficial)** | 2 min hoy + 4-8 sem espera | 0€ | 100% sin riesgo | 🟢 Nulo (vía oficial) |
+
+**Recomendación combo A + D (en paralelo)**:
+- Crear 3 routines remotas vía `/schedule`:
+  1. **Lunes 09:00** — Telegram al grupo Mesa 3P recordando ejecutar `/linkedin-import semana`
+  2. **Lunes 13:00** — verifica vía Airtable si hay snapshot del lunes; si no, insiste
+  3. **Día 1 mes 09:00** — recordatorio mensual + resumen del mes anterior leyendo de Airtable
+- En paralelo: aplicar al **MDP de LinkedIn** (formulario en `developer.linkedin.com`). Si aprueban en 4-8 semanas → workflow n8n diario con OAuth oficial reemplaza la skill. Si rechazan → seguimos con A indefinidamente.
+
+**No recomendado** B y C por ahora: el riesgo de invalidación de cookies + posible baneo de cuenta admin no compensa el ahorro de 30 segundos semanales que da A.
+
 ### Pendientes
-- Jordi configura PAT siguiendo una de las opciones de arriba (5 min)
-- Validar el flujo completo con un export real semanal (lunes próximo)
-- Decidir si aplicar al **Marketing Developer Platform** de LinkedIn para automatizar 100% (4-8 sem aprobación)
-- Cuando MDP esté aprobado: workflow n8n diario con OAuth → mismas tablas → no requiere intervención humana
-- Considerar añadir pestaña "LinkedIn" en `dash.trespuntos-lab.com` que lea de Airtable (aunque para Tres Puntos no es prioritario, ya está en Airtable directamente)
+- ✅ ~~Crear skill `/linkedin-import` con descarga automatizada vía Claude_in_Chrome~~ COMPLETADO (2026-05-03)
+- ✅ ~~Validar flujo end-to-end con export real~~ COMPLETADO (2026-05-03)
+- ✅ ~~Edge case rango pequeño vs grande protegido en la skill~~ COMPLETADO (2026-05-03)
+- Decidir camino de automatización (A+D recomendado) y crear las 3 routines de recordatorio
+- Aplicar al MDP de LinkedIn (paralelo, 2 min de formulario)
+- Jordi configura PAT (Opción 1 de arriba) — solo necesario si quieres ejecutar `import-xlsx.py` desde terminal SIN Claude Code
+- Considerar añadir pestaña "LinkedIn" en `dash.trespuntos-lab.com` que lea de Airtable (no prioritario, los datos ya están accesibles desde Airtable)
 
 ---
 

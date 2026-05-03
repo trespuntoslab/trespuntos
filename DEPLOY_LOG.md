@@ -43,6 +43,28 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
 
 ---
 
+## 2026-05-03 noche (cierre) — Sistema n8n totalmente funcional con env vars
+
+- **Setup final aplicado:**
+  - 4 env vars (`TELEGRAM_BOT_TOKEN`, `OPENAI_API_KEY`, `SERPER_API_KEY`, `ANTHROPIC_API_KEY`) inyectadas en el contenedor n8n vía Dokploy
+  - Compose path: `/etc/dokploy/compose/n8n-n8nwithpostgres-cqx34s/code/docker-compose.yml`
+  - Backup compose: `docker-compose.yml.bak.<timestamp>` (en VPS)
+  - Container `n8n-n8nwithpostgres-cqx34s-n8n-1` recreado con las env vars
+  - 9 workflows actualizados de `{{ $vars.X }}` → `{{ $env.X }}` vía MCP n8n (24 updateNode operations adicionales)
+- **Verificación:**
+  - `docker exec n8n-... env | grep -E "TELEGRAM_BOT_TOKEN|OPENAI_API_KEY|SERPER_API_KEY|ANTHROPIC_API_KEY"` → las 4 SET ✓
+  - n8n.trespuntos-lab.com accesible ✓
+  - Workflows reactivados sin errores ✓
+- **Avisos:**
+  - Las 4 env vars están en el compose editado a mano. Si Dokploy regenera el compose desde su UI, podrían perderse. Recomendado moverlas al panel "Environment" del servicio en la UI de Dokploy.
+  - Decisión de Jordi: NO rotar las 5 credenciales por ahora.
+- **Pendientes futuros (no urgentes):**
+  - Auditar los 73 workflows n8n no cubiertos en la auditoría anterior
+  - Sitemap.xml — añadir las 16 páginas de `/sectores/`
+  - Validar correcciones 404 desde Search Console
+
+---
+
 ## 2026-05-03 noche — Sanitización completa de los 9 workflows n8n (código limpio)
 
 - **Commits:** `chore(security)` pendiente de generar tras esta entrada
