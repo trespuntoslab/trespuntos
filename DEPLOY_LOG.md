@@ -160,3 +160,29 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
   - Producción n8n NO modificada — la auditoría fue solo lectura
 
 ---
+
+## 2026-05-06 22:35 · Fix 404 SEO + 4 huérfanos sitemap
+
+- **SHA:** `8824898` (rama `main` en GitHub)
+- **Archivos:** `.htaccess`, `sitemap.xml`
+- **Origen:** detección durante auditoría SEO Semrush 2026-05-06. 2 URLs en top GSC daban 404 (slugs renombrados sin redirect). 4 posts ausentes del sitemap.
+- **Cambio .htaccess:** 2 reglas 301 nuevas tras línea 106:
+  - `/blog/tendencias-de-diseno-web-2026-rendimiento-velocidad-y-conversiones-que-realmente-importan/` → `/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/`
+  - `/blog/tendencias-de-desarrollo-web-2026-rentabilidad-rendimiento-y-arquitectura-real/` → `/blog/tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica/`
+- **Cambio sitemap.xml:** añadidas 4 entradas blog (vivas en producción, ausentes del sitemap):
+  - `/blog/agencia-diseno-ux-ui-evaluar-propuestas/`
+  - `/blog/como-elegir-agencia-ecommerce-barcelona/`
+  - `/blog/desarrollo-web-a-medida-vs-wordpress/`
+  - `/blog/tiendas-online-barcelona-puntos-friccion-conversion/`
+- **FTP:** `.htaccess` (226 OK) + `sitemap.xml` (226 OK) → ftp.trespuntoscomunicacion.es
+- **Verificación bypass cache:** ambas URLs antiguas devuelven 301 → URL correcta ✅ (con `?cb=${date}`)
+- **Pendiente Jordi:** Purgar Cloudflare las 3 URLs específicas (Cache → Configuration → Custom Purge → Purge by URL):
+  ```
+  https://www.trespuntoscomunicacion.es/blog/tendencias-de-diseno-web-2026-rendimiento-velocidad-y-conversiones-que-realmente-importan/
+  https://www.trespuntoscomunicacion.es/blog/tendencias-de-desarrollo-web-2026-rentabilidad-rendimiento-y-arquitectura-real/
+  https://www.trespuntoscomunicacion.es/sitemap.xml
+  ```
+- **Impacto esperado:** recuperar ~30 clicks/mes orgánicos perdidos + Google indexa 4 posts huérfanos.
+- **Acción siguiente recomendada:** tras purga, "Solicitar reindexación" en Search Console para las 4 URLs huérfanas (acelera detección).
+
+---
