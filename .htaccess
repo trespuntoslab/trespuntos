@@ -25,7 +25,8 @@
 
 # ── Clean URLs ───────────────────────────────────────────────
 <IfModule mod_rewrite.c>
-    # Redirect .html to clean URL (except index.html direct access)
+    # Redirect .html to clean URL (except index.html and Google verification files)
+    RewriteCond %{REQUEST_URI} !^/google[a-z0-9]+\.html$ [NC]
     RewriteCond %{THE_REQUEST} \s/+(.*?)\.html[\s?] [NC]
     RewriteRule ^ /%1 [R=301,L]
 
