@@ -50,6 +50,36 @@ Sesión 2026-04-30: GitHub Secret Scanning bloqueó push de `partners/campana/se
 
 ---
 
+## Logos y assets de marca — REGLA OBLIGATORIA
+
+**Antes de usar el logo de Tres Puntos en cualquier sitio (imagen OG, email, PDF, landing, propuesta), leer `/BRAND.md` en la raíz del repo.**
+
+### Resumen rápido — el error más recurrente y cómo no cometerlo
+El sufijo `-dark` / `-light` se refiere al **FONDO** sobre el que se coloca el logo, NO al color del logo. Léelo dos veces.
+
+| Si el fondo es... | Usar este archivo | Por qué |
+|---|---|---|
+| **Oscuro** (negro, `#0e0e0e`, web Tres Puntos) | `img/logo-trespuntos-dark.svg` | Centros blancos `#F8F8F8` → contrastan |
+| **Claro** (blanco, gris claro, papel) | `img/logo-trespuntos-light.svg` | Centros negros `#1A1A1A` → contrastan |
+| **Email** (cliente Outlook/Gmail) | `img/logo-trespuntos-email.png` | PNG con transparencia, compatibilidad raster |
+
+Mnemotécnica: **"Logo dark va sobre dark. Logo light va sobre light."**
+
+### Errores que NO se permiten
+- Usar `logo-trespuntos-light.svg` sobre la web (centros negros invisibles sobre fondo oscuro)
+- Usar `logo-trespuntos-dark.svg` en un PDF blanco (centros blancos invisibles sobre fondo claro)
+- Generar un SVG nuevo "parecido al logo" — siempre usar el archivo del repo
+- Mezclar versiones distintas en el mismo documento
+
+### URLs canónicas para uso externo
+- Producción (sirve el del repo vía Nominalia + Cloudflare): `https://www.trespuntoscomunicacion.es/img/logo-trespuntos-dark.svg`
+- Raw GitHub (para skills que fetchean): `https://raw.githubusercontent.com/trespuntoslab/trespuntos/main/img/logo-trespuntos-dark.svg`
+- Sustituir `dark` por `light` o `email.png` según el caso
+
+Documento completo (con tokens, checklist y guía para agentes externos): `/BRAND.md`
+
+---
+
 ## Rol de Claudio — Responsable del ecosistema Tres Puntos
 
 Claudio (el asistente IA) es el **responsable del ecosistema técnico y de sistemas de Tres Puntos Comunicación**. No es un ejecutor pasivo: es el arquitecto que vela por la coherencia, la deuda técnica, la seguridad, la performance y la evolución del stack.
@@ -1083,11 +1113,27 @@ bash scripts/og/ftp-upload.sh
 - Kobe workflow: reemplazar nodo HTTP "Notificar Jordan" por nodo nativo Telegram (para eliminar token del URL)
 - Configurar dominio en Cookiebot panel para que el banner aparezca en producción (trespuntoscomunicacion.es)
 - Actualizar textos legales a RGPD/LOPDGDD (actualmente referencian LOPD 15/1999 del WP antiguo)
-- **Sync Notion ↔ archivos locales (Cerebro Digital)** — Ver plan completo abajo
+- **Sync Notion ↔ archivos locales (Cerebro Digital)** — SUPERSEDED. Ver nota abajo.
 
-## Plan pendiente · Sync Notion ↔ Archivos locales (Cerebro Digital)
+## Plan pendiente · Sync Notion ↔ Archivos locales (Cerebro Digital) — SUPERSEDED 2026-05-10
 
-**Contexto (2026-04-22):** Creada la DB `🧠 Identidad & Cerebro Digital` en Notion dentro de la página Cerebro (`https://www.notion.so/64a93adb48314c908fed3fe74715a1f4`). 8 registros iniciales: Design System Web (Dark), Design System Docs (Light+Dark), Tono de voz, Brand Voice Exit BCN, Logos & Marca, Stack técnico, Automatización Pipeline de Leads, Cerebro Digital repo. Schema con campos: Nombre, Tipo, Tema, Estado, Proyecto, Audiencia, URL/Recurso, Ruta local, Tags, Responsable, Descripción, Última actualización.
+> **Estado: archivado como referencia.** Este plan fue absorbido por el doc *"Arquitectura de Contexto Tres Puntos — Git + Notion v1.0"* (2026-05-10), que propone una solución más completa.
+>
+> **Decisión 2026-05-10:** Tras revisar el doc nuevo, Jordi y Claudio acordaron NO ejecutarlo todavía — el coste (6-8h + mantenimiento) supera al beneficio actual (no hay ningún agente roto por contexto desactualizado, ni cliente afectado). En su lugar se hicieron los **30 min mínimos**:
+> 1. Crear `BRAND.md` en la raíz como fuente canónica de logos + tokens (resuelve el bug recurrente del logo dark/light)
+> 2. Añadir sección "Logos y assets de marca — REGLA OBLIGATORIA" al principio de este CLAUDE.md
+> 3. Marcar este plan como SUPERSEDED
+>
+> **Cuándo retomar el plan completo:** cuando ocurra UNO de estos triggers:
+> - Contratación de alguien que no sea Jordi (necesidad real de onboarding)
+> - Un agente IA genere contenido con voz desactualizada y un cliente lo reciba
+> - GEMA/Jordan/Kobe rompan producción por leer una versión vieja de identidad
+>
+> Hasta entonces, los registros de Notion del Cerebro Digital y los page IDs de abajo se mantienen como referencia. El contenido del plan sigue siendo válido como base para una futura implementación.
+
+---
+
+**Contexto histórico (2026-04-22):** Creada la DB `🧠 Identidad & Cerebro Digital` en Notion dentro de la página Cerebro (`https://www.notion.so/64a93adb48314c908fed3fe74715a1f4`). 8 registros iniciales: Design System Web (Dark), Design System Docs (Light+Dark), Tono de voz, Brand Voice Exit BCN, Logos & Marca, Stack técnico, Automatización Pipeline de Leads, Cerebro Digital repo. Schema con campos: Nombre, Tipo, Tema, Estado, Proyecto, Audiencia, URL/Recurso, Ruta local, Tags, Responsable, Descripción, Última actualización.
 
 **Objetivo:** Mantener los registros de Notion sincronizados automáticamente con los archivos fuente locales (CSS, JSON, SVG, MD) para que todos los agentes IA (Claudio, Jordan, Magic, Kobe, Bird, Curry, Luka, Rodman) consulten siempre la versión vigente.
 
