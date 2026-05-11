@@ -75,8 +75,6 @@
     <link rel="stylesheet" href="/css/case-study.css">
     <link rel="stylesheet" href="/css/service-page.css">
   </noscript>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-
   <style>@font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}@font-face{font-family:'Jakarta Fallback';src:local('Arial Black');size-adjust:95%;ascent-override:100%;descent-override:22%;line-gap-override:0%}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--mint:#5dffbf;--mint-rgb:93,255,191;--bg-base:#0e0e0e;--bg-surface:#141414;--text-primary:#f5f5f5;--text-secondary:#b3b3b3;--text-muted:#8a8a8a;--font-heading:'Plus Jakarta Sans','Jakarta Fallback',sans-serif;--font-body:'Inter','Inter Fallback',sans-serif;--radius-md:10px;--radius-lg:14px;--radius-full:9999px}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg-base);color:var(--text-primary);-webkit-font-smoothing:antialiased;overflow-x:hidden}.container-main{max-width:1200px;margin:0 auto;padding:0 1.5rem}#tp-navbar{position:fixed;top:0;left:0;right:0;z-index:1000;min-height:72px}
 
@@ -612,8 +610,6 @@
     .sp-method-card:hover .sp-method-card-anim {
       transform: translateY(-5px);
     }
-
-
     @media(max-width:991px) {
       .sp-method-card {
         padding: 2.5rem;
@@ -1776,9 +1772,6 @@
       </div>
     </div>
   </section>
-
-  
-
   <!-- ============ OPINIÓN EXPERTA ============ -->
   <section class="sp-expert" aria-label="Opinión experta">
     <div class="container-main">
@@ -2098,7 +2091,8 @@
       }
     })();
   </script>
-
+  <!-- Cloudflare Turnstile anti-spam — defer para no bloquear el primer render -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 </body>
 
 </html>

@@ -928,8 +928,6 @@
     .ai-marquee-row--right {
       animation: aiMarqueeRight 40s linear infinite;
     }
-
-
     @keyframes aiMarqueeLeft {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -1077,8 +1075,6 @@
       line-height: 1.7;
       font-style: italic;
     }
-
-
     .reveal-delay-4 { transition-delay: .6s; }
     .reveal-delay-5 { transition-delay: .75s; }
 
@@ -1391,7 +1387,7 @@
       .services-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  
 </head>
 
 <body>
@@ -2221,7 +2217,8 @@
       }).mount(window.splide.Extensions);
     });
   </script>
-
+  <!-- Cloudflare Turnstile anti-spam — defer para no bloquear el primer render -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 </body>
 
 </html>

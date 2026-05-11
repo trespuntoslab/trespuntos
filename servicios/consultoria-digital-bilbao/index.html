@@ -1001,7 +1001,7 @@
       }
     }
   </style>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.trespuntoscomunicacion.es/"},{"@type":"ListItem","position":2,"name":"Servicios","item":"https://www.trespuntoscomunicacion.es/servicios/"},{"@type":"ListItem","position":3,"name":"Consultoría Digital Bilbao"}]}
 </script>
@@ -1191,9 +1191,6 @@
       </div>
     </div>
   </section>
-
-
-
   <!-- ============ 3. SOLUCIÓN (ARQUITECTURA DIGITAL) ============ -->
   <section class="sp-services" aria-label="Qué incluye el servicio">
     <div class="container-main">
@@ -1506,9 +1503,6 @@
       </div>
     </div>
   </section>
-
-
-
   <!-- ============ 7. OPINIÓN EXPERTA ============ -->
   <section class="sp-expert" aria-label="Opinión experta">
     <div class="container-main">
@@ -1929,7 +1923,8 @@
       }
     })();
   </script>
-
+  <!-- Cloudflare Turnstile anti-spam — defer para no bloquear el primer render -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 </body>
 
 </html>

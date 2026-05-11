@@ -103,7 +103,7 @@
     <link rel="stylesheet" href="/css/service-page.css">
     <link rel="stylesheet" href="/css/case-study.css">
   </noscript>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.trespuntoscomunicacion.es/"},{"@type":"ListItem","position":2,"name":"Casos de Negocio","item":"https://www.trespuntoscomunicacion.es/casos-de-negocio/"},{"@type":"ListItem","position":3,"name":"Zim Connections"}]}
 </script>
@@ -942,6 +942,7 @@
   };
   </script>
   <script async src="/assets/jordan/jordan-widget-v7.js"></script>
-
+  <!-- Cloudflare Turnstile anti-spam — defer para no bloquear el primer render -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 </body>
 </html>

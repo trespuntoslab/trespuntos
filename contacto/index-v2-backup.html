@@ -1182,7 +1182,7 @@
     .service-card-label { font-size: .75rem; font-weight: 500; color: var(--text-secondary); line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .service-card.selected .service-card-label { color: var(--text-primary); }
   </style>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  
 </head>
 
 <body>
@@ -1856,7 +1856,8 @@
       }
     })();
   </script>
-
+  <!-- Cloudflare Turnstile anti-spam — defer para no bloquear el primer render -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 </body>
 
 </html>

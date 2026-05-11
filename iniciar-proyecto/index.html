@@ -296,8 +296,6 @@
       color: var(--text-secondary);
       font-weight: 600;
     }
-
-
     .v3-placeholder-text {
       font-family: var(--font-body);
       font-size: 0.9375rem;
@@ -926,7 +924,7 @@
     .v3-form-section .checkbox-row { display: flex; align-items: flex-start; gap: .5rem; font-size: .75rem; color: var(--text-muted); line-height: 1.5; cursor: pointer; margin-top: 1rem; }
     .v3-form-section .checkbox-row a { color: var(--mint); }
   </style>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1233,6 +1231,7 @@
     document.addEventListener('mouseenter',function(){outerCursor.style.opacity='.6';innerCursor.style.opacity='1';});
   })();
   </script>
-
+  <!-- Cloudflare Turnstile anti-spam — defer para no bloquear el primer render -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 </body>
 </html>

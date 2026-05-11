@@ -300,8 +300,6 @@
       color: var(--text-secondary);
       font-weight: 600;
     }
-
-
     .v3-placeholder-text {
       font-family: var(--font-body);
       font-size: 0.9375rem;
@@ -1007,7 +1005,7 @@
       .v3-hero.chat-active .v3-chat-section { max-width: 1200px; }
     }
   </style>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1436,6 +1434,7 @@
     document.addEventListener('mouseenter',function(){outerCursor.style.opacity='.6';innerCursor.style.opacity='1';});
   })();
   </script>
-
+  <!-- Cloudflare Turnstile anti-spam — defer para no bloquear el primer render -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 </body>
 </html>
