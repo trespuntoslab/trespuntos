@@ -16,6 +16,19 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
 
 ---
 
+## 2026-05-11 — Caso Naranja Inmobiliaria
+- **Commit:** 1ab1379 (main — merge de claude/context-architecture-setup-LNrbb)
+- **Archivos:**
+  - `casos-de-negocio/naranja/index.html` (nuevo)
+  - `casos-de-negocio/index.html` (card naranja añadida)
+  - `img/casos/naranja/*.webp` (18 imágenes: 7 desktop + 8 mobile + 3 posters)
+  - `img/casos/naranja/*.mp4` (3 vídeos: 2 desktop + 1 mobile)
+- **Cloudflare:** Purge Everything ⚠️ PENDIENTE
+- **Verificación:** pendiente post-purga
+- **Notas:** Carrusel móvil con RAF + inercia. Video split-phone con play directo (bypass IO). Avatar quote corregido.
+
+---
+
 ## 2026-05-03 — Caso Paradise + 2 posts blog + Jordan widget v7.3
 
 - **Commits:**
