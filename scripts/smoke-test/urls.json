@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "description": "URLs críticas a verificar tras cada deploy FTP + purga Cloudflare. Editable: añade rutas que rompan a menudo.",
+    "base_url": "https://www.trespuntoscomunicacion.es",
+    "updated": "2026-05-03"
+  },
+  "urls": [
+    { "path": "/",                                                   "label": "Home",                  "must_contain": ["Tres Puntos", "iniciar-proyecto"], "must_not_contain": ["Lorem ipsum"], "checks": ["status", "html_size", "navbar", "footer", "jordan_widget", "og_image", "no_console_errors"] },
+    { "path": "/contacto/",                                          "label": "Contacto",              "must_contain": ["Jordan", "jordan-embed"],          "checks": ["status", "navbar", "footer", "jordan_widget", "og_image"] },
+    { "path": "/iniciar-proyecto/",                                  "label": "Iniciar proyecto",      "must_contain": ["Jordan", "jordan-embed"],          "checks": ["status", "jordan_widget", "og_image"] },
+    { "path": "/nosotros/",                                          "label": "Nosotros",              "must_contain": ["Tres Puntos"],                     "checks": ["status", "navbar", "footer", "og_image"] },
+    { "path": "/servicios/",                                         "label": "Servicios hub",         "must_contain": ["Servicios"],                       "checks": ["status", "navbar", "footer", "og_image"] },
+    { "path": "/servicios/desarrollo-web-a-medida-barcelona/",       "label": "Servicio: Desarrollo Web BCN", "checks": ["status", "navbar", "footer", "og_image"] },
+    { "path": "/servicios/diseno-ux-ui-barcelona/",                  "label": "Servicio: UX/UI BCN",   "checks": ["status", "navbar", "footer", "og_image"] },
+    { "path": "/casos-de-negocio/",                                  "label": "Casos hub",             "must_contain": ["caso"],                            "checks": ["status", "navbar", "footer", "og_image"] },
+    { "path": "/casos-de-negocio/gibobs/",                           "label": "Caso: Gibobs",          "checks": ["status", "navbar", "footer", "og_image"] },
+    { "path": "/casos-de-negocio/exitbcn/",                          "label": "Caso: Exit BCN",        "checks": ["status", "navbar", "footer", "og_image"] },
+    { "path": "/blog/",                                              "label": "Blog hub",              "checks": ["status", "navbar", "footer", "og_image"] },
+    { "path": "/sectores/",                                          "label": "Sectores hub",          "checks": ["status", "navbar", "footer", "og_image"] },
+    { "path": "/aviso-legal/",                                       "label": "Aviso legal",           "must_contain": ["Tres Puntos Comunicación"],        "checks": ["status"] },
+    { "path": "/politica-cookies/",                                  "label": "Política cookies",      "checks": ["status"] },
+    { "path": "/sitemap.xml",                                        "label": "Sitemap",               "must_contain": ["<url>"],                           "checks": ["status"] },
+    { "path": "/robots.txt",                                         "label": "Robots",                "must_contain": ["Sitemap"],                         "checks": ["status"] }
+  ],
+  "post_deploy_assertions": {
+    "cloudflare_cache_purged_recently": {
+      "description": "La home debe responder con cf-cache-status: MISS la primera request post-purga, luego HIT. Si después del deploy ves HIT en la primera request, la purga no se aplicó.",
+      "header_to_check": "cf-cache-status",
+      "expected_first_hit": "MISS"
+    },
+    "jordan_widget_version": {
+      "description": "Verifica que la versión del widget Jordan en producción coincide con la esperada (cache-bust correcto).",
+      "expected_substring": "jordan-widget-v7"
+    }
+  }
+}

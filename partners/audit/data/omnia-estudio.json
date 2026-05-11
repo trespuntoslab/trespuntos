@@ -1,0 +1,157 @@
+{
+  "agencia": "Omnia Estudio Creativo",
+  "web": "omniaestudio.es",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Propuesta de valor",
+          "titulo": "Hero genérico que promete \"máquina de ventas\" sin pruebas inmediatas",
+          "detalle": "El hero abre con la promesa de transformar la presencia digital en una \"máquina de ventas\", pero el visitante no encuentra a primera vista métricas, casos o un dato concreto que respalde la afirmación. <strong>Incorporar un microcaso medible en el hero (por ejemplo \"+312% de leads para Alysa Psicología en 6 meses\") aumenta la credibilidad inmediata y reduce la fricción del primer scroll</strong>, sobre todo en una agencia de Zaragoza que necesita posicionarse frente a estudios mucho más grandes."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "CTAs y embudo",
+          "titulo": "CTAs sin diferenciación entre proyecto pequeño y proyecto grande",
+          "detalle": "El \"Contacta\" o \"Pide presupuesto\" trata igual a un autónomo que pide una landing y a un cliente B2B que quiere reposicionar la marca. <strong>Añadir dos CTAs paralelos del tipo \"Auditoría gratuita SEO\" y \"Reunión estratégica de 30 min\" segmentaría el embudo y permitiría cualificar el lead antes del primer email</strong>, mejorando la calidad de la pipeline comercial."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Storytelling de casos",
+          "titulo": "Portfolio listado pero sin narrativa de resultado",
+          "detalle": "Los casos (Alysa Psicología, Serrano Arquitectura, Vanilla, Picasso Diario Íntimo) están presentados como galería visual, pero falta el formato \"reto → estrategia → resultado\" con números. <strong>Reescribir 3-4 casos con un caso de estudio largo de 1.500 palabras, métricas verificadas y testimonio del cliente convierte el portfolio en activo SEO y de venta</strong> al mismo tiempo."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Cualificación de lead",
+          "titulo": "Formulario de contacto sin campos de cualificación",
+          "detalle": "El formulario solicita datos básicos sin preguntar presupuesto, urgencia o tipología de proyecto. <strong>Añadir 3-4 campos de cualificación (sector, presupuesto orientativo, urgencia) ahorra tiempo en la primera llamada y permite priorizar leads enterprise frente a proyectos sub-3K</strong>, especialmente útil cuando el equipo es reducido."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción Visual",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Identidad visual",
+          "titulo": "Diseño limpio pero sin personalidad propia diferenciable",
+          "detalle": "La web cumple en lo formal: tipografía cuidada, retícula consistente, peso visual equilibrado. Sin embargo, comparada con agencias como Erretres, Mucho o Toormix, <strong>falta un \"detalle de marca\" reconocible (un grafismo, una micro-animación, un sistema de color rompedor) que haga que el visitante recuerde Omnia tres días después</strong>. La diferenciación visual es un activo comercial que ahora está infrautilizado."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Jerarquía tipográfica",
+          "titulo": "Bloques de texto extensos sin jerarquía display clara",
+          "detalle": "Las páginas de servicio acumulan párrafos largos sin destacar conceptos clave con tipografía display o resaltados visuales. <strong>Implementar pull-quotes, números grandes (estilo \"100K usuarios simultáneos\" como display) y subtítulos con peso variable mejora la escaneabilidad y aumenta el tiempo medio en página</strong> en la franja de visitantes que llega desde búsquedas SEO."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Microinteracciones",
+          "titulo": "Ausencia de microinteracciones que refuercen el storytelling",
+          "detalle": "La web es estática salvo por hovers básicos. <strong>Una agencia que vende creatividad y diseño debería usar su web como demo viva: scroll-triggered animations, transiciones entre secciones, cursor custom o reveal de imágenes son recursos que comunican la capacidad técnica del equipo</strong> mucho mejor que una sección de \"qué sabemos hacer\"."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Fotografía",
+          "titulo": "Equipo y oficina invisibles en la home",
+          "detalle": "La sección \"El equipo\" existe en /nosotros/la-agencia/ pero no aparece en home. <strong>Para una agencia de Zaragoza que compite con estudios remotos, mostrar las caras reales del equipo (Paula Garcés, Guillermo Rivera, Víctor Lallana) en un módulo de home humaniza la marca y genera más confianza</strong> que cualquier mensaje genérico de \"somos un equipo apasionado\"."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Desarrollo & Rendimiento",
+      "score": 9.5,
+      "hallazgos": [
+        {
+          "prioridad": "baja",
+          "impacto": "Performance",
+          "titulo": "Lighthouse perfecto: 100/100 en performance desktop y mobile",
+          "detalle": "Omnia es un caso ejemplar: LCP 0,2s en desktop, 0,1s en mobile, CLS prácticamente cero. <strong>El equipo ha hecho un trabajo técnico impecable y este es uno de los pocos puntos donde la web supera a competidores mucho más grandes</strong>. Mantener este estándar al añadir nuevas funcionalidades requiere disciplina (lazy loading, optimización de imágenes WebP, scripts diferidos) pero el cimiento ya está."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Accesibilidad",
+          "titulo": "Accessibility en 90/100 con margen para llegar a 95+",
+          "detalle": "El score de accesibilidad es bueno pero no perfecto. Los puntos típicos que restan son contraste de color en CTAs secundarios, labels en formularios, alt-text en imágenes decorativas. <strong>Una auditoría WCAG 2.1 AA completa con 2-3 fixes específicos llevaría la web a 95+ y permitiría usar el etiquetado de \"web accesible\" como argumento comercial</strong> con clientes B2B sensibles a normativa europea."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Seguridad y cabeceras",
+          "titulo": "Falta cabeceras de seguridad modernas",
+          "detalle": "La web no expone cabeceras como Content-Security-Policy, Permissions-Policy o Strict-Transport-Security con preload. <strong>Aunque WordPress es seguro de fábrica, una capa adicional de hardening (HTTP headers + WAF a nivel Cloudflare) reduce el riesgo de ataques automatizados y es algo que se puede ofrecer como upsell a clientes B2B</strong> que vienen del legal o sanitario."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Stack técnico",
+          "titulo": "WordPress optimizado pero limitado para proyectos enterprise",
+          "detalle": "Vuestra web va sobre WordPress, lo cual es perfecto para el ICP actual. Pero cuando aparezca un cliente B2B con necesidades de portal cliente, integración ERP, dashboard interno o e-commerce headless, <strong>WordPress se queda corto. Tener un partner técnico que pueda asumir esos proyectos en Next.js, Vue o stacks headless evita perder oportunidades enterprise</strong> que llegan a través de los clientes existentes."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Contenido",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "SEO técnico",
+          "titulo": "Score SEO 85/100, principal punto débil del Lighthouse",
+          "detalle": "Aunque el SEO es respetable, es el área con más recorrido. Posibles puntos: meta descriptions truncadas, headings sin estructura H1→H2→H3 estricta en algunas landing, schema.org limitado a Organization. <strong>Una auditoría técnica con Screaming Frog detectaría 30-40 fixes en una jornada y subiría el score a 95+</strong>, lo cual desbloquearía rankings adicionales en búsquedas de cola larga."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido y blog",
+          "titulo": "Blog poco activo y sin contenido pillar",
+          "detalle": "Una agencia que vende SEO debería tener blog activo como vitrina. <strong>Plantear 3-4 contenidos pillar de 3.000+ palabras al año (\"Guía SEO para clínicas privadas\", \"Cómo medir ROI de marketing en pymes B2B\") atraería búsquedas de tu ICP en lugar de leads aleatorios</strong> y posicionaría a Omnia como referente en Zaragoza-Aragón."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Local SEO",
+          "titulo": "Posicionamiento local Zaragoza con margen de optimización",
+          "detalle": "La ficha de Google Business y el localización en headings está, pero falta densidad de contenido geolocalizado: \"agencia marketing Zaragoza\", \"diseño web Aragón\". <strong>Una página dedicada a cada ICP con mención local explícita (\"Branding para clínicas en Zaragoza\") capta búsquedas comerciales con intención alta</strong> que tu actual home no rankea."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Datos estructurados",
+          "titulo": "Schema.org básico sin FAQ ni Review",
+          "detalle": "Detectamos schema Organization pero no FAQPage, Service ni Review. <strong>Añadir FAQPage en cada landing de servicio y Review en casos de éxito habilita rich snippets en SERP</strong> y aumenta CTR orgánico entre un 15-25% según los datos públicos de Google."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Reescritura del hero con caso real medible y CTA dual",
+    "detalle": "Sustituir \"transformar tu presencia online en una máquina de ventas\" por un titular específico con un dato real de un cliente (Alysa Psicología, Serrano Arquitectura) y dividir el CTA en dos: uno para auditoría gratuita SEO y otro para reunión estratégica.",
+    "impacto": "Esperable un incremento del 25-40% en conversión del tráfico actual, sin tocar la performance técnica que ya es excelente."
+  },
+  "_score": 7.6,
+  "_nombre": "Víctor",
+  "_icp": "Branding",
+  "resumen": [
+    "Omnia Estudio Creativo opera en Zaragoza con un posicionamiento claro de marketing 360 (branding, web, paid media) y una cartera de clientes pyme B2B sólida (Alysa Psicología, Serrano Arquitectura, Picasso Diario Íntimo, Vanilla). Hemos analizado omniaestudio.es en cuatro dimensiones — UX, UI, desarrollo y SEO — para identificar dónde hay fricción comercial y dónde hay oportunidad real de crecimiento.",
+    "Detectamos una plataforma técnicamente impecable: <strong>Lighthouse 100/100 en performance desktop y mobile</strong>, lo cual es excepcional. La oportunidad está en el storytelling y la conversión: el hero promete \"máquina de ventas\" sin demostrar el resultado con un caso medible, y el portfolio funciona como galería pero no como herramienta de venta consultiva.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> El cimiento técnico es de los mejores que hemos visto en agencias regionales — el reto está en convertir esa excelencia técnica en lenguaje de ventas que atraiga clientes B2B de mayor ticket."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 100,
+      "accessibility": 90,
+      "bestPractices": 100,
+      "seo": 85
+    },
+    "mobile": {
+      "performance": 100,
+      "accessibility": 90,
+      "bestPractices": 100,
+      "seo": 85
+    }
+  }
+}

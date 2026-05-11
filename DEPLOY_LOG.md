@@ -160,3 +160,51 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
   - Producción n8n NO modificada — la auditoría fue solo lectura
 
 ---
+
+## 2026-05-06 22:35 · Fix 404 SEO + 4 huérfanos sitemap
+
+- **SHA:** `8824898` (rama `main` en GitHub)
+- **Archivos:** `.htaccess`, `sitemap.xml`
+- **Origen:** detección durante auditoría SEO Semrush 2026-05-06. 2 URLs en top GSC daban 404 (slugs renombrados sin redirect). 4 posts ausentes del sitemap.
+- **Cambio .htaccess:** 2 reglas 301 nuevas tras línea 106:
+  - `/blog/tendencias-de-diseno-web-2026-rendimiento-velocidad-y-conversiones-que-realmente-importan/` → `/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/`
+  - `/blog/tendencias-de-desarrollo-web-2026-rentabilidad-rendimiento-y-arquitectura-real/` → `/blog/tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica/`
+- **Cambio sitemap.xml:** añadidas 4 entradas blog (vivas en producción, ausentes del sitemap):
+  - `/blog/agencia-diseno-ux-ui-evaluar-propuestas/`
+  - `/blog/como-elegir-agencia-ecommerce-barcelona/`
+  - `/blog/desarrollo-web-a-medida-vs-wordpress/`
+  - `/blog/tiendas-online-barcelona-puntos-friccion-conversion/`
+- **FTP:** `.htaccess` (226 OK) + `sitemap.xml` (226 OK) → ftp.trespuntoscomunicacion.es
+- **Verificación bypass cache:** ambas URLs antiguas devuelven 301 → URL correcta ✅ (con `?cb=${date}`)
+- **Pendiente Jordi:** Purgar Cloudflare las 3 URLs específicas (Cache → Configuration → Custom Purge → Purge by URL):
+  ```
+  https://www.trespuntoscomunicacion.es/blog/tendencias-de-diseno-web-2026-rendimiento-velocidad-y-conversiones-que-realmente-importan/
+  https://www.trespuntoscomunicacion.es/blog/tendencias-de-desarrollo-web-2026-rentabilidad-rendimiento-y-arquitectura-real/
+  https://www.trespuntoscomunicacion.es/sitemap.xml
+  ```
+- **Impacto esperado:** recuperar ~30 clicks/mes orgánicos perdidos + Google indexa 4 posts huérfanos.
+- **Acción siguiente recomendada:** tras purga, "Solicitar reindexación" en Search Console para las 4 URLs huérfanas (acelera detección).
+
+---
+
+## 2026-05-06 23:00 · GSC URL prefix property + Disavow inicial
+
+- **SHA archivo verificación GSC:** `ed987b8` (`googlef48129b76dca5bb5.html` en raíz)
+- **SHA fix htaccess (excepción strip .html para google verification):** `d6d159f`
+- **Acción:** Crear URL prefix property `https://www.trespuntoscomunicacion.es/` en Search Console (Domain property no permite Disavow tool — limitación legacy de Google).
+- **Verificación:** Método "Archivo HTML" via `googlef48129b76dca5bb5.html` (método "Google Analytics" falla porque Consent Mode v2 no carga GA hasta aceptar cookies).
+- **Hallazgo importante:** **GA verification de GSC no funcionará nunca con Consent Mode v2 activo**. Para futuras propiedades usar siempre método HTML file o GTM.
+- **Disavow upload:** 5 dominios rechazados, archivo `disavow-trespuntoscomunicacion-2026-05-06.txt`:
+  - `trespuntoscomunicacion.com` (dominio fantasma de Angel Garcia, riesgo Penguin alto)
+  - `practicalprivacyjj.blogspot.com`
+  - `lnksasunmjkl.blogspot.com`
+  - `metalinkas.blogspot.com`
+  - `relyfeasunml.blogspot.com`
+- **Archivos en producción a NO BORRAR:**
+  - `/googlef48129b76dca5bb5.html` (Google revalida periódicamente la URL prefix property)
+- **Fechas clave futuras:**
+  - **~2026-07-06**: 60 días — posible reversión si el disavow causa problemas
+  - **~2026-08-06**: 90 días — empezar a evaluar impacto en posiciones (`hiexperience.es` vs `trespuntos.es` en rankings)
+  - **Tarea pendiente**: cuando reset Semrush quota mañana, revisar los ~165 refdomains restantes y ampliar disavow si procede
+
+---

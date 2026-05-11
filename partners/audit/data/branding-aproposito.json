@@ -1,0 +1,157 @@
+{
+  "agencia": "Branding A Propósito",
+  "web": "brandingaproposito.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Embudo de conversión",
+          "titulo": "Cliente único visible (Adevinta) reduce credibilidad de tracción B2B",
+          "detalle": "El testimonial de Adevinta (Carlota Alegre) es potente, pero la cartera visible se limita a este único cliente. <strong>Para un trío consultivo que vende branding con storytelling, presentar al menos 4-6 casos diversos en sectores complementarios (humanidades, B2B tech, cultura, formación) generaría sensación de tracción real</strong> en lugar de \"un cliente fuerte y luego ¿qué?\" — narrativa peligrosa en un sector donde la confianza se construye por volumen demostrable."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Cualificación de leads",
+          "titulo": "Sin segmentación por tamaño de proyecto en el primer contacto",
+          "detalle": "El formulario de contacto admite cualquier tipo de consulta sin cualificación. <strong>Para un equipo consultivo de 3 personas (Elena, Yolanda, Mar), invertir 30-45 min en cada lead sin filtro previo es insostenible</strong>. Añadir presupuesto orientativo, naming + branding completo o intervención puntual permitiría priorizar conversaciones de fit real con la capacidad operativa del estudio."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Storytelling",
+          "titulo": "Tagline \"Branding con sentido para marcas humanas\" sin desarrollo en home",
+          "detalle": "El posicionamiento es claro y diferencial pero queda como eslogan sin desarrollo. <strong>Un manifiesto de 3-4 párrafos en home explicando qué significa exactamente \"marca humana\" — con ejemplos contrarios (\"no hacemos branding corporativo neutro\") — convertiría el tagline en filosofía operativa</strong> y atraería a clientes que ya están alineados ideológicamente con el enfoque."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Equipo",
+          "titulo": "Trío fundador no presentado individualmente con autoridad",
+          "detalle": "Elena Peinador (Co-CEO + Directora Creativa, copywriter 20 años) y Yolanda Vilà (estrategia + copywriting) son perfiles con autoridad real. <strong>Una sección \"equipo\" con foto profesional, micro-bio + linkedin de cada una humanizaría la marca y vendería la combinación creativa-estrategia-storytelling</strong> que es exactamente la propuesta de valor diferencial."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción Visual",
+      "score": 8.0,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Identidad visual",
+          "titulo": "Estética coherente pero con riesgo de saturación tipográfica",
+          "detalle": "El diseño tipográfico es trabajado y coherente con el discurso \"marcas humanas\" pero algunas secciones acumulan demasiados pesos y tamaños distintos. <strong>Reducir a una escala más controlada (3-4 tamaños tipográficos por página) sin perder la riqueza visual incrementaría la legibilidad</strong> y mantendría la coherencia de un estudio que vende rigor en el discurso."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "TBT",
+          "titulo": "Total Blocking Time desktop 420ms — alto para un sitio editorial",
+          "detalle": "TBT desktop de 420ms (umbral bueno ≤200ms) indica JavaScript pesado bloqueando la interactividad inicial. <strong>Auditar scripts de tracking, animaciones JS y chat widgets — aplicar defer/async + code-splitting reduciría TBT significativamente</strong>. Para un sitio que está casi perfecto en el resto de métricas, este es el detalle que separa 80 de 95 en Performance desktop."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Navegación",
+          "titulo": "Menú con copy creativo pero términos no estándar pueden confundir",
+          "detalle": "Los items de menú parecen creativos (en línea con el discurso de marca) pero pueden ser ambiguos para un visitante en su primera visita. <strong>Mantener el carácter editorial pero añadir un subtítulo descriptivo en hover o complementar con etiquetas funcionales convencionales</strong> facilitaría la navegación sin renunciar al tono diferencial."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Mobile",
+          "titulo": "Experiencia mobile cuidada pero infrautiliza el espacio del fold",
+          "detalle": "El mobile carga rápido (LCP 0.5s, CLS 0) pero el primer fold se queda corto en información comercial. <strong>Optimizar el hero mobile para incluir tagline + CTA + 3 keywords de servicios en el primer scroll capturaría más conversiones</strong> de tráfico mobile que típicamente no hace scroll completo en una primera visita."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Desarrollo & Rendimiento",
+      "score": 8.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "TBT desktop",
+          "titulo": "TBT desktop 420ms penaliza el score de Performance",
+          "detalle": "El sitio tiene métricas excelentes (LCP 0.5s, CLS 0.018, FCP 0.2s) pero el TBT desktop arrastra el score de Performance a 80. <strong>JavaScript bloqueante por encima de 350ms se nota en interacciones de usuario reales — clicks que no responden inmediatamente</strong>. Lighthouse penaliza fuerte. Solución: identificar el script causante con DevTools Performance + defer/async o cargar tras user interaction."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Resilencia",
+          "titulo": "Sin sistema de error tracking visible (Sentry, LogRocket o similar)",
+          "detalle": "No se detecta sistema de monitoring de errores en frontend ni mensajes de fallback amigables. <strong>Para un sitio comercial que es la entrada principal de leads, un sistema de error tracking + alertas Slack/email permite detectar y resolver bugs críticos antes de perder conversiones</strong> — herramientas como Sentry tienen plan free hasta 5K errores/mes que cubre sobradamente este volumen."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Imágenes",
+          "titulo": "Performance mobile excelente (100/100) — referente",
+          "detalle": "Score mobile de 100/100 con LCP 0.5s y CLS 0 son resultados excepcionales. <strong>Branding A Propósito puede usar este dato como argumento comercial cuando audita marcas de clientes</strong> — \"nuestra propia web es la prueba de que aplicamos lo que vendemos a nivel técnico\" es un argumento difícil de batir en un sector saturado de discurso sin demostración."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Best Practices",
+          "titulo": "Score Best Practices 96/100 — muy buen estado técnico",
+          "detalle": "Best Practices de 96 indica HTTPS bien configurado, sin vulnerabilidades en librerías y buena gestión de errores. <strong>El 4% restante suele ser warnings menores corregibles en una sesión de 30 min</strong> — actualizar 1-2 librerías obsoletas o limpiar console.log residuales en producción llevaría a 100."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Contenido",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Autoridad temática",
+          "titulo": "Sin blog editorial pese a vender storytelling y copywriting",
+          "detalle": "Branding A Propósito vende exactamente \"branding con sentido + storytelling + copywriting\" pero la web no tiene blog editorial visible. <strong>Para Elena (copywriter 20 años) y Yolanda (estrategia + copywriting) no publicar contenido editorial es paradoja profesional — equivalente a un chef sin reseñas culinarias o un fotógrafo sin portfolio</strong>. Un blog con 1-2 artículos/mes sobre naming, marca personal o storytelling capturaría tráfico orgánico de altísima calidad."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "GEO / IA",
+          "titulo": "Sin optimización para IAs en queries de \"branding humano\" o \"naming consultivo\"",
+          "detalle": "Las páginas no están estructuradas para ser citadas por ChatGPT, Perplexity o Gemini en queries del nicho \"agencia branding humano\", \"naming consultivo Barcelona\" o \"copywriting marca personal\". <strong>Un archivo llms.txt + Schema Organization con foundingDate + employees + serviceArea consolidaría el estudio como fuente citable</strong> en las respuestas de IA donde se está moviendo cada vez más tráfico de descubrimiento."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Local SEO",
+          "titulo": "Barcelona como territorio principal pero sin schema LocalBusiness",
+          "detalle": "El estudio opera desde Barcelona pero no expone schema LocalBusiness con dirección, opening hours ni service area. <strong>Para un equipo de 3 personas, el SEO local es palanca de captación inmediata: queries tipo \"agencia branding consultivo Barcelona\" o \"naming Barcelona\" se ganan con LocalBusiness + Google Business Profile bien configurado</strong>."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Pillar content",
+          "titulo": "Servicios listados sin landing pages dedicadas con keyword targeting",
+          "detalle": "Storytelling, naming, branding, marca personal y formación son servicios potentes pero no tienen landing pages individuales con copy y keywords trabajadas. <strong>5 landing pages dedicadas (una por servicio) con 800-1200 palabras de contenido + casos de éxito + FAQ con schema multiplicaría la presencia orgánica</strong> en queries comerciales específicas con intent de compra."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Lanzar blog editorial con 4-6 artículos pillar sobre naming, storytelling y marca personal",
+    "detalle": "Un trío consultivo con +20 años de copywriting (Elena) + estrategia (Yolanda) que no publica contenido editorial es paradoja profesional pura. Plan inicial: 4-6 artículos pillar (1500-2500 palabras cada uno) sobre los servicios core (naming consultivo, storytelling para marcas humanas, marca personal sin postureo, branding y propósito). Cada artículo con schema Article + author Person + FAQ.",
+    "impacto": "El blog construiría autoridad temática única en español: nicho \"branding consultivo + storytelling + propósito\" tiene poca competencia pero búsquedas constantes. Captación de leads orgánicos de alta calidad (alineados ideológicamente con el enfoque) en 3-6 meses. Adicional: cada artículo es activo de outreach reutilizable en LinkedIn, newsletter y propuestas comerciales."
+  },
+  "_score": 7.5,
+  "_nombre": "Elena",
+  "_icp": "Branding",
+  "resumen": [
+    "Branding A Propósito es un trío consultivo con autoridad real: Elena Peinador (Co-CEO + copywriter 20 años), Yolanda Vilà (estrategia + copywriting) y Mar trabajan desde Barcelona el nicho \"branding con sentido para marcas humanas\". Hemos analizado brandingaproposito.com en cuatro dimensiones — UX, UI, Desarrollo y SEO — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma técnicamente excelente (Performance mobile 100/100, LCP 0.5s — referente del sector) y con UI cuidada y coherente con el discurso. Las debilidades principales están en SEO (7.0/10): ausencia de blog editorial pese a vender exactamente copywriting + storytelling, sin optimización para respuestas IA, y sin schema LocalBusiness. UX/Conversión (6.5/10) sufre por single-client risk (solo Adevinta visible) y formulario sin cualificación.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en construir autoridad temática y en capturar el flujo de leads que ya está buscando exactamente este enfoque consultivo de marca."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 80,
+      "accessibility": 91,
+      "bestPractices": 96,
+      "seo": 100
+    },
+    "mobile": {
+      "performance": 100,
+      "accessibility": 91,
+      "bestPractices": 100,
+      "seo": 100
+    }
+  }
+}

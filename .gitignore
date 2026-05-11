@@ -43,3 +43,15 @@ Thumbs.db
 *.zip
 *.backup
 js/*.backup
+
+# Herramientas de testing (artefactos, no fuentes)
+.playwright-mcp/
+playwright-test-home.jpeg
+scripts/jordan-e2e/node_modules/
+scripts/jordan-e2e/report.json
+scripts/jordan-e2e/screenshot-*.png
+scripts/smoke-test/report.html
+scripts/smoke-test/screenshot-*.png
+
+# Backups de casos (no deben quedar en el repo)
+casos-de-negocio/index-v1-backup.html

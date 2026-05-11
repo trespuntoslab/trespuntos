@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- CookieConsent v3 (self-hosted, GDPR, consent mode v2) + GA4 condicional — post-LCP -->
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css">
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css">
+  </noscript>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var s1 = document.createElement('script');
+        s1.src = '/assets/cookieconsent/cookieconsent.umd.js';
+        s1.onload = function () {
+          var s2 = document.createElement('script');
+          s2.src = '/assets/cookieconsent/cookieconsent-init.js?v=20260416';
+          document.head.appendChild(s2);
+        };
+        document.head.appendChild(s1);
+      }, 800);
+    });
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#5dffbf">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plataforma inmobiliaria WordPress | Caso Naranja Inmobiliaria · Tres Puntos</title>
+  <meta name="description" content="Diseño y desarrollo de plataforma inmobiliaria en WordPress a medida para Naranja Inmobiliaria en Barcelona y Santa Coloma de Gramenet. UX/UI, buscador propio y captador online." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/casos-de-negocio/naranja/" />
+  <meta property="og:title" content="Naranja Inmobiliaria · Plataforma inmobiliaria WordPress a medida" />
+  <meta property="og:description" content="Arquitectura web, UX/UI y desarrollo WordPress para una inmobiliaria barcelonesa. Captador online, fichas de propiedad, simulador hipotecario y panel de gestión autónomo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/casos-de-negocio/naranja/" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og/caso-naranja.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Tres Puntos Comunicación" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Naranja Inmobiliaria · Plataforma inmobiliaria WordPress a medida" />
+  <meta name="twitter:description" content="Arquitectura web, UX/UI y desarrollo WordPress para una inmobiliaria barcelonesa. Captador online, fichas de propiedad y panel de gestión autónomo." />
+  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og/caso-naranja.png" />
+
+  <!-- Schema: Article -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "name": "Plataforma inmobiliaria WordPress a medida — Caso Naranja Inmobiliaria",
+      "headline": "Diseño y desarrollo de plataforma inmobiliaria en WordPress para Naranja Inmobiliaria",
+      "description": "Diseño y desarrollo de plataforma inmobiliaria en WordPress a medida para Naranja Inmobiliaria en Barcelona y Santa Coloma de Gramenet. UX/UI, buscador propio y captador online.",
+      "author": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "url": "https://www.trespuntoscomunicacion.es"
+      },
+      "datePublished": "2026-05-03",
+      "dateModified": "2026-05-11",
+      "keywords": ["plataforma inmobiliaria wordpress", "diseño web inmobiliaria barcelona", "desarrollo web wordpress a medida", "ux ui inmobiliaria", "arquitectura web inmobiliaria"]
+    }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tarda en desarrollarse una web inmobiliaria en WordPress a medida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un proyecto con buscador propio, fichas de propiedad, captador de vendedores y simulador hipotecario tarda entre 8 y 14 semanas desde el arranque hasta el lanzamiento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito un plugin específico para gestionar propiedades en WordPress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para proyectos inmobiliarios desarrollamos un plugin a medida basado en Custom Post Types, mucho más eficiente que los plugins genéricos. El equipo puede publicar, editar y retirar propiedades sin intervención técnica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿La web puede publicar automáticamente en Idealista o Fotocasa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, es posible sincronizar el catálogo con los principales portales mediante feeds XML o APIs. La arquitectura que desarrollamos lo permite según las necesidades de cada agencia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo añadir un simulador hipotecario a mi web inmobiliaria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Es uno de los elementos que más conversión aporta en webs inmobiliarias y lo integramos como módulo nativo, sin depender de servicios externos."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <!-- BreadcrumbList -->
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.trespuntoscomunicacion.es/"},{"@type":"ListItem","position":2,"name":"Casos de Negocio","item":"https://www.trespuntoscomunicacion.es/casos-de-negocio/"},{"@type":"ListItem","position":3,"name":"Naranja Inmobiliaria"}]}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="/css/case-study.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="/css/design-system.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/service-page.css">
+    <link rel="stylesheet" href="/css/case-study.css">
+  </noscript>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+  <style>@font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}@font-face{font-family:'Jakarta Fallback';src:local('Arial Black');size-adjust:95%;ascent-override:100%;descent-override:22%;line-gap-override:0%}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--mint:#5dffbf;--mint-rgb:93,255,191;--bg-base:#0e0e0e;--bg-surface:#141414;--text-primary:#f5f5f5;--text-secondary:#b3b3b3;--text-muted:#8a8a8a;--font-heading:'Plus Jakarta Sans','Jakarta Fallback',sans-serif;--font-body:'Inter','Inter Fallback',sans-serif;--radius-md:10px;--radius-lg:14px;--radius-full:9999px}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg-base);color:var(--text-primary);-webkit-font-smoothing:antialiased;overflow-x:hidden}.container-main{max-width:1200px;margin:0 auto;padding:0 1.5rem}#tp-navbar{position:fixed;top:0;left:0;right:0;z-index:1000;min-height:72px}
+  </style>
+  <style>
+    /* Mobile split block — naranja */
+    .cs-mobile-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .cs-mobile-split-copy h2 {
+      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+    }
+    .cs-mobile-split-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .875rem;
+    }
+    .cs-mobile-split-list li {
+      display: flex;
+      gap: .875rem;
+      align-items: flex-start;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      font-size: .95rem;
+    }
+    .cs-mobile-split-list li::before {
+      content: '→';
+      color: var(--mint);
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+    .cs-mobile-split-phone {
+      display: flex;
+      justify-content: center;
+    }
+    .cs-mobile-split-phone .cs-phone-frame--video {
+      max-width: 270px;
+      width: 100%;
+    }
+    @media (max-width: 900px) {
+      .cs-mobile-split {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .cs-mobile-split-phone .cs-phone-frame--video {
+        max-width: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="tp-navbar"></div>
+
+  <!-- ════════════════════════════════════════════════════════
+       1. HERO HEADER
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-header" aria-label="Información del caso">
+    <div class="container-main">
+      <div class="cs-header-content">
+        <div class="cs-header-copy cs-reveal">
+          <div class="cs-header-sector">INMOBILIARIA · BARCELONA</div>
+          <h1 class="cs-header-name">Naranja Inmobiliaria</h1>
+          <div class="cs-header-services"><strong>Servicios:</strong> UX/UI · Desarrollo WordPress a medida · Arquitectura web</div>
+          <div class="cs-header-brief">Plataforma inmobiliaria completa con buscador propio, fichas de propiedad, captador de vendedores, simulador hipotecario y panel de gestión autónomo para una agencia barcelonesa con presencia en Santa Coloma de Gramenet y Trinitat Vella.</div>
+        </div>
+        <div class="cs-overview-meta cs-reveal cs-reveal-delay-1">
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Cliente</div>
+            <div class="cs-meta-value">Naranja Inmobiliaria</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Sector</div>
+            <div class="cs-meta-value">Inmobiliaria · Servicios locales</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Servicios</div>
+            <div class="cs-meta-value">UX/UI · WordPress · Arquitectura web</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Web</div>
+            <div class="cs-meta-value"><a href="https://naranjainmobiliaria.com" target="_blank" rel="noopener" style="color: var(--mint); text-decoration: none;">naranjainmobiliaria.com &#8599;</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       2. BROWSER FULLWIDTH — Homepage
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-base cs-padding-xl" aria-label="Vista de la plataforma">
+    <div class="container-main">
+      <div class="cs-browser-fullwidth cs-reveal-scale">
+        <div class="cs-browser">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">naranjainmobiliaria.com</span>
+          </div>
+          <div class="cs-browser-screen">
+            <img src="/img/casos/naranja/desktop-01.webp" alt="Homepage de Naranja Inmobiliaria con buscador de propiedades" width="1920" height="1080" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       3. OVERVIEW — Narrativa
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-overview" aria-label="El proyecto">
+    <div class="container-main">
+      <div class="cs-overview-grid">
+        <div class="cs-overview-narrative cs-reveal">
+          <span class="section-badge"><span class="badge-dot"></span>El proyecto</span>
+          <h2>Una inmobiliaria local con presencia digital de agencia grande</h2>
+          <div class="cs-overview-text">
+            <p>Naranja Inmobiliaria opera en Barcelona y Santa Coloma de Gramenet con un equipo especializado en compraventa, alquiler y valoración de inmuebles. Necesitaban una plataforma que reflejara su nivel de servicio y que funcionara como un captador activo de compradores, vendedores y propiedades.</p>
+            <p>El proyecto arrancó desde cero: arquitectura de información pensada para tres perfiles de usuario distintos, diseño de experiencia mobile-first, desarrollo WordPress completamente a medida con plugin inmobiliario propio, buscador avanzado con filtros y un ecosistema de herramientas —simulador hipotecario, tasación online, formularios de captación— que convierten la web en una extensión del equipo comercial.</p>
+          </div>
+        </div>
+        <div class="cs-overview-meta cs-reveal cs-reveal-delay-1">
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Cliente</div>
+            <div class="cs-meta-value">Naranja Inmobiliaria</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Sector</div>
+            <div class="cs-meta-value">Inmobiliaria · Servicios locales</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Servicios</div>
+            <div class="cs-meta-value">
+              <div class="cs-hero-tags">
+                <span class="cs-hero-tag">UX/UI</span>
+                <span class="cs-hero-tag">WordPress a medida</span>
+                <span class="cs-hero-tag">Arquitectura web</span>
+              </div>
+            </div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-label">Web</div>
+            <div class="cs-meta-value"><a href="https://naranjainmobiliaria.com" target="_blank" rel="noopener" style="color: var(--mint); text-decoration: none;">naranjainmobiliaria.com &#8599;</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       4. STATEMENT 1
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-statement" aria-label="Contexto">
+    <div class="cs-particles">
+      <div class="cs-particle"></div><div class="cs-particle"></div><div class="cs-particle"></div>
+      <div class="cs-particle"></div><div class="cs-particle"></div><div class="cs-particle"></div>
+    </div>
+    <div class="container-main">
+      <div class="cs-reveal-blur">
+        <div class="cs-line-draw cs-reveal"></div>
+        <p class="cs-statement-text">Una web inmobiliaria no es un catálogo de pisos. Es el primer comercial que trabaja 24 horas.</p>
+        <p class="cs-statement-sub">Diseñada para captar compradores, atraer vendedores y convertir visitas en contactos reales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       5. CHALLENGE
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-challenge cs-padding-xl" aria-label="El reto">
+    <div class="container-main">
+      <div class="cs-challenge-layout">
+        <div class="cs-challenge-copy cs-reveal">
+          <span class="section-badge"><span class="badge-dot"></span>El reto</span>
+          <h2>Competir online sin perder el trato humano</h2>
+          <div class="cs-body-text">
+            <p>Las inmobiliarias locales se enfrentan a un reto doble: los grandes portales (Idealista, Fotocasa) acaparan el tráfico de búsqueda, y los CMS genéricos no tienen la estructura que necesita una agencia para gestionar su catálogo de forma eficiente.</p>
+            <p>Naranja necesitaba su propio espacio digital donde la marca, el equipo y la cercanía del servicio fueran el diferenciador. Una plataforma autónoma: que el equipo pudiera publicar, actualizar precios y retirar inmuebles sin depender de ningún desarrollador.</p>
+          </div>
+        </div>
+        <div class="cs-signals cs-reveal cs-reveal-delay-1">
+          <div class="cs-signals-title">Señales de fricción detectadas</div>
+          <div class="cs-signal-item">
+            <div class="cs-signal-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="cs-signal-text">
+              <strong>Sin captador online propio</strong>
+              <span>El usuario que quería vender solo podía llamar por teléfono o acudir a la oficina. Leads perdidos sin registro.</span>
+            </div>
+          </div>
+          <div class="cs-signal-item">
+            <div class="cs-signal-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="cs-signal-text">
+              <strong>Dependencia total de portales externos</strong>
+              <span>Idealista y Fotocasa acaparaban el tráfico sin dejar datos del lead. La agencia pagaba sin retener audiencia.</span>
+            </div>
+          </div>
+          <div class="cs-signal-item">
+            <div class="cs-signal-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="cs-signal-text">
+              <strong>Sin herramientas de valor</strong>
+              <span>Ni simulador hipotecario, ni tasación online, ni alertas de propiedades. Sin razones para volver a la web.</span>
+            </div>
+          </div>
+          <div class="cs-signal-item">
+            <div class="cs-signal-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="cs-signal-text">
+              <strong>CMS sin estructura inmobiliaria</strong>
+              <span>Gestionar el catálogo de pisos era lento y complejo. Cualquier cambio requería intervención técnica.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       6. APPROACH CARDS
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-padding-xl" aria-label="La solución">
+    <div class="container-main">
+      <div class="cs-approach-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>La solución</span>
+        <h2>Tres pilares para una plataforma que trabaja sola</h2>
+        <p class="cs-section-intro">Arquitectura, diseño y desarrollo construidos en paralelo para que el resultado sea coherente de punta a punta.</p>
+      </div>
+      <div class="cs-approach-cards">
+        <div class="cs-approach-card cs-reveal">
+          <div class="cs-approach-card-number">01</div>
+          <h3>Arquitectura de información</h3>
+          <ul class="cs-approach-card-list">
+            <li>Estructura de navegación para tres perfiles: comprador, vendedor y curioso</li>
+            <li>Buscador avanzado con filtros por zona, precio, tipo y estado</li>
+            <li>Fichas de propiedad con galería, características y formulario integrado</li>
+            <li>Secciones de captación: tasación online, alertas y simulador hipotecario</li>
+          </ul>
+        </div>
+        <div class="cs-approach-card cs-reveal cs-reveal-delay-1">
+          <div class="cs-approach-card-number">02</div>
+          <h3>UX/UI Mobile-first</h3>
+          <ul class="cs-approach-card-list">
+            <li>Identidad visual limpia con el naranja corporativo como acento de confianza</li>
+            <li>Diseño mobile-first real: el 70%+ del tráfico inmobiliario llega desde el móvil</li>
+            <li>Navegación adaptada al proceso de búsqueda real del comprador</li>
+            <li>Fotografías de propiedad en primer plano, sin ruido visual que distraiga</li>
+          </ul>
+        </div>
+        <div class="cs-approach-card cs-reveal cs-reveal-delay-2">
+          <div class="cs-approach-card-number">03</div>
+          <h3>WordPress a medida</h3>
+          <ul class="cs-approach-card-list">
+            <li>Plugin inmobiliario propio con Custom Post Types para propiedades</li>
+            <li>Taxonomías por zona, tipo, precio y estado para filtrado preciso</li>
+            <li>Panel de gestión intuitivo: publicar o retirar un piso en menos de 5 minutos</li>
+            <li>El equipo gestiona el catálogo completo de forma autónoma, sin código</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       7. PLATFORM GALLERY
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-surface cs-padding-xl" aria-label="La plataforma">
+    <div class="container-main">
+      <div class="cs-showcase-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>La plataforma</span>
+        <h2>Cada sección diseñada para un propósito</h2>
+        <p class="cs-section-intro">Desde el listado de propiedades hasta la ficha individual y la página de contacto: sin fricciones.</p>
+      </div>
+      <div class="cs-platform-gallery">
+        <div class="cs-browser cs-reveal-scale">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">naranjainmobiliaria.com — Agencia</span>
+          </div>
+          <div class="cs-browser-screen">
+            <img src="/img/casos/naranja/desktop-06.webp" alt="Página de la agencia Naranja Inmobiliaria con equipo y oficinas" loading="lazy" />
+          </div>
+        </div>
+        <div class="cs-browser cs-reveal-scale">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">naranjainmobiliaria.com — Propiedades en venta</span>
+          </div>
+          <div class="cs-browser-screen">
+            <img src="/img/casos/naranja/desktop-03.webp" alt="Listado de propiedades en venta con precios y etiquetas de estado" loading="lazy" />
+          </div>
+        </div>
+        <div class="cs-browser cs-reveal-scale">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">naranjainmobiliaria.com — Ficha de propiedad</span>
+          </div>
+          <div class="cs-browser-screen">
+            <img src="/img/casos/naranja/desktop-04.webp" alt="Ficha de propiedad con descripción, precio y formulario de contacto" loading="lazy" />
+          </div>
+        </div>
+        <div class="cs-browser cs-reveal-scale cs-platform-gallery--wide">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">naranjainmobiliaria.com — Servicios y contacto</span>
+          </div>
+          <div class="cs-browser-screen">
+            <img src="/img/casos/naranja/desktop-05.webp" alt="Sección de servicios con simulador hipotecario y formulario lateral" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       8. STATEMENT 2
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-statement cs-bg-subtle" aria-label="Reflexión">
+    <div class="container-main">
+      <div class="cs-reveal-blur">
+        <p class="cs-statement-text">El usuario que busca piso en Barcelona compara 6 portales en 40 minutos. Tu web tiene que ganarse ese tiempo.</p>
+        <p class="cs-statement-sub">Velocidad, claridad y confianza desde el primer scroll.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       9. PHONE CAROUSEL
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-base cs-padding-xl" aria-label="Experiencia móvil">
+    <div class="container-main">
+      <div class="cs-showcase-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Experiencia móvil</span>
+        <h2>Navegación diseñada para el móvil donde ocurre la búsqueda real</h2>
+        <p class="cs-section-intro">El 70% de las búsquedas inmobiliarias empiezan en el teléfono. Cada pantalla está optimizada para ese momento.</p>
+      </div>
+    </div>
+    <div class="cs-phone-carousel-wrapper">
+      <div class="cs-phone-carousel-track">
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-01.webp" alt="Homepage móvil Naranja Inmobiliaria con buscador" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-02.webp" alt="Sección de servicios en móvil" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-03.webp" alt="Listado de propiedades en móvil" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-04.webp" alt="Filtros de búsqueda en móvil" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-05.webp" alt="Ficha de propiedad en móvil con galería" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-06.webp" alt="Vista de propiedad exclusiva con precio y contacto" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-07.webp" alt="Página de la agencia en móvil" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-08.webp" alt="Sección de reseñas y valoraciones en móvil" loading="lazy" /></div></div>
+        <!-- Duplicate set for infinite loop -->
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-01.webp" alt="Homepage móvil Naranja Inmobiliaria con buscador" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-02.webp" alt="Sección de servicios en móvil" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-03.webp" alt="Listado de propiedades en móvil" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-04.webp" alt="Filtros de búsqueda en móvil" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-05.webp" alt="Ficha de propiedad en móvil con galería" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-06.webp" alt="Vista de propiedad exclusiva con precio y contacto" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-07.webp" alt="Página de la agencia en móvil" loading="lazy" /></div></div>
+        <div class="cs-phone-frame"><div class="cs-phone-screen"><img src="/img/casos/naranja/mobile-08.webp" alt="Sección de reseñas y valoraciones en móvil" loading="lazy" /></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       10. MOBILE VIDEO — Split layout
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-padding-xl" aria-label="Experiencia móvil">
+    <div class="container-main">
+      <div class="cs-mobile-split">
+        <div class="cs-mobile-split-copy cs-reveal">
+          <span class="section-badge"><span class="badge-dot"></span>Experiencia móvil</span>
+          <h2>La experiencia real de buscar piso desde el teléfono</h2>
+          <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:2rem;">Diseñada para el momento exacto: cuando alguien busca desde el sofá, la parada del bus o el portal de al lado.</p>
+          <ul class="cs-mobile-split-list">
+            <li>Buscador con filtros por zona, precio y tipo de propiedad</li>
+            <li>Ficha completa con galería, características y contacto directo</li>
+            <li>Formulario de contacto sin salir de la ficha, en dos toques</li>
+          </ul>
+        </div>
+        <div class="cs-mobile-split-phone cs-reveal-scale">
+          <div class="cs-phone-frame cs-phone-frame--video">
+            <div class="cs-phone-screen">
+              <video autoplay muted loop playsinline preload="auto" poster="/img/casos/naranja/video-mobile-01-poster.webp">
+                <source src="/img/casos/naranja/video-mobile-01.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       11. BROWSER SHOWCASE — Desktop video
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-surface cs-padding-xl" aria-label="Demo de plataforma">
+    <div class="container-main">
+      <div class="cs-showcase-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Demo de plataforma</span>
+        <h2>Una inmobiliaria que se gestiona sola</h2>
+        <p class="cs-section-intro">El equipo de Naranja publica y actualiza propiedades desde el panel de WordPress. Sin código, sin esperas.</p>
+      </div>
+      <div class="cs-browser-fullwidth cs-reveal-scale" style="margin-top: 4rem;">
+        <div class="cs-browser">
+          <div class="cs-browser-bar">
+            <div class="cs-browser-dots">
+              <span class="cs-browser-dot red"></span>
+              <span class="cs-browser-dot yellow"></span>
+              <span class="cs-browser-dot green"></span>
+            </div>
+            <span class="cs-browser-url">naranjainmobiliaria.com</span>
+          </div>
+          <div class="cs-browser-screen">
+            <div class="cs-browser-video-wrapper">
+              <video autoplay muted loop playsinline poster="/img/casos/naranja/video-desktop-01-poster.webp">
+                <source src="/img/casos/naranja/video-desktop-01.mp4" type="video/mp4">
+                <img src="/img/casos/naranja/desktop-02.webp" alt="Naranja Inmobiliaria plataforma desktop" width="1920" height="1080" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       12. MARQUEE
+       ════════════════════════════════════════════════════════ -->
+  <div class="cs-marquee-container">
+    <div class="cs-marquee-content">
+      <span class="cs-marquee-item">Comprar</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Vender</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Alquilar</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Valorar</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Barcelona</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Santa Coloma</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">WordPress a medida</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">UX/UI</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Inmobiliaria local</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Arquitectura web</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <!-- Duplicate -->
+      <span class="cs-marquee-item">Comprar</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Vender</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Alquilar</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Valorar</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Barcelona</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Santa Coloma</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">WordPress a medida</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">UX/UI</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Inmobiliaria local</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+      <span class="cs-marquee-item">Arquitectura web</span><span class="cs-marquee-item cs-marquee-item--accent">·</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════
+       13. IMPACT GRID
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-feature-block cs-bg-base cs-padding-xl" aria-label="Resultados">
+    <div class="container-main">
+      <div class="cs-approach-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Resultados</span>
+        <h2>Presencia digital lista para crecer</h2>
+      </div>
+      <div class="cs-impact-grid">
+        <div class="cs-impact-card cs-reveal">
+          <div class="cs-impact-card-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+          </div>
+          <h3>Captación online activa</h3>
+          <p>Formularios de venta y valoración generan leads al instante, sin intermediarios ni pérdida de contactos.</p>
+        </div>
+        <div class="cs-impact-card cs-reveal cs-reveal-delay-1">
+          <div class="cs-impact-card-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" /></svg>
+          </div>
+          <h3>Identidad digital propia</h3>
+          <p>Fuera de los portales genéricos, la marca Naranja habla por sí sola con coherencia visual y tono de confianza.</p>
+        </div>
+        <div class="cs-impact-card cs-reveal cs-reveal-delay-2">
+          <div class="cs-impact-card-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" /></svg>
+          </div>
+          <h3>Autonomía total del equipo</h3>
+          <p>Publicar, editar o retirar propiedades desde el panel de WordPress. Sin una sola línea de código.</p>
+        </div>
+        <div class="cs-impact-card cs-reveal cs-reveal-delay-3">
+          <div class="cs-impact-card-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" /></svg>
+          </div>
+          <h3>Arquitectura escalable</h3>
+          <p>Nuevas zonas, agentes y tipologías se añaden sin rediseño. La plataforma crece con el negocio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       14. QUOTE
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-quote cs-padding-xl" aria-label="Comentario del experto">
+    <div class="container-main">
+      <div class="cs-quote-inner cs-reveal">
+        <div class="cs-quote-mark">&ldquo;</div>
+        <blockquote>Hicimos una web que vende sin vender. Que informa, genera confianza y convierte visitantes en contactos antes de que suene el teléfono.</blockquote>
+        <p class="cs-quote-body" style="font-size:1.1rem; color: var(--text-secondary); line-height:1.7; margin-bottom:3rem; max-width:700px; margin-left:auto; margin-right:auto;">
+          El sector inmobiliario local compite con plataformas de millones de euros de inversión en marketing. La única forma de diferenciarse es con una experiencia de usuario superior y una arquitectura pensada para el proceso de compra real, no para mostrar pisos como en un catálogo de papel.
+        </p>
+        <div class="cs-quote-author">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="cs-quote-avatar" width="60" height="60" loading="lazy">
+          <div class="cs-quote-author-info">
+            <div class="cs-quote-name">Jordi Expósito</div>
+            <div class="cs-quote-role">Digital Project Lead · Tres Puntos Comunicación</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       15. SERVICES
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-services cs-padding-xl" aria-label="Servicios aplicados">
+    <div class="container-main">
+      <div class="cs-services-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Servicios aplicados</span>
+        <h2>Lo que construimos para Naranja</h2>
+      </div>
+      <div class="cs-services-grid">
+        <a href="/servicios/diseno-ux-ui-barcelona/" class="cs-service-link cs-reveal">
+          <div class="cs-service-link-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" /></svg>
+          </div>
+          <h3>Diseño UX/UI</h3>
+          <p>Arquitectura de información, wireframes y diseño de interfaz centrado en el proceso de búsqueda inmobiliaria.</p>
+          <div class="cs-service-link-cta">
+            Ver servicio
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+        <a href="/servicios/desarrollo-web-a-medida-barcelona/" class="cs-service-link cs-reveal cs-reveal-delay-1">
+          <div class="cs-service-link-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg>
+          </div>
+          <h3>Desarrollo WordPress a medida</h3>
+          <p>Plugin inmobiliario propio, Custom Post Types, buscador avanzado y panel de gestión autónomo para el equipo.</p>
+          <div class="cs-service-link-cta">
+            Ver servicio
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+        <a href="/arquitectura-digital-conversion/" class="cs-service-link cs-reveal cs-reveal-delay-2">
+          <div class="cs-service-link-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+          </div>
+          <h3>Arquitectura digital de conversión</h3>
+          <p>Estructura de navegación y embudo de conversión diseñados para captar compradores, vendedores y propiedades.</p>
+          <div class="cs-service-link-cta">
+            Ver servicio
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       16. FAQ
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-faq cs-padding-xl" aria-label="Preguntas frecuentes">
+    <div class="container-main">
+      <div class="cs-faq-header cs-reveal">
+        <span class="section-badge"><span class="badge-dot"></span>Preguntas frecuentes</span>
+        <h2>Lo que más nos preguntan sobre proyectos inmobiliarios</h2>
+      </div>
+      <div class="cs-faq-list">
+        <div class="cs-faq-item cs-reveal">
+          <button class="cs-faq-question" aria-expanded="false">
+            ¿Cuánto tarda en desarrollarse una web inmobiliaria en WordPress a medida?
+            <svg class="cs-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="cs-faq-answer">
+            <div class="cs-faq-answer-inner">Un proyecto como el de Naranja, con buscador propio, fichas de propiedad, captador de vendedores y simulador hipotecario, tarda entre 8 y 14 semanas desde el arranque hasta el lanzamiento. El tiempo depende principalmente de la complejidad del catálogo de propiedades y de las integraciones necesarias con portales externos.</div>
+          </div>
+        </div>
+        <div class="cs-faq-item cs-reveal cs-reveal-delay-1">
+          <button class="cs-faq-question" aria-expanded="false">
+            ¿Necesito un plugin específico para gestionar propiedades en WordPress?
+            <svg class="cs-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="cs-faq-answer">
+            <div class="cs-faq-answer-inner">Para proyectos como este desarrollamos un plugin a medida basado en Custom Post Types, mucho más eficiente y adaptado al flujo de trabajo real de la agencia que los plugins genéricos de gestión inmobiliaria. El resultado es un panel intuitivo donde el equipo publica, edita y retira propiedades sin fricción técnica.</div>
+          </div>
+        </div>
+        <div class="cs-faq-item cs-reveal cs-reveal-delay-2">
+          <button class="cs-faq-question" aria-expanded="false">
+            ¿La web puede publicar automáticamente en Idealista o Fotocasa?
+            <svg class="cs-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="cs-faq-answer">
+            <div class="cs-faq-answer-inner">Sí, es posible sincronizar el catálogo de propiedades con los principales portales mediante feeds XML o APIs. La arquitectura que desarrollamos lo permite, aunque la integración con cada portal se configura según las necesidades y el volumen de propiedades de cada agencia.</div>
+          </div>
+        </div>
+        <div class="cs-faq-item cs-reveal cs-reveal-delay-3">
+          <button class="cs-faq-question" aria-expanded="false">
+            ¿Puedo añadir un simulador hipotecario a mi web inmobiliaria?
+            <svg class="cs-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="cs-faq-answer">
+            <div class="cs-faq-answer-inner">Es uno de los elementos que más conversión aporta en webs inmobiliarias. Permite al usuario calcular su cuota mensual sin salir de tu web, aumentando el tiempo en página y la probabilidad de que contacte con la agencia. Lo integramos como módulo nativo, sin depender de servicios externos.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       17. NEXT PROJECT
+       ════════════════════════════════════════════════════════ -->
+  <section class="cs-next-project" aria-label="Siguiente proyecto">
+    <div class="container-main">
+      <div class="cs-reveal">
+        <div class="cs-next-label">Siguiente proyecto</div>
+        <div class="cs-next-title">
+          <a href="/casos-de-negocio/gibobs/">Gibobs — Plataforma fintech de hipotecas &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       18. CTA FORM
+       ════════════════════════════════════════════════════════ -->
+  <section id="cierre" aria-label="Iniciar proyecto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy reveal">
+          <span class="section-badge reveal"><span class="badge-dot"></span>Siguiente paso</span>
+          <h2 class="cierre-h2">¿Tu proyecto <span class="text-gradient-standalone">empieza aquí</span>?</h2>
+          <p class="cierre-sub">Cuéntanos qué necesitas y te respondemos en menos de 24h con una primera valoración.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5" /></svg></div>
+              <span>Sin reunión de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5" /></svg></div>
+              <span>Respondemos en menos de 24h con una primera valoración de alcance.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5" /></svg></div>
+              <span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12.75l6 6 9-13.5" /></svg></div>
+              <span>El proyecto empieza con diagnóstico, no con propuesta económica genérica.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col">
+          <div class="cierre-form-inner" id="tp-cta-form">
+<div class="form-gradient-accent"></div>
+<div class="form-card-header">
+  <div class="form-card-title" style="font-size:1.25rem;font-weight:700;color:var(--mint);margin-bottom:.25rem;">Inicia el proyecto</div>
+  <div class="form-card-sub" style="font-size:.85rem;color:var(--text-muted);line-height:1.5;">En menos de 48h laborables tendrás una primera respuesta personalizada.</div>
+</div>
+<form>
+  <input type="text" name="hp_field" id="hp_field" style="position:absolute;left:-9999px;opacity:0;height:0;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+  <div class="form-row">
+    <div class="form-field">
+      <label class="label label-required" for="f-nombre">Nombre</label>
+      <input id="f-nombre" type="text" class="input" placeholder="¿Cómo te llamas?" autocomplete="name" required />
+      <span class="field-error" id="err-nombre"></span>
+    </div>
+    <div class="form-field">
+      <label class="label label-required" for="f-email">Email de empresa</label>
+      <input id="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
+      <span class="field-error" id="err-email"></span>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-field">
+      <label class="label label-required" for="f-tel">Teléfono</label>
+      <input id="f-tel" type="tel" class="input" placeholder="Tu teléfono" autocomplete="tel" required minlength="9" />
+      <span class="field-error" id="err-tel"></span>
+    </div>
+    <div class="form-field">
+      <label class="label label-required" for="f-presupuesto">Inversión estimada</label>
+      <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Inversión estimada">
+        <button type="button" class="custom-select-trigger" aria-label="Selecciona rango de inversión" aria-controls="cs-presupuesto-panel">
+          <span class="custom-select-value">Rango de inversión</span>
+          <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="custom-select-panel" role="listbox" id="cs-presupuesto-panel" aria-label="Opciones de presupuesto">
+          <div class="custom-select-option" role="option" data-value="5k-10k">5.000 € – 10.000 €</div>
+          <div class="custom-select-option" role="option" data-value="10k-15k">10.000 € – 15.000 €</div>
+          <div class="custom-select-option" role="option" data-value="15k-20k">15.000 € – 20.000 €</div>
+          <div class="custom-select-option" role="option" data-value="mas-20k">+ 20.000 €</div>
+        </div>
+      </div>
+      <input type="hidden" id="f-presupuesto" name="presupuesto" />
+      <span class="field-error" id="err-presupuesto"></span>
+    </div>
+  </div>
+  <div class="services-section">
+    <span class="services-label" id="services-label">¿En qué te podemos ayudar?</span>
+    <div class="services-grid" id="services-grid" role="group" aria-labelledby="services-label">
+      <div class="service-card" data-value="Diseño UX/UI" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Diseño UX/UI</span></div>
+      <div class="service-card" data-value="Desarrollo Web" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Desarrollo Web</span></div>
+      <div class="service-card" data-value="Tienda Online" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Tienda Online</span></div>
+      <div class="service-card" data-value="IA y Automatización" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">IA y Automatización</span></div>
+      <div class="service-card" data-value="Consultoría Digital" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Consultoría Digital</span></div>
+      <div class="service-card" data-value="Design Engineer" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Design Engineer</span></div>
+    </div>
+    <input type="hidden" id="f-servicios" name="servicio" />
+  </div>
+  <div class="form-field" style="margin-top:1.25rem;">
+    <label class="label" for="f-mensaje">Cuéntanos qué está pasando</label>
+    <textarea id="f-mensaje" class="input" rows="3" placeholder="Describe brevemente el proyecto. Qué quieres construir, qué problema tienes o qué no está funcionando en tu plataforma actual."></textarea>
+  </div>
+  <input type="hidden" id="f-pagina-origen" name="pagina_origen" />
+  <input type="hidden" id="f-utm-source" name="utm_source" />
+  <input type="hidden" id="f-utm-medium" name="utm_medium" />
+  <input type="hidden" id="f-utm-campaign" name="utm_campaign" />
+  <input type="hidden" id="f-referrer" name="referrer" />
+  <input type="hidden" id="f-timestamp" name="timestamp" />
+  <label class="checkbox-row" id="privacy-row" for="f-privacidad" style="margin-top:1rem;">
+    <input type="checkbox" id="f-privacidad" required />
+    <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+  </label>
+  <span class="field-error" id="err-privacidad"></span>
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAACv1HyITv5ZdYE50" data-theme="dark" data-size="invisible"></div>
+  <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn btn-disabled" style="width:100%;justify-content:center;">
+    Enviar mensaje
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+</form>
+<a href="/iniciar-proyecto/" class="briefing-banner" style="margin-top:.75rem;">
+  <div class="briefing-banner-icon">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+      <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="12" cy="12" r="10"/>
+    </svg>
+  </div>
+  <div class="briefing-banner-text">
+    <span class="briefing-banner-title">¿Tu proyecto es urgente?</span>
+    <span class="briefing-banner-desc">Cuéntanos más detalles y te enviamos una propuesta completa en 48h.</span>
+  </div>
+  <svg class="briefing-banner-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js?v=27" defer></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){
+    try{try{TP.navbar('casos-de-negocio');}catch(e){}}catch(e){console.warn("TP.navbar:",e);}
+    try{try{TP.footer();}catch(e){}}catch(e){console.warn("TP.footer:",e);}
+    try{try{TP.ctaForm();}catch(e){}}catch(e){console.warn("TP.ctaForm:",e);}
+    try{try{TP.initJS();}catch(e){}}catch(e){console.warn("TP.initJS:",e);}
+  });</script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js?v=20260416" defer></script>
+  <script src="/js/form-validation.js" defer></script>
+
+  <!-- Case Study Animations -->
+  <script>
+    (function () {
+      'use strict';
+
+      var revealEls = document.querySelectorAll('.cs-reveal, .cs-reveal-scale, .cs-reveal-left, .cs-reveal-right, .cs-reveal-blur, .cs-stagger, .cs-line-draw');
+      if (revealEls.length) {
+        requestAnimationFrame(function () {
+          revealEls.forEach(function (el) {
+            var rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) el.classList.add('visible');
+          });
+        });
+        var revealObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { if (!el.classList.contains('visible')) revealObs.observe(el); });
+      }
+
+      document.querySelectorAll('.cs-faq-question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.parentElement;
+          var isOpen = item.classList.contains('open');
+          document.querySelectorAll('.cs-faq-item.open').forEach(function (i) { i.classList.remove('open'); });
+          if (!isOpen) item.classList.add('open');
+          btn.setAttribute('aria-expanded', String(!isOpen));
+        });
+      });
+
+      var signalsBlock = document.querySelector('.cs-signals');
+      if (signalsBlock) {
+        var sigObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in-view'); sigObs.unobserve(e.target); }
+          });
+        }, { threshold: 0.25 });
+        sigObs.observe(signalsBlock);
+      }
+
+      // Split-phone video: play directly, no IO pause interference
+      var splitVideo = document.querySelector('.cs-mobile-split-phone video');
+      if (splitVideo) {
+        function playMobileSplit() {
+          splitVideo.muted = true; splitVideo.playsInline = true;
+          var p = splitVideo.play(); if (p && p.catch) p.catch(function(){});
+        }
+        [200, 600, 1200].forEach(function(ms) { setTimeout(playMobileSplit, ms); });
+        splitVideo.addEventListener('pause', function() {
+          if (!document.hidden) { var p = splitVideo.play(); if (p && p.catch) p.catch(function(){}); }
+        });
+      }
+
+      // Multi-phone videos (carousel / video-phones): IO play/pause
+      var phoneVideos = document.querySelectorAll('.cs-video-phones video, .cs-phone-frame--video video');
+      if (phoneVideos.length) {
+        var vidObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            var v = e.target;
+            if (e.isIntersecting) {
+              v.muted = true; v.playsInline = true;
+              var p = v.play();
+              if (p && p.catch) p.catch(function(){});
+            } else {
+              v.pause();
+            }
+          });
+        }, { threshold: 0.1 });
+        phoneVideos.forEach(function(v){ vidObs.observe(v); });
+      }
+
+      var carouselTrack = document.querySelector('.cs-phone-carousel-track');
+      if (carouselTrack) {
+        // RAF-based scroll: disable CSS animation, drive everything via JS for silky drag + inertia
+        carouselTrack.style.animation = 'none';
+        var halfWidth = 0;
+        var posX = 0;
+        var velocity = 0;
+        var isDragging = false;
+        var lastClientX = 0;
+        var lastMoveTime = 0;
+        var AUTO_PX_PER_SEC = 60; // auto-scroll speed
+
+        function initCarousel() {
+          halfWidth = carouselTrack.scrollWidth / 2;
+          requestAnimationFrame(tick);
+        }
+
+        var lastTs = 0;
+        function tick(ts) {
+          var dt = Math.min((ts - lastTs) / 1000, 0.1); // seconds, capped
+          lastTs = ts;
+          if (!isDragging) {
+            posX -= AUTO_PX_PER_SEC * dt;
+            // Apply inertia after drag release
+            if (Math.abs(velocity) > 0.5) {
+              posX += velocity * dt;
+              velocity *= Math.pow(0.92, dt * 60); // frame-rate independent damping
+            } else {
+              velocity = 0;
+            }
+          }
+          // Infinite wrap
+          if (halfWidth > 0) {
+            posX = ((posX % halfWidth) - halfWidth) % halfWidth;
+          }
+          carouselTrack.style.transform = 'translateX(' + posX + 'px)';
+          requestAnimationFrame(tick);
+        }
+
+        function onDragStart(x) {
+          isDragging = true;
+          lastClientX = x;
+          lastMoveTime = performance.now();
+          velocity = 0;
+          carouselTrack.classList.add('dragging');
+        }
+
+        function onDragMove(x) {
+          if (!isDragging) return;
+          var now = performance.now();
+          var dt = (now - lastMoveTime) || 16;
+          var dx = x - lastClientX;
+          velocity = (dx / dt) * 1000; // px/sec
+          posX += dx;
+          lastClientX = x;
+          lastMoveTime = now;
+        }
+
+        function onDragEnd() {
+          if (!isDragging) return;
+          isDragging = false;
+          carouselTrack.classList.remove('dragging');
+        }
+
+        carouselTrack.addEventListener('mousedown', function(e) { onDragStart(e.clientX); e.preventDefault(); });
+        document.addEventListener('mousemove', function(e) { onDragMove(e.clientX); });
+        document.addEventListener('mouseup', onDragEnd);
+        carouselTrack.addEventListener('touchstart', function(e) { onDragStart(e.touches[0].clientX); }, { passive: true });
+        carouselTrack.addEventListener('touchmove', function(e) { if (isDragging) { onDragMove(e.touches[0].clientX); e.preventDefault(); } }, { passive: false });
+        carouselTrack.addEventListener('touchend', onDragEnd);
+
+        // Init once fonts/images settle
+        if (document.readyState === 'complete') { initCarousel(); }
+        else { window.addEventListener('load', initCarousel); }
+      }
+    })();
+  </script>
+
+  <!-- Jordan — Agente Conversacional Tres Puntos -->
+  <script>
+  window.JordanConfig = {
+    webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
+    calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
+    avatar: '/assets/jordan/jordan-avatar.webp',
+    avatarVideo: '/assets/jordan/jordan-avatar-video.mp4',
+    position: 'right',
+    rules: [
+      { pattern: '/blog/*', show: false },
+      { pattern: '/checkout/*', show: false },
+      { pattern: '/login', show: false },
+      { pattern: '/politica-*', show: false },
+      { pattern: '/aviso-legal', show: false },
+      { pattern: '/casos/*', show: true, proactive: true, delay: 5 },
+      { pattern: '*', show: true, proactive: true, delay: 5 }
+    ]
+  };
+  </script>
+  <script async src="/assets/jordan/jordan-widget-v7.js"></script>
+
+</body>
+</html>

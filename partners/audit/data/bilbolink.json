@@ -1,0 +1,157 @@
+{
+  "agencia": "Bilbolink",
+  "web": "bilbolink.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Embudo de conversión",
+          "titulo": "Carrusel de 130 reseñas como activo principal pero sin CTA contextual",
+          "detalle": "Bilbolink tiene un asset de social proof excepcional (130+ reseñas 4.9★ — algo prácticamente inédito en el sector SEO). Sin embargo, el carrusel está separado del CTA principal. <strong>Insertar un CTA contextual junto a las reseñas (\"Pide tu auditoría SEO gratuita — como hicieron las 130 empresas que nos puntúan 4.9\") aprovecharía la prueba social en el momento de máximo convencimiento</strong> y podría incrementar el ratio de conversión un 25-35%."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Cualificación de leads",
+          "titulo": "Formulario sin segmentación por presupuesto o sector",
+          "detalle": "El formulario de contacto es genérico, sin distinguir entre franquicias, e-commerce o SMBs locales. <strong>Para una agencia con cartera amplia y diversa, segmentar por sector y presupuesto en el primer contacto permitiría priorizar leads de mayor LTV</strong> y personalizar el discurso comercial desde el primer intercambio."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Arquitectura de información",
+          "titulo": "Servicios mezclados sin jerarquía clara entre core y satélites",
+          "detalle": "WordPress, SEO, Google Ads, GEO conviven al mismo nivel cuando el SEO es claramente el core de Bilbolink. <strong>Establecer SEO como pilar central y los demás servicios como satélites complementarios reforzaría el posicionamiento</strong> y guiaría mejor al visitante al servicio realmente diferenciador."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Confianza",
+          "titulo": "Página \"Sobre Nosotros\" sin protagonismo del founder",
+          "detalle": "Jorge Menoyo lidera Bilbolink desde 2014 con un track record demostrable, pero su perfil queda relegado en la home. <strong>Una sección con foto profesional, micro-bio y enlace al LinkedIn personal del founder humanizaría la marca</strong> y reforzaría el factor confianza, especialmente clave cuando el SEO es un servicio de relación largo plazo."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción Visual",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Identidad visual",
+          "titulo": "Diseño técnicamente correcto pero sin diferenciación clara frente a otras agencias SEO",
+          "detalle": "La paleta y tipografía son funcionales pero podrían ser de cualquier agencia SEO española. <strong>Para una marca con +10 años, +130 reseñas y posicionamiento Bilbao, la web podría incorporar elementos visuales con carácter local o sectorial</strong> (referencias a Bilbao, micro-detalles tipográficos, uso de color más distintivo) que refuercen el factor memorabilidad."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Jerarquía visual",
+          "titulo": "Hero con varios elementos compitiendo por la atención",
+          "detalle": "El hero combina título, subtítulo, CTA, formulario y elementos visuales sin un foco visual dominante claro. <strong>Aplicar la regla 60-30-10 con un único elemento focal por sección mejoraría la lectura visual</strong> y reduciría el tiempo necesario para entender la propuesta de valor."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Microinteracciones",
+          "titulo": "Falta de feedback visual en interacciones clave",
+          "detalle": "Los hover, transiciones y feedback de formulario son estándar de tema WordPress. <strong>Microinteracciones cuidadas (animaciones de entrada, hover states distintivos, feedback de éxito/error animado) elevan la percepción de calidad</strong> sin requerir un rediseño completo — es un quick-win de UI con alto retorno percibido."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Iconografía",
+          "titulo": "Mezcla de estilos iconográficos en distintas secciones",
+          "detalle": "Conviven iconos outline, filled y emojis en distintas zonas de la web. <strong>Unificar el sistema iconográfico bajo un único estilo (recomendado: outline 2px stroke) refuerza la coherencia visual</strong> y facilita el mantenimiento del sitio a medio plazo."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Desarrollo & Rendimiento",
+      "score": 9.0,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Accesibilidad",
+          "titulo": "Score Lighthouse de accesibilidad 85-89, margen real de mejora",
+          "detalle": "Lighthouse marca 85 desktop y 89 mobile, principalmente por contraste de color insuficiente en algunos elementos secundarios y labels de formulario incompletos. <strong>Una intervención de 2-3 horas para corregir contraste WCAG AA y completar atributos aria/label llevaría el score a 95+</strong> y eliminaría barreras reales para usuarios con baja visión."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Carga de imágenes",
+          "titulo": "Carrusel de reseñas con carga eager penaliza el LCP en mobile",
+          "detalle": "El carrusel de 130 reseñas carga todas las imágenes en first paint, aunque solo 1-2 son visibles inicialmente. <strong>IntersectionObserver con threshold 0.1 + lazy-loading nativo implementaría carga diferida sin perder el asset social proof</strong> — pequeña intervención técnica con impacto medible en Core Web Vitals."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Performance",
+          "titulo": "Lighthouse Performance excelente, mantener sin regresiones",
+          "detalle": "Performance 94 desktop / 99 mobile y CLS 0.001 son resultados sobresalientes. <strong>El reto está en mantener estos scores tras añadir nuevos plugins o trackers</strong>. Recomendamos automatizar Lighthouse CI en cada deploy de WordPress y un budget de performance en cabecera para evitar regresiones silenciosas."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Seguridad",
+          "titulo": "Best Practices 100/100 — referente en el sector",
+          "detalle": "Score Lighthouse Best Practices 100 indica HTTPS correctamente configurado, sin librerías vulnerables y manejo adecuado de errores en consola. <strong>Bilbolink puede usar este dato como argumento comercial frente a competidores</strong> que típicamente tienen scores de 60-80 por uso descuidado de plugins WordPress."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Contenido",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Datos estructurados",
+          "titulo": "FAQ presente en home pero sin schema FAQPage marcado",
+          "detalle": "Bilbolink tiene una sección FAQS visible en home pero el contenido se sirve como HTML normal sin marcado schema.org/FAQPage. <strong>Para una agencia SEO esto es paradoja profesional pura: schema FAQ marca +15-25% CTR en SERPs (data Google) y aparece en respuestas de IA tipo \"cuánto tarda en posicionar una web en Bilbao\"</strong>. Trabajo de 30 min con plugin Yoast/RankMath — ROI alto inmediato para una agencia que vende exactamente este servicio."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "GEO / IA",
+          "titulo": "Sin optimización para respuestas en LLM (ChatGPT, Perplexity, Gemini)",
+          "detalle": "Las páginas no están estructuradas para ser citadas por IAs en respuestas a queries del tipo \"agencia SEO Bilbao\" o \"empresas posicionamiento web País Vasco\". <strong>Añadir un archivo llms.txt + datos estructurados Organization con dirección + reviews + ratings consolidaría a Bilbolink como fuente citable</strong>, capturando el tráfico que se va perdiendo desde Google a ChatGPT."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Local SEO",
+          "titulo": "Bilbao como territorio principal pero schema LocalBusiness genérico",
+          "detalle": "La oficina en Iparraguirre Kalea, Indautxu (Bilbao) es un asset de local SEO infrautilizado. <strong>Schema LocalBusiness completo con address, openingHours, priceRange y aggregateRating (130 reseñas 4.9 = oro puro) potenciaría la presencia en pack local</strong> de Google y rich snippets."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Interlinking",
+          "titulo": "Estructura sólida pero con interlinking superficial",
+          "detalle": "Las URLs son limpias y la estructura de headings correcta. <strong>Un interlinking más estratégico (anclas contextuales entre servicios SEO ↔ casos sectoriales ↔ blog técnico) distribuiría mejor la autoridad</strong> hacia las landings comerciales prioritarias y mejoraría la indexación de páginas profundas."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Marcar FAQ con schema FAQPage + activar reviews schema con las 130 valoraciones",
+    "detalle": "Para una agencia SEO no marcar la FAQ con schema es paradoja pura. Trabajo de 30-45 min con plugin Yoast/RankMath: añadir schema FAQPage a las preguntas existentes en home y schema Review/AggregateRating con las 130+ reseñas 4.9. Ambos cambios son detectables por Google en 24-72h.",
+    "impacto": "Aparición en featured snippets + CTR +15-25% en SERPs según data Google. Citación en respuestas IA tipo \"cuánto tarda en posicionar\" o \"mejores agencias SEO Bilbao\". Coste técnico: bajo. Impacto: medible en GSC en 2-4 semanas."
+  },
+  "_score": 7.5,
+  "_nombre": "Jorge",
+  "_icp": "SEO",
+  "resumen": [
+    "Bilbolink ha construido desde 2014 una agencia SEO con base sólida y un activo poco común en el sector: 130+ reseñas con valoración 4.9★ — social proof real que muy pocas agencias pueden mostrar. Hemos analizado bilbolink.com en cuatro dimensiones — UX, UI, Desarrollo y SEO — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma técnicamente sólida (Performance 94 desktop / 99 mobile, CLS 0.001 — referente del sector) pero con margen de mejora notable en la dimensión SEO (7.5/10), curiosamente la especialidad principal de la casa. Quick wins prioritarios: FAQ sin schema marcado + carrusel reseñas con carga eager + ausencia de optimización GEO/IA.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en captación de clientes B2B y en la coherencia de presentar SEO de calidad cuando la propia web aplica las mismas técnicas que se venden."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 94,
+      "accessibility": 85,
+      "bestPractices": 100,
+      "seo": 100
+    },
+    "mobile": {
+      "performance": 99,
+      "accessibility": 89,
+      "bestPractices": 100,
+      "seo": 100
+    }
+  }
+}

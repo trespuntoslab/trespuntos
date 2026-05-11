@@ -1,0 +1,15 @@
+{
+  "name": "jordan-e2e",
+  "version": "1.0.0",
+  "description": "Reproduce los 5 escenarios críticos del widget Jordan v7 que han roto antes, con **TEST MODE activo** para no contaminar métricas reales.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}

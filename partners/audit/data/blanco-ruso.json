@@ -1,0 +1,157 @@
+{
+  "agencia": "Blanco Ruso Diseño",
+  "web": "blancoruso.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Embudo de conversión",
+          "titulo": "CTA \"TRABAJA CON NOSOTRAS\" sobre-presente con 6 instancias en una sola página",
+          "detalle": "El CTA principal aparece 6 veces en la home, generando sobre-presencia que reduce el contraste cognitivo del CTA primario. <strong>Para clientes premium del nivel de Tous, Universidad de Sevilla o Leroy Merlin, el exceso de insistencia transmite ansiedad comercial — exactamente la postura opuesta a la que un estudio de branding diferencial debería proyectar</strong>. Reducir a 3 instancias jerárquicas (hero + tras portfolio + footer) recupera el efecto \"shortlist\" propio del posicionamiento premium."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Cualificación de leads",
+          "titulo": "Sin filtro de cualificación inicial para proyectos premium",
+          "detalle": "Blanco Ruso compite por proyectos de branding con marcas de gran nivel, pero el formulario de contacto admite cualquier consulta sin filtros previos. <strong>Para una marca con +20 años de Mamen y cartera Tous/Universidad Sevilla, el formulario debería incluir presupuesto mínimo o tipo de proyecto</strong>, alineando expectativas y reduciendo tiempo invertido en discovery con leads sin fit."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Storytelling",
+          "titulo": "Diferencial \"marcas con carácter para negocios liderados por mujeres\" infrautilizado",
+          "detalle": "Es un posicionamiento sectorial valioso y poco saturado, pero queda camuflado en el copy general. <strong>Convertir este diferencial en hero principal y pilar editorial recurrente (case studies de marcas femeninas, blog sobre branding y mercado femenino) atraería un nicho de alta especialidad</strong> que valora exactamente este enfoque y está dispuesto a pagar por especialización real."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Portfolio",
+          "titulo": "Cartera con marcas reconocibles pero sin métricas de impacto",
+          "detalle": "Tous, Universidad de Sevilla, Leroy Merlin, El País son referentes. Sin embargo, los casos no exponen métricas (incremento de ventas, recall de marca, awareness). <strong>Añadir 3-4 case studies con resultados cuantitativos (KPIs antes/después) elevaría la cartera de \"clientes prestigiosos\" a \"resultados demostrables\"</strong>, justificando un pricing premium con datos."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción Visual",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Identidad visual",
+          "titulo": "Estética cuidada pero con tipografía corporativa demasiado neutra",
+          "detalle": "El uso tipográfico es correcto pero genérico para un estudio que vende diferenciación de marca. <strong>Una tipografía display más distintiva en headlines, ligaduras tipográficas, y un tratamiento editorial más arriesgado coherente con \"branding con carácter\" reforzaría la coherencia entre el discurso y la práctica</strong> — el factor demostración silenciosa que diferencia a estudios de élite."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "CLS",
+          "titulo": "Cumulative Layout Shift mobile 0.235 — riesgo en Core Web Vitals",
+          "detalle": "Lighthouse mobile detecta CLS de 0.235 (umbral malo es ≥0.25, bueno ≤0.1). <strong>Las imágenes y vídeos cargan sin width/height declarados produciendo desplazamientos visibles en pantalla</strong>. Solución: añadir aspect-ratio CSS o atributos width/height explícitos en todas las imágenes — intervención de 1-2h con impacto directo en el score de Google."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Coherencia visual",
+          "titulo": "Mezcla de estilos visuales entre proyectos sin sistema unificador",
+          "detalle": "El portfolio muestra cada proyecto con su propia estética sin un envoltorio visual de Blanco Ruso que los integre. <strong>Un sistema de \"chrome\" gráfico (frames, tipografía descriptiva, color overlay sutil) que envuelva los trabajos sin desvirtuar la marca cliente reforzaría la firma visual del estudio</strong> — algo que estudios como Pentagram o Mucho hacen impecablemente."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Animaciones",
+          "titulo": "Animaciones de entrada presentes pero a destiempo",
+          "detalle": "Las animaciones de revelado de elementos al hacer scroll funcionan pero el timing es inconsistente entre secciones. <strong>Curva de easing unificada y duración estándar (300-400ms cubic-bezier) en todas las microanimaciones aporta sensación de pieza única</strong> en lugar de plantilla con efectos genéricos."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Desarrollo & Rendimiento",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Best Practices",
+          "titulo": "Score Best Practices Lighthouse 58/100 — alarma técnica",
+          "detalle": "Best Practices de 58 es el score más bajo de toda la auditoría e indica problemas reales: probable mixed content (HTTPS con recursos HTTP), librerías JavaScript con vulnerabilidades conocidas o errores en consola del navegador. <strong>Para un estudio que cobra premium y trabaja con marcas como Tous o Universidad de Sevilla, este score es un riesgo reputacional</strong> — cualquier auditoría técnica de un cliente nuevo lo detectará."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "LCP",
+          "titulo": "Largest Contentful Paint desktop 3.1s — por encima del umbral",
+          "detalle": "LCP desktop de 3.1s y mobile 2.9s están por encima del umbral \"bueno\" de Google (≤2.5s). <strong>El elemento LCP es probablemente una imagen de hero sin priority hint ni preload, cargada con plugin de WordPress sin optimización</strong>. Solución: comprimir imagen a WebP con quality 80, añadir loading=\"eager\" + fetchpriority=\"high\" en el LCP — gana 1-1.5s reales."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "WordPress optimización",
+          "titulo": "Stack WordPress con plugins acumulados sin auditar",
+          "detalle": "La estructura sugiere WordPress + Elementor o Divi + plugins acumulados durante años. <strong>Auditar y desactivar plugins redundantes (típicamente 30-40% son innecesarios), sustituir slider por código nativo y revisar tema base</strong> mejoraría tanto Performance como Best Practices simultáneamente. Inversión 4-6h con resultado medible inmediato."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Imágenes responsive",
+          "titulo": "Imágenes servidas sin srcset para distintos breakpoints",
+          "detalle": "El navegador descarga la misma imagen en mobile y desktop, desperdiciando bandwidth. <strong>srcset con 3-4 tamaños + sizes correcto reduciría el peso de imágenes en mobile un 40-60%</strong> — implementación nativa de WordPress 5.5+ que solo requiere regenerar las miniaturas y ajustar el tema."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Contenido",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Local SEO",
+          "titulo": "Schema LocalBusiness ausente pese a oficina física en Sevilla",
+          "detalle": "Blanco Ruso tiene oficina en Sevilla pero no expone schema LocalBusiness ni Person para Mamen como Directora Creativa con +20 años. <strong>Queries con foco diferencial real como \"agencia branding mujeres Sevilla\", \"estudio diseño femenino Andalucía\" o \"branding mujeres emprendedoras\" no devuelven Blanco Ruso pese al fit perfecto</strong> — schema LocalBusiness + Person sería un quick win con alto retorno."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Diferencial editorial",
+          "titulo": "Sin contenido editorial sobre el nicho \"branding para mujeres emprendedoras\"",
+          "detalle": "El posicionamiento sectorial es claro pero el blog (si existe) no lo trabaja como pilar editorial. <strong>Una serie de 8-10 artículos pillar sobre branding y mujeres emprendedoras — con casos reales del portfolio — generaría autoridad temática única en España</strong> y captaría las queries informacionales que después convierten en proyecto."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Título y meta",
+          "titulo": "Title tag genérico sin diferencial sectorial",
+          "detalle": "El title de la home no comunica el diferencial \"marcas con carácter para negocios liderados por mujeres\". <strong>Un title tipo \"Blanco Ruso · Branding y diseño para marcas femeninas con carácter\" comunicaría el nicho desde la SERP</strong>, mejorando CTR en queries de fit alto y reduciendo bounce de tráfico no cualificado."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Vinculación clientes-marca",
+          "titulo": "Clientes premium nombrados sin enlace al case study correspondiente",
+          "detalle": "Tous, Universidad de Sevilla, Leroy Merlin aparecen como clientes pero sin enlace claro al trabajo realizado. <strong>Conectar cada nombre de cliente con una página de case study específica refuerza el SEO sectorial</strong> (queries tipo \"branding Tous\" o \"agencia que trabajó con Universidad Sevilla\") y proporciona prueba navegable al visitante."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Reducir CTA \"TRABAJA CON NOSOTRAS\" de 6 a 3 instancias jerárquicas + añadir schema LocalBusiness",
+    "detalle": "Dos cambios complementarios de bajo coste técnico: (1) auditar la home y dejar solo 3 instancias del CTA principal en posiciones jerárquicas (hero + tras portfolio + footer); (2) añadir schema LocalBusiness completo con dirección Sevilla + Person para Mamen como Directora Creativa con +20 años de experiencia.",
+    "impacto": "El primer cambio recupera el efecto shortlist propio del posicionamiento premium (alineado con clientes Tous/Leroy Merlin). El segundo abre visibilidad orgánica en queries específicas de nicho como \"branding marcas femeninas Sevilla\" donde el fit es máximo y la competencia mínima. Implementación: 2-3 horas. Impacto medible: +15-25% engagement en home y aparición en SERPs locales en 3-4 semanas."
+  },
+  "_score": 6.5,
+  "_nombre": "Mamen",
+  "_icp": "Branding",
+  "resumen": [
+    "Blanco Ruso Diseño es uno de los estudios de branding andaluces con más solera: cartera potente que combina marcas premium (Tous, Universidad de Sevilla, Leroy Merlin, Fundación Tres Culturas) con medios consolidados (SER, El País, Telva, La Vanguardia) bajo el liderazgo de Mamen Villalba (+20 años). Hemos analizado blancoruso.com en cuatro dimensiones — UX, UI, Desarrollo y SEO — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma con estética cuidada pero con fricciones notables en conversión y debilidades técnicas relevantes. Best Practices Lighthouse de 58/100 es el área más vulnerable; UX/Conversión (6.0/10) tiene un quick win evidente con la sobre-presencia del CTA \"TRABAJA CON NOSOTRAS\" (6 instancias en una sola página). El nicho \"branding para marcas femeninas\" está infrautilizado a nivel SEO pese a ser un diferencial real.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en cómo se percibe Blanco Ruso desde la primera impresión y en la captación de clientes premium que valoran tanto el branding como la propia ejecución de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 76,
+      "accessibility": 85,
+      "bestPractices": 58,
+      "seo": 92
+    },
+    "mobile": {
+      "performance": 83,
+      "accessibility": 85,
+      "bestPractices": 58,
+      "seo": 92
+    }
+  }
+}
