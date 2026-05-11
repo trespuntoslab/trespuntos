@@ -1,0 +1,333 @@
+{
+  "slug": "naranja",
+  "meta": {
+    "title": "Plataforma inmobiliaria WordPress | Caso Naranja Inmobiliaria · Tres Puntos",
+    "description": "Diseño y desarrollo de plataforma inmobiliaria en WordPress a medida para Naranja Inmobiliaria en Barcelona y Santa Coloma de Gramenet. UX/UI, buscador propio y captador online.",
+    "canonical": "/casos-de-negocio/naranja/",
+    "schema_type": "Article",
+    "date_published": "2026-05-03",
+    "date_modified": "2026-05-11",
+    "keywords": ["plataforma inmobiliaria wordpress", "diseño web inmobiliaria barcelona", "desarrollo web wordpress a medida", "ux ui inmobiliaria", "arquitectura web inmobiliaria"],
+    "og": {
+      "title": "Naranja Inmobiliaria · Plataforma inmobiliaria WordPress a medida",
+      "description": "Arquitectura web, UX/UI y desarrollo WordPress para una inmobiliaria barcelonesa. Captador online, fichas de propiedad, simulador hipotecario y panel de gestión autónomo.",
+      "image": "https://www.trespuntoscomunicacion.es/img/og/caso-naranja.png"
+    }
+  },
+  "blocks": [
+    {
+      "type": "hero-header",
+      "sector_label": "INMOBILIARIA · BARCELONA",
+      "name": "Naranja Inmobiliaria",
+      "services": "UX/UI · Desarrollo WordPress a medida · Arquitectura web",
+      "brief": "Plataforma inmobiliaria completa con buscador propio, fichas de propiedad, captador de vendedores, simulador hipotecario y panel de gestión autónomo para una agencia barcelonesa con presencia en Santa Coloma de Gramenet y Trinitat Vella.",
+      "meta_items": [
+        { "label": "Cliente", "value": "Naranja Inmobiliaria" },
+        { "label": "Sector", "value": "Inmobiliaria · Servicios locales" },
+        { "label": "Servicios", "value": "UX/UI · WordPress · Arquitectura web" },
+        { "label": "Web", "value": "naranjainmobiliaria.com", "url": "https://naranjainmobiliaria.com" }
+      ]
+    },
+    {
+      "type": "browser-fullwidth",
+      "bg": "base",
+      "browser_url": "naranjainmobiliaria.com",
+      "image": "/img/casos/naranja/desktop-01.webp",
+      "alt": "Homepage de Naranja Inmobiliaria con buscador de propiedades"
+    },
+    {
+      "type": "overview",
+      "variant": "narrative",
+      "badge": "El proyecto",
+      "heading": "Una inmobiliaria local con presencia digital de agencia grande",
+      "paragraphs": [
+        "Naranja Inmobiliaria opera en Barcelona y Santa Coloma de Gramenet con un equipo especializado en compraventa, alquiler y valoración de inmuebles. Necesitaban una plataforma que reflejara su nivel de servicio y que funcionara como un captador activo de compradores, vendedores y propiedades.",
+        "El proyecto arrancó desde cero: arquitectura de información pensada para tres perfiles de usuario distintos, diseño de experiencia mobile-first, desarrollo WordPress completamente a medida con plugin inmobiliario propio, buscador avanzado con filtros y un ecosistema de herramientas —simulador hipotecario, tasación online, formularios de captación— que convierten la web en una extensión del equipo comercial."
+      ],
+      "meta": [
+        { "label": "Cliente", "value": "Naranja Inmobiliaria" },
+        { "label": "Sector", "value": "Inmobiliaria · Servicios locales" },
+        { "label": "Servicios", "value_tags": ["UX/UI", "WordPress a medida", "Arquitectura web"] },
+        { "label": "Web", "value": "naranjainmobiliaria.com", "url": "https://naranjainmobiliaria.com" }
+      ]
+    },
+    {
+      "type": "statement",
+      "text": "Una web inmobiliaria no es un catálogo de pisos. Es el primer comercial que trabaja 24 horas.",
+      "sub": "Diseñada para captar compradores, atraer vendedores y convertir visitas en contactos reales.",
+      "show_divider": true
+    },
+    {
+      "type": "challenge",
+      "badge": "El reto",
+      "heading": "Competir online sin perder el trato humano",
+      "paragraphs": [
+        "Las inmobiliarias locales se enfrentan a un reto doble: los grandes portales (Idealista, Fotocasa) acaparan el tráfico de búsqueda, y los CMS genéricos no tienen la estructura que necesita una agencia para gestionar su catálogo de forma eficiente.",
+        "Naranja necesitaba su propio espacio digital donde la marca, el equipo y la cercanía del servicio fueran el diferenciador. Una plataforma autónoma: que el equipo pudiera publicar, actualizar precios y retirar inmuebles sin depender de ningún desarrollador."
+      ],
+      "signals_title": "Señales de fricción detectadas",
+      "signals": [
+        {
+          "title": "Sin captador online propio",
+          "description": "El usuario que quería vender solo podía llamar por teléfono o acudir a la oficina. Leads perdidos sin registro."
+        },
+        {
+          "title": "Dependencia total de portales externos",
+          "description": "Idealista y Fotocasa acaparaban el tráfico sin dejar datos del lead. La agencia pagaba sin retener audiencia."
+        },
+        {
+          "title": "Sin herramientas de valor",
+          "description": "Ni simulador hipotecario, ni tasación online, ni alertas de propiedades. Sin razones para volver a la web."
+        },
+        {
+          "title": "CMS sin estructura inmobiliaria",
+          "description": "Gestionar el catálogo de pisos era lento y complejo. Cualquier cambio requería intervención técnica."
+        }
+      ]
+    },
+    {
+      "type": "approach-cards",
+      "badge": "La solución",
+      "heading": "Tres pilares para una plataforma que trabaja sola",
+      "intro": "Arquitectura, diseño y desarrollo construidos en paralelo para que el resultado sea coherente de punta a punta.",
+      "cards": [
+        {
+          "number": "01",
+          "title": "Arquitectura de información",
+          "items": [
+            "Estructura de navegación para tres perfiles: comprador, vendedor y curioso",
+            "Buscador avanzado con filtros por zona, precio, tipo y estado",
+            "Fichas de propiedad con galería, características y formulario de contacto integrado",
+            "Secciones de captación: tasación online, alertas de propiedades, simulador hipotecario"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "UX/UI Mobile-first",
+          "items": [
+            "Identidad visual limpia con el naranja corporativo como acento de confianza",
+            "Diseño mobile-first real: el 70%+ del tráfico inmobiliario llega desde el móvil",
+            "Navegación adaptada al proceso de búsqueda real del comprador",
+            "Fotografías de propiedad en primer plano, sin ruido visual que distraiga"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "WordPress a medida",
+          "items": [
+            "Plugin inmobiliario propio con Custom Post Types para propiedades",
+            "Taxonomías por zona, tipo, precio y estado para filtrado preciso",
+            "Panel de gestión intuitivo: publicar o retirar un piso en menos de 5 minutos",
+            "Sin código: el equipo gestiona el catálogo completo de forma autónoma"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "platform-gallery",
+      "bg": "surface",
+      "badge": "La plataforma",
+      "heading": "Cada sección diseñada para un propósito",
+      "intro": "Desde el listado de propiedades hasta la ficha individual y la página de contacto: sin fricciones.",
+      "browsers": [
+        {
+          "url": "naranjainmobiliaria.com — Agencia",
+          "image": "/img/casos/naranja/desktop-06.webp",
+          "alt": "Página de la agencia Naranja Inmobiliaria con equipo y oficinas",
+          "wide": false
+        },
+        {
+          "url": "naranjainmobiliaria.com — Propiedades en venta",
+          "image": "/img/casos/naranja/desktop-03.webp",
+          "alt": "Listado de propiedades en venta con precios y etiquetas de estado",
+          "wide": false
+        },
+        {
+          "url": "naranjainmobiliaria.com — Ficha de propiedad",
+          "image": "/img/casos/naranja/desktop-04.webp",
+          "alt": "Ficha de propiedad con descripción, precio y formulario de contacto",
+          "wide": false
+        },
+        {
+          "url": "naranjainmobiliaria.com — Servicios y contacto",
+          "image": "/img/casos/naranja/desktop-05.webp",
+          "alt": "Sección de servicios con simulador hipotecario y formulario lateral",
+          "wide": true
+        }
+      ]
+    },
+    {
+      "type": "statement",
+      "bg": "subtle",
+      "text": "El usuario que busca piso en Barcelona compara 6 portales en 40 minutos. Tu web tiene que ganarse ese tiempo.",
+      "sub": "Velocidad, claridad y confianza desde el primer scroll.",
+      "show_divider": false
+    },
+    {
+      "type": "phone-carousel",
+      "bg": "base",
+      "badge": "Experiencia móvil",
+      "heading": "Navegación diseñada para el móvil donde ocurre la búsqueda real",
+      "intro": "El 70% de las búsquedas inmobiliarias empiezan en el teléfono. Cada pantalla está optimizada para ese momento.",
+      "phones": [
+        { "src": "/img/casos/naranja/mobile-01.webp", "alt": "Homepage móvil Naranja Inmobiliaria con buscador" },
+        { "src": "/img/casos/naranja/mobile-02.webp", "alt": "Sección de servicios en móvil" },
+        { "src": "/img/casos/naranja/mobile-03.webp", "alt": "Listado de propiedades en móvil" },
+        { "src": "/img/casos/naranja/mobile-04.webp", "alt": "Filtros de búsqueda en móvil" },
+        { "src": "/img/casos/naranja/mobile-05.webp", "alt": "Ficha de propiedad en móvil con galería" },
+        { "src": "/img/casos/naranja/mobile-06.webp", "alt": "Vista de propiedad exclusiva con precio y contacto" },
+        { "src": "/img/casos/naranja/mobile-07.webp", "alt": "Página de la agencia en móvil" },
+        { "src": "/img/casos/naranja/mobile-08.webp", "alt": "Sección de reseñas y valoraciones en móvil" }
+      ]
+    },
+    {
+      "type": "video-phones",
+      "badge": "Flujo de usuario",
+      "heading": "Desde la búsqueda hasta el contacto en menos de 3 pasos",
+      "intro": "La navegación real en móvil: buscador, ficha de propiedad y formulario de contacto sin fricción.",
+      "videos": [
+        {
+          "src": "/img/casos/naranja/video-mobile-01.mp4",
+          "poster": "/img/casos/naranja/video-mobile-01-poster.webp"
+        }
+      ]
+    },
+    {
+      "type": "browser-showcase",
+      "bg": "surface",
+      "badge": "Demo de plataforma",
+      "heading": "Una inmobiliaria que se gestiona sola",
+      "intro": "El equipo de Naranja publica y actualiza propiedades desde el panel de WordPress. Sin código, sin esperas.",
+      "browser_url": "naranjainmobiliaria.com",
+      "content_type": "video",
+      "video_src": "/img/casos/naranja/video-desktop-01.mp4",
+      "poster": "/img/casos/naranja/video-desktop-01-poster.webp",
+      "fallback_image": "/img/casos/naranja/desktop-02.webp",
+      "fallback_alt": "Naranja Inmobiliaria plataforma desktop"
+    },
+    {
+      "type": "marquee",
+      "words": ["Comprar", "Vender", "Alquilar", "Valorar", "Barcelona", "Santa Coloma", "WordPress a medida", "UX/UI", "Inmobiliaria local", "Arquitectura web"]
+    },
+    {
+      "type": "impact-grid",
+      "bg": "base",
+      "badge": "Resultados",
+      "heading": "Presencia digital lista para crecer",
+      "cards": [
+        {
+          "icon": "bolt",
+          "title": "Captación online activa",
+          "description": "Formularios de venta y valoración generan leads al instante, sin intermediarios ni pérdida de contactos."
+        },
+        {
+          "icon": "paintbrush",
+          "title": "Identidad digital propia",
+          "description": "Fuera de los portales genéricos, la marca Naranja habla por sí sola con coherencia visual y tono de confianza."
+        },
+        {
+          "icon": "monitor",
+          "title": "Autonomía total del equipo",
+          "description": "Publicar, editar o retirar propiedades desde el panel de WordPress. Sin una sola línea de código."
+        },
+        {
+          "icon": "rocket",
+          "title": "Arquitectura escalable",
+          "description": "Nuevas zonas, agentes y tipologías se añaden sin rediseño. La plataforma crece con el negocio."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "quote": "Hicimos una web que vende sin vender. Que informa, genera confianza y convierte visitantes en contactos antes de que suene el teléfono.",
+      "body": "El sector inmobiliario local compite con plataformas de millones de euros de inversión en marketing. La única forma de diferenciarse es con una experiencia de usuario superior y una arquitectura pensada para el proceso de compra real, no para mostrar pisos como en un catálogo de papel.",
+      "author": "Jordi Expósito",
+      "role": "Digital Project Lead · Tres Puntos Comunicación",
+      "avatar": "/img/jordi-avatar.jpg"
+    },
+    {
+      "type": "services",
+      "badge": "Servicios aplicados",
+      "heading": "Lo que construimos para Naranja",
+      "links": [
+        {
+          "href": "/servicios/diseno-ux-ui-barcelona/",
+          "icon": "paintbrush",
+          "title": "Diseño UX/UI",
+          "description": "Arquitectura de información, wireframes y diseño de interfaz centrado en el proceso de búsqueda inmobiliaria."
+        },
+        {
+          "href": "/servicios/desarrollo-web-a-medida-barcelona/",
+          "icon": "code",
+          "title": "Desarrollo WordPress a medida",
+          "description": "Plugin inmobiliario propio, Custom Post Types, buscador avanzado y panel de gestión autónomo para el equipo."
+        },
+        {
+          "href": "/arquitectura-digital-conversion/",
+          "icon": "bolt",
+          "title": "Arquitectura digital de conversión",
+          "description": "Estructura de navegación y embudo de conversión diseñados para captar compradores, vendedores y propiedades."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "badge": "Preguntas frecuentes",
+      "heading": "Lo que más nos preguntan sobre proyectos inmobiliarios",
+      "items": [
+        {
+          "question": "¿Cuánto tarda en desarrollarse una web inmobiliaria en WordPress a medida?",
+          "answer": "Un proyecto como el de Naranja, con buscador propio, fichas de propiedad, captador de vendedores y simulador hipotecario, tarda entre 8 y 14 semanas desde el arranque hasta el lanzamiento. El tiempo depende principalmente de la complejidad del catálogo de propiedades y de las integraciones necesarias con portales externos."
+        },
+        {
+          "question": "¿Necesito un plugin específico para gestionar propiedades en WordPress?",
+          "answer": "Para proyectos como este desarrollamos un plugin a medida basado en Custom Post Types, mucho más eficiente y adaptado al flujo de trabajo real de la agencia que los plugins genéricos de gestión inmobiliaria. El resultado es un panel intuitivo donde el equipo publica, edita y retira propiedades sin fricción técnica."
+        },
+        {
+          "question": "¿La web puede publicar automáticamente en Idealista o Fotocasa?",
+          "answer": "Sí, es posible sincronizar el catálogo de propiedades con los principales portales mediante feeds XML o APIs. La arquitectura que desarrollamos lo permite, aunque la integración con cada portal se configura según las necesidades y el volumen de propiedades de cada agencia."
+        },
+        {
+          "question": "¿Puedo añadir un simulador hipotecario a mi web inmobiliaria?",
+          "answer": "Es uno de los elementos que más conversión aporta en webs inmobiliarias. Permite al usuario calcular su cuota mensual sin salir de tu web, aumentando el tiempo en página y la probabilidad de que contacte con la agencia. Lo integramos como módulo nativo, sin depender de servicios externos."
+        }
+      ],
+      "schema": [
+        {
+          "question": "¿Cuánto tarda en desarrollarse una web inmobiliaria en WordPress a medida?",
+          "answer": "Un proyecto con buscador propio, fichas de propiedad, captador de vendedores y simulador hipotecario tarda entre 8 y 14 semanas desde el arranque hasta el lanzamiento."
+        },
+        {
+          "question": "¿Necesito un plugin específico para gestionar propiedades en WordPress?",
+          "answer": "Para proyectos inmobiliarios desarrollamos un plugin a medida basado en Custom Post Types, mucho más eficiente que los plugins genéricos. El equipo puede publicar, editar y retirar propiedades sin intervención técnica."
+        },
+        {
+          "question": "¿La web puede publicar automáticamente en Idealista o Fotocasa?",
+          "answer": "Sí, es posible sincronizar el catálogo con los principales portales mediante feeds XML o APIs. La arquitectura que desarrollamos lo permite según las necesidades de cada agencia."
+        },
+        {
+          "question": "¿Puedo añadir un simulador hipotecario a mi web inmobiliaria?",
+          "answer": "Sí. Es uno de los elementos que más conversión aporta en webs inmobiliarias y lo integramos como módulo nativo, sin depender de servicios externos."
+        }
+      ]
+    },
+    {
+      "type": "next-project",
+      "label": "Siguiente proyecto",
+      "title": "Gibobs — Plataforma fintech de hipotecas",
+      "href": "/casos-de-negocio/gibobs/"
+    },
+    {
+      "type": "cta-form",
+      "heading_prefix": "Tu proyecto",
+      "heading_highlight": "empieza aquí",
+      "sub": "Cuéntanos qué necesitas y te respondemos en menos de 24h con una primera valoración.",
+      "reasons": [
+        "Sin reunión de ventas previa. Formulario directo en 3 minutos.",
+        "Respondemos en menos de 24h con una primera valoración de alcance.",
+        "Si no encajamos con lo que necesitas, te lo decimos sin rodeos.",
+        "El proyecto empieza con diagnóstico, no con propuesta económica genérica."
+      ]
+    }
+  ]
+}
