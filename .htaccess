@@ -103,12 +103,17 @@
     RewriteRule ^agencia-ux-ui-barcelona/?$ https://www.trespuntoscomunicacion.es/ [R=301,L]
     RewriteRule ^agencia-diseno-web-barcelona/?$ https://www.trespuntoscomunicacion.es/ [R=301,L]
 
-    # Typo URL indexed by Google (missing 't' in tendencias)
-    RewriteRule ^endencias-ux-ui-2026(.*)$ https://www.trespuntoscomunicacion.es/blog/tendencias-ux-ui-2026-la-consolidacion-del-diseno-predictivo-y-la-eficiencia-tecnica/ [R=301,L]
+    # Typo URL indexed by Google (missing 't' in tendencias) → winner del cluster
+    RewriteRule ^endencias-ux-ui-2026(.*)$ https://www.trespuntoscomunicacion.es/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/ [R=301,L]
 
-    # Renamed slugs (2026-05-06): URLs antiguas indexadas en GSC reciben ~30 clicks/mes → URLs nuevas
+    # Renamed slugs (2026-05-06): URLs antiguas indexadas en GSC → URLs nuevas
     RewriteRule ^blog/tendencias-de-diseno-web-2026-rendimiento-velocidad-y-conversiones-que-realmente-importan/?$ https://www.trespuntoscomunicacion.es/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/ [R=301,L]
-    RewriteRule ^blog/tendencias-de-desarrollo-web-2026-rentabilidad-rendimiento-y-arquitectura-real/?$ https://www.trespuntoscomunicacion.es/blog/tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica/ [R=301,L]
+    RewriteRule ^blog/tendencias-de-desarrollo-web-2026-rentabilidad-rendimiento-y-arquitectura-real/?$ https://www.trespuntoscomunicacion.es/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/ [R=301,L]
+
+    # Consolidación tendencias 2026 (2026-05-11): 3 artículos → 1 URL ganadora
+    # Winner: /blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/ (pos. 7.7, 326 impr.)
+    RewriteRule ^blog/tendencias-ux-ui-2026-la-consolidacion-del-diseno-predictivo-y-la-eficiencia-tecnica/?$ https://www.trespuntoscomunicacion.es/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/ [R=301,L]
+    RewriteRule ^blog/tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica/?$ https://www.trespuntoscomunicacion.es/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/ [R=301,L]
 
     # Blog posts: old root URLs → /blog/ prefix
     # /tips-ux-ui/page/N/ no existe en estructura nueva → todas al hub
@@ -151,9 +156,9 @@
     RewriteRule ^metodologias-para-el-diseno-de-productos-digitales/?$ https://www.trespuntoscomunicacion.es/blog/metodologias-para-el-diseno-de-productos-digitales/ [R=301,L]
     RewriteRule ^proceso-para-un-buen-diseno-web-a-medida/?$ https://www.trespuntoscomunicacion.es/blog/proceso-para-un-buen-diseno-web-a-medida/ [R=301,L]
     RewriteRule ^scope-canvas-el-punto-de-partida-de-lean-ux/?$ https://www.trespuntoscomunicacion.es/blog/scope-canvas-el-punto-de-partida-de-lean-ux/ [R=301,L]
-    RewriteRule ^tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica/?$ https://www.trespuntoscomunicacion.es/blog/tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica/ [R=301,L]
+    RewriteRule ^tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica/?$ https://www.trespuntoscomunicacion.es/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/ [R=301,L]
     RewriteRule ^tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/?$ https://www.trespuntoscomunicacion.es/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/ [R=301,L]
-    RewriteRule ^tendencias-ux-ui-2026-la-consolidacion-del-diseno-predictivo-y-la-eficiencia-tecnica/?$ https://www.trespuntoscomunicacion.es/blog/tendencias-ux-ui-2026-la-consolidacion-del-diseno-predictivo-y-la-eficiencia-tecnica/ [R=301,L]
+    RewriteRule ^tendencias-ux-ui-2026-la-consolidacion-del-diseno-predictivo-y-la-eficiencia-tecnica/?$ https://www.trespuntoscomunicacion.es/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/ [R=301,L]
     RewriteRule ^tests-de-usuarios-de-guerrilla/?$ https://www.trespuntoscomunicacion.es/blog/tests-de-usuarios-de-guerrilla/ [R=301,L]
     RewriteRule ^unir-el-pensamiento-lean-startup-con-diseno-lean-design/?$ https://www.trespuntoscomunicacion.es/blog/unir-el-pensamiento-lean-startup-con-diseno-lean-design/ [R=301,L]
     RewriteRule ^wcag-2-2-que-cambia-y-como-aplicarlo-en-tu-diseno-web-en-barcelona/?$ https://www.trespuntoscomunicacion.es/blog/wcag-2-2-que-cambia-y-como-aplicarlo-en-tu-diseno-web-en-barcelona/ [R=301,L]
