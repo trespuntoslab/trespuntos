@@ -132,6 +132,59 @@
   <style>@font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}@font-face{font-family:'Jakarta Fallback';src:local('Arial Black');size-adjust:95%;ascent-override:100%;descent-override:22%;line-gap-override:0%}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--mint:#5dffbf;--mint-rgb:93,255,191;--bg-base:#0e0e0e;--bg-surface:#141414;--text-primary:#f5f5f5;--text-secondary:#b3b3b3;--text-muted:#8a8a8a;--font-heading:'Plus Jakarta Sans','Jakarta Fallback',sans-serif;--font-body:'Inter','Inter Fallback',sans-serif;--radius-md:10px;--radius-lg:14px;--radius-full:9999px}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg-base);color:var(--text-primary);-webkit-font-smoothing:antialiased;overflow-x:hidden}.container-main{max-width:1200px;margin:0 auto;padding:0 1.5rem}#tp-navbar{position:fixed;top:0;left:0;right:0;z-index:1000;min-height:72px}
   </style>
+  <style>
+    /* Mobile split block — naranja */
+    .cs-mobile-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .cs-mobile-split-copy h2 {
+      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+    }
+    .cs-mobile-split-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .875rem;
+    }
+    .cs-mobile-split-list li {
+      display: flex;
+      gap: .875rem;
+      align-items: flex-start;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      font-size: .95rem;
+    }
+    .cs-mobile-split-list li::before {
+      content: '→';
+      color: var(--mint);
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+    .cs-mobile-split-phone {
+      display: flex;
+      justify-content: center;
+    }
+    .cs-mobile-split-phone .cs-phone-frame--video {
+      max-width: 270px;
+      width: 100%;
+    }
+    @media (max-width: 900px) {
+      .cs-mobile-split {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .cs-mobile-split-phone .cs-phone-frame--video {
+        max-width: 220px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -477,21 +530,28 @@
   </section>
 
   <!-- ════════════════════════════════════════════════════════
-       10. VIDEO PHONES — Mobile recording
+       10. MOBILE VIDEO — Split layout
        ════════════════════════════════════════════════════════ -->
-  <section class="cs-feature-block cs-padding-xl" aria-label="Flujo de usuario">
+  <section class="cs-feature-block cs-padding-xl" aria-label="Experiencia móvil">
     <div class="container-main">
-      <div class="cs-showcase-header cs-reveal">
-        <span class="section-badge"><span class="badge-dot"></span>Flujo de usuario</span>
-        <h2>Desde la búsqueda hasta el contacto en menos de 3 pasos</h2>
-        <p class="cs-section-intro">La navegación real en móvil: buscador, ficha de propiedad y formulario de contacto sin fricción.</p>
-      </div>
-      <div class="cs-video-phones cs-reveal-scale">
-        <div class="cs-phone-frame cs-phone-frame--video">
-          <div class="cs-phone-screen">
-            <video autoplay muted loop playsinline preload="auto" poster="/img/casos/naranja/video-mobile-01-poster.webp">
-              <source src="/img/casos/naranja/video-mobile-01.mp4" type="video/mp4">
-            </video>
+      <div class="cs-mobile-split">
+        <div class="cs-mobile-split-copy cs-reveal">
+          <span class="section-badge"><span class="badge-dot"></span>Experiencia móvil</span>
+          <h2>La experiencia real de buscar piso desde el teléfono</h2>
+          <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:2rem;">Diseñada para el momento exacto: cuando alguien busca desde el sofá, la parada del bus o el portal de al lado.</p>
+          <ul class="cs-mobile-split-list">
+            <li>Buscador con filtros por zona, precio y tipo de propiedad</li>
+            <li>Ficha completa con galería, características y contacto directo</li>
+            <li>Formulario de contacto sin salir de la ficha, en dos toques</li>
+          </ul>
+        </div>
+        <div class="cs-mobile-split-phone cs-reveal-scale">
+          <div class="cs-phone-frame cs-phone-frame--video">
+            <div class="cs-phone-screen">
+              <video autoplay muted loop playsinline preload="auto" poster="/img/casos/naranja/video-mobile-01-poster.webp">
+                <source src="/img/casos/naranja/video-mobile-01.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
       </div>
@@ -614,7 +674,7 @@
           El sector inmobiliario local compite con plataformas de millones de euros de inversión en marketing. La única forma de diferenciarse es con una experiencia de usuario superior y una arquitectura pensada para el proceso de compra real, no para mostrar pisos como en un catálogo de papel.
         </p>
         <div class="cs-quote-author">
-          <img src="/img/jordi-avatar.jpg" alt="Jordi Expósito" class="cs-quote-avatar" width="60" height="60" loading="lazy">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Expósito" class="cs-quote-avatar" width="60" height="60" loading="lazy">
           <div class="cs-quote-author-info">
             <div class="cs-quote-name">Jordi Expósito</div>
             <div class="cs-quote-role">Digital Project Lead · Tres Puntos Comunicación</div>
@@ -949,20 +1009,78 @@
 
       var carouselTrack = document.querySelector('.cs-phone-carousel-track');
       if (carouselTrack) {
-        var isDragging = false, startX = 0, scrollLeft = 0;
-        carouselTrack.addEventListener('mousedown', function(e){
-          isDragging = true; startX = e.pageX - carouselTrack.offsetLeft; scrollLeft = carouselTrack.scrollLeft;
-          carouselTrack.style.animationPlayState = 'paused';
-        });
-        document.addEventListener('mouseup', function(){
-          isDragging = false; carouselTrack.style.animationPlayState = '';
-        });
-        carouselTrack.addEventListener('mousemove', function(e){
+        // RAF-based scroll: disable CSS animation, drive everything via JS for silky drag + inertia
+        carouselTrack.style.animation = 'none';
+        var halfWidth = 0;
+        var posX = 0;
+        var velocity = 0;
+        var isDragging = false;
+        var lastClientX = 0;
+        var lastMoveTime = 0;
+        var AUTO_PX_PER_SEC = 60; // auto-scroll speed
+
+        function initCarousel() {
+          halfWidth = carouselTrack.scrollWidth / 2;
+          requestAnimationFrame(tick);
+        }
+
+        var lastTs = 0;
+        function tick(ts) {
+          var dt = Math.min((ts - lastTs) / 1000, 0.1); // seconds, capped
+          lastTs = ts;
+          if (!isDragging) {
+            posX -= AUTO_PX_PER_SEC * dt;
+            // Apply inertia after drag release
+            if (Math.abs(velocity) > 0.5) {
+              posX += velocity * dt;
+              velocity *= Math.pow(0.92, dt * 60); // frame-rate independent damping
+            } else {
+              velocity = 0;
+            }
+          }
+          // Infinite wrap
+          if (halfWidth > 0) {
+            posX = ((posX % halfWidth) - halfWidth) % halfWidth;
+          }
+          carouselTrack.style.transform = 'translateX(' + posX + 'px)';
+          requestAnimationFrame(tick);
+        }
+
+        function onDragStart(x) {
+          isDragging = true;
+          lastClientX = x;
+          lastMoveTime = performance.now();
+          velocity = 0;
+          carouselTrack.classList.add('dragging');
+        }
+
+        function onDragMove(x) {
           if (!isDragging) return;
-          e.preventDefault();
-          var x = e.pageX - carouselTrack.offsetLeft;
-          carouselTrack.scrollLeft = scrollLeft - (x - startX);
-        });
+          var now = performance.now();
+          var dt = (now - lastMoveTime) || 16;
+          var dx = x - lastClientX;
+          velocity = (dx / dt) * 1000; // px/sec
+          posX += dx;
+          lastClientX = x;
+          lastMoveTime = now;
+        }
+
+        function onDragEnd() {
+          if (!isDragging) return;
+          isDragging = false;
+          carouselTrack.classList.remove('dragging');
+        }
+
+        carouselTrack.addEventListener('mousedown', function(e) { onDragStart(e.clientX); e.preventDefault(); });
+        document.addEventListener('mousemove', function(e) { onDragMove(e.clientX); });
+        document.addEventListener('mouseup', onDragEnd);
+        carouselTrack.addEventListener('touchstart', function(e) { onDragStart(e.touches[0].clientX); }, { passive: true });
+        carouselTrack.addEventListener('touchmove', function(e) { if (isDragging) { onDragMove(e.touches[0].clientX); e.preventDefault(); } }, { passive: false });
+        carouselTrack.addEventListener('touchend', onDragEnd);
+
+        // Init once fonts/images settle
+        if (document.readyState === 'complete') { initCarousel(); }
+        else { window.addEventListener('load', initCarousel); }
       }
     })();
   </script>
