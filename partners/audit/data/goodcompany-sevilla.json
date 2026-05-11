@@ -1,0 +1,157 @@
+{
+  "agencia": "GoodCompany",
+  "web": "goodcompany.es",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Propuesta de valor",
+          "titulo": "Posicionamiento confuso por exceso de servicios sin ICP claro",
+          "detalle": "GoodCompany ofrece branding, publicidad, marketing digital, diseño web, redes sociales, marketing de contenidos, marketing dental y eventos. <strong>El visitante no entiende a quién se dirige la agencia: ¿pyme local de servicios? ¿clínicas dentales? ¿bodegas? Concentrar el discurso en 2-3 sectores donde se tienen resultados verificados (dental, vinícola, turismo)</strong> aumenta la calidad del lead y posiciona como especialista frente a competidores genéricos."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Hero y CTA",
+          "titulo": "CTA \"¡Ahora!\" sin contexto ni promesa de valor",
+          "detalle": "El banner principal usa un CTA de \"¡Ahora!\" que no transmite qué obtiene el visitante al hacer clic. <strong>Sustituirlo por algo orientado a resultado (\"Audita tu presencia digital gratis\", \"Reserva 30 min de estrategia\") reduce la fricción y mejora la tasa de conversión del hero entre un 20-30%</strong> sobre tráfico cualificado."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Prueba social",
+          "titulo": "Métricas \"245 clientes / 1000 proyectos\" sin caso de estudio que las respalde",
+          "detalle": "Los números grandes (245 clientes satisfechos, 1000 proyectos completados) funcionan como gancho pero no van acompañados de casos de estudio detallados con métricas verificadas. <strong>Construir 3-4 casos de estudio largos con resultados concretos (ROI, leads generados, ranking SEO) convierte el portfolio en activo de venta consultiva</strong> en lugar de galería visual."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Cualificación de lead",
+          "titulo": "Formulario sin segmentación entre tipo de proyecto y presupuesto",
+          "detalle": "El formulario de contacto recoge datos básicos sin preguntar sector, presupuesto orientativo o urgencia. <strong>Para una agencia con 20+ años de experiencia que quiere atraer clientes de mayor ticket, añadir 4-5 campos de cualificación permite priorizar leads enterprise frente a consultas pequeñas</strong> y ahorra tiempo en la fase de discovery."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción Visual",
+      "score": 5.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "CLS y layout shift",
+          "titulo": "Cumulative Layout Shift de 0,55 en mobile y 0,30 en desktop — inaceptable",
+          "detalle": "El Lighthouse marca CLS de 0,55 en mobile (límite \"bueno\" es 0,1). Esto significa que los elementos saltan en pantalla durante la carga, generando una experiencia frustrante y pérdida de clics. <strong>Reservar espacio para imágenes con width/height explícitos, evitar inserciones DOM tardías y usar font-display: swap arregla la mayor parte del problema en una jornada</strong> y se nota inmediatamente en la sensación de calidad."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Identidad visual",
+          "titulo": "Diseño funcional sin personalidad reconocible",
+          "detalle": "La web cumple en lo formal pero usa un sistema visual muy estándar de agencia genérica: tipografía sans-serif neutra, paleta corporativa, componentes WordPress sin custom. <strong>Para una agencia con 20 años de trayectoria, la web debería transmitir autoridad y carácter propio</strong>, especialmente cuando se compite con agencias jóvenes de Sevilla más vistosas visualmente."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Jerarquía y escaneabilidad",
+          "titulo": "Bloques de contenido con jerarquía visual plana",
+          "detalle": "Las páginas de servicio y portfolio presentan información en bloques densos sin pull-quotes, números display ni elementos visuales que guíen el ojo. <strong>Implementar una escala tipográfica más contrastada y módulos visuales con peso específico (números grandes, citas destacadas, comparativas antes/después) mejora el tiempo medio en página</strong> y la profundidad de scroll."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Microinteracciones",
+          "titulo": "Ausencia de microinteracciones que refuercen la calidad percibida",
+          "detalle": "La web es estática y no aprovecha recursos de diseño contemporáneo (scroll-triggered animations, hovers ricos, transiciones suaves). <strong>Para una agencia que vende creatividad, la web es la primera demostración de capacidad: añadir 4-5 microinteracciones bien elegidas en home y portfolio refuerza la percepción de marca</strong> sin penalizar performance si se hace bien."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Desarrollo & Rendimiento",
+      "score": 5.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Performance desktop",
+          "titulo": "Performance desktop en 57/100, LCP de 3,3s y Speed Index de 5,6s",
+          "detalle": "El score de performance desktop es de los más bajos que vemos en el sector (57/100). El Largest Contentful Paint llega a los 3,3s, muy por encima del umbral de 2,5s recomendado por Google. <strong>Cada segundo adicional reduce conversiones un 7%. Optimizar imágenes a WebP, implementar lazy loading agresivo, deferir scripts de WordPress y limpiar plugins innecesarios subiría el score a 80+</strong> en 2-3 jornadas de trabajo."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Core Web Vitals",
+          "titulo": "WordPress con plugins excesivos impactando el rendimiento",
+          "detalle": "La estructura sugiere un WordPress con múltiples plugins activos (page builders, sliders, plugins de redes sociales, scripts de tracking). <strong>Una auditoría de plugins detectaría 5-10 candidatos a eliminar o sustituir por código nativo. Reducir plugins también baja el riesgo de seguridad y reduce el coste de mantenimiento mensual</strong>, algo que se puede argumentar al cliente como ahorro."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Mobile performance",
+          "titulo": "Mobile con Performance 77/100 y CLS terrible (0,55)",
+          "detalle": "Aunque el LCP en mobile (2,0s) es razonable, el CLS de 0,55 destruye la experiencia. <strong>Los visitantes ven cómo el contenido salta mientras leen, lo cual genera errores de clic y abandono. Es el problema más crítico de la web y afortunadamente el más rápido de arreglar</strong> con técnicas estándar de prevención de layout shift."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Best practices y seguridad",
+          "titulo": "Best Practices en 81/100 con headers de seguridad incompletos",
+          "detalle": "El score de Best Practices se queda en 81/100, normalmente por falta de cabeceras HTTP modernas (CSP, HSTS, Permissions-Policy), HTTPS no estricto en algunos recursos y librerías JavaScript con vulnerabilidades conocidas. <strong>Una auditoría de seguridad básica de medio día sube el score a 95+ y permite usar el resultado en argumentación comercial</strong> con clientes de salud y legal."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Contenido",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "SEO técnico",
+          "titulo": "Score SEO 92/100 — el área más fuerte de la web",
+          "detalle": "GoodCompany tiene un buen trabajo SEO de base (URLs limpias, headings, meta descriptions), por lo que rankea para varias búsquedas locales en Sevilla. <strong>Subir el score a 98+ con fixes de schema.org (FAQPage, Service, Review) y interlinking estratégico desbloquearía rankings adicionales en cola larga</strong>, especialmente útil para captar leads de marketing dental y vinícola."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Local SEO",
+          "titulo": "Posicionamiento local Sevilla con oportunidad en sectores nicho",
+          "detalle": "La marca rankea para \"agencia publicidad Sevilla\" pero no para nichos donde tiene experiencia real (\"marketing dental Sevilla\", \"marketing bodegas DO Rueda\", \"agencia turismo Andalucía\"). <strong>Crear landings dedicadas por nicho con casos de éxito reales captaría búsquedas con intención comercial mucho más alta</strong> que el tráfico genérico actual."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido y blog",
+          "titulo": "Blog con publicación regular pero sin contenido pillar",
+          "detalle": "El blog mantiene actividad pero los contenidos son generalistas (tendencias marketing, consejos genéricos). <strong>Plantear 3-4 contenidos pillar de 3.000+ palabras al año especializados en los nichos verticales (\"Guía completa marketing para clínicas dentales\", \"Cómo medir ROI marketing en bodegas\") generaría backlinks naturales y leads cualificados</strong> directamente del orgánico."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Meta descripciones y CTR",
+          "titulo": "Meta descripciones descriptivas pero sin gancho comercial",
+          "detalle": "Las meta descriptions cumplen su función técnica pero no incluyen un gancho que diferencie del resto de resultados en SERP. <strong>Reescribir las 10 meta descriptions de las landing principales con copy orientado a beneficio + CTA mejora el CTR orgánico entre un 15-25%</strong>, lo cual se traduce en más visitas sin necesidad de generar más backlinks."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Fix de CLS y carga de imágenes para subir performance a 80+",
+    "detalle": "El mayor problema técnico es el Cumulative Layout Shift de 0,55 en mobile. Reservar espacio para imágenes con width/height explícitos, optimizar imágenes a WebP con lazy loading y deferir scripts no críticos puede subir Performance a 80+ y CLS por debajo de 0,1 en una jornada de trabajo.",
+    "impacto": "Mejora directa en conversión (CLS bajo correlaciona con +12% de conversiones según Google) y mejor posicionamiento orgánico al cumplir Core Web Vitals."
+  },
+  "_score": 5.9,
+  "_nombre": "Rocío",
+  "_icp": "Comunicación",
+  "resumen": [
+    "GoodCompany lleva más de 20 años operando desde Sevilla con un enfoque de comunicación 360 y especialización en sectores como dental, vinícola, turismo e inmobiliaria. Hemos analizado goodcompany.es en cuatro dimensiones — UX, UI, desarrollo y SEO — para identificar dónde hay fricción que está penalizando la conversión del tráfico actual.",
+    "Detectamos un buen trabajo SEO (92/100) que ya genera leads orgánicos, pero <strong>el rendimiento técnico (57/100 desktop) y un CLS desastroso (0,55 en mobile) están sabotando la conversión de ese tráfico</strong>. La identidad visual cumple en lo formal pero no transmite la autoridad que dan 20 años de trayectoria.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> El mayor potencial está en convertir las métricas que ya generáis (245 clientes, 1000 proyectos) en casos de estudio narrativos que diferencien a GoodCompany como especialista en sectores nicho de Andalucía."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 57,
+      "accessibility": 87,
+      "bestPractices": 81,
+      "seo": 92
+    },
+    "mobile": {
+      "performance": 77,
+      "accessibility": 84,
+      "bestPractices": 81,
+      "seo": 92
+    }
+  }
+}

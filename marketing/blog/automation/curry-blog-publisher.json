@@ -1,0 +1,285 @@
+{
+  "name": "📝 Curry — Blog Publisher Daily",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "cronExpression", "expression": "0 9 * * *" }
+          ]
+        }
+      },
+      "id": "node-cron",
+      "name": "Cron Diario 09:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 320]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.notion.com/v1/data_sources/{{ $env.NOTION_BLOG_DATA_SOURCE_ID }}/query",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "notionApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Notion-Version", "value": "2025-09-03" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"filter\": {\n    \"and\": [\n      {\n        \"property\": \"Fecha publicación\",\n        \"date\": { \"equals\": \"{{ $now.format('yyyy-MM-dd') }}\" }\n      },\n      {\n        \"property\": \"Estado\",\n        \"select\": { \"equals\": \"Aprobado\" }\n      }\n    ]\n  }\n}",
+        "options": {}
+      },
+      "id": "node-notion-query",
+      "name": "Notion · Buscar artículo de hoy",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 320]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "id": "has-article",
+              "leftValue": "={{ $json.results.length }}",
+              "rightValue": 0,
+              "operator": { "type": "number", "operation": "gt" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "node-if-has-article",
+      "name": "¿Hay artículo hoy?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [720, 320]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrae los datos del primer resultado de Notion\nconst article = $input.first().json.results[0];\nconst props = article.properties;\n\nfunction text(p) {\n  if (!p) return '';\n  if (p.type === 'title') return (p.title[0]?.plain_text) || '';\n  if (p.type === 'rich_text') return (p.rich_text[0]?.plain_text) || '';\n  if (p.type === 'url') return p.url || '';\n  if (p.type === 'select') return p.select?.name || '';\n  if (p.type === 'status') return p.status?.name || '';\n  return '';\n}\n\nconst slug = text(props['Slug']);\nconst title = text(props['Título']);\nconst category = text(props['Categoría']);\nconst notionPageId = article.id;\n\n// URLs derivadas\nconst REPO = 'trespuntoslab/trespuntos';\nconst BRANCH = 'main';\nconst rawBase = `https://raw.githubusercontent.com/${REPO}/${BRANCH}`;\nconst htmlUrl = `${rawBase}/blog/${slug}/index.html`;\nconst ogUrl = `${rawBase}/img/og/blog-${slug}.png`;\nconst publicUrl = `https://www.trespuntoscomunicacion.es/blog/${slug}/`;\n\nreturn [{\n  json: {\n    slug,\n    title,\n    category,\n    notionPageId,\n    htmlUrl,\n    ogUrl,\n    publicUrl,\n    htmlFtpPath: `/blog/${slug}/index.html`,\n    ogFtpPath: `/img/og/blog-${slug}.png`\n  }\n}];"
+      },
+      "id": "node-extract-data",
+      "name": "Extraer datos del artículo",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [960, 240]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.htmlUrl }}",
+        "options": {
+          "response": { "response": { "responseFormat": "text" } }
+        }
+      },
+      "id": "node-download-html",
+      "name": "Descargar HTML del repo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1200, 160]
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Extraer datos del artículo').item.json.ogUrl }}",
+        "options": {
+          "response": { "response": { "responseFormat": "file" } }
+        }
+      },
+      "id": "node-download-og",
+      "name": "Descargar OG del repo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1200, 320]
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "path": "={{ $('Extraer datos del artículo').item.json.htmlFtpPath }}",
+        "binaryData": false,
+        "fileContent": "={{ $('Descargar HTML del repo').item.json.data }}",
+        "options": {}
+      },
+      "id": "node-ftp-html",
+      "name": "FTP · Subir HTML",
+      "type": "n8n-nodes-base.ftp",
+      "typeVersion": 1,
+      "position": [1440, 160],
+      "credentials": {
+        "ftp": { "name": "Nominalia FTP" }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "path": "={{ $('Extraer datos del artículo').item.json.ogFtpPath }}",
+        "binaryData": true,
+        "binaryPropertyName": "data",
+        "options": {}
+      },
+      "id": "node-ftp-og",
+      "name": "FTP · Subir OG image",
+      "type": "n8n-nodes-base.ftp",
+      "typeVersion": 1,
+      "position": [1440, 320],
+      "credentials": {
+        "ftp": { "name": "Nominalia FTP" }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.cloudflare.com/client/v4/zones/{{ $env.CLOUDFLARE_ZONE_ID }}/purge_cache",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "=Bearer {{ $env.CLOUDFLARE_API_TOKEN }}" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"files\": [\n    \"{{ $('Extraer datos del artículo').item.json.publicUrl }}\",\n    \"https://www.trespuntoscomunicacion.es/img/og/blog-{{ $('Extraer datos del artículo').item.json.slug }}.png\",\n    \"https://www.trespuntoscomunicacion.es/blog/\",\n    \"https://www.trespuntoscomunicacion.es/sitemap.xml\"\n  ]\n}",
+        "options": {}
+      },
+      "id": "node-cf-purge",
+      "name": "Cloudflare · Purge by URL",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1680, 240]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.notion.com/v1/pages/{{ $('Extraer datos del artículo').item.json.notionPageId }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "notionApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Notion-Version", "value": "2025-09-03" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"properties\": {\n    \"Estado\": { \"select\": { \"name\": \"Publicado\" } },\n    \"URL real\": { \"url\": \"{{ $('Extraer datos del artículo').item.json.publicUrl }}\" }\n  }\n}",
+        "options": {}
+      },
+      "id": "node-notion-update",
+      "name": "Notion · Marcar como Publicado",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1920, 240]
+    },
+    {
+      "parameters": {
+        "chatId": "-4999298972",
+        "text": "=✅ *Blog publicado*\n\n*{{ $('Extraer datos del artículo').item.json.title }}*\n📂 {{ $('Extraer datos del artículo').item.json.category }}\n\n🔗 {{ $('Extraer datos del artículo').item.json.publicUrl }}\n\n@jordan\\_cloude\\_bot revisa GSC en 7 días.",
+        "additionalFields": {
+          "parse_mode": "Markdown",
+          "disable_web_page_preview": false
+        }
+      },
+      "id": "node-telegram-success",
+      "name": "Telegram · Aviso publicado",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [2160, 240],
+      "credentials": {
+        "telegramApi": { "name": "Claudio Bot Telegram" }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "-4999298972",
+        "text": "=⚠️ *Error publicando blog*\n\nWorkflow: Curry Blog Publisher\nFecha: {{ $now.format('yyyy-MM-dd HH:mm') }}\nNodo: {{ $execution.error?.node?.name || 'desconocido' }}\nMensaje: {{ $execution.error?.message || 'sin mensaje' }}\n\n@jordan\\_cloude\\_bot revisa el workflow.",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "node-telegram-error",
+      "name": "Telegram · Aviso error",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1680, 480],
+      "credentials": {
+        "telegramApi": { "name": "Claudio Bot Telegram" }
+      }
+    }
+  ],
+  "connections": {
+    "Cron Diario 09:00": {
+      "main": [
+        [{ "node": "Notion · Buscar artículo de hoy", "type": "main", "index": 0 }]
+      ]
+    },
+    "Notion · Buscar artículo de hoy": {
+      "main": [
+        [{ "node": "¿Hay artículo hoy?", "type": "main", "index": 0 }]
+      ]
+    },
+    "¿Hay artículo hoy?": {
+      "main": [
+        [{ "node": "Extraer datos del artículo", "type": "main", "index": 0 }],
+        []
+      ]
+    },
+    "Extraer datos del artículo": {
+      "main": [
+        [
+          { "node": "Descargar HTML del repo", "type": "main", "index": 0 },
+          { "node": "Descargar OG del repo", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Descargar HTML del repo": {
+      "main": [
+        [{ "node": "FTP · Subir HTML", "type": "main", "index": 0 }]
+      ]
+    },
+    "Descargar OG del repo": {
+      "main": [
+        [{ "node": "FTP · Subir OG image", "type": "main", "index": 0 }]
+      ]
+    },
+    "FTP · Subir HTML": {
+      "main": [
+        [{ "node": "Cloudflare · Purge by URL", "type": "main", "index": 0 }]
+      ]
+    },
+    "FTP · Subir OG image": {
+      "main": [
+        [{ "node": "Cloudflare · Purge by URL", "type": "main", "index": 0 }]
+      ]
+    },
+    "Cloudflare · Purge by URL": {
+      "main": [
+        [{ "node": "Notion · Marcar como Publicado", "type": "main", "index": 0 }]
+      ]
+    },
+    "Notion · Marcar como Publicado": {
+      "main": [
+        [{ "node": "Telegram · Aviso publicado", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "errorWorkflow": "",
+    "timezone": "Europe/Madrid"
+  },
+  "staticData": null,
+  "tags": [
+    { "name": "blog" },
+    { "name": "curry" },
+    { "name": "publisher" }
+  ]
+}

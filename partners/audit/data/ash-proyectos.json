@@ -1,0 +1,157 @@
+{
+  "agencia": "ASH Proyectos",
+  "web": "ashproyectos.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Embudo de conversión",
+          "titulo": "CTA principal genérico que no transmite la propuesta de valor",
+          "detalle": "Los call-to-action de ASH Proyectos usan textos como \"Contacta\", \"Solicita información\" o similares, sin transmitir el beneficio concreto. <strong>Un CTA orientado a outcome (\"Auditamos tu marca en 48h\", \"Descubre qué falla en tu identidad\") incrementa la tasa de conversión un 20-35%</strong> al reducir la fricción percibida del primer contacto y diferenciarse del resto de agencias."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Arquitectura de información",
+          "titulo": "Estructura de navegación que no guía al perfil decisor",
+          "detalle": "El menú de ASH Proyectos ofrece servicios pero no segmenta por tipo de cliente o caso de uso. <strong>Añadir entradas tipo \"Para PYME\", \"Para retail\" o \"Para B2B industrial\" permite al visitante reconocerse y reducir el tiempo de evaluación</strong>. Los clientes B2B comparan 3-5 agencias antes de contactar; perder al usuario en la home cuesta caro."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Prueba social",
+          "titulo": "Cartera de clientes potente pero poco visible en el funnel",
+          "detalle": "ASH Proyectos tiene una cartera de clientes reconocibles que es un activo de venta directo. <strong>Sacar 4-6 logos al hero (no enterrarlos en /clientes) y añadir un caso narrado con datos de antes/después convierte mucho mejor</strong> que un grid plano de logos. El testimonio en formato vídeo corto (30-60s) genera 3x más confianza que el escrito."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Cualificación de lead",
+          "titulo": "Formulario de contacto sin cualificación de presupuesto ni timing",
+          "detalle": "El formulario principal recoge nombre/email/mensaje sin segmentar tipo de proyecto, presupuesto estimado o urgencia. <strong>Añadir 2-3 campos de cualificación (rango de inversión, sector, momento del proyecto) permite priorizar leads de alto valor y filtrar curiosos</strong>. La fricción extra es mínima si los campos son opcionales o tipo radio button."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Identidad visual",
+          "titulo": "Diseño consolidado pero con menos diferenciación que la cartera de clientes",
+          "detalle": "La web de ASH Proyectos cumple pero proyecta una identidad menos arriesgada que el trabajo que realmente entregan a sus clientes. <strong>Aplicar la misma osadía visual que muestran en sus casos al propio site (microinteracciones, tipografía display, tratamientos cromáticos atrevidos)</strong> calibra mejor las expectativas del cliente potencial: contratan al estudio que se ve capaz de hacer el trabajo que quieren."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Tipografía y jerarquía",
+          "titulo": "Jerarquía tipográfica plana en páginas de servicio y proyecto",
+          "detalle": "Los párrafos largos sin contraste tipográfico (titular display + intro + cuerpo + cita) impactan en escaneabilidad. <strong>Una escala con 4-5 niveles claramente diferenciados, líneas máx 65 caracteres y subtítulos cada 200-300 palabras</strong> dobla el tiempo de permanencia y reduce la tasa de rebote en blog y casos."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Sistema de diseño",
+          "titulo": "Componentes UI sin sistema unificado (botones, tarjetas, iconografía)",
+          "detalle": "Auditando rápidamente la web se detectan estilos mixtos en botones (con/sin sombra, esquinas distintas), tarjetas con padding inconsistente y mezcla de iconos outline+filled. <strong>Establecer 6-8 tokens base (color, spacing, radius, sombras) y un set único de iconos</strong> es trabajo de 2-3 días con beneficio cumulativo: cada nueva sección heredará el sistema sin reinventarlo."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Detalle visual",
+          "titulo": "Microinteracciones aprovechables para reforzar el carácter del estudio",
+          "detalle": "Las transiciones, hovers y reveals son la oportunidad de proyectar carácter sin coste de carga. <strong>Añadir 4-5 microinteracciones cuidadas (cursor follower, magnetic buttons, scroll reveals tipográficos)</strong> diferencia un estudio top de uno medio sin tocar la estructura."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Visibilidad",
+      "score": 9.2,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "SEO técnico",
+          "titulo": "SEO técnico aceptable (92/100) con mejoras concretas en meta y schema",
+          "detalle": "Las meta descriptions son descriptivas pero no comerciales (sin CTA). <strong>Reescribir las 10 meta descriptions más visitadas con copy orientado a beneficio + añadir schema Organization, Service y BreadcrumbList</strong> mejora CTR orgánico 15-25% sin generar más tráfico."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Datos estructurados",
+          "titulo": "Sin schema FAQPage, Service ni AggregateRating en plantillas clave",
+          "detalle": "Los datos estructurados son la puerta a featured snippets, panel de marca y respuestas en IA generativa. <strong>Marcar las preguntas frecuentes con FAQPage, los servicios con Service schema y los testimonios con Review/AggregateRating</strong> son cambios de bajo coste técnico (Yoast/RankMath en WP) con impacto medible en GSC en 2-4 semanas."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido",
+          "titulo": "Blog/casos sin estrategia de keywords por sector cliente",
+          "detalle": "La estrategia de contenidos de ASH Proyectos parece más documentación de proyectos que captación. <strong>Reorientar 1 post mensual a long-tail comercial (\"branding para empresa de [sector]\", \"identidad visual [vertical]\")</strong> alimenta SEO sin sacrificar la calidad editorial. Los casos pueden cumplir ambos roles si se titulan con intent."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Visibilidad en IA generativa",
+          "titulo": "Sin optimización para citaciones en respuestas de ChatGPT/Perplexity/Gemini",
+          "detalle": "Cuando un decisor pregunta \"agencias de [vertical] en España\" a ChatGPT, las que se citan son las que tienen presencia consistente, schema correcto y mención cruzada en directorios sectoriales. <strong>Trabajar GEO (Generative Engine Optimization) con FAQ schema bien construido + presencia en 8-10 directorios verticales relevantes</strong> empieza a aportar tráfico cualificado en 3-4 meses."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Dev & Performance",
+      "score": 9.9,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Core Web Vitals",
+          "titulo": "Performance sólida (100 desktop / 100 mobile) que conviene mantener vivo",
+          "detalle": "ASH Proyectos tiene métricas de carga buenas. <strong>El riesgo a 12 meses es la deuda incremental: cada plugin nuevo, cada widget de tracking añade peso</strong>. Recomendable un check trimestral con Lighthouse para detectar regresiones antes de que impacten conversión y SEO. La excelencia de hoy es la deuda de mañana sin disciplina."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Calidad técnica",
+          "titulo": "Best Practices correcto pero con margen en headers de seguridad avanzados",
+          "detalle": "Headers como Content-Security-Policy, Permissions-Policy y Strict-Transport-Security elevan la postura de seguridad. <strong>Configurarlos en .htaccess/nginx en 30 minutos</strong> es trabajo invisible al usuario pero relevante en propuestas a clientes regulados (banca, salud, sector público)."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Stack y mantenimiento",
+          "titulo": "Stack basado probablemente en WordPress + tema constructor (Elementor/WPBakery)",
+          "detalle": "El patrón típico de la mayoría de agencias en España: WordPress con tema constructor visual. Funciona pero <strong>añade 200-400KB de CSS/JS no usado por página y dificulta la performance avanzada</strong>. Para webs de marca de agencia, un stack moderno (Astro, Next.js estático) con headless content da mejor performance, mejor DX para el equipo y diferencia a la agencia técnicamente. Solo merece la pena con presupuesto y mantenimiento posterior asegurado."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Experiencia móvil",
+          "titulo": "Diseño responsive correcto pero no mobile-first en flujos clave",
+          "detalle": "La adaptación al móvil existe pero los flujos de contacto, casos y portfolio están pensados desktop-first y reducidos. <strong>Con +60% de tráfico móvil en agencias, los CTAs deberían ser sticky bottom bar, los formularios verticales con campos grandes y el carrusel de proyectos optimizado para swipe</strong>. El móvil es la pantalla del decisor mientras toma café, no un afterthought."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Marcar schema FAQPage + Service + Review en home y plantillas de servicio",
+    "detalle": "ASH Proyectos ya tiene la base técnica sólida. El paso siguiente es maximizar visibilidad orgánica con datos estructurados: FAQ en home y casos, Service en cada vertical y AggregateRating con testimonios reales. Trabajo de 2-3 horas con plugins Yoast/RankMath o JSON-LD manual.",
+    "impacto": "Aparición en featured snippets en 3-6 semanas. CTR orgánico +15-25%. Citaciones en ChatGPT/Perplexity (GEO) cuando preguntan por agencias del vertical. Coste: bajo. Impacto: medible en GSC en 2-4 semanas."
+  },
+  "_score": 8.2,
+  "_nombre": "Ascensión",
+  "_icp": "Branding",
+  "resumen": [
+    "ASH Proyectos opera en un mercado competitivo donde la plataforma digital es la primera impresión para un potencial cliente. Hemos analizado ashproyectos.com en cuatro dimensiones — UX, UI, SEO y rendimiento técnico — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma técnicamente sólida (Performance 100/100) con base correcta para escalar captación. Dev & Performance (9.9/10) es el área más fuerte y UX & Conversión (6.5/10) la que tiene margen prioritario. La oportunidad está en convertir esa solidez técnica en captación cualificada.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en la captación de clientes y la percepción profesional de la agencia."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 100,
+      "accessibility": 87,
+      "bestPractices": 96,
+      "seo": 92
+    },
+    "mobile": {
+      "performance": 100,
+      "accessibility": 91,
+      "bestPractices": 96,
+      "seo": 92
+    }
+  }
+}

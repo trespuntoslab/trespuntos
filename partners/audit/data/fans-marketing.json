@@ -1,0 +1,157 @@
+{
+  "agencia": "FANS Marketing",
+  "web": "fansmarketing.es",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Tiempo de carga y abandono",
+          "titulo": "LCP de 13,3s en desktop está provocando abandono masivo antes de ver el hero",
+          "detalle": "El Largest Contentful Paint de 13,3s en desktop y 10,6s en mobile significa que el visitante pasa más de 10 segundos viendo una pantalla en blanco antes de poder leer la propuesta de valor. <strong>Según los datos de Google, una web con LCP superior a 4s pierde el 53% de los visitantes mobile antes de la primera interacción</strong>. Para una agencia de performance marketing, este dato técnico contradice directamente su discurso comercial."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Propuesta de valor",
+          "titulo": "Hero \"transformamos ideas en resultados\" sin caso medible que lo respalde",
+          "detalle": "El hero promete resultados pero no muestra ninguno en pantalla inicial: ni un número, ni un cliente icónico (Fun&Basics, Málaga Plaza), ni un testimonio. <strong>Para una agencia de performance que vende ROI medible, no exhibir el ROI obtenido en un caso real desaprovecha el activo más fuerte de venta consultiva</strong>. Un microcaso en hero (\"+218% ROAS para EVO Beauty\") tendría más impacto que toda la sección de servicios."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Portfolio y casos",
+          "titulo": "Portfolio de 30+ proyectos pero sin casos de estudio narrativos",
+          "detalle": "El portfolio funciona como galería filtrable pero los proyectos no tienen profundidad narrativa: no hay reto, estrategia, métricas de ROI ni testimonio del cliente. <strong>Reescribir 5-6 casos de estudio largos (1.500-2.500 palabras) con ROI medible convierte el portfolio en activo SEO + activo de venta</strong> que los comerciales pueden enviar a leads cualificados."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Posicionamiento ICP",
+          "titulo": "Servicios all-in-one (digital + interiores + packaging) diluyen el ICP",
+          "detalle": "FANS ofrece marketing digital, diseño web, diseño interior, packaging, video, fotografía y eventos. <strong>El visitante no entiende si es una agencia de performance digital o un estudio creativo all-in-one. Concentrar el discurso comercial en performance + branding (donde tienen casos verificables como Málaga Plaza, EVO Beauty) y mover los servicios secundarios a una pestaña interna mejora el match con leads enterprise</strong>."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción Visual",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Identidad visual",
+          "titulo": "Diseño cuidado pero la lentitud arruina la primera impresión",
+          "detalle": "Visualmente la web tiene buen criterio: tipografía, color, fotografía. Pero <strong>la lentitud de carga genera una percepción de \"web vieja o rota\" antes de que el visitante pueda apreciar el diseño</strong>. Es un caso clásico donde el problema técnico está canibalizando el trabajo de diseño. Optimizar performance es prerrequisito para que la UI cumpla su función comercial."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Accesibilidad",
+          "titulo": "Accessibility 94/100, el punto fuerte del Lighthouse",
+          "detalle": "La accesibilidad está bien trabajada (94/100). Los puntos típicos que faltan para llegar a 100 son contraste de color en CTAs secundarios, labels en formularios y atributos ARIA en componentes interactivos. <strong>Cerrar esos detalles permite usar el etiquetado WCAG 2.1 AA como argumento comercial</strong> con clientes de educación, salud y administración pública."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Storytelling visual",
+          "titulo": "Slogan \"WORK ENJOY WIN\" sin desarrollo narrativo",
+          "detalle": "El slogan visual \"WORK ENJOY WIN\" funciona como gancho pero queda aislado sin una narrativa de marca que lo respalde. <strong>Convertirlo en un eje editorial con 3 secciones de home (cómo trabajamos / cómo disfrutamos / cómo ganamos), cada una con un caso real, transforma un mensaje publicitario en una propuesta de valor estructurada</strong>."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Microinteracciones",
+          "titulo": "Hovers y transiciones básicos sin demostración de capacidad técnica",
+          "detalle": "Para una agencia que vende diseño y desarrollo web, la web debería ser una demo viva de capacidades. <strong>Añadir microinteracciones bien medidas (scroll-triggered animations, transiciones entre secciones, custom cursor en ciertas zonas) refuerza la percepción de calidad y diferenciación</strong> sin penalizar performance si se hace con criterio."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Desarrollo & Rendimiento",
+      "score": 4.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Performance crítica",
+          "titulo": "LCP de 13,3s en desktop y 10,6s en mobile — el problema más urgente",
+          "detalle": "Estos son tiempos de carga inaceptables en cualquier web profesional, especialmente en una agencia de marketing digital. <strong>El problema es claramente el peso de imágenes sin optimizar (probablemente 2-5MB por página) combinado con scripts de WordPress sin diferir, plugins excesivos y ausencia de CDN. Una optimización completa de medio día subiría el Performance a 80+ y resolvería el problema</strong> sin tocar el diseño."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Speed Index y experiencia",
+          "titulo": "Speed Index 8,9s desktop y 8,7s mobile — sensación de web rota",
+          "detalle": "El Speed Index mide el tiempo hasta que el contenido visible se considera completo. Casi 9 segundos significa que el visitante \"ve la web montándose\" durante una eternidad. <strong>Para una agencia que cobra por gestionar campañas SEM, donde cada segundo de carga reduce conversión un 7%, este dato es directamente contradictorio con la propuesta de valor que vende</strong>. Es prioridad uno absoluta."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Stack y optimización",
+          "titulo": "WordPress sin optimización moderna (CDN, lazy loading, WebP)",
+          "detalle": "La web sugiere un WordPress estándar sin las optimizaciones modernas: probablemente sin CDN (Cloudflare), sin imágenes WebP/AVIF, sin lazy loading agresivo, sin minificación de CSS/JS. <strong>Migrar a un setup con Cloudflare + plugin de optimización (WP Rocket, Perfmatters) + conversión masiva a WebP es un proyecto de 2-3 jornadas que cambia radicalmente la experiencia</strong> sin necesidad de rediseñar."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Best Practices",
+          "titulo": "Best Practices 77/100 con cabeceras de seguridad incompletas",
+          "detalle": "El score de Best Practices se queda en 77/100 por falta de cabeceras de seguridad modernas (CSP, HSTS, Permissions-Policy), librerías JavaScript con vulnerabilidades conocidas y posiblemente recursos cargados por HTTP. <strong>Una auditoría de medio día sube el score a 95+ y reduce el riesgo de ataques automatizados</strong>, algo que es buen argumento comercial con clientes B2B."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Contenido",
+      "score": 8.0,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "SEO técnico",
+          "titulo": "Score SEO 100/100 — punto fuerte indiscutible",
+          "detalle": "FANS Marketing tiene SEO técnico perfecto: titles, meta descriptions, headings, URLs limpias, sitemap. <strong>Es la categoría donde la web más destaca, lo cual confirma que el equipo SEO de la agencia trabaja bien. El reto es que ese excelente SEO está dirigiendo tráfico a una web que carga en 13 segundos</strong>, lo cual desperdicia gran parte del tráfico orgánico captado."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Local SEO Málaga-Antequera",
+          "titulo": "Posicionamiento local Málaga sólido con oportunidad de ampliar a Costa del Sol",
+          "detalle": "La marca rankea para \"agencia marketing Málaga\" pero hay margen para captar búsquedas de toda la Costa del Sol (Marbella, Estepona, Fuengirola). <strong>Una estrategia de landing pages locales por ciudad de la provincia, cada una con casos reales del territorio, captaría búsquedas con intención comercial muy alta</strong> en una zona económicamente potente."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Contenido y autoridad",
+          "titulo": "Blog activo pero con potencial de especialización por sector",
+          "detalle": "El blog mantiene actividad regular, lo cual es positivo. Sin embargo, los contenidos son generalistas y no aprovechan la experiencia sectorial real de la cartera (centros comerciales, retail moda, beauty clinics, inmobiliario). <strong>Especializar el blog en 2-3 verticales con contenido pillar (\"Marketing para centros comerciales\", \"Estrategia digital clínicas estéticas\") generaría leads sectoriales cualificados</strong>."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Datos estructurados",
+          "titulo": "Schema.org básico sin FAQ ni Service por sector",
+          "detalle": "Detectamos schema Organization pero no FAQPage ni Service específico por servicio. <strong>Añadir FAQPage en cada landing de servicio y Service por especialización (SEM, branding, video) habilita rich snippets en SERP</strong> y aumenta CTR orgánico entre un 15-25%."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Optimización integral de performance para llevar Lighthouse de 60 a 85+",
+    "detalle": "Optimizar imágenes a WebP/AVIF con lazy loading, implementar Cloudflare como CDN, deferir scripts no críticos y configurar plugin de cache (WP Rocket o Perfmatters). 2-3 jornadas de trabajo que cambiarían radicalmente la experiencia de usuario.",
+    "impacto": "Esperable un incremento del 35-50% en conversión del tráfico orgánico actual y mejora directa de Core Web Vitals que beneficia el ranking SEO general. Recuperación inmediata del tráfico que ahora abandona por lentitud."
+  },
+  "_score": 6.3,
+  "_nombre": "David",
+  "_icp": "Performance",
+  "resumen": [
+    "FANS Marketing opera desde Málaga con oficina adicional en Antequera, equipo de 15+ personas y una cartera mid-market sólida (Fun&Basics, Málaga Plaza Shopping Center, EVO Beauty Clinics, CIVA, Golden Routes). Hemos analizado fansmarketing.es en cuatro dimensiones — UX, UI, desarrollo y SEO — buscando dónde la web está saboteando el discurso comercial.",
+    "Detectamos un caso paradigmático: <strong>SEO técnico perfecto (100/100) llevando tráfico a una web con LCP de 13,3s en desktop</strong>. El equipo SEO de la agencia hace bien su trabajo, pero la web pierde a más del 50% de los visitantes antes de poder ver el hero por culpa de problemas técnicos de optimización (imágenes pesadas, plugins WordPress sin optimizar, ausencia de CDN).",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> El mayor retorno está en arreglar la performance: 2-3 jornadas de optimización subirían Lighthouse de 60 a 85+ y multiplicarían la conversión del tráfico que la web ya recibe sin necesidad de generar más visitas."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 60,
+      "accessibility": 94,
+      "bestPractices": 77,
+      "seo": 100
+    },
+    "mobile": {
+      "performance": 66,
+      "accessibility": 94,
+      "bestPractices": 77,
+      "seo": 100
+    }
+  }
+}

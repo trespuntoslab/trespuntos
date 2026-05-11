@@ -1,0 +1,157 @@
+{
+  "agencia": "Maktagg",
+  "web": "maktagg.com",
+  "categorias": [
+    {
+      "id": "ux",
+      "nombre": "UX & Conversión",
+      "score": 6.5,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Embudo de conversión",
+          "titulo": "Cartera lujo/enterprise muy potente pero CTA principal poco diferenciado",
+          "detalle": "Loewe, Smeg, BIC, Sandoz, Marset, Mark Maddox o Lonbali son clientes de altísimo nivel — cartera enterprise excepcional. Sin embargo, el CTA principal es genérico (\"Contact\" / \"Get in touch\") sin filtrar el tipo de cliente. <strong>Para una agencia que trabaja con marcas de lujo, un CTA contextual tipo \"Discuss your luxury brand project\" o \"Premium project enquiry\" alinearía la primera impresión con el posicionamiento real</strong> y filtrarían leads sin fit desde el primer click."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "Cualificación",
+          "titulo": "Sin filtro de presupuesto mínimo en formulario inicial",
+          "detalle": "Una agencia con capacidades 360 (branding + paid + SEO + social + UX/UI + 3D + motion + packaging) y cartera enterprise debería filtrar leads desde el formulario. <strong>Indicar presupuesto mínimo orientativo (>25K€ típico para proyectos enterprise) o tipo de cliente esperado evitaría quemar tiempo del equipo en discovery con leads sin fit</strong> y reforzaría el posicionamiento premium frente a la competencia generalista."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Storytelling",
+          "titulo": "Cartera fuerte pero sin case studies con métricas de impacto",
+          "detalle": "Loewe, Smeg, BIC son nombres potentes pero no se exponen casos detallados con KPIs (incremento ventas, recall marca, awareness). <strong>3-4 case studies de gran formato con datos antes/después convertirían \"clientes de prestigio\" en \"resultados demostrables\"</strong> — exactamente lo que buscan otras marcas enterprise antes de contratar a una agencia internacional."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Multi-oficina",
+          "titulo": "Presencia Barcelona / Madrid / Málaga sin diferenciación de servicios",
+          "detalle": "Las tres oficinas se mencionan al mismo nivel sin clarificar especialidades por sede. <strong>Una página por oficina con foco diferencial (Barcelona = branding internacional, Madrid = enterprise, Málaga = innovación digital, p.ej.) reforzaría la presencia local en cada plaza</strong> y abriría visibilidad SEO en queries específicas de cada ciudad."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "nombre": "UI & Percepción Visual",
+      "score": 7.5,
+      "hallazgos": [
+        {
+          "prioridad": "media",
+          "impacto": "Speed Index",
+          "titulo": "Speed Index desktop 3.0s — penaliza percepción de marca premium",
+          "detalle": "Para una agencia que trabaja Loewe (lujo) y Smeg (premium), Speed Index de 3.0s desktop transmite lentitud de carga visual incoherente con el posicionamiento. <strong>El usuario percibe la web cargando \"a pellizcos\" — lo opuesto a la fluidez que el posicionamiento promete</strong>. Solución: priorizar imágenes hero, reducir CSS bloqueante y precachear fonts custom — gana 1-1.5s de Speed Index sin reescribir."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Identidad visual",
+          "titulo": "Estética coherente con el posicionamiento pero sin elemento memorable único",
+          "detalle": "El diseño cumple los códigos de agencia premium internacional (limpio, minimal, tipografía cuidada) pero podría ser sustituido por cualquier otra agencia equivalente. <strong>Un elemento gráfico recurrente (motif tipográfico, asset 3D, transición distintiva, sistema de color signature) elevaría la firma visual</strong> diferenciándola en un mercado donde el \"premium minimal\" se ha vuelto cliché compartido."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Multi-idioma",
+          "titulo": "Web en inglés (/en) sin clarificar versión española completa",
+          "detalle": "La home está en /en (inglés) sin indicador claro de la versión española y posible mezcla de contenido entre idiomas. <strong>Una experiencia bilingüe con switcher visible y rutas /es y /en separadas y completas refuerza el posicionamiento internacional</strong> y mejora SEO en cada idioma — actualmente posibles páginas con contenido duplicado o canonical mal configurado."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Animaciones",
+          "titulo": "Microanimaciones presentes pero con timing irregular",
+          "detalle": "Las animaciones de scroll y transiciones funcionan pero el timing es inconsistente entre secciones. <strong>Una curva de easing unificada (cubic-bezier signature) y duración estándar de 300-400ms en todas las microinteracciones aporta sensación de pieza única</strong> en lugar de plantilla con efectos genéricos."
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "nombre": "Desarrollo & Rendimiento",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "Best Practices",
+          "titulo": "Best Practices Lighthouse 73/100 — debajo del estándar para premium",
+          "detalle": "Best Practices de 73 es bajo para una agencia que trabaja con marcas internacionales premium. Posibles causas: librerías JavaScript con vulnerabilidades, mixed content, errores en consola del navegador o problemas de imágenes con aspect-ratio. <strong>Para una agencia que cobra premium, este score es un riesgo reputacional — cualquier auditoría técnica de un cliente nuevo lo verá inmediatamente</strong>. Inversión 4-6h con resultado medible inmediato."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "LCP mobile",
+          "titulo": "LCP mobile 3.3s — fuera del umbral bueno de Google",
+          "detalle": "LCP mobile de 3.3s está por encima del umbral \"bueno\" (≤2.5s) de Google. <strong>El elemento LCP es probablemente una imagen hero de gran formato sin priority hint ni preload, cargada en mobile a tamaño desktop</strong>. Solución: srcset + sizes con imagen mobile-specific de 800px max + loading=\"eager\" + fetchpriority=\"high\" — gana 1-1.5s reales en mobile."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "CLS mobile",
+          "titulo": "Cumulative Layout Shift mobile 0.119 — borderline",
+          "detalle": "CLS mobile de 0.119 está cerca del umbral malo (≥0.25) y supera el umbral bueno (≤0.1). <strong>Imágenes y/o vídeos sin width/height declarados producen desplazamientos visibles al cargar</strong>. Añadir aspect-ratio CSS o atributos width/height explícitos en cada imagen/vídeo es trabajo de 1-2h con impacto directo en Core Web Vitals."
+        },
+        {
+          "prioridad": "baja",
+          "impacto": "Performance",
+          "titulo": "Score Performance 88-89 — sólido pero con margen real",
+          "detalle": "Performance 89 desktop / 88 mobile es bueno pero no excepcional para una agencia que vende tecnología en sus servicios. <strong>Llegar a 95+ en ambos requiere las correcciones de LCP y CLS arriba mencionadas + auditar terceros (analytics, chat widgets, fonts externas)</strong> — la diferencia entre 88 y 95 separa una web buena de una referente para clientes auditando agencias internacionales."
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "nombre": "SEO & Contenido",
+      "score": 7.0,
+      "hallazgos": [
+        {
+          "prioridad": "alta",
+          "impacto": "GEO / IA",
+          "titulo": "Sin optimización para IAs en queries de \"agencia branding lujo Barcelona\"",
+          "detalle": "Pese a la cartera de lujo, las páginas no están estructuradas para ser citadas por ChatGPT, Perplexity o Gemini en queries del nicho \"agencia branding marcas lujo España\" o \"agencia 360 enterprise Barcelona Madrid\". <strong>Un archivo llms.txt + Schema Organization completo + entity SEO trabajado en home consolidaría a Maktagg como fuente citable</strong> donde cada vez se desplaza más tráfico de descubrimiento empresarial."
+        },
+        {
+          "prioridad": "alta",
+          "impacto": "SEO multilingüe",
+          "titulo": "Hreflang y canonicals probablemente mal configurados",
+          "detalle": "La web sirve /en sin clarificar la versión /es completa, lo que típicamente genera contenido duplicado, canonical apuntando a la versión incorrecta o ausencia de hreflang. <strong>Para una agencia internacional con clientes globales, hreflang y canonicals correctos son fundamentales para no canibalizar versiones de idioma</strong> y aparecer en SERPs específicas de cada país. Auditoría rápida con Screaming Frog detecta el problema en 1h."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Servicios sin landings dedicadas",
+          "titulo": "9 servicios listados pero sin páginas individuales con keyword targeting",
+          "detalle": "Branding, paid media, SEO, social, copy, motion, 3D, UX/UI y packaging son 9 servicios potentes que comparten una sola página \"servicios\". <strong>9 landing pages dedicadas (una por servicio) con 1000-1500 palabras + casos + FAQ con schema multiplicaría la presencia orgánica en cada vertical</strong> — particularmente en queries comerciales B2B con intent de compra."
+        },
+        {
+          "prioridad": "media",
+          "impacto": "Local SEO multi-oficina",
+          "titulo": "Presencia 3 ciudades sin schema LocalBusiness por sede",
+          "detalle": "Maktagg opera en Barcelona, Madrid y Málaga pero no expone schema LocalBusiness por cada oficina. <strong>3 schemas LocalBusiness (uno por sede) abrirían visibilidad en queries locales de cada plaza</strong> tipo \"agencia branding Madrid\", \"agencia 360 Barcelona\", \"agencia digital Málaga\" — alta competencia pero alto valor por lead."
+        }
+      ]
+    }
+  ],
+  "quickWin": {
+    "titulo": "Optimización LCP mobile + Best Practices a 90+ con auditoría técnica de 4-6 horas",
+    "detalle": "Dos correcciones técnicas que elevan inmediatamente la percepción premium: (1) optimizar el elemento LCP mobile (imagen hero) con srcset + sizes + priority hints — pasa de 3.3s a sub-2s; (2) auditar Best Practices con DevTools para identificar y corregir librerías obsoletas, mixed content o errores en consola — pasa de 73 a 90+. Ambos cambios son detectables por Google y por cualquier auditoría técnica de cliente nuevo en cuestión de horas.",
+    "impacto": "Una web de agencia que sirve marcas de lujo (Loewe) y premium (Smeg, Sandoz) debería tener métricas técnicas equivalentes al posicionamiento. Tras la intervención: Performance esperada 95+, LCP <2s, BP 90+ — referencias profesionales sólidas para presentar a CMOs y CIOs auditando agencias antes de contratar. Implementación: 4-6 horas. Impacto medible: en 24-48h tras deploy."
+  },
+  "_score": 7.0,
+  "_nombre": "Federico",
+  "_icp": "Branding",
+  "resumen": [
+    "Maktagg es una agencia 360 con presencia multi-oficina (Barcelona / Madrid / Málaga) y cartera enterprise excepcional: Loewe, Smeg, Viceroy, New Era, BIC, Sandoz, Marset, Mark Maddox y Lonbali. Servicios completos: branding, paid media, SEO, social, copy, motion, 3D, UX/UI y packaging. Hemos analizado maktagg.com en cuatro dimensiones — UX, UI, Desarrollo y SEO — para identificar dónde hay fricción y dónde hay oportunidad.",
+    "Detectamos una plataforma con estética coherente con el posicionamiento premium pero con debilidades técnicas relevantes: Best Practices Lighthouse 73/100 y LCP mobile 3.3s son inconsistentes con clientes del nivel Loewe o Smeg. Speed Index desktop 3.0s transmite lentitud incoherente con marcas de lujo. SEO (7.0/10) muestra ausencia de optimización GEO/IA, hreflang probablemente mal configurado y 9 servicios compartiendo una sola landing.",
+    "<strong>Hemos identificado 16 hallazgos concretos y un quick win de implementación rápida.</strong> Cada punto tiene impacto directo en alinear la presentación técnica de la agencia con el nivel de cartera que ya tienen — gap actual entre cliente real y propia web."
+  ],
+  "lighthouse": {
+    "desktop": {
+      "performance": 89,
+      "accessibility": 84,
+      "bestPractices": 73,
+      "seo": 85
+    },
+    "mobile": {
+      "performance": 88,
+      "accessibility": 87,
+      "bestPractices": 73,
+      "seo": 85
+    }
+  }
+}
