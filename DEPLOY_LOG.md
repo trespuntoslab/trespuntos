@@ -16,6 +16,20 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
 
 ---
 
+## 2026-05-11 20:55 — SEO: fix canibalización, meta servicio desarrollo web, consolidación tendencias
+- **Commit:** ec58c0c (main)
+- **Archivos (5):**
+  - `.htaccess` — 4 nuevas reglas 301 tendencias → winner + typo redirect actualizado
+  - `blog/desarrollo-web-a-medida-cuando-es-la-decision-correcta/index.html` — 2 CTAs internos → servicio
+  - `blog/tendencias-ux-ui-2026-la-consolidacion-del-diseno-predictivo-y-la-eficiencia-tecnica/index.html` — canonical → winner
+  - `blog/tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-y-escala-tecnica/index.html` — canonical → winner
+  - `servicios/desarrollo-web-a-medida-barcelona/index.html` — nuevo title + meta + OG + JSON-LD
+- **Cloudflare:** Purge Everything — PENDIENTE ⚠️
+- **Verificación:** 301s OK en producción (curl), title nuevo OK, CTAs blog OK (cf-cache: MISS = recién subido)
+- **Notas:** Winner tendencias = tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion (pos.7.7). Solicitar re-crawl en GSC para las 3 URLs afectadas.
+
+---
+
 ## 2026-05-11 — Fix hang al cargar: orbit animation + Turnstile al fin del body
 - **Commit:** 276f988 (main)
 - **Archivos (36):**
