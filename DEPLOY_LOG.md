@@ -23,8 +23,8 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
   - `casos-de-negocio/index.html` (card naranja añadida)
   - `img/casos/naranja/*.webp` (18 imágenes: 7 desktop + 8 mobile + 3 posters)
   - `img/casos/naranja/*.mp4` (3 vídeos: 2 desktop + 1 mobile)
-- **Cloudflare:** Purge Everything ⚠️ PENDIENTE
-- **Verificación:** pendiente post-purga
+- **Cloudflare:** Purge Everything ✅ 2026-05-11
+- **Verificación:** OK
 - **Notas:** Carrusel móvil con RAF + inercia. Video split-phone con play directo (bypass IO). Avatar quote corregido.
 
 ---
