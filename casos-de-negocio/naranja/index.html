@@ -990,6 +990,20 @@
         sigObs.observe(signalsBlock);
       }
 
+      // Split-phone video: play directly, no IO pause interference
+      var splitVideo = document.querySelector('.cs-mobile-split-phone video');
+      if (splitVideo) {
+        function playMobileSplit() {
+          splitVideo.muted = true; splitVideo.playsInline = true;
+          var p = splitVideo.play(); if (p && p.catch) p.catch(function(){});
+        }
+        [200, 600, 1200].forEach(function(ms) { setTimeout(playMobileSplit, ms); });
+        splitVideo.addEventListener('pause', function() {
+          if (!document.hidden) { var p = splitVideo.play(); if (p && p.catch) p.catch(function(){}); }
+        });
+      }
+
+      // Multi-phone videos (carousel / video-phones): IO play/pause
       var phoneVideos = document.querySelectorAll('.cs-video-phones video, .cs-phone-frame--video video');
       if (phoneVideos.length) {
         var vidObs = new IntersectionObserver(function (entries) {
