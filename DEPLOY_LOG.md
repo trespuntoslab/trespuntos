@@ -16,6 +16,24 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
 
 ---
 
+## 2026-05-11 — Fix Turnstile data-size=invisible → hang de 7s en todas las páginas
+- **Commit:** d4997fa (main)
+- **Archivos (47):** todos los HTMLs con widget `.cf-turnstile` — quitado `data-size="invisible"` (parámetro inválido en versión actual de Turnstile API)
+- **Cloudflare:** Purge Everything ✅
+- **Verificación:** `data-theme="dark"` sin `data-size` confirmado en producción (CF-Cache: HIT)
+- **Notas:** El `data-size="invisible"` causaba TurnstileError al cargarse → bucle de 15+ reintentos durante ~7s → hang percibido por el usuario. El modo invisible lo controla el tipo de widget en CF dashboard, no el atributo HTML.
+
+---
+
+## 2026-05-11 — Revert components.css async (FOUC) + Fix orbit animation + Turnstile defer
+- **Commits:** `276f988`, `94578e6`, `e2dfba1` (revertido) (main)
+- **Archivos:** `index.html` + 35 HTMLs con Turnstile + `css/design-system.css` + archivos servicios/casos/contacto
+- **Cloudflare:** Purge Everything ✅ (x2)
+- **Verificación:** OK
+- **Notas:** (1) orbitBubbleIn reducido a opacity-only; (2) Turnstile movido a fin de body con defer; (3) components.css async probado y revertido (causaba FOUC). El culpable real era el data-size=invisible del fix siguiente.
+
+---
+
 ## 2026-05-11 20:55 — SEO: fix canibalización, meta servicio desarrollo web, consolidación tendencias
 - **Commit:** ec58c0c (main)
 - **Archivos (5):**
