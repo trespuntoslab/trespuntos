@@ -101,3 +101,78 @@ img/logo-trespuntos-dark.svg
 - [ ] ¿El logo tiene espacio de respiro alrededor (mínimo igual a la altura de un anillo)?
 
 Si los cuatro son sí, adelante.
+
+---
+
+## Modo light — Estado y guía de implementación
+
+> Esta sección es para cuando decidas activar el modo light en la web, un cliente, o cualquier nuevo proyecto.  
+> La referencia "done right" ya existe: `doc-library.css` del proyecto de documentos funcionales tiene el modo light completo en producción desde abril 2026.
+
+### Tokens completos para `[data-theme="light"]` (copia-pega ready)
+
+Paleta derivada de `doc-library.css`, adaptada a los nombres de token del web (sin prefijo `--tp-`).
+
+```css
+[data-theme="light"] {
+  /* Mint oscurecido: #5DFFBF no cumple WCAG AA sobre blanco, #0FA36C sí */
+  --mint:        #0FA36C;
+  --mint-hover:  #0C8A5B;
+  --mint-rgb:    15, 163, 108;  /* CRÍTICO: actualizar siempre junto a --mint */
+
+  /* Fondos: warm off-white, evita el blanco clínico */
+  --bg-base:     #F7F6F3;
+  --bg-surface:  #FFFFFF;
+  --bg-subtle:   #F0EFEB;
+  --bg-muted:    #E8E6E0;
+
+  /* Texto */
+  --text-primary:   #141414;
+  --text-secondary: #4A4A4A;
+  --text-muted:     #6E6E6E;
+
+  /* Bordes */
+  --border-base:    #E4E2DC;
+  --border-subtle:  #EEECE6;
+  --border-strong:  #D0CEC6;
+
+  /* Sombras (reemplaza las dark que usan rgba(0,0,0,...)) */
+  --shadow-elevation: 0 8px 32px rgba(24,24,20,.12), 0 2px 8px rgba(24,24,20,.08);
+  --shadow-brand:     0 0 24px rgba(15,163,108,.15);
+}
+```
+
+### Estado actual en la web (`css/design-system.css`) — auditado 2026-05-10
+
+| Capa | Estado | Notas |
+|---|---|---|
+| Bloque `[data-theme="light"]` en `css/design-system.css` | ❌ No existe | Solo en `design-system.html` (showcase), no en el CSS que cargan las páginas |
+| `--mint-rgb` actualizado en light | ❌ Sin bloque, no aplica | Si no se actualiza, todos los `rgba(var(--mint-rgb),...)` siguen en mint dark |
+| Overrides de componentes light en CSS principal | ❌ No existe | Solo parcialmente en el showcase |
+| `rgba(93,255,191,...)` hardcoded en `design-system.css` | ⚠️ ~11 ocurrencias | No se adaptan al cambiar `--mint-rgb`; necesitan reemplazarse |
+| `rgba(93,255,191,...)` hardcoded en `components.css` | ⚠️ ~5 ocurrencias | Ídem |
+| `rgba(255,255,255,...)` glassmorphism dark | ⚠️ ~28 ocurrencias | Invisibles en light (blanco sobre blanco); los críticos necesitan override |
+| Componentes sin override light en showcase | ⚠️ Parcial | Faltan: cards testimonio, cierre-form, faq, caso, servicio; custom-select; footer; browser-mock; form-gradient-accent |
+
+**Referencia**: `doc-library.css` resuelve todos estos problemas — revisar su sección `[data-theme="light"]` (líneas ~37-54) y los overrides de componente (líneas ~1155-1253) antes de implementar en la web.
+
+### Checklist de activación para la web (est. 1-2h)
+
+Orden estricto — cada paso depende del anterior:
+
+- [ ] **Paso 1** — Copiar los tokens de arriba como bloque `[data-theme="light"]` en `css/design-system.css`, justo después del bloque `:root {}` existente.
+- [ ] **Paso 2** — Reemplazar `rgba(93,255,191,X)` por `rgba(var(--mint-rgb),X)` en:
+  - `css/design-system.css` (~11 ocurrencias — buscar con `grep -n "rgba(93"`)
+  - `css/components.css` (~5 ocurrencias)
+  - `css/case-study.css` (revisar)
+- [ ] **Paso 3** — Añadir overrides de componentes para light en `css/design-system.css`. Prioridad: cards, custom-select, footer, browser-mock, form-gradient-accent. Copiar el patrón de `doc-library.css` líneas 1155-1253.
+- [ ] **Paso 4** — Actualizar la fecha en `design-system.html` (header y footer del showcase).
+- [ ] **Paso 5** — Test visual local: poner `data-theme="light"` en el `<html>` de `index.html` y verificar: botones, inputs, badges, cards, footer, navbar. Quitar antes del commit.
+- [ ] **Paso 6** — Commit en rama propia (`feat/light-mode`) y test en staging antes de FTP a producción.
+
+### Cuándo implementar
+
+No hay urgencia — el modo dark funciona bien y es la identidad visual de Tres Puntos. Implementar cuando:
+- Un cliente necesite una versión light de su producto (basado en este design system)
+- Se decida ofrecer toggle dark/light en la propia web de Tres Puntos
+- Un nuevo proyecto con esta base requiera fondo claro por defecto
