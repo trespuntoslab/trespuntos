@@ -16,6 +16,23 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
 
 ---
 
+## 2026-05-11 — Fix hang al cargar: orbit animation + Turnstile al fin del body
+- **Commit:** 276f988 (main)
+- **Archivos (36):**
+  - `css/design-system.css`
+  - `index.html`
+  - `arquitectura-digital-conversion/index.html`
+  - `casos-de-negocio/{1csoft,diferentidea,exitbcn,gibobs,naranja,nomade-rent,nomadevans,paradise,penguinaula,tsp,tusolucionhipotecaria,zimconnections}/index.html`
+  - `contacto/index.html`, `contacto/index-v2-backup.html`
+  - `form-v3/form-step1.html`
+  - `iniciar-proyecto/index.html`, `nosotros/index.html`
+  - `servicios/{consultoria-digital-barcelona,consultoria-digital-bilbao,consultoria-digital-madrid,consultoria-digital-sevilla,desarrollo-web-a-medida-barcelona,design-engineer-barcelona,design-engineer-bilbao,design-engineer-madrid,design-engineer-sevilla,diseno-ux-ui-barcelona,ia-generativa-empresas,index,tienda-online-barcelona,tienda-online-bilbao,tienda-online-madrid,tienda-online-sevilla}/index.html`
+- **Cloudflare:** Purge Everything — PENDIENTE ⚠️
+- **Verificación:** Pendiente post-purga
+- **Notas:** Fix en dos frentes: (1) orbitBubbleIn reducido a solo opacity (quitado transform con fill-mode:forwards que congelaba orbitCounterRotation) + will-change en orbit-ring/bubble; (2) Turnstile movido de <head async defer> a </body> con defer en 35 HTMLs — el challenge de CF ya no bloquea el primer render.
+
+---
+
 ## 2026-05-11 — Caso Naranja Inmobiliaria
 - **Commit:** 1ab1379 (main — merge de claude/context-architecture-setup-LNrbb)
 - **Archivos:**
