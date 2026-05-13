@@ -113,6 +113,24 @@
               onReject: function () {
                 gtag('consent', 'update', { analytics_storage: 'denied' });
               }
+            },
+            hotjar: {
+              label: 'Hotjar (Heatmaps y grabaciones de sesión)',
+              onAccept: function () {
+                if (window._hjLoaded) return;
+                window._hjLoaded = true;
+                (function(h,o,t,j,a,r){
+                  h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                  h._hjSettings={hjid:2456748,hjsv:6};
+                  a=o.getElementsByTagName('head')[0];
+                  r=o.createElement('script');r.async=1;
+                  r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                  a.appendChild(r);
+                })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+              },
+              onReject: function () {
+                if (window.hj) { try { window.hj('optOut'); } catch(e) {} }
+              }
             }
           }
         },
@@ -175,7 +193,7 @@
                 },
                 {
                   title: 'Analíticas',
-                  description: 'Nos ayudan a entender cómo usas el sitio (Google Analytics 4) de forma anónima.',
+                  description: 'Nos ayudan a entender cómo usas el sitio (Google Analytics 4, Hotjar heatmaps y grabaciones) de forma anónima.',
                   linkedCategory: 'analytics'
                 },
                 {
