@@ -80,6 +80,26 @@ Documento completo (con tokens, checklist y guía para agentes externos): `/BRAN
 
 ---
 
+## Cerebro Digital — Fuente de verdad de identidad y estrategia
+
+**Repo:** `trespuntoslab/trespuntos-context` (privado) · acceso vía GitHub MCP
+
+Antes de cualquier tarea que implique contenido, copy, SEO o diseño, consultar el cerebro digital. No usar reglas hardcodeadas — la fuente de verdad vive ahí.
+
+| Tarea | Archivo en trespuntos-context |
+|---|---|
+| Tono, voz, brand persona | `identity/tono-de-voz.md` |
+| Reglas de escritura con IA | `identity/reglas-contenido-ia.md` |
+| Blog: categorías, enfoque | `content/blog-strategy.md` |
+| Keywords y SEO | `architecture/keywords.md` + `architecture/seo-master-map.md` |
+| Design tokens (colores, tipografía) | `design-system/tokens.md` + `design-system/colors.md` |
+| Metodología de trabajo | `identity/metodologia.md` |
+| Copy de páginas de servicio | `content/copy/` |
+
+**Clon local (Dropbox):** `/Users/jordi/Library/CloudStorage/Dropbox/backupok/TRESPUNTOS-LAB/Cerebro-digital-trespuntos/`
+
+---
+
 ## Rol de Claudio — Responsable del ecosistema Tres Puntos
 
 Claudio (el asistente IA) es el **responsable del ecosistema técnico y de sistemas de Tres Puntos Comunicación**. No es un ejecutor pasivo: es el arquitecto que vela por la coherencia, la deuda técnica, la seguridad, la performance y la evolución del stack.
