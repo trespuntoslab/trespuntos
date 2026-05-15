@@ -280,3 +280,27 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
   - `blog/agencia-ecommerce-plantillas-vs-medida/index.html` (nuevo post)
 - **Cloudflare**: purge by URL — 2 URLs ✅ `{"success":true}`
 - **Verificación**: HTTP 200 · CF MISS ✅ · Playwright screenshot OK ✅ · 0 errores consola
+
+## Deploy 2026-05-15 — Blog index + OG post ecommerce
+
+- **SHA**: e692e78 + b9cc32d (main)
+- **Commits**: feat(blog): añadir 7 posts nuevos al índice + fix(blog): corregir fechas posts ecommerce
+- **Archivos FTP (2)**:
+  - `blog/index.html` (7 posts nuevos añadidos, 44 total)
+  - `img/og/blog-agencia-ecommerce-plantillas-vs-medida.png` (imagen OG nuevo post)
+- **Cloudflare**: Purge by URL — /blog/ + /img/og/blog-agencia-ecommerce-plantillas-vs-medida.png — PENDIENTE ⚠️
+- **Verificación**: pendiente
+
+---
+
+## Deploy 2026-05-15 — /iniciar-proyecto/ nueva página + fix email + fix briefing pipeline
+
+- **SHA**: 087eec6 (feat/iniciar-proyecto-form → main)
+- **Commits**: feat(iniciar-proyecto), fix(iniciar-proyecto): logo real + redirect circular + n8n pipeline, chore(og): imagen OG iniciar-proyecto
+- **Archivos FTP (3)**:
+  - `iniciar-proyecto/index.html` (nueva página: héroe conversión + formulario CTA completo)
+  - `.htaccess` (eliminado redirect circular form-step1 → iniciar-proyecto)
+  - `img/og/iniciar-proyecto.png` (imagen OG 1200×630)
+- **n8n (sin FTP)**: Email bienvenida botón oscuro (fix dark mode Gmail), `¿Es Briefing?` condition → form_type=completo, Airtable typecast + continueOnFail
+- **Cloudflare**: Purge by URL — /iniciar-proyecto/ + /.htaccess + /img/og/iniciar-proyecto.png — PENDIENTE ⚠️
+- **Verificación**: Playwright E2E ✅ — form simple (leads-trespuntos 200) + briefing completo (leads-trespuntos 200 + briefing-v3 200)
