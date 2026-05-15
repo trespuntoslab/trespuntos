@@ -186,7 +186,7 @@
 
     # --- Forms antiguos → nuevos ---
     RewriteRule ^gracias/?$ https://www.trespuntoscomunicacion.es/form-v3/gracias [R=301,L]
-    RewriteRule ^form-v3/form-step1\.html$ https://www.trespuntoscomunicacion.es/iniciar-proyecto/ [R=301,L]
+    # form-step1.html redirect eliminado — iniciar-proyecto/ es ahora el formulario principal
 
     # --- Páginas antiguas (producción WordPress) ---
     RewriteRule ^trespuntos/?$ https://www.trespuntoscomunicacion.es/nosotros/ [R=301,L]
