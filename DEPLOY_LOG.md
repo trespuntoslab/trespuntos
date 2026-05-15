@@ -304,3 +304,20 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
 - **n8n (sin FTP)**: Email bienvenida botón oscuro (fix dark mode Gmail), `¿Es Briefing?` condition → form_type=completo, Airtable typecast + continueOnFail
 - **Cloudflare**: Purge by URL — /iniciar-proyecto/ + /.htaccess + /img/og/iniciar-proyecto.png — PENDIENTE ⚠️
 - **Verificación**: Playwright E2E ✅ — form simple (leads-trespuntos 200) + briefing completo (leads-trespuntos 200 + briefing-v3 200)
+
+---
+
+## Deploy 2026-05-15 — SEO: Links internos a páginas ciudad + collapse dobles barras
+
+- **SHA**: d833030 (main)
+- **Commit**: seo: añadir links internos a páginas ciudad desde servicios BCN + fix dobles barras
+- **Archivos FTP (7)**:
+  - `.htaccess` (regla collapse `//` → 301 antes de llegar a Cloudflare)
+  - `servicios/desarrollo-web-a-medida-barcelona/index.html` (links "También disponible en" → madrid/sevilla/bilbao)
+  - `servicios/diseno-ux-ui-barcelona/index.html` (idem)
+  - `servicios/tienda-online-barcelona/index.html` (idem)
+  - `servicios/consultoria-digital-barcelona/index.html` (idem)
+  - `servicios/design-engineer-barcelona/index.html` (idem)
+  - `servicios/ia-generativa-empresas/index.html` (links a 4 ciudades + automatizacion-agentes-ia)
+- **Cloudflare**: purge_everything ✅ `{"success":true}`
+- **Verificación**: CF MISS ✅ · Playwright screenshot OK ✅ (desarrollo-web-a-medida-barcelona carga correctamente)
