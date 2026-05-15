@@ -25,6 +25,10 @@
 
 # ── Clean URLs ───────────────────────────────────────────────
 <IfModule mod_rewrite.c>
+    # Collapse consecutive slashes (e.g. /casos-de-negocio/slug// → /slug/)
+    RewriteCond %{REQUEST_URI} //
+    RewriteRule ^(.+?)//+(.*)$ https://www.trespuntoscomunicacion.es/$1/$2 [R=301,L,NE]
+
     # Redirect .html to clean URL (except index.html and Google verification files)
     RewriteCond %{REQUEST_URI} !^/google[a-z0-9]+\.html$ [NC]
     RewriteCond %{THE_REQUEST} \s/+(.*?)\.html[\s?] [NC]
