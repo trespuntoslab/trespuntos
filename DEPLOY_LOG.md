@@ -270,3 +270,13 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
   - **Tarea pendiente**: cuando reset Semrush quota mañana, revisar los ~165 refdomains restantes y ampliar disavow si procede
 
 ---
+
+## Deploy 2026-05-14 00:44
+
+- **SHA**: 4eb9ebb (+ 622aaf6)
+- **Commits**: feat(blog): nuevo post agencia ecommerce plantillas vs medida + feat(analytics): integrar Hotjar bajo consentimiento GDPR
+- **Archivos FTP (2)**:
+  - `assets/cookieconsent/cookieconsent-init.js` (Hotjar bajo consent)
+  - `blog/agencia-ecommerce-plantillas-vs-medida/index.html` (nuevo post)
+- **Cloudflare**: purge by URL — 2 URLs ✅ `{"success":true}`
+- **Verificación**: HTTP 200 · CF MISS ✅ · Playwright screenshot OK ✅ · 0 errores consola
