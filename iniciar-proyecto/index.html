@@ -344,7 +344,7 @@
       background: var(--bg-surface);
       border: 1px solid rgba(93,255,191,.1);
       border-radius: 20px;
-      padding: 2.5rem;
+      padding: 2rem 2.25rem;
       overflow: hidden;
       box-shadow:
         0 0 0 1px rgba(93,255,191,.04),
@@ -370,7 +370,7 @@
 
     /* Card header */
     .ip-card-hd {
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.25rem;
     }
     .ip-card-title {
       font-family: var(--font-heading);
@@ -385,6 +385,26 @@
       line-height: 1.5;
     }
 
+    /* Section divider labels — small uppercase to group fields */
+    .ip-section-label {
+      font-size: .6875rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 .875rem;
+      display: flex;
+      align-items: center;
+      gap: .625rem;
+    }
+    .ip-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255,255,255,.08), transparent);
+    }
+    .ip-section + .ip-section { margin-top: 1.5rem; }
+
     /* Form layout */
     .ip-form-row {
       display: grid;
@@ -392,7 +412,8 @@
       gap: 1rem;
       margin-bottom: 1rem;
     }
-    .ip-form-field { display: flex; flex-direction: column; gap: .375rem; }
+    .ip-form-row:last-child { margin-bottom: 0; }
+    .ip-form-field { display: flex; flex-direction: column; gap: .4375rem; }
     .ip-form-field.full { grid-column: 1/-1; }
 
     /* Labels & inputs: reuse design-system vars but override sizing */
@@ -408,6 +429,7 @@
     .input {
       width: 100%;
       padding: .75rem 1rem;
+      min-height: 44px;
       background: var(--bg-muted);
       border: 1px solid var(--border-strong);
       border-radius: 10px;
@@ -415,13 +437,15 @@
       color: var(--text-primary);
       font-family: var(--font-body);
       outline: none;
-      transition: border-color .2s, box-shadow .2s;
+      transition: border-color .2s, box-shadow .2s, background .2s;
       -webkit-appearance: none;
     }
     .input::placeholder { color: var(--text-muted); }
+    .input:hover { border-color: rgba(255,255,255,.16); }
     .input:focus {
-      border-color: rgba(93,255,191,.3);
-      box-shadow: 0 0 0 3px rgba(93,255,191,.06);
+      border-color: rgba(93,255,191,.45);
+      box-shadow: 0 0 0 4px rgba(93,255,191,.12);
+      background: var(--bg-surface);
     }
     .input.input-error { border-color: rgba(248,113,113,.5) !important; }
     .input.input-valid { border-color: rgba(93,255,191,.25); }
@@ -433,6 +457,7 @@
     .custom-select-trigger {
       width: 100%;
       padding: .75rem 1rem;
+      min-height: 44px;
       background: var(--bg-muted);
       border: 1px solid var(--border-strong);
       border-radius: 10px;
@@ -445,12 +470,14 @@
       justify-content: space-between;
       gap: .5rem;
       text-align: left;
-      transition: border-color .2s, box-shadow .2s;
+      transition: border-color .2s, box-shadow .2s, background .2s;
     }
+    .custom-select-trigger:hover { border-color: rgba(255,255,255,.16); }
     .custom-select.open .custom-select-trigger,
     .custom-select-trigger:focus {
-      border-color: rgba(93,255,191,.3);
-      box-shadow: 0 0 0 3px rgba(93,255,191,.06);
+      border-color: rgba(93,255,191,.45);
+      box-shadow: 0 0 0 4px rgba(93,255,191,.12);
+      background: var(--bg-surface);
       outline: none;
     }
     .custom-select-trigger.has-value { color: var(--text-primary); }
@@ -485,8 +512,81 @@
       font-size: .8125rem;
       font-weight: 600;
       color: var(--text-secondary);
-      margin-bottom: .5rem;
+      margin-bottom: .625rem;
       display: block;
+    }
+    .ip-card #services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .5rem;
+    }
+    /* Override del case-study.css: service-cards como chips clicables */
+    .ip-card #services-grid .service-card {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem .625rem !important;
+      min-height: 40px;
+      background: rgba(255,255,255,.035) !important;
+      border: 1px solid rgba(255,255,255,.08) !important;
+      border-radius: 10px !important;
+      cursor: pointer;
+      transition: background .15s, border-color .15s, transform .1s;
+      user-select: none;
+    }
+    .ip-card #services-grid .service-card:hover {
+      background: rgba(93,255,191,.04) !important;
+      border-color: rgba(93,255,191,.25) !important;
+    }
+    .ip-card #services-grid .service-card:active { transform: scale(.98); }
+    .ip-card #services-grid .service-card:focus-visible {
+      outline: none;
+      border-color: rgba(93,255,191,.5) !important;
+      box-shadow: 0 0 0 3px rgba(93,255,191,.12);
+    }
+    .ip-card #services-grid .service-card.selected {
+      background: rgba(93,255,191,.08) !important;
+      border-color: rgba(93,255,191,.55) !important;
+    }
+    .ip-card #services-grid .service-card-check {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      border-radius: 4px;
+      border: 1.5px solid rgba(255,255,255,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .15s;
+      flex-shrink: 0;
+    }
+    .ip-card #services-grid .service-card:hover .service-card-check { border-color: rgba(93,255,191,.5); }
+    .ip-card #services-grid .service-card.selected .service-card-check {
+      background: var(--mint);
+      border-color: var(--mint);
+    }
+    .ip-card #services-grid .service-card-check svg {
+      width: 10px;
+      height: 10px;
+      color: #0e0e0e;
+      opacity: 0;
+      transition: opacity .15s;
+    }
+    .ip-card #services-grid .service-card.selected .service-card-check svg { opacity: 1; }
+    .ip-card #services-grid .service-card-label {
+      font-size: .75rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.2;
+      transition: color .15s;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      min-width: 0;
+    }
+    .ip-card #services-grid .service-card.selected .service-card-label { color: var(--text-primary); font-weight: 600; }
+    @media (max-width: 560px) {
+      .ip-card #services-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     /* Errors */
@@ -502,20 +602,21 @@
     #privacy-row {
       display: flex;
       align-items: flex-start;
-      gap: .625rem;
+      gap: .75rem;
       margin-top: 1.25rem;
       cursor: pointer;
     }
     #privacy-row input[type="checkbox"] {
-      width: 15px;
-      height: 15px;
+      width: 18px;
+      height: 18px;
       accent-color: var(--mint);
       flex-shrink: 0;
-      margin-top: .1rem;
+      margin-top: .05rem;
+      cursor: pointer;
     }
     .ip-privacy-text {
-      font-size: .75rem;
-      color: var(--text-muted);
+      font-size: .8125rem;
+      color: var(--text-secondary);
       line-height: 1.55;
     }
     .ip-privacy-text a { color: var(--text-secondary); text-decoration: underline; text-underline-offset: 2px; }
@@ -529,10 +630,174 @@
     }
     .shake { animation: ipShake .4s ease; }
 
+    /* ── Exit-intent modal ── */
+    .ip-exit-overlay {
+      position: fixed; inset: 0;
+      background: rgba(8,10,12,.78);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity .25s ease;
+      padding: 1.5rem;
+    }
+    .ip-exit-overlay.visible { display: flex; opacity: 1; }
+    .ip-exit-modal {
+      position: relative;
+      background: var(--bg-surface);
+      border: 1px solid rgba(93,255,191,.18);
+      border-radius: 20px;
+      padding: 2rem 2.25rem;
+      max-width: 460px;
+      width: 100%;
+      box-shadow:
+        0 0 0 1px rgba(93,255,191,.06),
+        0 30px 80px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.04);
+      transform: translateY(20px) scale(.96);
+      transition: transform .35s cubic-bezier(.16,1,.3,1);
+      overflow: hidden;
+    }
+    .ip-exit-overlay.visible .ip-exit-modal { transform: translateY(0) scale(1); }
+    .ip-exit-modal::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--mint), #4ea5ff, #c084fc, var(--mint));
+      background-size: 200% 100%;
+      animation: ipShimmer 8s linear infinite;
+      border-radius: 20px 20px 0 0;
+    }
+    .ip-exit-close {
+      position: absolute;
+      top: .875rem; right: .875rem;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      color: var(--text-muted);
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .ip-exit-close:hover { background: rgba(255,255,255,.08); color: var(--text-primary); }
+    .ip-exit-eyebrow {
+      font-size: .6875rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--mint);
+      margin-bottom: .625rem;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .ip-exit-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--mint);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(93,255,191,.6);
+    }
+    .ip-exit-title {
+      font-family: var(--font-heading);
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: .625rem;
+    }
+    .ip-exit-sub {
+      font-size: .875rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+    .ip-exit-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .75rem;
+      margin-bottom: 1rem;
+    }
+    .ip-exit-input {
+      width: 100%;
+      padding: .75rem 1rem;
+      min-height: 44px;
+      background: var(--bg-muted);
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      font-size: .9375rem;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+      -webkit-appearance: none;
+    }
+    .ip-exit-input::placeholder { color: var(--text-muted); }
+    .ip-exit-input:focus {
+      border-color: rgba(93,255,191,.45);
+      box-shadow: 0 0 0 4px rgba(93,255,191,.12);
+      background: var(--bg-surface);
+    }
+    .ip-exit-input.input-error { border-color: rgba(248,113,113,.5); }
+    .ip-exit-actions {
+      display: flex; flex-direction: column; gap: .625rem;
+    }
+    .ip-exit-cta {
+      width: 100%;
+      min-height: 48px;
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+      padding: .875rem 1.5rem;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: .9375rem;
+      background: var(--mint);
+      color: #0e0e0e;
+      border: none;
+      cursor: pointer;
+      transition: all .2s;
+      box-shadow: 0 0 20px rgba(93,255,191,.2);
+    }
+    .ip-exit-cta:hover { background: #7fffcf; transform: translateY(-1px); box-shadow: 0 0 30px rgba(93,255,191,.3); }
+    .ip-exit-cta:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+    .ip-exit-cta.btn-success { background: rgba(93,255,191,.15); color: var(--mint); }
+    .ip-exit-dismiss {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: .8125rem;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      padding: .5rem;
+      transition: color .15s;
+    }
+    .ip-exit-dismiss:hover { color: var(--text-secondary); }
+    .ip-exit-trust {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+      font-size: .75rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      text-align: center;
+      line-height: 1.5;
+    }
+    .ip-exit-error {
+      font-size: .75rem;
+      color: var(--red);
+      margin-top: -.5rem;
+      margin-bottom: .75rem;
+      min-height: 1em;
+    }
+
     /* Submit button */
     #form-submit-btn {
       width: 100%;
-      margin-top: 1.5rem;
+      margin-top: 1.25rem;
+      min-height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -559,10 +824,10 @@
       transform: translateY(-1px);
     }
     #form-submit-btn.btn-disabled {
-      background: rgba(255,255,255,.06);
-      color: var(--text-muted);
+      background: rgba(93,255,191,.04);
+      color: rgba(93,255,191,.55);
       cursor: not-allowed;
-      border: 1px solid var(--border-strong);
+      border: 1px solid rgba(93,255,191,.2);
     }
     #form-submit-btn.btn-success {
       background: rgba(93,255,191,.15);
@@ -570,6 +835,19 @@
       border: 1px solid rgba(93,255,191,.2);
       cursor: default;
     }
+
+    /* Field counter shown when form is incomplete */
+    .ip-form-counter {
+      display: none;
+      text-align: center;
+      font-size: .75rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      margin-top: .75rem;
+      letter-spacing: .02em;
+    }
+    .ip-form-counter.visible { display: block; }
+    .ip-form-counter .num { color: var(--mint); font-weight: 600; }
 
     .ip-form-note {
       text-align: center;
@@ -759,6 +1037,9 @@
             <!-- Honeypot anti-spam -->
             <input type="text" name="hp_field" id="hp_field" style="position:absolute;left:-9999px;opacity:0;height:0;" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
+            <!-- ── Sección 1: Datos de contacto ── -->
+            <div class="ip-section">
+
             <!-- Row 1: Nombre + Email -->
             <div class="ip-form-row">
               <div class="ip-form-field">
@@ -774,7 +1055,7 @@
             </div>
 
             <!-- Row 2: Teléfono + Inversión -->
-            <div class="ip-form-row" style="margin-top:1rem;">
+            <div class="ip-form-row">
               <div class="ip-form-field">
                 <label class="label label-required" for="f-tel">Teléfono</label>
                 <input id="f-tel" name="f-tel" type="tel" class="input" placeholder="600 000 000" autocomplete="tel" required aria-required="true" minlength="9" />
@@ -799,8 +1080,14 @@
               </div>
             </div>
 
+            </div><!-- /.ip-section datos -->
+
+            <!-- ── Sección 2: Sobre el proyecto ── -->
+            <div class="ip-section">
+            <div class="ip-section-label">Sobre el proyecto</div>
+
             <!-- Servicios -->
-            <div style="margin-top:1.125rem;">
+            <div>
               <span class="ip-services-label">¿En qué te podemos ayudar?</span>
               <div class="services-grid" id="services-grid" role="group" aria-label="Servicios (selección múltiple)">
                 <div class="service-card" data-value="Diseño UX/UI" role="checkbox" aria-checked="false" tabindex="0">
@@ -832,10 +1119,12 @@
             </div>
 
             <!-- Mensaje -->
-            <div class="ip-form-field" style="margin-top:1.125rem;">
+            <div class="ip-form-field" style="margin-top:1rem;">
               <label class="label" for="f-mensaje">Cuéntanos qué está pasando</label>
-              <textarea id="f-mensaje" name="f-mensaje" class="input" rows="3" placeholder="Describe brevemente el proyecto, el contexto o lo que no funciona..."></textarea>
+              <textarea id="f-mensaje" name="f-mensaje" class="input" rows="2" placeholder="Describe brevemente el proyecto, contexto o lo que no funciona..."></textarea>
             </div>
+
+            </div><!-- /.ip-section proyecto -->
 
             <!-- Hidden tracking fields -->
             <input type="hidden" id="f-pagina-origen" name="pagina_origen" />
@@ -846,7 +1135,7 @@
             <input type="hidden" id="f-timestamp" name="timestamp" />
 
             <!-- Privacy -->
-            <label class="checkbox-row" id="privacy-row" for="f-privacidad" style="margin-top:1.25rem;cursor:pointer;">
+            <label class="checkbox-row" id="privacy-row" for="f-privacidad">
               <input type="checkbox" id="f-privacidad" name="f-privacidad" required aria-required="true" />
               <span class="ip-privacy-text">He leído y acepto la <a href="/politica-privacidad/" target="_blank" rel="noopener">Política de Privacidad</a>.</span>
             </label>
@@ -860,6 +1149,7 @@
               Enviar proyecto
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
+            <p class="ip-form-counter" id="ip-form-counter">Completa <span class="num" id="ip-form-counter-num">5</span> campos para enviar</p>
           </form>
 
           <p class="ip-form-note">
@@ -952,6 +1242,313 @@
     } else {
       setup();
     }
+  })();
+  </script>
+
+  <!-- ── Exit-intent modal ── -->
+  <div class="ip-exit-overlay" id="ip-exit-overlay" aria-hidden="true" role="dialog" aria-labelledby="ip-exit-title" aria-modal="true">
+    <div class="ip-exit-modal">
+      <button type="button" class="ip-exit-close" id="ip-exit-close" aria-label="Cerrar">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="ip-exit-eyebrow">Espera un momento</div>
+      <h3 class="ip-exit-title" id="ip-exit-title">¿Te vas sin contarnos el proyecto?</h3>
+      <p class="ip-exit-sub">Déjanos email o teléfono y te llamamos en menos de 24h. Sin compromiso ni newsletter — solo para entender tu proyecto.</p>
+
+      <div class="ip-exit-row">
+        <input type="email" id="ip-exit-email" class="ip-exit-input" placeholder="tu@empresa.com" autocomplete="email" aria-label="Email" />
+        <input type="tel" id="ip-exit-tel" class="ip-exit-input" placeholder="Teléfono (opcional)" autocomplete="tel" aria-label="Teléfono" />
+      </div>
+      <div class="ip-exit-error" id="ip-exit-error" role="alert"></div>
+
+      <div class="ip-exit-actions">
+        <button type="button" class="ip-exit-cta" id="ip-exit-submit">
+          Que me llamen
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button type="button" class="ip-exit-dismiss" id="ip-exit-dismiss">No, gracias — seguir mirando</button>
+      </div>
+
+      <p class="ip-exit-trust">Respondemos todos los mensajes · Sin compromiso · Sin publicidad</p>
+    </div>
+  </div>
+
+  <!-- Field counter: muestra cuántos campos faltan mientras el botón está disabled -->
+  <script>
+  (function(){
+    var btn = document.getElementById('form-submit-btn');
+    var counter = document.getElementById('ip-form-counter');
+    var counterNum = document.getElementById('ip-form-counter-num');
+    if (!btn || !counter || !counterNum) return;
+
+    var required = [
+      function() { return (document.getElementById('f-nombre').value || '').trim().length >= 2; },
+      function() { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((document.getElementById('f-email').value || '').trim()); },
+      function() { var v = (document.getElementById('f-tel').value || '').replace(/[\s\-()+]/g,''); return /^\d{9}$/.test(v); },
+      function() { return !!(document.getElementById('f-presupuesto').value || '').trim(); },
+      function() { return document.getElementById('f-privacidad').checked; }
+    ];
+
+    function update() {
+      var missing = required.filter(function(fn){ return !fn(); }).length;
+      if (missing === 0) {
+        counter.classList.remove('visible');
+      } else {
+        counterNum.textContent = String(missing);
+        counter.firstChild.nodeValue = 'Completa ';
+        var rest = missing === 1 ? ' campo para enviar' : ' campos para enviar';
+        counter.lastChild.nodeValue = rest;
+        counter.classList.add('visible');
+      }
+    }
+
+    ['f-nombre','f-email','f-tel','f-privacidad'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) { el.addEventListener('input', update); el.addEventListener('change', update); }
+    });
+    document.querySelectorAll('#cs-presupuesto .custom-select-option').forEach(function(opt){
+      opt.addEventListener('click', function(){ setTimeout(update, 50); });
+    });
+
+    update();
+  })();
+  </script>
+
+  <!-- ── Exit-intent modal logic ── -->
+  <script>
+  (function(){
+    var overlay = document.getElementById('ip-exit-overlay');
+    if (!overlay) return;
+
+    var emailInput = document.getElementById('ip-exit-email');
+    var telInput = document.getElementById('ip-exit-tel');
+    var submitBtn = document.getElementById('ip-exit-submit');
+    var closeBtn = document.getElementById('ip-exit-close');
+    var dismissBtn = document.getElementById('ip-exit-dismiss');
+    var errorEl = document.getElementById('ip-exit-error');
+
+    var WEBHOOK = 'https://n8n.trespuntos-lab.com/webhook/leads-trespuntos';
+    var STORAGE_KEY = 'ip_exit_intent_shown';
+    var MIN_TIME_MS = 10000; // 10s mínimo en página
+    var pageLoadTime = Date.now();
+    var modalShownTime = null;
+    var shown = false;
+    var converted = false;
+    var formCompleted = false;
+    var fieldsFocused = {}; // one-shot por field
+
+    function track(name, params) {
+      try {
+        if (window.tpTrack) window.tpTrack(name, Object.assign({
+          pagina_origen: window.location.pathname
+        }, params || {}));
+      } catch(e) {}
+    }
+
+    function alreadyShown() {
+      try { return sessionStorage.getItem(STORAGE_KEY) === '1'; } catch(e) { return false; }
+    }
+    function markShown() {
+      try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
+    }
+
+    function isMainFormCompleted() {
+      var mainBtn = document.getElementById('form-submit-btn');
+      return mainBtn && mainBtn.classList.contains('btn-success');
+    }
+
+    function isUserActivelyTyping() {
+      var ae = document.activeElement;
+      if (!ae) return false;
+      var tag = ae.tagName;
+      if (tag !== 'INPUT' && tag !== 'TEXTAREA') return false;
+      // Si es del form principal, sí está escribiendo
+      var form = document.getElementById('v3-form');
+      return form && form.contains(ae);
+    }
+
+    function timeInModalSeconds() {
+      return modalShownTime ? Math.round((Date.now() - modalShownTime) / 1000) : 0;
+    }
+
+    function show() {
+      if (shown || alreadyShown()) return;
+      if (Date.now() - pageLoadTime < MIN_TIME_MS) return;
+      if (isMainFormCompleted()) return;
+      if (isUserActivelyTyping()) return;
+
+      shown = true;
+      modalShownTime = Date.now();
+      markShown();
+      overlay.classList.add('visible');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      setTimeout(function(){ emailInput.focus(); }, 350);
+
+      track('exit_intent_shown', {
+        time_on_page_seconds: Math.round((Date.now() - pageLoadTime) / 1000)
+      });
+    }
+
+    function hide(reason) {
+      if (!overlay.classList.contains('visible')) return;
+      overlay.classList.remove('visible');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (!converted && reason) {
+        track('exit_intent_dismissed', {
+          dismiss_reason: reason,
+          time_in_modal_seconds: timeInModalSeconds()
+        });
+      }
+    }
+
+    // ── Field focus tracking (one-shot por field) ──
+    function trackFieldFocus(fieldName) {
+      if (fieldsFocused[fieldName]) return;
+      fieldsFocused[fieldName] = true;
+      track('exit_intent_field_focus', {
+        field_name: fieldName,
+        time_in_modal_seconds: timeInModalSeconds()
+      });
+    }
+    emailInput.addEventListener('focus', function(){ trackFieldFocus('email'); });
+    telInput.addEventListener('focus', function(){ trackFieldFocus('telefono'); });
+
+    // ── Triggers ──
+    // Desktop: mouseleave por borde superior
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY > 0) return;
+      show();
+    });
+
+    // ESC para cerrar
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && overlay.classList.contains('visible')) hide('escape');
+    });
+
+    // Click fuera del modal (overlay) cierra
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) hide('overlay_click');
+    });
+
+    closeBtn.addEventListener('click', function(){ hide('close_button'); });
+    dismissBtn.addEventListener('click', function(){ hide('dismiss_button'); });
+
+    // Mobile: scroll-up rápido como proxy de "salir"
+    var lastScrollY = window.scrollY;
+    var lastScrollTime = Date.now();
+    var SCROLL_VELOCITY_THRESHOLD = 2.5; // px/ms
+    window.addEventListener('scroll', function() {
+      if (window.innerWidth > 768) return; // solo móvil
+      var now = Date.now();
+      var dy = lastScrollY - window.scrollY;
+      var dt = now - lastScrollTime;
+      if (dt > 0 && dy > 0 && (dy / dt) > SCROLL_VELOCITY_THRESHOLD && window.scrollY < 100) {
+        show();
+      }
+      lastScrollY = window.scrollY;
+      lastScrollTime = now;
+    }, { passive: true });
+
+    // ── Submit handler ──
+    function validateEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((v || '').trim());
+    }
+    function validateTel(v) {
+      var clean = (v || '').replace(/[\s\-()+]/g,'');
+      return /^\d{9,}$/.test(clean);
+    }
+
+    submitBtn.addEventListener('click', function() {
+      var email = emailInput.value.trim();
+      var tel = telInput.value.trim();
+      errorEl.textContent = '';
+      emailInput.classList.remove('input-error');
+      telInput.classList.remove('input-error');
+
+      // Al menos uno de los dos debe ser válido
+      var emailOK = email && validateEmail(email);
+      var telOK = tel && validateTel(tel);
+
+      if (!email && !tel) {
+        errorEl.textContent = 'Déjanos email o teléfono para que podamos contactarte';
+        emailInput.classList.add('input-error');
+        track('exit_intent_validation_error', { error_type: 'both_empty', time_in_modal_seconds: timeInModalSeconds() });
+        return;
+      }
+      if (email && !emailOK) {
+        errorEl.textContent = 'Email no válido';
+        emailInput.classList.add('input-error');
+        track('exit_intent_validation_error', { error_type: 'invalid_email', time_in_modal_seconds: timeInModalSeconds() });
+        return;
+      }
+      if (tel && !telOK) {
+        errorEl.textContent = 'Teléfono no válido (mínimo 9 dígitos)';
+        telInput.classList.add('input-error');
+        track('exit_intent_validation_error', { error_type: 'invalid_phone', time_in_modal_seconds: timeInModalSeconds() });
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.firstChild.nodeValue = 'Enviando…';
+
+      // Construir payload — compatible con n8n Pipeline v2.5
+      var tracking = {
+        pagina_origen: window.location.pathname,
+        utm_source: '',
+        utm_medium: '',
+        utm_campaign: ''
+      };
+      try {
+        var params = new URLSearchParams(window.location.search);
+        tracking.utm_source = params.get('utm_source') || '';
+        tracking.utm_medium = params.get('utm_medium') || '';
+        tracking.utm_campaign = params.get('utm_campaign') || '';
+      } catch(e) {}
+
+      var payload = {
+        tipo: 'cta',
+        form_type: 'exit-intent',
+        nombre: 'Exit Intent Lead',
+        email: email || '',
+        telefono: tel || '',
+        empresa: '',
+        mensaje: 'Lead capturado vía exit-intent en /iniciar-proyecto/. Contactar prioritariamente.',
+        presupuesto: '',
+        servicio: 'exit-intent',
+        pagina_origen: tracking.pagina_origen,
+        pagina_referrer: document.referrer || '',
+        utm_source: tracking.utm_source,
+        utm_medium: tracking.utm_medium,
+        utm_campaign: tracking.utm_campaign,
+        privacidad_aceptada: true,
+        lead_score: 50,
+        lead_quality: 'Tibio',
+        ga_client_id: (window.tpClientId && window.tpClientId()) || ''
+      };
+
+      fetch(WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(r) {
+        converted = true;
+        submitBtn.classList.add('btn-success');
+        submitBtn.firstChild.nodeValue = '✓ Te llamamos pronto';
+        track('exit_intent_converted', {
+          has_email: !!email,
+          has_phone: !!tel,
+          time_on_page_seconds: Math.round((Date.now() - pageLoadTime) / 1000),
+          time_in_modal_seconds: timeInModalSeconds()
+        });
+        setTimeout(function(){ hide(); }, 1800);
+      }).catch(function() {
+        errorEl.textContent = 'No hemos podido enviar tu mensaje. Inténtalo de nuevo.';
+        submitBtn.disabled = false;
+        submitBtn.firstChild.nodeValue = 'Que me llamen';
+      });
+    });
   })();
   </script>
 

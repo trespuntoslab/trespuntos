@@ -90,13 +90,45 @@
     return { valid: allValid, firstInvalid: firstInvalid };
   }
 
+  // ── Funnel tracking flags (one-shot per session) ──
+  var halfwayFired = false;
+  var readyFired = false;
+
+  function trackFunnel(name, extra) {
+    try {
+      if (window.tpTrack) {
+        var params = {
+          form_type: 'cta',
+          pagina_origen: window.location.pathname
+        };
+        if (extra) for (var k in extra) params[k] = extra[k];
+        window.tpTrack(name, params);
+      }
+    } catch (e) { /* fail-safe */ }
+  }
+
   // ── Update button state ──
   function updateBtn() {
     var result = checkAll(false);
+    var totalRequired = Object.keys(validators).length;
+    var validCount = 0;
+    Object.keys(validators).forEach(function(key){ if (!validators[key]()) { validCount++; } });
+
+    // ── form_50pct: primer momento al alcanzar ≥50% de campos válidos ──
+    if (!halfwayFired && validCount / totalRequired >= 0.5) {
+      halfwayFired = true;
+      trackFunnel('form_50pct_complete', { fields_complete: validCount, fields_total: totalRequired });
+    }
+
     if (result.valid) {
       btn.classList.remove('btn-disabled');
       btn.classList.add('btn-enabled');
       btn.dataset.formReady = 'true';
+      // ── form_ready: primera vez que el botón se habilita ──
+      if (!readyFired) {
+        readyFired = true;
+        trackFunnel('form_ready');
+      }
     } else {
       btn.classList.add('btn-disabled');
       btn.classList.remove('btn-enabled');
@@ -109,14 +141,7 @@
   function fireFormStart() {
     if (formStarted) return;
     formStarted = true;
-    try {
-      if (window.tpTrack) {
-        window.tpTrack('form_start', {
-          form_type: 'cta',
-          pagina_origen: window.location.pathname
-        });
-      }
-    } catch (e) { /* fail-safe */ }
+    trackFunnel('form_start');
   }
 
   // ── Real-time validation on input ──
@@ -238,7 +263,14 @@
   }
 
   // ── Click on disabled button → show all errors + shake ──
+  var submitAttemptFired = false;
   btn.addEventListener('click', function (e) {
+    // form_submit_attempt: every click on button (enabled or disabled), once per session
+    if (!submitAttemptFired) {
+      submitAttemptFired = true;
+      trackFunnel('form_submit_attempt', { form_was_ready: btn.classList.contains('btn-enabled') });
+    }
+
     if (btn.classList.contains('btn-disabled')) {
       e.preventDefault();
       e.stopPropagation();

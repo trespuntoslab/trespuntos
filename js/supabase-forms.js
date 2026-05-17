@@ -1,5 +1,5 @@
 (function(){'use strict';var N8N_WEBHOOK_LEADS='https://n8n.trespuntos-lab.com/webhook/leads-trespuntos';var N8N_WEBHOOK_BRIEFING='https://n8n.trespuntos-lab.com/webhook/leads-trespuntos';
-function n8nSend(webhookUrl,data){if(webhookUrl.indexOf('TU-WEBHOOK')!==-1)return;fetch(webhookUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(err){/* n8n webhook error silenced */});}
+function n8nSend(webhookUrl,data){if(webhookUrl.indexOf('TU-WEBHOOK')!==-1)return;var formType=data.tipo||data.form_type||'cta';var pagOrigen=data.pagina_origen||window.location.pathname;return fetch(webhookUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(function(r){try{window.tpTrack&&window.tpTrack('form_submit_success',{form_type:formType,pagina_origen:pagOrigen,status:r.status});}catch(e){}return r;}).catch(function(err){try{window.tpTrack&&window.tpTrack('form_submit_error',{form_type:formType,pagina_origen:pagOrigen,error:String(err).substring(0,80)});}catch(e){}});}
 var TURNSTILE_SITE_KEY='0x4AAAAAACv1HyITv5ZdYE50';
 function checkHoneypot(){var hp=document.getElementById('hp_field');return!hp||!hp.value;}
 function checkRateLimit(){try{var last=parseInt(localStorage.getItem('tp_last_submit')||'0',10);if(Date.now()-last<30000)return false;return true;}catch(e){return true;}}
