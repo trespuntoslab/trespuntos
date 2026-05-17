@@ -16,6 +16,18 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
 
 ---
 
+## 2026-05-17 17:50 — Nuevo post blog: tracking formulario contacto GA4 + agente IA
+- **Commit:** 20613863b2c621dadd6a9beb517e95923f7ab1dc (main)
+- **Archivos (3):**
+  - `blog/tracking-formulario-contacto-ga4-agente-ia/index.html` (nuevo, 26.517 b)
+  - `img/og/blog-tracking-formulario-contacto-ga4-agente-ia.png` (1200×630, 234.519 b)
+  - `blog/index.html` (card en primera posición, +7 líneas)
+- **Cloudflare:** Custom URL — PENDIENTE ⚠️ (purgar `/blog/tracking-formulario-contacto-ga4-agente-ia/`, `/blog/`, `/img/og/blog-tracking-formulario-contacto-ga4-agente-ia.png`)
+- **Verificación:** OK · 200 vía origen Nominalia (post + OG) · 200 vía CF · card visible en `/blog/`
+- **Notas:** Artículo "Tu formulario de contacto es una caja negra": instrumentación 5 eventos GA4 + demo en `recursos/formulario-instrumentado/` + revisión diaria con agente IA. Datos Zuko 2024 (81% abandono).
+
+---
+
 ## 2026-05-11 — Fix Turnstile data-size=invisible → hang de 7s en todas las páginas
 - **Commit:** d4997fa (main)
 - **Archivos (47):** todos los HTMLs con widget `.cf-turnstile` — quitado `data-size="invisible"` (parámetro inválido en versión actual de Turnstile API)
