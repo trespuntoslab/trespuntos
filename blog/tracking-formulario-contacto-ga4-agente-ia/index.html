@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css">
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css">
+  </noscript>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var s1 = document.createElement('script');
+        s1.src = '/assets/cookieconsent/cookieconsent.umd.js';
+        s1.onload = function () {
+          var s2 = document.createElement('script');
+          s2.src = '/assets/cookieconsent/cookieconsent-init.js?v=20260416';
+          document.head.appendChild(s2);
+        };
+        document.head.appendChild(s1);
+      }, 800);
+    });
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#5dffbf">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Tu formulario es una caja negra | Blog | Tres Puntos</title>
+  <meta name="description" content="El 81% de los formularios se abandonan. Aquí el sistema: 5 eventos GA4 + un agente IA de revisión diaria para saber dónde pierdes leads y por qué." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/tracking-formulario-contacto-ga4-agente-ia/" />
+
+  <meta property="og:title" content="Tu formulario de contacto es una caja negra. Esto es lo que pierdes por no medirlo" />
+  <meta property="og:description" content="El 81% de los formularios se abandonan. Aquí el sistema: 5 eventos GA4 + un agente IA de revisión diaria para saber dónde pierdes leads y por qué." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/blog/tracking-formulario-contacto-ga4-agente-ia/" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Tres Puntos Comunicación" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og/blog-tracking-formulario-contacto-ga4-agente-ia.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tu formulario de contacto es una caja negra. Esto es lo que pierdes por no medirlo" />
+  <meta name="twitter:description" content="El 81% de los formularios se abandonan. Aquí el sistema: 5 eventos GA4 + un agente IA de revisión diaria." />
+  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og/blog-tracking-formulario-contacto-ga4-agente-ia.png" />
+  <meta property="article:published_time" content="2026-05-17" />
+  <meta property="article:modified_time" content="2026-05-17" />
+  <meta property="article:author" content="Jordi Expósito" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Tu formulario de contacto es una caja negra. Esto es lo que pierdes por no medirlo",
+    "description": "El 81% de los formularios se abandonan. Aquí el sistema: 5 eventos GA4 + un agente IA de revisión diaria para saber dónde pierdes leads y por qué.",
+    "image": "https://www.trespuntoscomunicacion.es/img/og/blog-tracking-formulario-contacto-ga4-agente-ia.png",
+    "datePublished": "2026-05-17",
+    "dateModified": "2026-05-17",
+    "author": {
+      "@type": "Person",
+      "name": "Jordi Expósito",
+      "url": "https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/",
+      "sameAs": [
+        "https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/",
+        "https://www.linkedin.com/in/trespuntoscomunicacion/"
+      ],
+      "jobTitle": "Digital Project Lead & UX/UI Designer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "url": "https://www.trespuntoscomunicacion.es/"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tres Puntos Comunicación",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.trespuntoscomunicacion.es/img/logo.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.trespuntoscomunicacion.es/blog/tracking-formulario-contacto-ga4-agente-ia/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.trespuntoscomunicacion.es/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.trespuntoscomunicacion.es/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "Tu formulario de contacto es una caja negra. Esto es lo que pierdes por no medirlo"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/blog-article.css" />
+  <noscript>
+    <link rel="stylesheet" href="/css/design-system.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/blog-article.css">
+  </noscript>
+
+  <style>
+    @font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+    @font-face{font-family:'Jakarta Fallback';src:local('Arial Black');size-adjust:95%;ascent-override:100%;descent-override:22%;line-gap-override:0%}
+    #tp-navbar{position:fixed;top:0;left:0;right:0;z-index:1000;min-height:72px}
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+  <div id="tp-navbar"></div>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-header-wrapper">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Inicio</a><span class="article-breadcrumb-sep">/</span><a href="/blog/">Blog</a><span class="article-breadcrumb-sep">/</span><span>Tu formulario de contacto es una caja negra</span>
+      </nav>
+      <div class="article-category">IA y Automatización</div>
+      <h1 class="article-title">Tu formulario de contacto es una caja negra. Esto es lo que pierdes por no medirlo</h1>
+      <div class="article-meta">
+        <div class="article-meta-author">
+          <img class="article-meta-avatar" src="/nosotros/Jordi.webp" alt="Jordi Expósito" loading="lazy" />
+          <div>
+            <div class="article-meta-name"><a href="https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/" target="_blank" rel="noopener">Jordi Expósito</a></div>
+            <div class="article-meta-time">17 de mayo de 2026 <span class="article-meta-item">· 5 min de lectura</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tabla de contenidos -->
+  <div class="article-toc">
+    <div class="toc-box">
+      <div class="toc-title">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h14"/></svg>
+        En este artículo
+      </div>
+      <ol class="toc-list">
+        <li><a href="#section-0">Qué eventos trackear y qué te revelan</a></li>
+        <li><a href="#section-1">El agente de revisión diaria: qué le das, qué le pides, qué te devuelve</a></li>
+        <li><a href="#section-2">Qué hacer con lo que te dice el agente</a></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Cuerpo del artículo -->
+  <main class="article-body">
+    <article class="article-content">
+
+      <p>La mayoría de empresas B2B saben cuántos leads llegan al mes. Casi ninguna sabe dónde los pierde.</p>
+      <p>El formulario de contacto es el punto de mayor fricción en cualquier web de servicios. Es donde el visitante que ya ha decidido contactar puede desertar. Y sin datos, ese abandono es invisible: GA4 muestra tráfico, muestra sesiones, pero no te dice en qué campo exacto se marchó alguien que estaba a punto de convertir.</p>
+      <p>Lo llamamos la paradoja del último metro: tienes a alguien en tu formulario de inicio de proyecto y no sabes qué pasó. Solo ves que no llegó.</p>
+
+      <div class="pain-blocks">
+        <div class="pain-block">
+          <div class="pain-block-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </div>
+          <div class="pain-block-title">El abandono es invisible</div>
+          <div class="pain-block-desc">GA4 registra la sesión, el pageview y el bounce. Pero no te dice que alguien llegó hasta el campo de presupuesto, lo dejó en blanco y cerró la pestaña.</div>
+        </div>
+        <div class="pain-block">
+          <div class="pain-block-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="pain-block-title">Solo mides el submit final</div>
+          <div class="pain-block-desc">La fricción ya ocurrió antes de que el usuario pulsara enviar — o no lo pulsó. Si solo tienes el evento de conversión, estás midiendo el resultado sin entender el proceso.</div>
+        </div>
+        <div class="pain-block">
+          <div class="pain-block-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="pain-block-title">Nadie mira los datos cada día</div>
+          <div class="pain-block-desc">Aunque instrumentaras el formulario mañana, los dashboards de GA4 exigen interpretación manual. Sin análisis automatizado, las señales de fricción se pierden en el ruido.</div>
+        </div>
+      </div>
+
+      <div class="stat-callout">
+        <div class="stat-callout-number" data-target="81" data-suffix="%">81%</div>
+        <div class="stat-callout-label">de los usuarios que inician un formulario online no lo completan</div>
+        <div class="stat-callout-source">Fuente: Zuko Form Analytics Report 2024</div>
+      </div>
+
+      <p>Ese porcentaje no se distribuye de forma uniforme. Según el mismo informe de Zuko, los campos de teléfono y presupuesto concentran entre el 40% y el 60% del abandono total, aunque solo representan dos de los seis o siete campos típicos de un formulario de contacto B2B. La fricción tiene una geografía precisa. El problema es que casi nadie la mide.</p>
+      <p>Lo hemos resuelto instrumentando nuestro propio formulario de inicio de proyecto con tracking de eventos granular en GA4 y añadiendo un agente que revisa los datos cada mañana. Aquí está el sistema, paso a paso.</p>
+
+      <h2 id="section-0">Qué eventos trackear y qué te revelan</h2>
+
+      <p>No sirve de nada medir el submit final. Para cuando alguien pulsa "enviar", la fricción ya ocurrió o no ocurrió. Necesitas datos de cada etapa del proceso.</p>
+      <p>Estos son los cinco eventos que instrumentamos en nuestro propio formulario, dentro del trabajo de <a href="/servicios/diseno-ux-ui-barcelona/">diseño UX y arquitectura de conversión</a> que aplicamos también con clientes:</p>
+
+      <div class="checklist-box">
+        <div class="checklist-box-title">Los 5 eventos que necesitas en GA4</div>
+        <ul>
+          <li><strong>form_start</strong> — El usuario hace clic en el primer campo. Es el indicador de intención real. Si tienes mucho tráfico en la página pero pocos <code>form_start</code>, el problema está antes del formulario: la página no convence.</li>
+          <li><strong>field_complete</strong> <em>(parámetro: nombre del campo)</em> — Cada vez que el usuario completa un campo y sale de él. Dibuja el mapa de progreso paso a paso. Si el 80% completa "nombre" pero solo el 43% completa "presupuesto", tienes un cuello de botella localizado.</li>
+          <li><strong>field_retry</strong> — El usuario borra y reescribe un campo que ya había rellenado. Es el detector de fricción por excelencia. Tres reintentos consecutivos en el mismo campo equivalen a confusión o rechazo activo.</li>
+          <li><strong>field_abandon</strong> — El usuario abandona con campos sin completar. Con el parámetro del campo en el que estaba al salir, sabes exactamente dónde se rompió la conversión.</li>
+          <li><strong>generate_lead</strong> — El formulario se envía correctamente. Este es el único evento que la mayoría mide. Los cuatro anteriores son los que generan la inteligencia real.</li>
+        </ul>
+      </div>
+
+      <p>Con estos cinco eventos calculas la tasa de conversión en cada paso del funnel interno del formulario. No es una métrica de vanidad: es el mapa exacto de dónde se escapa dinero.</p>
+
+      <div class="mini-chart">
+        <div class="mini-chart-title">Tasa de progreso por campo — patrón típico en formularios de contacto B2B (Zuko 2024)</div>
+        <div class="mini-chart-row">
+          <div class="mini-chart-row-head"><span>Nombre</span><strong>89%</strong></div>
+          <div class="mini-chart-bar"><div class="mini-chart-bar-fill" data-pct="89"></div></div>
+        </div>
+        <div class="mini-chart-row">
+          <div class="mini-chart-row-head"><span>Email de empresa</span><strong>78%</strong></div>
+          <div class="mini-chart-bar"><div class="mini-chart-bar-fill" data-pct="78"></div></div>
+        </div>
+        <div class="mini-chart-row">
+          <div class="mini-chart-row-head"><span>Teléfono</span><strong>61%</strong></div>
+          <div class="mini-chart-bar"><div class="mini-chart-bar-fill warn" data-pct="61"></div></div>
+        </div>
+        <div class="mini-chart-row">
+          <div class="mini-chart-row-head"><span>Servicios necesarios</span><strong>55%</strong></div>
+          <div class="mini-chart-bar"><div class="mini-chart-bar-fill warn" data-pct="55"></div></div>
+        </div>
+        <div class="mini-chart-row">
+          <div class="mini-chart-row-head"><span>Presupuesto estimado</span><strong>43%</strong></div>
+          <div class="mini-chart-bar"><div class="mini-chart-bar-fill warn" data-pct="43"></div></div>
+        </div>
+      </div>
+
+      <p>La implementación técnica es directa: un listener por campo, un <code>dataLayer.push</code> por evento, GA4 recoge el resto. Puedes ver el snippet de código comentado y probarlo en tiempo real en nuestra <a href="https://trespuntos-lab.com/recursos/formulario-instrumentado/" target="_blank" rel="noopener">demo interactiva del formulario instrumentado</a>.</p>
+
+      <h2 id="section-1">El agente de revisión diaria: qué le das, qué le pides, qué te devuelve</h2>
+
+      <p>Los datos de GA4 son necesarios pero no suficientes. El problema real es que nadie los mira todos los días. Y sin revisión sistemática, las señales se pierden en el ruido.</p>
+
+      <blockquote class="quote-pull">
+        <img class="quote-pull-avatar" src="/nosotros/Jordi.webp" alt="Jordi Expósito" loading="lazy" onerror="this.style.display='none'">
+        <div class="quote-pull-body">
+          <p class="quote-pull-text">"Si el dato de abandono existe pero nadie lo lee a diario, es como no tenerlo. La solución no es más dashboards — es un agente que haga la revisión por ti y te diga exactamente qué acción tomar."</p>
+          <div class="quote-pull-author">JORDI EXPÓSITO · Digital Project Lead</div>
+        </div>
+      </blockquote>
+
+      <div class="before-after">
+        <div class="before-after-side before-after-before">
+          <div class="before-after-label">Sin agente</div>
+          <div class="before-after-title">Datos sin lectura</div>
+          <div class="before-after-desc">GA4 acumula eventos. Nadie los revisa a diario. Las señales de fricción crecen durante semanas sin que nadie tome una decisión. Cuando alguien finalmente abre el dashboard, ya ha perdido varias semanas de leads.</div>
+        </div>
+        <div class="before-after-side before-after-after">
+          <div class="before-after-label">Con agente IA</div>
+          <div class="before-after-title">Informe matutino con acción concreta</div>
+          <div class="before-after-desc">Cada lunes: campo con más fricción, tendencia respecto a la semana anterior, y una acción propuesta. Sin entrar a GA4. Sin interpretar tablas. Solo leer tres párrafos y decidir si ejecutar o no.</div>
+        </div>
+      </div>
+
+      <p><strong>Qué le das al agente:</strong> los eventos de los últimos 7 días (conteo de <code>form_start</code>, <code>field_complete</code> por campo, <code>field_retry</code> por campo, <code>field_abandon</code> por campo, <code>generate_lead</code>), los mismos datos de la semana anterior para detectar tendencias reales, y el texto actual de cada campo del formulario para que entienda el contexto.</p>
+      <p><strong>Qué le pides:</strong> identifica el campo con más fricción esta semana, compara con la semana anterior e indica si mejora o empeora, y propón una acción concreta para reducir el abandono en ese punto.</p>
+      <p><strong>Ejemplo de output real del agente (lunes 12 de mayo):</strong></p>
+
+      <blockquote>«Esta semana el campo "presupuesto estimado" registra 14 field_retry (vs. 6 la semana pasada) y es el punto de abandono en el 38% de los casos. La tasa de conversión form_start → generate_lead ha bajado del 22% al 17%. Causa probable: la pregunta de presupuesto aparece en el paso 2 sin contexto previo de rangos. Acción recomendada: añadir una nota de ejemplo bajo el campo ("p. ej. 5.000–15.000 €") y moverlo al paso 3, después de que el usuario haya descrito el proyecto.»</blockquote>
+
+      <p>Ese informe llega cada mañana. No requiere que nadie entre a GA4. No requiere interpretar tablas. Requiere leer tres párrafos y decidir si ejecutar o no la acción propuesta.</p>
+
+      <div class="article-cta-inline">
+        <div class="article-cta-inline-text">¿Quieres ver el sistema funcionando en tiempo real? Prueba el formulario instrumentado con los cinco eventos activos y el snippet de código comentado.</div>
+        <a href="https://trespuntos-lab.com/recursos/formulario-instrumentado/" class="article-cta-inline-btn" target="_blank" rel="noopener">Ver demo interactiva →</a>
+      </div>
+
+      <h2 id="section-2">Qué hacer con lo que te dice el agente</h2>
+
+      <p>La mayoría de equipos tienen el problema inverso al de la falta de datos: cuando los datos aparecen, no saben qué priorizar. Aquí va la lógica que usamos.</p>
+
+      <div class="signal-cards" role="list">
+        <div class="signal-card" role="listitem">
+          <div class="signal-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="signal-card-content">
+            <div class="signal-card-title">Primero: el campo con mayor tasa de abandono</div>
+            <div class="signal-card-desc">Es el cuello de botella principal. Arreglarlo sube la conversión global del formulario más que cualquier otra mejora. No empieces por otro campo, aunque te parezca más fácil de tocar.</div>
+          </div>
+        </div>
+        <div class="signal-card" role="listitem">
+          <div class="signal-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
+          </div>
+          <div class="signal-card-content">
+            <div class="signal-card-title">Segundo: los campos con más field_retry</div>
+            <div class="signal-card-desc">No son abandonos todavía, pero son señales de confusión activa. Una etiqueta más clara o un texto de ayuda reducen la fricción sin tocar la estructura del formulario ni el flujo de validación.</div>
+          </div>
+        </div>
+        <div class="signal-card" role="listitem">
+          <div class="signal-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="signal-card-content">
+            <div class="signal-card-title">Tercero: el ratio form_start / tráfico en la página</div>
+            <div class="signal-card-desc">Si muchos visitan pero pocos inician el formulario, el problema no está en los campos: está en el copy o en la arquitectura de la página. Es una señal de <a href="/blog/la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas/">deuda de arquitectura UX</a>, no de formulario.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-block" role="note">
+        <p>Cada cambio que ejecutas es una iteración medible. No una suposición. La semana siguiente, el agente compara. Si el field_retry bajó, el cambio funcionó. Si no bajó, se descarta y se prueba otra hipótesis.</p>
+      </div>
+
+      <p>Eso es iterar con datos, no con intuición. Y es exactamente lo que diferencia a un equipo que mejora su conversión sistemáticamente de uno que rediseña el formulario completo cada año esperando que "esta vez sí".</p>
+      <p>El sistema completo — instrumentación GA4, prompt del agente, conexión con la API de datos y el workflow de revisión semanal — está documentado en la demo y puedes desplegarlo en cualquier formulario de contacto en menos de una semana de trabajo técnico. No hace falta cambiar de plataforma ni migrar datos históricos.</p>
+
+    </article>
+  </main>
+
+  <!-- CTA final -->
+  <section class="article-cta">
+    <div class="article-cta-eyebrow">TRES PUNTOS — ARQUITECTURA DE CONVERSIÓN</div>
+    <h2>¿Tu formulario de contacto también es una caja negra?</h2>
+    <p>Auditamos la arquitectura de conversión de tu web y te decimos exactamente dónde estás perdiendo leads — con datos, no con suposiciones.</p>
+    <a href="/iniciar-proyecto/" class="article-cta-btn">Cuéntanos tu proyecto →</a>
+  </section>
+
+  <!-- Author card -->
+  <div class="author-card">
+    <div class="author-card-inner">
+      <img class="author-card-avatar" src="/nosotros/Jordi.webp" alt="Jordi Expósito">
+      <div class="author-card-info">
+        <div class="author-card-name">Jordi Expósito</div>
+        <div class="author-card-role">Digital Project Lead & UX/UI Designer · Tres Puntos</div>
+        <a href="https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/" target="_blank" rel="noopener" class="author-card-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Conectar en LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-footer-divider"></div>
+
+  <!-- Artículos relacionados -->
+  <section class="related-articles">
+    <h2 class="related-articles-title">Artículos relacionados</h2>
+    <div class="related-articles-grid">
+      <a href="/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/" class="related-card">
+        <span class="related-card-cat">UX Y CONVERSIÓN</span>
+        <h3 class="related-card-title">Tendencias de diseño web 2026: rendimiento, UX y conversión</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+      <a href="/blog/la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas/" class="related-card">
+        <span class="related-card-cat">UX B2B</span>
+        <h3 class="related-card-title">La deuda de arquitectura UX en plataformas B2B modernas</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+      <a href="/blog/inteligencia-artificial-y-ux-ui-guia-completa/" class="related-card">
+        <span class="related-card-cat">IA Y UX</span>
+        <h3 class="related-card-title">Inteligencia artificial y UX/UI: guía completa para equipos de diseño</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js?v=27" defer></script>
+  <script src="/js/supabase-forms.js?v=20260416" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      try { TP.navbar('blog'); } catch (e) {}
+      try { TP.footer(); } catch (e) {}
+      try { TP.initJS(); } catch (e) {}
+    });
+  </script>
+  <script src="/js/blog-article.js" defer></script>
+
+  <script>
+    window.JordanConfig = {
+      webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
+      calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
+      avatar: '/assets/jordan/jordan-avatar.png',
+      position: 'right'
+    };
+  </script>
+  <script async src="/assets/jordan/jordan-widget-v7.js"></script>
+
+</body>
+</html>
