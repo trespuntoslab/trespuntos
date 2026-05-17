@@ -324,6 +324,26 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
 
 ---
 
+## Deploy 2026-05-17 — Form unificado en 47 páginas + tracking dual-bucket
+
+- **SHA**: `c7e4438` (main)
+- **Commit**: feat(forms): unificar form CTA + tracking dual-bucket por variant
+- **Archivos FTP (5)**:
+  - `css/components.css` — estilos scopeados `#tp-cta-form` (chips 3-col, counter, section labels, botón outline mint)
+  - `js/components.js` — TP.ctaForm() refactorizado con HTML idéntico al de iniciar-proyecto (sin modal)
+  - `js/form-validation.js` — lee `data-form-variant` y lo envía en todos los eventos GA4
+  - `js/supabase-forms.js` — envía `form_variant` en payload del webhook n8n
+  - `iniciar-proyecto/index.html` — `data-form-variant="iniciar-proyecto"` en `<form>`
+- **Cloudflare**: purge_everything ✅
+- **Verificación**: components.js 2 matches · components.css 12 matches · ambos servidos OK
+- **Sistemas relacionados (ya en producción VPS antes del deploy)**:
+  - n8n Mapear datos lead v7: fuente dinámica (Inicio Proyecto / Footer CTA / Exit Intent / CTA Briefing / CTA Simple)
+  - server.py `/api/form-funnel?variant=iniciar-proyecto|footer-cta|all&range=N`
+  - Dashboard sub-sección "Forms Footer" con toggle 7d/30d/90d (verificada: 171 sess · 0.6% conv)
+  - Workflow Optimizer dual-bucket (`VQZZ1StJhimlrkP3`) lunes 9am con propuestas IA por bucket
+
+---
+
 ## Deploy 2026-05-17 — Funnel tracking + modal exit-intent + UI refactor /iniciar-proyecto/
 
 - **SHA**: `0476756` (main)
