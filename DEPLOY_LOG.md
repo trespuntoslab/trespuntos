@@ -16,6 +16,32 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
 
 ---
 
+## Reglas FTP — cómo funciona el deploy
+
+> Documentado 2026-05-17 tras auditoría del filesystem.
+
+El FTP a Nominalia es **manual y selectivo** (via `curl --ftp-pasv`). No existe sincronización automática de directorio, por lo que:
+
+- Los archivos en `.gitignore` (`.bak`, `.zip`, `.backup`, `supabase-schema.sql`, etc.) **nunca** llegan a producción por FTP accidental.
+- Cada entrada en este log lista exactamente los archivos subidos.
+- El servidor FTP es `ftp.trespuntoscomunicacion.es` (port 21, pasv). Nunca usar el dominio raíz como host FTP.
+
+**Exclusiones que el operador debe respetar en cualquier upload masivo:**
+```
+_archive/   master/   _preview/   *.zip   *.bak   *.backup
+supabase-schema.sql   dashboard-leads.jsx   generate-blogs.sh
+audit-trespuntos*.html   AUDITORIA-WEB-*.md   Informe-SEO-*.docx
+CLAUDE.md   DEPLOY_LOG.md   BRAND.md   HANDOFF.md
+```
+
+**Comando base para un archivo:**
+```bash
+curl -sk --ftp-pasv --ftp-create-dirs -T "ruta/local" \
+  "ftp://claude%40trespuntoscomunicacion.es:Y20pC%267L%214z%28%24%256g@ftp.trespuntoscomunicacion.es/ruta/destino"
+```
+
+---
+
 ## 2026-05-17 17:50 — Nuevo post blog: tracking formulario contacto GA4 + agente IA
 - **Commit:** 20613863b2c621dadd6a9beb517e95923f7ab1dc (main)
 - **Archivos (3):**

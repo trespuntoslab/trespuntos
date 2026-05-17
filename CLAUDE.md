@@ -45,6 +45,19 @@
 
 3. **Workflows restantes por auditar:** 71 workflows aún sin auditar al cierre del 2026-05-03 (paneles exitbcn, share drive, calendly, healthcheck, LinkedIn sync, dashboard, Curry SEO, etc.). Probablemente están limpios pero conviene confirmar con un grep masivo desde el MCP n8n. Al confirmar limpios o sanitizar, actualizar este número.
 
+4. **⚠️ DISCREPANCIAS DETECTADAS 2026-05-17:** revisando workflows que la tabla de arriba marca como "✅ sanitizado", se descubrió que **al menos 2 mienten**:
+   - **`BLcLAnrGcwUYyDJf` (Kobe)** — sigue con PAT Airtable hardcoded en "Leer Datos Agencia Airtable" (`patN5OZQ...`), Anthropic API key hardcoded en "Haiku Kobe Emails", y Telegram token hardcoded en "Notificar Jordan". La sección de cambios 2026-04-07 dice que se migró pero **NO** se hizo en producción (o se revirtió). Tabla `✅` errónea.
+   - **`ofNEs2v9y3angTDz` (WF3 Partner Envío)** — tiene credencial Airtable adjunta PERO `authentication: "none"` Y header `Authorization: Bearer pat...` hardcoded. La credencial es **inerte** — n8n envía el PAT hardcoded. La migración se quedó a medias.
+
+   **Acción pendiente:** auditar uno por uno los 11 workflows de la tabla para confirmar cuáles están realmente migrados vs cuáles fingen estarlo. El patrón correcto verificado funcionando (de `SRai7Mly38uCOVO7` WF6, nodos "Leer Agencias AT" + "Crear en Airtable"):
+   ```json
+   "parameters": { "authentication": "predefinedCredentialType", "nodeCredentialType": "airtableApi", ... },
+   "credentials": { "airtableApi": { "id": "zQer745cZNd0kQyb", "name": "airtableApiKey" } }
+   ```
+   Sin `Authorization` header. `sendHeaders: false` en GET, `sendHeaders: true` con SOLO `Content-Type` en POST/PATCH.
+
+5. **`8XoipUHvtokIaiw5` (Playwright Auditor) sanitizado 2026-05-17** — añadido a la lista limpia. Antes tenía PAT Airtable hardcoded en 4 nodos HTTP + cron `*/5 * * * *` que consumía ~288 calls/día de Airtable (causa raíz del `PUBLIC_API_BILLING_LIMIT_EXCEEDED` que reventó la cuota a mitad de mayo). Cambios: cron → `0 9 * * 1-5` (Madrid), 4 nodos migrados a credencial nativa. **Pendiente** (no crítico): runner token (3 nodos) y Telegram bot token (2 nodos, bot distinto del principal `8706170609:...`) siguen hardcoded — requieren env var nueva en Dokploy.
+
 ### Origen del incidente
 Sesión 2026-04-30: GitHub Secret Scanning bloqueó push de `partners/campana/sectores-workflows-backup/wf3-sectores-completo.json` detectando 2 secretos. Auditoría 2026-05-03: 9 workflows infectados + 5 credenciales filtradas (Airtable, Telegram, OpenAI, Anthropic, Serper). Tarde 2026-05-03: 68 updateNode + 24 más vía MCP n8n para migrar a `$env`. Configuración final: env vars en Dokploy + recreate del contenedor.
 
@@ -1102,6 +1115,90 @@ bash scripts/og/ftp-upload.sh
 - Añadir hook `PostToolUse` que detecte cuando se crea un nuevo `blog/{slug}/index.html` o `casos-de-negocio/{slug}/index.html` y sugiera regenerar OG
 - Convertir PNG a JPG (~50% más pequeño) si Lighthouse o PSI detectan los OG como problema de bytes (poco probable, no se cargan en página, solo al compartir)
 - Variantes A/B: probar otra disposición (logo abajo en lugar de arriba, título más grande sin subtítulo) para ver si mejora CTR en redes
+
+---
+
+### Cambios aplicados (2026-05-17) — Crisis Airtable API + diagnóstico real + sanitización Playwright Auditor
+
+#### Contexto del incidente
+El formulario CTA dejó de guardar leads en Airtable. Email de Airtable confirmando `PUBLIC_API_BILLING_LIMIT_EXCEEDED` para el workspace "Leads" — la cuota free de 1.000 calls/mes se agotó a mitad de mayo. Telegram + email backup seguían funcionando, pero los leads no se persistían en Airtable.
+
+#### Fix inmediato (estabilización en 5 min)
+Pipeline v2.5 (`fxiAWMB3S0eWc1aM`) → ambos nodos Airtable (`Guardar en Airtable` + `Guardar AT Briefing`) ahora tienen `continueOnFail: true`. Esto garantiza que aunque Airtable devuelva 429:
+- Telegram a Jordi se dispara siempre
+- Email backup se dispara siempre
+- Nada se pierde de cara al equipo, solo no queda en Airtable hasta que se resetee la cuota el 1 de junio
+
+#### Investigación: por qué se agotaron 1.000 calls a mitad de mes
+Tras descartar las opciones obvias (upgrade Airtable Team = $80/mes por 4 workspaces, migración a NocoDB = 16-24h, migración a Supabase = 8-12h, CRM open-source = mucho trabajo), se hizo auditoría forense del consumo real:
+
+**🚨 Smoking gun identificado:** Workflow `8XoipUHvtokIaiw5` "🔍 Playwright Auditor — Lead Audit + Drive" — creado 2026-05-03, activo.
+- Cron: `*/5 * * * *` (cada 5 min, 24/7)
+- Hacía `GET filterByFormula` a `tblqbhaPtZlsPbsYs` **incondicionalmente** en cada tick
+- = **288 calls/día = ~8.640 calls/mes** él solo
+- Agotaba el plan free en 3-4 días sin que nadie se diera cuenta
+
+**Conclusión clave:** NO había que migrar nada. El sistema funcionaba bien; un workflow loco quemaba la cuota innecesariamente. Documento `MIGRATION-AIRTABLE-NOCODB.md` queda en el repo como referencia para futuro, pero **NO ejecutar** hasta que de verdad se necesite (cuando se llegue al límite real de Airtable Team plan, lo cual no pasará en años).
+
+#### Sanitización aplicada al Playwright Auditor (2026-05-17)
+Vía MCP n8n, 5 operaciones atómicas:
+
+1. **Cron** `*/5 * * * *` → `0 9 * * 1-5` (1x/día lun-vie 9:00 Madrid) = 99,7% reducción de calls
+2. **PAT Airtable hardcoded eliminado** de los 4 nodos HTTP Request (`Listar pendientes`, `Marcar 'En curso'`, `Update OK`, `Update Error`). Ahora usan credencial nativa:
+   ```json
+   "parameters": { "authentication": "predefinedCredentialType", "nodeCredentialType": "airtableApi" }
+   "credentials": { "airtableApi": { "id": "zQer745cZNd0kQyb", "name": "airtableApiKey" } }
+   ```
+3. Workflow reactivado tras los cambios. Primera ejecución: lunes 2026-05-18 a las 9:00 Madrid.
+
+#### Funcionalidad del Playwright Auditor (preservada)
+Cuando Jordi marca `Auditar=true` en un lead de Airtable con URL Web válida, este workflow:
+- Llama al runner Playwright (`172.17.0.1:8090/audit`)
+- Extrae: Core Web Vitals (LCP/FCP/TTFB/CLS), CMS, stack tecnológico, sector, hero copy (H1/sub/CTA), UX checks (h1 count, forms, CTAs above-fold, imágenes sin alt), screenshots desktop+mobile
+- Sube screenshots a Google Drive (folder `1LB5JXB7uj_hPwDgnTDDfxwV8fLfWJw0n`)
+- Rellena Airtable con CMS, Stack, Hero, Sector, Notas estructuradas, status=Hecha
+- Notifica por Telegram al chat `7313439878`
+
+Antes: poll cada 5 min buscando leads pendientes (la mayoría de polls no encontraban nada). Ahora: 1 poll/día. La auditoría real funciona igual.
+
+#### Hallazgos críticos de sanitización (discrepancias con la tabla de la sección "Sanitización n8n")
+Durante la búsqueda del patrón correcto de credencial Airtable, se descubrió que **al menos 2 workflows marcados ✅ NO están realmente sanitizados**:
+- **`BLcLAnrGcwUYyDJf` (Kobe)** — sigue con PAT Airtable + Anthropic + Telegram hardcoded
+- **`ofNEs2v9y3angTDz` (WF3 Partner Envío)** — credencial adjunta pero `authentication: "none"` + Bearer hardcoded simultáneamente (credencial inerte)
+
+Documentado en la sección "Sanitización n8n" del propio CLAUDE.md (avisos 4 y 5).
+
+**El patrón verificado funcionando** (de `SRai7Mly38uCOVO7` WF6, nodos "Leer Agencias AT" + "Crear en Airtable"):
+- `authentication: "predefinedCredentialType"`
+- `nodeCredentialType: "airtableApi"` (no `airtableTokenApi`)
+- Key en `credentials` block es `airtableApi`, value: `{ id: "zQer745cZNd0kQyb", name: "airtableApiKey" }`
+- **Sin** header `Authorization`. GET: `sendHeaders: false`. POST/PATCH: `sendHeaders: true` con solo `Content-Type`
+
+#### Otros cómplices menores detectados (no fixados aún)
+- **Dashboard frontend auto-refresh**: `setInterval(initDashboard, 5 * 60 * 1000)` cada 5 min. Si Jordi deja el dashboard abierto = ~96 refreshes/día × 9 endpoints Airtable. Cache TTL default 60s no es suficiente.
+- **TTLs faltantes** en `CACHE_TTL_BY_PATH` (`/root/server.py`): `/api/leads`, `/api/pipeline`, `/api/form-leads`, `/api/auditorias`, `/api/revision` usan default 60s. Deberían ser 600-900s.
+- **`_pipeline()` con `maxRecords=500`** = paginación de 5 calls Airtable por refresh.
+- **Reporte Diario Partners (`HriQqHjDRZWxxSMo`)** — hace 3 GETs secuenciales donde 1 bastaría.
+
+#### Documentos generados/actualizados
+- `MIGRATION-AIRTABLE-NOCODB.md` (raíz del repo) — plan completo de migración por si en el futuro se necesita. Incluye evaluación de 3 alternativas (Supabase, NocoDB, Airtable Team), apéndices con scripts de extracción de schema y backup, estrategia dual-write. **Estado: archivado como referencia, NO ejecutar**.
+
+#### Estado final del consumo Airtable
+- Antes: ~350-450 calls/día (~10.500-13.500/mes)
+- Después: ~50 calls/día (~1.500/mes) si no se aplican optimizaciones adicionales
+- Tras aplicar TTLs en server.py + reducir auto-refresh: <30 calls/día (~900/mes) → **dentro del plan free**
+
+#### Pendientes derivados (para próximas sesiones, no urgentes)
+1. **Aplicar TTLs en `server.py`** del VPS:
+   ```python
+   '/api/leads': 600, '/api/pipeline': 600, '/api/form-leads': 600,
+   '/api/auditorias': 900, '/api/revision': 900
+   ```
+2. **Subir auto-refresh frontend** en dashboard.html de `5 * 60 * 1000` a `15 * 60 * 1000`
+3. **Re-sanitizar Kobe + WF3** (PAT hardcoded confirmado, mienten en la tabla ✅)
+4. **Auditar el resto de los 11 "✅ sanitizados"** — la metodología del 2026-05-03 no fue 100% fiable
+5. **Crear env var `TELEGRAM_AUDITOR_BOT_TOKEN`** en Dokploy si se quiere migrar también el bot del Auditor (`8706170609:...`, distinto del principal `8749982652:...`)
+6. **Optimizar `_pipeline()`** para no paginar 500 records si no es necesario (probablemente `maxRecords=100` basta para el KPI mostrado)
 
 ---
 
