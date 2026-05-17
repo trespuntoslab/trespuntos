@@ -321,3 +321,22 @@ Registro cronológico de cada deploy a producción. Una entrada por subida FTP a
   - `servicios/ia-generativa-empresas/index.html` (links a 4 ciudades + automatizacion-agentes-ia)
 - **Cloudflare**: purge_everything ✅ `{"success":true}`
 - **Verificación**: CF MISS ✅ · Playwright screenshot OK ✅ (desarrollo-web-a-medida-barcelona carga correctamente)
+
+---
+
+## Deploy 2026-05-17 — Funnel tracking + modal exit-intent + UI refactor /iniciar-proyecto/
+
+- **SHA**: `0476756` (main)
+- **Commit**: feat(iniciar-proyecto): funnel tracking GA4 + modal exit-intent + UI refactor
+- **Archivos FTP (3)**:
+  - `iniciar-proyecto/index.html` — UI refactor Refactoring UI (chips 3-col, inputs 44px touch target, counter dinámico, section labels) + modal exit-intent HTML/CSS/JS con 6 eventos GA4
+  - `js/form-validation.js` — eventos `form_50pct_complete`, `form_ready`, `form_submit_attempt` (one-shot per session)
+  - `js/supabase-forms.js` — `n8nSend` retorna Promise, dispara `form_submit_success` / `form_submit_error` post-fetch
+- **Cloudflare**: Purge by URL — 3 URLs ✅ `{"success":true}`
+- **Verificación**: HTTP 200 · CF MISS ✅ · Eventos nuevos confirmados en HTML servido (form_50pct_complete, form_ready, form_submit_attempt, form_submit_success/error, ip-exit-overlay, exit_intent_shown, exit_intent_converted)
+- **Sistemas relacionados activos**:
+  - n8n workflow `📊 Conversion Form Optimizer` (ID `VQZZ1StJhimlrkP3`) — diario 9am Madrid, modo fallback sin IA, avisa solo si anomalías o lunes
+  - Dashboard `dash.trespuntos-lab.com → Marketing → Iniciar Proyecto` con toggle 7d/30d/90d
+  - Endpoint `/api/iniciar-proyecto?range=N` activo en server.py del VPS
+  - Skill `/conversion-form` para audits ondemand
+  - n8n branch exit-intent: `¿Es Exit Intent?` con Telegram urgente
