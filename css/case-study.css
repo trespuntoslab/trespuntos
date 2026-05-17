@@ -703,7 +703,7 @@
   height: 36px;
   border-radius: 10px;
   background: rgba(248, 113, 113, 0.1);
-  color: #f87171;
+  color: var(--color-error);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2716,7 +2716,7 @@
 .btn-primary.btn-enabled {
   background: var(--mint);
   color: var(--text-inverse);
-  box-shadow: 0 0 20px rgba(93,255,191,.15);
+  box-shadow: 0 0 20px rgba(var(--mint-rgb),.15);
   cursor: pointer;
   border: none;
 }
