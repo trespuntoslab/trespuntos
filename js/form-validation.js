@@ -94,11 +94,24 @@
   var halfwayFired = false;
   var readyFired = false;
 
+  // Detectar variante del form: 'iniciar-proyecto' (página dedicada) o 'footer-cta' (resto del sitio)
+  function getFormVariant() {
+    try {
+      var form = document.getElementById('v3-form');
+      if (form && form.dataset.formVariant) return form.dataset.formVariant;
+      var wrapper = document.getElementById('tp-cta-form');
+      if (wrapper && wrapper.dataset.formVariant) return wrapper.dataset.formVariant;
+    } catch (e) {}
+    return 'footer-cta'; // default seguro
+  }
+  var FORM_VARIANT = getFormVariant();
+
   function trackFunnel(name, extra) {
     try {
       if (window.tpTrack) {
         var params = {
           form_type: 'cta',
+          form_variant: FORM_VARIANT,
           pagina_origen: window.location.pathname
         };
         if (extra) for (var k in extra) params[k] = extra[k];

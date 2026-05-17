@@ -250,3 +250,174 @@ html,body{overflow-x:hidden;max-width:100vw}section{overflow-x:clip;max-width:10
 @media (max-width: 1024px) {
   .section-badge:first-child { margin-top: 1rem; }
 }
+
+
+/* ──────────────────────────────────────────────────────────
+   CTA FORM (footer-cta variant) — scoped a #tp-cta-form
+   Mejoras visuales del form que se inyecta en home/casos/servicios
+   Coordinado con iniciar-proyecto/index.html
+   ────────────────────────────────────────────────────────── */
+
+#tp-cta-form .cta-section + .cta-section { margin-top: 1.5rem; }
+
+#tp-cta-form .cta-section-label {
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 .875rem;
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+}
+#tp-cta-form .cta-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,.08), transparent);
+}
+
+#tp-cta-form .form-row { margin-bottom: 1rem; }
+#tp-cta-form .form-row:last-child { margin-bottom: 0; }
+
+#tp-cta-form .input {
+  padding: .75rem 1rem;
+  min-height: 44px;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+#tp-cta-form .input:hover { border-color: rgba(255,255,255,.16); }
+#tp-cta-form .input:focus {
+  border-color: rgba(93,255,191,.45);
+  box-shadow: 0 0 0 4px rgba(93,255,191,.12);
+  background: var(--bg-surface);
+}
+
+#tp-cta-form .custom-select-trigger {
+  padding: .75rem 1rem;
+  min-height: 44px;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+#tp-cta-form .custom-select-trigger:hover { border-color: rgba(255,255,255,.16); }
+#tp-cta-form .custom-select[aria-expanded="true"] .custom-select-trigger,
+#tp-cta-form .custom-select-trigger:focus {
+  border-color: rgba(93,255,191,.45);
+  box-shadow: 0 0 0 4px rgba(93,255,191,.12);
+  background: var(--bg-surface);
+}
+
+/* Services chips: 3 columnas con cuerpo (override de case-study.css) */
+#tp-cta-form .services-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: .5rem !important;
+}
+#tp-cta-form .service-card {
+  display: flex !important;
+  align-items: center !important;
+  gap: .5rem !important;
+  padding: .5rem .625rem !important;
+  min-height: 40px !important;
+  background: rgba(255,255,255,.035) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 10px !important;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, transform .1s;
+  user-select: none;
+}
+#tp-cta-form .service-card:hover {
+  background: rgba(93,255,191,.04) !important;
+  border-color: rgba(93,255,191,.25) !important;
+}
+#tp-cta-form .service-card:active { transform: scale(.98); }
+#tp-cta-form .service-card.selected {
+  background: rgba(93,255,191,.08) !important;
+  border-color: rgba(93,255,191,.55) !important;
+}
+#tp-cta-form .service-card-check {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  border-radius: 4px !important;
+  border: 1.5px solid rgba(255,255,255,.3) !important;
+}
+#tp-cta-form .service-card:hover .service-card-check { border-color: rgba(93,255,191,.5) !important; }
+#tp-cta-form .service-card.selected .service-card-check {
+  background: var(--mint) !important;
+  border-color: var(--mint) !important;
+}
+#tp-cta-form .service-card-check svg { width: 10px !important; height: 10px !important; color: #0e0e0e !important; }
+#tp-cta-form .service-card-label {
+  font-size: .75rem !important;
+  font-weight: 500 !important;
+  color: var(--text-secondary) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  min-width: 0;
+}
+#tp-cta-form .service-card.selected .service-card-label { color: var(--text-primary) !important; font-weight: 600 !important; }
+
+@media (max-width: 560px) {
+  #tp-cta-form .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* Submit button: outline mint cuando disabled (no gris muerto) */
+#tp-cta-form #form-submit-btn {
+  width: 100%;
+  margin-top: 1.25rem;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .9375rem 1.5rem;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .25s;
+}
+#tp-cta-form #form-submit-btn.btn-enabled {
+  background: var(--mint);
+  color: #0e0e0e;
+  box-shadow: 0 0 20px rgba(93,255,191,.25), 0 4px 12px rgba(0,0,0,.2);
+}
+#tp-cta-form #form-submit-btn.btn-enabled:hover {
+  background: #7fffcf;
+  box-shadow: 0 0 30px rgba(93,255,191,.35), 0 6px 20px rgba(0,0,0,.25);
+  transform: translateY(-1px);
+}
+#tp-cta-form #form-submit-btn.btn-disabled {
+  background: rgba(93,255,191,.04);
+  color: rgba(93,255,191,.55);
+  cursor: not-allowed;
+  border: 1px solid rgba(93,255,191,.2);
+}
+#tp-cta-form #form-submit-btn.btn-success {
+  background: rgba(93,255,191,.15);
+  color: var(--mint);
+  border: 1px solid rgba(93,255,191,.2);
+  cursor: default;
+}
+
+/* Counter dinámico */
+#tp-cta-form .cta-form-counter {
+  display: none;
+  text-align: center;
+  font-size: .75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-top: .75rem;
+  letter-spacing: .02em;
+}
+#tp-cta-form .cta-form-counter.visible { display: block; }
+#tp-cta-form .cta-form-counter .num { color: var(--mint); font-weight: 600; }
+
+/* Privacy más legible */
+#tp-cta-form #privacy-row .checkbox-label {
+  font-size: .8125rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
