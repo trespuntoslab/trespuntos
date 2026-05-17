@@ -42,6 +42,45 @@ curl -sk --ftp-pasv --ftp-create-dirs -T "ruta/local" \
 
 ---
 
+## 2026-05-17 23:00 — Auditoría web completa: SEO canonical, tokens CSS, sectores assets
+
+### Commits desplegados (3)
+- **`cb5d86b`** — `seo(sectores): canonical + JSON-LD + meta description partners/audit`
+- **`8513c1f`** — `refactor(css): backfill 68 tokens design-system + colores hardcoded → tokens`
+- **`a4de60c`** — `chore(infra): documentar reglas FTP + gitignore + CLAUDE.md + migration ref`
+
+### Archivos subidos por FTP (20)
+**SEO — canonicals + JSON-LD:**
+- `sectores/index.html` — canonical + schema CollectionPage con ItemList de 4 verticales
+- `sectores/fintech/index.html` — canonical
+- `sectores/saas-b2b/index.html` — canonical
+- `sectores/salud/index.html` — canonical
+- `sectores/inmobiliaria/index.html` — canonical
+- `partners/index.html` — canonical
+- `partners/audit/index.html` — meta description añadida
+
+**CSS — tokens design system:**
+- `css/design-system.css` — 68 tokens nuevos en `:root` + 24× `rgba(93,255,191,` → `rgba(var(--mint-rgb),` + `#f87171` → `var(--color-error)`
+- `css/components.css` — 79× `rgba(93,255,191,` → `rgba(var(--mint-rgb),` + 3× `#f87171` → `var(--color-error)`
+- `css/case-study.css` — 1× `rgba(93,255,191,` → `rgba(var(--mint-rgb),` + 1× `#f87171` → `var(--color-error)`
+
+**Assets sectores (ausentes en producción — causa raíz de 404 CSS):**
+- `sectores/css/sectores.css` — archivo nunca había sido subido al servidor FTP
+- `sectores/img/capilclinic-desktop.webp`
+- `sectores/img/capilclinic-mobile.webp`
+- `sectores/img/gibobs-desktop.webp`
+- `sectores/img/gibobs-mobile.webp`
+- `sectores/img/naranja-desktop.webp`
+- `sectores/img/naranja-mobile.webp`
+- `sectores/img/tsp-desktop.webp`
+- `sectores/img/tsp-mobile.webp`
+
+- **Cloudflare:** purge_everything + purge by URL (`sectores/css/sectores.css` + 5 URLs sectores)
+- **Verificación:** ✅ CF MISS tras purga · `sectores/css/sectores.css` → 200 text/css · Playwright sectores/ sin errores consola · Screenshot OK (tema oscuro, mint, grid cards)
+- **Notas:** `sectores/css/sectores.css` y las 8 imágenes webp llevaban meses ausentes del servidor FTP (drift git→producción). La auditoría lo detectó. También corregidos: 2 falsos positivos del audit (alt attrs + loading attrs usan multiline — grep line-by-line fallaba). Cerebro Digital actualizado vía GitHub MCP (`architecture/tech-stack.md`).
+
+---
+
 ## 2026-05-17 17:50 — Nuevo post blog: tracking formulario contacto GA4 + agente IA
 - **Commit:** 20613863b2c621dadd6a9beb517e95923f7ab1dc (main)
 - **Archivos (3):**
