@@ -42,6 +42,18 @@ curl -sk --ftp-pasv --ftp-create-dirs -T "ruta/local" \
 
 ---
 
+## 2026-05-19 — Clarity Smart Events: Hotjar → Clarity + embudos + eventos API
+
+- **Commits:** `1511fe9` + `257666b` (main)
+- **Archivos:**
+  - `assets/cookieconsent/cookieconsent-init.js` — Hotjar reemplazado por Clarity, listeners cta_navbar_click / form_submit_click / scroll_75_pct
+  - `assets/jordan/jordan-widget-v7.js` — clarity('event','jordan_open') en open()
+- **Cloudflare:** Custom Purge — 2 URLs
+- **Verificación:** FTP 226 OK × 2, Cloudflare purge OK
+- **Notas:** Clarity (wt7lglwv95) instalado, 2 embudos en panel, 4 eventos API pendientes de primeras visitas (24-48h)
+
+---
+
 ## 2026-05-17 23:00 — Auditoría web completa: SEO canonical, tokens CSS, sectores assets
 
 ### Commits desplegados (3)

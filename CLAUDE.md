@@ -500,7 +500,7 @@ Cada caso vive en `/casos-de-negocio/{slug}/`:
 
 #### Decisión arquitectónica
 - **Ubicación dashboard**: el dashboard de control central es `https://dash.trespuntos-lab.com/dashboard.html` (vanilla JS + Supabase auth + tabs Equipo/Captación/Keywords/Leads/Reuniones/Finanzas/Sistema). NO se usa Looker Studio externo. La estrategia analytics añade una pestaña "Web" en este dashboard, alimentada por una tabla `web_metrics` en Supabase que un workflow n8n actualiza desde GA4 Data API + GSC + Airtable + logs de bots IA
-- **Stack final**: GA4 + Search Console + Microsoft Clarity (pendiente) + tabla Supabase + workflow n8n. Sin Plausible, sin PostHog, sin Looker Studio
+- **Stack final**: GA4 + Search Console + Microsoft Clarity ✅ + tabla Supabase + workflow n8n. Sin Plausible, sin PostHog, sin Looker Studio
 
 #### Helpers globales (assets/cookieconsent/cookieconsent-init.js)
 Tres funciones añadidas al inicio del IIFE, disponibles en las 89 páginas:
@@ -603,7 +603,7 @@ Tres funciones añadidas al inicio del IIFE, disponibles en las 89 páginas:
 - Crear el GA4 Measurement Protocol API secret y configurarlo en el nodo `GA4 Qualified Lead`
 - Marcar `qualified_lead` como evento clave en GA4 admin
 - Exponer schema `trespuntos` en Kong/PostgREST (actualmente usa psql directo como workaround)
-- Microsoft Clarity integration (heatmaps, session recordings)
+- ✅ Microsoft Clarity integration (heatmaps, session recordings) — COMPLETADO 2026-05-19 (ver sección "Clarity")
 - GEO/AEO: tracking de menciones en ChatGPT, Perplexity, Gemini, Claude
 - Pestaña "Web" en dashboard: añadir gráficos históricos desde `web_metrics` (tendencias 7d/30d/90d)
 
@@ -1202,6 +1202,39 @@ Documentado en la sección "Sanitización n8n" del propio CLAUDE.md (avisos 4 y 
 
 ---
 
+### Cambios aplicados (2026-05-19) — Microsoft Clarity: instalación, embudos y Smart Events
+
+#### Sustitución Hotjar → Microsoft Clarity
+- **Motivo**: Hotjar no tiene API útil (solo lookup/deletion y survey responses). Clarity es gratuito, ilimitado en grabaciones y tiene integración nativa con GA4.
+- **Tracking ID**: `wt7lglwv95`
+- **Instalación**: self-hosted vía CookieConsent v3, cargado en `onAccept` de la categoría `analytics` (igual que GA4). Hotjar eliminado del código.
+- **`assets/cookieconsent/cookieconsent-init.js`**: reemplazado bloque `hotjar` por `clarity` en `services`. Descripción en preferencias actualizada.
+
+#### Configuración en el panel de Clarity
+- **Bloqueo de IP**: `85.51.255.66` (IP de Jordi) — excluida del tracking
+- **Enmascaramiento**: Equilibrado (oculta inputs sensibles, respeta GDPR)
+- **GA4 integrado**: propiedad `G-ERX855WTHN` ya conectada (marcada en onboarding)
+
+#### Embudos configurados (2)
+| Nombre | Pasos |
+|---|---|
+| Conversion Principal - Formulario | Home → Iniciar Proyecto → Gracias - Conversión |
+| Blog hacia Conversión | Blog → Iniciar Proyecto → Gracias - Conversión |
+
+#### Smart Events instrumentados (aparecen en Clarity → Eventos de API tras 24-48h)
+Los eventos se disparan con `window.clarity('event', nombre)` **solo si el usuario aceptó cookies analíticas**:
+
+| Evento Clarity | Trigger | Archivo |
+|---|---|---|
+| `cta_navbar_click` | Click en `.nav-cta` ("Cuéntanos tu proyecto") | `cookieconsent-init.js` (listener delegado) |
+| `form_submit_click` | Click en `#form-submit-btn` ("Enviar mensaje") | `cookieconsent-init.js` (listener delegado) |
+| `scroll_75_pct` | Scroll ≥ 75% de la página | `cookieconsent-init.js` (scroll listener pasivo) |
+| `jordan_open` | Apertura del widget Jordan (modo flotante) | `jordan-widget-v7.js` — método `open()` |
+
+**Pendiente**: cuando los eventos aparezcan en el panel (tras primeras visitas reales), crear los Smart Events desde Clarity → Configuración → Eventos inteligentes → Eventos de API seleccionando cada nombre.
+
+---
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
@@ -1219,6 +1252,7 @@ Documentado en la sección "Sanitización n8n" del propio CLAUDE.md (avisos 4 y 
 - ✅ ~~Fix UTM tracking end-to-end + limpieza código Supabase muerto~~ COMPLETADO (2026-04-21): Ver sección "Cambios aplicados (2026-04-21)"
 - ✅ ~~Jordan widget v7: persistencia en 3 stages + fix Calendly bug + system prompt v10.2~~ COMPLETADO (2026-04-24): Ver sección "Cambios aplicados (2026-04-24)". Stages initial/update/final con upsert por Session ID. Fix del bug que perdía leads cuando el usuario clicaba Calendly. Iteraciones v7 → v7.1 → v7.2 tras feedback de tests reales.
 - ✅ ~~Sistema OG (Open Graph) — imágenes para redes sociales en TODAS las páginas~~ COMPLETADO (2026-04-29): 102 imágenes 1200×630 PNG generadas con plantilla universal (logo dark + badge categoría + título + descripción), 102 HTMLs actualizados con `og:image`, `twitter:image`, dimensiones declaradas y `summary_large_image`. Ver sección "Sistema OG (Open Graph)". Scripts en `/scripts/og/`.
+- ✅ ~~Microsoft Clarity: instalación + embudos + Smart Events instrumentados~~ COMPLETADO (2026-05-19): Hotjar reemplazado, 2 embudos creados, 4 eventos API instrumentados (cta_navbar_click, form_submit_click, scroll_75_pct, jordan_open). Ver sección "Cambios aplicados (2026-05-19)".
 - Fix botón "Rechazar" del banner (sigue en mint, debería ser outline)
 - Investigar discrepancia PSI público (67-69) vs Lighthouse local (95)
 - Decidir qué hacer con loop `.htaccess` en `/servicios/` (preexistente)
