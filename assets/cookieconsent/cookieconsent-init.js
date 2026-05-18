@@ -114,22 +114,19 @@
                 gtag('consent', 'update', { analytics_storage: 'denied' });
               }
             },
-            hotjar: {
-              label: 'Hotjar (Heatmaps y grabaciones de sesión)',
+            clarity: {
+              label: 'Microsoft Clarity (Heatmaps y grabaciones de sesión)',
               onAccept: function () {
-                if (window._hjLoaded) return;
-                window._hjLoaded = true;
-                (function(h,o,t,j,a,r){
-                  h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                  h._hjSettings={hjid:2456748,hjsv:6};
-                  a=o.getElementsByTagName('head')[0];
-                  r=o.createElement('script');r.async=1;
-                  r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                  a.appendChild(r);
-                })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+                if (window._clarityLoaded) return;
+                window._clarityLoaded = true;
+                (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window,document,'clarity','script','wt7lglwv95');
               },
               onReject: function () {
-                if (window.hj) { try { window.hj('optOut'); } catch(e) {} }
+                if (window.clarity) { try { window.clarity('stop'); } catch(e) {} }
               }
             }
           }
@@ -193,7 +190,7 @@
                 },
                 {
                   title: 'Analíticas',
-                  description: 'Nos ayudan a entender cómo usas el sitio (Google Analytics 4, Hotjar heatmaps y grabaciones) de forma anónima.',
+                  description: 'Nos ayudan a entender cómo usas el sitio (Google Analytics 4, Microsoft Clarity heatmaps y grabaciones) de forma anónima.',
                   linkedCategory: 'analytics'
                 },
                 {
