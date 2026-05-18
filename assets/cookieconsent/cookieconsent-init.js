@@ -124,6 +124,32 @@
                   t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
                   y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
                 })(window,document,'clarity','script','wt7lglwv95');
+                // Clarity event listeners (CTA navbar, form submit, scroll 75%)
+                setTimeout(function () {
+                  document.addEventListener('click', function (e) {
+                    if (!window.clarity) return;
+                    var el = e.target;
+                    while (el && el !== document.body) {
+                      if (el.classList && el.classList.contains('nav-cta')) {
+                        try { window.clarity('event', 'cta_navbar_click'); } catch (x) {}
+                        break;
+                      }
+                      el = el.parentElement;
+                    }
+                    if (e.target && e.target.id === 'form-submit-btn') {
+                      try { window.clarity('event', 'form_submit_click'); } catch (x) {}
+                    }
+                  }, true);
+                  var _scrollTracked = false;
+                  window.addEventListener('scroll', function () {
+                    if (_scrollTracked || !window.clarity) return;
+                    var pct = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+                    if (pct >= 0.75) {
+                      _scrollTracked = true;
+                      try { window.clarity('event', 'scroll_75_pct'); } catch (x) {}
+                    }
+                  }, { passive: true });
+                }, 500);
               },
               onReject: function () {
                 if (window.clarity) { try { window.clarity('stop'); } catch(e) {} }

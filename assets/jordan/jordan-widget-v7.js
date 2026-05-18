@@ -1386,6 +1386,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
         this._track('jordan_open', {
           messages_count: this.messages.length
         });
+        try { window.clarity && window.clarity('event', 'jordan_open'); } catch(e) {}
       }
 
       if (!this._isEmbedded) {
