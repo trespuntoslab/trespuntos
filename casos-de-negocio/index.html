@@ -656,14 +656,47 @@
     }
 
     @media (max-width: 768px) {
-      .casos-hero { min-height: auto; padding: 7rem 0 3rem; }
+      /* Hero — más respiro y tipografía que no desborda */
+      .casos-hero { min-height: auto; padding: 8.5rem 0 3rem; text-align: center; }
       .casos-hero-bg .float-card { display: none; }
       .casos-hero-bg::before {
         background: radial-gradient(circle at 50% 30%, rgba(var(--mint-rgb), 0.08) 0%, transparent 60%);
       }
-      .casos-hero-meta { gap: 1.5rem; }
+      .casos-hero-eyebrow {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.85rem;
+        letter-spacing: 0.06em;
+        margin-bottom: 1.5rem;
+        max-width: calc(100% - 1rem);
+        text-align: center;
+      }
+      .casos-hero-title {
+        font-size: clamp(1.6rem, 7.8vw, 2.4rem);
+        line-height: 1.05;
+        letter-spacing: -0.035em;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+        margin-bottom: 1rem;
+        padding: 0 0.25rem;
+      }
+      .casos-hero-title .accent { letter-spacing: -0.04em; }
+      .casos-hero-title br { display: none; }
+      .casos-hero-sub {
+        font-size: 0.95rem;
+        line-height: 1.55;
+        margin-bottom: 1.75rem;
+        padding: 0 0.25rem;
+      }
+      .casos-hero-meta {
+        gap: 1.25rem;
+        padding-top: 1.5rem;
+        margin-top: 1.5rem;
+      }
       .casos-hero-meta-num { font-size: 1.5rem; }
+      .casos-hero-meta-label { font-size: 0.68rem; letter-spacing: 0.06em; }
 
+      /* Bento — full width + aspect 4/5 con min-height reset */
       .casos-bento {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -675,19 +708,64 @@
       .bento-card.size-tall,
       .bento-card.size-wide {
         grid-column: span 1;
-        aspect-ratio: 16/10;
+        aspect-ratio: 4/5;
+        min-height: 0;
+        border-radius: 16px;
+        cursor: pointer;
       }
-      .bento-card { cursor: pointer; }
-      /* On mobile no hover: always show desc */
+      /* Mobile: gradiente más fuerte para legibilidad del texto sobre imagen */
+      .bento-card-media::after {
+        background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, transparent 25%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.92) 100%);
+      }
+      .bento-card-content {
+        padding: 1.25rem;
+      }
+      .bento-card-tag {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.32rem 0.65rem;
+        font-size: 0.62rem;
+        letter-spacing: 0.05em;
+      }
+      .bento-card-featured {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.32rem 0.7rem;
+        font-size: 0.6rem;
+      }
+      .bento-card-sector {
+        font-size: 0.65rem;
+        letter-spacing: 0.06em;
+        margin-bottom: 0.35rem;
+      }
+      .bento-card-title,
+      .bento-card.size-lg .bento-card-title,
+      .bento-card.size-wide .bento-card-title {
+        font-size: 1.35rem;
+        line-height: 1.08;
+        margin-bottom: 0.35rem;
+      }
+      /* En mobile, sin hover: mostrar desc y CTA estables */
       .bento-card .bento-card-desc {
-        max-height: 100px;
+        max-height: none;
         opacity: 1;
-        margin-top: 0.75rem;
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
       .bento-card .bento-card-cta {
         transform: translateX(0);
         opacity: 1;
+        margin-top: 0.6rem;
+        font-size: 0.8rem;
       }
+      .bento-card .bento-card-title br { display: none; }
+      .casos-bento-section { padding-top: 3rem; }
       .casos-bento-section .cursor-card { display: none; }
 
       .casos-marquee-item { font-size: 1.1rem; }
@@ -695,6 +773,8 @@
       .casos-marquee-item .sep { margin-left: 2.5rem; }
 
       .casos-bento-header { flex-direction: column; align-items: flex-start; }
+      .casos-bento-header h2 { font-size: 1.6rem; }
+      .casos-bento-header p { font-size: 0.9rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
