@@ -54,6 +54,20 @@ curl -sk --ftp-pasv --ftp-create-dirs -T "ruta/local" \
 
 ---
 
+## 2026-05-19 — Blog: publicación "El verdadero coste de no responder rápido a un lead B2B"
+
+- **Commit:** `6fd65bf` (main)
+- **Archivos:**
+  - `blog/tiempo-respuesta-leads-b2b/index.html` — nuevo post (1.573 palabras, categoría: IA y Automatización)
+  - `img/og/blog-tiempo-respuesta-leads-b2b.png` — imagen OG 1200×630
+  - `blog/index.html` — nueva tarjeta añadida al inicio del grid
+  - `sitemap.xml` — añadidas 3 URLs pendientes (tiempo-respuesta-leads-b2b, agencia-ecommerce-plantillas-vs-medida, tracking-formulario-contacto-ga4-agente-ia)
+- **Cloudflare:** Custom Purge — 4 URLs (`/blog/tiempo-respuesta-leads-b2b/`, `/img/og/blog-tiempo-respuesta-leads-b2b.png`, `/blog/`, `/sitemap.xml`)
+- **Verificación:** HTTP 200 + cf-cache-status: MISS ✅
+- **Notas:** Sitemap actualizado con 2 posts anteriores que faltaban (agencia-ecommerce 2026-05-15, tracking-formulario 2026-05-17)
+
+---
+
 ## 2026-05-17 23:00 — Auditoría web completa: SEO canonical, tokens CSS, sectores assets
 
 ### Commits desplegados (3)
