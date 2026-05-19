@@ -42,6 +42,18 @@ curl -sk --ftp-pasv --ftp-create-dirs -T "ruta/local" \
 
 ---
 
+## 2026-05-19 — Casos de Negocio: fix responsive mobile
+
+- **Commit:** `d86fda3` (main)
+- **Archivos:**
+  - `casos-de-negocio/index.html` — rediseño mobile @media 768px
+- **Cambios:** Hero H1 sin overflow (clamp 1.6-2.4rem + letter-spacing), padding-top 8.5rem (no choca con navbar), eyebrow/sub/meta escala mobile. Bento: `min-height: 0 !important` + `aspect-ratio: 4/5` unificado (cards ya no son vacías de 500px), gradient overlay más fuerte, line-clamp 2 en desc, CTA siempre visible
+- **Cloudflare:** Custom Purge — 2 URLs (`/casos-de-negocio/` × 2 variants)
+- **Verificación:** HTTP 200 + cf-cache-status: MISS ✅ + grep `aspect-ratio: 4/5` = 5 matches en HTML servido
+- **Notas:** Las cards Nomade Vans / ZIM / TSP / 1CSoft aparecen oscuras porque sus imágenes cover originales son negras — la estructura del card funciona correctamente (TODO posterior: regenerar covers más vivos)
+
+---
+
 ## 2026-05-19 — Clarity Smart Events: Hotjar → Clarity + embudos + eventos API
 
 - **Commits:** `1511fe9` + `257666b` (main)

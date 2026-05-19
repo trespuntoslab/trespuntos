@@ -708,8 +708,11 @@
       .bento-card.size-tall,
       .bento-card.size-wide {
         grid-column: span 1;
-        aspect-ratio: 4/5;
-        min-height: 0;
+        aspect-ratio: 4 / 5;
+        /* iOS Safari fallback: aspect-ratio puede fallar en <a> con hijos position:absolute.
+           Garantizamos altura mínima basada en viewport */
+        min-height: calc((100vw - 2.5rem) * 1.25);
+        height: calc((100vw - 2.5rem) * 1.25);
         border-radius: 16px;
         cursor: pointer;
       }
