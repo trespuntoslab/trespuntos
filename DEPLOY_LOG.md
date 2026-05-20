@@ -2,6 +2,30 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-05-20 23:52 — Briefing-banner → Jordan (resto del sitio)
+- **Commit:** `c983ed6` (main · `copy(briefing-banner): redirigir CTA secundario al chat de Jordan`)
+- **Contexto:** El deploy de 23:47 (Fricciones) solo arrastró `/index.html` de este commit. Faltaba propagar el cambio del banner al resto del sitio (44 HTMLs + `js/components.js`) — el banner secundario seguía apuntando a `/iniciar-proyecto/` con copy viejo "¿Tu proyecto es urgente?".
+- **Archivos (45):**
+  - `js/components.js` (banner inyectado dinámicamente en home + casos vía `ctaForm()`)
+  - 44 HTMLs con `.briefing-banner` hardcoded:
+    - Hubs: `/servicios/`, `/blog/`, `/casos-de-negocio/`, `/nosotros/`, `/arquitectura-digital-conversion/`
+    - 22 páginas servicio (`/servicios/{slug}/` — UX/UI, desarrollo web, e-commerce, design engineer, IA, consultoría × Barcelona/Madrid/Bilbao/Sevilla + 2 generales)
+    - 13 casos (`/casos-de-negocio/{slug}/` — 1csoft, capilclinic, diferentidea, exitbcn, gibobs, naranja, nomade-rent, nomadevans, paradise, penguinaula, tsp, tusolucionhipotecaria, zimconnections)
+- **Cambios en cada banner:**
+  - `href`: `/iniciar-proyecto/` → `/contacto/`
+  - Título: `¿Tu proyecto es urgente?` → `¿Prefieres hablarlo?`
+  - Descripción: `Cuéntanos más detalles y te enviamos una propuesta completa en 48h.` → `Chatea con Jordan, nuestro asistente IA, y resolvemos al momento.`
+  - Icono SVG: reloj → bocadillo de chat
+- **Motivo:** El banner mandaba al mismo formulario en el que ya estaba el usuario (acción duplicada). Ahora ofrece ruta alternativa real (chat IA inmediato vs form asíncrono).
+- **FTP:** 45/45 OK (curl `--ftp-pasv --ftp-create-dirs`, código 226 en todos).
+- **Cloudflare:** `purge_everything` (>5 archivos) → `{"success":true}`.
+- **Verificación post-purga (sleep 6s):**
+  - `/servicios/`: HTTP 200 · `last-modified: 21:52:10 GMT` · `cf-cache-status: MISS` · contiene `href="/contacto/"` + título + desc nuevos ✅
+  - `/blog/`: HTTP 200 · MISS · título "¿Prefieres hablarlo?" servido ✅
+  - `/casos-de-negocio/gibobs/`: título nuevo servido ✅
+  - `js/components.js`: HTTP 200 · `last-modified: 21:51:16 GMT` · MISS · contiene `Prefieres hablarlo` ✅ (sin matches de "Tu proyecto es urgente")
+- **Notas:** Backup `contacto/index-v2-backup.html` deliberadamente intacto. El cambio no afecta a `/contacto/` ni `/iniciar-proyecto/` (ninguno tenía banner). Test E2E DOM hecho en local pre-deploy via preview server (preview_eval confirmó href + título + desc + iconD nuevos en ambos paths: HTML hardcoded `/servicios/` y banner dinámico `/` desde components.js). Console sin errores.
+
 ## 2026-05-20 23:47 — Home: rediseñar bloque Fricciones como diagnóstico anotado
 - **Commits:**
   - `c983ed6` (main · `copy(briefing-banner): redirigir CTA secundario al chat de Jordan`) — incluye por arrastre el HTML del nuevo `.friction-visual`
