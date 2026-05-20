@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "slug": "capilclinic",
+    "title": "Caso Capilclinic | Rediseño web e identidad de marca · Tres Puntos",
+    "description": "Cómo rediseñamos la web y la identidad de Capilclinic — clínica capilar con sedes en Madrid y Barcelona — en HTML 100% gestionable por su equipo.",
+    "canonical": "/casos-de-negocio/capilclinic/",
+    "og": {
+      "title": "Caso Capilclinic | Rediseño web + nueva identidad de marca",
+      "description": "De una web técnica a un sitio editorial. Nueva marca, nueva arquitectura y HTML editable por el equipo de la clínica.",
+      "image": "https://www.trespuntoscomunicacion.es/img/casos/capilclinic.webp"
+    },
+    "schema_type": "Article",
+    "date_published": "2026-05-20",
+    "date_modified": "2026-05-20",
+    "keywords": [
+      "rediseño web clínica capilar",
+      "identidad de marca clínica estética",
+      "web a medida sector salud",
+      "html editable equipo cliente",
+      "ux ui sanidad privada"
+    ]
+  },
+  "faq_schema": [
+    {
+      "question": "¿Qué tipo de proyecto era?",
+      "answer": "Un rediseño integral de la web de Capilclinic combinado con la renovación completa de su identidad de marca. Todo construido en HTML para que el equipo del cliente pueda mantenerlo sin depender de un CMS pesado."
+    },
+    {
+      "question": "¿Por qué HTML y no WordPress u otro CMS?",
+      "answer": "Capilclinic necesitaba performance, control absoluto del SEO técnico y autonomía del equipo para editar landings y testimonios. Un HTML bien estructurado con componentes reutilizables resolvía mejor el problema que un CMS sobredimensionado."
+    },
+    {
+      "question": "¿Qué se trabajó principalmente?",
+      "answer": "Identidad visual (logo, sistema de color, tipografías), arquitectura de información, UX/UI, desarrollo HTML/CSS/JS y un sistema de plantillas editables por el equipo de la clínica."
+    },
+    {
+      "question": "¿Qué cambió para el negocio?",
+      "answer": "Una marca a la altura del nivel real de las clínicas, una web más rápida y orientada a la captación de estudios gratuitos, y autonomía editorial del equipo sin pasar por agencia para cada cambio."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero-split",
+      "sector": "Salud · Clínica capilar",
+      "h1": "Rediseño web e identidad de marca para una",
+      "h1_highlight": "clínica capilar de referencia",
+      "intro": "Capilclinic es una clínica especializada en injerto capilar con sedes en Madrid y Barcelona, equipo médico propio y más de 10 años de experiencia.",
+      "intro_emphasis": "Necesitaban una marca y una web a la altura del nivel real de sus clínicas — y que el equipo pudiera mantener por sí mismo.",
+      "meta": [
+        { "label": "Cliente", "value": "Capilclinic" },
+        { "label": "Sector", "value": "Salud · Injerto capilar" },
+        { "label": "Servicios", "value": "Branding · UX/UI · Dev HTML" }
+      ],
+      "video_src": "/img/casos/capilclinic/desktop-recording-01.mp4",
+      "browser_url": "capilclinic.es",
+      "browser_image": "/img/casos/capilclinic/desktop-01.webp",
+      "browser_alt": "Home de Capilclinic — Hero con formulario de estudio gratuito"
+    },
+    {
+      "type": "statement",
+      "text": "Una marca renovada de raíz. Una web que el equipo <em>puede mantener</em>.",
+      "sub": "Identidad, arquitectura y desarrollo pensados a la vez. Sin CMS sobredimensionado, sin dependencias innecesarias.",
+      "bg": "subtle",
+      "show_divider": true
+    },
+    {
+      "type": "browser-fullwidth",
+      "bg": "base",
+      "browser_url": "capilclinic.es",
+      "image": "/img/casos/capilclinic/desktop-01.webp",
+      "alt": "Capilclinic — Home con propuesta de valor y formulario de estudio gratuito"
+    },
+    {
+      "type": "overview",
+      "variant": "cards",
+      "badge": "Contexto del proyecto",
+      "heading": "Una clínica con producto sólido y una marca que no lo reflejaba",
+      "cards": [
+        {
+          "label": "Punto de partida",
+          "text": "Una web funcional pero genérica, con una identidad visual antigua que no transmitía el nivel real de las instalaciones ni del equipo médico."
+        },
+        {
+          "label": "Reto principal",
+          "text": "Crear una marca y un sitio que comunicasen confianza, profesionalidad y proximidad — sin caer en la estética sanitaria fría."
+        },
+        {
+          "label": "Restricción clave",
+          "text": "El equipo de la clínica tenía que poder editar testimonios, doctores y landings sin pedir presupuesto a una agencia para cada cambio."
+        }
+      ],
+      "content_paragraphs": [
+        "Capilclinic lleva más de una década operando como referente en injerto capilar en España, con clínicas equipadas a nivel hospitalario y un equipo médico colegiado entre Madrid, Barcelona y Turquía. El reto no era arreglar la web: era llevar la marca y el sitio al nivel del negocio real."
+      ]
+    },
+    {
+      "type": "challenge",
+      "badge": "El problema",
+      "heading": "Una identidad antigua y una web que no estaba a la altura",
+      "paragraphs": [
+        "La marca y la web anteriores cumplían su función — pero no transmitían el nivel real de Capilclinic. La identidad visual estaba desfasada, el sistema gráfico era inconsistente y la web no comunicaba ni la profesionalidad del equipo médico ni la calidad de las instalaciones.",
+        "Además, cualquier cambio mínimo dependía de un proveedor externo. Añadir un testimonio o publicar una landing de campaña suponía días de espera."
+      ],
+      "signals_title": "Señales de fricción detectadas",
+      "signals": [
+        {
+          "title": "Identidad desactualizada",
+          "description": "Logo y sistema visual antiguos, sin coherencia entre canales online y offline."
+        },
+        {
+          "title": "Web técnica, no editorial",
+          "description": "Mucha información, poco recorrido. El usuario no avanzaba de forma natural hacia el estudio gratuito."
+        },
+        {
+          "title": "Equipo sin autonomía",
+          "description": "Cada cambio editorial — testimonios, doctores, campañas — requería intervención técnica externa."
+        },
+        {
+          "title": "Falta de tono propio",
+          "description": "Mensajes correctos pero genéricos. Difícil diferenciarse de otras clínicas del sector."
+        }
+      ]
+    },
+    {
+      "type": "approach-cards",
+      "badge": "Cómo lo abordamos",
+      "heading": "Tres frentes, un único equipo trabajando a la vez",
+      "intro": "Diseñamos la identidad, la arquitectura digital y el código pensando en cómo encajarían entre sí — no como tres entregables separados.",
+      "cards": [
+        {
+          "number": "01",
+          "title": "Identidad de marca renovada",
+          "items": [
+            "Nuevo logo y monograma «CC» de la marca",
+            "Sistema de color con verde como ancla de marca",
+            "Tipografías editoriales para titulares y UI clara",
+            "Manual gráfico aplicado a web, redes y clínica"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Arquitectura y UX orientadas a estudio gratuito",
+          "items": [
+            "Recorrido único: hero → método → equipo → testimonios → CTA",
+            "Formulario de estudio gratuito visible desde el primer scroll",
+            "Páginas de doctores con colegiación visible para reforzar confianza",
+            "Antes/después y testimonios como prueba social estructurada"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "HTML gestionable por el equipo",
+          "items": [
+            "Componentes editables sin CMS pesado",
+            "Bloques de testimonios, doctores y antes/después en JSON",
+            "Documentación interna para el equipo de marketing",
+            "Carga rápida y SEO técnico controlado al milímetro"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "browser-showcase",
+      "bg": "surface",
+      "badge": "El método explicado",
+      "heading": "Comunicar el método como protagonista, no como ficha técnica",
+      "intro": "El Min Time FUE™ es el diferencial real de Capilclinic. Lo sacamos del pie de página y lo convertimos en sección hero del relato.",
+      "browser_url": "capilclinic.es/el-metodo",
+      "image": "/img/casos/capilclinic/desktop-03.webp",
+      "alt": "Sección de beneficios del método Min Time FUE™ con comparativa antes/después"
+    },
+    {
+      "type": "statement",
+      "text": "Las instalaciones, los doctores y los resultados <em>al frente</em>.",
+      "sub": "Tres activos reales que la web anterior escondía. Ahora vertebran la home.",
+      "bg": "base",
+      "show_divider": false
+    },
+    {
+      "type": "platform-gallery",
+      "bg": "surface",
+      "badge": "Activos al frente",
+      "heading": "Instalaciones, equipo médico y resultados",
+      "intro": "Cada sección refuerza un eje distinto de la propuesta de valor.",
+      "browsers": [
+        {
+          "url": "capilclinic.es/instalaciones",
+          "image": "/img/casos/capilclinic/desktop-02.webp",
+          "alt": "Sección de instalaciones de Capilclinic en Madrid y Barcelona",
+          "wide": true
+        },
+        {
+          "url": "capilclinic.es/equipo-medico",
+          "image": "/img/casos/capilclinic/desktop-04.webp",
+          "alt": "Equipo médico de Capilclinic — doctores Barcelona y Madrid con colegiación"
+        },
+        {
+          "url": "capilclinic.es/resultados",
+          "image": "/img/casos/capilclinic/desktop-06.webp",
+          "alt": "Resultados antes y después de pacientes reales de Capilclinic"
+        }
+      ]
+    },
+    {
+      "type": "phone-carousel",
+      "bg": "subtle",
+      "badge": "Mobile-first",
+      "heading": "Una experiencia mobile pensada para reservar desde el móvil",
+      "intro": "El 70% del tráfico de Capilclinic llega desde el teléfono. La navegación, los formularios y los testimonios se rediseñaron para esa realidad.",
+      "phones": [
+        { "src": "/img/casos/capilclinic/mobile-01.webp", "alt": "Home mobile Capilclinic con formulario de estudio" },
+        { "src": "/img/casos/capilclinic/mobile-02.webp", "alt": "El método en mobile" },
+        { "src": "/img/casos/capilclinic/mobile-03.webp", "alt": "Acordeón de beneficios del método capilar" },
+        { "src": "/img/casos/capilclinic/mobile-04.webp", "alt": "Sección de instalaciones en mobile" },
+        { "src": "/img/casos/capilclinic/mobile-05.webp", "alt": "Equipo médico en mobile con doctores Madrid y Barcelona" },
+        { "src": "/img/casos/capilclinic/mobile-06.webp", "alt": "Resultados antes y después en mobile" },
+        { "src": "/img/casos/capilclinic/mobile-07.webp", "alt": "Cards de testimonios reales con métricas de folículos" },
+        { "src": "/img/casos/capilclinic/mobile-08.webp", "alt": "Detalle de un testimonio con vídeo" },
+        { "src": "/img/casos/capilclinic/mobile-09.webp", "alt": "Sección de prensa con medios destacados" },
+        { "src": "/img/casos/capilclinic/mobile-10.webp", "alt": "Formulario de estudio gratuito en mobile" }
+      ]
+    },
+    {
+      "type": "marquee",
+      "words": [
+        "Identidad renovada",
+        "HTML editable",
+        "Performance",
+        "Estudio gratuito",
+        "Madrid · Barcelona",
+        "Marca con tono propio"
+      ]
+    },
+    {
+      "type": "browser-fullwidth",
+      "bg": "base",
+      "browser_url": "capilclinic.es/testimonios",
+      "image": "/img/casos/capilclinic/desktop-07.webp",
+      "alt": "Sección de testimonios con cards visuales — pacientes reales con fecha, folículos y vídeo"
+    },
+    {
+      "type": "impact-grid",
+      "bg": "surface",
+      "badge": "Impacto del rediseño",
+      "heading": "Una marca al nivel del negocio y un equipo más autónomo",
+      "cards": [
+        {
+          "icon": "paintbrush",
+          "title": "Identidad coherente y editorial",
+          "description": "Marca renovada de raíz, con un sistema visual aplicable a web, clínica, materiales y campañas."
+        },
+        {
+          "icon": "rocket",
+          "title": "Carga rápida y SEO técnico controlado",
+          "description": "HTML ligero, sin CMS pesado. Performance, Core Web Vitals y arquitectura técnica diseñadas a medida."
+        },
+        {
+          "icon": "code",
+          "title": "Equipo autónomo en edición",
+          "description": "Componentes y bloques editables (testimonios, doctores, antes/después) sin pasar por agencia para cada cambio."
+        },
+        {
+          "icon": "trending-up",
+          "title": "Captación al frente",
+          "description": "Estudio gratuito visible desde el primer scroll y formulario integrado en cada punto crítico del recorrido."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "quote": "Capilclinic tenía producto, tenía equipo y tenía clínicas reales. Lo que le faltaba era una marca y una web que jugaran en su misma liga — y un sistema que el equipo pudiera mantener sin depender de nadie.",
+      "body": "Trabajamos identidad, arquitectura y código a la vez, con un único equipo. Esa es la diferencia entre un rediseño y un proyecto que de verdad cambia cómo opera el negocio.",
+      "author": "Jordi Expósito",
+      "role": "Digital Project Lead · Tres Puntos"
+    },
+    {
+      "type": "services",
+      "badge": "Servicios aplicados",
+      "heading": "Lo que pusimos en marcha en este proyecto",
+      "links": [
+        {
+          "href": "/servicios/diseno-ux-ui-barcelona/",
+          "icon": "paintbrush",
+          "title": "Diseño UX/UI",
+          "description": "Identidad visual, arquitectura digital y diseño de interfaces editoriales."
+        },
+        {
+          "href": "/servicios/desarrollo-web-a-medida-barcelona/",
+          "icon": "code",
+          "title": "Desarrollo web a medida",
+          "description": "HTML/CSS/JS limpio, gestionable por el equipo del cliente y orientado a performance."
+        },
+        {
+          "href": "/servicios/consultoria-digital-barcelona/",
+          "icon": "chart",
+          "title": "Consultoría digital",
+          "description": "Estrategia, arquitectura de marca y decisiones técnicas alineadas con el negocio."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "badge": "Preguntas frecuentes",
+      "heading": "Sobre el proyecto de Capilclinic",
+      "items": [
+        {
+          "question": "¿Qué tipo de proyecto era?",
+          "answer": "Un rediseño integral de la web de Capilclinic combinado con la renovación completa de su identidad de marca. Todo construido en HTML para que el equipo del cliente pueda mantenerlo sin depender de un CMS pesado."
+        },
+        {
+          "question": "¿Por qué HTML y no WordPress u otro CMS?",
+          "answer": "Capilclinic necesitaba performance, control absoluto del SEO técnico y autonomía del equipo para editar landings y testimonios. Un HTML bien estructurado con componentes reutilizables resolvía mejor el problema que un CMS sobredimensionado."
+        },
+        {
+          "question": "¿Qué se trabajó principalmente?",
+          "answer": "Identidad visual (logo, sistema de color, tipografías), arquitectura de información, UX/UI, desarrollo HTML/CSS/JS y un sistema de plantillas editables por el equipo de la clínica."
+        },
+        {
+          "question": "¿Qué cambió para el negocio?",
+          "answer": "Una marca a la altura del nivel real de las clínicas, una web más rápida y orientada a la captación de estudios gratuitos, y autonomía editorial del equipo sin pasar por agencia para cada cambio."
+        }
+      ]
+    },
+    {
+      "type": "next-project",
+      "label": "Caso relacionado",
+      "title": "Diferent Idea",
+      "href": "/casos-de-negocio/diferentidea/"
+    },
+    {
+      "type": "cta-form",
+      "heading_prefix": "Hablamos sobre",
+      "heading_highlight": "tu proyecto",
+      "sub": "Cuéntanos en qué punto estás. Te respondemos en menos de 24 horas con una primera lectura honesta — sin compromiso.",
+      "reasons": [
+        "Primera lectura honesta del proyecto",
+        "Equipo senior desde el día 1",
+        "Sin compromiso ni promesas vacías"
+      ]
+    }
+  ]
+}
