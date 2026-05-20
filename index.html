@@ -1078,35 +1078,89 @@ across CRM, calendar and docs.</pre>
               </a>
             </div>
           </div>
-          <div class="friction-visual reveal reveal-delay-2">
-            <div class="friction-visual-header">Diagnóstico de arquitectura — ejemplo</div>
-            <div class="friction-item">
-              <div class="friction-status error"></div>
-              <div class="friction-label"><strong>LCP &gt; 4.2s en mobile</strong>Imágenes sin lazy load + bloqueo de
-                render.<div class="friction-impact">+18% abandono en primera visita</div>
+          <div class="friction-visual reveal reveal-delay-2" aria-hidden="true">
+            <div class="fr-frame">
+              <div class="fr-frame-bar">
+                <span class="ux-dot"></span><span class="ux-dot"></span><span class="ux-dot"></span>
+                <div class="fr-url">
+                  <span class="fr-url-lock">🔒</span>
+                  <span class="fr-url-text">acme-store.com/checkout</span>
+                </div>
+                <div class="fr-live"><span class="fr-live-dot"></span><span>Auditoría</span></div>
+              </div>
+              <div class="fr-page">
+                <div class="fr-bc">
+                  <span class="fr-bc-item">Carrito</span><span class="fr-bc-sep">›</span>
+                  <span class="fr-bc-item">Datos</span><span class="fr-bc-sep">›</span>
+                  <span class="fr-bc-item">Envío</span><span class="fr-bc-sep">›</span>
+                  <span class="fr-bc-item">Dirección</span><span class="fr-bc-sep">›</span>
+                  <span class="fr-bc-item">Pago</span><span class="fr-bc-sep">›</span>
+                  <span class="fr-bc-item fr-bc-cur">Revisión</span>
+                  <span class="fr-pin fr-pin--warn fr-pin--steps">
+                    <span class="fr-pin-marker">!</span>
+                    <span class="fr-pin-card">
+                      <span class="fr-pin-cat">Checkout · 6 pasos</span>
+                      <span class="fr-pin-text">Cada paso extra: −8/−12% conversión.</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="fr-hero">
+                  <div class="fr-hero-shimmer"></div>
+                  <div class="fr-hero-meta">
+                    <span class="fr-hero-pill">LCP 4.2s</span>
+                    <span class="fr-hero-bar"><span class="fr-hero-bar-fill"></span></span>
+                  </div>
+                  <span class="fr-pin fr-pin--err fr-pin--lcp">
+                    <span class="fr-pin-marker">!</span>
+                    <span class="fr-pin-card">
+                      <span class="fr-pin-cat">LCP &gt; 4.2s en mobile</span>
+                      <span class="fr-pin-text">Imágenes sin lazy load + bloqueo de render.</span>
+                      <span class="fr-pin-impact">+18% abandono primera visita</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="fr-title">Datos de envío<span class="fr-title-meta">opcional · paso 3</span></div>
+                <div class="fr-form">
+                  <span class="fr-field"></span>
+                  <span class="fr-field"></span>
+                  <span class="fr-field"></span>
+                  <span class="fr-field"></span>
+                  <span class="fr-field"></span>
+                  <span class="fr-field"></span>
+                  <span class="fr-field fr-field--full"></span>
+                  <span class="fr-pin fr-pin--warn fr-pin--form">
+                    <span class="fr-pin-marker">8</span>
+                    <span class="fr-pin-card">
+                      <span class="fr-pin-cat">Formulario · 8 campos</span>
+                      <span class="fr-pin-text">Datos redundantes — capturar antes en el funnel.</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="fr-log">
+                  <span class="fr-log-time">22:01:14</span>
+                  <span class="fr-log-tag fr-log-tag--err">FAIL</span>
+                  <span class="fr-log-msg">webhook stripe · 3 retries · sin alerta</span>
+                  <span class="fr-pin fr-pin--err fr-pin--hook">
+                    <span class="fr-pin-marker">×</span>
+                    <span class="fr-pin-card">
+                      <span class="fr-pin-cat">Webhooks parcheados</span>
+                      <span class="fr-pin-text">Fallan sin alerta — pérdida de leads sin registro.</span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <div class="fr-frame-status">
+                <span class="fr-status-pill"><span class="fr-status-dot"></span><span class="fr-status-count">5</span> fricciones detectadas</span>
+                <span class="fr-status-meta">2 críticas · 2 medias · 1 ok</span>
+                <span class="fr-status-meta fr-status-meta--right">audit · v2.4</span>
               </div>
             </div>
-            <div class="friction-item">
-              <div class="friction-status warn"></div>
-              <div class="friction-label"><strong>Checkout: 6 pasos innecesarios</strong>Campos redundantes en el flujo
-                de compra.<div class="friction-impact">Cada paso extra: –8–12% conversión</div>
+            <div class="fr-comment">
+              <div class="fr-comment-avatar">J</div>
+              <div class="fr-comment-body">
+                <div class="fr-comment-head"><b>Jordi</b><span>hace 1m</span></div>
+                <p>Esto se arregla en arquitectura — no en CSS.</p>
               </div>
-            </div>
-            <div class="friction-item">
-              <div class="friction-status error"></div>
-              <div class="friction-label"><strong>Sin caché distribuido</strong>La plataforma cae en picos de campaña.
-                <div class="friction-impact">Pérdida directa de ventas en Black Friday</div>
-              </div>
-            </div>
-            <div class="friction-item">
-              <div class="friction-status warn"></div>
-              <div class="friction-label"><strong>Integraciones parcheadas</strong>Webhooks que fallan semanalmente sin
-                alertas.<div class="friction-impact">Pérdida de leads sin registro</div>
-              </div>
-            </div>
-            <div class="friction-item">
-              <div class="friction-status ok"></div>
-              <div class="friction-label"><strong>SEO técnico</strong>Estructura de URLs y metadatos correctos.</div>
             </div>
           </div>
         </div>
@@ -1937,16 +1991,14 @@ across CRM, calendar and docs.</pre>
     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </button>
 </form>
-<a href="/iniciar-proyecto/" class="briefing-banner" style="margin-top:.75rem;">
+<a href="/contacto/" class="briefing-banner" style="margin-top:.75rem;">
   <div class="briefing-banner-icon">
-    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-      <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="12" cy="12" r="10"/>
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </div>
   <div class="briefing-banner-text">
-    <span class="briefing-banner-title">¿Tu proyecto es urgente?</span>
-    <span class="briefing-banner-desc">Cuéntanos más detalles y te enviamos una propuesta completa en 48h.</span>
+    <span class="briefing-banner-title">¿Prefieres hablarlo?</span>
+    <span class="briefing-banner-desc">Chatea con Jordan, nuestro asistente IA, y resolvemos al momento.</span>
   </div>
   <svg class="briefing-banner-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
 </a>
