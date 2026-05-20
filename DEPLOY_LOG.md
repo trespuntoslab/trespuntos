@@ -2,6 +2,20 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-05-20 23:47 — Home: rediseñar bloque Fricciones como diagnóstico anotado
+- **Commits:**
+  - `c983ed6` (main · `copy(briefing-banner): redirigir CTA secundario al chat de Jordan`) — incluye por arrastre el HTML del nuevo `.friction-visual`
+  - `db81b77` (main · `feat(home/fricciones): rediseñar visual derecho como diagnóstico anotado`) — 611 líneas CSS del nuevo bloque
+- **Archivos (2):**
+  - `/index.html` (sustituye lista estática `.friction-item` por escena audit-en-vivo: browser frame + 4 pins anotados + comment Jordi)
+  - `/css/components.css` (+611 líneas: `.fr-frame`, `.fr-pin`, `.fr-pin-card`, `.fr-comment`, `.fr-bc`, `.fr-hero`, animaciones `frPinDrop`/`frShimmer`/`frLivePulse`/`frTagBlink`/`frFloat` + responsive ≤768/480px)
+- **Cloudflare:** Custom URL purge → `/`, `/index.html`, `/css/components.css` (api success).
+- **Verificación:** ✅ OK
+  - Home: HTTP 200 · `last-modified: 2026-05-20 21:47:21 GMT` · MISS
+  - components.css: HTTP 200 · `last-modified: 2026-05-20 21:47:23 GMT` · `content-length: 174106` · MISS
+  - HTML contiene 4 ocurrencias de `fr-frame|friction-visual` (estructura completa)
+- **Notas:** Iteración tras feedback de Jordi sobre primer mock — eliminados barrido láser verde, cursor flotante y heading `sr-only` huérfano; cards reposicionadas en zig-zag (3 LEFT · 1 RIGHT) para evitar solape. Animaciones encadenadas vía `.visible` del `IntersectionObserver` (rootMargin existente), idle loops para frame float / shimmer / FAIL blink.
+
 ## 2026-05-20 21:42 — Capilclinic: hero — sustituir video por imagen retrato
 - **Commit:** 13f010b (main · `feat(casos/capilclinic): hero — sustituir video por imagen retrato`)
 - **Archivos (2):**
