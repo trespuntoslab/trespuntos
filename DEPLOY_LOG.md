@@ -2,6 +2,25 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-05-20 09:48 — Home: nueva sección Servicios bento Stripe-style
+- **Commit:** bf401d9 (main, merge de feat/bento-services · b358d1e)
+- **Archivos:**
+  - `/index.html` (163 KB · sustituye `.servicios-stack` por `.servicios-bento` con 4 cards asimétricas + script mouse-follow)
+  - `/css/components.css` (156 KB · +2788 líneas de CSS del bento)
+  - `/casos-de-negocio/gibobs/index.html` (73 KB · limpia 2 phone-frames con vídeos 404)
+- **Cloudflare:** No necesitó purga manual — cache estaba MISS al subir (probablemente expiró TTL 2h). cf-cache-status pasó MISS → HIT en segunda petición.
+- **Verificación:** ✅ OK
+  - `index.html` HTTP 200 · `last-modified: 2026-05-20 07:45:43 GMT` · cf-cache HIT
+  - `components.css` HTTP 200 · `last-modified: 2026-05-20 07:45:45 GMT` · cf-cache HIT
+  - 4 H3 del bento presentes (Diseño UX/UI · Desarrollo Web · Consultoría · IA generativa)
+  - 4 links `/servicios/*` correctos
+  - 3 `<ul class="sr-only">` indexables presentes
+  - Hero v1 intacto (26 referencias a `css-particles` + `orbit-bubble`)
+  - 107 reglas CSS del bento en `components.css` servido
+- **Notas:** Mantiene SEO intacto (H3, descs, bullets en sr-only indexables, links a /servicios/* sin cambios). Hover Stripe-fiel (clip-path expansion + mouse spotlight + parallax 3D). Loops sutiles infinitos CSS-only. Mobile simplificado. Hero v1 sin tocar.
+
+
+
 **Regla:** cada entrada debe tener un SHA de commit que ya esté en `origin/main`. Si la línea SHA queda vacía o no se corresponde con un push, el deploy es inválido y hay que reconciliar.
 
 **Formato:**
