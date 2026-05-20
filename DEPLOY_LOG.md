@@ -2,6 +2,23 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-05-20 21:30 — Nuevo caso de éxito: Capilclinic (rediseño web + identidad)
+- **Commit:** 3b976c7 (main · `feat(casos): nuevo caso de éxito Capilclinic — rediseño web + identidad`)
+- **Archivos (22):**
+  - `/casos-de-negocio/capilclinic/index.html` (69 KB · página del caso, 18 bloques)
+  - `/casos-de-negocio/index.html` (hub, +17 líneas: bento card #13 con `data-sector="salud"`)
+  - `/img/casos/capilclinic.webp` (84 KB · cover bento 1024×1536, glow mint)
+  - `/img/casos/capilclinic/desktop-01..08.webp` (8 desktop screenshots, q82)
+  - `/img/casos/capilclinic/mobile-01..10.webp` (10 mobile screenshots, 660px ancho)
+  - `/img/casos/capilclinic/desktop-recording-01.mp4` (73 KB · video hero, 1280×, 8s, CRF 23)
+- **Cloudflare:** Custom URL purge → `/casos-de-negocio/`, `/casos-de-negocio/capilclinic/`, `/img/casos/capilclinic.webp` (api success). Resto del path `/img/casos/capilclinic/*` no estaba cacheado todavía (assets nuevos).
+- **Verificación:** ✅ OK
+  - Hub: HTTP 200 · cf-cache MISS · 2 referencias a "capilclinic" en HTML
+  - Caso: HTTP 200 · `last-modified: 2026-05-20 19:28:37 GMT` · contiene "Capilclinic" y "capilclinic.es"
+  - Cover: HTTP 200 · `content-length: 84050` · cf-cache MISS
+  - MP4: HTTP 200 · `content-length: 73330`
+- **Notas:** Estructura de bloques distinta a casos anteriores para no repetir patrón. FAQ schema + BreadcrumbList + Article JSON-LD. `data-sector="salud"` no tiene regla CSS específica — cae al accent mint por defecto (intencional, pega con el glow mint de la cover). Pendiente: generar OG image (`/og-generate casos-de-negocio/capilclinic`) en próxima sesión.
+
 ## 2026-05-20 09:48 — Home: nueva sección Servicios bento Stripe-style
 - **Commit:** bf401d9 (main, merge de feat/bento-services · b358d1e)
 - **Archivos:**
