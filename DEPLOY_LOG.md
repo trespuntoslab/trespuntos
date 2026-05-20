@@ -2,6 +2,18 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-05-20 21:42 — Capilclinic: hero — sustituir video por imagen retrato
+- **Commit:** 13f010b (main · `feat(casos/capilclinic): hero — sustituir video por imagen retrato`)
+- **Archivos (2):**
+  - `/casos-de-negocio/capilclinic/index.html` (sustituye `<video>` por `<img>` con `loading="eager"` + `fetchpriority="high"`)
+  - `/img/casos/capilclinic/hero-portrait.webp` (116 KB · 1200×1801, q82 · venía de JPG de 16.7 MB)
+- **Cloudflare:** Custom URL purge → caso + nueva imagen (api success).
+- **Verificación:** ✅ OK
+  - Caso: HTTP 200 · `last-modified: 2026-05-20 19:42:20 GMT`
+  - hero-portrait.webp: HTTP 200 · `content-length: 116470` · MISS
+  - HTML solo referencia `hero-portrait.webp`, ninguna mención al MP4 anterior
+- **Notas:** El MP4 `desktop-recording-01.mp4` queda huérfano en FTP (73 KB sin referenciar). No se elimina por ahora (decisión: low priority cleanup). El overlay mint sigue aplicándose por encima de la imagen (mix-blend-mode overlay).
+
 ## 2026-05-20 21:30 — Nuevo caso de éxito: Capilclinic (rediseño web + identidad)
 - **Commit:** 3b976c7 (main · `feat(casos): nuevo caso de éxito Capilclinic — rediseño web + identidad`)
 - **Archivos (22):**
