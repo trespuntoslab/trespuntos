@@ -421,3 +421,2791 @@ html,body{overflow-x:hidden;max-width:100vw}section{overflow-x:clip;max-width:10
   color: var(--text-secondary);
   line-height: 1.55;
 }
+
+/* ============================================================
+   BENTO SERVICIOS v2 — Stripe-style sobre dark (2026-05-19)
+   ============================================================ */
+
+/* Section spacing: Stripe usa 96px arriba/abajo */
+#propuesta { padding-top: 96px; padding-bottom: 96px; }
+#propuesta .section-h2 { font-weight: 300; letter-spacing: -.025em; }
+.servicios-bento { margin-top: 3rem; }
+
+/* Layout flex (NO grid) con gap 16px como Stripe */
+.servicios-bento {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Tamaños card: large 2/3, small 1/3 — Stripe usa 816+16+400=1232 (66/33) */
+.bento-card {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: 620px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #050505;
+  color: inherit;
+  text-decoration: none;
+  isolation: isolate;
+  transition: transform 1.2s cubic-bezier(.22,.61,.36,1);
+}
+.bento-card--large { flex-basis: calc(66.666% - 8px); }
+.bento-card--small { flex-basis: calc(33.333% - 8px); }
+
+/* Hover: lift sutil + glow */
+.bento-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Blobs — el secreto de Stripe: 3 círculos gigantes con blur(10px) apilados */
+.bento-card-blobs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+  overflow: hidden;
+}
+.bento-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: .85;
+  mix-blend-mode: screen;
+  transition: transform 8s ease-in-out;
+}
+.bento-blob-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5,5,5,0) 0%, rgba(5,5,5,.18) 45%, rgba(5,5,5,.45) 100%);
+  pointer-events: none;
+}
+
+/* Animación lenta de los blobs (respiración) */
+@keyframes bentoBlobDrift1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(40px,-30px) scale(1.08); } }
+@keyframes bentoBlobDrift2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-30px,40px) scale(1.05); } }
+@keyframes bentoBlobDrift3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(50px,20px) scale(1.1); } }
+.bento-blob--1 { animation: bentoBlobDrift1 18s ease-in-out infinite; }
+.bento-blob--2 { animation: bentoBlobDrift2 22s ease-in-out infinite; }
+.bento-blob--3 { animation: bentoBlobDrift3 26s ease-in-out infinite; }
+
+/* Tints por servicio — cada card tiene 3 blobs de color distintos */
+.bento-card--ux .bento-blob--1 { width: 70%; height: 60%; left: -10%; top: 25%; background: rgba(255,140,90,.55); }   /* peach */
+.bento-card--ux .bento-blob--2 { width: 65%; height: 55%; right: -8%; top: 5%; background: rgba(255,90,180,.42); }   /* magenta */
+.bento-card--ux .bento-blob--3 { width: 60%; height: 50%; right: 5%; bottom: -10%; background: rgba(93,255,191,.30); } /* mint accent */
+
+.bento-card--web .bento-blob--1 { width: 90%; height: 60%; left: -10%; top: 20%; background: rgba(93,255,191,.55); }
+.bento-card--web .bento-blob--2 { width: 80%; height: 50%; right: -15%; top: 50%; background: rgba(80,180,255,.42); }
+.bento-card--web .bento-blob--3 { width: 75%; height: 45%; left: 10%; bottom: -15%; background: rgba(120,90,255,.28); }
+
+.bento-card--consult .bento-blob--1 { width: 85%; height: 55%; left: -10%; top: 30%; background: rgba(80,227,194,.50); }
+.bento-card--consult .bento-blob--2 { width: 75%; height: 50%; right: -10%; top: 10%; background: rgba(150,255,160,.38); }
+.bento-card--consult .bento-blob--3 { width: 70%; height: 50%; right: 0%; bottom: -10%; background: rgba(255,230,130,.25); }
+
+.bento-card--ia .bento-blob--1 { width: 65%; height: 55%; left: -5%; top: 20%; background: rgba(93,255,191,.55); }
+.bento-card--ia .bento-blob--2 { width: 60%; height: 55%; right: -5%; top: 5%; background: rgba(190,255,100,.40); }
+.bento-card--ia .bento-blob--3 { width: 65%; height: 55%; right: 10%; bottom: -10%; background: rgba(140,90,255,.32); }
+
+/* Texto: absolute top-left como Stripe */
+.bento-card-text {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  right: 60px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.bento-card--large .bento-card-text { top: 32px; left: 32px; right: 72px; }
+
+.bento-card-tag {
+  font-size: .7rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.55);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.bento-card-headline {
+  font-family: 'Plus Jakarta Sans', var(--font-heading, system-ui), sans-serif;
+  font-weight: 300;
+  font-size: 1.625rem;       /* 26px como Stripe */
+  line-height: 1.12;
+  letter-spacing: -.025em;
+  color: #fff;
+  margin: 0;
+}
+.bento-card--large .bento-card-headline { font-size: 1.875rem; }  /* 30px en large */
+
+.bento-card-sub {
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: rgba(255,255,255,.62);
+  margin: .35rem 0 0;
+  max-width: 36em;
+}
+
+/* Icono expand top-right (detalle Stripe) */
+.bento-card-expand {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.55);
+  z-index: 4;
+  transition: background 1s cubic-bezier(.22,.61,.36,1), color 1s cubic-bezier(.22,.61,.36,1), transform 1s cubic-bezier(.22,.61,.36,1);
+}
+.bento-card-expand svg { width: 12px; height: 12px; }
+.bento-card:hover .bento-card-expand {
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  transform: rotate(0deg) scale(1.08);
+}
+
+/* Scene: contenedor de la UI composition (ocupa la parte inferior) */
+.bento-card-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+/* Stub temporal */
+.web-stub {
+  position: absolute;
+  inset: auto 0 40% 0;
+  text-align: center;
+  font-size: .8rem;
+  color: rgba(255,255,255,.35);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* sr-only (bullets indexables pero invisibles) */
+.bento-card .sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* ============================================================
+   SCENE — UX/UI composition
+   ============================================================ */
+.scene--ux .ux-frame {
+  position: absolute;
+  left: 32px;
+  bottom: -40px;
+  width: 58%;
+  background: #111316;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.04) inset;
+  transform: perspective(1400px) rotateY(-6deg) rotateX(2deg);
+  transform-origin: left center;
+  overflow: hidden;
+  transition: transform 1.4s cubic-bezier(.22,.61,.36,1);
+}
+.bento-card:hover .scene--ux .ux-frame {
+  transform: perspective(1400px) rotateY(-4deg) rotateX(1deg) translateY(-4px);
+}
+.ux-frame-bar {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  padding: 9px 12px;
+  background: #0d0e10;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.ux-dot { width: 8px; height: 8px; border-radius: 50%; background: #ff5f57; }
+.ux-dot:nth-child(2) { background: #febc2e; }
+.ux-dot:nth-child(3) { background: #28c840; }
+.ux-url {
+  margin-left: .75rem;
+  font-size: .65rem;
+  color: rgba(255,255,255,.4);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  letter-spacing: .02em;
+}
+.ux-frame-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 12px;
+  padding: 14px;
+}
+.ux-col {
+  background: rgba(255,255,255,.025);
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ux-canvas-title, .ux-tokens-title {
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+}
+.ux-btn-row { display: flex; gap: 6px; }
+.ux-btn {
+  font-size: .65rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.ux-btn--primary { background: #5DFFBF; color: #0e0e0e; }
+.ux-btn--ghost { background: rgba(255,255,255,.05); color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.1); }
+.ux-spec-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: .6rem;
+  font-family: var(--font-mono, monospace);
+  color: rgba(255,255,255,.4);
+}
+.ux-spec-row b { color: rgba(255,255,255,.85); font-weight: 500; }
+.ux-token {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .6rem;
+  color: rgba(255,255,255,.55);
+}
+.ux-token code { margin-left: auto; font-size: .55rem; color: rgba(255,255,255,.7); font-family: var(--font-mono, monospace); }
+.ux-swatch { width: 10px; height: 10px; border-radius: 3px; border: 1px solid rgba(255,255,255,.1); }
+.ux-swatch--mint { background: #5DFFBF; }
+.ux-swatch--dark { background: #0E0E0E; }
+.ux-swatch--text { background: #F8F8F8; }
+.ux-swatch--muted { background: #7A7F85; }
+
+/* Cursor flotante */
+.ux-cursor {
+  position: absolute;
+  left: 38%;
+  top: 60%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.5));
+}
+.ux-cursor svg { width: 16px; height: 18px; }
+.ux-cursor-tag {
+  background: #5DFFBF;
+  color: #0e0e0e;
+  font-size: .6rem;
+  font-weight: 600;
+  padding: 3px 7px;
+  border-radius: 4px;
+  letter-spacing: -.01em;
+}
+
+/* Phone overlay derecha */
+.scene--ux .ux-phone {
+  position: absolute;
+  right: 6%;
+  bottom: 14%;
+  width: 168px;
+  background: #0a0a0a;
+  border: 4px solid #181818;
+  border-radius: 22px;
+  padding: 14px 12px;
+  box-shadow: 0 24px 50px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06) inset;
+  transform: rotate(4deg);
+  transition: transform 1.2s cubic-bezier(.22,.61,.36,1);
+}
+.bento-card:hover .scene--ux .ux-phone { transform: rotate(2deg) translateY(-4px); }
+.ux-phone-screen { display: flex; flex-direction: column; gap: 6px; }
+.ux-phone-step {
+  font-size: .55rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+}
+.ux-phone-h {
+  font-size: .8rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.ux-phone-options { display: flex; flex-direction: column; gap: 4px; }
+.ux-phone-opt {
+  font-size: .62rem;
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.7);
+}
+.ux-phone-opt--sel {
+  background: rgba(93,255,191,.12);
+  border-color: rgba(93,255,191,.45);
+  color: #5DFFBF;
+}
+.ux-phone-cta {
+  margin-top: 6px;
+  font-size: .65rem;
+  font-weight: 600;
+  background: #5DFFBF;
+  color: #0e0e0e;
+  text-align: center;
+  padding: 7px;
+  border-radius: 6px;
+}
+
+/* Métrica conversión bottom-right */
+.scene--ux .ux-metric {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  background: rgba(14,14,14,.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 5;
+  min-width: 130px;
+}
+.ux-metric-label {
+  font-size: .55rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+}
+.ux-metric-val {
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 300;
+  font-size: 1.75rem;
+  letter-spacing: -.03em;
+  color: #5DFFBF;
+  line-height: 1;
+}
+.ux-metric-val small { font-size: 1rem; opacity: .7; }
+.ux-metric-bars {
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+  height: 22px;
+}
+.ux-metric-bars i {
+  display: block;
+  width: 6px;
+  height: var(--h);
+  background: linear-gradient(180deg, #5DFFBF, rgba(93,255,191,.4));
+  border-radius: 1px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .bento-card { height: 540px; }
+  .bento-card--large, .bento-card--small { flex-basis: 100%; }
+  .scene--ux .ux-frame { width: 65%; }
+}
+@media (max-width: 720px) {
+  #propuesta { padding-top: 56px; padding-bottom: 56px; }
+  .bento-card { height: 480px; border-radius: 6px; }
+  .bento-card-text { top: 22px; left: 22px; right: 50px; }
+  .bento-card-headline,
+  .bento-card--large .bento-card-headline { font-size: 1.4rem; }
+  .bento-card-sub { font-size: .85rem; }
+  .bento-card-expand { top: 22px; right: 22px; }
+  .scene--ux .ux-frame { width: 80%; left: 22px; bottom: -30px; }
+  .scene--ux .ux-phone { width: 130px; right: 4%; bottom: 10%; }
+  .scene--ux .ux-metric { right: 18px; bottom: 18px; padding: 9px 12px; }
+  .ux-metric-val { font-size: 1.4rem; }
+}
+
+/* ============================================================
+   SCENE — Web a Medida (composition)
+   ============================================================ */
+.scene--web .web-dashboard {
+  position: absolute;
+  left: 24px;
+  bottom: -20px;
+  width: 78%;
+  background: #111316;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  box-shadow: 0 24px 50px rgba(0,0,0,.55);
+  transform: perspective(1200px) rotateX(8deg) rotateY(-4deg);
+  transform-origin: bottom left;
+  overflow: hidden;
+  transition: transform 1.4s cubic-bezier(.22,.61,.36,1);
+}
+.bento-card:hover .scene--web .web-dashboard {
+  transform: perspective(1200px) rotateX(6deg) rotateY(-3deg) translateY(-4px);
+}
+.web-dash-bar {
+  display: flex; align-items: center; gap: .35rem;
+  padding: 8px 10px;
+  background: #0d0e10;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.web-dash-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  padding: 10px 12px 6px;
+}
+.web-kpi {
+  background: rgba(255,255,255,.025);
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: 5px;
+  padding: 8px 10px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.web-kpi-label {
+  font-size: .55rem; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.45); font-weight: 600;
+}
+.web-kpi-val {
+  font-size: 1.05rem; font-weight: 500; color: #fff;
+  letter-spacing: -.02em;
+}
+.web-kpi-trend {
+  font-size: .6rem; color: #5DFFBF; font-weight: 600;
+}
+.web-chart { padding: 0 12px 12px; height: 56px; }
+.web-chart svg { width: 100%; height: 100%; display: block; }
+
+.scene--web .web-perf {
+  position: absolute;
+  top: 38%;
+  right: 18px;
+  background: rgba(14,14,14,.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  padding: 9px 12px;
+  display: flex; align-items: center; gap: 8px;
+  z-index: 5;
+}
+.web-perf .deploy-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #5DFFBF;
+  box-shadow: 0 0 10px #5DFFBF;
+}
+.web-perf-label {
+  font-size: .5rem; letter-spacing: .15em; text-transform: uppercase;
+  color: rgba(255,255,255,.55); font-weight: 600;
+}
+.web-perf-val {
+  font-size: 1.1rem; font-weight: 300; color: #fff;
+  letter-spacing: -.02em; line-height: 1;
+}
+.web-perf-val small { font-size: .7rem; opacity: .7; margin-left: 1px; }
+
+.scene--web .web-code {
+  position: absolute;
+  bottom: 24px;
+  right: 16px;
+  background: rgba(10,10,12,.85);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: .58rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,.75);
+  z-index: 5;
+}
+.web-code-l { color: #c084fc; }
+.web-code-v { color: #5DFFBF; }
+.web-code-fn { color: #fbbf24; }
+.web-code-c { color: rgba(255,255,255,.35); font-style: italic; }
+
+/* ============================================================
+   SCENE — Consultoría (funnel)
+   ============================================================ */
+.scene--consult .consult-funnel {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 4;
+}
+.consult-step {
+  display: grid;
+  grid-template-columns: 80px 1fr 50px;
+  gap: 10px;
+  align-items: center;
+}
+.consult-step-label {
+  font-size: .6rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.7);
+  letter-spacing: .02em;
+}
+.consult-step-bar {
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, rgba(80,227,194,.55), rgba(80,227,194,.85));
+  width: var(--w);
+  box-shadow: 0 0 8px rgba(80,227,194,.3);
+}
+.consult-step-bar--red {
+  background: linear-gradient(90deg, rgba(248,113,113,.55), rgba(248,113,113,.85));
+  box-shadow: 0 0 8px rgba(248,113,113,.3);
+}
+.consult-step-bar--ok {
+  background: linear-gradient(90deg, #5DFFBF, #80FFD0);
+  box-shadow: 0 0 12px rgba(93,255,191,.5);
+}
+.consult-step-val {
+  font-size: .6rem;
+  font-family: var(--font-mono, monospace);
+  color: rgba(255,255,255,.8);
+  text-align: right;
+}
+.consult-step--issue .consult-step-label { color: #f87171; }
+.consult-step--ok .consult-step-label { color: #5DFFBF; }
+.consult-step--ok .consult-step-val { color: #5DFFBF; font-weight: 600; }
+
+.scene--consult .consult-tag {
+  position: absolute;
+  top: 38%;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .58rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  background: rgba(14,14,14,.6);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 999px;
+  padding: 5px 10px;
+  z-index: 5;
+}
+.consult-tag svg { width: 11px; height: 11px; color: #5DFFBF; }
+
+/* ============================================================
+   SCENE — IA generativa (workflow + chat + counter)
+   ============================================================ */
+.scene--ia .ia-workflow {
+  position: absolute;
+  left: 32px;
+  bottom: 80px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 4;
+}
+.ia-node {
+  background: rgba(20,22,26,.92);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: .62rem;
+  color: rgba(255,255,255,.8);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  backdrop-filter: blur(6px);
+}
+.ia-node svg { width: 11px; height: 11px; color: rgba(255,255,255,.55); }
+.ia-node--core {
+  background: rgba(93,255,191,.14);
+  border-color: rgba(93,255,191,.55);
+  color: #5DFFBF;
+  font-weight: 600;
+  padding: 9px 12px;
+  position: relative;
+}
+.ia-node--core small {
+  display: block;
+  font-size: .5rem;
+  opacity: .65;
+  margin-top: 1px;
+  font-weight: 400;
+  font-family: var(--font-mono, monospace);
+}
+.ia-node-spark {
+  position: absolute;
+  top: -3px; right: -3px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #5DFFBF;
+  box-shadow: 0 0 8px #5DFFBF;
+  animation: iaSparkPulse 2s ease-in-out infinite;
+}
+@keyframes iaSparkPulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
+.ia-link {
+  width: 18px; height: 1px;
+  background: linear-gradient(90deg, rgba(93,255,191,.6), rgba(93,255,191,.1));
+}
+.ia-node-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ia-node-stack .ia-node {
+  padding: 4px 8px;
+  font-size: .55rem;
+}
+.ia-node--out {
+  background: rgba(93,255,191,.06);
+  border-color: rgba(93,255,191,.18);
+  color: rgba(255,255,255,.85);
+}
+
+.scene--ia .ia-chat {
+  position: absolute;
+  right: 28px;
+  bottom: 90px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 5;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,.55));
+}
+.ia-msg {
+  font-size: .68rem;
+  line-height: 1.4;
+  padding: 7px 10px;
+  border-radius: 11px;
+  max-width: 88%;
+}
+.ia-msg--bot {
+  background: rgba(20,22,26,.92);
+  color: rgba(255,255,255,.85);
+  border: 1px solid rgba(255,255,255,.08);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.ia-msg--user {
+  background: #5DFFBF;
+  color: #0e0e0e;
+  font-weight: 500;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.ia-msg--typing {
+  display: inline-flex;
+  gap: 4px;
+  padding: 9px 11px;
+  width: 44px;
+}
+.ia-msg--typing span {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(255,255,255,.6);
+  animation: iaDot 1.3s infinite ease-in-out;
+}
+.ia-msg--typing span:nth-child(2) { animation-delay: .15s; }
+.ia-msg--typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes iaDot { 0%,80%,100% { opacity:.3; transform: scale(.8); } 40% { opacity:1; transform: scale(1); } }
+
+.scene--ia .ia-counter {
+  position: absolute;
+  left: 32px;
+  bottom: 24px;
+  background: rgba(14,14,14,.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 10px 14px;
+  z-index: 5;
+}
+.ia-counter-label {
+  font-size: .55rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  font-weight: 600;
+}
+.ia-counter-val {
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: -.025em;
+  line-height: 1;
+  margin: 2px 0;
+}
+.ia-counter-trend {
+  font-size: .58rem;
+  color: #5DFFBF;
+  font-weight: 600;
+}
+
+/* Mobile tweaks scenes */
+@media (max-width: 720px) {
+  .scene--web .web-dashboard { width: 90%; left: 18px; bottom: -16px; }
+  .scene--web .web-perf { right: 16px; top: 32%; padding: 7px 10px; }
+  .scene--web .web-code { display: none; }
+  .scene--consult .consult-funnel { left: 18px; right: 18px; bottom: 40px; }
+  .consult-step { grid-template-columns: 70px 1fr 45px; gap: 8px; }
+  .scene--consult .consult-tag { right: 18px; top: 38%; }
+  .scene--ia .ia-workflow { left: 18px; bottom: 60px; gap: 6px; }
+  .scene--ia .ia-chat { right: 18px; bottom: 70px; width: 210px; }
+  .ia-msg { font-size: .62rem; }
+  .scene--ia .ia-counter { left: 18px; bottom: 18px; padding: 8px 12px; }
+}
+
+/* ============================================================
+   BENTO v3 — Overrides Stripe-faithful (2026-05-19)
+   Animaciones internas reales + mockups centrados + clip-path inset
+   ============================================================ */
+
+/* Variables de easing universal Stripe */
+:root {
+  --bento-ease: cubic-bezier(0.165, 0.84, 0.44, 1);  /* easeOutExpo */
+  --bento-ease-smooth: cubic-bezier(0.16, 1, 0.3, 1); /* easeOutQuint */
+}
+
+/* Cards más altas, clip-path en hover (técnica Stripe) */
+.bento-card {
+  height: 720px;
+  transition: transform 1.2s var(--bento-ease);
+}
+.bento-card-blobs {
+  clip-path: inset(4px round 6px);
+  transition: clip-path .9s var(--bento-ease);
+}
+.bento-card:hover .bento-card-blobs { clip-path: inset(0px round 6px); }
+
+/* Glow border en hover (técnica Stripe — border gradient que aparece) */
+.bento-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(93,255,191,0) 0%, rgba(93,255,191,.4) 50%, rgba(93,255,191,0) 100%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .8s var(--bento-ease);
+  pointer-events: none;
+  z-index: 6;
+}
+.bento-card:hover::after { opacity: 1; }
+
+/* ============================================================
+   SCENE UX/UI v3 — Frame centrado, animaciones internas
+   ============================================================ */
+.scene--ux .ux-frame {
+  bottom: auto;
+  top: 50%;
+  left: 32px;
+  width: 56%;
+  transform: translateY(-42%) perspective(1400px) rotateY(-6deg) rotateX(2deg);
+  transition: transform 1.4s var(--bento-ease);
+}
+.bento-card:hover .scene--ux .ux-frame {
+  transform: translateY(-46%) perspective(1400px) rotateY(-4deg) rotateX(1deg);
+}
+
+/* Phone CTA pulse */
+.ux-phone-cta {
+  position: relative;
+  overflow: hidden;
+}
+.ux-phone-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.45) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: uxCtaShine 3.5s var(--bento-ease) infinite;
+}
+@keyframes uxCtaShine {
+  0%, 60% { transform: translateX(-100%); }
+  100% { transform: translateX(120%); }
+}
+
+/* Métrica val: cuenta animada */
+.ux-metric-val {
+  background: linear-gradient(180deg, #5DFFBF, #B4FFD9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: uxMetricGlow 4s ease-in-out infinite;
+}
+@keyframes uxMetricGlow {
+  0%, 100% { filter: drop-shadow(0 0 0px rgba(93,255,191,0)); }
+  50% { filter: drop-shadow(0 0 12px rgba(93,255,191,.55)); }
+}
+.ux-metric-bars i {
+  transform-origin: bottom;
+  animation: uxBarRise 1.4s var(--bento-ease) backwards;
+}
+.ux-metric-bars i:nth-child(1) { animation-delay: 0s; }
+.ux-metric-bars i:nth-child(2) { animation-delay: .15s; }
+.ux-metric-bars i:nth-child(3) { animation-delay: .3s; }
+.ux-metric-bars i:nth-child(4) { animation-delay: .45s; }
+@keyframes uxBarRise { from { transform: scaleY(0); } }
+
+/* Cursor flotante con movimiento sutil */
+.ux-cursor {
+  animation: uxCursorMove 6s var(--bento-ease-smooth) infinite;
+}
+@keyframes uxCursorMove {
+  0%, 100% { transform: translate(0, 0); }
+  30% { transform: translate(8px, -4px); }
+  60% { transform: translate(-3px, 6px); }
+}
+
+/* Phone más centrado verticalmente */
+.scene--ux .ux-phone {
+  bottom: auto;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-48%) rotate(4deg);
+}
+.bento-card:hover .scene--ux .ux-phone {
+  transform: translateY(-52%) rotate(2deg);
+}
+
+/* Métrica más arriba */
+.scene--ux .ux-metric {
+  bottom: 80px;
+  right: 36px;
+}
+
+/* ============================================================
+   SCENE WEB v3 — Dashboard centrado + chart drawing
+   ============================================================ */
+.scene--web .web-dashboard {
+  bottom: auto;
+  top: 52%;
+  left: 50%;
+  width: 82%;
+  transform: translate(-50%, -50%) perspective(1200px) rotateX(10deg) rotateY(-3deg);
+  transition: transform 1.4s var(--bento-ease);
+}
+.bento-card:hover .scene--web .web-dashboard {
+  transform: translate(-50%, -54%) perspective(1200px) rotateX(7deg) rotateY(-2deg);
+}
+
+/* Chart SVG: anima stroke-dasharray (se dibuja) */
+.web-chart svg path:first-child {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: webChartDraw 2.4s var(--bento-ease) forwards;
+  animation-delay: .4s;
+}
+.web-chart svg path:last-child {
+  opacity: 0;
+  animation: webChartFill 1.2s var(--bento-ease) forwards;
+  animation-delay: 2.4s;
+}
+@keyframes webChartDraw { to { stroke-dashoffset: 0; } }
+@keyframes webChartFill { to { opacity: .25; } }
+
+/* KPIs count-up (CSS @property + counter) */
+@property --kpi-1 { syntax: '<integer>'; inherits: false; initial-value: 0; }
+@property --kpi-2 { syntax: '<number>'; inherits: false; initial-value: 0; }
+
+.web-kpi:nth-child(1) .web-kpi-val { animation: kpiCount1 2.2s var(--bento-ease) forwards; counter-reset: kpi var(--kpi-1); }
+.web-kpi:nth-child(1) .web-kpi-val::before { content: counter(kpi); }
+.web-kpi:nth-child(1) .web-kpi-val::after { content: " "; }
+@keyframes kpiCount1 { 0% { --kpi-1: 0; } 100% { --kpi-1: 14800; } }
+
+/* Web-perf badge pulse */
+.web-perf .deploy-dot { animation: webDotPulse 1.8s ease-in-out infinite; }
+@keyframes webDotPulse {
+  0%, 100% { box-shadow: 0 0 8px #5DFFBF; transform: scale(1); }
+  50% { box-shadow: 0 0 20px #5DFFBF, 0 0 30px rgba(93,255,191,.4); transform: scale(1.12); }
+}
+
+/* Web code: typewriter cursor */
+.web-code::after {
+  content: "█";
+  display: inline-block;
+  color: #5DFFBF;
+  animation: webCodeCaret 1.1s steps(2) infinite;
+}
+@keyframes webCodeCaret { 50% { opacity: 0; } }
+
+/* Centrar code & perf en altura razonable */
+.scene--web .web-perf { top: 50%; transform: translateY(-50%); }
+.scene--web .web-code {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(140%);
+}
+
+/* ============================================================
+   SCENE CONSULT v3 — Funnel centrado + barras animadas
+   ============================================================ */
+.scene--consult .consult-funnel {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-42%);
+  left: 28px;
+  right: 28px;
+  z-index: 4;
+}
+.consult-step-bar {
+  transform-origin: left;
+  animation: consultBarGrow 1.6s var(--bento-ease) backwards;
+}
+.consult-step:nth-child(1) .consult-step-bar { animation-delay: .1s; }
+.consult-step:nth-child(2) .consult-step-bar { animation-delay: .35s; }
+.consult-step:nth-child(3) .consult-step-bar { animation-delay: .6s; }
+.consult-step:nth-child(4) .consult-step-bar { animation-delay: .85s; }
+@keyframes consultBarGrow { from { transform: scaleX(0); } }
+
+.consult-step-val {
+  opacity: 0;
+  animation: consultValFade 1s var(--bento-ease) backwards;
+}
+.consult-step:nth-child(1) .consult-step-val { animation-delay: .9s; }
+.consult-step:nth-child(2) .consult-step-val { animation-delay: 1.15s; }
+.consult-step:nth-child(3) .consult-step-val { animation-delay: 1.4s; }
+.consult-step:nth-child(4) .consult-step-val { animation-delay: 1.65s; }
+@keyframes consultValFade { to { opacity: 1; } }
+
+.consult-step--ok .consult-step-bar {
+  animation: consultBarGrow 1.6s var(--bento-ease) .85s backwards, consultOkPulse 2.5s ease-in-out 2.5s infinite;
+}
+@keyframes consultOkPulse {
+  0%, 100% { box-shadow: 0 0 12px rgba(93,255,191,.5); }
+  50% { box-shadow: 0 0 24px rgba(93,255,191,.9), 0 0 40px rgba(93,255,191,.3); }
+}
+
+.scene--consult .consult-tag {
+  top: 50%;
+  transform: translateY(-220%);
+}
+
+/* ============================================================
+   SCENE IA v3 — Workflow + chat centrados + animaciones reales
+   ============================================================ */
+.scene--ia .ia-workflow {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(40%);
+  left: 32px;
+}
+.scene--ia .ia-chat {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-95%);
+  right: 32px;
+  width: 280px;
+}
+.scene--ia .ia-counter {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(95%);
+  left: 32px;
+}
+
+/* Chat: mensajes aparecen secuencialmente */
+.ia-msg {
+  opacity: 0;
+  animation: iaMsgIn 0.6s var(--bento-ease) forwards;
+}
+.ia-msg--bot:nth-of-type(1) { animation-delay: 0.3s; }
+.ia-msg--user { animation-delay: 1.5s; }
+.ia-msg--typing { animation-delay: 2.7s; }
+@keyframes iaMsgIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Links del workflow con pulso viajando */
+.ia-link {
+  position: relative;
+  overflow: hidden;
+}
+.ia-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, #5DFFBF, transparent);
+  transform: translateX(-100%);
+  animation: iaLinkFlow 2.5s var(--bento-ease) infinite;
+}
+.ia-link:nth-of-type(2)::after { animation-delay: 0.8s; }
+@keyframes iaLinkFlow {
+  0%, 30% { transform: translateX(-100%); }
+  70%, 100% { transform: translateX(100%); }
+}
+
+/* Out nodes: highlight rotativo */
+.ia-node--out {
+  animation: iaOutPulse 4s ease-in-out infinite;
+}
+.ia-node-stack .ia-node:nth-child(1) { animation-delay: 0s; }
+.ia-node-stack .ia-node:nth-child(2) { animation-delay: 1.3s; }
+.ia-node-stack .ia-node:nth-child(3) { animation-delay: 2.6s; }
+@keyframes iaOutPulse {
+  0%, 15%, 100% { background: rgba(93,255,191,.06); border-color: rgba(93,255,191,.18); color: rgba(255,255,255,.85); }
+  20%, 30% { background: rgba(93,255,191,.18); border-color: rgba(93,255,191,.55); color: #5DFFBF; }
+}
+
+/* Counter IA: cuenta animada */
+.ia-counter-val {
+  background: linear-gradient(180deg, #fff, rgba(255,255,255,.7));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Indicador entry de sección — todas las cards reveal-blur al entrar viewport */
+.bento-card { opacity: 0; transform: translateY(24px); transition: opacity 1s var(--bento-ease), transform 1s var(--bento-ease); }
+.bento-card.reveal-visible,
+.bento-card.visible { opacity: 1; transform: translateY(0); }
+.servicios-bento .bento-card:nth-child(1) { transition-delay: .05s; }
+.servicios-bento .bento-card:nth-child(2) { transition-delay: .15s; }
+.servicios-bento .bento-card:nth-child(3) { transition-delay: .25s; }
+.servicios-bento .bento-card:nth-child(4) { transition-delay: .35s; }
+
+/* Re-aplicar hover transform sobre el opacity reveal */
+.bento-card.reveal-visible:hover,
+.bento-card.visible:hover { transform: translateY(-3px); }
+
+/* Mobile: cards no tan altas */
+@media (max-width: 720px) {
+  .bento-card { height: 560px; }
+  .scene--ux .ux-frame { width: 78%; left: 18px; transform: translateY(-44%) perspective(1200px) rotateY(-4deg) rotateX(2deg); }
+  .scene--ux .ux-phone { right: 5%; }
+  .scene--web .web-dashboard { width: 92%; }
+  .scene--ia .ia-chat { right: 18px; width: 220px; }
+  .scene--ia .ia-counter { left: 18px; }
+  .scene--ia .ia-workflow { left: 18px; }
+}
+
+/* ============================================================
+   BENTO v3.1 — Fixes + mockups más grandes (ocupan centro)
+   ============================================================ */
+
+/* Card height ajustado y mockup más grande */
+.bento-card { height: 660px; }
+
+/* Fix counter bug: quitar pseudo-elementos */
+.web-kpi:nth-child(1) .web-kpi-val { counter-reset: none; animation: none; }
+.web-kpi:nth-child(1) .web-kpi-val::before,
+.web-kpi:nth-child(1) .web-kpi-val::after { content: none; }
+
+/* Fix small "%" perdido en clip-text */
+.ux-metric-val small {
+  -webkit-text-fill-color: initial;
+  background: none;
+  color: rgba(93,255,191,.85);
+  -webkit-background-clip: initial;
+  background-clip: initial;
+}
+
+/* UX: frame más ancho y phone más grande */
+.scene--ux .ux-frame { width: 62%; left: 36px; transform: translateY(-44%) perspective(1400px) rotateY(-7deg) rotateX(2deg); }
+.scene--ux .ux-phone {
+  width: 192px;
+  right: 9%;
+  transform: translateY(-50%) rotate(5deg);
+}
+.bento-card:hover .scene--ux .ux-phone { transform: translateY(-54%) rotate(3deg); }
+.scene--ux .ux-frame-grid { padding: 18px; gap: 14px; }
+.scene--ux .ux-col { padding: 12px 14px; gap: 10px; }
+.scene--ux .ux-spec-row { font-size: .65rem; }
+.scene--ux .ux-token { font-size: .65rem; }
+.scene--ux .ux-token code { font-size: .6rem; }
+.scene--ux .ux-canvas-title, .scene--ux .ux-tokens-title { font-size: .62rem; }
+.scene--ux .ux-btn { font-size: .7rem; padding: 7px 12px; }
+
+/* UX: métrica más grande */
+.scene--ux .ux-metric { padding: 14px 18px; min-width: 150px; bottom: 56px; right: 36px; }
+.ux-metric-val { font-size: 2.1rem; }
+.ux-metric-bars { height: 26px; }
+
+/* WEB: dashboard MUCHO más grande */
+.scene--web .web-dashboard {
+  width: 90%;
+  top: 56%;
+  transform: translate(-50%, -50%) perspective(1200px) rotateX(10deg) rotateY(-4deg);
+}
+.web-dash-grid { padding: 14px 16px 8px; gap: 12px; }
+.web-kpi { padding: 12px 14px; }
+.web-kpi-label { font-size: .6rem; }
+.web-kpi-val { font-size: 1.4rem; }
+.web-kpi-trend { font-size: .68rem; }
+.web-chart { padding: 4px 16px 16px; height: 72px; }
+.scene--web .web-perf { padding: 12px 16px; right: 28px; }
+.web-perf-label { font-size: .55rem; }
+.web-perf-val { font-size: 1.4rem; }
+.web-perf-val small { font-size: .85rem; }
+.scene--web .web-code {
+  padding: 10px 12px;
+  font-size: .65rem;
+  bottom: auto;
+  right: 28px;
+  top: 50%;
+  transform: translateY(170%);
+}
+
+/* CONSULT: funnel más visible (mayor tamaño tipográfico) */
+.scene--consult .consult-funnel { gap: 14px; }
+.consult-step-label { font-size: .72rem; }
+.consult-step-val { font-size: .72rem; }
+.consult-step-bar { height: 8px; }
+.consult-step { grid-template-columns: 100px 1fr 60px; gap: 12px; }
+.scene--consult .consult-tag {
+  top: 50%; right: 28px; padding: 7px 14px; font-size: .65rem;
+  transform: translateY(-260%);
+}
+.scene--consult .consult-tag svg { width: 13px; height: 13px; }
+
+/* IA: workflow más grande */
+.ia-node { padding: 9px 13px; font-size: .72rem; }
+.ia-node--core { padding: 11px 14px; font-size: .75rem; }
+.ia-node--core small { font-size: .58rem; }
+.ia-node-stack .ia-node { padding: 6px 10px; font-size: .65rem; }
+.ia-link { width: 22px; }
+
+.scene--ia .ia-chat { width: 300px; right: 36px; }
+.ia-msg { font-size: .78rem; padding: 9px 13px; }
+.scene--ia .ia-counter { padding: 13px 18px; left: 36px; }
+.ia-counter-label { font-size: .6rem; }
+.ia-counter-val { font-size: 1.85rem; margin: 4px 0; }
+.ia-counter-trend { font-size: .65rem; }
+
+/* ============================================================
+   BENTO v3.2 — Llenar el centro (altura óptima)
+   ============================================================ */
+.bento-card { height: 600px; }
+.bento-card--large .bento-card-text { top: 30px; left: 32px; right: 72px; }
+.bento-card-text { top: 26px; left: 28px; right: 60px; }
+
+/* UX: subir frame y phone */
+.scene--ux .ux-frame { top: 52%; transform: translateY(-38%) perspective(1400px) rotateY(-7deg) rotateX(2deg); }
+.bento-card:hover .scene--ux .ux-frame { transform: translateY(-42%) perspective(1400px) rotateY(-5deg) rotateX(1deg); }
+.scene--ux .ux-phone { top: 56%; transform: translateY(-44%) rotate(5deg); }
+.bento-card:hover .scene--ux .ux-phone { transform: translateY(-48%) rotate(3deg); }
+.scene--ux .ux-metric { bottom: 40px; }
+.scene--ux .ux-cursor { top: 64%; }
+
+/* WEB: dashboard centrado mejor */
+.scene--web .web-dashboard { top: 58%; }
+.scene--web .web-perf { top: 55%; }
+.scene--web .web-code { transform: translateY(160%); }
+
+/* CONSULT: funnel ocupando vertical centro */
+.scene--consult .consult-funnel { top: 58%; transform: translateY(-36%); }
+.scene--consult .consult-tag { transform: translateY(-300%); }
+
+/* IA: subir todo */
+.scene--ia .ia-workflow { top: 55%; transform: translateY(20%); }
+.scene--ia .ia-chat { top: 55%; transform: translateY(-110%); }
+.scene--ia .ia-counter { top: 55%; transform: translateY(75%); }
+
+/* ============================================================
+   BENTO v4 — UX/UI ultra-densa (composition rica + sombras)
+   ============================================================ */
+
+/* Card UX más alta para meter más contenido */
+.bento-card--ux { /* same height keep grid */ }
+
+/* Frame: sombra profunda Stripe-like */
+.scene--ux .ux-frame {
+  width: 64%;
+  filter: drop-shadow(0 50px 80px rgba(0,0,0,.55)) drop-shadow(0 0 0 1px rgba(255,255,255,.04));
+  box-shadow: none;
+}
+
+/* Tabs en barra del navegador */
+.ux-frame-tabs {
+  display: flex; gap: 4px; margin-left: auto; padding-right: 8px;
+}
+.ux-tab {
+  font-size: .58rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: rgba(255,255,255,.45);
+  background: rgba(255,255,255,.025);
+  letter-spacing: .02em;
+}
+.ux-tab--active {
+  background: rgba(93,255,191,.12);
+  color: #5DFFBF;
+}
+
+/* Grid 2-col con más densidad */
+.ux-frame-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 10px;
+  padding: 14px 14px 0;
+}
+.ux-col {
+  background: rgba(255,255,255,.025);
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: 6px;
+  padding: 11px 12px;
+  display: flex; flex-direction: column; gap: 8px;
+  min-height: 0;
+}
+.ux-col-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px; }
+.ux-col-title {
+  font-size: .68rem; font-weight: 600; color: #fff;
+  letter-spacing: -.005em;
+}
+.ux-col-meta {
+  font-size: .55rem; color: rgba(255,255,255,.4);
+  font-family: var(--font-mono, monospace);
+}
+
+/* Stack de variantes de botón */
+.ux-btn-stack { display: flex; flex-direction: column; gap: 5px; }
+.ux-btn {
+  font-size: .65rem;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+}
+.ux-btn--outline { background: transparent; color: #5DFFBF; border: 1px solid rgba(93,255,191,.45); }
+.ux-btn--disabled { background: rgba(255,255,255,.04); color: rgba(255,255,255,.3); }
+
+.ux-prop-list {
+  display: flex; flex-direction: column; gap: 4px;
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(255,255,255,.06);
+}
+
+/* Tokens con type swatches y más colores */
+.ux-swatch--surface { background: #161616; }
+.ux-swatch--accent  { background: #FF8E6E; }
+.ux-token--type { display: flex; align-items: center; gap: 6px; }
+.ux-type-swatch {
+  width: 16px; height: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading, serif);
+  font-size: .65rem;
+  color: #fff;
+  background: rgba(255,255,255,.06);
+  border-radius: 3px;
+}
+.ux-type-swatch--sm { font-size: .55rem; }
+
+/* Status bar abajo */
+.ux-frame-status {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 14px;
+  background: rgba(255,255,255,.015);
+  border-top: 1px solid rgba(255,255,255,.05);
+  font-size: .55rem;
+  color: rgba(255,255,255,.45);
+}
+.ux-status-pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  color: #5DFFBF;
+}
+.ux-status-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: #5DFFBF;
+  box-shadow: 0 0 6px #5DFFBF;
+  animation: webDotPulse 2.2s ease-in-out infinite;
+}
+.ux-status-meta {
+  font-family: var(--font-mono, monospace);
+  letter-spacing: .02em;
+}
+.ux-status-meta--right { margin-left: auto; color: rgba(255,255,255,.6); }
+
+/* Comment bubble flotante (Dani review) */
+.ux-comment {
+  position: absolute;
+  z-index: 6;
+  top: 18%;
+  right: 14%;
+  display: flex; gap: 8px;
+  background: rgba(15,15,17,.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px 10px 10px 2px;
+  padding: 9px 11px;
+  width: 200px;
+  filter: drop-shadow(0 14px 30px rgba(0,0,0,.55));
+  animation: uxCommentIn 1s var(--bento-ease) .6s backwards;
+}
+@keyframes uxCommentIn {
+  from { opacity: 0; transform: translateY(-8px) scale(.92); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.ux-comment-avatar {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF8E6E, #FF5AB4);
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.ux-comment-body { font-size: .65rem; line-height: 1.4; color: rgba(255,255,255,.85); }
+.ux-comment-head { display: flex; gap: 6px; align-items: baseline; }
+.ux-comment-head b { color: #fff; font-size: .68rem; }
+.ux-comment-head span { color: rgba(255,255,255,.45); font-size: .55rem; }
+.ux-comment-body p { margin: 2px 0 0; color: rgba(255,255,255,.75); }
+
+/* Phone v4: más realista, con bar de status, progress, footer */
+.scene--ux .ux-phone {
+  width: 200px;
+  padding: 10px 12px 14px;
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,.65)) drop-shadow(0 0 0 1px rgba(255,255,255,.06));
+  box-shadow: none;
+}
+.ux-phone-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: .5rem;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 6px;
+  padding: 0 4px;
+}
+.ux-phone-time { font-weight: 600; color: rgba(255,255,255,.9); }
+.ux-phone-icons { letter-spacing: -.05em; }
+.ux-phone-progress {
+  display: flex; gap: 3px; margin-bottom: 8px;
+}
+.ux-phone-progress-step {
+  flex: 1; height: 3px; border-radius: 2px;
+  background: rgba(255,255,255,.1);
+}
+.ux-phone-progress-step--active { background: #5DFFBF; box-shadow: 0 0 6px rgba(93,255,191,.5); }
+.ux-phone-step {
+  font-size: .55rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+}
+.ux-phone-h {
+  font-size: .82rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.25;
+  margin: 4px 0 8px;
+}
+.ux-phone-options { display: flex; flex-direction: column; gap: 5px; margin-bottom: 8px; }
+.ux-phone-opt {
+  font-size: .62rem;
+  padding: 7px 10px;
+  border-radius: 6px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.7);
+  display: flex; flex-direction: column; gap: 1px;
+}
+.ux-phone-opt-meta {
+  font-size: .53rem;
+  color: rgba(255,255,255,.42);
+  letter-spacing: .01em;
+}
+.ux-phone-opt--sel {
+  background: rgba(93,255,191,.13);
+  border-color: rgba(93,255,191,.5);
+  color: #5DFFBF;
+}
+.ux-phone-opt--sel .ux-phone-opt-meta { color: rgba(93,255,191,.6); }
+.ux-phone-footnote {
+  font-size: .5rem;
+  color: rgba(255,255,255,.4);
+  margin-top: 6px;
+  text-align: center;
+  line-height: 1.4;
+}
+.ux-phone-footnote u { color: #5DFFBF; text-decoration: none; }
+
+/* Métrica v4: con sparkline + delta + bars con labels */
+.scene--ux .ux-metric {
+  min-width: 180px;
+  padding: 14px 16px;
+  filter: drop-shadow(0 24px 40px rgba(0,0,0,.6));
+  box-shadow: 0 0 0 1px rgba(255,255,255,.06) inset;
+}
+.ux-metric-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.ux-metric-delta {
+  font-size: .58rem;
+  color: #5DFFBF;
+  font-weight: 600;
+  padding: 3px 7px;
+  background: rgba(93,255,191,.1);
+  border-radius: 999px;
+  white-space: nowrap;
+  align-self: flex-start;
+}
+.ux-metric-sparkline {
+  height: 24px;
+  margin: 6px 0;
+}
+.ux-metric-sparkline svg { width: 100%; height: 100%; display: block; }
+.ux-metric-sparkline svg path:first-child {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: webChartDraw 2.8s var(--bento-ease) .4s forwards;
+}
+.ux-metric-bars {
+  display: flex; gap: 4px; align-items: flex-end; height: 28px;
+}
+.ux-metric-bars i {
+  flex: 1;
+  height: var(--h);
+  border-radius: 1.5px;
+  background: linear-gradient(180deg, #5DFFBF, rgba(93,255,191,.35));
+}
+
+/* Card UX background base más oscuro para contrastar con blobs vivos */
+.bento-card--ux { background: #08070a; }
+
+/* ============================================================
+   BENTO v5 — Hover Stripe-faithful + mouse-follow spotlight
+   ============================================================ */
+
+/* Override v3.x: quitar translateY del hover, usar clip-path */
+.bento-card { transform: none !important; }
+.bento-card:hover { transform: none !important; }
+.bento-card.reveal-visible:hover,
+.bento-card.visible:hover { transform: none !important; }
+
+/* La técnica Stripe: clip-path inset que se expande en hover */
+.bento-card-blobs { clip-path: inset(4px round 6px); transition: clip-path 1s var(--bento-ease); }
+.bento-card:hover .bento-card-blobs { clip-path: inset(0px round 6px); }
+
+.bento-card-scene { clip-path: inset(4px round 5px); transition: clip-path 1s var(--bento-ease); }
+.bento-card:hover .bento-card-scene { clip-path: inset(0px round 5px); }
+
+/* Mouse-follow spotlight: variables CSS actualizadas por JS via --mx --my */
+.bento-card {
+  --mx: 50%;
+  --my: 50%;
+}
+.bento-card .bento-spotlight {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 5;
+  background: radial-gradient(360px circle at var(--mx) var(--my),
+    rgba(93,255,191,.18) 0%,
+    rgba(93,255,191,.06) 25%,
+    transparent 60%);
+  opacity: 0;
+  transition: opacity .6s var(--bento-ease);
+  mix-blend-mode: screen;
+}
+.bento-card:hover .bento-spotlight { opacity: 1; }
+
+/* Border gradient que aparece en hover (igual que Stripe borderColor) */
+.bento-card::after {
+  background: radial-gradient(circle at var(--mx) var(--my),
+    rgba(93,255,191,.65) 0%,
+    rgba(93,255,191,.2) 20%,
+    rgba(93,255,191,0) 50%);
+  opacity: 0;
+  transition: opacity .6s var(--bento-ease);
+}
+
+/* Icono expand: outline → fill mint en hover (técnica Stripe) */
+.bento-card-expand {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.55);
+  transition: background .5s var(--bento-ease),
+              border-color .5s var(--bento-ease),
+              color .5s var(--bento-ease),
+              transform .8s var(--bento-ease);
+}
+.bento-card:hover .bento-card-expand {
+  background: #5DFFBF;
+  border-color: #5DFFBF;
+  color: #0e0e0e;
+  transform: translate(4px, -4px);  /* Igual que Stripe: matrix(1,0,0,1,4.83,-4) */
+}
+
+/* Mockup interno: parallax 3D según mouse */
+.bento-card .ux-frame,
+.bento-card .web-dashboard,
+.bento-card .ux-phone {
+  transition-property: transform;
+  transition-duration: .8s;
+  transition-timing-function: var(--bento-ease);
+}
+
+/* Más densidad revelada en hover: extra-row visible solo on hover */
+.ux-frame-status-extra {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height .8s var(--bento-ease), opacity .6s var(--bento-ease);
+}
+.bento-card:hover .ux-frame-status-extra {
+  max-height: 24px;
+  opacity: 1;
+}
+
+/* Blob intensification en hover */
+.bento-card:hover .bento-blob {
+  opacity: 1;
+  filter: blur(38px);
+  transition: opacity 1s var(--bento-ease), filter 1s var(--bento-ease);
+}
+
+/* Counters numéricos: glow pulse on hover */
+.bento-card:hover .ux-metric-val,
+.bento-card:hover .web-kpi-val,
+.bento-card:hover .ia-counter-val,
+.bento-card:hover .web-perf-val {
+  animation: bentoValPulse 1.6s var(--bento-ease) infinite;
+}
+@keyframes bentoValPulse {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(93,255,191,0)); }
+  50% { filter: drop-shadow(0 0 14px rgba(93,255,191,.65)); }
+}
+
+/* Comment UX y elementos flotantes: lift sutil en hover de la card */
+.bento-card:hover .ux-comment { transform: translateY(-3px); }
+.ux-comment { transition: transform .8s var(--bento-ease); }
+
+/* Cursor real estilo Mac (sobre la card)  */
+.bento-card { cursor: pointer; }
+.bento-card:hover { cursor: pointer; }
+
+/* Parallax 3D del mockup según mouse (CSS vars actualizadas via JS) */
+.bento-card:hover .scene--ux .ux-frame {
+  transform: translate3d(var(--parallax-x, 0), var(--parallax-y, 0), 0)
+             translateY(-42%)
+             perspective(1400px) rotateY(-5deg) rotateX(1deg);
+}
+.bento-card:hover .scene--ux .ux-phone {
+  transform: translate3d(var(--parallax-x, 0), var(--parallax-y, 0), 0)
+             translateY(-48%)
+             rotate(3deg);
+}
+.bento-card:hover .scene--web .web-dashboard {
+  transform: translate3d(var(--parallax-x, 0), var(--parallax-y, 0), 0)
+             translate(-50%, -54%)
+             perspective(1200px) rotateX(7deg) rotateY(-2deg);
+}
+
+/* ============================================================
+   BENTO v6 — CSS para nuevos elementos (UX cursor alt, Web editor, Consult board, IA logs+tokens)
+   ============================================================ */
+
+/* UX: segundo cursor (Dani · review) — orbita en hover */
+.ux-cursor--alt {
+  top: 38%; left: 56%;
+  animation: uxCursorMove2 8s var(--bento-ease-smooth) infinite;
+  animation-delay: -2s;
+}
+.ux-cursor-tag--alt { background: #FF8E6E; color: #0e0e0e; }
+@keyframes uxCursorMove2 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-10px, 6px); }
+  60% { transform: translate(12px, -8px); }
+}
+
+/* Quitar la regla vieja del metric (no debería renderizarse pero por si acaso) */
+.scene--ux .ux-metric { display: none; }
+
+/* ============================================================
+   WEB editor de código (estilo VSCode dark)
+   ============================================================ */
+.scene--web .web-editor {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  width: 88%;
+  background: #0d0e10;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  overflow: hidden;
+  transform: translate(-50%, -50%) perspective(1200px) rotateX(8deg) rotateY(-4deg);
+  transition: transform 1.4s var(--bento-ease);
+  filter: drop-shadow(0 50px 80px rgba(0,0,0,.6));
+}
+.bento-card:hover .scene--web .web-editor {
+  transform: translate(-50%, -54%) perspective(1200px) rotateX(5deg) rotateY(-2deg);
+}
+.web-editor-bar {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 10px;
+  background: #08080a;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.web-editor-tabs { display: flex; gap: 2px; margin-left: 10px; }
+.web-tab {
+  font-size: .58rem;
+  padding: 4px 9px;
+  border-radius: 4px 4px 0 0;
+  color: rgba(255,255,255,.4);
+  background: rgba(255,255,255,.02);
+  font-family: var(--font-mono, monospace);
+}
+.web-tab--active {
+  background: #0d0e10;
+  color: #fff;
+  border-bottom: 2px solid #5DFFBF;
+}
+.web-editor-body {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  padding: 10px 0;
+  min-height: 200px;
+}
+.web-editor-gutter {
+  display: flex; flex-direction: column;
+  font-family: var(--font-mono, monospace);
+  font-size: .58rem;
+  color: rgba(255,255,255,.25);
+  text-align: right;
+  padding-right: 6px;
+  border-right: 1px solid rgba(255,255,255,.04);
+  line-height: 1.6;
+}
+.web-editor-code {
+  font-family: var(--font-mono, monospace);
+  font-size: .65rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,.85);
+  padding-left: 10px;
+  overflow: hidden;
+}
+.web-cl {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: webCodeTypewriter 1.2s steps(40, end) forwards;
+  animation-delay: var(--d, 0s);
+}
+@keyframes webCodeTypewriter { to { width: 100%; } }
+
+/* Syntax highlighting tokens */
+.tk-key { color: #c084fc; }    /* keyword: import, const, export, return */
+.tk-var { color: #5DFFBF; }    /* variables */
+.tk-str { color: #fbbf24; }    /* strings */
+.tk-fn  { color: #60a5fa; }    /* function names */
+.tk-type { color: #34d399; }   /* types/components */
+.tk-pun { color: rgba(255,255,255,.55); }
+.web-caret {
+  display: inline-block;
+  width: 2px; height: 1em;
+  background: #5DFFBF;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: webCaret 1s steps(2) infinite;
+}
+@keyframes webCaret { 50% { opacity: 0; } }
+
+.web-editor-status {
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 12px;
+  background: #08080a;
+  border-top: 1px solid rgba(255,255,255,.04);
+  font-size: .55rem;
+  color: rgba(255,255,255,.45);
+  font-family: var(--font-mono, monospace);
+}
+.web-st-pill { display: inline-flex; align-items: center; gap: 4px; color: #5DFFBF; }
+.web-st-meta { color: rgba(255,255,255,.45); }
+.web-st-meta--right { margin-left: auto; }
+
+/* Deploy badge */
+.scene--web .web-deploy {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 6;
+  background: rgba(15,15,17,.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: .58rem;
+  color: rgba(255,255,255,.8);
+  font-family: var(--font-mono, monospace);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 170px;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,.5));
+}
+.web-deploy-row {
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+.web-deploy-chk {
+  color: #5DFFBF;
+  font-weight: 700;
+  font-size: .68rem;
+}
+.web-deploy-chk--live {
+  display: block;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #5DFFBF;
+  margin: 0 auto;
+  animation: webDotPulse 1.4s ease-in-out infinite;
+}
+.web-deploy-row--live { color: #fff; }
+.web-deploy-time { color: rgba(255,255,255,.5); font-size: .55rem; }
+
+/* Web-perf badge: reposicionar para que no choque con editor */
+.scene--web .web-perf {
+  top: 28px;
+  right: 80px;
+  transform: none;
+}
+.scene--web .web-code { display: none; }  /* el viejo code chip ya no se usa */
+
+/* ============================================================
+   CONSULT — Workshop board con sticky notes
+   ============================================================ */
+.scene--consult .consult-funnel,
+.scene--consult .consult-tag { display: none; }  /* ocultar antiguos */
+
+.scene--consult .consult-board {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  width: 88%;
+  background: #0d0e10;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 40px 70px rgba(0,0,0,.6));
+  transition: transform 1.4s var(--bento-ease);
+}
+.bento-card:hover .scene--consult .consult-board { transform: translate(-50%, -52%); }
+.consult-board-bar {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 10px;
+  background: #08080a;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.consult-board-title {
+  font-size: .6rem;
+  color: rgba(255,255,255,.6);
+  margin-left: 10px;
+  font-weight: 600;
+}
+.consult-board-avatars { display: flex; gap: -3px; margin-left: auto; }
+.consult-avatar {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: .55rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid #0d0e10;
+  margin-left: -6px;
+}
+.consult-avatar:first-child { margin-left: 0; }
+
+.consult-canvas {
+  position: relative;
+  height: 220px;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,.04) 1px, transparent 0);
+  background-size: 18px 18px;
+}
+.consult-lines {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+}
+.consult-lines path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: webChartDraw 2.4s var(--bento-ease) .5s forwards;
+}
+
+.consult-sticky {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 110px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: .58rem;
+  line-height: 1.3;
+  transform: rotate(var(--rot, 0deg));
+  box-shadow: 0 6px 14px rgba(0,0,0,.35), 0 0 0 1px rgba(0,0,0,.15);
+  z-index: 2;
+  animation: consultStickyIn .6s var(--bento-ease) backwards;
+}
+.consult-sticky--insight { background: #5DFFBF; color: #0e0e0e; animation-delay: .2s; }
+.consult-sticky--user    { background: #fbbf24; color: #0e0e0e; animation-delay: .5s; }
+.consult-sticky--action  { background: #c084fc; color: #0e0e0e; animation-delay: .8s; }
+.consult-sticky--risk    { background: #f87171; color: #0e0e0e; animation-delay: 1.1s; }
+.consult-sticky--win     { background: #34d399; color: #0e0e0e; animation-delay: 1.4s; }
+@keyframes consultStickyIn {
+  from { opacity: 0; transform: rotate(var(--rot, 0deg)) translateY(-8px) scale(.9); }
+  to { opacity: 1; transform: rotate(var(--rot, 0deg)) translateY(0) scale(1); }
+}
+.consult-sticky-tag {
+  font-size: .5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  opacity: .65;
+  margin-bottom: 2px;
+}
+.consult-sticky-text { font-weight: 500; }
+
+.consult-cursor {
+  position: absolute;
+  left: 42%; top: 56%;
+  z-index: 5;
+  display: flex; align-items: center; gap: 5px;
+  animation: uxCursorMove 7s var(--bento-ease-smooth) infinite;
+}
+.consult-cursor svg { width: 14px; height: 16px; filter: drop-shadow(0 4px 8px rgba(0,0,0,.4)); }
+.consult-cursor-tag {
+  background: #5DFFBF; color: #0e0e0e;
+  font-size: .55rem; font-weight: 700;
+  padding: 2px 6px; border-radius: 3px;
+}
+
+/* ROI badge */
+.scene--consult .consult-roi {
+  position: absolute;
+  bottom: 22px;
+  right: 22px;
+  background: rgba(15,15,17,.88);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  padding: 10px 14px;
+  z-index: 7;
+  text-align: right;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,.5));
+}
+.consult-roi-label {
+  font-size: .55rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  font-weight: 600;
+}
+.consult-roi-val {
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: #5DFFBF;
+  letter-spacing: -.025em;
+  line-height: 1;
+  margin: 2px 0;
+}
+.consult-roi-val small { font-size: .85rem; opacity: .85; }
+.consult-roi-meta {
+  font-size: .52rem;
+  color: rgba(255,255,255,.5);
+}
+
+/* ============================================================
+   IA — Workflow + logs sidebar + tokens badge
+   ============================================================ */
+.ia-stage { display: flex; flex-direction: column; gap: 5px; align-items: center; }
+.ia-stage-label {
+  font-size: .5rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 4px;
+}
+.ia-node--small { padding: 5px 9px; font-size: .58rem; opacity: .85; }
+
+/* Chat más larga con header */
+.scene--ia .ia-chat {
+  width: 290px;
+  top: 22%;
+  transform: none;
+  bottom: auto;
+  background: rgba(15,15,17,.86);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 10px;
+  gap: 5px;
+  filter: drop-shadow(0 18px 36px rgba(0,0,0,.55));
+}
+.ia-chat-head {
+  display: flex; align-items: center; gap: 6px;
+  padding: 0 4px 8px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  margin-bottom: 4px;
+}
+.ia-chat-avatar { color: #5DFFBF; font-size: .9rem; }
+.ia-chat-name { font-size: .65rem; font-weight: 600; color: #fff; flex: 1; }
+.ia-chat-status {
+  font-size: .55rem;
+  color: #5DFFBF;
+  padding: 2px 6px;
+  background: rgba(93,255,191,.1);
+  border-radius: 999px;
+}
+.ia-msg { font-size: .68rem; padding: 7px 10px; }
+.ia-msg--bot b { color: #5DFFBF; }
+
+/* Activity logs sidebar */
+.scene--ia .ia-logs {
+  position: absolute;
+  top: 22%;
+  left: 32px;
+  width: 230px;
+  background: rgba(8,8,11,.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  padding: 10px;
+  font-family: var(--font-mono, monospace);
+  z-index: 5;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,.55));
+}
+.ia-logs-head {
+  display: flex; align-items: center; gap: 6px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  margin-bottom: 6px;
+}
+.ia-logs-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #5DFFBF;
+  box-shadow: 0 0 6px #5DFFBF;
+  animation: webDotPulse 1.5s ease-in-out infinite;
+}
+.ia-logs-title {
+  font-size: .58rem;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  flex: 1;
+}
+.ia-logs-meta {
+  font-size: .52rem;
+  color: #5DFFBF;
+}
+.ia-log-row {
+  display: grid;
+  grid-template-columns: 30px 14px 1fr;
+  gap: 6px;
+  align-items: center;
+  font-size: .58rem;
+  padding: 4px 0;
+  color: rgba(255,255,255,.75);
+  animation: iaMsgIn .5s var(--bento-ease) backwards;
+}
+.ia-log-row:nth-child(2) { animation-delay: .5s; }
+.ia-log-row:nth-child(3) { animation-delay: 1s; }
+.ia-log-row:nth-child(4) { animation-delay: 1.5s; }
+.ia-log-row:nth-child(5) { animation-delay: 2s; }
+.ia-log-time {
+  color: rgba(255,255,255,.4);
+  font-size: .54rem;
+}
+.ia-log-tag {
+  font-size: .65rem;
+  text-align: center;
+  font-weight: 700;
+}
+.ia-log-tag--ok { color: #5DFFBF; }
+.ia-log-tag--run { color: #fbbf24; animation: webDotPulse 1.2s ease-in-out infinite; }
+.ia-log-tag--wait { color: rgba(255,255,255,.4); }
+
+/* Tokens badge */
+.scene--ia .ia-tokens {
+  position: absolute;
+  bottom: 24px;
+  right: 32px;
+  width: 180px;
+  background: rgba(15,15,17,.88);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  padding: 10px 14px;
+  z-index: 6;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,.5));
+}
+.ia-tokens-label {
+  font-size: .55rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.ia-tokens-bar {
+  height: 5px;
+  background: rgba(255,255,255,.06);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.ia-tokens-fill {
+  display: block;
+  height: 100%;
+  width: var(--w);
+  background: linear-gradient(90deg, #5DFFBF, #4ea3ff);
+  border-radius: 3px;
+  animation: consultBarGrow 1.6s var(--bento-ease) .8s backwards;
+  transform-origin: left;
+}
+.ia-tokens-row {
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono, monospace);
+  font-size: .68rem;
+  color: #fff;
+  font-weight: 500;
+}
+.ia-tokens-cost { color: #5DFFBF; }
+
+/* IA workflow reposicionar más bajo */
+.scene--ia .ia-workflow {
+  top: auto;
+  bottom: 80px;
+  left: 32px;
+  transform: none;
+  gap: 12px;
+}
+.scene--ia .ia-counter {
+  top: auto;
+  bottom: 24px;
+  left: 220px;
+  transform: none;
+}
+
+/* ============================================================
+   BENTO v7 — IA recomposición (centrar, no esquinas)
+   ============================================================ */
+
+/* Workflow al CENTRO horizontal del card */
+.scene--ia .ia-workflow {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 3;
+}
+
+/* Logs sidebar pegado al centro izquierda (encima del workflow) */
+.scene--ia .ia-logs {
+  position: absolute;
+  top: 28%;
+  left: 22%;
+  transform: translate(-50%, 0);
+  width: 215px;
+  z-index: 5;
+}
+
+/* Chat pegado al centro derecha (encima del workflow) */
+.scene--ia .ia-chat {
+  position: absolute;
+  top: 28%;
+  right: 22%;
+  transform: translate(50%, 0);
+  width: 270px;
+  z-index: 5;
+}
+
+/* Counter y tokens FILA HORIZONTAL debajo del workflow, centrados */
+.scene--ia .ia-counter {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(calc(-100% - 8px));
+  z-index: 6;
+  min-width: 170px;
+}
+.scene--ia .ia-tokens {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(8px);
+  right: auto;
+  z-index: 6;
+  width: 200px;
+}
+
+/* Conectores visuales entre chat→workflow y logs→workflow */
+.scene--ia::before {
+  content: "";
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 16%;
+  background: linear-gradient(180deg, rgba(93,255,191,.35), rgba(93,255,191,0));
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .scene--ia .ia-logs { left: 18%; width: 180px; }
+  .scene--ia .ia-chat { right: 18%; width: 230px; }
+  .scene--ia .ia-workflow { gap: 8px; }
+  .scene--ia .ia-counter,
+  .scene--ia .ia-tokens { width: 150px; }
+}
+@media (max-width: 720px) {
+  .scene--ia .ia-logs { display: none; }
+  .scene--ia .ia-chat { right: 50%; transform: translateX(50%); width: 86%; top: 22%; }
+  .scene--ia .ia-workflow { top: 64%; gap: 6px; }
+  .scene--ia .ia-counter { transform: translateX(calc(-100% - 4px)); bottom: 18px; min-width: 130px; }
+  .scene--ia .ia-tokens { transform: translateX(4px); bottom: 18px; width: 150px; }
+}
+
+/* ============================================================
+   BENTO v7.1 — Fix overlap chat/workflow en IA
+   ============================================================ */
+.scene--ia .ia-logs {
+  top: 24%;
+  width: 200px;
+  padding: 8px 10px;
+}
+.scene--ia .ia-chat {
+  top: 24%;
+  width: 260px;
+  padding: 8px;
+}
+.scene--ia .ia-chat .ia-msg { font-size: .65rem; padding: 6px 9px; }
+.scene--ia .ia-chat-head { padding-bottom: 6px; margin-bottom: 3px; }
+
+/* Workflow más abajo para no chocar */
+.scene--ia .ia-workflow {
+  top: 70%;
+}
+
+/* Bajar conector vertical */
+.scene--ia::before {
+  top: 52%;
+  height: 14%;
+}
+
+/* Counter / tokens más pegados al borde inferior */
+.scene--ia .ia-counter,
+.scene--ia .ia-tokens { bottom: 20px; }
+
+/* ============================================================
+   BENTO v7.2 — IA: chat vertical derecho, workflow+logs+counter izquierda
+   ============================================================ */
+
+/* Chat ocupa toda la mitad derecha en vertical */
+.scene--ia .ia-chat {
+  position: absolute;
+  top: 22%;
+  right: 32px;
+  bottom: 24px;
+  left: auto;
+  width: 38%;
+  max-width: 320px;
+  transform: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+/* Logs arriba a la izquierda, ancho mayor */
+.scene--ia .ia-logs {
+  top: 22%;
+  left: 32px;
+  width: 280px;
+  transform: none;
+}
+
+/* Workflow horizontal MEDIO IZQUIERDA debajo de los logs */
+.scene--ia .ia-workflow {
+  top: auto;
+  bottom: 130px;
+  left: 32px;
+  transform: none;
+  gap: 10px;
+}
+.ia-stage { gap: 4px; }
+.ia-node { padding: 7px 10px; font-size: .65rem; }
+.ia-node--core { padding: 9px 11px; font-size: .68rem; }
+.ia-node--small { padding: 4px 7px; font-size: .55rem; }
+.ia-node-stack .ia-node { padding: 4px 8px; font-size: .55rem; }
+
+/* Counter y tokens: fila horizontal abajo izquierda */
+.scene--ia .ia-counter {
+  bottom: 24px;
+  left: 32px;
+  transform: none;
+  min-width: 145px;
+  padding: 8px 12px;
+}
+.scene--ia .ia-tokens {
+  bottom: 24px;
+  left: 190px;
+  transform: none;
+  width: 175px;
+  right: auto;
+  padding: 8px 12px;
+}
+.ia-counter-val { font-size: 1.5rem; margin: 1px 0; }
+.ia-counter-label, .ia-tokens-label { font-size: .52rem; margin-bottom: 4px; }
+
+/* Eliminar conector vertical (sobra) */
+.scene--ia::before { display: none; }
+
+/* ============================================================
+   BENTO MOBILE — Simplificación (max-width: 720px)
+   ============================================================ */
+@media (max-width: 720px) {
+
+  /* Cards más bajas para que respire */
+  .bento-card { height: 520px; border-radius: 12px; }
+
+  /* Header tighter */
+  .bento-card-text { top: 22px; left: 22px; right: 56px; gap: .35rem; }
+  .bento-card--large .bento-card-text { top: 24px; left: 24px; right: 60px; }
+  .bento-card-headline,
+  .bento-card--large .bento-card-headline { font-size: 1.3rem; line-height: 1.2; }
+  .bento-card-sub { font-size: .82rem; }
+  .bento-card-expand { top: 22px; right: 22px; width: 24px; height: 24px; }
+
+  /* ===========================================
+     UX/UI mobile — quitar elementos secundarios
+     =========================================== */
+  /* Ocultar: comment bubble, segundo cursor, status bar, tabs */
+  .scene--ux .ux-comment { display: none; }
+  .scene--ux .ux-cursor--alt { display: none; }
+  .scene--ux .ux-cursor { display: none; }  /* incluso el primero, simplificar */
+  .scene--ux .ux-frame-tabs { display: none; }
+  .scene--ux .ux-frame-status { display: none; }
+
+  /* Frame más sencillo: 1 columna en lugar de 2 */
+  .scene--ux .ux-frame {
+    width: 70%;
+    left: 18px;
+    top: 56%;
+    transform: translateY(-44%) perspective(1200px) rotateY(-3deg) rotateX(1deg);
+  }
+  .scene--ux .ux-frame-grid { grid-template-columns: 1fr; padding: 12px; gap: 8px; }
+  /* Mostrar solo Tokens (col 2) — más visual que Components */
+  .scene--ux .ux-col--canvas { display: none; }
+  .scene--ux .ux-col { padding: 10px 12px; }
+
+  /* Phone reducido y simplificado */
+  .scene--ux .ux-phone {
+    width: 145px;
+    right: 5%;
+    top: 52%;
+    transform: translateY(-46%) rotate(4deg);
+    padding: 8px 10px 12px;
+  }
+  .scene--ux .ux-phone-bar,
+  .scene--ux .ux-phone-progress,
+  .scene--ux .ux-phone-footnote { display: none; }
+  .scene--ux .ux-phone-step { font-size: .48rem; }
+  .scene--ux .ux-phone-h { font-size: .72rem; margin: 3px 0 6px; }
+  .scene--ux .ux-phone-opt { font-size: .56rem; padding: 5px 8px; }
+  .scene--ux .ux-phone-opt-meta { font-size: .48rem; }
+  .scene--ux .ux-phone-cta { font-size: .58rem; padding: 5px; margin-top: 4px; }
+
+  /* ===========================================
+     WEB mobile — editor compacto, mover badge LCP
+     =========================================== */
+  .scene--web .web-editor {
+    width: 92%;
+    top: 56%;
+  }
+  .web-editor-tabs { gap: 1px; margin-left: 6px; }
+  .web-tab { font-size: .5rem; padding: 3px 6px; }
+  .web-tab:nth-of-type(3) { display: none; }  /* ocultar api.ts en mobile */
+  .web-editor-code { font-size: .55rem; padding-left: 6px; }
+  .web-editor-gutter { font-size: .5rem; }
+  .web-editor-body { padding: 6px 0; }
+  /* Ocultar líneas 8-10 del código (se simplifica) */
+  .web-cl:nth-child(n+8) { display: none; }
+  .web-editor-gutter span:nth-child(n+8) { display: none; }
+  .web-editor-status { display: none; }
+
+  /* LCP badge: mover para que NO pise el título */
+  .scene--web .web-perf {
+    top: auto;
+    bottom: 26px;
+    right: 18px;
+    padding: 7px 10px;
+  }
+  .web-perf-val { font-size: 1rem; }
+  .scene--web .web-deploy { display: none; }  /* deploy badge sobra en mobile */
+
+  /* ===========================================
+     CONSULT mobile — board simplificado
+     =========================================== */
+  .scene--consult .consult-board { width: 94%; top: 56%; }
+  .consult-canvas { height: 200px; }
+  .consult-board-avatars { display: none; }
+  .consult-board-title { font-size: .55rem; }
+  /* Ocultar 2 stickies para reducir overlap */
+  .consult-sticky--win { display: none; }
+  .consult-sticky--action { display: none; }
+  .consult-sticky { width: 95px; padding: 5px 7px; font-size: .52rem; }
+  .consult-sticky-tag { font-size: .42rem; }
+  .scene--consult .consult-cursor { display: none; }
+  .scene--consult .consult-roi {
+    bottom: 18px;
+    right: 18px;
+    padding: 7px 10px;
+  }
+  .consult-roi-val { font-size: 1.25rem; }
+  .consult-roi-meta { font-size: .45rem; }
+  .consult-roi-label { font-size: .48rem; }
+
+  /* ===========================================
+     IA mobile — quitar logs, chat full width
+     =========================================== */
+  .scene--ia .ia-logs { display: none; }   /* ya estaba pero refuerzo */
+  .scene--ia .ia-chat {
+    position: absolute;
+    top: 22%;
+    left: 18px;
+    right: 18px;
+    bottom: 130px;
+    width: auto;
+    max-width: none;
+  }
+  .scene--ia .ia-chat .ia-msg:nth-of-type(3),
+  .scene--ia .ia-chat .ia-msg:nth-of-type(4) { display: none; }  /* solo 2 mensajes */
+
+  /* Workflow horizontal compacto debajo del chat */
+  .scene--ia .ia-workflow {
+    top: auto;
+    bottom: 86px;
+    left: 18px;
+    right: 18px;
+    gap: 6px;
+    transform: none;
+    justify-content: space-between;
+  }
+  .ia-stage-label { font-size: .42rem; }
+  .ia-node { padding: 4px 7px; font-size: .55rem; }
+  .ia-node--core { padding: 6px 9px; font-size: .58rem; }
+  .ia-node--small { display: none; }   /* solo el principal por stage */
+  .ia-node-stack .ia-node:nth-child(n+3) { display: none; }  /* solo 2 outputs */
+  .ia-link { width: 12px; }
+  .ia-node--core small { display: none; }
+
+  /* Counter y tokens lado a lado abajo */
+  .scene--ia .ia-counter {
+    bottom: 18px;
+    left: 18px;
+    min-width: 0;
+    width: calc(50% - 22px);
+    padding: 7px 10px;
+  }
+  .scene--ia .ia-tokens {
+    bottom: 18px;
+    left: 50%;
+    width: calc(50% - 22px);
+    padding: 7px 10px;
+  }
+  .ia-counter-val { font-size: 1.15rem; }
+  .ia-counter-label,
+  .ia-tokens-label { font-size: .45rem; }
+  .ia-counter-trend { font-size: .5rem; }
+  .ia-tokens-row { font-size: .58rem; }
+}
+
+/* ============================================================
+   BENTO MOBILE v8.1 — Fix IA chat/desc overlap
+   ============================================================ */
+@media (max-width: 720px) {
+  /* Card IA: aumentar height un poco más */
+  .bento-card--ia { height: 560px; }
+
+  /* Chat más abajo para no tapar la descripción */
+  .scene--ia .ia-chat {
+    top: 34%;
+    bottom: 130px;
+    padding: 7px;
+  }
+  .scene--ia .ia-chat .ia-msg { font-size: .62rem; padding: 6px 8px; }
+  .scene--ia .ia-chat-head { padding-bottom: 5px; }
+  .scene--ia .ia-chat-name { font-size: .58rem; }
+  .scene--ia .ia-chat-status { font-size: .5rem; padding: 1px 5px; }
+
+  /* Workflow más compacto y centrado */
+  .scene--ia .ia-workflow {
+    bottom: 92px;
+    gap: 4px;
+    justify-content: center;
+  }
+  .ia-stage-label { font-size: .4rem; }
+  .ia-node { padding: 3px 6px; font-size: .5rem; }
+  .ia-node--core { padding: 5px 8px; font-size: .55rem; }
+  .ia-link { width: 8px; }
+
+  /* Tokens más estrecho con label compacto */
+  .scene--ia .ia-tokens {
+    padding: 6px 9px;
+  }
+  .ia-tokens-row { font-size: .55rem; }
+  .ia-tokens-cost { font-size: .5rem; }
+  .ia-tokens-bar { height: 4px; margin-bottom: 4px; }
+
+  /* Counter */
+  .scene--ia .ia-counter { padding: 6px 9px; }
+  .ia-counter-val { font-size: 1.05rem; }
+  .ia-counter-trend { font-size: .48rem; }
+}
+
+/* ============================================================
+   BENTO v8 — Panel System Prompt (sin clientes) + respiración izquierda
+   ============================================================ */
+
+/* ----- Panel derecho: sustituye chat ----- */
+.ia-prompt {
+  padding: 12px !important;
+  gap: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.ia-prompt .ia-chat-head {
+  padding: 0 4px 9px !important;
+  margin-bottom: 10px !important;
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+}
+.ia-prompt .ia-chat-avatar {
+  color: #5DFFBF;
+  font-size: .95rem;
+  font-family: var(--font-mono, monospace);
+}
+.ia-prompt .ia-chat-name { letter-spacing: -.005em; }
+.ia-prompt .ia-chat-status {
+  font-family: var(--font-mono, monospace);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.7);
+  font-size: .52rem;
+}
+
+.ia-prompt-block {
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+.ia-prompt-label {
+  font-size: .5rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 5px;
+  font-family: var(--font-mono, monospace);
+}
+.ia-prompt-code {
+  font-family: var(--font-mono, monospace);
+  font-size: .62rem;
+  line-height: 1.45;
+  color: rgba(255,255,255,.85);
+  background: rgba(255,255,255,.03);
+  border-left: 2px solid rgba(93,255,191,.45);
+  border-radius: 0 4px 4px 0;
+  padding: 7px 9px;
+  margin: 0;
+  white-space: pre-wrap;
+}
+.ia-prompt-code .tk-key { color: #c084fc; font-weight: 600; }
+
+.ia-tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ia-tool {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono, monospace);
+  font-size: .6rem;
+  color: rgba(255,255,255,.78);
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.04);
+}
+.ia-tool code { color: #5DFFBF; font-family: inherit; }
+.ia-tool-check {
+  color: #5DFFBF;
+  font-weight: 700;
+  font-size: .7rem;
+  width: 12px;
+  text-align: center;
+}
+
+.ia-prompt-foot {
+  margin-top: auto;
+  padding-top: 9px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.ia-prompt-foot-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono, monospace);
+  font-size: .58rem;
+}
+.ia-prompt-foot-label {
+  color: rgba(255,255,255,.4);
+  letter-spacing: .04em;
+}
+.ia-prompt-foot-val { color: rgba(255,255,255,.88); }
+.ia-prompt-foot-val--ok { color: #5DFFBF; font-weight: 600; }
+
+/* ----- Composición izquierda: respiración ----- */
+.scene--ia .ia-logs {
+  top: 30%;   /* más separado del título/desc */
+  width: 290px;
+  padding: 11px 12px;
+}
+.scene--ia .ia-workflow {
+  bottom: 130px;   /* más arriba del fondo */
+  left: 36px;
+  gap: 14px;
+}
+.scene--ia .ia-counter {
+  bottom: 32px;
+  left: 36px;
+}
+.scene--ia .ia-tokens {
+  bottom: 32px;
+  left: 200px;
+}
+
+/* Mobile: chat ahora es ia-prompt — ajustar */
+@media (max-width: 720px) {
+  .ia-prompt .ia-prompt-code { font-size: .55rem; padding: 6px 8px; }
+  .ia-tool { font-size: .55rem; padding: 3px 5px; }
+  .ia-prompt-foot-row { font-size: .53rem; }
+  /* En mobile el panel es full-width, ajustar altura */
+  .ia-prompt { padding: 10px !important; }
+}
+
+/* ============================================================
+   BENTO v9 — Loops sutiles continuos (CSS only)
+   ============================================================ */
+
+/* ----- UX/UI: token swatches highlight rotativo + option seleccionada pulse ----- */
+.ux-token { transition: background .8s var(--bento-ease); }
+.ux-swatch {
+  animation: uxSwatchGlow 10s ease-in-out infinite;
+  animation-delay: var(--d, 0s);
+}
+.ux-col--tokens .ux-token:nth-child(2) .ux-swatch { --d: 0s; }
+.ux-col--tokens .ux-token:nth-child(3) .ux-swatch { --d: 1.5s; }
+.ux-col--tokens .ux-token:nth-child(4) .ux-swatch { --d: 3s; }
+.ux-col--tokens .ux-token:nth-child(5) .ux-swatch { --d: 4.5s; }
+.ux-col--tokens .ux-token:nth-child(6) .ux-swatch { --d: 6s; }
+.ux-col--tokens .ux-token:nth-child(7) .ux-swatch { --d: 7.5s; }
+@keyframes uxSwatchGlow {
+  0%, 88%, 100% { box-shadow: 0 0 0 0 transparent; transform: scale(1); }
+  92%, 96% { box-shadow: 0 0 6px 1px currentColor; transform: scale(1.15); }
+}
+
+/* Phone option seleccionada: glow loop muy sutil */
+.ux-phone-opt--sel {
+  animation: uxOptGlow 5s ease-in-out infinite;
+}
+@keyframes uxOptGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(93,255,191,0); }
+  50% { box-shadow: 0 0 12px 0 rgba(93,255,191,.25), inset 0 0 8px rgba(93,255,191,.08); }
+}
+
+/* ----- WEB: dot recorriendo el chart + status main pulse ----- */
+/* Status main pill: el dot ya pulsa */
+
+/* Code editor body: cursor que parpadea ya está. Añadir respiración sutil al status pill */
+.web-st-pill {
+  animation: webPillFade 6s ease-in-out infinite;
+}
+@keyframes webPillFade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .7; }
+}
+
+/* Deploy badge live row: dot ya pulsa.  Hacer toda la fila live tener un fade sutil */
+.web-deploy-row--live {
+  animation: webDeployFade 4s ease-in-out infinite;
+}
+@keyframes webDeployFade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .75; }
+}
+
+/* LCP val: pulse glow muy sutil */
+.web-perf-val {
+  animation: webValGlow 5s ease-in-out infinite;
+}
+@keyframes webValGlow {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(93,255,191,0)); }
+  50% { filter: drop-shadow(0 0 8px rgba(93,255,191,.35)); }
+}
+
+/* ----- CONSULT: stickies con micro-tilt + ROI pulse + líneas que redibujan ----- */
+.consult-sticky {
+  animation: consultStickyIn .6s var(--bento-ease) backwards,
+             consultStickyTilt 8s ease-in-out var(--tilt-d, 0s) infinite;
+}
+.consult-sticky--insight { --tilt-d: 0s; }
+.consult-sticky--user    { --tilt-d: 1.5s; }
+.consult-sticky--action  { --tilt-d: 3s; }
+.consult-sticky--risk    { --tilt-d: 4.5s; }
+.consult-sticky--win     { --tilt-d: 6s; }
+@keyframes consultStickyTilt {
+  0%, 100% { transform: rotate(var(--rot, 0deg)) translateY(0); }
+  50% { transform: rotate(calc(var(--rot, 0deg) + .8deg)) translateY(-2px); }
+}
+
+/* Líneas SVG del board: dasharray loop */
+.consult-lines path {
+  animation: webChartDraw 2.4s var(--bento-ease) .5s forwards,
+             consultLineFlow 10s linear 3s infinite;
+}
+@keyframes consultLineFlow {
+  0% { stroke-dashoffset: 0; }
+  50% { stroke-dashoffset: -24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* ROI val: pulse mint glow */
+.consult-roi-val {
+  animation: consultROIGlow 5s ease-in-out infinite;
+}
+@keyframes consultROIGlow {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(93,255,191,0)); }
+  50% { filter: drop-shadow(0 0 10px rgba(93,255,191,.5)); }
+}
+
+/* Board avatars: respira el más reciente (J · Jordi) */
+.consult-board-avatars .consult-avatar:nth-child(1) {
+  animation: consultAvatarPulse 4s ease-in-out infinite;
+}
+@keyframes consultAvatarPulse {
+  0%, 100% { box-shadow: 0 0 0 2px #0d0e10; }
+  50% { box-shadow: 0 0 0 2px #0d0e10, 0 0 0 4px rgba(255,142,110,.4); }
+}
+
+/* ----- IA: tools rotativo + accuracy pulse + caret en system prompt + tokens bar respira ----- */
+
+/* Tools list: cada uno se ilumina por turnos */
+.ia-tool {
+  animation: iaToolPulse 8s ease-in-out infinite;
+}
+.ia-tool:nth-child(1) { animation-delay: 0s; }
+.ia-tool:nth-child(2) { animation-delay: 2s; }
+.ia-tool:nth-child(3) { animation-delay: 4s; }
+.ia-tool:nth-child(4) { animation-delay: 6s; }
+@keyframes iaToolPulse {
+  0%, 22%, 100% { background: rgba(255,255,255,.02); border-color: rgba(255,255,255,.04); }
+  6%, 16% { background: rgba(93,255,191,.08); border-color: rgba(93,255,191,.3); }
+}
+.ia-tool-check { transition: color .8s var(--bento-ease); }
+
+/* System prompt: añadir caret virtual al final del code (sutil) */
+.ia-prompt-code::after {
+  content: "▌";
+  display: inline;
+  color: #5DFFBF;
+  margin-left: 2px;
+  animation: webCaret 1.1s steps(2) infinite;
+  opacity: .6;
+}
+
+/* Accuracy footer val: pulse glow muy sutil cada 6s */
+.ia-prompt-foot-val--ok {
+  animation: webValGlow 6s ease-in-out infinite;
+}
+
+/* Tokens bar: respira de ±2% cada 6s para sensación "en vivo" */
+.ia-tokens-fill {
+  animation: consultBarGrow 1.6s var(--bento-ease) .8s backwards,
+             iaTokensBreathe 6s ease-in-out 3s infinite;
+}
+@keyframes iaTokensBreathe {
+  0%, 100% { width: var(--w); }
+  50% { width: calc(var(--w) + 4%); }
+}
+
+/* Counter val: pulse glow sutil */
+.ia-counter-val {
+  animation: webValGlow 7s ease-in-out infinite;
+}
+
+/* Activity logs: la fila "run" ya pulsa. Añadir respiración sutil a la fila "wait" */
+.ia-log-tag--wait {
+  animation: iaWaitBreath 4s ease-in-out infinite;
+}
+@keyframes iaWaitBreath {
+  0%, 100% { opacity: .4; }
+  50% { opacity: .7; }
+}
+
+/* Spark del agent core: ya pulsa rápido, lo dejamos */
+
+/* ----- Global: sub-text de cada card respira sutilmente con el blob ----- */
+/* Nope, eso es demasiado. Skip. */
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ux-swatch, .ux-phone-opt--sel,
+  .web-st-pill, .web-deploy-row--live, .web-perf-val,
+  .consult-sticky, .consult-lines path, .consult-roi-val, .consult-board-avatars .consult-avatar,
+  .ia-tool, .ia-prompt-code::after, .ia-prompt-foot-val--ok,
+  .ia-tokens-fill, .ia-counter-val, .ia-log-tag--wait {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   FIX overlap LCP badge con title en card Web (override final)
+   ============================================================ */
+.scene--web .web-perf {
+  top: auto !important;
+  bottom: 28px !important;
+  right: 28px !important;
+  left: auto !important;
+  transform: none !important;
+  z-index: 6;
+}
+
+/* Asegurar que el deploy badge no choque tampoco */
+.scene--web .web-deploy {
+  bottom: 28px;
+  left: 28px;
+}
+

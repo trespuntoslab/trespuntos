@@ -62,3 +62,15 @@ Informe-SEO-*.docx
 
 # Preview server output
 _preview/
+
+# Backups internos y prototipos descartados (no van a producción)
+_backups/
+_prototypes/
+
+# Investigation artifacts en raíz (screenshots de referencias, comparativas)
+# No afecta a /img/casos/*.jpeg
+/*.jpeg
+/*.png
+
+# Backups automáticos de carpetas de casos
+img/casos/_backup_*/
