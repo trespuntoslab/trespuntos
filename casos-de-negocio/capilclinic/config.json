@@ -51,7 +51,8 @@
         { "label": "Sector", "value": "Salud · Injerto capilar" },
         { "label": "Servicios", "value": "Branding · UX/UI · Dev HTML" }
       ],
-      "video_src": "/img/casos/capilclinic/desktop-recording-01.mp4",
+      "hero_bg_image": "/img/casos/capilclinic/hero-portrait.webp",
+      "hero_bg_alt": "Paciente sonriendo — Capilclinic",
       "browser_url": "capilclinic.es",
       "browser_image": "/img/casos/capilclinic/desktop-01.webp",
       "browser_alt": "Home de Capilclinic — Hero con formulario de estudio gratuito"
