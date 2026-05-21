@@ -2,6 +2,21 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-05-21 06:59 — Servicios: fix container width + dashboard hero en 4 desarrollo-web
+- **Commit:** `81490ea` (main · `feat(servicios): fix container width + dashboard hero en 4 desarrollo-web`)
+- **Archivos (27):**
+  - **23 páginas con container fix puntual** (1 línea -, 1 línea +): elimina la regla `.container-main{max-width:1280px;...}` duplicada en critical CSS inline que sobrescribía los breakpoints anchos (1440px@1600px y 1600px@1920px) definidos en components.css. Cobertura completa de `/servicios/` (hub + 22 servicios sin hero animado).
+  - **4 páginas desarrollo-web con dashboard completo**: `/servicios/desarrollo-web-a-medida-barcelona/` + `desarrollo-web-madrid` + `desarrollo-web-bilbao` + `desarrollo-web-sevilla`. Cambio +397 líneas / -34 cada una. Sustituye el preview skeleton del hero por un dashboard tipo audit-monitor con 3 pills DB/API/CDN, 3 KPI tiles con count-up animado (Lighthouse 98 / LCP 0.8s / Modules 124), bar chart de 7 días con stagger 80ms, live counter wandering ±2 cada 2.2s. Browser frame con float idle, URL typewriter, BUILD badge mint pulse, status bar al pie con info de build. Tags Frontend/API/Database/Responsive con bounce drop + halo frPing infinito. Anim one-shot (no loop infinito). Reutiliza keyframes frFloat/frLivePulse/frPinDrop/frPing de components.css.
+- **Cloudflare:** `purge_everything` (27 archivos > umbral de 5 para custom URL) → `{"success":true}`.
+- **Verificación post-purga (sleep 8s):**
+  - `/servicios/desarrollo-web-a-medida-barcelona/`: HTTP 200 · `last-modified: 06:59:30 GMT` · MISS · 15 referencias a `dash-root|dash-kpi-num|animateCounter` ✅
+  - `/servicios/desarrollo-web-sevilla/`: HTTP 200 · `last-modified: 06:59:36 GMT` · MISS · 6 referencias a `dash-root` ✅
+  - `/servicios/diseno-ux-ui-barcelona/` (container fix only): HTTP 200 · `last-modified: 06:59:46 GMT` · MISS · 0 ocurrencias del bug `max-width:1200px` ✅
+- **Skill aplicada:** `/tp-anim` v1.2 (CHANGELOG local en `.claude/commands/tp-anim.md`). Anti-patrón #10 documentado en v1.1 era exactamente este caso (critical CSS inline override breakpoints) — esta vez se descubrió que la regla inline no solo era stale sino que TAMBIÉN bloqueaba los breakpoints anchos por orden de cascada. Solución correcta: ELIMINAR del inline, no actualizar valor.
+- **Notas:** El hero de las 22 páginas no-desarrollo-web (UX/UI, e-commerce, IA, consultoría, design-engineer, tienda-online…) NO se ha tocado — usan otros heroes propios. Solo recibieron el fix de container. Pendiente: revisar uno por uno si necesitan también upgrade visual al lenguaje tp-anim (futuras iteraciones).
+
+
+
 ## 2026-05-20 23:52 — Briefing-banner → Jordan (resto del sitio)
 - **Commit:** `c983ed6` (main · `copy(briefing-banner): redirigir CTA secundario al chat de Jordan`)
 - **Contexto:** El deploy de 23:47 (Fricciones) solo arrastró `/index.html` de este commit. Faltaba propagar el cambio del banner al resto del sitio (44 HTMLs + `js/components.js`) — el banner secundario seguía apuntando a `/iniciar-proyecto/` con copy viejo "¿Tu proyecto es urgente?".
