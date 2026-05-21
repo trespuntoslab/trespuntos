@@ -2,6 +2,17 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-05-21 07:24 — Sectores: cache-bust sectores.css en 15 análisis
+- **Commit:** `8288bb5` (main · `fix(sectores): añadir ?v=2026-05-21 a sectores.css link en 15 análisis`)
+- **Motivo:** Tras el deploy de 07:07 (layout horizontal), navegadores con caché HTTP de la versión previa de `sectores.css` seguían parseando el rule viejo de `.caso-card` (sin `display:flex`) incluso tras Cmd+Shift+R en algunos casos. Verificado con `document.styleSheets` (rule cacheado sin flex) vs `fetch(url, {cache:'no-store'})` (rule nuevo con flex). El navegador no revalidaba.
+- **Fix:** Añadido query string `?v=2026-05-21` al `<link rel="stylesheet" href="../../css/sectores.css">` en los 15 análisis (11 existentes + 4 nuevos). Cambia la URL → fuerza fetch fresco en todos los browsers, incluso los que tenían cache de larga duración.
+- **Archivos (15):** todos `sectores/analisis/{circulantis,clinica-birbe,clinica-frontela,colectual,coverfy,dorsia,face-clinic,factorial-hr,fincas-blanco,finques-feliu,hospital-capilar,kronos-homes,novicap,okticket,saludonnet}/index.html`
+- **Cloudflare:** `purge_everything` → `{"success":true}`.
+- **Verificación (browser real, post-purge + reload):**
+  - `/sectores/analisis/hospital-capilar/`: `cardDisplay: flex`, `cardFlexDir: row`, `imgWidthPct: 38%`, `bodyWidth: 500px` (62% de 808px de card) ✅
+  - CSS link href: `sectores.css?v=2026-05-21` ✅
+- **Lección aprendida (añadir a CLAUDE.md `tp-anim` antipatrones):** Cuando cambias REGLAS en un CSS file (no solo añades) y el sitio tiene cache-control agresivo, **el sed-replace del CSS no basta**. Hay que cache-bustear el `<link>` desde el HTML (`?v=YYYY-MM-DD`) o el navegador del usuario seguirá usando la versión vieja parseada en CSSOM hasta que expire su cache local. Cloudflare purge solo limpia el edge, no el cliente.
+
 ## 2026-05-21 07:07 — Sectores: 4 análisis nuevos + layout horizontal + fix paths
 - **Commit:** `f0ab068` (main · `feat(sectores): 4 análisis nuevos + layout horizontal + fix paths`)
 - **Archivos (17):**
