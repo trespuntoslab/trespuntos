@@ -2,6 +2,24 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-05-21 07:07 — Sectores: 4 análisis nuevos + layout horizontal + fix paths
+- **Commit:** `f0ab068` (main · `feat(sectores): 4 análisis nuevos + layout horizontal + fix paths`)
+- **Archivos (17):**
+  - **4 análisis nuevos** (`sectores/analisis/`): `colectual/`, `face-clinic/`, `hospital-capilar/`, `saludonnet/` — cada uno ~12-13 KB
+  - **11 análisis existentes** con fix de paths rotos de imágenes (`../../img/SLUG-desktop.webp` → `../../../img/casos/SLUG.webp`): circulantis, clinica-birbe, clinica-frontela, coverfy, dorsia, factorial-hr, fincas-blanco, finques-feliu, kronos-homes (también limpia cifras inventadas), novicap, okticket
+  - `sectores/css/sectores.css`: layout `.caso-card` de vertical → horizontal (imagen 38% izquierda · texto 62% derecha) en desktop, vertical en ≤599px
+  - `img/casos/naranja.webp` (97 KB) — cover Naranja Inmobiliaria
+- **Cloudflare:** `purge_everything` (17 archivos > umbral 5) → `{"success":true}`.
+- **Verificación post-purga (sleep 8s):**
+  - `/sectores/analisis/colectual/`: HTTP 200 · `last-modified: 07:06:41 GMT` ✅
+  - `/sectores/analisis/face-clinic/`: HTTP 200 · `07:06:47 GMT` ✅
+  - `/sectores/analisis/hospital-capilar/`: HTTP 200 · `07:06:55 GMT` ✅
+  - `/sectores/analisis/saludonnet/`: HTTP 200 · `07:07:03 GMT` ✅
+  - `/sectores/analisis/circulantis/`: contiene `img/casos/gibobs` (path nuevo correcto), 0 ocurrencias del path roto antiguo ✅
+  - `/sectores/css/sectores.css`: HTTP 200 · `07:07:05 GMT` · MISS ✅
+  - `/img/casos/naranja.webp`: HTTP 200 · `content-length: 97234` · MISS ✅
+- **Notas:** Antes del deploy las 11 cards "Casos relacionados" en los análisis de sector mostraban imagen rota (404) por path equivocado. Ahora resuelven contra `/img/casos/SLUG.webp` que es el path real de los covers de casos. La imagen `naranja.webp` se añadió porque no existía (referenciada desde análisis de kronos-homes). Pendiente reseñar: si hay más imágenes "casos relacionados" sin cover en `/img/casos/` para evitar más 404 silenciosos.
+
 ## 2026-05-21 06:59 — Servicios: fix container width + dashboard hero en 4 desarrollo-web
 - **Commit:** `81490ea` (main · `feat(servicios): fix container width + dashboard hero en 4 desarrollo-web`)
 - **Archivos (27):**
