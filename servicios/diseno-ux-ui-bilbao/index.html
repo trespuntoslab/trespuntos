@@ -139,6 +139,1140 @@
 
   <style>@font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}@font-face{font-family:'Jakarta Fallback';src:local('Arial Black');size-adjust:95%;ascent-override:100%;descent-override:22%;line-gap-override:0%}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--mint:#5dffbf;--mint-rgb:93,255,191;--bg-base:#0e0e0e;--bg-surface:#141414;--text-primary:#f5f5f5;--text-secondary:#b3b3b3;--text-muted:#8a8a8a;--font-heading:'Plus Jakarta Sans','Jakarta Fallback',sans-serif;--font-body:'Inter','Inter Fallback',sans-serif;--radius-md:10px;--radius-lg:14px;--radius-full:9999px}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg-base);color:var(--text-primary);-webkit-font-smoothing:antialiased;overflow-x:hidden}#tp-navbar{position:fixed;top:0;left:0;right:0;z-index:1000;min-height:72px}
+    /* ═══ Hero UX/UI · Design system showcase (tp-anim v1.4 · 2026-05-22) ═══ */
+    .dux-scene {
+      position: relative;
+      min-height: 520px;
+      isolation: isolate;
+    }
+    .dux-scene::before {
+      content: "";
+      position: absolute;
+      inset: -30px -50px -40px -30px;
+      background:
+        radial-gradient(60% 50% at 75% 30%, rgba(var(--mint-rgb),.12), transparent 70%),
+        radial-gradient(45% 40% at 25% 80%, rgba(255,142,110,.08), transparent 70%);
+      filter: blur(40px);
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 1.2s ease .2s;
+    }
+    .dux-scene.visible::before { opacity: 1; }
+
+    /* ─── Frame ─── */
+    .dux-frame {
+      position: relative;
+      width: 100%;
+      background: linear-gradient(180deg, #1a1a1a 0%, #0e0e0e 100%);
+      border: 1px solid #2a2a2a;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px -15px rgba(0,0,0,.65), inset 0 1px 0 rgba(255,255,255,.04);
+      transform: scale(.94) translateY(20px);
+      opacity: 0;
+      transition: transform .95s cubic-bezier(.22,1,.36,1), opacity .9s ease;
+      z-index: 1;
+    }
+    .dux-scene.visible .dux-frame {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+      animation: frFloat 9s ease-in-out 2s infinite;
+    }
+
+    .dux-frame-bar {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      padding: .65rem .9rem;
+      background: rgba(255,255,255,.025);
+      border-bottom: 1px solid #1f1f1f;
+    }
+    .dux-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #3a3a3a;
+      flex-shrink: 0;
+      opacity: 0;
+      transform: scale(.4);
+      transition: opacity .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
+    }
+    .dux-scene.visible .dux-dot { opacity: 1; transform: scale(1); }
+    .dux-scene.visible .dux-dot:nth-child(1) { transition-delay: .2s; background: #ff5f57; }
+    .dux-scene.visible .dux-dot:nth-child(2) { transition-delay: .27s; background: #ffbd2e; }
+    .dux-scene.visible .dux-dot:nth-child(3) { transition-delay: .34s; background: #28c940; }
+
+    .dux-url {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      color: var(--text-muted);
+      background: rgba(0,0,0,.35);
+      border: 1px solid #1f1f1f;
+      border-radius: 8px;
+      padding: .32rem .6rem;
+      overflow: hidden;
+      min-width: 0;
+    }
+    .dux-url-lock { opacity: .55; font-size: .68rem; }
+    .dux-url-text {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      max-width: 0;
+      transition: max-width 1.2s steps(32, end) .45s;
+    }
+    .dux-scene.visible .dux-url-text { max-width: 320px; }
+
+    .dux-tabs {
+      display: flex;
+      gap: .2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .6rem;
+      opacity: 0;
+      transform: translateX(6px);
+      transition: opacity .5s ease 1.1s, transform .5s ease 1.1s;
+    }
+    .dux-scene.visible .dux-tabs { opacity: 1; transform: none; }
+    .dux-tab {
+      padding: .25rem .55rem;
+      border-radius: 5px;
+      color: var(--text-muted);
+      letter-spacing: .04em;
+    }
+    .dux-tab--active {
+      background: rgba(var(--mint-rgb),.1);
+      color: var(--mint);
+      box-shadow: inset 0 0 0 1px rgba(var(--mint-rgb),.2);
+    }
+
+    /* ─── Grid 2 columns ─── */
+    .dux-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      padding: 18px;
+    }
+    .dux-col {
+      background: rgba(255,255,255,.02);
+      border: 1px solid rgba(255,255,255,.05);
+      border-radius: 10px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .dux-scene.visible .dux-col { opacity: 1; transform: none; }
+    .dux-scene.visible .dux-col:nth-child(1) { transition-delay: .85s; }
+    .dux-scene.visible .dux-col:nth-child(2) { transition-delay: 1s; }
+
+    .dux-col-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .dux-col-title {
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -.01em;
+    }
+    .dux-col-meta {
+      font-size: .58rem;
+      color: var(--text-muted);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    /* ─── Buttons column ─── */
+    .dux-btn-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .dux-btn {
+      font-family: var(--font-body);
+      font-size: .8rem;
+      padding: 9px 14px;
+      border-radius: 7px;
+      text-align: center;
+      font-weight: 600;
+      opacity: 0;
+      transform: scale(.92) translateY(4px);
+      transition: opacity .4s ease, transform .4s cubic-bezier(.34,1.56,.64,1);
+    }
+    .dux-scene.visible .dux-btn { opacity: 1; transform: none; }
+    .dux-scene.visible .dux-btn:nth-child(1) { transition-delay: 1.1s; }
+    .dux-scene.visible .dux-btn:nth-child(2) { transition-delay: 1.2s; }
+    .dux-scene.visible .dux-btn:nth-child(3) { transition-delay: 1.3s; }
+    .dux-scene.visible .dux-btn:nth-child(4) { transition-delay: 1.4s; }
+    .dux-btn--primary {
+      background: var(--mint);
+      color: #0e0e0e;
+      box-shadow: 0 0 18px rgba(var(--mint-rgb),.35), inset 0 -2px 0 rgba(0,0,0,.15);
+    }
+    .dux-btn--ghost {
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.7);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .dux-btn--outline {
+      background: transparent;
+      color: var(--mint);
+      border: 1px solid rgba(var(--mint-rgb),.45);
+    }
+    .dux-btn--disabled {
+      background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.25);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .dux-spec {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255,255,255,.05);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .62rem;
+    }
+    .dux-spec-row {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+    }
+    .dux-spec-row b {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* ─── Tokens column ─── */
+    .dux-token {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      color: rgba(255,255,255,.85);
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity .4s ease, transform .4s ease;
+    }
+    .dux-scene.visible .dux-token { opacity: 1; transform: none; }
+    .dux-scene.visible .dux-token:nth-of-type(1) { transition-delay: 1.15s; }
+    .dux-scene.visible .dux-token:nth-of-type(2) { transition-delay: 1.21s; }
+    .dux-scene.visible .dux-token:nth-of-type(3) { transition-delay: 1.27s; }
+    .dux-scene.visible .dux-token:nth-of-type(4) { transition-delay: 1.33s; }
+    .dux-scene.visible .dux-token:nth-of-type(5) { transition-delay: 1.39s; }
+    .dux-scene.visible .dux-token:nth-of-type(6) { transition-delay: 1.45s; }
+    .dux-scene.visible .dux-token:nth-of-type(7) { transition-delay: 1.51s; }
+    .dux-scene.visible .dux-token:nth-of-type(8) { transition-delay: 1.57s; }
+
+    .dux-swatch {
+      width: 14px; height: 14px; border-radius: 4px;
+      border: 1px solid rgba(255,255,255,.1);
+      flex-shrink: 0;
+    }
+    .dux-swatch--mint { background: #5DFFBF; }
+    .dux-swatch--dark { background: #0E0E0E; }
+    .dux-swatch--surface { background: #161616; }
+    .dux-swatch--text { background: #F8F8F8; }
+    .dux-swatch--muted { background: #7A7F85; }
+    .dux-swatch--accent { background: #FF8E6E; }
+    .dux-token code {
+      margin-left: auto;
+      font-size: .6rem;
+      color: rgba(255,255,255,.55);
+    }
+    .dux-token--type {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .dux-type-swatch {
+      width: 22px; height: 18px;
+      background: rgba(255,255,255,.04);
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-heading);
+      font-size: .75rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .dux-type-swatch--sm { font-size: .58rem; font-weight: 500; }
+
+    /* ─── Status bar ─── */
+    .dux-status {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .55rem 1rem;
+      border-top: 1px solid #1f1f1f;
+      background: rgba(0,0,0,.28);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .62rem;
+      color: var(--text-muted);
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity .5s ease 1.9s, transform .5s ease 1.9s;
+    }
+    .dux-scene.visible .dux-status { opacity: 1; transform: none; }
+    .dux-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      color: var(--mint);
+      font-weight: 700;
+    }
+    .dux-status-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 6px rgba(var(--mint-rgb),.5);
+      animation: frLivePulse 1.6s ease-in-out infinite;
+    }
+    .dux-status-meta { opacity: .6; }
+    .dux-status-meta--right { margin-left: auto; }
+
+    /* ─── Phone overlay ─── */
+    .dux-phone {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-46%) scale(.85);
+      width: 200px;
+      height: 380px;
+      background: #0d1117;
+      border: 8px solid #161b22;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.65), 0 0 0 1px rgba(255,255,255,.06);
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity .6s ease 1.4s, transform .7s cubic-bezier(.22,1,.36,1) 1.4s;
+      z-index: 4;
+    }
+    .dux-scene.visible .dux-phone {
+      opacity: 1;
+      transform: translateY(-50%) scale(.85);
+      animation: frFloat 7s ease-in-out 2.6s infinite;
+    }
+    .dux-phone-notch {
+      width: 50px; height: 5px;
+      background: #000;
+      border-radius: 3px;
+      margin: 8px auto 8px;
+    }
+    .dux-phone-screen {
+      padding: 0 12px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .dux-phone-bar {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .55rem;
+      color: rgba(255,255,255,.45);
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255,255,255,.04);
+    }
+
+    /* App header (greeting + avatar) */
+    .dux-phone-app-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .dux-phone-app-title {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .dux-phone-greet {
+      font-family: var(--font-heading);
+      font-size: .9rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -.01em;
+    }
+    .dux-phone-sub {
+      font-size: .52rem;
+      color: var(--text-muted);
+      letter-spacing: .02em;
+    }
+    .dux-phone-avatar {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--mint), #4ade80);
+      color: #0e0e0e;
+      font-weight: 800;
+      font-size: .72rem;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 10px rgba(var(--mint-rgb),.4);
+    }
+
+    /* Hero KPI block */
+    .dux-phone-kpi {
+      background: linear-gradient(180deg, rgba(var(--mint-rgb),.08), rgba(var(--mint-rgb),.02));
+      border: 1px solid rgba(var(--mint-rgb),.18);
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .dux-phone-kpi-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .52rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .dux-phone-kpi-num {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--mint);
+      letter-spacing: -.02em;
+      text-shadow: 0 0 12px rgba(var(--mint-rgb),.3);
+    }
+    .dux-phone-kpi-trend {
+      font-size: .55rem;
+      font-weight: 700;
+      color: #4ade80;
+      letter-spacing: .04em;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .dux-phone-spark {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 26px;
+      padding-top: 4px;
+    }
+    .dux-spark-bar {
+      flex: 1;
+      height: 0;
+      background: linear-gradient(180deg, rgba(var(--mint-rgb),.55), rgba(var(--mint-rgb),.15));
+      border-radius: 2px 2px 0 0;
+      transition: height .6s cubic-bezier(.34,1.56,.64,1);
+    }
+    .dux-scene.visible .dux-spark-bar { height: var(--h); }
+    .dux-scene.visible .dux-spark-bar:nth-child(1) { transition-delay: 1.7s; }
+    .dux-scene.visible .dux-spark-bar:nth-child(2) { transition-delay: 1.78s; }
+    .dux-scene.visible .dux-spark-bar:nth-child(3) { transition-delay: 1.86s; }
+    .dux-scene.visible .dux-spark-bar:nth-child(4) { transition-delay: 1.94s; }
+    .dux-scene.visible .dux-spark-bar:nth-child(5) { transition-delay: 2.02s; }
+    .dux-scene.visible .dux-spark-bar:nth-child(6) { transition-delay: 2.10s; }
+    .dux-scene.visible .dux-spark-bar:nth-child(7) { transition-delay: 2.18s; }
+    .dux-spark-bar--active {
+      background: linear-gradient(180deg, var(--mint), rgba(var(--mint-rgb),.4));
+      box-shadow: 0 0 8px rgba(var(--mint-rgb),.5);
+    }
+
+    /* 2-up stats */
+    .dux-phone-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .dux-phone-stat {
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.05);
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+    .dux-phone-stat-num {
+      font-family: var(--font-heading);
+      font-size: .9rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .dux-phone-stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .5rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    /* Primary CTA */
+    .dux-phone-cta {
+      background: var(--mint);
+      color: #0e0e0e;
+      padding: 9px;
+      border-radius: 8px;
+      font-size: .7rem;
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 0 0 16px rgba(var(--mint-rgb),.4);
+      letter-spacing: .01em;
+    }
+
+    /* Bottom nav */
+    .dux-phone-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 4px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255,255,255,.04);
+    }
+    .dux-phone-nav-item {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.18);
+    }
+    .dux-phone-nav-item--active {
+      width: 16px; height: 4px;
+      border-radius: 2px;
+      background: var(--mint);
+      box-shadow: 0 0 6px rgba(var(--mint-rgb),.5);
+    }
+
+        /* ─── Comment ─── */
+    .dux-comment {
+      position: absolute;
+      top: -18px;
+      left: 24px;
+      display: flex;
+      gap: .55rem;
+      background: rgba(20,20,20,.96);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 11px;
+      padding: .55rem .8rem .65rem;
+      max-width: 240px;
+      box-shadow: 0 18px 35px rgba(0,0,0,.55);
+      opacity: 0;
+      transform: translateY(-8px) scale(.95);
+      transition: opacity .5s ease 2.4s, transform .55s cubic-bezier(.34,1.56,.64,1) 2.4s;
+      z-index: 7;
+    }
+    .dux-scene.visible .dux-comment { opacity: 1; transform: none; }
+    .dux-c-avatar {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: linear-gradient(135deg, #FF8E6E, #f87171);
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: .8rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .dux-c-body { font-size: .68rem; line-height: 1.42; }
+    .dux-c-head {
+      display: flex; gap: .4rem; align-items: baseline;
+      margin-bottom: .15rem;
+    }
+    .dux-c-head b { color: var(--text-primary); font-size: .72rem; }
+    .dux-c-head span { color: var(--text-muted); font-size: .58rem; }
+    .dux-c-body p { margin: 0; color: rgba(255,255,255,.78); }
+
+    /* ─── Cursor ─── */
+    .dux-cursor {
+      position: absolute;
+      top: 38%;
+      left: 38%;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      opacity: 0;
+      transform: translate(-10px, -8px);
+      transition: opacity .5s ease 2.7s, transform .8s cubic-bezier(.34,1.56,.64,1) 2.7s;
+      z-index: 6;
+      pointer-events: none;
+    }
+    .dux-scene.visible .dux-cursor {
+      opacity: 1;
+      transform: none;
+      animation: duxCursorFloat 6s ease-in-out 3.5s infinite;
+    }
+    .dux-cursor svg {
+      width: 16px; height: 18px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,.5));
+    }
+    .dux-cursor-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .58rem;
+      font-weight: 700;
+      padding: .2rem .5rem;
+      border-radius: 5px;
+      background: var(--mint);
+      color: #0e0e0e;
+      letter-spacing: .04em;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+    @keyframes duxCursorFloat {
+      0%, 100% { transform: translate(0,0); }
+      25% { transform: translate(-6px,-3px); }
+      50% { transform: translate(2px,-7px); }
+      75% { transform: translate(-4px,2px); }
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 1100px) {
+      .dux-phone { right: -10px; width: 180px; height: 340px; }
+    }
+    @media (max-width: 900px) {
+      .dux-scene { min-height: auto; }
+      .dux-phone { display: none; }
+      .dux-cursor { display: none; }
+      .dux-comment { position: relative; top: auto; left: auto; margin-bottom: 1rem; }
+    }
+    @media (max-width: 600px) {
+      .dux-grid { grid-template-columns: 1fr; padding: 12px; gap: 10px; }
+      .dux-tabs { display: none; }
+    }
+
+    /* ═══ Evolution canvas · Wireframe → Conversión (tp-anim v1.4) ═══ */
+    .dux-evo-canvas {
+      position: relative;
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(180deg, #131313 0%, #0e0e0e 100%);
+      border: 1px solid #2a2a2a;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px -15px rgba(0,0,0,.65), inset 0 1px 0 rgba(255,255,255,.03);
+      transition: box-shadow .6s ease, border-color .6s ease;
+    }
+
+    /* Browser chrome */
+    .dux-evo-bar {
+      display: flex; align-items: center; gap: .55rem;
+      padding: .55rem .9rem;
+      background: rgba(255,255,255,.02);
+      border-bottom: 1px solid #1f1f1f;
+    }
+    .dux-evo-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .dux-evo-dot:nth-child(1) { background: #ff5f57; }
+    .dux-evo-dot:nth-child(2) { background: #ffbd2e; }
+    .dux-evo-dot:nth-child(3) { background: #28c940; }
+    .dux-evo-url {
+      flex: 1;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .7rem;
+      color: var(--text-muted);
+      background: rgba(0,0,0,.35);
+      border: 1px solid #1f1f1f;
+      border-radius: 6px;
+      padding: .25rem .7rem;
+    }
+
+    /* Page (real content) */
+    .dux-evo-page {
+      position: relative;
+      padding: 1.5rem 2rem 1.75rem;
+      height: calc(100% - 45px);
+      display: flex; flex-direction: column;
+      transition: filter .7s ease, opacity .7s ease;
+    }
+    .dux-evo-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      transition: border-color .6s ease;
+    }
+    .dux-evo-logo {
+      display: flex; align-items: center; gap: .5rem;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--text-primary);
+    }
+    .dux-evo-logo-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 10px rgba(var(--mint-rgb),.5);
+      transition: background .6s ease, box-shadow .6s ease;
+    }
+    .dux-evo-nav {
+      display: flex; gap: 1.5rem; align-items: center;
+      font-size: .82rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: color .6s ease;
+    }
+    .dux-evo-nav-cta {
+      color: var(--mint) !important;
+      font-weight: 600;
+    }
+    .dux-evo-hero {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding-top: 1.25rem;
+    }
+    .dux-evo-hero-copy { position: relative; }
+    .dux-evo-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .58rem;
+      color: var(--mint);
+      background: rgba(var(--mint-rgb),.1);
+      border: 1px solid rgba(var(--mint-rgb),.25);
+      padding: .2rem .55rem;
+      border-radius: 999px;
+      letter-spacing: .08em;
+      margin-bottom: .8rem;
+      transition: opacity .5s ease;
+    }
+    .dux-evo-title {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.5rem;
+      line-height: 1.15;
+      color: var(--text-primary);
+      letter-spacing: -.02em;
+      margin: 0 0 .55rem;
+      transition: color .6s ease, filter .6s ease;
+    }
+    .dux-evo-sub {
+      font-size: .85rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin: 0 0 1.1rem;
+      max-width: 320px;
+      transition: color .6s ease, filter .6s ease;
+    }
+    .dux-evo-ctas { display: flex; gap: .55rem; align-items: center; }
+    .dux-evo-btn-primary {
+      padding: .55rem 1rem;
+      background: var(--mint);
+      color: #0e0e0e;
+      border: 0;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: .82rem;
+      cursor: default;
+      box-shadow: 0 0 16px rgba(var(--mint-rgb),.35), inset 0 -2px 0 rgba(0,0,0,.15);
+      transition: background .6s ease, box-shadow .6s ease, transform .3s ease;
+    }
+    .dux-evo-btn-ghost {
+      padding: .5rem .9rem;
+      background: transparent;
+      color: rgba(255,255,255,.65);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      font-size: .8rem;
+      cursor: default;
+      transition: all .5s ease;
+    }
+    .dux-evo-hero-visual {
+      position: relative;
+      background: linear-gradient(180deg, rgba(var(--mint-rgb),.06), rgba(var(--mint-rgb),.01));
+      border: 1px solid rgba(var(--mint-rgb),.15);
+      border-radius: 10px;
+      padding: 1rem;
+      transition: background .6s ease, border-color .6s ease;
+    }
+    .dux-evo-mini-kpi {
+      display: flex; flex-direction: column; gap: 4px;
+      margin-bottom: 10px;
+    }
+    .dux-evo-mini-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .55rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .dux-evo-mini-num {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--mint);
+      letter-spacing: -.02em;
+      line-height: 1;
+      text-shadow: 0 0 12px rgba(var(--mint-rgb),.3);
+    }
+    .dux-evo-mini-trend {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .65rem;
+      color: #4ade80;
+      font-weight: 700;
+    }
+    .dux-evo-mini-bars {
+      display: flex; align-items: flex-end; gap: 4px;
+      height: 50px;
+    }
+    .dux-evo-mini-bar {
+      flex: 1;
+      height: var(--h);
+      background: linear-gradient(180deg, rgba(var(--mint-rgb),.5), rgba(var(--mint-rgb),.15));
+      border-radius: 3px 3px 0 0;
+      transition: background .6s ease, opacity .6s ease;
+    }
+    .dux-evo-mini-bar--cur {
+      background: linear-gradient(180deg, var(--mint), rgba(var(--mint-rgb),.4));
+      box-shadow: 0 0 10px rgba(var(--mint-rgb),.5);
+    }
+
+    /* Placeholders (visibles solo en fase 1-2) */
+    .dux-evo-ph {
+      position: absolute;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .7rem;
+      color: rgba(255,255,255,.45);
+      background: rgba(255,255,255,.02);
+      border: 1.5px dashed rgba(255,255,255,.2);
+      border-radius: 6px;
+      letter-spacing: .04em;
+      opacity: 0;
+      transition: opacity .5s ease;
+      pointer-events: none;
+    }
+    .dux-evo-ph--title { top: 32px; left: 0; right: 30%; height: 28px; }
+    .dux-evo-ph--sub   { top: 66px; left: 0; right: 50%; height: 18px; font-size: .6rem; }
+    .dux-evo-ph--btn   { top: 96px; left: 0; width: 110px; height: 30px; }
+    .dux-evo-ph--image { top: 8px; left: 8px; right: 8px; bottom: 8px; font-size: .8rem; }
+
+    /* ─── Figma overlay (fase 2) ─── */
+    .dux-evo-figma {
+      position: absolute;
+      top: 45px; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .55s ease;
+    }
+    .dux-evo-figma-sidebar {
+      position: absolute;
+      top: 0; left: 0; width: 180px;
+      height: 100%;
+      background: rgba(13,17,23,.92);
+      backdrop-filter: blur(8px);
+      border-right: 1px solid rgba(13,153,255,.18);
+      padding: 14px 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      color: rgba(255,255,255,.7);
+    }
+    .dux-evo-figma-head {
+      font-size: .58rem;
+      color: #0d99ff;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .dux-evo-figma-layer {
+      padding: 4px 6px;
+      border-radius: 4px;
+      color: rgba(255,255,255,.7);
+    }
+    .dux-evo-figma-sub { padding-left: 14px; color: rgba(255,255,255,.5); font-size: .62rem; }
+    .dux-evo-figma-sub--sel {
+      background: rgba(13,153,255,.15);
+      color: #80caff !important;
+      border: 1px solid rgba(13,153,255,.35);
+    }
+    .dux-evo-figma-comment {
+      position: absolute;
+      top: 40%;
+      right: 32px;
+      width: 200px;
+      background: rgba(20,20,20,.96);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(13,153,255,.3);
+      border-radius: 8px;
+      padding: 8px 10px;
+      display: flex; gap: 8px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.5);
+    }
+    .dux-evo-figma-avatar {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: linear-gradient(135deg, #FF8E6E, #f87171);
+      color: #1a1a1a;
+      font-size: .65rem;
+      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .dux-evo-figma-c-body { font-size: .65rem; }
+    .dux-evo-figma-c-body b { color: var(--text-primary); font-size: .68rem; }
+    .dux-evo-figma-c-body p { margin: 1px 0 0; color: var(--text-secondary); }
+
+    /* ─── Interaction overlay (fase 4-5) ─── */
+    .dux-evo-interact {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 12px 20px;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .dux-evo-flow {
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 14px;
+      background: rgba(0,0,0,.65);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(var(--mint-rgb),.2);
+      border-radius: 30px;
+      max-width: 380px;
+      margin: 0 auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .7rem;
+      position: relative;
+    }
+    .dux-evo-flow-node {
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: var(--text-muted);
+      border: 1px solid rgba(255,255,255,.1);
+      letter-spacing: .03em;
+    }
+    .dux-evo-flow-node--done {
+      color: var(--mint);
+      background: rgba(var(--mint-rgb),.08);
+      border-color: rgba(var(--mint-rgb),.3);
+    }
+    .dux-evo-flow-node--active {
+      color: #0e0e0e;
+      background: var(--mint);
+      border-color: var(--mint);
+      font-weight: 700;
+      box-shadow: 0 0 12px rgba(var(--mint-rgb),.55);
+    }
+    .dux-evo-flow-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(var(--mint-rgb),.3), rgba(var(--mint-rgb),.6));
+    }
+    .dux-evo-flow-dot {
+      position: absolute;
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 10px var(--mint);
+      top: 50%;
+      left: 30%;
+      transform: translateY(-50%);
+      animation: duxFlowDot 3s ease-in-out infinite;
+    }
+    @keyframes duxFlowDot {
+      0% { left: 24%; }
+      45% { left: 55%; }
+      90%, 100% { left: 86%; }
+    }
+    .dux-evo-cursor {
+      position: absolute;
+      width: 18px; height: 22px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,.6));
+      bottom: 90px;
+      left: 32%;
+      animation: duxEvoCursor 4s ease-in-out infinite;
+    }
+    .dux-evo-cursor-tag {
+      position: absolute;
+      bottom: 76px;
+      left: calc(32% + 22px);
+      background: var(--mint);
+      color: #0e0e0e;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .58rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      animation: duxEvoCursor 4s ease-in-out infinite;
+    }
+    @keyframes duxEvoCursor {
+      0%, 100% { transform: translate(0,0); }
+      50% { transform: translate(8px, -4px); }
+    }
+
+    /* ─── Conversion overlay (fase 5) ─── */
+    .dux-evo-convert {
+      position: absolute;
+      top: 80px;
+      right: 30px;
+      display: flex; flex-direction: column; gap: 10px;
+      opacity: 0;
+      transform: translateY(-10px) scale(.94);
+      transition: opacity .55s ease, transform .6s cubic-bezier(.34,1.56,.64,1);
+      pointer-events: none;
+      z-index: 10;
+    }
+    .dux-evo-kpi-badge {
+      display: flex; align-items: center; gap: 6px;
+      background: linear-gradient(135deg, rgba(var(--mint-rgb),.95), rgba(74,222,128,.85));
+      color: #0e0e0e;
+      padding: 8px 12px;
+      border-radius: 8px;
+      box-shadow: 0 0 28px rgba(var(--mint-rgb),.45), 0 10px 24px rgba(0,0,0,.4);
+      font-family: var(--font-heading);
+      font-weight: 800;
+    }
+    .dux-evo-kpi-arrow { font-size: .8rem; }
+    .dux-evo-kpi-pct { font-size: 1.1rem; letter-spacing: -.02em; }
+    .dux-evo-kpi-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .58rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      opacity: .7;
+      margin-left: 4px;
+    }
+    .dux-evo-leads {
+      display: flex; align-items: baseline; gap: 5px;
+      background: rgba(20,20,20,.92);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(var(--mint-rgb),.25);
+      border-radius: 8px;
+      padding: 6px 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.4);
+    }
+    .dux-evo-leads-num {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: .95rem;
+      color: var(--mint);
+    }
+    .dux-evo-leads-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .55rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    /* ═══ STATE: Phase 1 — Wireframe ═══ */
+    .dux-evo-canvas.is-phase-1 .dux-evo-page { filter: grayscale(.85); }
+    .dux-evo-canvas.is-phase-1 .dux-evo-tag,
+    .dux-evo-canvas.is-phase-1 .dux-evo-title,
+    .dux-evo-canvas.is-phase-1 .dux-evo-sub,
+    .dux-evo-canvas.is-phase-1 .dux-evo-btn-primary,
+    .dux-evo-canvas.is-phase-1 .dux-evo-btn-ghost,
+    .dux-evo-canvas.is-phase-1 .dux-evo-mini-kpi,
+    .dux-evo-canvas.is-phase-1 .dux-evo-mini-bars { opacity: 0; }
+    .dux-evo-canvas.is-phase-1 .dux-evo-hero-visual {
+      background: rgba(255,255,255,.02);
+      border-color: rgba(255,255,255,.1);
+    }
+    .dux-evo-canvas.is-phase-1 .dux-evo-logo-dot {
+      background: rgba(255,255,255,.25);
+      box-shadow: none;
+    }
+    .dux-evo-canvas.is-phase-1 .dux-evo-logo-text,
+    .dux-evo-canvas.is-phase-1 .dux-evo-nav { color: rgba(255,255,255,.35); }
+    .dux-evo-canvas.is-phase-1 .dux-evo-ph { opacity: 1; }
+
+    /* ═══ STATE: Phase 2 — Prototipo Figma ═══ */
+    .dux-evo-canvas.is-phase-2 .dux-evo-page { filter: grayscale(.7); }
+    .dux-evo-canvas.is-phase-2 .dux-evo-tag,
+    .dux-evo-canvas.is-phase-2 .dux-evo-title,
+    .dux-evo-canvas.is-phase-2 .dux-evo-sub,
+    .dux-evo-canvas.is-phase-2 .dux-evo-btn-primary,
+    .dux-evo-canvas.is-phase-2 .dux-evo-btn-ghost,
+    .dux-evo-canvas.is-phase-2 .dux-evo-mini-kpi,
+    .dux-evo-canvas.is-phase-2 .dux-evo-mini-bars { opacity: 0; }
+    .dux-evo-canvas.is-phase-2 .dux-evo-ph { opacity: 1; }
+    .dux-evo-canvas.is-phase-2 .dux-evo-figma { opacity: 1; }
+    .dux-evo-canvas.is-phase-2 { border-color: rgba(13,153,255,.3); box-shadow: 0 30px 60px -15px rgba(0,0,0,.65), 0 0 50px rgba(13,153,255,.1); }
+
+    /* ═══ STATE: Phase 3 — Interfaz final ═══ */
+    /* (Default state: real content visible, no overlays) */
+
+    /* ═══ STATE: Phase 4 — Interacción ═══ */
+    .dux-evo-canvas.is-phase-4 .dux-evo-interact { opacity: 1; transform: none; }
+    .dux-evo-canvas.is-phase-4 .dux-evo-btn-primary {
+      box-shadow: 0 0 28px rgba(var(--mint-rgb),.55), inset 0 -2px 0 rgba(0,0,0,.15);
+      transform: translateY(-1px);
+    }
+
+    /* ═══ STATE: Phase 5 — Conversión ═══ */
+    .dux-evo-canvas.is-phase-5 .dux-evo-interact { opacity: 1; transform: none; }
+    .dux-evo-canvas.is-phase-5 .dux-evo-convert { opacity: 1; transform: none; }
+    .dux-evo-canvas.is-phase-5 {
+      border-color: rgba(var(--mint-rgb),.35);
+      box-shadow: 0 30px 60px -15px rgba(0,0,0,.65), 0 0 60px rgba(var(--mint-rgb),.18);
+    }
+    .dux-evo-canvas.is-phase-5 .dux-evo-btn-primary {
+      box-shadow: 0 0 32px rgba(var(--mint-rgb),.65), inset 0 -2px 0 rgba(0,0,0,.15);
+    }
+
+    /* ─── Chips ─── */
+    .dux-evo-chips {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 1.75rem auto 0;
+      max-width: 920px;
+    }
+    .dux-evo-chip {
+      display: flex; align-items: center; gap: 8px;
+      padding: 9px 16px 9px 12px;
+      background: rgba(255,255,255,.02);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 999px;
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .35s cubic-bezier(.22,1,.36,1);
+    }
+    .dux-evo-chip:hover {
+      background: rgba(255,255,255,.05);
+      color: var(--text-secondary);
+      border-color: rgba(255,255,255,.18);
+    }
+    .dux-evo-chip-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .65rem;
+      color: var(--text-muted);
+      background: rgba(255,255,255,.05);
+      padding: 2px 6px;
+      border-radius: 5px;
+      letter-spacing: .06em;
+      transition: all .35s ease;
+    }
+    .dux-evo-chip.is-active {
+      background: rgba(var(--mint-rgb),.08);
+      border-color: rgba(var(--mint-rgb),.45);
+      color: var(--mint);
+      box-shadow: 0 0 22px rgba(var(--mint-rgb),.18), inset 0 0 0 1px rgba(var(--mint-rgb),.15);
+    }
+    .dux-evo-chip.is-active .dux-evo-chip-num {
+      background: var(--mint);
+      color: #0e0e0e;
+    }
+
+    @media (max-width: 900px) {
+      .dux-evo-canvas { aspect-ratio: auto; min-height: 360px; }
+      .dux-evo-page { padding: 1rem 1.25rem 1.25rem; }
+      .dux-evo-title { font-size: 1.15rem; }
+      .dux-evo-sub { font-size: .75rem; }
+      .dux-evo-hero { grid-template-columns: 1fr; gap: 1rem; }
+      .dux-evo-hero-visual { display: none; }
+      .dux-evo-figma-sidebar { width: 140px; font-size: .58rem; }
+      .dux-evo-figma-comment { display: none; }
+      .dux-evo-convert { top: 60px; right: 14px; }
+      .dux-evo-chips { padding: 0 1rem; }
+      .dux-evo-chip { font-size: .72rem; padding: 7px 12px 7px 10px; }
+      .dux-evo-chip-name { display: none; }
+    }
   </style>
 </head>
 
@@ -171,84 +1305,124 @@
           </div>
         </div>
         <!-- Hero visual: browser mockup with friction hotspots -->
-        <div class="sp-hero-visual reveal reveal-delay-1">
-          <div class="sp-browser-mock">
-            <div class="sp-browser-topbar">
-              <span class="sp-browser-dot"></span>
-              <span class="sp-browser-dot"></span>
-              <span class="sp-browser-dot"></span>
-              <span class="sp-browser-url">app.ejemplo.com/dashboard</span>
-            </div>
-            <div class="sp-browser-body" id="ux-mockup">
-              <!-- Simulated interface with friction hotspots -->
-              <div class="sp-mock-sidebar">
-                <div class="sp-mock-nav-item active"></div>
-                <div class="sp-mock-nav-item"></div>
-                <div class="sp-mock-nav-item"></div>
-                <div class="sp-mock-nav-item"></div>
-                <div class="sp-mock-nav-item"></div>
+        <div class="sp-hero-visual dux-scene reveal reveal-delay-1" aria-hidden="true">
+          <!-- Browser frame: design system live -->
+          <div class="dux-frame">
+            <div class="dux-frame-bar">
+              <span class="dux-dot"></span><span class="dux-dot"></span><span class="dux-dot"></span>
+              <div class="dux-url">
+                <span class="dux-url-lock">🔒</span>
+                <span class="dux-url-text">trespuntoscomunicacion.es/design-system</span>
               </div>
-              <div class="sp-mock-content">
-                <div class="sp-mock-header">
-                  <div class="sp-mock-title-bar"></div>
-                  <div class="sp-mock-actions">
-                    <div class="sp-mock-btn"></div>
-                    <div class="sp-mock-btn"></div>
-                  </div>
+              <div class="dux-tabs">
+                <span class="dux-tab dux-tab--active">Components</span>
+                <span class="dux-tab">Tokens</span>
+                <span class="dux-tab">Flows</span>
+              </div>
+            </div>
+            <div class="dux-grid">
+              <!-- Components column -->
+              <div class="dux-col">
+                <div class="dux-col-head">
+                  <span class="dux-col-title">Button</span>
+                  <span class="dux-col-meta">4 variants</span>
                 </div>
-                <div class="sp-mock-grid">
-                  <div class="sp-mock-card">
-                    <div class="sp-mock-card-header"></div>
-                    <div class="sp-mock-card-body">
-                      <div class="sp-mock-line"></div>
-                      <div class="sp-mock-line short"></div>
-                    </div>
-                  </div>
-                  <div class="sp-mock-card">
-                    <div class="sp-mock-card-header"></div>
-                    <div class="sp-mock-card-body">
-                      <div class="sp-mock-line"></div>
-                      <div class="sp-mock-line short"></div>
-                    </div>
-                  </div>
-                  <div class="sp-mock-card">
-                    <div class="sp-mock-card-header"></div>
-                    <div class="sp-mock-card-body">
-                      <div class="sp-mock-line"></div>
-                      <div class="sp-mock-line short"></div>
-                    </div>
-                  </div>
-                  <div class="sp-mock-card full">
-                    <div class="sp-mock-card-header"></div>
-                    <div class="sp-mock-card-body">
-                      <div class="sp-mock-chart"></div>
-                    </div>
-                  </div>
+                <div class="dux-btn-stack">
+                  <div class="dux-btn dux-btn--primary">Continuar →</div>
+                  <div class="dux-btn dux-btn--ghost">Atrás</div>
+                  <div class="dux-btn dux-btn--outline">Cancelar</div>
+                  <div class="dux-btn dux-btn--disabled">Enviado</div>
                 </div>
-                <!-- Friction hotspots that animate in -->
-                <div class="sp-hotspot" id="hs-nav" data-label="Navegación confusa">
-                  <span class="sp-hotspot-ping"></span>
-                  <span class="sp-hotspot-dot"></span>
+                <div class="dux-spec">
+                  <div class="dux-spec-row"><span>variant</span><b>primary</b></div>
+                  <div class="dux-spec-row"><span>size</span><b>lg · 48px</b></div>
+                  <div class="dux-spec-row"><span>radius</span><b>12px</b></div>
+                  <div class="dux-spec-row"><span>icon</span><b>arrow-right</b></div>
                 </div>
-                <div class="sp-hotspot" id="hs-hierarchy" data-label="Jerarquía débil">
-                  <span class="sp-hotspot-ping"></span>
-                  <span class="sp-hotspot-dot"></span>
+              </div>
+              <!-- Tokens column -->
+              <div class="dux-col">
+                <div class="dux-col-head">
+                  <span class="dux-col-title">Tokens</span>
+                  <span class="dux-col-meta">12</span>
                 </div>
-                <div class="sp-hotspot" id="hs-cta" data-label="CTA poco claro">
-                  <span class="sp-hotspot-ping"></span>
-                  <span class="sp-hotspot-dot"></span>
+                <div class="dux-token"><span class="dux-swatch dux-swatch--mint"></span><span>mint</span><code>#5DFFBF</code></div>
+                <div class="dux-token"><span class="dux-swatch dux-swatch--dark"></span><span>bg-base</span><code>#0E0E0E</code></div>
+                <div class="dux-token"><span class="dux-swatch dux-swatch--surface"></span><span>surface</span><code>#161616</code></div>
+                <div class="dux-token"><span class="dux-swatch dux-swatch--text"></span><span>fg</span><code>#F8F8F8</code></div>
+                <div class="dux-token"><span class="dux-swatch dux-swatch--muted"></span><span>muted</span><code>#7A7F85</code></div>
+                <div class="dux-token"><span class="dux-swatch dux-swatch--accent"></span><span>peach</span><code>#FF8E6E</code></div>
+                <div class="dux-token dux-token--type"><span class="dux-type-swatch">Aa</span><span>heading-lg</span><code>32/1.1</code></div>
+                <div class="dux-token dux-token--type"><span class="dux-type-swatch dux-type-swatch--sm">Aa</span><span>body</span><code>16/1.5</code></div>
+              </div>
+            </div>
+            <div class="dux-status">
+              <span class="dux-status-pill"><span class="dux-status-dot"></span>Synced</span>
+              <span class="dux-status-meta">12 components · 36 tokens</span>
+              <span class="dux-status-meta dux-status-meta--right">v2.4.0</span>
+            </div>
+          </div>
+
+          <!-- Phone overlay: design system aplicado a un producto real (dashboard) -->
+          <div class="dux-phone">
+            <div class="dux-phone-notch"></div>
+            <div class="dux-phone-screen">
+              <div class="dux-phone-bar"><span class="dux-phone-time">22:00</span><span>●●● ◐ ▁</span></div>
+              <div class="dux-phone-app-head">
+                <div class="dux-phone-app-title">
+                  <span class="dux-phone-greet">Dashboard</span>
+                  <span class="dux-phone-sub">Última actualización · ahora</span>
                 </div>
+                <div class="dux-phone-avatar">J</div>
+              </div>
+              <div class="dux-phone-kpi">
+                <div class="dux-phone-kpi-label">Ingresos · 7d</div>
+                <div class="dux-phone-kpi-num"><span data-target="4832" data-prefix="€">€0</span><span class="dux-phone-kpi-trend">▲ 12%</span></div>
+                <div class="dux-phone-spark">
+                  <span class="dux-spark-bar" style="--h:30%"></span>
+                  <span class="dux-spark-bar" style="--h:45%"></span>
+                  <span class="dux-spark-bar" style="--h:38%"></span>
+                  <span class="dux-spark-bar" style="--h:65%"></span>
+                  <span class="dux-spark-bar" style="--h:55%"></span>
+                  <span class="dux-spark-bar" style="--h:85%"></span>
+                  <span class="dux-spark-bar dux-spark-bar--active" style="--h:100%"></span>
+                </div>
+              </div>
+              <div class="dux-phone-stats">
+                <div class="dux-phone-stat">
+                  <div class="dux-phone-stat-num" data-target="1247">0</div>
+                  <div class="dux-phone-stat-label">usuarios</div>
+                </div>
+                <div class="dux-phone-stat">
+                  <div class="dux-phone-stat-num" data-target="3.8" data-suffix="%">0%</div>
+                  <div class="dux-phone-stat-label">conversión</div>
+                </div>
+              </div>
+              <div class="dux-phone-cta">Ver detalle →</div>
+              <div class="dux-phone-nav">
+                <span class="dux-phone-nav-item dux-phone-nav-item--active"></span>
+                <span class="dux-phone-nav-item"></span>
+                <span class="dux-phone-nav-item"></span>
+                <span class="dux-phone-nav-item"></span>
               </div>
             </div>
           </div>
-          <!-- Floating badge -->
-          <div class="sp-float-badge reveal" id="sp-analysis-badge">
-            <svg width="14" height="14" fill="none" stroke="var(--mint)" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </svg>
-            <span>3 fricciones detectadas</span>
+
+          <!-- Comment from Dani (review) -->
+          <div class="dux-comment">
+            <div class="dux-c-avatar">D</div>
+            <div class="dux-c-body">
+              <div class="dux-c-head"><b>Dani</b><span>hace 2h</span></div>
+              <p>+5% en el CTA al subir el size a lg ✅</p>
+            </div>
           </div>
-        </div>
+
+          <!-- Cursor with label -->
+          <div class="dux-cursor">
+            <svg viewBox="0 0 18 22" fill="#fff"><path d="M2 1l14 8-6 2 4 8-3 1-4-8-5 4z" stroke="#0e0e0e" stroke-width="1.2"/></svg>
+            <span class="dux-cursor-tag">Jordi · designer</span>
+          </div>
+        </div>          </div>
       </div>
     </div>
   </section>
@@ -460,63 +1634,131 @@
       <div class="conversion-flow-container reveal reveal-delay-2" style="margin-top: 4rem;">
         <div class="ux-evolution-wrapper">
 
-          <div class="ux-evolution-canvas">
-            <!-- Phase 1 & 3: Base Skeleton to Interface -->
-            <div class="ux-evol-header">
-              <div class="ux-evol-logo"></div>
+          <div class="dux-evo-canvas is-phase-1" id="dux-evo-canvas" aria-hidden="true">
+            <!-- Browser chrome -->
+            <div class="dux-evo-bar">
+              <span class="dux-evo-dot"></span><span class="dux-evo-dot"></span><span class="dux-evo-dot"></span>
+              <span class="dux-evo-url">🔒 acmeos.app/operaciones</span>
             </div>
-            <div class="ux-evol-body">
-              <div class="ux-evol-image"></div>
-              <div class="ux-evol-content">
-                <div class="ux-evol-text-1"></div>
-                <div class="ux-evol-text-2"></div>
-                <div class="ux-evol-btn"></div>
+
+            <!-- Page (contenido REAL siempre en DOM, estilo cambia por fase) -->
+            <div class="dux-evo-page">
+              <!-- Header -->
+              <header class="dux-evo-header">
+                <div class="dux-evo-logo">
+                  <span class="dux-evo-logo-dot"></span>
+                  <span class="dux-evo-logo-text">AcmeOS</span>
+                </div>
+                <nav class="dux-evo-nav">
+                  <span>Producto</span><span>Precio</span><span>Equipo</span>
+                  <span class="dux-evo-nav-cta">Iniciar sesión →</span>
+                </nav>
+              </header>
+
+              <!-- Hero -->
+              <div class="dux-evo-hero">
+                <div class="dux-evo-hero-copy">
+                  <span class="dux-evo-tag">B2B · 2024</span>
+                  <h3 class="dux-evo-title">Operaciones B2B sin fricción.</h3>
+                  <p class="dux-evo-sub">La plataforma que escala con tu equipo y tu negocio.</p>
+                  <div class="dux-evo-ctas">
+                    <button class="dux-evo-btn-primary">Empezar gratis →</button>
+                    <button class="dux-evo-btn-ghost">Ver demo</button>
+                  </div>
+                  <!-- Wireframe placeholder labels (visibles solo en fase 1-2) -->
+                  <span class="dux-evo-ph dux-evo-ph--title">[ Headline ]</span>
+                  <span class="dux-evo-ph dux-evo-ph--sub">[ Subtítulo · 1 línea ]</span>
+                  <span class="dux-evo-ph dux-evo-ph--btn">[ CTA primary ]</span>
+                </div>
+                <div class="dux-evo-hero-visual">
+                  <div class="dux-evo-mini-kpi">
+                    <span class="dux-evo-mini-label">Revenue · 7d</span>
+                    <span class="dux-evo-mini-num">€4.832</span>
+                    <span class="dux-evo-mini-trend">▲ +12%</span>
+                  </div>
+                  <div class="dux-evo-mini-bars">
+                    <span class="dux-evo-mini-bar" style="--h:30%"></span>
+                    <span class="dux-evo-mini-bar" style="--h:50%"></span>
+                    <span class="dux-evo-mini-bar" style="--h:42%"></span>
+                    <span class="dux-evo-mini-bar" style="--h:65%"></span>
+                    <span class="dux-evo-mini-bar" style="--h:80%"></span>
+                    <span class="dux-evo-mini-bar dux-evo-mini-bar--cur" style="--h:100%"></span>
+                  </div>
+                  <span class="dux-evo-ph dux-evo-ph--image">[ Product image ]</span>
+                </div>
               </div>
             </div>
 
-            <!-- Phase 2: Figma Prototyping Overlay -->
-            <div class="ux-figma-layer">
-              <div class="figma-toolbar">
-                <div class="figma-tool active"></div>
-                <div class="figma-tool"></div>
-                <div class="figma-tool"></div>
+            <!-- ▸ Fase 2 overlay: Figma prototyping (sidebar capas + comment) -->
+            <div class="dux-evo-figma" aria-hidden="true">
+              <div class="dux-evo-figma-sidebar">
+                <div class="dux-evo-figma-head">Layers</div>
+                <div class="dux-evo-figma-layer dux-evo-figma-layer--open">▾ Hero</div>
+                <div class="dux-evo-figma-layer dux-evo-figma-sub">• Title</div>
+                <div class="dux-evo-figma-layer dux-evo-figma-sub dux-evo-figma-sub--sel">• CTA primary</div>
+                <div class="dux-evo-figma-layer dux-evo-figma-sub">• Subtitle</div>
+                <div class="dux-evo-figma-layer">▸ Nav</div>
+                <div class="dux-evo-figma-layer">▸ Footer</div>
               </div>
-              <div class="figma-sidebar-l">
-                <div class="figma-layer-item"></div>
-                <div class="figma-layer-item" style="width: 70%;"></div>
-                <div class="figma-layer-item" style="width: 50%;"></div>
-                <div class="figma-layer-item" style="width: 80%;"></div>
+              <div class="dux-evo-figma-comment">
+                <div class="dux-evo-figma-avatar">D</div>
+                <div class="dux-evo-figma-c-body">
+                  <b>Dani</b>
+                  <p>+5% al subir size a lg ✅</p>
+                </div>
               </div>
-              <div class="figma-sidebar-r">
-                <div class="figma-layer-item"></div>
-                <div class="figma-layer-item" style="width: 60%;"></div>
-              </div>
-              <div class="figma-bounds"></div>
             </div>
 
-            <!-- Phase 4 & 5: Interaction Path (User Flow) -->
-            <div class="ux-interaction-layer">
-              <div class="inter-path"></div>
-              <div class="inter-node node-home">
-                <div class="node-label-txt">Home</div>
+            <!-- ▸ Fase 4-5 overlay: Interaction (cursor + flow Home→Producto→Acción) -->
+            <div class="dux-evo-interact" aria-hidden="true">
+              <div class="dux-evo-flow">
+                <span class="dux-evo-flow-node dux-evo-flow-node--done">Home</span>
+                <span class="dux-evo-flow-line"></span>
+                <span class="dux-evo-flow-node dux-evo-flow-node--done">Producto</span>
+                <span class="dux-evo-flow-line"></span>
+                <span class="dux-evo-flow-node dux-evo-flow-node--active">Acción</span>
+                <span class="dux-evo-flow-dot"></span>
               </div>
-              <div class="inter-node node-prod">
-                <div class="node-label-txt">Producto</div>
+              <svg class="dux-evo-cursor" viewBox="0 0 18 22" fill="#fff"><path d="M2 1l14 8-6 2 4 8-3 1-4-8-5 4z" stroke="#0e0e0e" stroke-width="1.2"/></svg>
+              <span class="dux-evo-cursor-tag">Jordi · UX</span>
+            </div>
+
+            <!-- ▸ Fase 5 overlay: Conversion KPI -->
+            <div class="dux-evo-convert" aria-hidden="true">
+              <div class="dux-evo-kpi-badge">
+                <span class="dux-evo-kpi-arrow">▲</span>
+                <span class="dux-evo-kpi-pct">+43%</span>
+                <span class="dux-evo-kpi-label">conversión</span>
               </div>
-              <div class="inter-node node-act">
-                <div class="node-label-txt">Acción</div>
+              <div class="dux-evo-leads">
+                <span class="dux-evo-leads-num">1.247</span>
+                <span class="dux-evo-leads-label">leads/mes</span>
               </div>
-              <!-- User Dot -->
-              <div class="inter-dot"></div>
             </div>
           </div>
 
-          <div class="ux-anim-labels">
-            <span class="ux-phase-badge pb-wireframe">Wireframe</span>
-            <span class="ux-phase-badge pb-figma">Prototipo en Figma</span>
-            <span class="ux-phase-badge pb-ui">Interfaz final</span>
-            <span class="ux-phase-badge pb-interact">Interacción</span>
-            <span class="ux-phase-badge pb-convert">Conversión</span>
+          <!-- Phase chips (clickable + auto-cycle) -->
+          <div class="dux-evo-chips" id="dux-evo-chips">
+            <button type="button" class="dux-evo-chip is-active" data-phase="1">
+              <span class="dux-evo-chip-num">01</span>
+              <span class="dux-evo-chip-name">Wireframe</span>
+            </button>
+            <button type="button" class="dux-evo-chip" data-phase="2">
+              <span class="dux-evo-chip-num">02</span>
+              <span class="dux-evo-chip-name">Prototipo Figma</span>
+            </button>
+            <button type="button" class="dux-evo-chip" data-phase="3">
+              <span class="dux-evo-chip-num">03</span>
+              <span class="dux-evo-chip-name">Interfaz final</span>
+            </button>
+            <button type="button" class="dux-evo-chip" data-phase="4">
+              <span class="dux-evo-chip-num">04</span>
+              <span class="dux-evo-chip-name">Interacción</span>
+            </button>
+            <button type="button" class="dux-evo-chip" data-phase="5">
+              <span class="dux-evo-chip-num">05</span>
+              <span class="dux-evo-chip-name">Conversión</span>
+            </button>
           </div>
 
         </div>
@@ -988,6 +2230,97 @@
     try{try{TP.initJS();}catch(e){}}catch(e){console.warn("TP.initJS:",e);}
   });</script>
   <script src="/js/service-page.js" defer></script>
+  <!-- Hero UX/UI · Design system showcase animation (tp-anim v1.4) -->
+  <script defer>
+    (function(){
+      const scene = document.querySelector('.dux-scene');
+      if (!scene) return;
+
+      // Hero above-the-fold → arranque inmediato (per skill §2 excepción justificada)
+      scene.classList.add('visible');
+
+      // Count-up para el número hero del phone + 2 stats
+      function animateCounter(el, delay){
+        const target = parseFloat(el.dataset.target);
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        const isFloat = target % 1 !== 0;
+        setTimeout(() => {
+          const duration = 1300;
+          const start = performance.now();
+          function tick(now){
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            const val = target * eased;
+            const formatted = isFloat ? val.toFixed(1) : Math.round(val).toLocaleString('es-ES');
+            el.textContent = prefix + formatted + suffix;
+            if (t < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        }, delay);
+      }
+
+      // Trigger los count-ups después de la entrada de la escena (~2s in)
+      const hero = scene.querySelector('.dux-phone-kpi-num span[data-target]');
+      const stats = scene.querySelectorAll('.dux-phone-stat-num[data-target]');
+      if (hero) animateCounter(hero, 2000);
+      stats.forEach((s, i) => animateCounter(s, 2400 + i * 200));
+    })();
+  </script>
+
+  <!-- Evolution canvas · Wireframe → Conversión cycler (tp-anim v1.4) -->
+  <script defer>
+    (function(){
+      const canvas = document.getElementById('dux-evo-canvas');
+      const chipsWrap = document.getElementById('dux-evo-chips');
+      if (!canvas || !chipsWrap) return;
+      const chips = chipsWrap.querySelectorAll('.dux-evo-chip');
+      let phase = 1;
+      let autoTimer = null;
+      let userInteracted = false;
+
+      function setPhase(n) {
+        phase = n;
+        canvas.classList.remove('is-phase-1','is-phase-2','is-phase-3','is-phase-4','is-phase-5');
+        canvas.classList.add('is-phase-' + n);
+        chips.forEach(c => c.classList.toggle('is-active', parseInt(c.dataset.phase, 10) === n));
+      }
+
+      function next() {
+        setPhase(phase >= 5 ? 1 : phase + 1);
+      }
+
+      function startAuto() {
+        if (autoTimer) return;
+        autoTimer = setInterval(next, 3000);
+      }
+
+      function stopAuto() {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+
+      // Click chip → set phase, stop autoplay
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          stopAuto();
+          userInteracted = true;
+          setPhase(parseInt(chip.dataset.phase, 10));
+        });
+      });
+
+      // IntersectionObserver: start autoplay when canvas enters viewport
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting && !userInteracted) {
+            startAuto();
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      obs.observe(canvas);
+    })();
+  </script>
   <script src="/js/supabase-forms.js?v=20260416" defer></script>
   <script src="/js/form-validation.js" defer></script>
 
