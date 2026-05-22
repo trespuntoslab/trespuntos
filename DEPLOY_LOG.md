@@ -2,6 +2,16 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-05-22 11:30 — Diseño UX/UI: rediseño hero + metodología en 4 ciudades
+- **Commit:** `1106301` (main · `feat(servicios/diseno-ux-ui): rediseñar hero + metodología en 4 ciudades`)
+- **Archivos (4):** `servicios/diseno-ux-ui-{barcelona,madrid,bilbao,sevilla}/index.html` (+1444 / -109 cada una)
+- **Cambios principales** (aplica skill `/tp-anim` v1.3+v1.4 con antipatrón #12 documentado · "animar sobre placeholders abstractos nunca se siente premium"):
+  - **Hero rediseñado (.dux-scene)** — Sustituye el mockup con sp-hotspot (3 fricciones rojas sobre dashboard skeleton) por un design system showcase: browser frame con 2 cols (Components: 4 buttons reales con texto + spec rows; Tokens: 6 swatches con hex visible + 2 type swatches), Phone overlay 200×380 con dashboard real (KPI €4.832 ▲+12% + sparkline + 2 mini-stats con count-up + CTA mint), Comment Dani peach con feedback de review, Cursor "Jordi · designer" mint. Animaciones encadenadas via `.visible` con frame scale-in, URL typewriter (steps 32), buttons pop bounce stagger, tokens stagger 60ms, phone slide, count-up ease-out cubic, idle loops sutiles.
+  - **Metodología rediseñada (.dux-evo-canvas)** — Sustituye la animación con 4 layers abstractos por un único mockup (AcmeOS landing) que evoluciona por 5 fases via classes `.is-phase-1` a `.is-phase-5`: 01 Wireframe (grayscale 85% + placeholders dashed), 02 Prototipo Figma (+ sidebar capas + comment + glow azul), 03 Interfaz final (contenido real revelado), 04 Interacción (+ flow nodes Home → Producto → Acción con dot viajando + cursor sobre CTA), 05 Conversión (+ KPI badge ▲+43% + counter 1.247 leads/mes + glow mint). Auto-cycle 3s + chips clickables.
+- **Cloudflare:** `purge_everything` → `{"success":true}`.
+- **Verificación post-purga (sleep 8s):** las 4 URLs sirven HTTP 200 con last-modified `2026-05-22 11:30:47-53 GMT`, cf-cache HIT tras la primera request post-purge, 76 referencias a `dux-scene|dux-evo-canvas` en cada HTML ✅.
+- **Notas:** El antipatrón #12 documentado en la skill costó 3 iteraciones aprender (audit→optimized con grises → no premium; pivot a design system showcase con contenido real → premium logrado). La skill ahora tiene el TEST DE CONTENIDO REAL en §10 paso 0 y la galería §11 de valores reusables para no recaer.
+
 ## 2026-05-21 07:24 — Sectores: cache-bust sectores.css en 15 análisis
 - **Commit:** `8288bb5` (main · `fix(sectores): añadir ?v=2026-05-21 a sectores.css link en 15 análisis`)
 - **Motivo:** Tras el deploy de 07:07 (layout horizontal), navegadores con caché HTTP de la versión previa de `sectores.css` seguían parseando el rule viejo de `.caso-card` (sin `display:flex`) incluso tras Cmd+Shift+R en algunos casos. Verificado con `document.styleSheets` (rule cacheado sin flex) vs `fetch(url, {cache:'no-store'})` (rule nuevo con flex). El navegador no revalidaba.
