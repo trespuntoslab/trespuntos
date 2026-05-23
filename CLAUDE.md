@@ -1235,6 +1235,103 @@ Los eventos se disparan con `window.clarity('event', nombre)` **solo si el usuar
 
 ---
 
+### Cambios aplicados (2026-05-23) — Recuperación post-migración SEO + sanitización n8n + optimización Airtable
+
+#### 1. Diagnóstico de la caída de clicks (-23.8% GSC)
+Investigación profunda con 5 agentes paralelos (datos GA4/GSC, auditoría técnica, Semrush, Airtable quota, -73% generate_lead real). Conclusión clave: **NO es un problema de UX, performance ni off-page. Es upstream — menos tráfico orgánico llegando al funnel**. Cuadra con −24% GSC clicks y `form_start` estable + `generate_lead` -73% (los pocos que llegan, convierten igual; simplemente llegan menos). Performance Lighthouse 100/100/100 mobile, LCP 1.6s, CLS 0. Backlinks +15% MoM, Authority Score estable, Site Health Semrush 84% (+6%).
+
+**Causas concurrentes identificadas:**
+- 16 URLs `/sectores/*` con `noindex,nofollow` listadas en `sitemap.xml` — Google recibía señales contradictorias y malgastaba crawl budget (correcto que tengan noindex, son campaña outreach, pero NO debían estar en sitemap)
+- `sitemap.xml` con 108 URLs vs 229 `index.html` locales — desfase ~52%
+- 2 URLs 301 listadas en sitemap (consolidación tendencias-de-desarrollo → tendencias-de-diseño)
+- Title home y meta desc poco transaccionales (post fix canibalización 17-abr) → CTR cayó pese a que position MEJORÓ (15,0 → 13,2)
+- Query "desarrollo web a medida" (1.868 imp/mes, pos 11.2, 1 click) sin ataque específico
+- `lastmod` del sitemap desactualizado (Google no detecta cambios rápido)
+- Workflow `Pipeline v2.5` con nodos Airtable sin `retryOnFail` + cuota Airtable 429 desde 17-may
+
+#### 2. Cambios SEO aplicados (commit `bdca9c0`)
+| Archivo | Cambio |
+|---|---|
+| `index.html` (home) | Title → `Agencia UX/UI Barcelona — Diseño y Desarrollo Web a Medida · Tres Puntos` + meta desc más transaccional. Reconciliación FTP→git de cambios que se habían aplicado por FTP el 23-may sin commit. |
+| `blog/el-efecto-einstellung/index.html` | Title → `El Efecto Einstellung: Qué es y cómo afecta al diseño UX | Tres Puntos`. Idem reconciliación. |
+| `sitemap.xml` | 108 → 95 URLs. Excluidos 16 sectores + 2 URLs 301. Añadidos 4 casos faltantes (`1csoft`, `capilclinic`, `naranja`, `paradise`) + 1 legal (`politica-redes-sociales`). `lastmod` regenerado desde `git log` por archivo. |
+| `servicios/desarrollo-web-a-medida-barcelona/index.html` | +123 líneas. Nueva sección "Alcance del servicio" (~350 palabras) entre `sp-fit` y `sp-marquee` con copy específico para query nacional "desarrollo web a medida" (sin mencionar Barcelona en el copy nuevo). Schema FAQPage extendido de 5 → 8 preguntas, incluyendo "¿Trabajáis fuera de Barcelona?". Título y H1 sin tocar (preservar ranking pos 6 para query Barcelona). |
+| `blog/desarrollo-web-a-medida-cuando-es-la-decision-correcta/index.html` | Enlace contextual con anchor "construir una plataforma a medida" (variado, no repite anchors existentes). |
+
+#### 3. Deploy
+- `git push origin main` ✅
+- FTP a Nominalia (5 archivos) ✅
+- Purga Cloudflare API (5 URLs específicas) ✅ — token `cfut_ExV6qS...` zone `86def687c657b92ed6ce30b0a2d16b66`
+- robots.txt referencia sitemap correctamente
+- **Pendiente Jordi:** re-submit manual en GSC https://search.google.com/search-console/sitemaps (Google ya no acepta `ping?sitemap=...` desde 2023)
+
+#### 4. Hallazgo crítico de Airtable — cuota mensual agotada (mismo problema que 17-may)
+- HTTP 429 desde 17-may en el nodo `Guardar en Airtable` del Pipeline v2.5
+- Consecuencia: leads del form NO se guardan en Airtable. Pero Telegram + email SÍ llegan (`continueOnFail: true` ya estaba)
+- Esto explica los 3 leads Airtable en 30d post vs 11 pre. NO es bug del form ni del tracking.
+- **Diagnóstico de consumo (agente Airtable):** ~24.000 calls/mes (cuota free 3.000 en 3 workspaces) = 8x sobre cuota
+- Top consumidores: `/api/sectores` (4.300/mes), `/api/sequences` (3.600/mes), 2 crons cada 1h (~5.800/mes combinados)
+
+#### 5. Optimizaciones Airtable aplicadas (1h trabajo, $0 vs $480/año upgrade)
+**A) `server.py` del VPS (`/root/server.py`):**
+- TTL `/api/sectores` 180 → **1800s**
+- TTL `/api/agencies` 180 → **1800s**
+- TTL `/api/sequences` 180 → **1800s**
+- TTL `/api/leads` 180 → **600s**
+- TTL `/api/linkedin` 180 → **600s**
+- Añadidos endpoints faltantes: `/api/form-leads: 600`, `/api/pipeline: 600`, `/api/revision: 900`, `/api/auditorias: 900`
+- Backup en `/root/server.py.bak-2026-05-23`
+- Servidor reiniciado (PID nuevo: 2828082)
+
+**B) `dashboard.html` del VPS (`/root/dashboard.html`):**
+- `setInterval(initDashboard, 5 * 60 * 1000)` → `15 * 60 * 1000` (línea 6356)
+- Backup en `/root/dashboard.html.bak-2026-05-23-ttl`
+
+**C) Crons de workflows n8n:**
+- `4DeHrw1yL4kVMsCZ` (Sectores Detección Respuestas): cron 1h → `0 9-19/2 * * 1-5` (cada 2h L-V horario laboral, nodo renombrado "Cada 2h L-V 9-19")
+- `JoeLRJRwoV9HCDnX` (Email Recordatorio): cron 1h → `0 9,16 * * 1-5` (2x/día L-V, nodo renombrado "2x/día L-V (9 + 16)")
+
+**Estimación ahorro total:** 24.000 → <3.000 calls/mes (dentro de cuota free).
+
+#### 6. Workflow `Pipeline v2.5` — resiliencia añadida
+3 nodos HTTP Airtable (`guardar-airtable`, `guardar-at-briefing`, `guardar-estado`):
+- **Añadido `retryOnFail: true` + `maxTries: 3` + `waitBetweenTries: 5000ms`** — para que próximos 429 no rompan el flujo en 1 intento
+- `continueOnFail: true` ya estaba
+- **PAT sigue hardcoded** — intenté migrar a credencial nativa `airtableApi` (id `zQer745cZNd0kQyb`) pero ese tipo solo aplica al nodo nativo `n8n-nodes-base.airtable`, NO al `n8n-nodes-base.httpRequest`. Para sanitización real hay que crear una credencial `httpHeaderAuth` separada — pendiente.
+
+#### 7. Guard `is_test: true` añadido al Pipeline v2.5
+Replicado el patrón del workflow Jordan v7.3 para evitar que tests futuros spammeen Telegram/email a Jordi:
+- `Mapear datos lead` (Code): añadido `is_test: !!body.is_test, test_triggers: Array.isArray(body.test_triggers) ? body.test_triggers : []` al output
+- `Preparar Telegram` (Code): prepend `if ($('Mapear datos lead').first().json.is_test === true) return [];`
+- `Preparar Email Bienvenida` (Code): idem
+- `Preparar Telegram Research` (Code): idem
+- `Preparar TG Briefing` (Code): idem
+- `Preparar Telegram Exit Intent` (Code): idem
+- **Test confirmado:** un `POST` con `is_test: true` ejecuta el workflow, pero los 5 nodos Code de notification devuelven `[]` y NO se mandan ni Telegram ni email
+- **Pendiente:** añadir un nodo IF antes de `Email Backup Jordi` (emailSend) — actualmente sigue mandando 1 email/test. Es nodo no-Code, requiere cambio estructural
+
+#### 8. Playwright Auditor (`8XoipUHvtokIaiw5`) — diagnosticado, no fix
+- 8+ ejecuciones consecutivas en error desde 17-may
+- Causa: mismo `PUBLIC_API_BILLING_LIMIT_EXCEEDED` (Airtable 429) en el nodo `Airtable — Listar pendientes`
+- Se resolverá automáticamente el 1-jun con reset de cuota
+- Nombre histórico del nodo "Schedule cada 5 min" pero cron real ya optimizado a `0 9 * * 1-5` (1x/día L-V 9:00 Madrid) según CLAUDE.md sanitización 2026-05-17
+
+#### 9. Lecciones aprendidas
+1. **NUNCA hacer curl sin cache-bust al verificar deploys.** Durante 30 minutos di al usuario información incorrecta porque Cloudflare cachea HTML 4h. Solución obligatoria: `curl "URL?v=$(date +%s)" -H "Cache-Control: no-cache"` cuando se verifica producción.
+2. **Webhook responde 200 != lead guardado.** Pipeline v2.5 responde 200 OK aunque Airtable 429. El frontend dispara `generate_lead` en GA4 de igual modo. Los números GA4 no mienten — la caída es real, no de instrumentación.
+3. **Patrón verificado funcionando para credencial Airtable** (de CLAUDE.md sanitización 2026-05-17) aplica al nodo nativo `n8n-nodes-base.airtable`, NO al `n8n-nodes-base.httpRequest`. Para HTTP se necesita credencial `httpHeaderAuth` o `airtableTokenApi` con id distinto al `airtableApi`.
+4. **Curry (otro agente IA)** editó archivos por FTP directo sin commit en git el 23-may. Riesgo de pérdida de cambios en deploys futuros desde local. Patrón a evitar: toda edición en producción debe pasar por git primero.
+
+#### 10. Pendientes derivados (no urgentes)
+- Re-submit manual del sitemap en GSC (1 min)
+- Borrar manualmente los 14 mensajes Telegram + 7 emails de test del 23-may (todos contienen "BORRAR" en subject)
+- Migrar 3 nodos HTTP Airtable del Pipeline v2.5 a credencial `httpHeaderAuth` para eliminar PAT hardcoded
+- Añadir nodo IF antes de `Email Backup Jordi` para que `is_test:true` también lo silencie
+- Auditar el resto de los workflows "✅ sanitizados" según pendiente del 17-may
+- Re-validar `Pipeline v2.5` con tráfico real tras 1-jun (cuota Airtable reset) y verificar que retries funcionan
+
+---
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
@@ -1253,6 +1350,7 @@ Los eventos se disparan con `window.clarity('event', nombre)` **solo si el usuar
 - ✅ ~~Jordan widget v7: persistencia en 3 stages + fix Calendly bug + system prompt v10.2~~ COMPLETADO (2026-04-24): Ver sección "Cambios aplicados (2026-04-24)". Stages initial/update/final con upsert por Session ID. Fix del bug que perdía leads cuando el usuario clicaba Calendly. Iteraciones v7 → v7.1 → v7.2 tras feedback de tests reales.
 - ✅ ~~Sistema OG (Open Graph) — imágenes para redes sociales en TODAS las páginas~~ COMPLETADO (2026-04-29): 102 imágenes 1200×630 PNG generadas con plantilla universal (logo dark + badge categoría + título + descripción), 102 HTMLs actualizados con `og:image`, `twitter:image`, dimensiones declaradas y `summary_large_image`. Ver sección "Sistema OG (Open Graph)". Scripts en `/scripts/og/`.
 - ✅ ~~Microsoft Clarity: instalación + embudos + Smart Events instrumentados~~ COMPLETADO (2026-05-19): Hotjar reemplazado, 2 embudos creados, 4 eventos API instrumentados (cta_navbar_click, form_submit_click, scroll_75_pct, jordan_open). Ver sección "Cambios aplicados (2026-05-19)".
+- ✅ ~~Recuperación SEO post-migración + sanitización n8n + optimización Airtable~~ COMPLETADO (2026-05-23): 5 archivos SEO (commit bdca9c0), guard is_test en Pipeline v2.5, TTLs server.py + dashboard auto-refresh + crons de 2 workflows reducidos. Ver sección "Cambios aplicados (2026-05-23)".
 - Fix botón "Rechazar" del banner (sigue en mint, debería ser outline)
 - Investigar discrepancia PSI público (67-69) vs Lighthouse local (95)
 - Decidir qué hacer con loop `.htaccess` en `/servicios/` (preexistente)
