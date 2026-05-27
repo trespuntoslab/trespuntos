@@ -1332,6 +1332,103 @@ Replicado el patrón del workflow Jordan v7.3 para evitar que tests futuros spam
 
 ---
 
+### Cambios aplicados (2026-05-27) — Cloudflare Web Analytics (analytics cookieless complementario a GA4)
+
+#### Contexto del diagnóstico (con Jordi)
+Jordan (agente) reportó que "GA4 está completamente ausente del sitio" y propuso añadir snippet `gtag` a `components.js`. **Diagnóstico falso**. Verificado:
+- GA4 SÍ está instalado vía `assets/cookieconsent/cookieconsent-init.js` (línea 106, ID `G-ERX855WTHN`)
+- Carga condicional en `onAccept` de categoría analytics (Consent Mode v2)
+- Test E2E con Playwright: GET `gtag/js?id=G-ERX855WTHN` + POSTs a `region1.google-analytics.com/g/collect` confirmados tras aceptar cookies
+- Snippet propuesto por Jordan habría provocado: doble carga GA4 (eventos contados 2x) + violación GDPR (carga sin consent)
+
+**Causa real de los "66 usuarios"** (auditoría en GA4 con Claude_in_Chrome):
+- Propiedad: `TresPuntos.es - GA4` (392606096), cuenta `Tres Puntos comunicac...`
+- **Curva 90 días**: escalón vertical claro alrededor del 10-abril (de ~125 a ~50 usuarios/día) que coincide EXACTAMENTE con la migración Cookiebot → CookieConsent v3 (2026-04-10, ver sección de ese día)
+- **Firma matemática del consent**: `first_visit = 1.080 ≈ usuarios totales 1.092 (98,9%)`. Imposible en un sitio normal — significa que la cookie `_ga` no persiste para casi nadie (no aceptan analytics)
+- **Discrepancia GA4 vs GSC**: GSC 67 clicks/28d vs GA4 18 Organic Search/28d → factor 3,7x perdido por consent
+- **Anomalía secundaria**: Direct = 789 (66%) vs Organic Search = 247 (21%) en 90d — sugerir investigar `Referrer-Policy` en Cloudflare o tracking de UTMs en próximas iteraciones
+
+#### Decisión: Cloudflare Web Analytics como complemento gratuito
+Tras descartar (todas evaluadas con Jordi):
+- ❌ Volver a Cookiebot con GA4 inline (ILEGAL, multas AEPD €20K-50K)
+- ❌ Cambiar a otro plugin (Iubenda/Termly/Borlabs) — mismo problema, distinto plugin
+- ❌ Plausible cloud (€9/mes — Jordi prefiere 0€)
+- ❌ Matomo self-hosted (overkill, 4GB+ RAM)
+- ❌ Umami self-hosted (más complejo, requeriría 1-2h setup VPS)
+- ❌ Behavioral Modeling GA4 (requiere ≥1000 usuarios/día con denied + ≥1000 granted — Tres Puntos no llega ni de lejos)
+- ✅ **Cloudflare Web Analytics**: gratis, sin límite tráfico, sin cookies, legal sin consent (Recital 30 GDPR), nativo en CF ya activo
+
+#### Implementación realizada
+**Activación CF Web Analytics**:
+- Account ID: `8a58fd1f69f97772a5143d9d58313c56`
+- Hostname: `www.trespuntoscomunicacion.es`
+- Modo: **Manual** (CF no ofreció Automatic Setup, posiblemente por las Cache Rules existentes)
+- **Token CF Web Analytics**: `35d1d72046854c3fb1c6a1781afc7203`
+
+**Edit `js/components.js` línea 1** (prepend antes del IIFE `var TP=...`):
+```js
+/* Cloudflare Web Analytics — cookieless, sin consent (RGPD-compliant). Token activado 2026-05-27 */
+(function(){var s=document.createElement('script');s.defer=true;s.src='https://static.cloudflareinsights.com/beacon.min.js';s.setAttribute('data-cf-beacon','{"token": "35d1d72046854c3fb1c6a1781afc7203"}');document.head.appendChild(s);})();
+```
+
+**Características técnicas**:
+- Inyección dinámica del beacon al `<head>` cuando carga `components.js`
+- `defer=true` → no bloquea render
+- Sin cookies persistentes → sin banner consent (legal en UE)
+- Sin payload añadido al HTML (no toca los 89 HTMLs)
+- Hash diario de IP del lado server-side de CF — anonimizado
+- Métricas: page views, visitantes únicos, top pages, sources, devices, countries, Core Web Vitals
+- Retención plan free: 30 días en dashboard
+
+**Deploy**:
+- Commit `4d897b5` con mensaje `feat(analytics): añadir Cloudflare Web Analytics (cookieless, sin consent)`
+- Push a `origin/main` ✓
+- FTP a Nominalia (`/js/components.js`, 48.011 bytes, HTTP 226) ✓
+- **Cloudflare purge crítico — lección aprendida**: el HTML carga `components.js?v=27` (con query string). CF cachea URLs con query como entradas separadas. La primera purga de `/js/components.js` sin query NO funcionó. Hay que purgar **ambas**: `?v=27` Y sin query. Fix aplicado.
+- Verificación E2E Playwright en `/contacto/`:
+  - Script en DOM ✓
+  - GET `static.cloudflareinsights.com/beacon.min.js` → 200 ✓
+  - POST `cloudflareinsights.com/cdn-cgi/rum` → 204 ✓ (hit real registrado)
+
+#### Filosofía: por qué GA4 + CF Web Analytics y no solo uno
+
+**GA4** (cuando usuario acepta cookies analytics):
+- ✅ Eventos custom complejos (generate_lead, jordan_open, calendly_click, etc.)
+- ✅ Funnels y conversiones con value EUR
+- ✅ Atribución cross-device
+- ✅ Measurement Protocol server-side
+- ❌ Solo mide ~50% del tráfico real (consent rate baja)
+
+**CF Web Analytics** (siempre, sin consent):
+- ✅ 100% del tráfico real
+- ✅ Métricas básicas (pageviews, sources, countries, devices, CWV)
+- ✅ Gratis ilimitado
+- ✅ Privacy-first nativo
+- ❌ Sin eventos custom complejos
+- ❌ Sin atribución avanzada
+- ❌ Retención 30 días en plan free
+
+**Combinación**: GA4 da profundidad de quien consintió; CF da volumen total real. Para ver "cuánto tráfico tengo de verdad" → CF. Para "cómo convierte ese tráfico" → GA4.
+
+#### Dashboard CF Web Analytics
+`https://dash.cloudflare.com/8a58fd1f69f97772a5143d9d58313c56/web-analytics`
+
+Primeros datos visibles: 30 min - 2h tras activación. Datos completos del día a 24h.
+
+#### Lecciones aprendidas
+1. **Cloudflare Dashboard NO carga con la extensión Claude_in_Chrome**. El SPA detecta browser controlado y se queda en loader infinito (probado con Chrome MCP y waits de 60s). Para configurar CF Web Analytics u otras secciones del dashboard: pedir a Jordi que abra en su Chrome real, o usar API de CF cuando exista endpoint y el token tenga permisos suficientes. El token actual (cache purge only) NO sirve para activar Web Analytics — requiere `Account → Web Analytics: Edit`.
+2. **Cache Cloudflare con query strings**: una purga de `https://www.trespuntoscomunicacion.es/js/components.js` NO purga `https://www.trespuntoscomunicacion.es/js/components.js?v=27`. Son entradas separadas en el cache edge. Cuando se actualice un asset versionado, purgar TODAS las URLs posibles (con y sin query) o usar `purge_everything`.
+3. **Diagnóstico antes de fix**: Jordan propuso un fix de 10 líneas basado en una premisa falsa ("GA4 ausente") que habría empeorado la situación (doble tracking + ilegalidad). 2 minutos de verificación con `grep -r "G-ERX855WTHN"` + test E2E hubieran bastado para descartarlo. Patrón a evitar en agentes: nunca proponer fixes sin verificar la premisa contra código real.
+
+#### Pendientes derivados
+- Aplicar mismo snippet a `dash.trespuntos-lab.com` y `doc.trespuntos-lab.com` si se quieren métricas unificadas
+- Investigar anomalía **Direct = 66%** en GA4: revisar `Referrer-Policy` header (CF Rules + meta), verificar UTMs en campañas activas (link tracking partners outreach)
+- Activar Behavioral Modeling en GA4 (Admin → Configuración de datos → Consent) — cuando el tráfico crezca, GA4 estimará usuarios cookieless con ML
+- Actualizar política de cookies (`/politica-cookies/`) si se quiere mencionar CF Web Analytics como "estadística agregada sin identificación" — no es estrictamente requerido (es cookieless) pero da transparencia
+- A los 30 días: comparar números CF vs GA4 vs GSC para validar el factor multiplicador real
+
+---
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
@@ -1351,6 +1448,7 @@ Replicado el patrón del workflow Jordan v7.3 para evitar que tests futuros spam
 - ✅ ~~Sistema OG (Open Graph) — imágenes para redes sociales en TODAS las páginas~~ COMPLETADO (2026-04-29): 102 imágenes 1200×630 PNG generadas con plantilla universal (logo dark + badge categoría + título + descripción), 102 HTMLs actualizados con `og:image`, `twitter:image`, dimensiones declaradas y `summary_large_image`. Ver sección "Sistema OG (Open Graph)". Scripts en `/scripts/og/`.
 - ✅ ~~Microsoft Clarity: instalación + embudos + Smart Events instrumentados~~ COMPLETADO (2026-05-19): Hotjar reemplazado, 2 embudos creados, 4 eventos API instrumentados (cta_navbar_click, form_submit_click, scroll_75_pct, jordan_open). Ver sección "Cambios aplicados (2026-05-19)".
 - ✅ ~~Recuperación SEO post-migración + sanitización n8n + optimización Airtable~~ COMPLETADO (2026-05-23): 5 archivos SEO (commit bdca9c0), guard is_test en Pipeline v2.5, TTLs server.py + dashboard auto-refresh + crons de 2 workflows reducidos. Ver sección "Cambios aplicados (2026-05-23)".
+- ✅ ~~Cloudflare Web Analytics activado (cookieless, sin consent, complementario a GA4)~~ COMPLETADO (2026-05-27): snippet beacon en `components.js` línea 1, token `35d1d72046854c3fb1c6a1781afc7203`, deploy commit `4d897b5`, verificación E2E OK. Resuelve el "tráfico fantasma" perdido por consent rate baja desde la migración a CookieConsent v3 del 10-abr. Ver sección "Cambios aplicados (2026-05-27)".
 - Fix botón "Rechazar" del banner (sigue en mint, debería ser outline)
 - Investigar discrepancia PSI público (67-69) vs Lighthouse local (95)
 - Decidir qué hacer con loop `.htaccess` en `/servicios/` (preexistente)
