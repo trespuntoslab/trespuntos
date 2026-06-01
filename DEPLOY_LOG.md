@@ -2,6 +2,33 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-06-01 — SEO: mejora title + meta del post de velocidad web (Curry acción 3)
+- **Commit:** pendiente — `seo(blog): mejorar title/meta post velocidad web — CTR booster`
+- **Contexto:** Reporte semanal Curry 2026-06-01. Post `/blog/como-mejorar-la-velocidad-de-carga-de-tu-sitio-web/` con 1.643 imp/28d y CTR 0.1%. Meta description truncada en SERP (`...optimiza tu rendimi...`). Acción 1 (servicio desarrollo web) y 2 (home) descartadas por canibalización con keyword owner `/servicios/desarrollo-web-a-medida-barcelona/`.
+- **Archivos FTP (1):**
+  - `blog/como-mejorar-la-velocidad-de-carga-de-tu-sitio-web/index.html`
+- **Cambios:**
+  - `<title>`: `Cómo mejorar la velocidad de carga de tu sitio web | Blog | Tres Puntos` → `Cómo Mejorar Velocidad Web: Guía Completa SEO 2026 | Tres Puntos`
+  - `<meta description>`: nueva con números (5 pasos) + beneficios (bounce rate, Core Web Vitals, SEO) y sin truncar (147 chars).
+  - `og:title`, `og:description`, `twitter:title`, `twitter:description` actualizados en paralelo.
+
+## 2026-05-27 — Blog post #03: Agencia de diseño UX/UI: cómo evaluar propuestas y entregables
+- **Commit:** `f975d05` (main · `seo(sitemap): actualizar lastmod post #03 UX/UI evaluar propuestas`). HTML del post y OG ya estaban en commit `2d88354` (pendiente FTP); el card del hub en `c983ed6`.
+- **Contexto:** Post #03 del [Plan Blog Mayo–Agosto 2026](https://www.notion.so/3501b33b8b2181cfae1af3636df522a5). Estado Notion: Aprobado → Publicado. Slug: `agencia-diseno-ux-ui-evaluar-propuestas`. Keyword objetivo: "agencia diseño ux ui" (371 imp/mes, pos 11.34). Refuerza `/servicios/diseno-ux-ui-barcelona/`.
+- **Archivos FTP (4):**
+  - `blog/agencia-diseno-ux-ui-evaluar-propuestas/index.html` (34.049 B)
+  - `img/og/blog-agencia-diseno-ux-ui-evaluar-propuestas.png` (249.098 B)
+  - `blog/index.html` (53.450 B — card del nuevo post)
+  - `sitemap.xml` (20.383 B — lastmod del post y del hub `/blog/` actualizados a 2026-05-27)
+- **Cloudflare:** purge by URL de las 4 URLs → `{"success": true}`.
+- **Verificación post-purga:**
+  - `/blog/agencia-diseno-ux-ui-evaluar-propuestas/` → HTTP 200, cf-cache MISS ✅
+  - OG image → HTTP 200, 249.098 B ✅
+  - `/blog/` → card del nuevo post presente ✅
+  - `/sitemap.xml` → lastmod 2026-05-27 ✅
+- **Notion:** Estado=Publicado + URL real rellenada en [el registro](https://www.notion.so/3561b33b8b2181369892ca53d5ac6e0d).
+- **Pendiente:** indexación manual en GSC (Jordi) + revisión de OG en LinkedIn Post Inspector tras 24-48h cache LinkedIn.
+
 ## 2026-05-22 11:30 — Diseño UX/UI: rediseño hero + metodología en 4 ciudades
 - **Commit:** `1106301` (main · `feat(servicios/diseno-ux-ui): rediseñar hero + metodología en 4 ciudades`)
 - **Archivos (4):** `servicios/diseno-ux-ui-{barcelona,madrid,bilbao,sevilla}/index.html` (+1444 / -109 cada una)
