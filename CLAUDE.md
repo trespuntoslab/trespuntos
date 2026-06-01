@@ -1252,7 +1252,7 @@ Investigación profunda con 5 agentes paralelos (datos GA4/GSC, auditoría técn
 #### 2. Cambios SEO aplicados (commit `bdca9c0`)
 | Archivo | Cambio |
 |---|---|
-| `index.html` (home) | Title → `Agencia UX/UI Barcelona — Diseño y Desarrollo Web a Medida · Tres Puntos` + meta desc más transaccional. Reconciliación FTP→git de cambios que se habían aplicado por FTP el 23-may sin commit. |
+| `index.html` (home) | Title → `Agencia UX/UI Barcelona — Diseño y Desarrollo Web a Medida · Tres Puntos` + meta desc más transaccional. Reconciliación FTP→git de cambios que se habían aplicado por FTP el 23-may sin commit. **⚠️ REVERTIDO el 1-jun (commit `e8cbb05`): este cambio violaba la regla de descanibalización del 17-abr y fue smoking gun de la caída -43% clicks GSC. Ver sección "Cambios aplicados (2026-06-01)".** |
 | `blog/el-efecto-einstellung/index.html` | Title → `El Efecto Einstellung: Qué es y cómo afecta al diseño UX | Tres Puntos`. Idem reconciliación. |
 | `sitemap.xml` | 108 → 95 URLs. Excluidos 16 sectores + 2 URLs 301. Añadidos 4 casos faltantes (`1csoft`, `capilclinic`, `naranja`, `paradise`) + 1 legal (`politica-redes-sociales`). `lastmod` regenerado desde `git log` por archivo. |
 | `servicios/desarrollo-web-a-medida-barcelona/index.html` | +123 líneas. Nueva sección "Alcance del servicio" (~350 palabras) entre `sp-fit` y `sp-marquee` con copy específico para query nacional "desarrollo web a medida" (sin mencionar Barcelona en el copy nuevo). Schema FAQPage extendido de 5 → 8 preguntas, incluyendo "¿Trabajáis fuera de Barcelona?". Título y H1 sin tocar (preservar ranking pos 6 para query Barcelona). |
@@ -1429,6 +1429,80 @@ Primeros datos visibles: 30 min - 2h tras activación. Datos completos del día 
 
 ---
 
+### Cambios aplicados (2026-06-01) — SEO recovery: revert errores propios del 23-may + diagnóstico profundo
+
+#### Contexto del diagnóstico
+Curry (agente SEO) reportó el 1-jun caída -43% clicks GSC (114→65) y caída de keywords clave: `desarrollo web a medida barcelona` pos 1 → 10.1, `agencia ux ui barcelona` pos ~3 → 6.2, CTR colapsado 0.4 → 0.3. Jordi pidió análisis profundo: por qué desde el cambio de web todas las métricas van mal.
+
+Investigación coordinada con 2 agentes paralelos (Lighthouse + on-page audit top 10 URLs) + API VPS (`/api/gsc` y `/api/web` desde `dash.trespuntos-lab.com`). Diagnóstico:
+
+**Caída GA4 real más severa que la GSC:**
+- Sessions 30d: 355 → 184 (**-48%**)
+- Users: 224 → 67 (**-70%**)
+- Pageviews: 672 → 479 (-29%)
+- `generate_lead`: 11 → 3 (-73%)
+- `jordan_lead_captured`: 34 → 1 (-97%, descartado bug del widget tras confirmar lead entrante el 31-may → caída es proporcional al tráfico upstream)
+
+**5 causas raíz identificadas + impacto:**
+1. 🚨 **Title HOME violó la regla de descanibalización del 17-abr** (sec "Cambios aplicados 2026-04-17"). El 23-may yo cambié el title de la home a `Agencia UX/UI Barcelona — Diseño y Desarrollo Web a Medida · Tres Puntos`, reintroduciendo "Desarrollo Web a Medida" donde el propio CLAUDE.md decía explícitamente: *"NUNCA poner 'desarrollo web' en titles de páginas que no sean la de servicio de desarrollo web"*. Smoking gun de la caída de "desarrollo web a medida barcelona" pos 1 → 10.1.
+2. 🚨 **Sitemap con lastmod uniforme** (también error mío del 23-may): regeneré las 89 URLs con `lastmod: 2026-05-21` masivamente desde `git log`. Google penaliza patrones de lastmod idéntico = señal de manipulación. Afectaba a TODA la web simultáneamente.
+3. 🟠 **Canonical bug en post `/blog/tendencias-ux-ui-2026-...-predictivo-y-la-eficiencia-tecnica/`**: apunta a OTRO post (`/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/`). Posible consolidación intencional sin 301 en `.htaccess` o bug. **Pendiente decisión Jordi.**
+4. 🟡 **6 páginas ciudad clonadas (90%+ HTML idéntico)**: `/servicios/desarrollo-web-{mad,bil,sev}/` + `/servicios/diseno-ux-ui-{mad,bil,sev}/`. Sin tráfico en GA4 (0 sessions/30d en top 20). Diluían autoridad de las versiones Barcelona.
+5. 🟡 **Cache HTML Cloudflare 14400s (4h)** sobre HTML: retrasa que Googlebot vea cambios de title/meta durante recovery. **Pendiente bajar a 1h en CF panel (Jordi).**
+
+**Auditoría Lighthouse en paralelo confirmó:**
+- Performance OK en 3 URLs críticas (LCP 0.4-1.5s mobile, CLS 0-0.039, SEO score 100/100/100). El problema NO es técnico.
+- Hallazgos extra: sitemap incompleto (89 vs 229 HTMLs locales — investigar), `crawl-delay: 1` innecesario en robots.txt.
+
+#### Acciones desplegadas en producción (4 commits)
+| Commit | Acción |
+|---|---|
+| `d9bc03f` | Title + meta `/blog/como-mejorar-la-velocidad-de-carga-de-tu-sitio-web/` mejorados (CTR booster, acción 3 del reporte Curry) |
+| `e8cbb05` | Revert title HOME → `Agencia UX/UI Barcelona \| Arquitectura Digital de Conversión · Tres Puntos` (versión pre-23-may) |
+| `9bec812` | noindex en 6 páginas ciudad MAD/BIL/SEV + sitemap 95 → 89 URLs |
+| `ce5e022` | Sitemap regenerado con lastmod real por archivo desde `git log -1 --format=%cI`: 1 fecha → 11 fechas únicas |
+
+**FTP a Nominalia + purga Cloudflare URL-específica** tras cada commit. Verificación con `curl ?cb=$(date +%s) -H "Cache-Control: no-cache"` confirmó cambios en producción.
+
+#### Acciones de Jordi en GSC (1-jun tras deploy)
+- ✅ Sitemap re-submit en https://search.google.com/search-console/sitemaps (mostraba 95 páginas porque Google leyó la versión vieja antes de la purga; el primer re-submit pidió relectura)
+- ✅ Reindex forzado de 3 URLs vía "Inspección de URLs" + "Solicitar indexación": home, `/servicios/desarrollo-web-a-medida-barcelona/`, `/blog/como-mejorar-la-velocidad-de-carga-de-tu-sitio-web/`
+
+#### Acciones pendientes Jordi (no urgentes)
+- Bajar Cache Rule HTML en Cloudflare panel: 2-4h → **1h** (Caching → Configuration → Cache Rules → "Cache HTML estático" → Edge TTL 1 hour)
+- Decidir canonical post `tendencias-ux-ui-2026-...predictivo`: ¿consolidación intencional (→ 301 en `.htaccess`) o bug (→ auto-canonical)?
+- Confirmar qué cuenta GSC tiene verificada la propiedad. La sesión del Chrome "Work" (`hola@trespuntoscomunicacion.es`) NO tiene acceso. Probablemente verificada con `jordi@trespuntoscomunicacion.es` o `jordiexp@gmail.com`.
+
+#### Tier 2 (para después del 15-jun si recovery confirmada)
+- Reescribir meta `/blog/el-efecto-einstellung/` (hoy: extracto del artículo truncado con "...a la...")
+- Acortar metas >160c en `/servicios/diseno-ux-ui-barcelona/` (183c) y `/servicios/` (178c)
+- Title `/servicios/diseno-ux-ui-barcelona/`: añadir "UX/UI" literal (KW principal)
+- Inventario canibalización blog tendencias 2026 (4 posts con keyword cercano)
+- Investigar **Direct = 38% sessions** (70/184) — anomalía persistente desde mayo. Posibles causas: `Referrer-Policy` CF, UTMs perdidos en campañas, tráfico interno
+- Investigar query "desarrollo web a medida" SIN ciudad: 1.791 imp/mes, pos 10.1, 1 click → mayor oportunidad nacional sin atacar
+- Auditar **sitemap incompleto** (89 vs 229 HTMLs locales): `git ls-files '*.html'` vs sitemap, decidir indexar/410
+
+#### KPIs a vigilar 2026-06-15 (validar recovery)
+| Métrica | 1-jun | Objetivo 15-jun | Cómo medir |
+|---|---|---|---|
+| `desarrollo web a medida barcelona` pos | 10.1 | 1-3 | GSC > Rendimiento > Consultas |
+| `agencia ux ui barcelona` pos | 6.2 | 3 | idem |
+| GSC clicks 30d | 65 | ≥90 | `curl -sk https://dash.trespuntos-lab.com/api/gsc` |
+| GSC CTR | 0.3% | ≥0.4% | idem |
+| GA4 sessions 30d | 184 | ≥250 | `curl -sk https://dash.trespuntos-lab.com/api/web` |
+| `jordan_lead_captured` | 1/30d | ≥10 | idem (subirá con tráfico upstream) |
+
+Si en 15-jun no recupera al menos el 50% de lo perdido → escalada: URL inspection masiva en GSC + reescritura de contenido más agresiva.
+
+#### Lecciones aprendidas
+1. **NO modificar titles de la home sin re-verificar la regla de descanibalización del 17-abr**. El cambio "supuestamente correctivo" del 23-may rompió una optimización previa. Antes de cualquier cambio de title/H1 en home o en servicios, releer la tabla del bloque "Cambios aplicados (2026-04-17)" donde se documentó qué keyword es dueña de qué página.
+2. **NO regenerar lastmod del sitemap en bloque masivamente**. Si se hace mass-update, mantener fechas reales por archivo (último commit que tocó CADA index.html, no la fecha del último update del sitemap). Patrón uniforme = señal de spam para Google.
+3. **Análisis "todo va mal" ≠ todo va mal**. Cuando una métrica cae, hay que diferenciar entre causas estructurales (consent rate post CookieConsent v3) y eventos concretos (mis cambios mayo). El segundo es lo que hay que arreglar; el primero se asume como contexto.
+4. **GA4 con consent rate 50% sub-reporta**. Comparar siempre CF Web Analytics (cookieless, 100% del tráfico) contra GA4 para tener el número real. La caída -48% sessions GA4 puede ser -25% en CF Web Analytics — esto va a poder medirse a los 30 días del activate CF Web Analytics (27-may → datos completos disponibles 27-jun).
+5. **El token Cloudflare vivo NO está en este CLAUDE.md**. Si hay un token literal `cfut_...` en una sección histórica de esta misma doc (sec 23-may), ya está caducado. Usar siempre el de `~/.config/tres-puntos/cloudflare.env` (campo `CF_API_TOKEN`) o el de `reference_cloudflare.md` en memoria — esos son la fuente de verdad.
+
+---
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
@@ -1449,6 +1523,7 @@ Primeros datos visibles: 30 min - 2h tras activación. Datos completos del día 
 - ✅ ~~Microsoft Clarity: instalación + embudos + Smart Events instrumentados~~ COMPLETADO (2026-05-19): Hotjar reemplazado, 2 embudos creados, 4 eventos API instrumentados (cta_navbar_click, form_submit_click, scroll_75_pct, jordan_open). Ver sección "Cambios aplicados (2026-05-19)".
 - ✅ ~~Recuperación SEO post-migración + sanitización n8n + optimización Airtable~~ COMPLETADO (2026-05-23): 5 archivos SEO (commit bdca9c0), guard is_test en Pipeline v2.5, TTLs server.py + dashboard auto-refresh + crons de 2 workflows reducidos. Ver sección "Cambios aplicados (2026-05-23)".
 - ✅ ~~Cloudflare Web Analytics activado (cookieless, sin consent, complementario a GA4)~~ COMPLETADO (2026-05-27): snippet beacon en `components.js` línea 1, token `35d1d72046854c3fb1c6a1781afc7203`, deploy commit `4d897b5`, verificación E2E OK. Resuelve el "tráfico fantasma" perdido por consent rate baja desde la migración a CookieConsent v3 del 10-abr. Ver sección "Cambios aplicados (2026-05-27)".
+- ✅ ~~SEO recovery: revert errores propios del 23-may + diagnóstico profundo~~ COMPLETADO (2026-06-01): 4 commits (`d9bc03f`, `e8cbb05`, `9bec812`, `ce5e022`). Title HOME revertido (smoking gun caída -43%), 6 páginas ciudad MAD/BIL/SEV con noindex, sitemap depurado (95→89) + lastmod real por archivo (1→11 fechas únicas), meta blog velocidad web mejorada. Sitemap re-submit + reindex 3 URLs forzado en GSC. Ver sección "Cambios aplicados (2026-06-01)" y memoria `project_seo_recovery_jun2026.md`. KPIs a vigilar 15-jun para validar recovery.
 - Fix botón "Rechazar" del banner (sigue en mint, debería ser outline)
 - Investigar discrepancia PSI público (67-69) vs Lighthouse local (95)
 - Decidir qué hacer con loop `.htaccess` en `/servicios/` (preexistente)
