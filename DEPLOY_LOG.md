@@ -2,6 +2,22 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-06-01 — SEO: revert title home + noindex MAD/BIL/SEV (post diagnóstico profundo)
+- **Commits:** pendiente.
+- **Contexto:** Diagnóstico profundo 1-jun reveló 2 errores propios del 23-may como causa raíz de la caída -43% clicks GSC:
+  - Title de la home reintrodujo "Desarrollo Web a Medida" (regla del 17-abr decía explícitamente "NUNCA poner desarrollo web en titles que no sean el servicio"). Consecuencia: `desarrollo web a medida barcelona` pos 1 → 10.1, `agencia ux ui barcelona` ~3 → 6.2.
+  - 6 páginas de servicio por ciudad (desarrollo-web-{mad,bil,sev} + diseno-ux-ui-{mad,bil,sev}) son clones del 90%+ del HTML de la versión Barcelona pero con canonical propio → duplicate content que diluye autoridad. Sin tráfico real en GA4 últimos 30d.
+- **Archivos FTP (8):**
+  - `index.html` (title + meta + og:title + twitter:title revertidos a versión pre-23-may)
+  - `servicios/desarrollo-web-{madrid,bilbao,sevilla}/index.html` (+ `<meta robots="noindex, follow">`)
+  - `servicios/diseno-ux-ui-{madrid,bilbao,sevilla}/index.html` (+ `<meta robots="noindex, follow">`)
+  - `sitemap.xml` (95 → 89 URLs, eliminadas las 6 noindex)
+- **Cambios title HOME:**
+  - Antes (23-may): `Agencia UX/UI Barcelona — Diseño y Desarrollo Web a Medida · Tres Puntos`
+  - Ahora (revert): `Agencia UX/UI Barcelona | Arquitectura Digital de Conversión · Tres Puntos`
+- **Expectativa de recovery:** 2-3 semanas para que Google reindexe y rerankee. KPIs a vigilar: pos de "desarrollo web a medida barcelona" (objetivo 1-3), pos de "agencia ux ui barcelona" (objetivo 3).
+- **Próximos pasos sugeridos:** revert sitemap lastmod uniforme → reales por archivo · canonical bug post `tendencias-ux-ui-2026-...predictivo` · cache HTML CF 4h → 1h · re-submit sitemap GSC manual.
+
 ## 2026-06-01 — SEO: mejora title + meta del post de velocidad web (Curry acción 3)
 - **Commit:** pendiente — `seo(blog): mejorar title/meta post velocidad web — CTR booster`
 - **Contexto:** Reporte semanal Curry 2026-06-01. Post `/blog/como-mejorar-la-velocidad-de-carga-de-tu-sitio-web/` con 1.643 imp/28d y CTR 0.1%. Meta description truncada en SERP (`...optimiza tu rendimi...`). Acción 1 (servicio desarrollo web) y 2 (home) descartadas por canibalización con keyword owner `/servicios/desarrollo-web-a-medida-barcelona/`.
