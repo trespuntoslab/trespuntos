@@ -1503,6 +1503,32 @@ Si en 15-jun no recupera al menos el 50% de lo perdido → escalada: URL inspect
 
 ---
 
+### Cambios aplicados (2026-06-09) — SEO: noindex 12 ciudades restantes (cierre del recovery 1-jun)
+
+#### Contexto
+Informe SEO de **Jordan** (agente VPS, 9-jun) sobre GSC: clicks 30d 110→73 (−33,6%), impresiones 31.036→22.063 (−28,9%), posición media 14,2→13,0 (mejora leve). Lectura clave de Jordan: la caída no para tras la migración y siguen indexadas **doorway pages thin**.
+
+#### Hallazgo real (validado contra repo)
+El recovery del 1-jun solo noindexó 6 ciudades (desarrollo-web + diseno-ux-ui × MAD/BIL/SEV). Quedaron **12 clones sin tapar**, indexables y en sitemap: `consultoria-digital`, `design-engineer`, `ia-empresas`, `tienda-online` × {madrid, bilbao, sevilla}. ~79% de vocabulario compartido con la versión Barcelona → Google las lee como doorway pages que diluyen autoridad del dominio.
+
+#### Acción desplegada (commit `16feb94`)
+- 12 HTML: `+ <meta name="robots" content="noindex, follow">` tras el viewport (mismo patrón que el 1-jun).
+- `sitemap.xml`: 90 → 78 URLs (eliminadas las 12; conservadas las 4 `-barcelona` como master indexable).
+- FTP 13 archivos + purga Cloudflare by-URL (12 + sitemap) → `{"success": true}`.
+- Verificación producción (cache-bust + no-cache): 12/12 sirven `noindex, follow` ✅; sitemap 78 `<loc>` sin las 12, 4 masters presentes ✅.
+- **Pendiente Jordi:** re-submit del sitemap en GSC.
+
+#### Lo que NO se hizo (y por qué) — corrección a Jordan
+Jordan recomendaba cambiar el title de la home (`Arquitectura Digital de Conversión` por algo "más buscado"). **Descartado.** Ese title es justo el que se revirtió el 1-jun (commit `e8cbb05`): meter "Desarrollo Web a Medida" ahí fue el smoking gun de la caída −43% y viola la regla de descanibalización del 17-abr (la home es dueña de "agencia ux ui barcelona", no de "desarrollo web"). Tocarlo ahora reabriría la canibalización y reiniciaría el reloj del recovery (KPIs a medir 15-jun). Mismo patrón que el 27-may (Jordan y el falso "GA4 ausente"): **Jordan aporta buenos datos GSC pero no conoce el historial de decisiones SEO** — cruzar siempre con CLAUDE.md/memoria antes de aplicar sus propuestas de title/meta.
+
+#### Otros puntos del informe Jordan (verificados)
+- 404 `/servicios/diseno-ux-ui/` → **ya tiene 301** en `.htaccess` (línea 59 → `diseno-ux-ui-barcelona`). No es 404.
+- Blog `...-ganador-2` → es la Parte II, artículo distinto con self-canonical correcto. No es duplicado real.
+- "desarrollo web a medida" nacional (1.467 imp, pos 10.6, 1 click) → oportunidad real, queda Tier 2 tras confirmar recovery el 15-jun.
+- ⚠️ Detectada de paso posible canibalización propia entre 3 páginas IA (`ia-empresas-barcelona`, `automatizacion-agentes-ia-empresas`, `ia-generativa-empresas`) — revisar aparte.
+
+---
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
@@ -1524,6 +1550,7 @@ Si en 15-jun no recupera al menos el 50% de lo perdido → escalada: URL inspect
 - ✅ ~~Recuperación SEO post-migración + sanitización n8n + optimización Airtable~~ COMPLETADO (2026-05-23): 5 archivos SEO (commit bdca9c0), guard is_test en Pipeline v2.5, TTLs server.py + dashboard auto-refresh + crons de 2 workflows reducidos. Ver sección "Cambios aplicados (2026-05-23)".
 - ✅ ~~Cloudflare Web Analytics activado (cookieless, sin consent, complementario a GA4)~~ COMPLETADO (2026-05-27): snippet beacon en `components.js` línea 1, token `35d1d72046854c3fb1c6a1781afc7203`, deploy commit `4d897b5`, verificación E2E OK. Resuelve el "tráfico fantasma" perdido por consent rate baja desde la migración a CookieConsent v3 del 10-abr. Ver sección "Cambios aplicados (2026-05-27)".
 - ✅ ~~SEO recovery: revert errores propios del 23-may + diagnóstico profundo~~ COMPLETADO (2026-06-01): 4 commits (`d9bc03f`, `e8cbb05`, `9bec812`, `ce5e022`). Title HOME revertido (smoking gun caída -43%), 6 páginas ciudad MAD/BIL/SEV con noindex, sitemap depurado (95→89) + lastmod real por archivo (1→11 fechas únicas), meta blog velocidad web mejorada. Sitemap re-submit + reindex 3 URLs forzado en GSC. Ver sección "Cambios aplicados (2026-06-01)" y memoria `project_seo_recovery_jun2026.md`. KPIs a vigilar 15-jun para validar recovery.
+- ✅ ~~SEO: noindex 12 ciudades restantes (cierre recovery)~~ COMPLETADO (2026-06-09): commit `16feb94`. Detectado por informe de Jordan — 12 doorway pages (`consultoria-digital`, `design-engineer`, `ia-empresas`, `tienda-online` × MAD/BIL/SEV) seguían indexables tras el 1-jun. noindex + sitemap 90→78 + FTP + purga + verificado en producción. Title home NO tocado (Jordan lo recomendaba pero era re-introducir el error revertido el 1-jun). Ver sección "Cambios aplicados (2026-06-09)". Pendiente Jordi: re-submit sitemap GSC.
 - Fix botón "Rechazar" del banner (sigue en mint, debería ser outline)
 - Investigar discrepancia PSI público (67-69) vs Lighthouse local (95)
 - Decidir qué hacer con loop `.htaccess` en `/servicios/` (preexistente)

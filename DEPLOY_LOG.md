@@ -2,6 +2,39 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-06-09 — SEO: noindex 12 ciudades restantes (completa recovery 1-jun)
+- **Commit:** `16feb94` (main · `seo(servicios): noindex 12 ciudades restantes — completa recovery 1-jun`)
+- **Contexto:** Informe SEO de Jordan (9-jun) detectó 12 doorway pages thin aún indexables que el recovery del 1-jun no había tapado: `consultoria-digital`, `design-engineer`, `ia-empresas`, `tienda-online` × {madrid, bilbao, sevilla}. ~79% de vocabulario compartido con la versión Barcelona → duplicate content que diluye autoridad del dominio. El 1-jun solo se noindexaron las 6 de desarrollo-web + diseno-ux-ui.
+- **Archivos FTP (13):**
+  - 12 × `servicios/{consultoria-digital,design-engineer,ia-empresas,tienda-online}-{madrid,bilbao,sevilla}/index.html` → `+ <meta name="robots" content="noindex, follow">` tras el viewport
+  - `sitemap.xml` (90 → 78 URLs · eliminadas las 12 · conservadas las 4 versiones `-barcelona` master)
+- **Cloudflare:** purge by URL de las 12 + sitemap.xml → `{"success": true}`.
+- **Verificación post-purga (cache-bust + no-cache):**
+  - 12/12 sirven `noindex, follow` en producción ✅
+  - `/sitemap.xml` → 78 `<loc>`, 0 coincidencias de las 12 ciudades, 4 masters Barcelona presentes ✅
+- **Pendiente Jordi:** re-submit del sitemap en GSC (https://search.google.com/search-console/sitemaps).
+- **Nota:** el title de la home NO se tocó pese a que Jordan lo recomendaba — sería re-introducir el error revertido el 1-jun (viola la regla de descanibalización del 17-abr).
+
+## 2026-06-03 — Blog post #06: Diseño web a medida — en qué se gasta realmente el presupuesto
+- **Commit:** `9d1459b` (main · `feat(blog): nuevo post #06 — diseño web a medida: en qué se gasta el presupuesto`)
+- **Contexto:** Post #06 del [Plan Blog Mayo–Agosto 2026](https://www.notion.so/3501b33b8b2181cfae1af3636df522a5). Adelantado (fecha programada 17-jun). Estado Notion: Pendiente → Maquetado. Slug: `diseno-web-a-medida-en-que-se-gasta-el-presupuesto`. Keyword objetivo: "diseño web a medida" (13.744 imp/mes, pos 67.96). Refuerza `/servicios/desarrollo-web-a-medida-barcelona/`. Maquetado con skill `blog-post-html`.
+- **Artículo:** 2.095 palabras · 10 min lectura · 5 secciones (4 H2 del brief + nueva sección "Cómo lo trabajamos en Tres Puntos") · 10 componentes (pain-blocks, stat-grid, mini-chart con 5 partidas, quote-pull, article-cta-inline, signal-cards de costes ocultos, stat-callout, checklist-box de 5 preguntas, timeline-mini del proceso TP, article-cta final).
+- **Diferenciador añadido por Jordi:** sección documentando cómo Tres Puntos trabaja — documento funcional interactivo (no PDF), presupuesto desglosado por work packages cerrados + bolsa de horas estimadas, sistema de feedback inline en el propio documento, contrato comercial vinculado al alcance versionado.
+- **Archivos FTP (4):**
+  - `blog/diseno-web-a-medida-en-que-se-gasta-el-presupuesto/index.html` (34.790 B)
+  - `img/og/blog-diseno-web-a-medida-en-que-se-gasta-el-presupuesto.png` (46.074 B, generada con skill `blog-post-html`)
+  - `blog/index.html` (53.975 B — nuevo card en primera posición del grid)
+  - `sitemap.xml` (19.396 B — nueva entrada con lastmod 2026-06-03)
+- **Cloudflare:** purge by URL de las 4 URLs → `{"success": true}`.
+- **Verificación post-purga:**
+  - `/blog/diseno-web-a-medida-en-que-se-gasta-el-presupuesto/` → HTTP 200, cf-cache MISS ✅
+  - OG image → HTTP 200, 46.074 B ✅
+  - `/blog/` → card del nuevo post presente ✅
+  - `/sitemap.xml` → entrada con lastmod 2026-06-03 ✅
+- **Notion:** Estado=Maquetado + URL real rellenada en [el registro](https://www.notion.so/35f1b33b8b2181db9fead454f2b66378).
+- **Enlaces internos verificados:** `/servicios/desarrollo-web-a-medida-barcelona/` 200 · `/blog/desarrollo-web-a-medida-vs-wordpress/` 200 · `/arquitectura-digital-conversion/` 200 (reemplaza a `/metodologia/` que redirige 301) · `/iniciar-proyecto/` 200.
+- **Pendiente Jordi:** indexación manual en GSC + revisión OG en LinkedIn Post Inspector tras 24-48h cache LinkedIn.
+
 ## 2026-06-01 — SEO: revert title home + noindex MAD/BIL/SEV (post diagnóstico profundo)
 - **Commits:** pendiente.
 - **Contexto:** Diagnóstico profundo 1-jun reveló 2 errores propios del 23-may como causa raíz de la caída -43% clicks GSC:
