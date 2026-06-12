@@ -24,5 +24,3 @@ Disallow: /
 # Sitemap
 Sitemap: https://www.trespuntoscomunicacion.es/sitemap.xml
 
-# Crawl delay (in seconds)
-Crawl-delay: 0.5
