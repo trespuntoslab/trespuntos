@@ -691,3 +691,16 @@ curl -sk --ftp-pasv --ftp-create-dirs -T "ruta/local" \
   - Endpoint `/api/iniciar-proyecto?range=N` activo en server.py del VPS
   - Skill `/conversion-form` para audits ondemand
   - n8n branch exit-intent: `¿Es Exit Intent?` con Telegram urgente
+
+---
+
+## Deploy 2026-06-12 — SEO Fase 1: sprint CTR (plan recovery conjunto Claudio+Jordan)
+
+- **SHA**: `ab4075b` (main)
+- **Commit**: seo(fase1): sprint CTR — metas orientadas a click + FAQ schema + anchors internos
+- **Archivos FTP (15)**: index.html · robots.txt · nosotros/ · servicios/ · servicios/desarrollo-web-a-medida-barcelona/ · servicios/ia-empresas-barcelona/ · blog/el-efecto-einstellung/ · blog/metodologias-para-el-diseno-de-productos-digitales/ · blog/scope-canvas-el-punto-de-partida-de-lean-ux/ · 6 PNG en img/og/
+- **Cambios**: metas de 6 páginas reescritas orientadas a click (home con "UI y UX" separados, 151c; dwm añade "programación"; einstellung estaba ROTA a mitad de frase; metodologias typo; scope sin gancho; ia-bcn 187c→154c) + FAQPage 4 preguntas y párrafo puente UX en einstellung + anchors internos /servicios/ y /nosotros/ → home + crawl-delay eliminado de robots.txt + 6 OG regeneradas. **Titles y H1 NO tocados** (regla recovery 1-jun).
+- **Base de la decisión**: A0 (inspección SERP real 12-jun): sin AI Overviews en las 6 queries; map pack roba en 4/6 (GBP pendiente decisión Jordi); SERPs limpias en "agencia ux ui barcelona" y "programacion web a medida".
+- **Cloudflare**: Purge by URL — 15 URLs ✅ `{"success":true}`
+- **Verificación**: 9/9 cambios confirmados en producción con cache-bust (metas nuevas servidas, FAQPage presente, crawl-delay fuera, anchors visibles)
+- **Control**: checkpoints 15/22/30-jun y 15/31-jul en dash.trespuntos-lab.com → Web & SEO → Plan SEO · watcher Telegram lunes 9:00 · plan en /root/shared/seo/
