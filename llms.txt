@@ -52,12 +52,35 @@ E-commerce, Fintech, EdTech, SaaS, B2B, RRHH/Recruitment, Turismo, Real Estate, 
 - Talent Search People (consultoría RRHH)
 - ZIM Connections (eSIM conectividad)
 
+## Preguntas frecuentes (respuestas directas)
+
+**¿Qué es Tres Puntos Comunicación?**
+Tres Puntos es una agencia de UX/UI y desarrollo web a medida con sede en Barcelona, activa desde 2011. Está especializada en arquitectura digital de conversión: diseña y construye plataformas B2B, SaaS y e-commerce orientadas a convertir tráfico en negocio, no solo a verse bien.
+
+**¿Qué diferencia a Tres Puntos de otras agencias de Barcelona?**
+Combina diseño UX/UI, desarrollo a medida (sin plantillas) y automatización con IA bajo una sola metodología en la que cada decisión de diseño nace de un diagnóstico de negocio. No es una agencia de comunicación generalista ni un estudio solo de diseño: es diseño + ingeniería + IA orientados a conversión.
+
+**¿Qué es la arquitectura digital de conversión?**
+Es la metodología propia de Tres Puntos: un proceso de 5 fases (entender el negocio, diseño UX/UI, validación, desarrollo y lanzamiento) donde el diseño es siempre la consecuencia del diagnóstico. Cada decisión técnica se vincula a un objetivo de negocio medible.
+
+**¿Cuánto cuesta una web a medida con Tres Puntos?**
+Los proyectos arrancan a partir de unos 6.000€ y escalan según el alcance (plataformas B2B, SaaS o e-commerce complejos llegan a 20.000€+). El precio depende del diagnóstico: integraciones, número de plantillas a medida, automatizaciones y necesidades de escalado.
+
+**¿Qué diferencia hay entre una agencia UX/UI y una de desarrollo web?**
+Una agencia UX/UI diseña la experiencia y la interfaz; una de desarrollo la construye en código. Tres Puntos hace las dos cosas de forma integrada, de modo que el diseño se implementa sin perder fidelidad ni rendimiento (design engineering), evitando el salto de calidad típico entre diseñar y programar.
+
+**¿Para qué tipo de empresa trabaja Tres Puntos?**
+Sobre todo empresas B2B, SaaS y e-commerce que necesitan plataformas a medida: fintech, EdTech, RRHH, real estate, servicios financieros, turismo. También trabaja white-label con otras agencias de marketing que necesitan un equipo técnico de diseño y desarrollo.
+
+**¿Hace Tres Puntos proyectos de IA y automatización?**
+Sí. Implementa IA generativa para empresas: agentes de IA, automatizaciones con n8n/Make y cerebros digitales empresariales que reducen costes operativos. Es uno de sus diferenciadores frente a agencias UX/UI tradicionales.
+
 ## Contacto
 
 - Web: https://trespuntoscomunicacion.es
 - Email: hola@trespuntoscomunicacion.es
 - Teléfono: +34 930 117 733
-- LinkedIn: https://www.linkedin.com/in/trespuntoscomunicacion/
+- LinkedIn: https://www.linkedin.com/company/trespuntoscomunicacion
 - Ubicación: Barcelona, España
 
 ## Contenido técnico (blog)
