@@ -704,3 +704,16 @@ curl -sk --ftp-pasv --ftp-create-dirs -T "ruta/local" \
 - **Cloudflare**: Purge by URL — 15 URLs ✅ `{"success":true}`
 - **Verificación**: 9/9 cambios confirmados en producción con cache-bust (metas nuevas servidas, FAQPage presente, crawl-delay fuera, anchors visibles)
 - **Control**: checkpoints 15/22/30-jun y 15/31-jul en dash.trespuntos-lab.com → Web & SEO → Plan SEO · watcher Telegram lunes 9:00 · plan en /root/shared/seo/
+
+---
+
+## Deploy 2026-06-15 — SEO Fase 2: B4 de-optimizar posts + B1 descanibalizar IA + B2 trailing-slash
+
+- **SHA**: `4ed3a4a` (main)
+- **Archivos FTP (7)**: .htaccess · 3 posts blog/agencia-ux-ui-en-barcelona-* · 3 servicios IA (ia-empresas-barcelona, ia-generativa-empresas, automatizacion-agentes-ia-empresas)
+- **B4**: title+H1 de los 3 posts reorientados a su tema (IA en diseño / claves UX/UI) — dejan de competir con la home por "agencia ux ui barcelona". Slugs intactos.
+- **B1**: descanibalización IA, 1 keyword dueña por página: ia-empresas-barcelona ("IA para Empresas en Barcelona"), ia-generativa-empresas ("IA Generativa para Empresas", sin Barcelona), automatizacion-agentes ("Automatización de Procesos y Agentes IA").
+- **B2**: `.htaccess` trailing-slash → https absoluto (RewriteRule línea 46). Verificado: redirect 301 directo a https con barra, sin salto http.
+- **Cruzado con keyword-map** (regla de oro). **Verificado en producción**: home HTTP 200 (sitio vivo tras htaccess), redirect OK, 4 titles nuevos servidos con cache-bust.
+- **Cloudflare**: purga 7 URLs OK.
+- **Pendiente menor**: regenerar OG de las 5 páginas con title cambiado (imagen social aún con title viejo — no afecta SEO).
