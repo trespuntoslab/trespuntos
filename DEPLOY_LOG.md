@@ -2,6 +2,23 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-06-17 — Blog post #07: Ecommerce en Barcelona — el coste real de una tienda online que convierte
+- **Commits:** `e13ff4c` (artículo + OG + sitemap) + `fd9b881` (card en hub `/blog/`).
+- **Contexto:** Art. 07 del [Plan Blog Mayo–Agosto 2026](https://www.notion.so/3501b33b8b2181cfae1af3636df522a5). Adelantado (fecha objetivo 24-jun). Borrador de Kobe (vía Jordan/bridge) revisado por Claudio: 3 fixes (enlace a artículo relacionado, CTA a `/iniciar-proyecto/`, slug unificado) + opcionales (mini-tabla de precios citable, meta title <60, fuente Baymard). Keyword: "ecommerce barcelona" (5.652 imp/mes, pos 9.7 — el de mayor ROI del plan). Refuerza `/servicios/tienda-online-barcelona/`. Maquetado con skill `blog-post-html`.
+- **Artículo:** ~1.600 palabras · 7 min · 5 H2 · 10 componentes (stat-grid, comparison-table, quote-pull, pain-blocks, stat-callout, signal-cards, icon-grid, article-cta-inline, checklist-box, article-cta final).
+- **Archivos FTP (4):**
+  - `blog/ecommerce-barcelona-coste-real-tienda-convierte/index.html` (32.443 B)
+  - `img/og/blog-ecommerce-barcelona-coste-real-tienda-convierte.png` (40.993 B, skill `blog-post-html`)
+  - `sitemap.xml` (17.174 B — nueva entrada, lastmod 2026-06-17, 79 URLs)
+  - `blog/index.html` (54.498 B — card en primera posición del grid)
+- **Cloudflare:** purge by URL (artículo + OG + sitemap + /blog/) → `{"success": true}`.
+- **Verificación post-purga (cache-bust + no-cache):**
+  - Artículo → HTTP 200 ✅ · OG → 200 ✅ · sitemap incluye la URL ✅
+  - 7/7 enlaces internos → 200 ✅ · card visible en hub `/blog/` ✅
+  - title producción: "Ecommerce en Barcelona: el coste real de una tienda | Tres Puntos" ✅
+- **Notion:** art. 07 → estado **Publicado**.
+- **Pendiente Jordi:** solicitar indexación en GSC (Inspección de URL → `https://www.trespuntoscomunicacion.es/blog/ecommerce-barcelona-coste-real-tienda-convierte/` → Solicitar indexación).
+
 ## 2026-06-09 — SEO: noindex 12 ciudades restantes (completa recovery 1-jun)
 - **Commit:** `16feb94` (main · `seo(servicios): noindex 12 ciudades restantes — completa recovery 1-jun`)
 - **Contexto:** Informe SEO de Jordan (9-jun) detectó 12 doorway pages thin aún indexables que el recovery del 1-jun no había tapado: `consultoria-digital`, `design-engineer`, `ia-empresas`, `tienda-online` × {madrid, bilbao, sevilla}. ~79% de vocabulario compartido con la versión Barcelona → duplicate content que diluye autoridad del dominio. El 1-jun solo se noindexaron las 6 de desarrollo-web + diseno-ux-ui.
