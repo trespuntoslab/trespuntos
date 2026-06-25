@@ -2,6 +2,22 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-06-25 — SEO Captación: página nueva software a medida + refuerzo hub/tienda (clientes >10k)
+- **Commit:** `64ecc25` (main · `feat(seo): captación nacional — página software a medida + refuerzo hub/tienda`)
+- **Contexto:** Arranque del Plan Captación Web (línea SEO ofensiva NACIONAL para clientes >10k). Tesis: las queries de Barcelona están en pos 3-4 con 0 clicks (map pack se come el clic, no estamos en él); las nacionales no tienen map pack → ganables con contenido. Keyword research con DataForSEO confirmó el clúster (desarrollo de aplicaciones web 1.300/mes, desarrollo web empresas 880, software a medida 390 con CPC hasta 48€). Panel "Captación Web" en dashboard (live, `/api/keyword-plan`). Doc: `/root/shared/seo/plan-captacion-web-jul2026.md`.
+- **Archivos FTP (5):**
+  - `servicios/software-a-medida/index.html` (PÁGINA NUEVA nacional, ~2.300 palabras, schema Service+FAQPage+BreadcrumbList)
+  - `img/og/servicio-software-a-medida.png` (OG generada con plantilla del repo)
+  - `servicios/desarrollo-web-a-medida-barcelona/index.html` (hub: +97 líneas ADITIVAS — sección aplicaciones web/empresas + 2 FAQ. **title/H1/meta/canonical byte-a-byte intactos**, verificado git diff)
+  - `servicios/tienda-online-barcelona/index.html` (+71 líneas aditivas — sección agencia ecommerce + 1 FAQ. title/H1/meta intactos)
+  - `sitemap.xml` (80 URLs — +software-a-medida, lastmod real 2026-06-25 en las 3 páginas tocadas)
+- **Cloudflare:** purge by URL (página nueva + hub + tienda + sitemap + OG) → `{"success": true}`.
+- **Verificación post-purga (cache-bust + no-cache):**
+  - Página nueva → HTTP 200 ✅ · title correcto ✅
+  - Hub → 200 ✅ · title INTACTO ✅ · sección nueva presente (10× "aplicaciones web") ✅
+  - Tienda → 200 ✅ · OG → 200 image/png ✅ · sitemap incluye la URL ✅
+- **Pendiente Jordi:** (1) re-submit sitemap en GSC; (2) solicitar indexación de `/servicios/software-a-medida/` (Inspección de URL → Solicitar indexación).
+
 ## 2026-06-17 — Blog post #07: Ecommerce en Barcelona — el coste real de una tienda online que convierte
 - **Commits:** `e13ff4c` (artículo + OG + sitemap) + `fd9b881` (card en hub `/blog/`).
 - **Contexto:** Art. 07 del [Plan Blog Mayo–Agosto 2026](https://www.notion.so/3501b33b8b2181cfae1af3636df522a5). Adelantado (fecha objetivo 24-jun). Borrador de Kobe (vía Jordan/bridge) revisado por Claudio: 3 fixes (enlace a artículo relacionado, CTA a `/iniciar-proyecto/`, slug unificado) + opcionales (mini-tabla de precios citable, meta title <60, fuente Baymard). Keyword: "ecommerce barcelona" (5.652 imp/mes, pos 9.7 — el de mayor ROI del plan). Refuerza `/servicios/tienda-online-barcelona/`. Maquetado con skill `blog-post-html`.
