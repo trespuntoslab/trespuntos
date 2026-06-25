@@ -62,7 +62,13 @@
   </url>
   <url>
     <loc>https://www.trespuntoscomunicacion.es/servicios/desarrollo-web-a-medida-barcelona/</loc>
-    <lastmod>2026-05-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.trespuntoscomunicacion.es/servicios/software-a-medida/</loc>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -92,7 +98,7 @@
   </url>
   <url>
     <loc>https://www.trespuntoscomunicacion.es/servicios/tienda-online-barcelona/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
