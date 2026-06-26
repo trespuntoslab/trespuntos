@@ -1529,6 +1529,33 @@ Jordan recomendaba cambiar el title de la home (`Arquitectura Digital de Convers
 
 ---
 
+## Cambios aplicados (2026-06-25/26) — Captación Web nacional + paneles dashboard + research IA
+
+### SEO web (producción)
+- **Página NUEVA `/servicios/software-a-medida/`** (commit `64ecc25`): nacional, ~2.300 palabras, schema Service+FAQPage+BreadcrumbList, OG generada. Ataca "software a medida" (390/mes, CPC hasta 48€). QA 26-jun: limpia.
+- **Hub desarrollo-web-a-medida + tienda-online reforzados** (ADITIVO, title/H1/meta INTACTOS): +sección aplicaciones web/empresas (hub) + agencia ecommerce (tienda) + FAQ.
+- **Fixes tienda-online** (26-jun): espacio en H1 (`Barcelona</span> para`, `442efd3`) + 23 negritas pegadas `</strong>X` (`02d64cd`).
+- **sitemap** 80 URLs: +software-a-medida, lastmod real por archivo (tienda 26-jun), re-submit GSC por API. Tesis: NACIONAL (sin map pack = ganable). Doc `/root/shared/seo/plan-captacion-web-jul2026.md`.
+
+### Dashboard (dash.trespuntos-lab.com / VPS)
+- **Panel "Captación Web"**: `/api/keyword-plan` (cartera 10 KW + posiciones live GSC + clics·impr + historia semanal). UI con barra hoy-vs-meta, tabla gauge recorrido + sparkline 6 sem + clics·impr, gráfico trayectoria.
+- **Panel "Plan SEO" rediseñado** + gráfico recovery con clics reales por semana (`/api/seo-plan` extendido). **Gráficos theme-aware** (leen vars del tema en runtime; antes rotos en modo claro por hex fijos).
+- **Radar de oportunidades** (`/api/gsc-radar`): barre TODAS las queries GSC, flagea top-15 con clicks bajos. Cazó 15 KW sin trackear. Resuelve el "no sabíamos que estábamos en pos 5,4".
+- ⚠️ **GOTCHA**: el dashboard cachea a disco (`/var/lib/dashboard/cache.pkl`) y sobrevive a `pm2 restart`. Para ver cambios de DATOS hay que **borrar `cache.pkl`** antes de reiniciar.
+
+### Google Business Profile (revisado, NO tocado)
+- Ficha EXISTE y verificada (cuenta `trespuntoscomunicacion@gmail.com`, authuser=1), 12 reseñas 5★, 257 interacciones, categoría "Diseñador de sitios web", descripción buena. PERO domicilio en **Santa Coloma de Gramenet** → fuera del map pack de Barcelona y NO movible (re-verificación + sería falso). Decisión: dejarla; crecer por canal nacional.
+
+### Cerebro digital (trespuntos-context)
+- `page-framework.md` + `curry.md` (`74e94d6`) + `keywords.md` + `sitemap.md` (`abbb5c1`): home ya no apunta a keyword prohibida, fix secundaria canibalizante, +software-a-medida.
+
+### Research IA (26-jun) — nuevo bloque, ver memoria `project_seo_ia_block`
+- Gran target **"agentes IA"** (~3.200 búsq/mes combinado, CPC 8-20€, on-brand) + "IA para empresas" (CPC 13-26€) + "ia generativa" (3.600 vol, pilar contenido). 3 páginas IA con descanibalización pendiente (B1). Páginas: ia-empresas-barcelona, ia-generativa-empresas, automatizacion-agentes-ia-empresas.
+
+### Pendientes de Jordi: CERO (J1-J5, B5, B6, C4 cerrados). Frente vivo: ejecutar captación nacional + decidir si arrancamos el bloque IA.
+
+---
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
