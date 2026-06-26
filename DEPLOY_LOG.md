@@ -2,6 +2,18 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-06-26 — Blog: post "Qué es un agente de IA y en qué se diferencia de un chatbot" (apoyo bloque IA)
+- **Commit:** `a8f889e` (main · `feat(blog): post "Qué es un agente de IA y en qué se diferencia de un chatbot"`)
+- **Contexto:** Post informacional de APOYO a la página de agentes desplegada hoy. Brief de Claudio → Jordan → Kobe (redacción) + Curry (validación KW) vía bridge (sesión `15ccdbbe`). Focus KW "qué es un agente de ia" (informacional, sin dueño en keyword-map, SERP virgen, canibalización 0 con las 3 páginas IA). Revisado por Claudio (skill blog-review): aprobado + 2 fixes (IA generativa capitalizado, métrica "cae a la mitad" → cualitativo). 1528 palabras, E-E-A-T (caso propio del sistema multiagente).
+- **Archivos FTP (4):**
+  - `blog/que-es-un-agente-de-ia-diferencia-chatbot/index.html` (maquetado con skill blog-post-html sobre gold pattern: TOC 7 H2, comparison-table agente vs chatbot, icon-grid percibe/razona/actúa, 5 pain-blocks casos de uso, 2 quote-pull, stat-callout, 2 CTA → /iniciar-proyecto/, 3 relacionados. Enlace interno → /servicios/automatizacion-agentes-ia-empresas/ anchor "lo implementamos en Tres Puntos")
+  - `blog/index.html` (card nueva al top del grid, data-category "IA y Automatización")
+  - `img/og/blog-que-es-un-agente-de-ia-diferencia-chatbot.png` (OG generada con script del skill)
+  - `sitemap.xml` (81 URLs — +post, lastmod 2026-06-26, priority 0.6)
+- **Cloudflare:** purge by URL (post + /blog/ + sitemap + OG) → `{"success": true}`.
+- **Verificación (cache-bust):** post 200 + title OK ✅ · OG 200 image/png ✅ · card en hub ✅ · sitemap ✅ · 4 enlaces internos 200 ✅.
+- **Notion:** Estado → Publicado. **Pendiente Jordi (opcional):** solicitar indexación en GSC.
+
 ## 2026-06-26 — SEO Bloque IA: reposicionar página de agentes ("Agentes de IA para empresas") + enlazado blog→hub
 - **Commit:** `f05fc75` (main · `seo(ia): reposicionar página de agentes para liderar "Agentes de IA para empresas" + enlazado blog→hub`)
 - **Contexto:** Arranque del Bloque SEO IA (research DataForSEO 26-jun, validado por Jordan vía bridge sesión `20baa50f`). Target primario "agentes ia / agentes de ia" ≈ 3.200 búsq/mes, CPC 8-20€, on-brand (Tres Puntos opera un sistema multiagente real). Cruzado contra `keyword-map.md`: la página es la dueña asignada del clúster; sin infringir prohibiciones. Reposicionamiento ADITIVO (no reescritura). Memoria: `project_seo_ia_block`.
