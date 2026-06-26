@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css">
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css">
+  </noscript>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var s1 = document.createElement('script');
+        s1.src = '/assets/cookieconsent/cookieconsent.umd.js';
+        s1.onload = function () {
+          var s2 = document.createElement('script');
+          s2.src = '/assets/cookieconsent/cookieconsent-init.js?v=20260416';
+          document.head.appendChild(s2);
+        };
+        document.head.appendChild(s1);
+      }, 800);
+    });
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#5dffbf">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qué es un agente de IA y en qué se diferencia de un chatbot | Blog | Tres Puntos</title>
+  <meta name="description" content="Un agente de IA no responde preguntas: ejecuta tareas. Te explicamos qué es, cómo funciona en una empresa real y qué hemos aprendido montando el nuestro." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/que-es-un-agente-de-ia-diferencia-chatbot/" />
+  <meta property="og:title" content="Qué es un agente de IA y en qué se diferencia de un chatbot" />
+  <meta property="og:description" content="Un agente de IA no responde preguntas: ejecuta tareas. Te explicamos qué es, cómo funciona en una empresa real y qué hemos aprendido montando el nuestro." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/blog/que-es-un-agente-de-ia-diferencia-chatbot/" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Tres Puntos Comunicación" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og/blog-que-es-un-agente-de-ia-diferencia-chatbot.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Qué es un agente de IA y en qué se diferencia de un chatbot" />
+  <meta name="twitter:description" content="Un agente de IA no responde preguntas: ejecuta tareas. Te explicamos qué es, cómo funciona en una empresa real y qué hemos aprendido montando el nuestro." />
+  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og/blog-que-es-un-agente-de-ia-diferencia-chatbot.png" />
+  <meta property="article:published_time" content="2026-06-26" />
+  <meta property="article:modified_time" content="2026-06-26" />
+  <meta property="article:author" content="Jordi Expósito" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Qué es un agente de IA y en qué se diferencia de un chatbot",
+      "description": "Un agente de IA no responde preguntas: ejecuta tareas. Te explicamos qué es, cómo funciona en una empresa real y qué hemos aprendido montando el nuestro.",
+      "image": "https://www.trespuntoscomunicacion.es/img/og/blog-que-es-un-agente-de-ia-diferencia-chatbot.png",
+      "datePublished": "2026-06-26",
+      "dateModified": "2026-06-26",
+      "author": {
+        "@type": "Person",
+        "name": "Jordi Expósito",
+        "url": "https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/",
+        "sameAs": [
+          "https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/",
+          "https://www.linkedin.com/in/trespuntoscomunicacion/"
+        ],
+        "jobTitle": "Digital Project Lead & UX/UI Designer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Tres Puntos Comunicación",
+          "url": "https://www.trespuntoscomunicacion.es/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.trespuntoscomunicacion.es/img/logo.svg"
+        }
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.trespuntoscomunicacion.es/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.trespuntoscomunicacion.es/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Qué es un agente de IA y en qué se diferencia de un chatbot"}
+      ]
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/blog-article.css" />
+  <noscript>
+    <link rel="stylesheet" href="/css/design-system.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/blog-article.css">
+  </noscript>
+
+  <style>
+    @font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+    @font-face{font-family:'Jakarta Fallback';src:local('Arial Black');size-adjust:95%;ascent-override:100%;descent-override:22%;line-gap-override:0%}
+    #tp-navbar{position:fixed;top:0;left:0;right:0;z-index:1000;min-height:72px}
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+  <div id="tp-navbar"></div>
+
+  <header class="article-header">
+    <div class="article-header-wrapper">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Inicio</a><span class="article-breadcrumb-sep">/</span><a href="/blog/">Blog</a><span class="article-breadcrumb-sep">/</span><span>Qué es un agente de IA y en qué se diferencia de un chatbot</span>
+      </nav>
+      <div class="article-category">IA y Automatización</div>
+      <h1 class="article-title">Qué es un agente de IA y en qué se diferencia de un chatbot</h1>
+      <div class="article-meta">
+        <div class="article-meta-author">
+          <img class="article-meta-avatar" src="/img/jordi-exposito.webp" alt="Jordi Expósito" loading="lazy" />
+          <div>
+            <div class="article-meta-name"><a href="https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/" target="_blank" rel="noopener">Jordi Expósito</a></div>
+            <div class="article-meta-time">26 de junio de 2026</div>
+          </div>
+        </div>
+        <div class="article-meta-item">
+          <span style="color:var(--mint)">•</span>
+          <span class="article-meta-time">8 min de lectura</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-toc">
+    <div class="toc-box">
+      <div class="toc-title">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h14"/></svg>
+        En este artículo
+      </div>
+      <ol class="toc-list">
+        <li><a href="#section-1">Qué es un agente de IA, sin humo</a></li>
+        <li><a href="#section-2">Por qué la diferencia con un chatbot importa para tu negocio</a></li>
+        <li><a href="#section-3">Cómo funciona un agente de IA, en términos prácticos</a></li>
+        <li><a href="#section-4">Para qué sirven los agentes de IA en una empresa</a></li>
+        <li><a href="#section-5">Lo que aprendimos montando nuestro propio equipo de agentes</a></li>
+        <li><a href="#section-6">La pregunta que deberías hacerte</a></li>
+        <li><a href="#section-7">Por dónde empezar</a></li>
+      </ol>
+    </div>
+  </div>
+
+  <main class="article-body">
+    <article class="article-content">
+
+      <p>Llevas meses oyendo hablar de agentes de IA. Lo has leído en LinkedIn, en newsletters, en algún artículo de prensa económica. Y probablemente tienes la sensación de que todo el mundo lo da por entendido menos tú.</p>
+      <p>No es culpa tuya. Es que la industria tecnológica tiene una habilidad especial para envolver conceptos sencillos en capas de jerga hasta hacerlos irreconocibles.</p>
+      <p>Vamos a desmontar eso.</p>
+
+      <h2 id="section-1">Qué es un agente de IA, sin humo</h2>
+      <p>Un agente de IA es un sistema de inteligencia artificial que no solo genera respuestas, sino que <strong>ejecuta tareas de forma autónoma</strong>.</p>
+      <p>La diferencia clave respecto a un chatbot o a un asistente de IA generativa convencional está en esa palabra: ejecuta.</p>
+
+      <blockquote class="quote-pull">
+        <img class="quote-pull-avatar" src="/nosotros/Jordi.webp" alt="Jordi Expósito" loading="lazy" onerror="this.style.display='none'">
+        <div class="quote-pull-body">
+          <p class="quote-pull-text">Un chatbot te responde. Un agente de IA actúa. La distinción no es semántica: es operativa.</p>
+          <div class="quote-pull-author">JORDI EXPÓSITO · Digital Project Lead</div>
+        </div>
+      </blockquote>
+
+      <p>Cuando le preguntas a ChatGPT cómo redactar un email, te da el texto. Tú lo copias, abres tu cliente de correo, pegas y envías. Tú eres el ejecutor.</p>
+      <p>Un agente de IA hace todo eso: redacta el email, accede a tu bandeja de entrada, lo envía y registra la acción. Sin que tú toques nada.</p>
+      <p>La distinción no es semántica. Es operativa. Y tiene consecuencias directas en cómo una empresa puede usar esta tecnología.</p>
+
+      <h2 id="section-2">Por qué la diferencia con un chatbot importa para tu negocio</h2>
+      <p>Los chatbots existen desde hace años. Los tienes en tu web de soporte, en WhatsApp, en el formulario de contacto. Son útiles para responder preguntas frecuentes, filtrar consultas o reducir carga en el equipo de atención al cliente.</p>
+      <p>Pero tienen un límite estructural: <strong>solo hablan</strong>.</p>
+      <p>No pueden abrir una ficha en tu CRM. No pueden comprobar el estado de un pedido en tu sistema ERP. No pueden enviar una propuesta, actualizar una hoja de cálculo o alertar a tu equipo de que un cliente ha llegado a un punto crítico del proceso.</p>
+      <p>Un agente de IA cruza ese límite. Se conecta a tus sistemas, lee datos, toma decisiones dentro de un margen definido y ejecuta acciones reales.</p>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Qué comparamos</th>
+              <th>Chatbot tradicional</th>
+              <th>Agente de IA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Qué hace</td>
+              <td><span class="badge badge-warn">Responde preguntas</span></td>
+              <td><span class="badge badge-ok">Ejecuta tareas</span></td>
+            </tr>
+            <tr>
+              <td>Integración</td>
+              <td><span class="badge badge-warn">Solo conversación</span></td>
+              <td><span class="badge badge-ok">Conectado a sistemas reales</span></td>
+            </tr>
+            <tr>
+              <td>Autonomía</td>
+              <td><span class="badge badge-bad">Ninguna</span></td>
+              <td><span class="badge badge-ok">Definida por el equipo</span></td>
+            </tr>
+            <tr>
+              <td>Resultado</td>
+              <td><span class="badge badge-warn">Una respuesta</span></td>
+              <td><span class="badge badge-ok">Una acción completada</span></td>
+            </tr>
+            <tr>
+              <td>Intervención humana</td>
+              <td><span class="badge badge-warn">Siempre para ejecutar</span></td>
+              <td><span class="badge badge-ok">Solo para supervisar o escalar</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="section-3">Cómo funciona un agente de IA, en términos prácticos</h2>
+      <p>Un agente de IA opera con un bucle que se repite: percibe, razona, actúa.</p>
+
+      <div class="icon-grid cols-3">
+        <div class="icon-grid-item">
+          <div class="icon-grid-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/></svg>
+          </div>
+          <div class="icon-grid-item-label">Percibe</div>
+        </div>
+        <div class="icon-grid-item">
+          <div class="icon-grid-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2z"/><line x1="9" y1="21" x2="15" y2="21"/></svg>
+          </div>
+          <div class="icon-grid-item-label">Razona</div>
+        </div>
+        <div class="icon-grid-item">
+          <div class="icon-grid-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="icon-grid-item-label">Actúa</div>
+        </div>
+      </div>
+
+      <p><strong>Percibe:</strong> recibe una instrucción o detecta un evento (un formulario enviado, una fecha límite, un cambio en un sistema conectado).</p>
+      <p><strong>Razona:</strong> analiza qué hay que hacer, en qué orden y con qué herramientas. Aquí es donde entra la IA generativa: el modelo de lenguaje actúa como motor de razonamiento.</p>
+      <p><strong>Actúa:</strong> ejecuta. Llama a una API, escribe en una base de datos, genera un documento, envía un mensaje, lanza un proceso.</p>
+      <p>Y si algo sale mal o necesita criterio humano, escala. No actúa a ciegas.</p>
+      <p>La clave está en ese ciclo de razonamiento más acción. Sin la parte de acción, es solo un modelo de lenguaje. Sin la parte de razonamiento, es solo automatización de reglas (lo que hacías con Zapier o Make).</p>
+      <p>Los agentes de IA combinan ambas cosas, y por eso representan un salto cualitativo respecto a cualquier herramienta anterior.</p>
+
+      <h2 id="section-4">Para qué sirven los agentes de IA en una empresa</h2>
+      <p>No hace falta ser una multinacional ni tener un equipo de ingeniería propio. Los agentes de IA tienen aplicaciones reales en empresas de cualquier tamaño.</p>
+
+      <div class="stat-callout row">
+        <div class="stat-callout-number">5</div>
+        <div>
+          <div class="stat-callout-label" style="text-align:left">Áreas de una empresa donde un agente de IA ya puede hacer trabajo real hoy, no en el futuro</div>
+          <div class="stat-callout-source" style="text-align:left">Casos de uso habituales en proyectos de automatización</div>
+        </div>
+      </div>
+
+      <div class="pain-blocks">
+        <div class="pain-block">
+          <div class="pain-block-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="pain-block-title">Comercial y ventas</div>
+          <div class="pain-block-desc">Monitoriza los leads que entran por el formulario, los cruza con el CRM, los clasifica según criterios de cualificación y prepara un resumen para el equipo antes de que nadie haya llegado a la oficina.</div>
+        </div>
+        <div class="pain-block">
+          <div class="pain-block-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="pain-block-title">Atención al cliente</div>
+          <div class="pain-block-desc">Gestiona las consultas de primer nivel —estado de pedidos, cambios de cita, dudas frecuentes— y escala a persona solo cuando hay una situación que requiere criterio humano. Sin colas. Sin horarios.</div>
+        </div>
+        <div class="pain-block">
+          <div class="pain-block-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <div class="pain-block-title">Operaciones y reporting</div>
+          <div class="pain-block-desc">Recoge datos de varios sistemas (CRM, ERP, herramientas de marketing), los cruza y genera el informe semanal de negocio. Sin copiar y pegar. Sin errores manuales.</div>
+        </div>
+        <div class="pain-block">
+          <div class="pain-block-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <div class="pain-block-title">Contenido y comunicación</div>
+          <div class="pain-block-desc">Investiga tendencias del sector, redacta borradores de artículos o posts, y los pone en cola de revisión. El equipo humano valida y publica. El tiempo de producción se reduce de forma notable.</div>
+        </div>
+        <div class="pain-block">
+          <div class="pain-block-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="pain-block-title">Legal y compliance</div>
+          <div class="pain-block-desc">Revisa contratos contra una checklist de criterios, detecta cláusulas problemáticas y prepara un resumen para el equipo legal. En minutos, no en horas.</div>
+        </div>
+      </div>
+
+      <p>En todos estos casos, el patrón es el mismo: el agente hace el trabajo preparatorio, repetitivo o de síntesis, y el humano aporta criterio y validación. El resultado no es eliminar personas, sino multiplicar su capacidad.</p>
+
+      <div class="article-cta-inline">
+        <div class="article-cta-inline-text">¿Hay procesos en tu empresa que están consumiendo tiempo y podrían ejecutarse solos? Te ayudamos a identificarlos.</div>
+        <a href="/iniciar-proyecto/" class="article-cta-inline-btn">Hablemos →</a>
+      </div>
+
+      <h2 id="section-5">Lo que aprendimos montando nuestro propio equipo de agentes</h2>
+      <p>Aquí viene la parte que ningún competidor puede copiar, porque es nuestra experiencia real.</p>
+      <p>En Tres Puntos llevamos meses operando con un equipo de agentes de IA que trabaja de forma integrada en la agencia. No es una demo. No es un piloto. Es cómo funcionamos cada día.</p>
+      <p>El sistema tiene un orquestador central que coordina al resto. Cada agente tiene un rol definido: uno trabaja en SEO y posicionamiento, otro en contenido y copy, otro en propuestas comerciales y documentos para clientes, otro en research y análisis competitivo, otro en automatizaciones y flujos de trabajo, y varios más especializados en finanzas, desarrollo, diseño y marketing.</p>
+      <p>Cuando llega una tarea compleja —preparar una propuesta para un cliente, analizar el estado del pipeline comercial, redactar un artículo de blog— el orquestador la descompone, la delega al agente adecuado, supervisa el resultado y lo consolida antes de que llegue a nosotros.</p>
+
+      <blockquote class="quote-pull">
+        <img class="quote-pull-avatar" src="/nosotros/Jordi.webp" alt="Jordi Expósito" loading="lazy" onerror="this.style.display='none'">
+        <div class="quote-pull-body">
+          <p class="quote-pull-text">La especialización importa más que la capacidad bruta. La inversión real está en definir bien los roles, no en el modelo de IA.</p>
+          <div class="quote-pull-author">JORDI EXPÓSITO · Digital Project Lead</div>
+        </div>
+      </blockquote>
+
+      <p>Qué hemos aprendido en el proceso:</p>
+      <p><strong>Primero: la especialización importa más que la capacidad bruta.</strong> Un agente que sabe exactamente qué debe hacer, con qué tono y con qué criterios, produce resultados mucho mejores que un agente generalista al que le dices "hazlo tú". La inversión real está en definir bien los roles, no en el modelo de IA.</p>
+      <p><strong>Segundo: el supervisor humano no desaparece, cambia de función.</strong> Antes, parte de nuestro tiempo se iba en tareas de síntesis, búsqueda de información y producción de borradores. Ahora ese tiempo se dedica a supervisar, validar y tomar decisiones. El trabajo de alto valor sube, el trabajo mecánico baja.</p>
+      <p><strong>Tercero: la integración con sistemas reales es lo que lo hace útil.</strong> Un agente que solo genera texto es un asistente de escritura. Un agente que lee tus datos, los cruza con contexto externo y produce un output accionable es una palanca de negocio. La diferencia está en las conexiones que construyes alrededor de él.</p>
+      <p><strong>Cuarto: la transparencia genera confianza.</strong> Tuvimos que decidir si contábamos que trabajamos con agentes de IA o si lo manteníamos como proceso interno. Decidimos contarlo. El resultado: los clientes lo valoran. Entienden que trabajamos con herramientas de vanguardia y que eso repercute en la calidad y la velocidad de lo que entregamos.</p>
+      <p><strong>Quinto: no todo debe automatizarse.</strong> Hay tareas donde el criterio humano es insustituible: la conversación con un cliente, la decisión estratégica, la negociación. Los agentes nos liberan tiempo para estar presentes en esas conversaciones. No para eliminarlas.</p>
+
+      <h2 id="section-6">La pregunta que deberías hacerte</h2>
+      <p>No es "¿debería usar agentes de IA?". Esa pregunta lleva a debates teóricos que no llevan a ningún sitio.</p>
+
+      <div class="question-block" role="note">
+        <p>La pregunta útil es: <strong>¿qué trabajo repetitivo o de síntesis está consumiendo tiempo de mi equipo que podría estar en otro lugar?</strong> Ahí está la respuesta.</p>
+      </div>
+
+      <p>Si tu equipo comercial dedica horas a cualificar leads que vienen del formulario, a preparar informes que requieren copiar datos de tres sistemas, o a responder consultas que siguen el mismo patrón cada semana, tienes una oportunidad de negocio clara.</p>
+      <p>Si tu equipo de contenido pasa más tiempo recopilando información que escribiendo, lo mismo.</p>
+      <p>Los agentes de IA para empresas no son una tecnología del futuro. Son una herramienta operativa disponible hoy, con casos de uso concretos y ROI medible. La pregunta no es si vas a usarlos. Es cuándo empiezas a hacerlo con criterio.</p>
+
+      <h2 id="section-7">Por dónde empezar</h2>
+      <p>Si llevas tiempo pensando en cómo integrar inteligencia artificial ejecutiva en tu empresa, el mejor punto de partida no es buscar la herramienta. Es definir el problema que quieres resolver.</p>
+      <p>Nosotros trabajamos con empresas que quieren construir este tipo de sistemas de forma ordenada: identificando los procesos con mayor potencial, diseñando la arquitectura correcta y construyendo algo que funcione en producción, no solo en una demo.</p>
+      <p>Si quieres explorar cómo <a href="/servicios/automatizacion-agentes-ia-empresas/">lo implementamos en Tres Puntos</a> dentro de tu operativa, cuéntanos qué necesitas construir.</p>
+
+    </article>
+  </main>
+
+  <section class="article-cta">
+    <p class="article-cta-eyebrow">Tres Puntos — Agentes de IA</p>
+    <h2>¿Quieres que la IA ejecute, no solo conteste?</h2>
+    <p>Identificamos los procesos con mayor potencial en tu empresa y diseñamos los agentes que los resuelven. Sin humo, con algo que funcione en producción.</p>
+    <a href="/iniciar-proyecto/" class="article-cta-btn">Cuéntanos tu proyecto</a>
+  </section>
+
+  <div class="author-card">
+    <div class="author-card-inner">
+      <img class="author-card-avatar" src="/img/jordi-exposito.webp" alt="Jordi Expósito" loading="lazy" />
+      <div class="author-card-info">
+        <div class="author-card-name">Jordi Expósito</div>
+        <div class="author-card-role">Digital Project Lead & UX/UI Designer · Tres Puntos</div>
+        <a class="author-card-link" href="https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Conectar en LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-footer-divider"></div>
+
+  <section class="related-articles" aria-label="Artículos relacionados">
+    <h2 class="related-articles-title">Artículos relacionados</h2>
+    <div class="related-articles-grid">
+      <a href="/blog/como-la-inteligencia-artificial-esta-cambiando-los-comportamientos-de-busqueda-online/" class="related-card">
+        <div class="related-card-cat">IA y Automatización</div>
+        <h3 class="related-card-title">Cómo la inteligencia artificial está cambiando los comportamientos de búsqueda online</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+      <a href="/servicios/automatizacion-agentes-ia-empresas/" class="related-card">
+        <div class="related-card-cat">Servicio</div>
+        <h3 class="related-card-title">Agentes de IA para empresas — automatización de procesos con prueba real</h3>
+        <span class="related-card-link">Ver servicio <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+      <a href="/blog/agencia-ux-ui-en-barcelona-ia-al-rescate-de-tu-diseno/" class="related-card">
+        <div class="related-card-cat">IA y Automatización</div>
+        <h3 class="related-card-title">IA al rescate de tu diseño UX/UI</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js?v=27" defer></script>
+  <script src="/js/supabase-forms.js?v=20260416" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      try { TP.navbar('blog'); } catch (e) {}
+      try { TP.footer(); } catch (e) {}
+      try { TP.initJS(); } catch (e) {}
+    });
+  </script>
+
+  <script src="/js/blog-article.js" defer></script>
+
+  <script defer>
+    (function () {
+      if (window.innerWidth > 1024) {
+        var outerCursor = document.createElement('div');
+        outerCursor.id = 'outer-cursor';
+        var innerCursor = document.createElement('div');
+        innerCursor.id = 'inner-cursor';
+        document.body.appendChild(outerCursor);
+        document.body.appendChild(innerCursor);
+        var style = document.createElement('style');
+        style.textContent = '#outer-cursor,#inner-cursor{position:fixed;pointer-events:none;border-radius:50%;mix-blend-mode:lighten;z-index:99999}#outer-cursor{width:40px;height:40px;border:2px solid #5dffbf;top:-20px;left:-20px;transition:transform .2s ease-out,opacity .2s ease-out;opacity:.6}#inner-cursor{width:8px;height:8px;background:#5dffbf;top:-4px;left:-4px;opacity:1;transition:transform .1s ease-out}#outer-cursor.active{transform:scale(1.5);border-width:3px;opacity:.8}#inner-cursor.active{transform:scale(.75)}#outer-cursor.click{transform:scale(.75);opacity:.4}#inner-cursor.click{transform:scale(1.5)}@media(max-width:1024px){#outer-cursor,#inner-cursor{display:none!important}}';
+        document.head.appendChild(style);
+        var mouseX = 0, mouseY = 0, outerX = 0, outerY = 0;
+        document.addEventListener('mousemove', function (e) { mouseX = e.clientX; mouseY = e.clientY; });
+        (function animate() {
+          outerX += (mouseX - outerX) * 0.2;
+          outerY += (mouseY - outerY) * 0.2;
+          outerCursor.style.transform = 'translate3d(' + outerX + 'px,' + outerY + 'px,0)';
+          innerCursor.style.transform = 'translate3d(' + mouseX + 'px,' + mouseY + 'px,0)';
+          requestAnimationFrame(animate);
+        })();
+        document.querySelectorAll('a,button,[role="button"],input,textarea,select').forEach(function (el) {
+          el.addEventListener('mouseenter', function () { outerCursor.classList.add('active'); innerCursor.classList.add('active'); });
+          el.addEventListener('mouseleave', function () { outerCursor.classList.remove('active', 'click'); innerCursor.classList.remove('active', 'click'); });
+          el.addEventListener('mousedown', function () { outerCursor.classList.add('click'); innerCursor.classList.add('click'); });
+          el.addEventListener('mouseup', function () { outerCursor.classList.remove('click'); innerCursor.classList.remove('click'); });
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
