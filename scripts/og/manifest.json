@@ -669,8 +669,8 @@
     "rel_path": "servicios/automatizacion-agentes-ia-empresas/index.html",
     "slug": "servicio-automatizacion-agentes-ia-empresas",
     "category": "SERVICIO · TRES PUNTOS",
-    "title": "IA para empresas",
-    "subtitle": "Automatizamos procesos y creamos agentes IA para empresas que quieren eliminar tareas manuales y escalar operaciones.",
+    "title": "Agentes de IA para empresas",
+    "subtitle": "Automatizamos procesos reales. Operamos nuestro propio sistema multiagente en producción.",
     "output": "/img/og/servicio-automatizacion-agentes-ia-empresas.png",
     "ok": true
   },
