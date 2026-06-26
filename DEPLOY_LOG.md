@@ -2,6 +2,18 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-06-26 — SEO Bloque IA: reposicionar página de agentes ("Agentes de IA para empresas") + enlazado blog→hub
+- **Commit:** `f05fc75` (main · `seo(ia): reposicionar página de agentes para liderar "Agentes de IA para empresas" + enlazado blog→hub`)
+- **Contexto:** Arranque del Bloque SEO IA (research DataForSEO 26-jun, validado por Jordan vía bridge sesión `20baa50f`). Target primario "agentes ia / agentes de ia" ≈ 3.200 búsq/mes, CPC 8-20€, on-brand (Tres Puntos opera un sistema multiagente real). Cruzado contra `keyword-map.md`: la página es la dueña asignada del clúster; sin infringir prohibiciones. Reposicionamiento ADITIVO (no reescritura). Memoria: `project_seo_ia_block`.
+- **Archivos FTP (4):**
+  - `servicios/automatizacion-agentes-ia-empresas/index.html` (title/H1/meta/OG/Service schema/breadcrumb → "Agentes de IA para empresas"; nueva sección "Caso propio" mostrando el sistema multiagente real como prueba; +2 FAQ chatbots/implementación IA como long-tail). 3 JSON-LD válidos.
+  - `img/og/servicio-automatizacion-agentes-ia-empresas.png` (OG regenerada con el nuevo title; manifest actualizado en repo)
+  - `blog/desarrollo-web-a-medida-cuando-es-la-decision-correcta/index.html` (anchor EXACTO "desarrollo web a medida" → hub, antes del otro enlace = first-link-counts, para fijar jerarquía hub-dueño. Recomendación de Jordan, hilo captación `7a923189`)
+  - `sitemap.xml` (lastmod real 2026-06-26 SOLO en las 2 URLs tocadas — regla anti-uniformidad)
+- **Cloudflare:** purge by URL (página agentes + post blog + OG + sitemap) → `{"success": true}`.
+- **Verificación post-purga (cache-bust + no-cache):** página agentes → title nuevo ✅ + H1 "Agentes de IA para empresas" ✅ · blog → anchor exacto presente ✅ · sitemap → lastmod 2026-06-26 ✅.
+- **Pendiente:** llevar la página al `keyword-map.md` como dueña de "agentes ia" (cierra parte de B1). Re-submit sitemap GSC (opcional).
+
 ## 2026-06-25 — SEO Captación: página nueva software a medida + refuerzo hub/tienda (clientes >10k)
 - **Commit:** `64ecc25` (main · `feat(seo): captación nacional — página software a medida + refuerzo hub/tienda`)
 - **Contexto:** Arranque del Plan Captación Web (línea SEO ofensiva NACIONAL para clientes >10k). Tesis: las queries de Barcelona están en pos 3-4 con 0 clicks (map pack se come el clic, no estamos en él); las nacionales no tienen map pack → ganables con contenido. Keyword research con DataForSEO confirmó el clúster (desarrollo de aplicaciones web 1.300/mes, desarrollo web empresas 880, software a medida 390 con CPC hasta 48€). Panel "Captación Web" en dashboard (live, `/api/keyword-plan`). Doc: `/root/shared/seo/plan-captacion-web-jul2026.md`.
