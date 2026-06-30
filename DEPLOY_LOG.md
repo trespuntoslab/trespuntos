@@ -2,6 +2,15 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-06-30 — SEO: answer-first en DWM-barcelona + enlace contextual desde software-a-medida
+- **Commit:** `83798c2` (main · `seo(dwm): párrafo answer-first en DWM-barcelona + enlace contextual desde software-a-medida`)
+- **Contexto:** Respuesta a alerta SEO de Curry (29-jun): `desarrollo-web-a-medida-barcelona` en pos 9.6 con CTR 0.16% (1 clic / 614 impr). Cruzado contra historial antes de actuar — se descartaron 2 falsos positivos del reporte (PageSpeed home 0/100 = artefacto de medición, verificado real LCP 2.7s/CLS 0 con Lighthouse; "agencia ux ui barcelona cae a 6.4" = artefacto de agregación, el propio Curry reconoce home real pos 3). NO se tocó la home ni ningún title/H1 (regla descanibalización).
+- **Archivos FTP (2):**
+  - `servicios/desarrollo-web-a-medida-barcelona/index.html` (sección answer-first "Qué es" tras el hero, ~58 palabras: qué es / para quién / por qué TP + "Barcelona y toda España". Aditivo, sin tocar title/H1/hero. Clases del design system + estilos inline mínimos.)
+  - `servicios/software-a-medida/index.html` (enlace contextual en prosa, anchor EXACTO "desarrollo web a medida" → `/servicios/desarrollo-web-a-medida-barcelona`, dentro del párrafo del espectro de proyectos. Refuerza la query nacional; complementa la card de relacionados ya existente. La home NO se tocó: ya enlaza fuerte con bento-card dedicada + link de texto.)
+- **Cloudflare:** purge by URL (2 URLs) → `{"success": true}`.
+- **Verificación (cache-bust):** answer-first presente en DWM ✅ · enlace contextual con href+anchor correctos en software ✅ · ambas 200 ✅.
+
 ## 2026-06-26 — Blog: post "Qué es un agente de IA y en qué se diferencia de un chatbot" (apoyo bloque IA)
 - **Commit:** `a8f889e` (main · `feat(blog): post "Qué es un agente de IA y en qué se diferencia de un chatbot"`)
 - **Contexto:** Post informacional de APOYO a la página de agentes desplegada hoy. Brief de Claudio → Jordan → Kobe (redacción) + Curry (validación KW) vía bridge (sesión `15ccdbbe`). Focus KW "qué es un agente de ia" (informacional, sin dueño en keyword-map, SERP virgen, canibalización 0 con las 3 páginas IA). Revisado por Claudio (skill blog-review): aprobado + 2 fixes (IA generativa capitalizado, métrica "cae a la mitad" → cualitativo). 1528 palabras, E-E-A-T (caso propio del sistema multiagente).
