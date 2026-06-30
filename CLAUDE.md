@@ -1556,6 +1556,35 @@ Jordan recomendaba cambiar el title de la home (`Arquitectura Digital de Convers
 
 ---
 
+## Cambios aplicados (2026-06-29) — E2E del form + restauración stats exit-intent en dashboard
+
+### Contexto
+Análisis de conversión (Jordan/agente) sobre el form afirmaba: *"Zero formStart en 75 sesiones combinadas indica problema técnico, no de intención"* y recomendaba 🔴 auditar si el form está renderizado en el DOM. Premisa sospechosa (mismo patrón que el falso "GA4 ausente" del 27-may). Se verificó contra código + producción antes de actuar.
+
+### E2E en producción (Playwright) — la premisa "form roto" queda DESMENTIDA
+- **Home** (`/`): el form CTA del footer renderiza; `form_start` **dispara** al hacer focus en `#f-nombre` (`form_variant: footer-cta`). Nota: el `<form>` del footer en la home NO tiene `id` → `#v3-form` da null, pero los campos (`#f-nombre`…) existen y `getFormVariant()` cae correctamente a `footer-cta`.
+- **`/iniciar-proyecto/`**: `#v3-form` presente (`data-form-variant="iniciar-proyecto"`), `form_start` dispara, y el **modal exit-intent** (`#ip-exit-overlay`) renderiza, se activa por mouseleave superior (tras 10s) y emite `exit_intent_shown` (time_on_page 47s). Sistema sano end-to-end.
+- **33 errores de consola en la home = TODOS de Cloudflare Turnstile** (error 600010, `brunhild...ERR_NAME_NOT_RESOLVED`, 401) — ruido de terceros amplificado por el navegador headless, no rompen el form. (Observación: Turnstile invisible falla en automatización; para usuarios reales suele pasar silencioso. No tocado — riesgo/fuera de alcance.)
+- **Conclusión**: el "zero form_start" es **artefacto de Consent Mode v2 (~50% sin cookies) + volumen bajo**, NO avería. A 90d sí hay datos: form_start=13, generate_lead=14 global. No hay nada que arreglar en el código del form.
+
+### Dashboard: por qué desaparecieron las stats del modal de salida
+- `server.py` (VPS) **SÍ** pide los eventos `exit_intent_*` a GA4 vía `/api/iniciar-proyecto` y `/api/form-funnel?variant=…` (funnel dict `{eventName:{count,users}}`). El backend nunca dejó de tenerlos.
+- **`dashboard.html` los dejó de pintar**: en la reestructuración del dashboard entre 2-jun y 12-jun, `loadConversion()` pasó a ser 100% Airtable (`/api/leads-by-channel`) y se perdió TODA la vista GA4 (funnel form_start→generate_lead + exit-intent + Jordan-funnel). Los endpoints `form-funnel`/`iniciar-proyecto`/`jordan-funnel` quedaron listados en el preload (línea ~430) pero **sin consumir por ningún loader**. Backups: mayo/2-jun tenían 5 refs a `exit_intent`; del 12-jun en adelante 0.
+
+### Fix desplegado (VPS `/root/dashboard.html`)
+- Restaurada la vista GA4 dentro del sub-panel **Web & SEO → Conversión** (`loadConversion()`): ahora también hace fetch de `form-funnel?variant={all,iniciar-proyecto,footer-cta}&range=90` y renderiza:
+  - **3 funnels** (Global / Footer CTA / /iniciar-proyecto/): Sesiones → Form start → 50% → Botón listo → Lead generado, con % de conversión entre pasos.
+  - **Card "🚪 Modal de salida (exit-intent)"**: Mostrado (% de sesiones) · Convertido (% del mostrado) · Descartado · Errores validación (+ focus). Si 0 eventos en 90d, muestra nota explicativa (esperado: tráfico bajo + consent gating; el modal dispara client-side OK).
+  - Aviso visible de subestimación por Consent Mode v2. Rango 90d (a 30d sale vacío por volumen).
+- Validado: `node --check` sobre los scripts inline (OK) + simulación de render con datos reales (sin NaN). Backup en `/root/dashboard.html.bak-20260629-091702-exit-intent`. Sin tocar `cache.pkl` (cambio de frontend).
+- **Nota**: exit-intent marca 0 ahora mismo — es real, no bug. Los datos volverán a poblarse con tráfico consentido a `/iniciar-proyecto/`.
+
+### Corrección de doc
+- CLAUDE.md afirmaba (present-tense) que `/iniciar-proyecto/` usa Jordan chat embebido. **Falso desde hace tiempo**: la página es form clásico (`#v3-form`) + modal exit-intent, NO carga `jordan-widget-v7.js` ni tiene `#jordan-embed`. Corregido en la sección "Sincronización de archivos" de Jordan.
+- **Patrón recurrente confirmado**: los agentes (Jordan/otros) aportan buenos datos pero proponen fixes 🔴 sobre premisas no verificadas. Cruzar SIEMPRE contra código + E2E antes de aplicar.
+
+---
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
@@ -1930,9 +1959,9 @@ window.JordanConfig = {
 ### Sincronización de archivos
 - **Widget v7 (actual)**: `/assets/jordan/jordan-widget-v7.js` — persistencia en 3 stages (initial/update/final), fix bug Calendly, prompt v10.2, checklist dinámico, marcador [CALENDLY_SLOTS] (2026-04-24)
 - Widget v6 (obsoleto): `/assets/jordan/jordan-widget-v6.js` — prompt v10.0 + embed mode + 8 eventos GA4 (2026-04-16)
-- 42 páginas cargan v7 (flotante en 40, embed en contacto + iniciar-proyecto)
+- Jordan widget se carga flotante en las páginas de contenido. Contacto usa embed mode con `embedTarget: '#jordan-embed'`
 - Contacto: `/contacto/index.html` — usa embed mode con `embedTarget: '#jordan-embed'`
-- Iniciar proyecto: `/iniciar-proyecto/index.html` — usa embed mode con `embedTarget: '#jordan-embed'`
+- ⚠️ **`/iniciar-proyecto/` YA NO usa Jordan embed** (corregido 2026-06-29). Ahora es un **form clásico** (`<form id="v3-form" data-form-variant="iniciar-proyecto">`) + **modal exit-intent** (`#ip-exit-overlay`). No carga `jordan-widget-v7.js` ni tiene `#jordan-embed`. Ver sección "Cambios aplicados (2026-06-29)".
 - System prompt maestro (v10.0): `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v10.0-master.md` — fuente única expandida
 - System prompt maestro anterior (v9.3): `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v9.3-master.md` — referencia histórica
 - System prompt completo (v6.2): `/TRESPUNTOS-LAB/jordan/tres-puntos-agent/system-prompt-v6.2.md` (~680 líneas, referencia histórica)
