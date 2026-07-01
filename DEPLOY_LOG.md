@@ -2,6 +2,15 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-07-01 — SEO: meta description answer-first en diseño UX/UI Barcelona
+- **Commit:** `0666d21` (main · `seo: reescribir meta description diseno-ux-ui-barcelona (answer-first)`)
+- **Contexto:** Alerta SEO de Jordan (01-jul, sesión bridge `743f00cb`): query "agencia ux ui barcelona" en pos 6.5 con 192 impresiones/30d pero solo 1 click (CTR 0.5%) desde `/servicios/diseno-ux-ui-barcelona/`. Diagnóstico: no era problema de posición, era snippet poco atractivo (no answer-first). Antes de tocar nada se verificaron los otros 3 puntos que planteó Jordan y resultaron ya resueltos: 12 doorway pages a noindex ya desplegadas (commit `16feb94`, confirmado en producción), title de home intacto, internal link home→desarrollo-web-a-medida-barcelona ya existente (bento card + footer, 6 clicks/30d confirmados por GSC — no era problema de indexación).
+- **Meta description revisada con Jordan vía bridge** cruzando `keyword-map.md`: mi primera propuesta abría con "Agencia de diseño UX/UI en Barcelona" (tokens de la keyword dueña de home). Jordan propuso alternativa que evita el solape abriendo con la keyword dueña de esta página. Versión final: "Diseño UX/UI en Barcelona para negocios digitales. Interfaces que mejoran conversión, claridad y rendimiento — 13 años." (121 caracteres). Solo meta description — title y H1 intactos.
+- **Archivos FTP (1):**
+  - `servicios/diseno-ux-ui-barcelona/index.html` (solo `<meta name="description">`)
+- **Cloudflare:** purge by URL (2 variantes: con y sin `/index.html`) → `{"success": true}`.
+- **Verificación (cache-bust):** `cf-cache-status: MISS` tras purga + meta description confirmada en producción ✅.
+
 ## 2026-06-30 — SEO: answer-first en DWM-barcelona + enlace contextual desde software-a-medida
 - **Commit:** `83798c2` (main · `seo(dwm): párrafo answer-first en DWM-barcelona + enlace contextual desde software-a-medida`)
 - **Contexto:** Respuesta a alerta SEO de Curry (29-jun): `desarrollo-web-a-medida-barcelona` en pos 9.6 con CTR 0.16% (1 clic / 614 impr). Cruzado contra historial antes de actuar — se descartaron 2 falsos positivos del reporte (PageSpeed home 0/100 = artefacto de medición, verificado real LCP 2.7s/CLS 0 con Lighthouse; "agencia ux ui barcelona cae a 6.4" = artefacto de agregación, el propio Curry reconoce home real pos 3). NO se tocó la home ni ningún title/H1 (regla descanibalización).
