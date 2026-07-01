@@ -2,6 +2,19 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-07-01 (2) — Cookies: rediseño banner de consentimiento (modal centrado)
+- **Commit:** `6a09bcb` (main · `feat(cookies): rediseño banner consentimiento — modal centrado + copy claro`)
+- **Contexto:** Cruzando GA4 contra Cloudflare Web Analytics (dataset RUM, cookieless) se confirmó que solo ~8% de las visitas reales aceptan la categoría analítica (junio: 1.640 page loads reales en Cloudflare vs 128 pageviews en GA4). GA4 va casi ciego — no es un problema de tráfico perdido, es de consentimiento.
+- **Cambios en `assets/cookieconsent/`:**
+  - `cookieconsent-init.js`: layout del consentModal de `bar inline`/`bottom` → `box`/`middle center` (modal centrado con overlay, más atención que una barra que se scrollea sin leer). Copy reescrito: honesto, explica qué cookies se usan y por qué, sin venta de datos a terceros. Botones renombrados ("Rechazar" → "Solo necesarias", "Preferencias" → "Personalizar") para mayor claridad. `equalWeightButtons: true` sin tocar (obligatorio RGPD — aceptar y rechazar deben pesar visualmente igual).
+  - `cookieconsent-theme.css`: 2 fixes — (1) el overlay oscuro del modal centrado no se pintaba por un conflicto de especificidad con el reset `all:unset` de la librería base (ID gana a clase) — restaurado con `html.show--consent #cc-main .cm-wrapper:before`; (2) el botón "Rechazar todas" del modal de Preferencias salía en mint sólido, indistinguible de "Aceptar todas" — el fix previo de esta sección solo cubría `.cm__btn` (modal de consentimiento), no `.pm__btn` (modal de preferencias). Ahora ambos modales son consistentes.
+- **Cache-busting:** bump `?v=20260416` → `?v=20260701` en el script loader de las 105 páginas que cargan `cookieconsent-init.js`, para que el test de la semana arranque limpio también en visitantes recurrentes con el JS cacheado (1 año de `max-age`).
+- **Verificado en local** con preview server antes de subir: modal centrado + overlay + botones correctos en desktop y mobile (375px), clic en "Personalizar" abre preferencias con "Rechazar todas" ya en outline.
+- **Archivos FTP (107):** 2 assets (`cookieconsent-init.js`, `cookieconsent-theme.css`) + 105 HTMLs (bump de versión).
+- **Cloudflare:** `purge_everything` (demasiados archivos para purga por URL) → `{"success": true}`.
+- **Verificación (cache-bust) en producción:** `layout: 'box'` confirmado en el JS servido, fix del overlay (`cm-wrapper:before`) presente en el CSS servido, HTML de home sirve `cookieconsent-init.js?v=20260701` ✅.
+- **Plan:** test A/B informal de 1 semana — comparar tasa de consentimiento (GA4 pageviews / Cloudflare Web Analytics pageloads) antes vs después. Checkpoint: 2026-07-08.
+
 ## 2026-07-01 — SEO: meta description answer-first en diseño UX/UI Barcelona
 - **Commit:** `0666d21` (main · `seo: reescribir meta description diseno-ux-ui-barcelona (answer-first)`)
 - **Contexto:** Alerta SEO de Jordan (01-jul, sesión bridge `743f00cb`): query "agencia ux ui barcelona" en pos 6.5 con 192 impresiones/30d pero solo 1 click (CTR 0.5%) desde `/servicios/diseno-ux-ui-barcelona/`. Diagnóstico: no era problema de posición, era snippet poco atractivo (no answer-first). Antes de tocar nada se verificaron los otros 3 puntos que planteó Jordan y resultaron ya resueltos: 12 doorway pages a noindex ya desplegadas (commit `16feb94`, confirmado en producción), title de home intacto, internal link home→desarrollo-web-a-medida-barcelona ya existente (bento card + footer, 6 clicks/30d confirmados por GSC — no era problema de indexación).
