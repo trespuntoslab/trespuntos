@@ -71,8 +71,8 @@
     CookieConsent.run({
       guiOptions: {
         consentModal: {
-          layout: 'bar inline',
-          position: 'bottom',
+          layout: 'box',
+          position: 'middle center',
           equalWeightButtons: true,
           flipButtons: false
         },
@@ -186,11 +186,11 @@
         translations: {
           es: {
             consentModal: {
-              title: 'Usamos cookies',
-              description: 'Utilizamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y personalizar contenido. Puedes aceptarlas todas o configurar tus preferencias.',
+              title: '👋 Antes de seguir',
+              description: 'Usamos cookies necesarias para que la web funcione y, si nos dejas, cookies analíticas para entender qué contenido interesa de verdad y mejorar el sitio. Nunca vendemos tus datos ni los compartimos con terceros para publicidad. Tú decides qué aceptar, y puedes cambiarlo cuando quieras.',
               acceptAllBtn: 'Aceptar todas',
-              acceptNecessaryBtn: 'Rechazar',
-              showPreferencesBtn: 'Preferencias',
+              acceptNecessaryBtn: 'Solo necesarias',
+              showPreferencesBtn: 'Personalizar',
               footer: '<a href="/politica-privacidad/">Privacidad</a> · <a href="/politica-cookies/">Cookies</a>'
             },
             preferencesModal: {

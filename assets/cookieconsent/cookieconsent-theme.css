@@ -68,6 +68,17 @@
   box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(93,255,191,.05) !important;
 }
 
+/* Fix: overlay oscuro del modal centrado (layout "box") — el reset
+   "#cc-main :before{all:unset}" de la librería (selector con ID, más
+   específico) anula el background/position que la propia librería
+   define para .cm-wrapper:before. Restaurado aquí con prioridad. */
+html.show--consent #cc-main .cm-wrapper:before {
+  background: var(--cc-overlay-bg) !important;
+  position: fixed !important;
+  inset: 0 !important;
+  content: '' !important;
+}
+
 /* Título con acento mint */
 #cc-main .cm__title,
 #cc-main .pm__title {
@@ -117,16 +128,21 @@
 }
 
 /* Diferenciar botones por data-role manteniendo equal-weight GDPR
-   all = Aceptar todas (mint), necessary = Rechazar (outline), show = Preferencias (outline) */
+   all = Aceptar todas (mint), necessary = Rechazar (outline), show = Preferencias (outline)
+   Aplica a ambos modales: .cm__btn (consent) y .pm__btn (preferencias) —
+   antes solo cubría .cm__btn y "Rechazar todas" salía en mint sólido
+   dentro del modal de preferencias, indistinguible de "Aceptar todas". */
 #cc-main .cm__btn[data-role="necessary"],
-#cc-main .cm__btn[data-role="show"] {
+#cc-main .cm__btn[data-role="show"],
+#cc-main .pm__btn[data-role="necessary"] {
   background: transparent !important;
   color: #ffffff !important;
   border: 1px solid rgba(255,255,255,.22) !important;
   box-shadow: none !important;
 }
 #cc-main .cm__btn[data-role="necessary"]:hover,
-#cc-main .cm__btn[data-role="show"]:hover {
+#cc-main .cm__btn[data-role="show"]:hover,
+#cc-main .pm__btn[data-role="necessary"]:hover {
   background: rgba(93,255,191,.08) !important;
   border-color: rgba(93,255,191,.4) !important;
   color: #5dffbf !important;
