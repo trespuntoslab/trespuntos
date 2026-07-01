@@ -1585,6 +1585,35 @@ Análisis de conversión (Jordan/agente) sobre el form afirmaba: *"Zero formStar
 
 ---
 
+## Cambios aplicados (2026-07-01) — SEO: meta description answer-first en diseño UX/UI Barcelona
+
+### Contexto
+Jordan (agente VPS) reportó por el bridge (sesión `743f00cb`) el informe SEO del día: clics 74 (+12,1%), impresiones 22.115 (-8,4%), CTR 0,3%, pos media 13,4. Señalaba 4 puntos: (1) 12 doorway pages a noindex sin confirmar deploy, (2) posible ausencia de internal link home→desarrollo-web, (3) verificar indexación de 2 landings en GSC, (4) meta description de `/servicios/diseno-ux-ui-barcelona/` no answer-first (pos 6,5, 192 impr/30d, CTR 0,5%).
+
+### Verificación antes de actuar (patrón "cruzar contra código real")
+Se verificaron los 4 puntos contra producción + código + GSC del dashboard antes de tocar nada:
+- **Punto 1 (doorway pages)**: ✅ ya desplegado — confirmado con curl en las 12 URLs, commit `16feb94` (9-jun). Falsa alarma, Jordan preguntaba por algo ya resuelto.
+- **Punto 2 (internal link)**: ✅ ya existe — 2 enlaces desde home (bento card + footer, anchor "Desarrollo Web"). Cruzado con GSC real: la landing tiene 6 clicks/30d (2ª página más clicada del sitio).
+- **Punto 3 (indexación)**: ✅ no hay problema de cobertura — la landing recibe tráfico real vía GSC, descartado.
+- **Punto 4 (meta description)**: 🔴 confirmado real. Cifras de Jordan coinciden exactas con `/api/gsc` del dashboard.
+
+Solo el punto 4 requería acción.
+
+### Deploy (commit `0666d21` + `ef3bea8`)
+- **Meta description** de `/servicios/diseno-ux-ui-barcelona/` reescrita en formato answer-first. Título e H1 intactos (regla de descanibalización del 17-abr).
+- Redacción consultada con Jordan por el bridge antes de aplicar: mi primera propuesta abría con "Agencia de diseño UX/UI en Barcelona" (tokens de la keyword dueña de home según `keyword-map.md`). Jordan sugirió abrir con la keyword dueña de esta página en su lugar, evitando cualquier señal de canibalización. Versión final desplegada:
+  > "Diseño UX/UI en Barcelona para negocios digitales. Interfaces que mejoran conversión, claridad y rendimiento — 13 años." (121 caracteres)
+- FTP + purge Cloudflare (2 URLs) + verificación cache-bust en producción (`cf-cache-status: MISS`, meta confirmada por curl).
+- Registrado en `DEPLOY_LOG.md`.
+
+### Pendiente en observación (sin acción de código)
+"Desarrollo web barcelona" sigue en pos 10,8 (621 impr/30d, 1 click) pese a que el internal linking ya existe. No es un problema de linking ni de indexación — probablemente contenido/autoridad. Queda en Tier 2, sin fix inmediato.
+
+### Lección
+Segunda vez seguida (tras el 29-jun) que un informe de Jordan mezcla un hallazgo real con puntos ya resueltos que no había vuelto a comprobar. Verificar SIEMPRE contra código/producción/GSC antes de actuar, y responderle con lo ya cerrado para que no lo siga arrastrando en próximos informes.
+
+---
+
 ### Pendientes globales — Próximas tareas
 - ✅ ~~Crear 4 páginas de servicios por ciudad~~ COMPLETADO (2026-03-27)
 - ✅ ~~Formulario CTA inline en contacto~~ COMPLETADO (2026-03-27)
