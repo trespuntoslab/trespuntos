@@ -77,10 +77,10 @@ Sí. Implementa IA generativa para empresas: agentes de IA, automatizaciones con
 
 ## Contacto
 
-- Web: https://trespuntoscomunicacion.es
+- [Web](https://trespuntoscomunicacion.es): trespuntoscomunicacion.es
 - Email: hola@trespuntoscomunicacion.es
 - Teléfono: +34 930 117 733
-- LinkedIn: https://www.linkedin.com/company/trespuntoscomunicacion
+- [LinkedIn](https://www.linkedin.com/company/trespuntoscomunicacion): Perfil de empresa
 - Ubicación: Barcelona, España
 
 ## Contenido técnico (blog)
@@ -89,14 +89,14 @@ Artículos sobre arquitectura frontend, tendencias UX/UI, leyes de UX, desarroll
 
 ## URLs principales
 
-- Home: https://trespuntoscomunicacion.es/
-- UX/UI: https://trespuntoscomunicacion.es/servicios/diseno-ux-ui-barcelona
-- Desarrollo: https://trespuntoscomunicacion.es/servicios/desarrollo-web-a-medida-barcelona
-- Consultoría: https://trespuntoscomunicacion.es/servicios/consultoria-digital-barcelona
-- IA: https://trespuntoscomunicacion.es/servicios/ia-generativa-empresas
-- Design Engineering: https://trespuntoscomunicacion.es/servicios/design-engineer-barcelona
-- Metodología: https://trespuntoscomunicacion.es/arquitectura-digital-conversion
-- Nosotros: https://trespuntoscomunicacion.es/nosotros
-- Blog: https://trespuntoscomunicacion.es/blog
-- Casos: https://trespuntoscomunicacion.es/casos-de-negocio
-- Contacto: https://trespuntoscomunicacion.es/contacto
+- [Home](https://trespuntoscomunicacion.es/): Página principal, agencia UX/UI y arquitectura digital de conversión
+- [Diseño UX/UI Barcelona](https://trespuntoscomunicacion.es/servicios/diseno-ux-ui-barcelona): Servicio de diseño de interfaces y experiencia de usuario
+- [Desarrollo Web a Medida Barcelona](https://trespuntoscomunicacion.es/servicios/desarrollo-web-a-medida-barcelona): Servicio de desarrollo web sin plantillas
+- [Consultoría Digital Barcelona](https://trespuntoscomunicacion.es/servicios/consultoria-digital-barcelona): Servicio de consultoría de arquitectura digital
+- [IA Generativa para Empresas](https://trespuntoscomunicacion.es/servicios/ia-generativa-empresas): Servicio de agentes de IA y automatización
+- [Design Engineer Barcelona](https://trespuntoscomunicacion.es/servicios/design-engineer-barcelona): Servicio de design engineering (Figma a código)
+- [Metodología ADC](https://trespuntoscomunicacion.es/arquitectura-digital-conversion): Arquitectura Digital de Conversión, proceso en 5 fases
+- [Nosotros](https://trespuntoscomunicacion.es/nosotros): Equipo y agencia
+- [Blog](https://trespuntoscomunicacion.es/blog): Artículos técnicos sobre UX/UI, desarrollo y arquitectura digital
+- [Casos de Negocio](https://trespuntoscomunicacion.es/casos-de-negocio): Casos de éxito documentados
+- [Contacto](https://trespuntoscomunicacion.es/contacto): Formulario de contacto e inicio de proyecto
