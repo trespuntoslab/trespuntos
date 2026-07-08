@@ -2,6 +2,17 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-07-08 — Blog: publicar "Migrar un ecommerce a medida" (post nuevo, cluster ecommerce)
+- **Commit:** `76b6793` (main · `blog: publicar "Migrar un ecommerce a medida" (reangulado, evita duplicar post 24-jun)`)
+- **Contexto:** Jordan reenvió por el bridge el artículo #07 de Kobe (aprobado por Jordi) para maquetar: "Ecommerce en Barcelona: el coste real de una tienda que convierte". Al revisarlo antes de maquetar se detectó que el H1, la keyword (`ecommerce barcelona`) y el ángulo eran prácticamente idénticos al post ya vivo e indexado `blog/ecommerce-barcelona-coste-real-tienda-convierte/` (24-jun), con rangos de precio además contradictorios entre ambos (5k/15k/80k € vs 8k/15k/40k €). Publicarlo tal cual habría autocanibalizado el cluster ecommerce (ya con 3 posts) — justo el error que se lleva corrigiendo desde abril.
+- **Decisión:** no publicar el #07 tal cual. Reaprovechar el material (deuda técnica, rangos de precio) reangulado a un hueco real sin dueño: **migración de ecommerce** (plantilla → desarrollo a medida). Cero posts de migración/replatforming en el blog hasta ahora.
+- **Post nuevo:** `/blog/migrar-ecommerce-plantilla-a-medida/` — keyword `migrar ecommerce` (nacional, sin dueño). 8 componentes visuales (signal-cards, checklist-box ×2, comparison-table con los 3 rangos ya coherentes, quote-pull, before-after, article-cta-inline, TOC). Enlaces internos a `desarrollo-web-a-medida-vs-wordpress` y a `ecommerce-barcelona-coste-real-tienda-convierte` (forma cluster en vez de competir), CTA final → `/servicios/tienda-online-barcelona/`, 3 relacionados.
+- **Verificado en local** con preview server antes de subir: sin errores de consola, componentes renderizados y revelados por JS, botones CTA con color correcto (no rotos por la regla global `.article-content a`), `checklist-box li::before` sin overlap (bug conocido, override aplicado), 3 imágenes de avatar cargando, todos los hrefs internos correctos.
+- **Archivos FTP (4):** `blog/migrar-ecommerce-plantilla-a-medida/index.html` (nuevo) · `img/og/blog-migrar-ecommerce-plantilla-a-medida.png` (nuevo, badge `BLOG · E-COMMERCE`) · `blog/index.html` (card nueva al principio del listado) · `sitemap.xml` (+1 URL, 79 total).
+- **Cloudflare:** Purge by URL — 4 URLs (post, OG, `/blog/`, `sitemap.xml`) → `{"success": true}`.
+- **Verificación (cache-bust) en producción:** post HTTP 200 con `cf-cache-status: MISS` y H1 correcto, OG sirviendo (246 KB), card visible en `/blog/`, entrada presente en sitemap.
+- **Pendiente:** avisar a Jordan/Kobe por el bridge de que el #07 original no se publicó tal cual (canibalización) y del reenfoque a migración, para que ajusten el pipeline editorial del cluster ecommerce.
+
 ## 2026-07-01 (2) — Cookies: rediseño banner de consentimiento (modal centrado)
 - **Commit:** `6a09bcb` (main · `feat(cookies): rediseño banner consentimiento — modal centrado + copy claro`)
 - **Contexto:** Cruzando GA4 contra Cloudflare Web Analytics (dataset RUM, cookieless) se confirmó que solo ~8% de las visitas reales aceptan la categoría analítica (junio: 1.640 page loads reales en Cloudflare vs 128 pageviews en GA4). GA4 va casi ciego — no es un problema de tráfico perdido, es de consentimiento.
