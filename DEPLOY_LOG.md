@@ -2,6 +2,18 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-07-08 (3) — Blog: publicar "Casos de uso de agentes de IA" (1/3 posts bloque IA) + Fase 2 IA desplegada
+- **Commits:** `f1c840f` (Fase 2 páginas IA) + `8e7c45f` (post nuevo)
+- **Contexto:** tras ejecutar la Fase 2 del bloque SEO IA (ver `project_seo_ia_block.md` en memoria) — `ia-empresas-barcelona` nacionalizada y `ia-generativa-empresas` reconvertida en pilar de contenido — se escribieron 3 blog posts de apoyo. Se publica solo el primero hoy; los otros 2 se espacian en semanas siguientes para no romper el ritmo de publicación habitual del blog (aprox. semanal) ni forzar a Google a indexar 3 URLs nuevas del mismo tema el mismo día.
+- **Páginas IA (f1c840f):** `servicios/ia-empresas-barcelona/index.html` (title/H1/meta/schema nacionalizados, slug intacto) + `servicios/ia-generativa-empresas/index.html` (H1 reorientado a "qué es la IA generativa", CTAs y bloque "relacionados" ahora canalizan hacia las 2 páginas comerciales de IA — antes enlazaban a consultoría/desarrollo/UX-UI, cero enlaces entre las 3 páginas IA entre sí). OG regeneradas para ambas.
+- **Post nuevo:** `/blog/casos-de-uso-agentes-ia-empresas/` — 5 casos reales (comercial, atención cliente, operaciones, contenido, legal) con el patrón "problema → cómo funciona el agente → quién decide". Componentes: TOC, icon-grid (5 casos), article-cta-inline, quote-pull, before-after, checklist-box, CTA final + author-card + related (3 cards, categorías IA y Automatización + Ventas y Conversión). Enlaza a `/blog/que-es-un-agente-de-ia-diferencia-chatbot/` y a `/servicios/automatizacion-agentes-ia-empresas/`.
+- **Verificado en local** antes de subir: sin errores de consola, sin bugs conocidos (checklist-box `::before` position static, botones CTA con color correcto rgb(14,14,14)), card de `/blog/index.html` correcta.
+- **Archivos FTP (6):** las 2 páginas de servicio IA + sus 2 OG + `blog/casos-de-uso-agentes-ia-empresas/index.html` (nuevo) + su OG + `blog/index.html` (card nueva) + `sitemap.xml` (+1 URL, la de las 2 páginas IA no cambia de URL así que no suma entradas).
+- **Cloudflare:** Purge by URL — 8 URLs (2 páginas IA + 2 OG IA + post nuevo + su OG + `/blog/` + sitemap) → `{"success": true}`.
+- **Verificación (cache-bust) en producción:** las 2 páginas IA sirven el title/H1 nuevos ✅. Post nuevo HTTP 200 con `cf-cache-status: MISS`, H1 correcto, OG sirviendo, card en `/blog/` y entrada en sitemap confirmadas ✅.
+- **Pendiente Jordi:** solicitar reindexación en GSC de `ia-empresas-barcelona` e `ia-generativa-empresas` (mismo motivo que `automatizacion-agentes-ia-empresas` el 26-jun: sin recrawl, Google sigue mostrando el contenido viejo — ver hallazgo en `project_seo_ia_block.md`).
+- **Pendiente:** publicar los otros 2 posts del bloque IA (automatización con IA vs tradicional; guía de implementación paso a paso) en las próximas 1-2 semanas, no antes.
+
 ## 2026-07-08 (2) — SEO: fix canibalización "desarrollo web barcelona" (post UX/UI mal etiquetado)
 - **Commit:** `2e68cb1` (main · `seo: fix canibalización "desarrollo web barcelona" — renombrar post UX/UI mal etiquetado`)
 - **Origen:** auditoría de Jordan por el bridge. Verifiqué el hallazgo antes de actuar (patrón: cruzar siempre contra código + datos reales antes de ejecutar lo que proponga otro agente):
