@@ -2,6 +2,18 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-07-15 — Fix modal de salida `/iniciar-proyecto/` (banner cookies + fallback inactividad)
+- **Commit:** `615471d` (main · `fix(iniciar-proyecto): modal salida no queda tapado por banner cookies + fallback inactividad`)
+- **Origen:** Jordi reportó que el modal de salida "parece que no funciona". Verificado en producción con el navegador: **funcionaba técnicamente** (dispara con mouseleave por borde superior tras 10s), pero (1) bug real de z-index — el overlay está en `z-index:9999` y el banner CookieConsent en `2147483647`, así que en la **primera visita** el modal aparecía detrás del banner de cookies; (2) trigger demasiado estrecho (solo mouseleave-top en desktop + scroll-up rápido en móvil); (3) one-shot por sesión (confunde en pruebas al recargar la misma pestaña — no es bug).
+- **Fix (`iniciar-proyecto/index.html`, +27 líneas):**
+  - `isCookieBannerVisible()` → si `#cc-main` existe y es visible, `show()` hace early-return **sin marcar el one-shot** (se re-arma: el siguiente intento de salida dispara el modal una vez cerrado el banner). Corrige el solapamiento en primera visita.
+  - Fallback por inactividad (45s sin ninguna interacción) que cubre móvil y cierres con Cmd+W/Cmd+Tab que el mouseleave/scroll-up no capturaban. Respeta todas las guardas de `show()`.
+- **Verificado:** `node --check` OK. En producción (cache-bust) el código nuevo sirve (3 coincidencias) y el modal sigue disparando end-to-end con las nuevas guardas (test en vivo: `modalVisible:true`).
+- **Archivos FTP (1):** `iniciar-proyecto/index.html` (HTTP 226, 57.601 bytes vía `ftp.trespuntoscomunicacion.es`).
+- **Cloudflare:** Purge by URL — 2 URLs (`/iniciar-proyecto/` + `/iniciar-proyecto/index.html`) → `{"success": true}`.
+- **Contexto stats (revisado, sin cambios):** los eventos `exit_intent_*` leen ~0 en GA4 (0 en 90d) no por bug — están bien instrumentados y el dashboard los consulta — sino por Consent Mode v2 + tráfico muy bajo (35 sesiones/90d en la página). El tráfico real se mide en Cloudflare Web Analytics, no GA4.
+- **Contacto:** decisión de Jordi = dejarlo como está (Jordan principal + link al form clásico existente). Dato: `jordan_open = 1 en 90d` (uso medible muy bajo).
+
 ## 2026-07-08 (3) — Blog: publicar "Casos de uso de agentes de IA" (1/3 posts bloque IA) + Fase 2 IA desplegada
 - **Commits:** `f1c840f` (Fase 2 páginas IA) + `8e7c45f` (post nuevo)
 - **Contexto:** tras ejecutar la Fase 2 del bloque SEO IA (ver `project_seo_ia_block.md` en memoria) — `ia-empresas-barcelona` nacionalizada y `ia-generativa-empresas` reconvertida en pilar de contenido — se escribieron 3 blog posts de apoyo. Se publica solo el primero hoy; los otros 2 se espacian en semanas siguientes para no romper el ritmo de publicación habitual del blog (aprox. semanal) ni forzar a Google a indexar 3 URLs nuevas del mismo tema el mismo día.
