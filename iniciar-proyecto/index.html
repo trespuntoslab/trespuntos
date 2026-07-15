@@ -1367,6 +1367,16 @@
       return form && form.contains(ae);
     }
 
+    // El banner de cookies (CookieConsent v3) usa z-index máximo: si está
+    // visible, el modal quedaría oculto detrás. Detectamos su presencia
+    // (#cc-main existe y es visible mientras pide consentimiento; al cerrarse
+    // se elimina del DOM). Si está abierto, no mostramos y re-armamos: el
+    // siguiente intento de salida disparará el modal una vez cerrado el banner.
+    function isCookieBannerVisible() {
+      var cc = document.getElementById('cc-main');
+      return !!cc && cc.offsetParent !== null;
+    }
+
     function timeInModalSeconds() {
       return modalShownTime ? Math.round((Date.now() - modalShownTime) / 1000) : 0;
     }
@@ -1376,6 +1386,7 @@
       if (Date.now() - pageLoadTime < MIN_TIME_MS) return;
       if (isMainFormCompleted()) return;
       if (isUserActivelyTyping()) return;
+      if (isCookieBannerVisible()) return; // re-arma: no marca shown ni sessionStorage
 
       shown = true;
       modalShownTime = Date.now();
@@ -1450,6 +1461,22 @@
       lastScrollY = window.scrollY;
       lastScrollTime = now;
     }, { passive: true });
+
+    // Fallback por inactividad: cubre los casos que el mouseleave/scroll-up no
+    // captan (móvil, cierre con Cmd+W/Cmd+Tab, lector que se queda quieto).
+    // 45s sin ninguna interacción con la página → nudge. show() aplica todas
+    // las guardas (10s mín., form completado, escribiendo, banner cookies, one-shot).
+    var IDLE_MS = 45000;
+    var idleTimer = null;
+    function resetIdle() {
+      if (shown) return;
+      if (idleTimer) clearTimeout(idleTimer);
+      idleTimer = setTimeout(show, IDLE_MS);
+    }
+    ['mousemove','mousedown','keydown','scroll','touchstart','click'].forEach(function(ev){
+      window.addEventListener(ev, resetIdle, { passive: true });
+    });
+    resetIdle();
 
     // ── Submit handler ──
     function validateEmail(v) {
