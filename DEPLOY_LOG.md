@@ -2,6 +2,23 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-07-28 — Blog: publicar "Cómo usamos la IA en nuestra propia agencia" (2/3 posts bloque IA, reposicionado)
+- **Commit:** `6304bcd` (main · `blog: publicar "Cómo usamos la IA en nuestra propia agencia: 5 sistemas en producción"`)
+- **Origen:** Jordan depositó por el bridge un borrador de Curry/Kobe (`/root/drafts/blog-ia-empresas-draft.html`) titulado "IA para empresas — 5 casos reales", con petición de publicar hoy. Revisado antes de maquetar; **dos bloqueos SEO reales**:
+  - 🔴 **Title pisaba la página dueña.** El propuesto (`IA para Empresas: 5 Casos Reales…`) arranca igual que el de `/servicios/ia-empresas-barcelona/` (`IA para Empresas: Agentes de IA y Automatización`), dueña de la keyword según `keyword-map.md`. Es el mismo patrón que costó −43% de clicks el 23-may.
+  - 🔴 **Solapamiento con `/blog/casos-de-uso-agentes-ia-empresas/`** (8-jul): misma promesa ("5 casos/ejemplos reales de IA en empresas") y misma estructura (5 casos + "el patrón que se repite" + CTA). Dos posts compitiendo entre sí y ambos contra la página de servicio.
+- **Reposicionamiento (en vez de descartar):** el ángulo diferencial real del borrador es que los 5 casos son **sistemas propios en producción** → se convierte en post de autoridad/E-E-A-T que sostiene lo que ya afirma la meta de `/servicios/automatizacion-agentes-ia-empresas/` ("lo que implementamos, lo usamos a diario"). No persigue keyword: enlaza al post del 8-jul en la entradilla en lugar de competir con él.
+  - Title: `Cómo usamos la IA en nuestra agencia: 5 sistemas reales | Tres Puntos` (68 chars) · H1: `Cómo usamos la IA en nuestra propia agencia: 5 sistemas en producción`
+  - Slug: `/blog/como-usamos-ia-en-nuestra-agencia/` (el propuesto era `/blog/ia-para-empresas-5-casos-reales-2026/`)
+- **Correcciones de contenido sobre el borrador:** (1) el caso 5 enumeraba los accesos del asistente interno (BBDD de clientes, CRM, correo, Drive) — sustituido por descripción funcional sin mapa de superficie; (2) añadida FASE 04 "Aprobación" al flujo de outreach (revisión humana obligatoria antes de enviar) y quitado el "no parece automatizado"; (3) CTAs a `/iniciar-proyecto/` (el borrador apuntaba a `/contacto/`); (4) añadido matiz honesto en el caso SEO: la causa que propone el agente es hipótesis, no diagnóstico.
+- **Maquetación:** ~1.400 palabras, 7 H2 + TOC, 9 componentes (pain-blocks, timeline-mini de 5 fases, before-after, stat-callout `11 agentes`, quote-pull, checklist-box, signal-cards, article-cta-inline, article-cta) + author-card + 3 related. Enlaces internos a los 2 posts IA previos y a las 2 páginas de servicio IA.
+- **Verificado en local** antes de subir: sin errores de consola, navbar/footer inyectan, 7 enlaces internos HTTP 200, geometría correcta (pain-blocks 3 col, before-after 2 col), sin overflow horizontal en desktop ni a 375px, schema BlogPosting + BreadcrumbList válidos.
+- **Archivos FTP (4):** `blog/como-usamos-ia-en-nuestra-agencia/index.html` (26.516 b) · `img/og/blog-como-usamos-ia-en-nuestra-agencia.png` (47.369 b) · `blog/index.html` (card nueva) · `sitemap.xml` (83 → 84 URLs, lastmod real; `/blog/` bump a 28-jul). Todos HTTP 226.
+- **Cloudflare:** Purge by URL — 4 URLs (post, `/blog/`, sitemap, OG) → `{"success": true}`.
+- **Verificación (cache-bust) en producción:** HTTP 200 con `cf-cache-status: MISS`, title y H1 correctos, OG 200, card presente en `/blog/`, entrada presente en sitemap ✅.
+- **Pendiente Jordi:** solicitar indexación en GSC (Inspección de URL → `https://www.trespuntoscomunicacion.es/blog/como-usamos-ia-en-nuestra-agencia/`).
+- **Pendiente Claudio:** responder a Jordan por el bridge con esta validación (mensajes `b51a44d1` sin marcar como delivered) + queda por validar la propuesta de metas de Curry (`/root/shared/seo/propuesta-metas-blog-jul2026.md`).
+
 ## 2026-07-15 — Fix modal de salida `/iniciar-proyecto/` (banner cookies + fallback inactividad)
 - **Commit:** `615471d` (main · `fix(iniciar-proyecto): modal salida no queda tapado por banner cookies + fallback inactividad`)
 - **Origen:** Jordi reportó que el modal de salida "parece que no funciona". Verificado en producción con el navegador: **funcionaba técnicamente** (dispara con mouseleave por borde superior tras 10s), pero (1) bug real de z-index — el overlay está en `z-index:9999` y el banner CookieConsent en `2147483647`, así que en la **primera visita** el modal aparecía detrás del banner de cookies; (2) trigger demasiado estrecho (solo mouseleave-top en desktop + scroll-up rápido en móvil); (3) one-shot por sesión (confunde en pruebas al recargar la misma pestaña — no es bug).
