@@ -2,6 +2,37 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-07-29 · `8bbec02` — SEO: enlazado interno páginas IA + software a medida (F1)
+
+**Contexto:** las páginas de IA estaban fuera del hub y del menú. `automatizacion-agentes-ia-empresas`
+tenía 5 enlaces entrantes e `ia-empresas-barcelona` 3, frente a 32 y 28 de las páginas consolidadas.
+Con dificultad de keyword 0-23 en todo el vocabulario de IA, el cuello no era el mercado: era que el
+propio sitio las trataba como secundarias. Ver `ESTRATEGIA-SEO-2026.md`.
+
+**Archivos subidos por FTP (4):**
+- `js/components.js` — desplegable de escritorio 6→8 servicios · footer "Qué hacemos" +Agentes de IA +Software a Medida
+- `servicios/index.html` — +2 tarjetas en el hub (6→8), patrón `service-card-hub`
+- `blog/inteligencia-artificial-y-ux-ui-guia-completa/index.html` — enlace contextual → `ia-empresas-barcelona`
+- `blog/desarrollo-web-a-medida-cuando-es-la-decision-correcta/index.html` — enlace contextual → `software-a-medida`
+
+**Purga Cloudflare:** by-URL, 6 entradas, incluyendo `components.js` **con y sin** `?v=27`
+(lección del 27-may: purgar solo una de las dos no invalida la otra). `success: true`.
+
+**Verificado en producción** (cache-bust + `Cache-Control: no-cache`): `cf-cache-status: MISS`,
+8 tarjetas en el hub, los servicios nuevos presentes en `components.js`, los 2 enlaces de blog
+activos y los 3 destinos respondiendo 200.
+
+**Menú móvil NO tocado, a propósito.** Con 12 items ya desborda el viewport (846px calculados vs
+667-844px de un iPhone) y el CTA queda bajo el pliegue; añadir 2 más lo habría empeorado. Sin
+pérdida SEO: `TP.navbar()` inyecta navbar y footer en las 89 páginas, así que cada servicio conserva
+enlaces sitewide. Pendiente: acordeón "Servicios" en móvil (7 items, 537px) y posible agrupación
+en 4 familias.
+
+**NO desplegado** (en local, sin commitear): `/servicios/diseno-web-para-empresas/` (terminada,
+pendiente de revisión de Jordi) y `/servicios/chatbot-para-empresas/` (a medias).
+
+---
+
 ## 2026-07-28 — Blog: publicar "Cómo usamos la IA en nuestra propia agencia" (2/3 posts bloque IA, reposicionado)
 - **Commit:** `6304bcd` (main · `blog: publicar "Cómo usamos la IA en nuestra propia agencia: 5 sistemas en producción"`)
 - **Origen:** Jordan depositó por el bridge un borrador de Curry/Kobe (`/root/drafts/blog-ia-empresas-draft.html`) titulado "IA para empresas — 5 casos reales", con petición de publicar hoy. Revisado antes de maquetar; **dos bloqueos SEO reales**:
