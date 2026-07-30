@@ -955,3 +955,21 @@ curl -sk --ftp-pasv --ftp-create-dirs -T "ruta/local" \
 - **Cruzado con keyword-map** (regla de oro). **Verificado en producción**: home HTTP 200 (sitio vivo tras htaccess), redirect OK, 4 titles nuevos servidos con cache-bust.
 - **Cloudflare**: purga 7 URLs OK.
 - **Pendiente menor**: regenerar OG de las 5 páginas con title cambiado (imagen social aún con title viejo — no afecta SEO).
+
+---
+
+## Deploy 2026-07-30 — /contacto/ form-first: fuera el chat embebido, Jordan solo en burbuja
+
+- **SHA**: `045adb6` (main)
+- **Commit**: feat(contacto): formulario como vía principal, Jordan solo en burbuja sticky
+- **Archivos FTP (2)**: `contacto/index.html` · `assets/jordan/jordan-widget-v7.js`
+- **Motivo (datos, no intuición)**: `jordan_first_message` = **1 en 30d en todo el sitio**. `/contacto/` con 11 sesiones/30d y 51s de permanencia media → entran, ven un chat, se van. El formulario existía en la página pero estaba oculto tras un link secundario ("¿Prefieres un formulario?"). Se invierte la jerarquía.
+- **Cambios en contacto**: fuera `#jordan-embed`, el input del hero, los chips y el script puente hero→embed · formulario visible por defecto dentro del hero · `data-form-variant="contacto"` (mide separado de `iniciar-proyecto` y `footer-cta`) · modal exit-intent replicado de `/iniciar-proyecto/` con guarda extra `JordanAPI.isOpen()` para no interrumpir una conversación · meta description actualizada · Jordan pasa a modo flotante (`position:'right'`, sin `embedTarget`).
+- **Bug corregido de paso**: en móvil los 6 servicios iban a `repeat(3,1fr)` con `white-space:nowrap` → las etiquetas desbordaban su tarjeta y se pisaban. Ahora 2 columnas con wrap. Estaba oculto porque el formulario casi nadie lo abría. Ojo: el media query tuvo que ir **después** de la regla base (misma especificidad, gana el orden).
+- **Widget (afecta solo a rutas `/contacto`)**: teasers de la categoría `contacto` ya no dicen "Sin formularios — solo escríbeme aquí" junto a un formulario. Rótulo global de la burbuja: "Sin formularios" → **"Respuesta al momento"** (esto sí sale en las 42 páginas).
+- **NO tocado a propósito**: la bienvenida del chat ("Hola. Soy Jordan. Sin formularios ni rollos...") está fijada como copy invariable en el prompt v10.2 y documentada así en CLAUDE.md. Cambiarla es tocar la especificación del agente, no un texto de UI.
+- **Verificación local (Playwright)**: `form_start` y `form_50pct_complete` disparan con `form_variant:"contacto"` · botón se habilita solo con los 5 requeridos · exit-intent muestra/trackea/cierra y restaura el scroll · 3 `validation_error` OK · sin errores de consola · HTML balanceado. No se lanzó ningún envío real al webhook de producción.
+- **Cloudflare**: purge by URL — 3 URLs (`/contacto/`, `/contacto/index.html`, `/assets/jordan/jordan-widget-v7.js`) ✅ `{"success":true}`
+- **Verificación en producción**: `cf-cache-status: MISS` ✅ · 0 ocurrencias de `jordan-embed` ✅ · `data-form-variant=contacto` ✅ · exit-intent presente ✅ · widget sirve "Habla con Jordan / Respuesta al momento" ✅ · sin errores de consola ✅
+- **A vigilar**: el fallback de inactividad del exit-intent son **45s** y la sesión media en contacto es 51s → va a dispararse a bastante gente que aterriza y no interactúa. Es el mismo comportamiento que ya estaba en `/iniciar-proyecto/`. Si resulta intrusivo, ese es el primer valor a subir (90s).
+- **Qué mirar en 4-6 semanas**: comparar `form_start`→`generate_lead` entre las variantes `contacto` e `iniciar-proyecto` en el panel Conversión del dashboard. Aviso: con ~20 sesiones/mes combinadas esto es higiene de conversión, no una prueba estadística.
