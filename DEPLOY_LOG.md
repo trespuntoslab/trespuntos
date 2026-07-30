@@ -2,6 +2,58 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-07-30 · `cda08f5` — 4 páginas de servicio nuevas + menú móvil por familias
+
+**Contexto:** ejecución del plan de captación (ver `ESTRATEGIA-SEO-2026.md`). Bloque WEB con el
+levantamiento parcial del keyword-map autorizado por Jordi el 29-jul, y bloque IA con las keywords
+de dificultad 0-23 y CPC 14-32 €.
+
+**12 archivos subidos por FTP (12/12 código 226):**
+- `servicios/diseno-web-para-empresas/index.html` — nacional, dueña de "agencia diseño web" (KD 22),
+  "diseño web profesional" (KD 25), "diseño web para empresas" (KD 40). Sin "Barcelona" en title/H1.
+  "diseño de página web" solo en cuerpo (intención mixta, matiz de Jordan).
+- `servicios/chatbot-para-empresas/index.html` — KD 7 · CPC 14,50 € · SERP limpia
+- `servicios/agentes-de-voz-ia/index.html` — KD 0 · CPC 31,67 €
+- `servicios/automatizacion-de-procesos-con-ia/index.html` — KD 0 · vol 720
+- `js/components.js` — menú móvil por familias (3 acordeones + Consultoría directa) y desplegable de
+  escritorio reorganizado en las mismas familias con separadores (12 servicios)
+- `css/components.css` — CSS del acordeón + **fix heredado**: eliminadas declaraciones huérfanas sin
+  selector (`.sep-line`) que dejaban el archivo con un `}` de más desde antes de esta sesión. Código
+  muerto (la clase no se usa en ningún marcado). Ahora 1752/1752 balanceado.
+- `servicios/index.html` — hub 8 → 12 tarjetas
+- `sitemap.xml` — 84 → 88 URLs, lastmod real (18 fechas distintas, no uniforme)
+- 4 × `img/og/servicio-*.png` — imágenes OG generadas con `scripts/og/generate-one.py`
+
+**Ninguna página menciona precios** (decisión de Jordi 29-jul): el filtro de cliente se hace
+describiendo perfil (B2B, producto complejo, ciclo de venta largo), nunca con cifras.
+
+**Purga Cloudflare:** `purge_everything` (>5 archivos) → `success: true`. `cf-cache-status: MISS`
+confirmado en la home tras la purga.
+
+**Verificado en producción** (cache-bust + `no-cache`): las 4 páginas 200 · las 4 OG 200 ·
+hub 12 tarjetas · sitemap 88 URLs · `components.js` con 3 acordeones, 3 separadores y las 4 páginas
+nuevas presentes · cero imágenes rotas · menú probado abriendo el grupo de IA en móvil real.
+
+**Medición honesta del menú:** con todos los grupos cerrados mide **746px** (9 filas × 64 + CTA 54 +
+padding 104). Los `.mm-sub` colapsados miden 0px, el acordeón funciona. Frente a los ~902px del menú
+plano anterior son **156px menos**, pero el CTA solo entra sin scroll desde iPhone 14 (844px) hacia
+arriba; en iPhone SE (667px) y 13 mini (693px) sigue requiriendo scroll. Una medición previa en local
+dio "812px y CTA visible" — era una lectura errónea de `scrollHeight`, que devuelve el alto del
+viewport cuando el contenido cabe. Ajuste opcional pendiente: reducir `padding-top` del contenedor y
+el padding de fila bajaría a ~690px y entraría también en SE.
+
+**Dos bugs detectados y corregidos durante el desarrollo, antes de subir:**
+1. El acordeón no colapsaba (1164px, peor que el original): el truco `grid-template-rows:0fr` exige
+   un único hijo y los enlaces iban directos. Añadido contenedor `.mm-sub-in`.
+2. "Design Engineer" se renderizaba como botón CTA: la regla `#mobile-menu a:last-child` estilaba el
+   CTA por posición y al introducir submenús ese enlace pasó a ser último de su grupo. Reatada a
+   `.mobile-menu-cta`.
+
+**Pendiente:** re-submit del sitemap en GSC · reindexación de las 4 URLs nuevas · con Nominalia, la
+whitelist de rangos Cloudflare en Imunify360 (causa raíz del incidente de caché del 30-jul).
+
+---
+
 ## 2026-07-29 · `8bbec02` — SEO: enlazado interno páginas IA + software a medida (F1)
 
 **Contexto:** las páginas de IA estaban fuera del hub y del menú. `automatizacion-agentes-ia-empresas`
