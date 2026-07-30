@@ -103,8 +103,8 @@
       "¿Tu tienda existe pero no vende lo que debería? Cuéntame qué está fallando."
     ],
     contacto: [
-      "Estás en el sitio correcto. Cuéntame directamente qué proyecto tienes en mente.",
-      "Sin formularios — solo escríbeme aquí y el equipo llega preparado."
+      "¿Dudas antes de rellenar el formulario? Pregúntame lo que necesites.",
+      "Si prefieres contármelo hablando, escríbeme aquí y el equipo llega preparado."
     ],
     default: [
       "¿Tienes un proyecto digital en mente? Cuéntame y el equipo llega preparado.",
@@ -1228,7 +1228,7 @@ IMPORTANTE: Respuestas cortas y naturales. 2-4 frases. Esto es un chat, no un em
               ${CONFIG.avatar ? `<img src="${CONFIG.avatar}" alt="Jordan" width="58" height="58" loading="eager" fetchpriority="high">` : '<span style="font-size:28px;color:#5dffbf;">J</span>'}
             </span>
           </button>
-          <span class="jordan-bubble-label">Habla con Jordan<br>Sin formularios</span>
+          <span class="jordan-bubble-label">Habla con Jordan<br>Respuesta al momento</span>
         </div>
       `;
       this.shadow.appendChild(this.bubbleEl);
