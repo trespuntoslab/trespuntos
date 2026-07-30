@@ -1,0 +1,1115 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <!-- CookieConsent v3 (self-hosted, GDPR, consent mode v2) + GA4 condicional — post-LCP -->
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css">
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css">
+  </noscript>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var s1 = document.createElement('script');
+        s1.src = '/assets/cookieconsent/cookieconsent.umd.js';
+        s1.onload = function () {
+          var s2 = document.createElement('script');
+          s2.src = '/assets/cookieconsent/cookieconsent-init.js?v=20260701';
+          document.head.appendChild(s2);
+        };
+        document.head.appendChild(s1);
+      }, 800);
+    });
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#5dffbf">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot para Empresas | Asistentes de IA que Resuelven, no Responden · Tres Puntos</title>
+  <meta name="description" content="Chatbot para empresas conectado a tus sistemas: resuelve consultas, cualifica leads y ejecuta tareas reales. Asistentes de IA a medida, integrados con CRM y ERP." />
+
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/servicios/chatbot-para-empresas/" />
+  <meta property="og:title" content="Chatbot para Empresas | Asistentes de IA que Resuelven, no Responden · Tres Puntos" />
+  <meta property="og:description"
+    content="Chatbot para empresas conectado a tus sistemas: resuelve consultas, cualifica leads y ejecuta tareas reales. Asistentes de IA a medida, integrados con CRM y ERP." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/servicios/chatbot-para-empresas" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og/servicio-chatbot-para-empresas.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Tres Puntos Comunicaci&oacute;n" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chatbot para Empresas | Asistentes de IA que Resuelven, no Responden · Tres Puntos" />
+  <meta name="twitter:description" content="Chatbot para empresas conectado a tus sistemas: resuelve consultas, cualifica leads y ejecuta tareas reales. Asistentes de IA a medida, integrados con CRM y ERP." />
+  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og/servicio-chatbot-para-empresas.png" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Chatbot para Empresas",
+      "description": "Chatbot para empresas conectado a CRM, ERP y sistemas internos. Resuelve consultas con datos reales, cualifica leads y escala a persona con contexto.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicaci\u00f3n",
+        "url": "https://www.trespuntoscomunicacion.es/"
+      },
+      "serviceType": "Chatbot para Empresas"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre un chatbot para empresas y un chatbot normal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un chatbot normal responde con textos preescritos. Un chatbot para empresas está conectado a vuestros sistemas: consulta el CRM, comprueba un pedido, agenda una reunión o cualifica un lead según vuestras reglas de negocio. Responde con datos reales, no con un guion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Con qué sistemas se puede integrar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con los que ya usáis: CRM (HubSpot, Pipedrive, Holded), ERP, calendarios, bases de datos internas, herramientas de ticketing o pasarelas. La integración se hace vía API o mediante n8n cuando hace falta orquestar varios pasos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde se instala el chatbot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Normalmente en la web, como widget embebido, y en WhatsApp cuando el canal principal de atención es ese. También puede vivir dentro de una intranet o de un área privada de clientes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda en estar funcionando?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un chatbot conectado a una o dos fuentes de datos suele estar en producción en 3-5 semanas. Si hay que orquestar varios sistemas o construir lógica de cualificación compleja, entre 6 y 10."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa cuando el chatbot no sabe algo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se diseña el punto de escalado desde el principio: deriva a una persona con todo el contexto de la conversación ya recogido, en lugar de dejar al usuario en un bucle. Un buen chatbot sabe cuándo dejar de hablar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Los datos de los usuarios quedan protegidos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Definimos qué datos se procesan, dónde se almacenan y durante cuánto tiempo, con la información de tratamiento visible en el propio chat. El chatbot no envía datos personales a terceros que no estén contemplados en vuestro registro de actividades."
+      }
+    }
+  ]
+}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/service-page.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="/css/case-study.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="/css/design-system.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/service-page.css">
+    <link rel="stylesheet" href="/css/case-study.css">
+  </noscript>
+
+  <style>@font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}@font-face{font-family:'Jakarta Fallback';src:local('Arial Black');size-adjust:95%;ascent-override:100%;descent-override:22%;line-gap-override:0%}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--mint:#5dffbf;--mint-rgb:93,255,191;--bg-base:#0e0e0e;--bg-surface:#141414;--text-primary:#f5f5f5;--text-secondary:#b3b3b3;--text-muted:#8a8a8a;--font-heading:'Plus Jakarta Sans','Jakarta Fallback',sans-serif;--font-body:'Inter','Inter Fallback',sans-serif;--radius-md:10px;--radius-lg:14px;--radius-full:9999px}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg-base);color:var(--text-primary);-webkit-font-smoothing:antialiased;overflow-x:hidden}#tp-navbar{position:fixed;top:0;left:0;right:0;z-index:1000;min-height:72px}
+
+    /* Page-specific: Automatizaciones y Agentes IA — Automation Flow Animation */
+
+    /* Hero: Automation Flow Diagram */
+    .auto-workflow {
+      position: absolute;
+      inset: 0;
+      overflow: hidden
+    }
+
+    .auto-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(93, 255, 191, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(93, 255, 191, .04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0;
+      animation: autoFade .8s .3s forwards
+    }
+
+    .auto-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%
+    }
+
+    .auto-line {
+      stroke: var(--line-color, rgba(93, 255, 191, .18));
+      stroke-width: 1.5;
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      animation: autoDraw 1.2s ease-out forwards
+    }
+
+    .auto-line:nth-child(1) { animation-delay: .5s }
+    .auto-line:nth-child(2) { animation-delay: .7s }
+    .auto-line:nth-child(3) { animation-delay: .9s }
+    .auto-line:nth-child(4) { animation-delay: 1.1s }
+    .auto-line:nth-child(5) { animation-delay: 1.3s }
+
+    .auto-pulse-line {
+      stroke: var(--pulse-color, var(--mint));
+      stroke-width: 1.5;
+      stroke-dasharray: 4 20;
+      opacity: 0;
+      animation: autoPulseIn .3s 1.8s forwards, autoTravel 3s 1.8s linear infinite
+    }
+
+    .auto-pulse-line:nth-child(7) { animation-delay: 2s, 2s }
+    .auto-pulse-line:nth-child(8) { animation-delay: 2.1s, 2.1s }
+    .auto-pulse-line:nth-child(9) { animation-delay: 2.3s, 2.3s }
+    .auto-pulse-line:nth-child(10) { animation-delay: 2.5s, 2.5s }
+
+    .auto-node {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .35rem .7rem;
+      background: var(--bg-color, rgba(93, 255, 191, .06));
+      border: 1px solid var(--border-color, rgba(93, 255, 191, .2));
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      letter-spacing: .03em;
+      color: var(--text-color, rgba(93, 255, 191, .9));
+      white-space: nowrap;
+      opacity: 0;
+      transform: scale(.85);
+      z-index: 2
+    }
+
+    .auto-node-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--dot-color, var(--mint));
+      box-shadow: 0 0 8px var(--glow-color, rgba(93, 255, 191, .5))
+    }
+
+    .auto-n-trigger {
+      top: 8%;
+      left: 12%;
+      animation: autoNodeIn .5s .6s ease-out forwards
+    }
+
+    .auto-n-agent {
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(.85);
+      animation: autoNodeC .5s .4s ease-out forwards;
+      padding: .5rem .9rem;
+      font-size: .65rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(2px);
+    }
+
+    .auto-n-agent svg {
+      width: 24px;
+      height: 24px;
+      stroke: #fff;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+    }
+
+    .auto-n-n8n {
+      top: 8%;
+      right: 12%;
+      animation: autoNodeIn .5s .8s ease-out forwards
+    }
+
+    .auto-n-crm {
+      bottom: 18%;
+      left: 8%;
+      animation: autoNodeIn .5s 1s ease-out forwards
+    }
+
+    .auto-n-lead {
+      bottom: 18%;
+      right: 8%;
+      animation: autoNodeIn .5s 1.2s ease-out forwards
+    }
+
+    .auto-n-api {
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%) scale(.85);
+      animation: autoNodeCX .5s 1.4s ease-out forwards
+    }
+
+    .auto-status {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--font-mono);
+      font-size: .55rem;
+      color: var(--mint);
+      opacity: 0;
+      animation: autoFade .4s 2.4s forwards
+    }
+
+    .auto-status-led {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 8px var(--mint);
+      animation: autoLed 2s 2.4s infinite
+    }
+
+    @keyframes autoFade { to { opacity: 1 } }
+    @keyframes autoNodeIn { to { opacity: 1; transform: scale(1) } }
+    @keyframes autoNodeC { to { opacity: 1; transform: translate(-50%, -50%) scale(1) } }
+    @keyframes autoNodeCX { to { opacity: 1; transform: translateX(-50%) scale(1) } }
+    @keyframes autoDraw { to { stroke-dashoffset: 0 } }
+    @keyframes autoPulseIn { to { opacity: .5 } }
+    @keyframes autoTravel { to { stroke-dashoffset: -48 } }
+    @keyframes autoLed { 0%, 100% { opacity: 1 } 50% { opacity: .3 } }
+
+    @media(max-width:768px) {
+      .auto-node {
+        font-size: .5rem;
+        padding: .25rem .5rem
+      }
+      .auto-n-crm { left: 5% }
+      .auto-n-lead { right: 5% }
+    }
+  </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.trespuntoscomunicacion.es/"},{"@type":"ListItem","position":2,"name":"Servicios","item":"https://www.trespuntoscomunicacion.es/servicios/"},{"@type":"ListItem","position":3,"name":"Chatbot para Empresas"}]}
+</script>
+</head>
+
+<body>
+  <!-- Navbar placeholder -->
+  <div id="tp-navbar"></div>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="sp-hero" aria-label="Automatizaciones y Agentes IA para Empresas">
+    <div class="container-main">
+      <div class="sp-hero-layout">
+        <div class="sp-hero-copy">
+          <span class="section-badge reveal">Agentes de IA para empresas</span>
+          <h1 class="sp-hero-h1 reveal">Chatbot para empresas que <span class="text-gradient-standalone">resuelve, no que responde</span></h1>
+          <p class="sp-hero-sub reveal">Dise&ntilde;amos <strong>chatbots para empresas</strong> conectados a vuestros sistemas. No repiten un guion: consultan el CRM, comprueban un pedido, agendan una reuni&oacute;n o cualifican un lead con vuestras reglas de negocio.</p>
+          <div class="sp-hero-detail reveal">
+            <p>Leads que se cualifican solos.<br>
+            Procesos internos que se ejecutan sin intervenci&oacute;n.<br>
+            Equipos que dejan de perder tiempo en tareas repetitivas.</p>
+            <p>La inteligencia artificial no es solo un chatbot.<br>
+            Bien aplicada se convierte en una infraestructura operativa para el negocio.</p>
+          </div>
+          <div class="sp-hero-ctas reveal">
+            <a href="/contacto/" class="btn-primary magnetic-btn">
+              Cu&eacute;ntanos tu proyecto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="/arquitectura-digital-conversion" class="btn-ghost">
+              Conoce nuestra metodolog&iacute;a
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Hero visual: Automation flow diagram -->
+        <div class="sp-hero-visual reveal reveal-delay-1">
+          <div class="sp-browser-mock">
+            <div class="sp-browser-topbar">
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-dot"></span>
+              <span class="sp-browser-url">automatizacion.empresa.com/agentes</span>
+            </div>
+            <div class="sp-browser-body">
+              <!-- Automation Flow Diagram -->
+              <div class="auto-workflow">
+                <div class="auto-grid-bg"></div>
+                <svg class="auto-lines" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
+                  <!-- Connection lines from center to nodes -->
+                  <line class="auto-line" x1="200" y1="130" x2="70" y2="40" style="--line-color: rgba(56, 189, 248, .18);" />
+                  <line class="auto-line" x1="200" y1="130" x2="330" y2="40" style="--line-color: rgba(167, 139, 250, .18);" />
+                  <line class="auto-line" x1="200" y1="130" x2="55" y2="200" style="--line-color: rgba(251, 113, 133, .18);" />
+                  <line class="auto-line" x1="200" y1="130" x2="345" y2="200" style="--line-color: rgba(250, 204, 21, .18);" />
+                  <line class="auto-line" x1="200" y1="130" x2="200" y2="240" style="--line-color: rgba(93, 255, 191, .18);" />
+                  <!-- Data flow pulses -->
+                  <line class="auto-pulse-line" x1="200" y1="130" x2="70" y2="40" style="--pulse-color: #38bdf8;" />
+                  <line class="auto-pulse-line" x1="200" y1="130" x2="330" y2="40" style="--pulse-color: #a78bfa;" />
+                  <line class="auto-pulse-line" x1="200" y1="130" x2="55" y2="200" style="--pulse-color: #fb7185;" />
+                  <line class="auto-pulse-line" x1="200" y1="130" x2="345" y2="200" style="--pulse-color: #facc15;" />
+                  <line class="auto-pulse-line" x1="200" y1="130" x2="200" y2="240" style="--pulse-color: var(--mint);" />
+                </svg>
+                <!-- Central Agent Node -->
+                <div class="auto-n-agent">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+                  </svg>
+                </div>
+                <!-- Surrounding nodes -->
+                <div class="auto-node auto-n-trigger" style="--bg-color: rgba(56, 189, 248, .06); --border-color: rgba(56, 189, 248, .2); --text-color: rgba(56, 189, 248, .9); --dot-color: #38bdf8; --glow-color: rgba(56, 189, 248, .5);">
+                  <span class="auto-node-dot"></span>Trigger
+                </div>
+                <div class="auto-node auto-n-n8n" style="--bg-color: rgba(167, 139, 250, .06); --border-color: rgba(167, 139, 250, .2); --text-color: rgba(167, 139, 250, .9); --dot-color: #a78bfa; --glow-color: rgba(167, 139, 250, .5);">
+                  <span class="auto-node-dot"></span>n8n
+                </div>
+                <div class="auto-node auto-n-crm" style="--bg-color: rgba(251, 113, 133, .06); --border-color: rgba(251, 113, 133, .2); --text-color: rgba(251, 113, 133, .9); --dot-color: #fb7185; --glow-color: rgba(251, 113, 133, .5);">
+                  <span class="auto-node-dot"></span>CRM
+                </div>
+                <div class="auto-node auto-n-lead" style="--bg-color: rgba(250, 204, 21, .06); --border-color: rgba(250, 204, 21, .2); --text-color: rgba(250, 204, 21, .9); --dot-color: #facc15; --glow-color: rgba(250, 204, 21, .5);">
+                  <span class="auto-node-dot"></span>Leads
+                </div>
+                <div class="auto-node auto-n-api">
+                  <span class="auto-node-dot"></span>API
+                </div>
+                <div class="auto-status"><span class="auto-status-led"></span>Agentes activos</div>
+              </div>
+            </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="sp-float-badge reveal">
+            <svg width="14" height="14" fill="none" stroke="var(--mint)" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+            <span>Automatizaci&oacute;n 24/7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT MARQUEE ============ -->
+  <div class="sp-marquee" aria-hidden="true">
+    <div class="sp-marquee-track">
+          <span>Chatbot para empresas &bull; </span>
+          <span>Asistente IA &bull; </span>
+          <span>Integraci&oacute;n CRM &bull; </span>
+          <span>Cualificaci&oacute;n de leads &bull; </span>
+          <span>WhatsApp Business &bull; </span>
+          <span>Escalado a persona &bull; </span>
+          <span>Agenda autom&aacute;tica &bull; </span>
+          <span>Atenci&oacute;n 24/7 &bull; </span>
+          <span>Chatbot para empresas &bull; </span>
+          <span>Asistente IA &bull; </span>
+          <span>Integraci&oacute;n CRM &bull; </span>
+          <span>Cualificaci&oacute;n de leads &bull; </span>
+          <span>WhatsApp Business &bull; </span>
+          <span>Escalado a persona &bull; </span>
+          <span>Agenda autom&aacute;tica &bull; </span>
+          <span>Atenci&oacute;n 24/7 &bull; </span>
+        </div>
+  </div>
+
+  <!-- ============ 2. EL PROBLEMA ============ -->
+  <section class="sp-problem" aria-label="El problema">
+    <div class="container-main">
+      <div class="sp-problem-layout">
+        <div class="sp-problem-copy reveal">
+          <span class="section-badge reveal">El problema</span>
+          <h2 class="section-h2 reveal">La mayor&iacute;a de chatbots frustran m&aacute;s <span class="text-gradient-standalone">de lo que ayudan</span></h2>
+          <p class="sp-problem-text reveal">Esto genera fricci&oacute;n operativa constante.</p>
+          <p class="sp-problem-text reveal">Cada una de estas fricciones tiene un coste. Tiempo del equipo. Errores humanos. Oportunidades de negocio perdidas.</p>
+          <p class="sp-problem-text reveal">Cuando el volumen crece, el sistema empieza a romperse.</p>
+        </div>
+        <!-- Friction signals -->
+        <div class="sp-signals reveal reveal-delay-1">
+          <div class="sp-signals-title">Se&ntilde;ales de fricci&oacute;n operativa</div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Respuestas de folleto</strong>
+              <span>Contesta con textos gen&eacute;ricos que no resuelven la duda concreta.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>No sabe nada de ti</strong>
+              <span>No consulta el pedido, ni la agenda, ni el hist&oacute;rico: solo improvisa.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Procesos dependientes de personas</strong>
+              <span>Procesos internos que dependen de personas espec&iacute;ficas.</span>
+            </div>
+          </div>
+          <div class="sp-signal-card">
+            <div class="sp-signal-icon">
+              <svg fill="none" stroke="#f87171" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <div class="sp-signal-content">
+              <strong>Informaci&oacute;n dispersa</strong>
+              <span>Informaci&oacute;n repartida entre herramientas sin conexi&oacute;n.</span>
+            </div>
+          </div>
+          <div class="sp-signal-bottom">Cada una de estas fricciones tiene un coste directo en tiempo, errores y oportunidades perdidas.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. QU&Eacute; HACEMOS ============ -->
+  <section class="sp-services" aria-label="Qu&eacute; hacemos">
+    <div class="container-main">
+      <span class="section-badge reveal">Qu&eacute; hacemos</span>
+      <h2 class="section-h2 reveal">Qu&eacute; incluye un chatbot para empresas <span class="text-gradient-standalone">conectado de verdad</span></h2>
+      <p class="sp-services-intro reveal">Un chatbot &uacute;til no se distingue por c&oacute;mo escribe, sino por a qu&eacute; tiene acceso. Trabajamos con arquitecturas modernas &mdash;APIs, n8n y modelos de lenguaje&mdash; para que la conversaci&oacute;n consulte datos reales y pueda ejecutar acciones, no solo redactar frases.</p>
+
+      <div class="sp-services-grid">
+        <div class="sp-service-card reveal">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Conversaci&oacute;n con acceso a datos</h3>
+          <p class="sp-service-text">El chatbot consulta en tiempo real el estado de un pedido, la disponibilidad de una agenda o el hist&oacute;rico de un cliente. Responde con el dato, no con una frase hecha.</p>
+        </div>
+
+        <div class="sp-service-card reveal reveal-delay-1">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Cualificaci&oacute;n de leads en el chat</h3>
+          <p class="sp-service-text">Detecta intenci&oacute;n de compra durante la conversaci&oacute;n, recoge los datos que necesit&aacute;is y crea el registro en el CRM ya puntuado.</p>
+        </div>
+
+        <div class="sp-service-card reveal">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Escalado a persona con contexto</h3>
+          <p class="sp-service-text">Cuando la consulta supera lo que puede resolver, deriva a una persona con la conversación y el contexto ya recogidos. Nadie tiene que repetir su problema desde cero. Se integran con CRM, bases de datos y herramientas internas. Se convierten en un miembro m&aacute;s del equipo.</p>
+        </div>
+
+        <div class="sp-service-card reveal reveal-delay-1">
+          <div class="sp-service-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <h3 class="sp-service-title">Integraci&oacute;n con CRM y ERP</h3>
+          <p class="sp-service-text">Se conecta con lo que ya tenéis: HubSpot, Pipedrive, Holded, calendarios, bases internas o ticketing, por API o mediante n8n cuando hay que orquestar varios pasos. n8n, Make, APIs empresariales y LLMs para construir sistemas que capturan leads, cualifican oportunidades, ejecutan procesos y generan informaci&oacute;n para el equipo.</p>
+        </div>
+      </div>
+
+      <div class="sp-method-cta reveal" style="margin-top:2rem">
+        <a href="/arquitectura-digital-conversion" class="btn-ghost">
+          Ver nuestra Metodolog&iacute;a de trabajo
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 3B. PRUEBA: NUESTRO PROPIO SISTEMA DE AGENTES IA ============ -->
+  <section class="sp-services" aria-label="Nuestro propio sistema de agentes IA">
+    <div class="container-main">
+      <span class="section-badge reveal">Caso propio</span>
+      <h2 class="section-h2 reveal">No es teor&iacute;a: nuestro propio asistente <span class="text-gradient-standalone">atiende esta web</span></h2>
+      <p class="sp-services-intro reveal">El chat que ves abajo a la derecha <em>es el nuestro</em>. Lo construimos nosotros, lleva meses en producci&oacute;n y es el que atiende a quien llega a esta web: entiende la consulta, pide los datos cuando toca, consulta la agenda real y avisa al equipo con todo el contexto. Antes de venderte un chatbot, te ense&ntilde;amos el nuestro funcionando.</p>
+
+      <div class="sp-services-grid">
+        <div class="sp-service-card reveal">
+          <h3 class="sp-service-title">Conversaci&oacute;n con criterio</h3>
+          <p class="sp-service-text">No sigue un &aacute;rbol de decisi&oacute;n r&iacute;gido. Entiende lo que se le pide, reformula y decide qu&eacute; preguntar seg&uacute;n lo que ya sabe de la conversaci&oacute;n.</p>
+        </div>
+        <div class="sp-service-card reveal reveal-delay-1">
+          <h3 class="sp-service-title">Captura progresiva de datos</h3>
+          <p class="sp-service-text">Pide los datos cuando toca, no en un formulario de entrada. En cuanto tiene un email, el contacto ya queda guardado en servidor aunque la conversaci&oacute;n se corte.</p>
+        </div>
+        <div class="sp-service-card reveal">
+          <h3 class="sp-service-title">Agenda real, no promesas</h3>
+          <p class="sp-service-text">Consulta los huecos reales del calendario por API y ofrece horas que existen. El usuario reserva en un clic, sin cadena de correos para cuadrar.</p>
+        </div>
+        <div class="sp-service-card reveal reveal-delay-1">
+          <h3 class="sp-service-title">Escalado con todo el contexto</h3>
+          <p class="sp-service-text">Cuando la conversaci&oacute;n merece una persona, el equipo recibe el hilo completo, los datos capturados y una valoraci&oacute;n del inter&eacute;s. Nadie empieza de cero.</p>
+        </div>
+        <div class="sp-service-card reveal">
+          <h3 class="sp-service-title">Memoria entre visitas</h3>
+          <p class="sp-service-text">Si el usuario vuelve, la conversaci&oacute;n contin&uacute;a donde la dej&oacute;. No tiene que volver a explicar qui&eacute;n es ni qu&eacute; necesita.</p>
+        </div>
+        <div class="sp-service-card reveal reveal-delay-1">
+          <h3 class="sp-service-title">Todo medido</h3>
+          <p class="sp-service-text">Cada apertura, cada dato capturado y cada reserva queda registrada. Se sabe qu&eacute; funciona en el chat y qu&eacute; hay que reescribir.</p>
+        </div>
+      </div>
+
+      <p class="sp-services-intro reveal" style="margin-top:2rem">Ese mismo modelo &mdash;conversaci&oacute;n con acceso a datos, captura progresiva y escalado con contexto&mdash; es el que montamos para cada cliente, adaptado a sus sistemas y a su forma de vender.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. C&Oacute;MO TRABAJAMOS ============ -->
+  <section class="sp-methodology" aria-label="C&oacute;mo trabajamos">
+    <div class="container-main">
+      <div class="sp-method-layout">
+        <div class="sp-method-copy">
+          <span class="section-badge reveal">Proceso</span>
+          <h2 class="section-h2 reveal">C&oacute;mo construimos <span class="text-gradient-standalone">tu chatbot</span></h2>
+          <p class="sp-method-intro reveal">Nuestro enfoque sigue la metodolog&iacute;a de Arquitectura Digital de Conversi&oacute;n. El proceso es siempre el mismo.</p>
+        </div>
+        <!-- Process timeline -->
+        <div class="sp-method-steps">
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">01</div>
+            <div class="sp-method-step-content">
+              <h3>Qu&eacute; tiene que resolver</h3>
+              <p>Definimos qu&eacute; consultas debe resolver el chat, cu&aacute;les no, y d&oacute;nde est&aacute; la frontera con una persona.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">02</div>
+            <div class="sp-method-step-content">
+              <h3>A qu&eacute; datos accede</h3>
+              <p>Decidimos a qu&eacute; sistemas se conecta y con qu&eacute; permisos. Un chatbot sin datos solo sabe dar largas.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">03</div>
+            <div class="sp-method-step-content">
+              <h3>Construcci&oacute;n e integraci&oacute;n</h3>
+              <p>Montamos la l&oacute;gica de conversaci&oacute;n y las integraciones v&iacute;a API o n8n, con el tono de vuestra marca.</p>
+            </div>
+          </div>
+          <div class="sp-method-step reveal">
+            <div class="sp-method-num">04</div>
+            <div class="sp-method-step-content">
+              <h3>Prueba con conversaciones reales</h3>
+              <p>Lo probamos con casos reales del equipo, medimos d&oacute;nde se atasca y lo ajustamos antes de abrirlo al p&uacute;blico.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sp-method-cta reveal">
+        <a href="/arquitectura-digital-conversion" class="btn-ghost">
+          Ver proceso completo: Arquitectura Digital de Conversi&oacute;n
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT MARQUEE ============ -->
+  <div class="sp-marquee" aria-hidden="true">
+    <div class="sp-marquee-track">
+      <span>IA para empresas</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Automatizaci&oacute;n con inteligencia artificial</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Agentes IA empresa</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Automatizaci&oacute;n procesos empresa</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>IA para empresas</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Automatizaci&oacute;n con inteligencia artificial</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Agentes IA empresa</span>
+      <span class="sp-marquee-sep">&bull;</span>
+      <span>Automatizaci&oacute;n procesos empresa</span>
+      <span class="sp-marquee-sep">&bull;</span>
+    </div>
+  </div>
+
+  <!-- ============ 5. PROYECTOS RELACIONADOS (TP.casos) ============ -->
+  <div id="tp-casos"></div>
+
+  <!-- ============ 6. SERVICIOS RELACIONADOS ============ -->
+  <section class="sp-related" aria-label="Servicios relacionados">
+    <div class="container-main">
+      <span class="section-badge reveal">Servicios complementarios</span>
+      <h2 class="section-h2 reveal">Servicios que suelen acompa&ntilde;ar este proyecto</h2>
+      <p class="sp-related-intro reveal">La automatizaci&oacute;n es m&aacute;s potente cuando est&aacute; integrada en una estrategia digital completa.</p>
+
+      <div class="sp-related-grid">
+        <a href="/servicios/desarrollo-web-a-medida-barcelona" class="sp-related-card reveal">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+            </svg>
+          </div>
+          <h3>Desarrollo web a medida</h3>
+          <p>Construimos interfaces que aprovechan la potencia de las automatizaciones y agentes IA.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/consultoria-digital-barcelona" class="sp-related-card reveal reveal-delay-1">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </div>
+          <h3>Consultor&iacute;a digital</h3>
+          <p>Antes de automatizar, es vital definir la arquitectura digital que soporte el sistema.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+
+        <a href="/servicios/ia-generativa-empresas" class="sp-related-card reveal reveal-delay-2">
+          <div class="sp-related-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+            </svg>
+          </div>
+          <h3>IA generativa para empresas</h3>
+          <p>Integraci&oacute;n de modelos de lenguaje y cerebros digitales para el negocio.</p>
+          <span class="sp-related-link">Ver servicio <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- ============ 7. COMENTARIO DEL EXPERTO ============ -->
+  <section class="sp-expert" aria-label="Comentario del experto">
+    <div class="container-main">
+      <div class="sp-expert-layout reveal">
+        <div class="sp-expert-quote">
+          <span class="section-badge">Comentario del experto</span>
+          <h2 class="sp-expert-h2">Un chatbot solo es &uacute;til si tiene permiso para actuar</h2>
+          <p>Un chatbot que solo sabe hablar es un buscador con globo de di&aacute;logo. El salto ocurre cuando tiene acceso a los datos y permiso para actuar: consultar, agendar, crear un registro.</p>
+          <p>Cuando resuelve de verdad, deja de ser un filtro molesto y pasa a ser el primer comercial que atiende.</p>
+          <p>Ese es el &uacute;nico chatbot que merece estar en una web de empresa.</p>
+        </div>
+        <div class="sp-expert-author">
+          <img src="/img/jordi-exposito.webp" alt="Jordi Exp&oacute;sito" class="sp-expert-avatar" width="80" height="80" loading="lazy">
+          <div>
+            <div class="sp-expert-name">Jordi Exp&oacute;sito</div>
+            <div class="sp-expert-role">UX/UI & Digital Architecture</div>
+            <a href="https://www.linkedin.com/in/trespuntoscomunicacion/" target="_blank" rel="noopener" class="sp-expert-linkedin">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+              Ver en LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. FAQ ============ -->
+  <section id="faq" class="sp-faq" aria-label="Preguntas frecuentes sobre Automatizaciones y Agentes IA">
+    <div class="container-main">
+      <div class="faq-layout">
+        <div class="reveal">
+          <span class="section-badge reveal">FAQ</span>
+          <h2 class="section-h2 reveal">Preguntas frecuentes</h2>
+        </div>
+        <div class="faq-list reveal reveal-delay-1">
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">&iquest;Qu&eacute; diferencia hay entre un chatbot para empresas y uno normal?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Un chatbot normal responde con textos preescritos. Uno de empresa est&aacute; conectado a vuestros sistemas: consulta el CRM, comprueba un pedido o agenda una reuni&oacute;n.</p>
+                <p>Responde con datos reales, no con un gui&oacute;n.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">&iquest;Con qu&eacute; sistemas se puede integrar?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Con los que ya us&aacute;is: CRM (HubSpot, Pipedrive, Holded), ERP, calendarios, bases internas o ticketing, v&iacute;a API o mediante n8n.</p>
+                <p>La integraci&oacute;n se dise&ntilde;a seg&uacute;n vuestros sistemas.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">&iquest;Cu&aacute;nto tarda en estar funcionando?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Depende de la complejidad del sistema.</p>
+                <p>Conectado a una o dos fuentes de datos, en 3-5 semanas. Con l&oacute;gica de cualificaci&oacute;n compleja, entre 6 y 10.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">&iquest;D&oacute;nde se instala el chatbot?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Normalmente como widget en la web, y en WhatsApp cuando el canal principal de atenci&oacute;n es ese. Tambi&eacute;n dentro de una intranet o un &aacute;rea privada de clientes.</p>
+                <p>El punto de escalado se dise&ntilde;a desde el principio.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">&iquest;Qu&eacute; pasa cuando el chatbot no sabe algo?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Deriva a una persona con todo el contexto de la conversaci&oacute;n ya recogido, en lugar de dejar al usuario en un bucle. Un buen chatbot sabe cu&aacute;ndo dejar de hablar.</p>
+                <p>Definimos qu&eacute; datos se procesan, d&oacute;nde se almacenan y durante cu&aacute;nto tiempo, visible en el propio chat.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL + FORM ============ -->
+  <section id="cierre" aria-label="Iniciar proyecto">
+    <div class="container-main">
+      <div class="cierre-layout">
+        <div class="cierre-copy reveal">
+          <span class="section-badge reveal">Siguiente paso</span>
+          <h2 class="cierre-h2">&iquest;Tu chat actual <span class="text-gradient-standalone">deja a la gente a medias?</span></h2>
+          <p class="cierre-sub">Muchas empresas descubren que el mayor cuello de botella no es el mercado. Es su propio sistema interno.<br><br>Si tu equipo est&aacute; perdiendo tiempo en tareas manuales, probablemente existe una arquitectura mejor.</p>
+          <div class="cierre-reasons">
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Sin reuni&oacute;n de ventas previa. Formulario directo en 3 minutos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Respondemos en menos de 24h con una primera valoraci&oacute;n de alcance.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>Si no encajamos con lo que necesitas, te lo decimos sin rodeos.</span>
+            </div>
+            <div class="cierre-reason">
+              <div class="cierre-reason-icon"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M4.5 12.75l6 6 9-13.5" />
+                </svg></div><span>El proyecto empieza con diagn&oacute;stico, no con propuesta econ&oacute;mica gen&eacute;rica.</span>
+            </div>
+          </div>
+        </div>
+        <div class="cierre-form-col reveal reveal-delay-1">
+          <div class="cierre-form-inner" id="tp-cta-form">
+<div class="form-gradient-accent"></div>
+<div class="form-card-header">
+  <div class="form-card-title" style="font-size:1.25rem;font-weight:700;color:var(--mint);margin-bottom:.25rem;">Inicia el proyecto</div>
+  <div class="form-card-sub" style="font-size:.85rem;color:var(--text-muted);line-height:1.5;">En menos de 48h laborables tendrás una primera respuesta personalizada.</div>
+</div>
+<form>
+  <input type="text" name="hp_field" id="hp_field" style="position:absolute;left:-9999px;opacity:0;height:0;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+  <div class="form-row">
+    <div class="form-field">
+      <label class="label label-required" for="f-nombre">Nombre</label>
+      <input id="f-nombre" name="f-nombre" type="text" class="input" placeholder="¿Cómo te llamas?" autocomplete="name" required />
+      <span class="field-error" id="err-nombre"></span>
+    </div>
+    <div class="form-field">
+      <label class="label label-required" for="f-email">Email de empresa</label>
+      <input id="f-email" name="f-email" type="email" class="input" placeholder="tu@empresa.com" autocomplete="email" required />
+      <span class="field-error" id="err-email"></span>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-field">
+      <label class="label label-required" for="f-tel">Teléfono</label>
+      <input id="f-tel" name="f-tel" type="tel" class="input" placeholder="Tu teléfono" autocomplete="tel" required minlength="9" />
+      <span class="field-error" id="err-tel"></span>
+    </div>
+    <div class="form-field">
+      <label class="label label-required" for="f-presupuesto">Inversión estimada</label>
+      <div class="custom-select" id="cs-presupuesto" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Inversión estimada">
+        <button type="button" class="custom-select-trigger" aria-label="Selecciona rango de inversión" aria-controls="cs-presupuesto-panel">
+          <span class="custom-select-value">Rango de inversión</span>
+          <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="custom-select-panel" role="listbox" id="cs-presupuesto-panel" aria-label="Opciones de presupuesto">
+          <div class="custom-select-option" role="option" data-value="5k-10k">5.000 € – 10.000 €</div>
+          <div class="custom-select-option" role="option" data-value="10k-15k">10.000 € – 15.000 €</div>
+          <div class="custom-select-option" role="option" data-value="15k-20k">15.000 € – 20.000 €</div>
+          <div class="custom-select-option" role="option" data-value="mas-20k">+ 20.000 €</div>
+        </div>
+      </div>
+      <input type="hidden" id="f-presupuesto" name="f-presupuesto" />
+      <span class="field-error" id="err-presupuesto"></span>
+    </div>
+  </div>
+  <div class="services-section">
+    <span class="services-label" id="services-label">¿En qué te podemos ayudar?</span>
+    <div class="services-grid" id="services-grid" role="group" aria-labelledby="services-label">
+      <div class="service-card" data-value="Diseño UX/UI" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Diseño UX/UI</span></div>
+      <div class="service-card" data-value="Desarrollo Web" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Desarrollo Web</span></div>
+      <div class="service-card" data-value="Tienda Online" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Tienda Online</span></div>
+      <div class="service-card" data-value="IA y Automatización" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">IA y Automatización</span></div>
+      <div class="service-card" data-value="Consultoría Digital" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Consultoría Digital</span></div>
+      <div class="service-card" data-value="Design Engineer" role="checkbox" aria-checked="false" tabindex="0"><div class="service-card-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="service-card-label">Design Engineer</span></div>
+    </div>
+    <input type="hidden" id="f-servicios" name="f-servicios" />
+  </div>
+  <div class="form-field" style="margin-top:1.25rem;">
+    <label class="label" for="f-mensaje">Cuéntanos qué está pasando</label>
+    <textarea id="f-mensaje" name="f-mensaje" class="input" rows="3" placeholder="Describe brevemente el proyecto. Qué quieres construir, qué problema tienes o qué no está funcionando en tu plataforma actual."></textarea>
+  </div>
+  <input type="hidden" id="f-pagina-origen" name="pagina_origen" />
+  <input type="hidden" id="f-utm-source" name="utm_source" />
+  <input type="hidden" id="f-utm-medium" name="utm_medium" />
+  <input type="hidden" id="f-utm-campaign" name="utm_campaign" />
+  <input type="hidden" id="f-referrer" name="referrer" />
+  <input type="hidden" id="f-timestamp" name="timestamp" />
+  <label class="checkbox-row" id="privacy-row" for="f-privacidad" style="margin-top:1rem;">
+    <input type="checkbox" id="f-privacidad" name="f-privacidad" required />
+    <span class="checkbox-label">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> y el tratamiento de mis datos para recibir respuesta a esta consulta.</span>
+  </label>
+  <span class="field-error" id="err-privacidad"></span>
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAACv1HyITv5ZdYE50" data-theme="dark"></div>
+  <button type="button" id="form-submit-btn" class="btn-primary magnetic-btn btn-disabled" style="width:100%;justify-content:center;">
+    Enviar mensaje
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+</form>
+<a href="/contacto/" class="briefing-banner" style="margin-top:.75rem;">
+  <div class="briefing-banner-icon">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="briefing-banner-text">
+    <span class="briefing-banner-title">¿Prefieres hablarlo?</span>
+    <span class="briefing-banner-desc">Chatea con Jordan, nuestro asistente IA, y resolvemos al momento.</span>
+  </div>
+  <svg class="briefing-banner-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+</a>
+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js?v=27" defer></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){
+    try{try{TP.navbar('automatizacion-ia');}catch(e){}}catch(e){console.warn("TP.navbar:",e);}
+    try{try{TP.casos();}catch(e){}}catch(e){console.warn("TP.casos:",e);}
+    try{try{TP.footer();}catch(e){}}catch(e){console.warn("TP.footer:",e);}
+    try{try{TP.ctaForm();}catch(e){}}catch(e){console.warn("TP.ctaForm:",e);}
+    try{try{TP.initJS();}catch(e){}}catch(e){console.warn("TP.initJS:",e);}
+  });</script>
+  <script src="/js/service-page.js" defer></script>
+  <script src="/js/supabase-forms.js?v=20260416" defer></script>
+  <script src="/js/form-validation.js" defer></script>
+
+  <!-- Jordan — Agente Conversacional Tres Puntos -->
+  <script>
+  window.JordanConfig = {
+    webhookUrl: 'https://n8n.trespuntos-lab.com/webhook/jordan-chat-leads',
+    calendlyUrl: 'https://calendly.com/trespuntos/jordi-exposito',
+    avatar: '/assets/jordan/jordan-avatar.webp',
+    avatarVideo: '/assets/jordan/jordan-avatar-video.mp4',
+    position: 'right',
+    rules: [
+      { pattern: '/blog/*', show: false },
+      { pattern: '/checkout/*', show: false },
+      { pattern: '/login', show: false },
+      { pattern: '/wp-admin/*', show: false },
+      { pattern: '/politica-*', show: false },
+      { pattern: '/aviso-legal', show: false },
+      { pattern: '/servicios/*', show: true, proactive: true, delay: 5 },
+      { pattern: '/contacto', show: true, proactive: true, delay: 5 },
+      { pattern: '/casos/*', show: true, proactive: true, delay: 5 },
+      { pattern: '/', show: true, proactive: true, delay: 5 },
+      { pattern: '*', show: true, proactive: true, delay: 5 }
+    ]
+  };
+  </script>
+  <script async src="/assets/jordan/jordan-widget-v7.js"></script>
+
+  <!-- Animated Cursor (Option 2 - stephenscaff) - Fluido con animación en links -->
+  <script defer>
+    (function() {
+      if (window.innerWidth > 1024) {
+        const outerCursor = document.createElement('div');
+        outerCursor.id = 'outer-cursor';
+        const innerCursor = document.createElement('div');
+        innerCursor.id = 'inner-cursor';
+        document.body.appendChild(outerCursor);
+        document.body.appendChild(innerCursor);
+
+        const style = document.createElement('style');
+        style.textContent = `
+          #outer-cursor, #inner-cursor {
+            position: fixed;
+            pointer-events: none;
+            border-radius: 50%;
+            mix-blend-mode: lighten;
+            z-index: 99999;
+          }
+          #outer-cursor {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #5dffbf;
+            top: -20px;
+            left: -20px;
+            transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+            opacity: 0.6;
+          }
+          #inner-cursor {
+            width: 8px;
+            height: 8px;
+            background: #5dffbf;
+            top: -4px;
+            left: -4px;
+            opacity: 1;
+            transition: transform 0.1s ease-out;
+          }
+          #outer-cursor.active {
+            transform: scale(1.5);
+            border-width: 3px;
+            opacity: 0.8;
+          }
+          #inner-cursor.active {
+            transform: scale(0.75);
+          }
+          #outer-cursor.click {
+            transform: scale(0.75);
+            border-width: 2px;
+            opacity: 0.4;
+          }
+          #inner-cursor.click {
+            transform: scale(1.5);
+            background: #5dffbf;
+          }
+          @media(max-width:1024px) {
+            #outer-cursor, #inner-cursor {
+              display: none !important;
+            }
+          }
+        `;
+        document.head.appendChild(style);
+
+        let mouseX = 0, mouseY = 0, outerX = 0, outerY = 0;
+        const smooth = 0.2;
+
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        function animate() {
+          outerX += (mouseX - outerX) * smooth;
+          outerY += (mouseY - outerY) * smooth;
+          outerCursor.style.transform = `translate3d(${outerX}px, ${outerY}px, 0)`;
+          innerCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+          requestAnimationFrame(animate);
+        }
+        animate();
+
+        const interactiveElements = document.querySelectorAll('a, button, [role="button"], .magnetic-btn, input, textarea, select, .caso-card');
+        interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            outerCursor.classList.add('active');
+            innerCursor.classList.add('active');
+          });
+          el.addEventListener('mouseleave', () => {
+            outerCursor.classList.remove('active');
+            innerCursor.classList.remove('active');
+            outerCursor.classList.remove('click');
+            innerCursor.classList.remove('click');
+          });
+          el.addEventListener('mousedown', () => {
+            outerCursor.classList.add('click');
+            innerCursor.classList.add('click');
+          });
+          el.addEventListener('mouseup', () => {
+            outerCursor.classList.remove('click');
+            innerCursor.classList.remove('click');
+          });
+        });
+      }
+    })();
+  </script>
+
+</body>
+
+</html>
