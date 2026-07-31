@@ -2,6 +2,55 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-07-31 · `fbc6e90` — 15 meta descriptions del blog en formato answer-first
+
+**Contexto:** checkpoint del 31-jul. Julio cerró con 33.118 impresiones (+42,6%) y 77 clics
+(CTR 0,2%): la visibilidad crece y no convierte. El cuello es el snippet, no el ranking. Caso
+extremo: «desarrollo web barcelona» con 1.483 impresiones y 1 clic.
+
+**Origen:** propuesta de Curry (`/root/shared/seo/propuesta-metas-blog-jul2026.md`, 27-jul),
+validada por Jordan contra `keyword-map.md` del 30-jul y por Claudio contra el historial de
+incidentes. Jordi aprobó el 31-jul delegando la revisión de los textos.
+
+**15 archivos subidos por FTP (15/15 código 226):** los `index.html` de los 15 posts listados en
+la propuesta.
+
+**56 reemplazos, no 15.** El texto roto no estaba solo en `<meta name="description">`: cada
+archivo lo repetía en `og:description`, `twitter:description` y el `description` del JSON-LD
+BlogPosting. Se reemplazaron los 4 para que Google y las previews de LinkedIn/WhatsApp/Telegram
+digan lo mismo.
+
+**Dos problemas corregidos:**
+- 8 metas truncadas: excerpts autogenerados del WordPress viejo, cortados a mitad con `...`
+- 7 metas de 167–252 chars que Google truncaba
+
+Todas las nuevas: 120–155 chars, frases completas, answer-first.
+
+**Guardarraíles respetados:**
+- Ninguna meta usa keywords dueñas de páginas de servicio (verificado con lista de prohibidas)
+- NO se tocan la home ni `/servicios/desarrollo-web-a-medida-barcelona/` — las dos páginas del
+  incidente -43% del 23-may
+- **Titles sin tocar.** La propuesta incluía un cambio de title para `atomic-design`; queda fuera
+  de alcance porque a Jordi se le describió el deploy como «solo la etiqueta meta». Pendiente de
+  su decisión.
+
+**Verificación en producción (cache-bust + `Cache-Control: no-cache`): 14/15 OK.**
+
+⚠️ **La 15ª es un cambio inerte.** `/blog/tendencias-de-desarrollo-web-2026-rentabilidad-velocidad-
+y-escala-tecnica/` hace **301** a `/blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/`
+(`.htaccess` línea 123) y **no está en el sitemap**: es una consolidación antigua. Curry la incluyó
+por leer los archivos locales en vez del sitemap. El archivo se actualizó igual (inofensivo, queda
+coherente si algún día se quita el redirect) pero **nunca se sirve**. El post destino ya tenía una
+meta correcta de 150 chars — no requería acción.
+
+**Purga Cloudflare:** purge by URL de las 15 → `success: true`.
+
+**Efecto esperado:** Google tarda 1–3 semanas en recoger metas nuevas y a veces las reescribe.
+Medir CTR en GSC a partir del 15-ago, no antes. Agosto es suelo estacional (el plan pide solo
+55 clics mínimo), así que el CTR es la métrica a mirar, no el volumen de clics.
+
+---
+
 ## 2026-07-30 · `cda08f5` — 4 páginas de servicio nuevas + menú móvil por familias
 
 **Contexto:** ejecución del plan de captación (ver `ESTRATEGIA-SEO-2026.md`). Bloque WEB con el
