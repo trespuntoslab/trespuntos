@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css">
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css">
+  </noscript>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var s1 = document.createElement('script');
+        s1.src = '/assets/cookieconsent/cookieconsent.umd.js';
+        s1.onload = function () {
+          var s2 = document.createElement('script');
+          s2.src = '/assets/cookieconsent/cookieconsent-init.js?v=20260701';
+          document.head.appendChild(s2);
+        };
+        document.head.appendChild(s1);
+      }, 800);
+    });
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#5dffbf">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test A/B: qué es y cuándo no sirve en B2B | Blog | Tres Puntos</title>
+  <meta name="description" content="Un test A/B necesita volumen para dar resultados fiables. Explicamos qué es, cómo se lee bien y por qué en B2B casi nunca es la herramienta adecuada." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/test-ab-que-es-y-cuando-no-sirve/" />
+  <meta property="og:title" content="Test A/B: qué es y cuándo no sirve en B2B" />
+  <meta property="og:description" content="Un test A/B necesita volumen para dar resultados fiables. Explicamos qué es, cómo se lee bien y por qué en B2B casi nunca es la herramienta adecuada." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/blog/test-ab-que-es-y-cuando-no-sirve/" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Tres Puntos Comunicación" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og/blog-test-ab-que-es-y-cuando-no-sirve.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Test A/B: qué es y cuándo no sirve en B2B" />
+  <meta name="twitter:description" content="Un test A/B necesita volumen para dar resultados fiables. Explicamos qué es, cómo se lee bien y por qué en B2B casi nunca es la herramienta adecuada." />
+  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og/blog-test-ab-que-es-y-cuando-no-sirve.png" />
+  <meta property="article:published_time" content="2026-08-05" />
+  <meta property="article:modified_time" content="2026-08-05" />
+  <meta property="article:author" content="Jordi Expósito" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Test A/B: qué es y cuándo no sirve en B2B",
+      "description": "Un test A/B necesita volumen para dar resultados fiables. Explicamos qué es, cómo se lee bien y por qué en B2B casi nunca es la herramienta adecuada.",
+      "image": "https://www.trespuntoscomunicacion.es/img/og/blog-test-ab-que-es-y-cuando-no-sirve.png",
+      "datePublished": "2026-08-05",
+      "dateModified": "2026-08-05",
+      "author": {
+        "@type": "Person",
+        "name": "Jordi Expósito",
+        "url": "https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/",
+        "sameAs": [
+          "https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/",
+          "https://www.linkedin.com/in/trespuntoscomunicacion/"
+        ],
+        "jobTitle": "Digital Project Lead & UX/UI Designer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Tres Puntos Comunicación",
+          "url": "https://www.trespuntoscomunicacion.es/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tres Puntos Comunicación",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.trespuntoscomunicacion.es/img/logo.svg"
+        }
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.trespuntoscomunicacion.es/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.trespuntoscomunicacion.es/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Test A/B: qué es y cuándo no sirve en B2B"}
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es un test A/B?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un test A/B compara dos versiones de una página mostrando cada una a la mitad del tráfico, para medir cuál convierte mejor. Solo da un resultado fiable cuando cada variante acumula suficientes conversiones: con poco tráfico, el resultado que se ve es ruido estadístico, no una mejora real."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué un test A/B necesita mucho tráfico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Porque cualquier medición sobre pocos datos oscila. Cuando cada variante ha recibido pocas conversiones, las diferencias grandes entre A y B son lo normal y no la excepción. El tamaño de muestra depende de las conversiones acumuladas por variante, no de las visitas, y se calcula antes de lanzar el test."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo merece la pena hacer un test A/B?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cuando se cumplen tres condiciones a la vez: hay volumen suficiente para acumular conversiones en días y no en meses, la conversión medida está cerca del cambio que se testa, y existe una hipótesis previa que explique por qué ese cambio debería funcionar."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/blog-article.css" />
+  <noscript>
+    <link rel="stylesheet" href="/css/design-system.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/blog-article.css">
+  </noscript>
+
+  <style>
+    @font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+    @font-face{font-family:'Jakarta Fallback';src:local('Arial Black');size-adjust:95%;ascent-override:100%;descent-override:22%;line-gap-override:0%}
+    #tp-navbar{position:fixed;top:0;left:0;right:0;z-index:1000;min-height:72px}
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+  <div id="tp-navbar"></div>
+
+  <header class="article-header">
+    <div class="article-header-wrapper">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Inicio</a><span class="article-breadcrumb-sep">/</span><a href="/blog/">Blog</a><span class="article-breadcrumb-sep">/</span><span>Test A/B: qué es y cuándo no sirve en B2B</span>
+      </nav>
+      <div class="article-category">Conversión</div>
+      <h1 class="article-title">Test A/B: qué es y cuándo no sirve en B2B</h1>
+      <div class="article-meta">
+        <div class="article-meta-author">
+          <img class="article-meta-avatar" src="/img/jordi-exposito.webp" alt="Jordi Expósito" loading="lazy" />
+          <div>
+            <div class="article-meta-name"><a href="https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/" target="_blank" rel="noopener">Jordi Expósito</a></div>
+            <div class="article-meta-time">5 de agosto de 2026</div>
+          </div>
+        </div>
+        <div class="article-meta-item">
+          <span style="color:var(--mint)">•</span>
+          <span class="article-meta-time">9 min de lectura</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-toc">
+    <div class="toc-box">
+      <div class="toc-title">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h14"/></svg>
+        En este artículo
+      </div>
+      <ol class="toc-list">
+        <li><a href="#section-0">¿Qué es un test A/B?</a></li>
+        <li><a href="#section-1">¿Por qué el volumen lo decide todo?</a></li>
+        <li><a href="#section-2">¿Qué hace que un test A/B se lea mal?</a></li>
+        <li><a href="#section-3">¿Por qué en B2B casi nunca es la herramienta adecuada?</a></li>
+        <li><a href="#section-4">¿Qué funciona mejor cuando no hay tráfico?</a></li>
+        <li><a href="#section-5">¿Cuándo sí merece la pena?</a></li>
+        <li><a href="#section-6">Matiz o planteamiento: la pregunta que va antes</a></li>
+      </ol>
+    </div>
+  </div>
+
+  <main class="article-body">
+    <article class="article-content">
+
+      <div class="question-block" role="note">
+        <p><strong>Un test A/B compara dos versiones de una página mostrando cada una a la mitad del tráfico, para medir cuál convierte mejor.</strong> Solo da un resultado fiable cuando cada variante acumula suficientes conversiones: con poco tráfico, el resultado que se ve es ruido estadístico, no una mejora real.</p>
+      </div>
+
+      <p>La escena se repite. Alguien propone testar dos versiones del botón, se lanza el experimento, y a los cuatro días la variante B va un 18% por encima. Se da por ganadora, se implementa y se celebra. Dos meses después, la conversión global está exactamente igual que antes.</p>
+      <p>No falló la ejecución. Falló la premisa: no había tráfico suficiente para que ese 18% significara nada.</p>
+      <p>Los tests A/B son una herramienta excelente. También son la herramienta que más se aplica donde no toca, porque suena rigurosa y porque las plataformas que la venden necesitan que la respuesta a "¿esto me sirve?" sea siempre sí.</p>
+      <p>Este artículo explica cómo funcionan, cómo se leen sin engañarse y —la parte incómoda— por qué en la mayoría de plataformas B2B no son el sitio por donde empezar.</p>
+
+      <div class="pain-blocks">
+        <div class="pain-block">
+          <div class="pain-block-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="pain-block-title">El test que gana y luego no se nota</div>
+          <div class="pain-block-desc">La variante ganó por un margen amplio, se implementó, y el dato agregado del trimestre no se movió ni un punto.</div>
+        </div>
+        <div class="pain-block">
+          <div class="pain-block-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 3 5-6"/></svg>
+          </div>
+          <div class="pain-block-title">Resultados que cambian cada mañana</div>
+          <div class="pain-block-desc">Lunes gana A, miércoles gana B, viernes vuelve a ganar A. Es la señal más clara de que no hay datos suficientes.</div>
+        </div>
+        <div class="pain-block">
+          <div class="pain-block-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          </div>
+          <div class="pain-block-title">Nadie sabe cuánto tiene que durar</div>
+          <div class="pain-block-desc">El test se para cuando alguien se cansa de esperar o cuando el resultado ya dice lo que se quería oír.</div>
+        </div>
+      </div>
+
+      <h2 id="section-0">¿Qué es un test A/B?</h2>
+      <p>Es un experimento controlado. Divides el tráfico en dos grupos: la mitad ve la versión actual —A, el control— y la otra mitad ve la versión modificada —B, la variante—. Ambos grupos navegan a la vez, en las mismas condiciones, y se mide qué porcentaje de cada uno completa la acción que importa: comprar, pedir presupuesto, registrarse.</p>
+      <p>La lógica es simple y potente. Como la única diferencia entre los dos grupos es el cambio que has introducido, cualquier diferencia sostenida en el resultado se le puede atribuir a ese cambio. No hace falta adivinar por qué la gente hace lo que hace: se mide.</p>
+      <p>Lo que convierte esto en método y no en superstición es una sola pregunta, y es la que casi nunca se responde bien: <strong>¿la diferencia que estoy viendo es real, o es casualidad?</strong></p>
+
+      <h2 id="section-1">¿Por qué el volumen lo decide todo?</h2>
+      <p>Porque cualquier medición sobre pocos datos oscila. Y oscila mucho más de lo que la intuición sugiere.</p>
+
+      <div class="stat-callout row">
+        <div class="stat-callout-number">7/10</div>
+        <div>
+          <div class="stat-callout-label" style="text-align:left">Sacar siete caras en diez lanzamientos de una moneda es perfectamente normal. Nadie concluiría de ahí que la moneda está trucada — y sin embargo eso es exactamente lo que hacemos cuando damos por ganador un test con pocos datos.</div>
+          <div class="stat-callout-source" style="text-align:left">Ilustración de probabilidad básica, no un dato de sector</div>
+        </div>
+      </div>
+
+      <p>Lanza esa misma moneda diez mil veces y una desviación así ya no aparece: el ruido se diluye a medida que crecen los datos. Un test A/B es exactamente eso. Cuando cada variante ha recibido pocas conversiones, las diferencias grandes entre A y B son lo normal, no la excepción. Por eso un test que a los cuatro días da un +18% suele acabar en nada: todavía no había pasado lo suficiente para distinguir la señal del ruido.</p>
+      <p>De esto salen tres consecuencias prácticas que conviene tener claras antes de lanzar nada:</p>
+      <ul>
+        <li><strong>Cuanto menor sea tu tasa de conversión, más tráfico necesitas.</strong> El cálculo no depende de las visitas, sino de las conversiones acumuladas por cada variante.</li>
+        <li><strong>Cuanto más pequeña sea la mejora que buscas, más tráfico necesitas.</strong> Detectar un salto grande es rápido. Detectar una mejora de un par de puntos porcentuales exige mucho más volumen.</li>
+        <li><strong>El tamaño de muestra se calcula antes de lanzar, no después.</strong> Si no sabes cuánto tiene que durar el test antes de empezarlo, no estás haciendo un experimento: estás mirando un gráfico.</li>
+      </ul>
+
+      <div class="before-after">
+        <div class="before-after-side before-after-before">
+          <div class="before-after-label">Sin tamaño de muestra calculado</div>
+          <div class="before-after-title">El test termina cuando alguien decide que ha terminado</div>
+          <div class="before-after-desc">Se mira el panel cada mañana. Se para el día que la variante va por delante. Siempre aparece un ganador, y casi nunca sobrevive al trimestre siguiente.</div>
+        </div>
+        <div class="before-after-side before-after-after">
+          <div class="before-after-label">Con tamaño de muestra calculado</div>
+          <div class="before-after-title">La duración se fija antes y se respeta</div>
+          <div class="before-after-desc">Se sabe de antemano cuántas conversiones hacen falta y cuánto va a tardar. Si el número no sale, la conclusión es que no hay tráfico para testar eso — y esa también es una respuesta útil.</div>
+        </div>
+      </div>
+
+      <h2 id="section-2">¿Qué hace que un test A/B se lea mal?</h2>
+      <p>Cuatro errores explican casi todos los resultados que luego no se sostienen. Ninguno tiene que ver con la herramienta: todos tienen que ver con el método.</p>
+
+      <div class="signal-cards" role="list">
+        <div class="signal-card" role="listitem">
+          <div class="signal-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="signal-card-content">
+            <div class="signal-card-title">Parar el test cuando va ganando</div>
+            <div class="signal-card-desc">Es el más común y el más caro. Si miras el resultado cada día y lo detienes en cuanto la variante va por delante, siempre encontrarás un ganador — aunque las dos versiones sean idénticas. La duración se fija antes y no se toca.</div>
+          </div>
+        </div>
+        <div class="signal-card" role="listitem">
+          <div class="signal-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="signal-card-content">
+            <div class="signal-card-title">No dejar pasar un ciclo completo</div>
+            <div class="signal-card-desc">El comportamiento de un martes no es el de un domingo, y en B2B la diferencia entre días laborables y fin de semana es enorme. Un test que no cubre al menos una semana entera está midiendo un sesgo de calendario.</div>
+          </div>
+        </div>
+        <div class="signal-card" role="listitem">
+          <div class="signal-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="signal-card-content">
+            <div class="signal-card-title">Testar dos cosas a la vez</div>
+            <div class="signal-card-desc">Si cambias el titular y el botón en la misma variante y gana, no sabes cuál de los dos funcionó. Puede incluso que uno ayudara y el otro estorbara, y que el resultado neto esté escondiendo una mejora mayor.</div>
+          </div>
+        </div>
+        <div class="signal-card" role="listitem">
+          <div class="signal-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="signal-card-content">
+            <div class="signal-card-title">Medir el clic en vez del negocio</div>
+            <div class="signal-card-desc">Una variante puede subir los clics en el CTA y bajar las solicitudes cualificadas. Si la métrica del test no es la que le importa al negocio, el test está optimizando contra ti con toda la apariencia de rigor.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-cta-inline">
+        <div class="article-cta-inline-text">¿Tienes tráfico pero no sabes si el problema es el detalle o el planteamiento? Lo miramos contigo.</div>
+        <a href="/iniciar-proyecto/" class="article-cta-inline-btn">Hablemos →</a>
+      </div>
+
+      <h2 id="section-3">¿Por qué en B2B casi nunca es la herramienta adecuada?</h2>
+      <p>Aquí está el motivo por el que este artículo abre con una advertencia en vez de con una guía de herramientas.</p>
+      <p>Una plataforma B2B con ticket alto recibe, por definición, poco tráfico cualificado. Su valor no está en el volumen de visitas: está en que las pocas que llegan sean las correctas. Ese perfil es justo el contrario del que necesita un test A/B para funcionar.</p>
+      <p>A eso se suma el ciclo de decisión. Entre la primera visita y la firma pueden pasar meses, con varias personas implicadas y conversaciones que ocurren fuera de la web. Cuando la conversión que de verdad importa sucede tan lejos del cambio que estás testando, atribuirle el mérito a un botón es, siendo generosos, optimista.</p>
+
+      <blockquote class="quote-pull">
+        <img class="quote-pull-avatar" src="/nosotros/Jordi.webp" alt="Jordi Expósito" loading="lazy" onerror="this.style.display='none'">
+        <div class="quote-pull-body">
+          <p class="quote-pull-text">Un test A/B no es una forma de tener razón. Es una forma de descubrir que estabas equivocado — y necesita datos suficientes para poder decírtelo.</p>
+          <div class="quote-pull-author">JORDI EXPÓSITO · Digital Project Lead</div>
+        </div>
+      </blockquote>
+
+      <p>Esto no significa que en B2B no se pueda medir ni mejorar. Significa que la herramienta correcta suele ser otra, y que antes de decidir cuál conviene entender qué está fallando de verdad en el embudo. Es parte del trabajo de <a href="/servicios/consultoria-digital-barcelona/">consultoría digital</a>: separar los problemas que se resuelven afinando de los que se resuelven replanteando.</p>
+
+      <h2 id="section-4">¿Qué funciona mejor cuando no hay tráfico?</h2>
+      <p>Con poco volumen hay alternativas que dan respuestas más rápidas, más baratas y —esto sorprende a mucha gente— más fiables.</p>
+
+      <div class="icon-grid cols-3">
+        <div class="icon-grid-item">
+          <div class="icon-grid-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="icon-grid-item-label">Hablar con cinco clientes</div>
+        </div>
+        <div class="icon-grid-item">
+          <div class="icon-grid-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <div class="icon-grid-item-label">Tests de usabilidad</div>
+        </div>
+        <div class="icon-grid-item">
+          <div class="icon-grid-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div class="icon-grid-item-label">Arreglar lo que está roto</div>
+        </div>
+      </div>
+
+      <p><strong>Cinco entrevistas bien hechas</strong> explican por qué la gente no pide presupuesto mucho mejor que un test de dos meses. No devuelven un porcentaje, y por eso parecen menos rigurosas. Aciertan más.</p>
+      <p><strong>Los tests de usabilidad</strong> no necesitan significancia estadística porque no miden porcentajes: detectan dónde se atasca la gente. Con cinco personas ya salen los problemas gordos, y salen con una claridad que ningún panel de analítica ofrece. Es la misma lógica de los <a href="/blog/tests-de-usuarios-de-guerrilla/">tests de usuarios de guerrilla</a>: poca muestra, mucha señal.</p>
+      <p><strong>Lo que está objetivamente roto no se testa: se arregla.</strong> Un formulario que pide catorce campos, una página que tarda seis segundos en cargar, un precio que no aparece por ningún lado. No hace falta un experimento para saber que eso resta.</p>
+      <p>Y si vas a testar algo con poco tráfico, que sea un cambio grande. Con volumen bajo solo puedes detectar diferencias grandes, así que una propuesta radicalmente distinta tiene alguna posibilidad de dar señal. Un cambio de color no la tiene.</p>
+
+      <h2 id="section-5">¿Cuándo sí merece la pena?</h2>
+      <p>El test A/B es la herramienta correcta cuando se cumplen tres condiciones a la vez. Si falla una, hay caminos más rápidos para averiguar lo mismo.</p>
+
+      <div class="checklist-box">
+        <div class="checklist-box-title">Las tres condiciones para que un test A/B tenga sentido:</div>
+        <ul>
+          <li><strong>Hay volumen.</strong> Las conversiones se acumulan en días, no en meses. Un e-commerce con miles de sesiones semanales lo cumple; una plataforma B2B con veinte solicitudes al mes, no.</li>
+          <li><strong>La conversión está cerca del cambio.</strong> Un checkout, una ficha de producto, un alta. No una venta consultiva que se cierra medio año después en una reunión.</li>
+          <li><strong>Hay una hipótesis detrás.</strong> "Creemos que la gente abandona el checkout porque los gastos de envío aparecen al final" es una hipótesis. "Vamos a probar el botón en verde" no lo es.</li>
+        </ul>
+      </div>
+
+      <h2 id="section-6">Matiz o planteamiento: la pregunta que va antes</h2>
+      <p>Casi todo lo anterior se resume en una distinción. Hay problemas de matiz y problemas de planteamiento, y solo los primeros se resuelven testando.</p>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Situación</th>
+              <th>Problema de matiz</th>
+              <th>Problema de planteamiento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Qué falla</td>
+              <td><span class="badge badge-ok">Un paso concreto del embudo</span></td>
+              <td><span class="badge badge-bad">La propuesta o la arquitectura</span></td>
+            </tr>
+            <tr>
+              <td>Herramienta adecuada</td>
+              <td><span class="badge badge-ok">Test A/B</span></td>
+              <td><span class="badge badge-warn">Investigación y rediseño</span></td>
+            </tr>
+            <tr>
+              <td>Qué pasa si testas</td>
+              <td><span class="badge badge-ok">Mejora medible</span></td>
+              <td><span class="badge badge-bad">Optimizas algo que sobra</span></td>
+            </tr>
+            <tr>
+              <td>Señal típica</td>
+              <td><span class="badge badge-neutral">Abandono en un punto identificado</span></td>
+              <td><span class="badge badge-neutral">Tráfico que no encaja con la oferta</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>En plataformas con mucho tráfico y conversión rápida, testar es de las mejores inversiones que se pueden hacer. En B2B con ticket alto, ciclo largo y pocas visitas cualificadas, casi siempre hay una pregunta anterior que responder. Muchos de los <a href="/blog/errores-ux-ui-que-destruyen-el-roi/">errores UX/UI que destruyen el ROI</a> son estructurales, y ninguno se resuelve comparando variantes.</p>
+      <p>Cuando el problema es de planteamiento, ningún test lo va a arreglar. Solo va a darte la sensación de estar haciendo algo.</p>
+
+      <div class="question-block" role="note">
+        <p>¿Estás a punto de montar un programa de experimentación y no tienes claro si tu tráfico da para ello? Cuéntanos tus números. En media hora sabrás si tiene sentido testar o si hay que mirar otra cosa antes.</p>
+      </div>
+
+    </article>
+  </main>
+
+  <section class="article-cta">
+    <p class="article-cta-eyebrow">Tres Puntos — Arquitectura digital de conversión</p>
+    <h2>¿El problema es el detalle o el planteamiento?</h2>
+    <p>Analizamos qué está fallando de verdad en tu embudo y te decimos por dónde se empieza. Sin compromiso.</p>
+    <a href="/iniciar-proyecto/" class="article-cta-btn">Cuéntanos tu proyecto</a>
+  </section>
+
+  <div class="author-card">
+    <div class="author-card-inner">
+      <img class="author-card-avatar" src="/img/jordi-exposito.webp" alt="Jordi Expósito" loading="lazy" />
+      <div class="author-card-info">
+        <div class="author-card-name">Jordi Expósito</div>
+        <div class="author-card-role">Digital Project Lead &amp; UX/UI Designer · Tres Puntos</div>
+        <a class="author-card-link" href="https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Conectar en LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-footer-divider"></div>
+
+  <section class="related-articles" aria-label="Artículos relacionados">
+    <h2 class="related-articles-title">Artículos relacionados</h2>
+    <div class="related-articles-grid">
+      <a href="/blog/tests-de-usuarios-de-guerrilla/" class="related-card">
+        <div class="related-card-cat">UX/UI</div>
+        <h3 class="related-card-title">Tests de usuarios de guerrilla</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+      <a href="/blog/errores-ux-ui-que-destruyen-el-roi/" class="related-card">
+        <div class="related-card-cat">UX/UI</div>
+        <h3 class="related-card-title">7 errores de UX/UI que destruyen el ROI de tu empresa</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+      <a href="/blog/la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas/" class="related-card">
+        <div class="related-card-cat">Desarrollo Web</div>
+        <h3 class="related-card-title">La deuda de arquitectura UX en plataformas B2B modernas</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js?v=27" defer></script>
+  <script src="/js/supabase-forms.js?v=20260416" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      try { TP.navbar('blog'); } catch (e) {}
+      try { TP.footer(); } catch (e) {}
+      try { TP.initJS(); } catch (e) {}
+    });
+  </script>
+
+  <script src="/js/blog-article.js" defer></script>
+
+  <script defer>
+    (function () {
+      if (window.innerWidth > 1024) {
+        var outerCursor = document.createElement('div');
+        outerCursor.id = 'outer-cursor';
+        var innerCursor = document.createElement('div');
+        innerCursor.id = 'inner-cursor';
+        document.body.appendChild(outerCursor);
+        document.body.appendChild(innerCursor);
+        var style = document.createElement('style');
+        style.textContent = '#outer-cursor,#inner-cursor{position:fixed;pointer-events:none;border-radius:50%;mix-blend-mode:lighten;z-index:99999}#outer-cursor{width:40px;height:40px;border:2px solid #5dffbf;top:-20px;left:-20px;transition:transform .2s ease-out,opacity .2s ease-out;opacity:.6}#inner-cursor{width:8px;height:8px;background:#5dffbf;top:-4px;left:-4px;opacity:1;transition:transform .1s ease-out}#outer-cursor.active{transform:scale(1.5);border-width:3px;opacity:.8}#inner-cursor.active{transform:scale(.75)}#outer-cursor.click{transform:scale(.75);opacity:.4}#inner-cursor.click{transform:scale(1.5)}@media(max-width:1024px){#outer-cursor,#inner-cursor{display:none!important}}';
+        document.head.appendChild(style);
+        var mouseX = 0, mouseY = 0, outerX = 0, outerY = 0;
+        document.addEventListener('mousemove', function (e) { mouseX = e.clientX; mouseY = e.clientY; });
+        (function animate() {
+          outerX += (mouseX - outerX) * 0.2;
+          outerY += (mouseY - outerY) * 0.2;
+          outerCursor.style.transform = 'translate3d(' + outerX + 'px,' + outerY + 'px,0)';
+          innerCursor.style.transform = 'translate3d(' + mouseX + 'px,' + mouseY + 'px,0)';
+          requestAnimationFrame(animate);
+        })();
+        document.querySelectorAll('a,button,[role="button"],input,textarea,select').forEach(function (el) {
+          el.addEventListener('mouseenter', function () { outerCursor.classList.add('active'); innerCursor.classList.add('active'); });
+          el.addEventListener('mouseleave', function () { outerCursor.classList.remove('active', 'click'); innerCursor.classList.remove('active', 'click'); });
+          el.addEventListener('mousedown', function () { outerCursor.classList.add('click'); innerCursor.classList.add('click'); });
+          el.addEventListener('mouseup', function () { outerCursor.classList.remove('click'); innerCursor.classList.remove('click'); });
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
