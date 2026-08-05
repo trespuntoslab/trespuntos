@@ -2,6 +2,48 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-08-05 · `2f3df53` + `1c353a4` — Post nuevo «Test A/B: qué es y cuándo no sirve en B2B»
+
+**Contexto:** Jordi pidió un post nuevo que ayudara a los objetivos. El tema NO se eligió por
+intuición: se midieron 26 candidatos informacionales con DataForSEO (volumen España) y se
+comprobó la SERP real de los finalistas en móvil, aplicando la regla del plan SEO —
+«la posición de GSC no es la que ve el usuario».
+
+**Por qué «test a/b»:** 3.600 búsquedas/mes · CPC 23,84 € (el más alto de todo lo medido) ·
+competencia MEDIA · sin cubrir en los 52 posts existentes · encaja con «arquitectura digital
+de conversión». Descartados: «seo técnico» (5.400/mes pero fuera de terreno), «wireframe»
+(4.400 con intención de estudiante), «customer journey map» (Miro/IBM/Asana arriba),
+«headless cms» (AWS/Strapi arriba), «portal del cliente» (intención navegacional: la gente
+busca el portal de Mercadona).
+
+**Expectativa declarada:** la SERP tiene AI Overview en absoluta 1, knowledge graph en 2, PAA
+en 3 y Wikipedia como primer orgánico en 4. NO se aspira al top: se aspira a entrar entre la 5
+y la 8 y a ser citables por la respuesta de IA (línea C3 / GEO-AEO, pendiente).
+
+**Contenido:** 1.744 palabras · 11 componentes del design system · 7 H2 en formato pregunta ·
+bloque answer-first citable bajo el H1 · schemas BlogPosting + BreadcrumbList + FAQPage.
+Sin datos inventados (la única cifra es una ilustración de probabilidad declarada como tal).
+Consultado con Jordan por el bridge antes de escribir y antes de publicar.
+
+**Cruzado contra `keyword-map.md`:** «test a/b» no tiene página dueña. Sin conflicto. No se
+tocó ningún title, H1 ni meta existente.
+
+**Archivos FTP (4):**
+- `blog/test-ab-que-es-y-cuando-no-sirve/index.html` (33.709 bytes, HTTP 226)
+- `blog/index.html` (57.017 bytes, HTTP 226 — tarjeta nueva en 1ª posición, categoría Conversión)
+- `sitemap.xml` (19.203 bytes, HTTP 226 — 88 → 89 URLs)
+- `img/og/blog-test-ab-que-es-y-cuando-no-sirve.png` (41.471 bytes)
+
+**Cloudflare:** purge by URL de 3 entradas (artículo, `/blog/`, sitemap) → `success: true`.
+
+**Verificación (cache-bust + no-cache):** artículo 200 con title y FAQPage correctos ✅ ·
+OG 200 ✅ · tarjeta presente en `/blog/` ✅ · URL presente en sitemap ✅ ·
+16/16 enlaces internos 200 ✅ · sin errores de consola ✅.
+
+**Pendiente de Jordi:** solicitar indexación en GSC (Inspección de URL → Solicitar indexación).
+
+---
+
 ## 2026-07-31 · `fbc6e90` — 15 meta descriptions del blog en formato answer-first
 
 **Contexto:** checkpoint del 31-jul. Julio cerró con 33.118 impresiones (+42,6%) y 77 clics
