@@ -2,6 +2,55 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-08-08 (2) · `63edd17` — `.htaccess`: 301 al destino real en tipsuxui, portfolio y blog-diseno-web
+
+**Contexto:** con el export de cobertura solo se veía el resumen, así que se entró en GSC con el
+navegador (Chrome real, cuenta `authuser=1` — la sesión por defecto `hola@` NO tiene acceso a la
+propiedad; la propiedad es **`sc-domain:trespuntoscomunicacion.es`**) y se sacaron los dos
+listados completos: los 26 404 y las 28 «rastreada: actualmente sin indexar». Cada URL relevante
+se comprobó después contra producción con `curl -L`.
+
+**Diagnóstico de los 26 404:** 21 son ruido irrecuperable del WordPress viejo (`portfolio-category/*`,
+`wp-content/`, `wp-includes/`, `wp-admin/`, tres `wp-login.php?itsec-hb-token=…` de escaneos de bots,
+`cdn-cgi/l/email-protection`, y varias entradas con asterisco literal que Google sacó del robots.txt).
+2 eran los enlaces de 1csoft corregidos en `c96e60a`. 1 ya estaba resuelto
+(`/servicio/web-a-medida-barcelona/`, dato de un rastreo del 9-feb). Solo 1 necesitaba regla nueva.
+
+**Diagnóstico de las 28 rastreadas-sin-indexar:** el post `test-ab-que-es-y-cuando-no-sirve`,
+5 variantes sin barra final o sin www (redirigen bien, solo consumen rastreo), 1 asset JS,
+`sectores/analisis/kronos-homes` (noindex intencional) y el resto restos de WordPress.
+
+**3 bugs de redirección corregidos:**
+| Regla | Antes | Ahora |
+|---|---|---|
+| `^tipsuxui/(.+)` | catch-all al hub `/blog/` | `RewriteCond -d` → al POST si existe con el mismo slug, al hub si no |
+| `^portfolio/([^/]+)` | mapeaba a `/casos-de-negocio/$1/` a ciegas → 301 a 404 (`absolute-corporate`) | `RewriteCond -d` → al caso si existe, al hub si no |
+| `^blog-diseno-web/…` | no existía → 404 | regla explícita para el slug renombrado + catch-all condicional |
+
+`/tipsuxui/` era la ruta del blog en WordPress: **5 URLs con años de antigüedad estaban tirando su
+señal a un hub genérico** teniendo el post equivalente vivo con el mismo slug. Ese es el cambio que
+importa; lo demás es limpieza de cola larga y no moverá clics por sí solo.
+
+**Sin regresión posible:** si `DOCUMENT_ROOT` no resolviera en Nominalia, la condición falla y se
+aplica el catch-all al hub — exactamente el comportamiento anterior.
+
+**Deploy:** `.htaccess` de producción descargado y comparado antes de tocar (**sin drift**, backup
+guardado) → commit → push (`git status` limpio) → FTP (HTTP 226) → 5 secciones del sitio
+verificadas vivas (200) → purga Cloudflare de las 7 URLs afectadas.
+
+**Verificado en producción (todo a 1 solo salto):** los 5 `/tipsuxui/<slug>/` llegan a su post ·
+`/blog-diseno-web/unir-lean-startup-con-diseno/` → `/blog/unir-el-pensamiento-lean-startup-con-diseno-lean-design/` ·
+`/portfolio/absolute-corporate/` ya no da 404, cae al hub · `/portfolio/nomadevans/` y `/portfolio/gibobs/`
+siguen yendo a su caso · los hubs `/tipsuxui/`, `/portfolio/` y el parche de `1csoft` intactos.
+
+**GSC:** sitemap reenviado desde la propiedad de dominio → «Se ha enviado el sitemap correctamente»
+(la lectura previa del 8-ago aún registraba 89 URLs; reprocesará las 85).
+
+**Indexación del post del 5-ago:** NO se solicitó, no hacía falta. La inspección en vivo devuelve
+«La URL está en Google · La página está indexada». El informe de cobertura lo listaba como
+rastreada-sin-indexar porque sus datos son del 5-ago. **Patrón ya conocido: el informe agregado va
+con retraso; la fuente de verdad es la inspección de URL en vivo.**
+
 ## 2026-08-08 · `c96e60a` — Fix 2 enlaces internos a 404 + legales fuera del sitemap
 
 **Contexto:** Jordi pasó el export de cobertura de Search Console (`Coverage-2026-08-08.zip`).
