@@ -2,6 +2,45 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-08-08 · `c96e60a` — Fix 2 enlaces internos a 404 + legales fuera del sitemap
+
+**Contexto:** Jordi pasó el export de cobertura de Search Console (`Coverage-2026-08-08.zip`).
+El ZIP solo trae el resumen, sin URLs, así que se contrastó todo contra producción.
+
+**Lectura del export — la caída de indexadas NO es una pérdida:** 97 (10-may) → 81 (5-ago) son
+16 páginas, y coinciden casi exactamente con los noindex deliberados (6 ciudades el 1-jun +
+12 el 9-jun = 18 doorway pages). Los escalones del gráfico lo confirman: 90 el 1-jul, 83 el
+11-jul, 81 el 25-jul, según Google fue recrawleando. Mientras tanto las **impresiones subieron
++56%** (732 → 1.140/día, con el repunte arrancando a finales de junio, cuando entró
+`/servicios/software-a-medida/`). Menos páginas indexadas, más impresiones: lo buscado.
+
+**Desglose de las 415 sin indexar:** 288 redirecciones · 62 noindex · 28 rastreada-sin-indexar ·
+26 404 · 7 canónica alternativa · 4 descubierta-sin-indexar.
+
+**Auditoría contra producción (cache-bust, `Cache-Control: no-cache`):**
+- 89 URLs del sitemap: 0 con status ≠ 200, 0 redirigidas, 0 con canonical cruzada.
+- Muestra de 40 orígenes de redirect del `.htaccess`: todas 1 solo salto, todas acaban en 200.
+  Sin cadenas. Las 288 redirecciones son el pasivo normal del WordPress viejo.
+- 200 enlaces internos únicos barridos → 2 apuntaban a 404 reales.
+
+**Cambios desplegados (2 archivos):**
+| Archivo | Cambio |
+|---|---|
+| `casos-de-negocio/1csoft/index.html` | 2 enlaces a servicios inexistentes: `desarrollo-wordpress-a-medida` → `desarrollo-web-a-medida-barcelona`, `automatizacion-ia-n8n` → `automatizacion-de-procesos-con-ia` |
+| `sitemap.xml` | 89 → 85 URLs. Fuera las 4 legales, que llevaban `noindex,follow` y estaban listadas igual — señales contradictorias, el mismo error que se corrigió con los 16 sectores en mayo |
+
+**Deploy:** commit → push (`git status` limpio) → FTP 2 archivos (HTTP 226) → purga Cloudflare
+by-URL (`success: true`) → verificado con cache-bust: sitemap sirve 85 `<loc>` y 0 legales, los
+2 destinos nuevos dan 200, y el HTML de 1csoft en producción ya no contiene los hrefs rotos.
+
+**Pendiente (necesita detalle que este export no trae):** los **26 404** —solo se identificaron
+2 por enlace interno, el resto serán URLs del WP viejo sin regla de redirect— y las **28
+«rastreada: actualmente sin indexar»**. Hay que entrar en GSC → Indexación → Páginas, clicar
+cada motivo y exportar ahí; luego cruzar con el `.htaccess`.
+
+**Nota de doc:** CLAUDE.md registra 78 URLs de sitemap tras el 9-jun; había crecido a 89 con
+software-a-medida y posts nuevos. Tras este deploy: 85.
+
 ## 2026-08-05 · `2f3df53` + `1c353a4` — Post nuevo «Test A/B: qué es y cuándo no sirve en B2B»
 
 **Contexto:** Jordi pidió un post nuevo que ayudara a los objetivos. El tema NO se eligió por
