@@ -84,9 +84,14 @@
 
     # Portfolio → Casos de negocio (individual + hub)
     # NOTA: ([^/]+) evita capturar la barra final → no genera doble slash en destino
-    # Casos WP antiguos no migrados → al hub directamente (1csoft, etc.)
+    # Casos WP antiguos no migrados → al hub directamente (1csoft, absolute-corporate...).
+    # La condición -d comprueba que el caso EXISTE antes de redirigir a él; si no,
+    # cae al hub. Antes se mapeaba a ciegas y generaba 301 → 404 (p. ej.
+    # portfolio/absolute-corporate/). Ya no hace falta parchear caso a caso.
     RewriteRule ^portfolio/1csoft/?$ https://www.trespuntoscomunicacion.es/casos-de-negocio/ [R=301,L]
+    RewriteCond %{DOCUMENT_ROOT}/casos-de-negocio/$1 -d
     RewriteRule ^portfolio/([^/]+)/?$ https://www.trespuntoscomunicacion.es/casos-de-negocio/$1/ [R=301,L]
+    RewriteRule ^portfolio/(.+)/?$ https://www.trespuntoscomunicacion.es/casos-de-negocio/ [R=301,L]
     RewriteRule ^portfolio/?$ https://www.trespuntoscomunicacion.es/casos-de-negocio/ [R=301,L]
 
     # Services: old WordPress /servicio/ slugs missing
@@ -138,6 +143,14 @@
     RewriteRule ^atomic-design-ultima-tendencia-en-diseno-web/?$ https://www.trespuntoscomunicacion.es/blog/atomic-design-ultima-tendencia-en-diseno-web/ [R=301,L]
     RewriteRule ^beneficios-de-la-arquitectura-de-informacion-en-el-diseno-web/?$ https://www.trespuntoscomunicacion.es/blog/beneficios-de-la-arquitectura-de-informacion-en-el-diseno-web/ [R=301,L]
     RewriteRule ^blog-diseno-web-elaborado-con-amor/?$ https://www.trespuntoscomunicacion.es/blog/blog-diseno-web-elaborado-con-amor/ [R=301,L]
+
+    # --- /blog-diseno-web/<slug>/ (ruta antigua del blog en WordPress) ---
+    # Slug renombrado al migrar → regla explícita (la condición -d no lo pillaría).
+    RewriteRule ^blog-diseno-web/unir-lean-startup-con-diseno/?$ https://www.trespuntoscomunicacion.es/blog/unir-el-pensamiento-lean-startup-con-diseno-lean-design/ [R=301,L]
+    # Resto: al post si conserva el slug, al hub si no.
+    RewriteCond %{DOCUMENT_ROOT}/blog/$1 -d
+    RewriteRule ^blog-diseno-web/([^/]+)/?$ https://www.trespuntoscomunicacion.es/blog/$1/ [R=301,L]
+    RewriteRule ^blog-diseno-web/(.+)/?$ https://www.trespuntoscomunicacion.es/blog/ [R=301,L]
     RewriteRule ^como-la-inteligencia-artificial-esta-cambiando-los-comportamientos-de-busqueda-online/?$ https://www.trespuntoscomunicacion.es/blog/como-la-inteligencia-artificial-esta-cambiando-los-comportamientos-de-busqueda-online/ [R=301,L]
     RewriteRule ^como-mejorar-la-experiencia-de-usuario-en-e-commerce-mediante-diseno-ux-ui-eficaz/?$ https://www.trespuntoscomunicacion.es/blog/como-mejorar-la-experiencia-de-usuario-en-e-commerce-mediante-diseno-ux-ui-eficaz/ [R=301,L]
     RewriteRule ^como-mejorar-la-velocidad-de-carga-de-tu-sitio-web/?$ https://www.trespuntoscomunicacion.es/blog/como-mejorar-la-velocidad-de-carga-de-tu-sitio-web/ [R=301,L]
@@ -220,8 +233,14 @@
     # --- WordPress index.php ---
     RewriteRule ^index\.php$ https://www.trespuntoscomunicacion.es/ [R=301,L]
 
-    # --- tipsuxui (sin guión, variante antigua) ---
+    # --- tipsuxui (ruta del blog en WordPress, variante sin guión) ---
+    # Si el post existe con el mismo slug en /blog/, redirige AL POST (preserva la
+    # señal de la URL antigua). Si no existe, cae al hub como antes.
+    # Si DOCUMENT_ROOT no resolviera, la condición falla y se aplica el catch-all
+    # de abajo → mismo comportamiento que antes, sin regresión.
     RewriteRule ^tipsuxui/?$ https://www.trespuntoscomunicacion.es/blog/ [R=301,L]
+    RewriteCond %{DOCUMENT_ROOT}/blog/$1 -d
+    RewriteRule ^tipsuxui/([^/]+)/?$ https://www.trespuntoscomunicacion.es/blog/$1/ [R=301,L]
     RewriteRule ^tipsuxui/(.+)/?$ https://www.trespuntoscomunicacion.es/blog/ [R=301,L]
     RewriteRule ^tipsux-ui/?$ https://www.trespuntoscomunicacion.es/blog/ [R=301,L]
 
