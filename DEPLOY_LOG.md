@@ -1152,3 +1152,16 @@ curl -sk --ftp-pasv --ftp-create-dirs -T "ruta/local" \
 - **Verificación en producción**: `cf-cache-status: MISS` ✅ · 0 ocurrencias de `jordan-embed` ✅ · `data-form-variant=contacto` ✅ · exit-intent presente ✅ · widget sirve "Habla con Jordan / Respuesta al momento" ✅ · sin errores de consola ✅
 - **A vigilar**: el fallback de inactividad del exit-intent son **45s** y la sesión media en contacto es 51s → va a dispararse a bastante gente que aterriza y no interactúa. Es el mismo comportamiento que ya estaba en `/iniciar-proyecto/`. Si resulta intrusivo, ese es el primer valor a subir (90s).
 - **Qué mirar en 4-6 semanas**: comparar `form_start`→`generate_lead` entre las variantes `contacto` e `iniciar-proyecto` en el panel Conversión del dashboard. Aviso: con ~20 sesiones/mes combinadas esto es higiene de conversión, no una prueba estadística.
+
+---
+
+## Deploy 2026-08-12 — Blog: "Cómo implementar agentes de IA en tu empresa" (soporte clúster IA)
+
+- **SHA**: `2ee3e28` (post + card hub) + `d555b33` (sitemap) (main)
+- **Archivos FTP (4)**: `blog/como-implementar-ia-en-tu-empresa/index.html` · `blog/index.html` (card nueva) · `img/og/blog-como-implementar-ia-en-tu-empresa.png` · `sitemap.xml` (85→86 URLs, lastmod real 2026-08-12)
+- **Motivo**: post nuevo pedido por Jordi para empujar objetivos. Tema elegido con Jordan por el bridge (sesión `4a877dc5`, 2 rondas): el clúster agentes IA tiene 0 tracción GSC (terreno virgen) y el funnel informacional tenía cubierto qué-es / ejemplos / caso-propio pero faltaba el CÓMO. Keyword: "cómo implementar ia en una empresa" (long-tail sin dueño en keyword-map, sin canibalización). Matiz de Jordan aplicado: "agentes de inteligencia artificial para empresas" solo en cuerpo, no en title/H1.
+- **Contenido**: ~2.100 palabras, 5 pasos + errores + FAQ. 10 componentes (pain-blocks, checklist, timeline-mini, comparison-table chatbot/agente/automatización, quote-pull, before-after, signal-cards, cta-inline, question-block). Schemas: BlogPosting + BreadcrumbList + FAQPage (4 preguntas). Enlaza a las 5 páginas de servicio IA + los 3 posts IA publicados. CTAs → /iniciar-proyecto/.
+- **Verificación local** (preview 8123): componentes renderizan, navbar/footer inyectados, 12 enlaces internos válidos (todos 200 en prod), anclas TOC OK, sin errores de consola propios (solo ruido CF/Turnstile por localhost).
+- **Cloudflare**: purge by URL — 3 URLs (post, /blog/, sitemap) ✅ `{"success":true}`
+- **Verificación producción** (cache-bust): artículo 200 + title correcto ✅ · sitemap contiene la URL ✅ · card visible en /blog/ ✅ · OG 200 ✅
+- **Pendiente Jordi**: GSC → Inspección de URL → solicitar indexación de `/blog/como-implementar-ia-en-tu-empresa/`.
