@@ -64,53 +64,117 @@
     }
   </script>
   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "\u00bfQu\u00e9 tipo de procesos se pueden automatizar?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pr\u00e1cticamente cualquier proceso digital. Gesti\u00f3n de leads, reporting, integraciones entre sistemas, tareas administrativas o flujos internos."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "\u00bfQu\u00e9 herramientas se utilizan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Dependiendo del proyecto utilizamos herramientas como n8n, Make, APIs empresariales y modelos de inteligencia artificial. La arquitectura se dise\u00f1a siempre en funci\u00f3n del negocio."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "\u00bfCu\u00e1nto tarda un proyecto de automatizaci\u00f3n?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Depende de la complejidad del sistema. Las primeras automatizaciones pueden estar funcionando en pocas semanas."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "\u00bfEn qu\u00e9 se diferencia un agente de IA de un chatbot?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Un chatbot responde preguntas. Un agente de IA ejecuta tareas: consulta sistemas, decide seg\u00fan reglas de negocio, act\u00faa sobre tus herramientas y reporta resultados. Para empresas que buscan algo m\u00e1s que un chatbot, los agentes automatizan procesos completos de principio a fin."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "\u00bfC\u00f3mo se implementa la IA en una empresa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La implementaci\u00f3n de IA en la empresa es progresiva. Empezamos por un diagn\u00f3stico de procesos, identificamos d\u00f3nde la IA aporta m\u00e1s valor y dise\u00f1amos la arquitectura. Las primeras automatizaciones y agentes entran en producci\u00f3n en pocas semanas y se ampl\u00edan desde ah\u00ed."
-          }
-        }
-      ]
+      "@type": "Question",
+      "name": "¿Qué tipo de procesos se pueden automatizar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prácticamente cualquier proceso digital. Gestión de leads, reporting, integraciones entre sistemas, tareas administrativas o flujos internos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué herramientas se utilizan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dependiendo del proyecto utilizamos herramientas como n8n, Make, APIs empresariales y modelos de inteligencia artificial. La arquitectura se diseña siempre en función del negocio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda un proyecto de automatización?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de la complejidad del sistema. Las primeras automatizaciones pueden estar funcionando en pocas semanas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué se diferencia un agente de IA de un chatbot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un chatbot responde preguntas. Un agente de IA ejecuta tareas: consulta sistemas, decide según reglas de negocio, actúa sobre tus herramientas y reporta resultados. Para empresas que buscan algo más que un chatbot, los agentes automatizan procesos completos de principio a fin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se implementa la IA en una empresa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La implementación de IA en la empresa es progresiva. Empezamos por un diagnóstico de procesos, identificamos dónde la IA aporta más valor y diseñamos la arquitectura. Las primeras automatizaciones y agentes entran en producción en pocas semanas y se amplian desde ahí."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es un agente de IA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es un sistema que ejecuta tareas de principio a fin sin supervisión constante. A diferencia de un modelo que solo genera texto, un agente consulta tus sistemas, decide según reglas de negocio, actúa sobre tus herramientas y reporta lo que ha hecho. Trabaja, no solo responde."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre una automatización y un agente de IA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una automatización sigue siempre el mismo camino: si pasa A, haz B. Un agente de IA interpreta el contexto y decide qué hacer ante casos que nadie programó explícitamente. La automatización es más barata y predecible; el agente resuelve lo que no cabe en un diagrama de flujo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede integrar un agente de IA con nuestro ERP o CRM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Es justo lo que los hace útiles. Conectamos los agentes a ERP, CRM, bases de datos y herramientas internas mediante n8n y APIs, de modo que el agente lee y escribe donde ya trabaja el equipo. Sin esa integración, un agente solo genera texto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Los agentes de IA pueden acceder a datos internos de la empresa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, y por eso el diseño de permisos es parte del proyecto. Cada agente accede solo a los sistemas y campos que necesita para su tarea, con credenciales propias y registro de cada acción. El alcance se define antes de conectar nada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si el agente de IA se equivoca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se diseña para que el error sea visible y reversible. Las acciones críticas pasan por validación humana antes de ejecutarse, todo queda registrado y hay alertas cuando algo se sale de lo esperado. Un agente sin supervisión ni trazabilidad no debería tocar procesos de negocio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hace falta tener los procesos documentados antes de automatizar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, pero hay que entenderlos. Parte del trabajo inicial es precisamente mapear cómo funciona hoy el proceso, que casi nunca coincide con lo que dice el manual. Ese mapa es el que permite decidir qué automatizar y qué conviene arreglar antes de automatizarlo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por dónde empieza una empresa que nunca ha usado IA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por un proceso concreto, repetitivo y medible. Se elige uno donde el equipo pierda horas cada semana, se automatiza de punta a punta y se mide el tiempo recuperado. Ese primer caso paga el siguiente y enseña al equipo a confiar en el sistema."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué retorno se puede esperar de automatizar procesos con IA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se mide en horas de equipo recuperadas y en errores evitados, no en licencias ahorradas. Antes de empezar cuantificamos cuánto tiempo consume hoy el proceso y con qué frecuencia falla; ese número es el que permite decidir si el proyecto compensa y comprobarlo después."
+      }
     }
-  </script>
+  ]
+}
+</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -827,6 +891,86 @@
               <div class="faq-answer-inner">
                 <p>La implementaci&oacute;n de IA en la empresa es progresiva. Empezamos por un diagn&oacute;stico de procesos, identificamos d&oacute;nde la IA aporta m&aacute;s valor y dise&ntilde;amos la arquitectura.</p>
                 <p>Las primeras automatizaciones y agentes entran en producci&oacute;n en pocas semanas y se amplian desde ah&iacute;.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Qué es un agente de IA?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Es un sistema que ejecuta tareas de principio a fin sin supervisión constante. A diferencia de un modelo que solo genera texto, un agente consulta tus sistemas, decide según reglas de negocio, actúa sobre tus herramientas y reporta lo que ha hecho. Trabaja, no solo responde.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Qué diferencia hay entre una automatización y un agente de IA?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Una automatización sigue siempre el mismo camino: si pasa A, haz B. Un agente de IA interpreta el contexto y decide qué hacer ante casos que nadie programó explícitamente. La automatización es más barata y predecible; el agente resuelve lo que no cabe en un diagrama de flujo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Se puede integrar un agente de IA con nuestro ERP o CRM?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Sí. Es justo lo que los hace útiles. Conectamos los agentes a ERP, CRM, bases de datos y herramientas internas mediante n8n y APIs, de modo que el agente lee y escribe donde ya trabaja el equipo. Sin esa integración, un agente solo genera texto.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Los agentes de IA pueden acceder a datos internos de la empresa?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Sí, y por eso el diseño de permisos es parte del proyecto. Cada agente accede solo a los sistemas y campos que necesita para su tarea, con credenciales propias y registro de cada acción. El alcance se define antes de conectar nada.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Qué pasa si el agente de IA se equivoca?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Se diseña para que el error sea visible y reversible. Las acciones críticas pasan por validación humana antes de ejecutarse, todo queda registrado y hay alertas cuando algo se sale de lo esperado. Un agente sin supervisión ni trazabilidad no debería tocar procesos de negocio.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Hace falta tener los procesos documentados antes de automatizar?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>No, pero hay que entenderlos. Parte del trabajo inicial es precisamente mapear cómo funciona hoy el proceso, que casi nunca coincide con lo que dice el manual. Ese mapa es el que permite decidir qué automatizar y qué conviene arreglar antes de automatizarlo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Por dónde empieza una empresa que nunca ha usado IA?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Por un proceso concreto, repetitivo y medible. Se elige uno donde el equipo pierda horas cada semana, se automatiza de punta a punta y se mide el tiempo recuperado. Ese primer caso paga el siguiente y enseña al equipo a confiar en el sistema.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Qué retorno se puede esperar de automatizar procesos con IA?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Se mide en horas de equipo recuperadas y en errores evitados, no en licencias ahorradas. Antes de empezar cuantificamos cuánto tiempo consume hoy el proceso y con qué frecuencia falla; ese número es el que permite decidir si el proyecto compensa y comprobarlo después.</p>
               </div>
             </div>
           </div>
