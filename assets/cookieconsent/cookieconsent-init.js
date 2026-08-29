@@ -48,6 +48,28 @@
     } catch (e) { return ''; }
   };
 
+  // --- F3 citabilidad IA: puente comercial del blog a la landing ---------
+  // Se registra a nivel superior a proposito: tpTrack ya esta protegido por
+  // Consent Mode v2 (no envia nada si analytics_storage esta denied), asi que
+  // no debe depender de que cargue Clarity. Sin utm_*: en GA4 los utm en
+  // enlaces internos rompen la atribucion de sesion.
+  document.addEventListener('click', function (e) {
+    var el = e.target;
+    while (el && el !== document.body) {
+      if (el.getAttribute && el.getAttribute('data-cta') === 'blog-bridge') {
+        try {
+          if (window.tpTrack) window.tpTrack('blog_bridge_click', {
+            destino: el.getAttribute('href') || '',
+            origen: location.pathname
+          });
+        } catch (x) {}
+        try { if (window.clarity) window.clarity('event', 'blog_bridge_click'); } catch (x) {}
+        break;
+      }
+      el = el.parentElement;
+    }
+  }, true);
+
   // tpPresupuestoToValue: mapea labels de presupuesto a valor numérico
   // estimado en EUR. Permite usar el campo "value" de GA4 para conversion
   // value reporting y futuras integraciones con Ads.
