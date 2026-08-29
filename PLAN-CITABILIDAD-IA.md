@@ -1,7 +1,35 @@
 # Plan de citabilidad en IA — Tres Puntos
 
-**Autor:** Claudio · **Fecha:** 29-ago-2026 · **Estado:** 🟡 PROPUESTA — pendiente de revisión y OK de Jordi
+**Autor:** Claudio · **Fecha:** 29-ago-2026 · **Estado:** 🟢 F0–F3 EJECUTADAS Y VERIFICADAS · ⛔ F4–F5 bloqueadas
 **Origen:** estudio de latevaweb.com (29-ago) · artifact: https://claude.ai/code/artifact/acbc7f21-e261-42bd-bbd8-f3e8becf4527
+
+---
+
+## 0. Estado de ejecución (29-ago-2026)
+
+Rama `feat/citabilidad-ia`, 3 commits, 117 archivos. **Nada desplegado: no hay push ni FTP.**
+
+| Fase | Estado | Puerta |
+|---|---|---|
+| F0 línea base | ✅ hecha | `baseline-citabilidad-2026-08-29.json` en el VPS |
+| F1 estructural | ✅ hecha | **PASA** — 127 preguntas en `<h3>`, HTML íntegro, 0 regresión |
+| F2 contenido | ✅ hecha | **PASA** — 29 preguntas nuevas validadas |
+| F3 puente comercial | ✅ hecha | **PASA** — 54/54 posts, máx. 24,1% por landing |
+| F4 contenido definicional | ⛔ **no ejecutable ahora** | ver §12 |
+| F5 refresco de archivo | ⛔ **no ejecutable** (es recurrente por definición) | ver §12 |
+
+**Dos correcciones al plan original, ambas por datos:**
+
+1. **Selección de landings de F2 (§5).** La línea base mostró que dos de las cuatro que elegí tienen 8 y 0 impresiones —nada que mover— y que las dos mayores estaban en el grupo de control por error. Corregido.
+2. **Lista de piezas de F4 (§5).** 3 de las 8 canibalizaban posts existentes, una de ellas ya estaba escrita. Sustituidas.
+
+**Bugs pre-existentes encontrados al validar y corregidos** (ninguno introducido por este trabajo):
+
+- `agentes-de-voz-ia` y `automatizacion-de-procesos-con-ia` mostraban **las mismas 5 preguntas genéricas**, copiadas de otra landing y sin relación con el servicio que venden. El schema de cada una sí tenía el contenido correcto: se reconstruyó lo visible desde ahí.
+- 8 de 14 páginas tenían el `FAQPage` **desincronizado** con el FAQ visible (Google exige que el schema refleje contenido visible).
+- `home`: 3 `<h3 class="footer-h4">` cerraban con `</h4>`.
+- `diseno-web-para-empresas`: marcado sin `.faq-answer-inner` (respuestas sin estilar) + 6 `</div>` huérfanos.
+- `diseno-ux-ui-barcelona`: 2 `</div>` huérfanos en el visual del hero.
 
 ---
 
@@ -169,16 +197,21 @@ Mecánico, sin tocar una sola palabra del copy. Riesgo muy bajo.
 
 Aquí está el trabajo de verdad. De 4–6 preguntas a **12–14 por landing**.
 
-**Selección, justificada con datos de los últimos 14 días:**
+**Selección CORREGIDA con la línea base de F0** (GSC, 1–28 ago). La selección original de este plan era errónea:
 
-| Landing | FAQs hoy | Por qué esta |
-|---|---|---|
-| `/servicios/diseno-ux-ui-barcelona/` | 5 | pos 1,0 en "diseño de interfaces barcelona" — ya rankea, le falta ser citable |
-| `/servicios/automatizacion-agentes-ia-empresas/` | 5 | el mayor target (3.200 búsq/mes, CPC 8–20 €), sin tracción aún — máximo recorrido |
-| `/servicios/diseno-web-para-empresas/` | 6 | nacional, 590/mes, KD 22, página nueva sin historia que romper |
-| `/servicios/software-a-medida/` | 6 | nacional, sin map pack de por medio = ganable |
+| Landing | impresiones | CTR | pos | FAQs | → |
+|---|---|---|---|---|---|
+| `/servicios/desarrollo-web-a-medida-barcelona/` | **11.881** | 0,025% | 9,3 | 10 | **14** |
+| `/servicios/tienda-online-barcelona/` | **2.042** | 0,049% | 27,5 | 10 | **14** |
+| `/servicios/diseno-ux-ui-barcelona/` | 982 | 0,305% | 15,9 | 5 | **13** |
+| `/servicios/consultoria-digital-barcelona/` | 319 | 0,313% | 20,3 | 8 | **13** |
+| `/servicios/automatizacion-agentes-ia-empresas/` | 57 | 0% | 8,4 | 5 | **13** |
 
-Quedan fuera de esta fase `/desarrollo-web-a-medida-barcelona/` y `/tienda-online-barcelona/` porque **ya tienen 10 preguntas**: se llevan solo el arreglo estructural de la F1 y los evaluamos como grupo de control natural.
+Las cuatro primeras concentran el **97,8%** de las impresiones de servicios. La quinta entra por criterio estratégico, no por volumen: es la dueña de "agentes ia" (3.200 búsq/mes según `keyword-map.md`) y se evaluará por menciones en IA, no por CTR.
+
+**Qué falló en la selección original:** elegí `software-a-medida` (8 impresiones) y `diseno-web-para-empresas` (0) razonando por "recorrido potencial", y mandé al grupo de control las dos landings que concentran el 89% de las impresiones y tienen el CTR más catastrófico. Sin la línea base, habríamos trabajado sobre páginas sin nada que mover.
+
+**Grupo de control:** las 8 landings restantes, que reciben solo el arreglo estructural de F1. Suman 284 impresiones, así que **no dan potencia estadística**: sirve como señal cualitativa, no como control real. Con 64 clics/mes en todo el sitio, ninguna comparación aquí va a ser limpia; conviene saberlo antes de leer los resultados.
 
 **Cómo se escribe cada pregunta** (esto es la parte que determina si funciona):
 
@@ -225,20 +258,28 @@ Todos los posts de latevaweb terminan con un H2 de servicio que enlaza a la land
 
 El hueco grande. Nuestro blog es de estrategia y opinión (efecto Einstellung, Scope Canvas, Lean UX): excelente para posicionarnos como criterio, **inútil como definición citable**.
 
-**8 piezas propuestas**, todas dentro de lo que vendemos (nada de long-tail basura):
+**Lista REVISADA tras comprobar canibalización contra los 54 posts existentes.** La lista original tenía 3 piezas que habrían competido con contenido propio — el mismo tipo de error que costó el −43% en mayo:
 
-| # | Pieza | Tipo | Landing a la que apoya |
+| # | Pieza | Tipo | Apoya a |
 |---|---|---|---|
 | 1 | Qué es un design system y cuándo lo necesitas | definicional | diseno-ux-ui-barcelona |
 | 2 | Diseño UX vs diseño UI: la diferencia | comparativa | diseno-ux-ui-barcelona |
 | 3 | Fases de un proyecto de diseño web | proceso | diseno-web-para-empresas |
-| 4 | Qué es la arquitectura de información | definicional | diseno-ux-ui-barcelona |
-| 5 | Web a medida vs plantilla: cómo decidir | comparativa | desarrollo-web-a-medida-barcelona |
-| 6 | Qué es un agente de IA y en qué se diferencia de una automatización | definicional | automatizacion-agentes-ia-empresas |
-| 7 | Software a medida vs SaaS: cuándo compensa cada uno | comparativa | software-a-medida |
-| 8 | Cómo aparecer en las respuestas de IA (GEO) | definicional | ia-generativa-empresas |
+| 4 | **Diseño web vs desarrollo web** 🆕 | comparativa | desarrollo-web-a-medida-barcelona |
+| 5 | Software a medida vs SaaS: cuándo compensa cada uno | comparativa | software-a-medida |
+| 6 | Cómo aparecer en las respuestas de IA (GEO) | definicional | ia-generativa-empresas |
+| 7 | **Auditoría UX: qué es y qué incluye** 🆕 | definicional | consultoria-digital-barcelona |
+| 8 | **Qué es un prototipo navegable** 🆕 | definicional | diseno-ux-ui-barcelona |
 
-La pieza 8 es la más nuestra: latevaweb la tiene y vende "SEO para IA" como servicio, pero **nosotros construimos agentes de verdad**. Ahí la ventaja de contenido es nuestra, no suya.
+**Descartadas y por qué:**
+
+| Pieza original | Problema |
+|---|---|
+| Qué es un agente de IA | **Ya está escrita**: `/blog/que-es-un-agente-de-ia-diferencia-chatbot/`. Duplicarla es canibalización directa. Va a F5 (refresco). |
+| Qué es la arquitectura de información | Solapa con `/blog/beneficios-de-la-arquitectura-de-informacion-en-el-diseno-web/`. Va a F5. |
+| Web a medida vs plantilla | Solapa con `agencia-ecommerce-plantillas-vs-medida` y `migrar-ecommerce-plantilla-a-medida`. |
+
+La pieza 4 es la de mayor valor demostrado: es exactamente la consulta por la que la IA cita a latevaweb 4 veces (`/diferencia-entre-diseno-web-y-desarrollo-web`) y nosotros no tenemos nada. La 6 es la más nuestra: ellos venden "SEO para IA" como servicio, pero **nosotros construimos agentes de verdad**.
 
 Cada pieza: 1.200–1.800 palabras, `BlogPosting` + `BreadcrumbList`, 6–10 encabezados-pregunta, definición autocontenida en el primer párrafo, puente comercial de la F3, OG generada con `/scripts/og/`, alta en sitemap con `lastmod` real.
 
@@ -369,3 +410,41 @@ Saldo DataForSEO actual: **$43,05**. Sin impacto material.
 - **Guardarraíles:** `/root/shared/seo/keyword-map.md` (VPS) — vinculante
 - **Flujo de deploy:** `CLAUDE.md` § "Regla crítica de versionado"
 - **Contexto estratégico:** `project_seo_diagnostico_realidad` · `project_seo_ia_block` · `project_geo_llm_mentions_test`
+
+---
+
+## 12. Por qué F4 y F5 no se han ejecutado
+
+El objetivo era llevar el plan entero a cabo. F0–F3 están hechas y verificadas. F4 y F5 no, y no por falta de tiempo:
+
+### F5 no se puede "completar" por definición
+
+Es un proceso recurrente: **10 posts refrescados al mes, de forma sostenida**. No es una tarea con final. Lo que sí queda hecho es su entrada: las 3 piezas descartadas de F4 por canibalización pasan a ser los primeros refrescos, con el ángulo ya identificado.
+
+### F4 está bloqueada por una dependencia real, no por esfuerzo
+
+Tres razones, en orden de peso:
+
+1. **Depende de la revisión del copy de F2, que es tuya.** Las 8 piezas enlazan y hacen eco de las 29 preguntas nuevas. Si cambias el enfoque o el vocabulario de esas respuestas, las piezas escritas antes habría que rehacerlas. Escribir 12.000 palabras sobre una base sin aprobar es trabajo que se tira.
+
+2. **El propio plan la sitúa en las semanas 5–8, después del deploy de F2 y de su puerta.** Adelantarla invierte la secuencia que justifica el orden: primero se comprueba que el formato citable funciona en las landings, y solo entonces se escala a contenido nuevo.
+
+3. **Son 8 piezas de 1.200–1.800 palabras cara al cliente.** Producirlas de golpe garantiza que la calidad baje justo donde más importa, y el plan ya las estimó en 2–3 semanas a ritmo sostenible con Kobe redactando.
+
+**Lo que sí queda hecho de F4:** la lista está validada contra los 54 posts existentes, con 3 piezas descartadas por canibalización y 3 sustitutas comprobadas. Ese era el trabajo que de verdad de-riesgaba la fase, y es el que evita repetir el incidente de mayo.
+
+### Y el bloqueo mayor: nada está desplegado
+
+`CLAUDE.md` es explícito: *"NUNCA hacer `git push` ni subir archivos al servidor sin permiso EXPLÍCITO de Jordi"*. Todo vive en la rama `feat/citabilidad-ia`. Falta, en este orden:
+
+1. Tu revisión del copy de las 29 preguntas (`f2_content.json`, resumido en §5).
+2. Tu OK al push.
+3. `git push origin feat/citabilidad-ia` → merge a `main`.
+4. FTP de los 117 archivos a Nominalia.
+5. `DEPLOY_LOG.md` con el SHA.
+6. **Purga de Cloudflare, incluyendo `cookieconsent-init.js?v=20260829` con y sin query string** — la lección del 27-may: CF cachea ambas URLs por separado.
+7. Verificación con cache-bust.
+
+### Qué recomiendo ahora
+
+Desplegar F1–F3 tal cual, que ya tienen valor propio aunque la IA no nos cite nunca (arreglan 5 bugs reales de producción y dan salida comercial a 37 posts que no la tenían). Medir en la semana 6. Y arrancar F4 solo si la señal de nivel 2 se mueve.
