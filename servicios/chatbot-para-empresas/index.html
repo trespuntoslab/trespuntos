@@ -64,16 +64,16 @@
     }
   </script>
   <script type="application/ld+json">
-    {
+{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Qué diferencia hay entre un chatbot para empresas y un chatbot normal?",
+      "name": "¿Qué diferencia hay entre un chatbot para empresas y uno normal?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un chatbot normal responde con textos preescritos. Un chatbot para empresas está conectado a vuestros sistemas: consulta el CRM, comprueba un pedido, agenda una reunión o cualifica un lead según vuestras reglas de negocio. Responde con datos reales, no con un guion."
+        "text": "Un chatbot normal responde con textos preescritos. Uno de empresa está conectado a vuestros sistemas: consulta el CRM, comprueba un pedido o agenda una reunión. Responde con datos reales, no con un guión."
       }
     },
     {
@@ -81,15 +81,7 @@
       "name": "¿Con qué sistemas se puede integrar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Con los que ya usáis: CRM (HubSpot, Pipedrive, Holded), ERP, calendarios, bases de datos internas, herramientas de ticketing o pasarelas. La integración se hace vía API o mediante n8n cuando hace falta orquestar varios pasos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Dónde se instala el chatbot?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Normalmente en la web, como widget embebido, y en WhatsApp cuando el canal principal de atención es ese. También puede vivir dentro de una intranet o de un área privada de clientes."
+        "text": "Con los que ya usáis: CRM (HubSpot, Pipedrive, Holded), ERP, calendarios, bases internas o ticketing, vía API o mediante n8n. La integración se diseña según vuestros sistemas."
       }
     },
     {
@@ -97,7 +89,15 @@
       "name": "¿Cuánto tarda en estar funcionando?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un chatbot conectado a una o dos fuentes de datos suele estar en producción en 3-5 semanas. Si hay que orquestar varios sistemas o construir lógica de cualificación compleja, entre 6 y 10."
+        "text": "Depende de la complejidad del sistema. Conectado a una o dos fuentes de datos, en 3-5 semanas. Con lógica de cualificación compleja, entre 6 y 10."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde se instala el chatbot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Normalmente como widget en la web, y en WhatsApp cuando el canal principal de atención es ese. También dentro de una intranet o un área privada de clientes. El punto de escalado se diseña desde el principio."
       }
     },
     {
@@ -105,20 +105,12 @@
       "name": "¿Qué pasa cuando el chatbot no sabe algo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Se diseña el punto de escalado desde el principio: deriva a una persona con todo el contexto de la conversación ya recogido, en lugar de dejar al usuario en un bucle. Un buen chatbot sabe cuándo dejar de hablar."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Los datos de los usuarios quedan protegidos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Definimos qué datos se procesan, dónde se almacenan y durante cuánto tiempo, con la información de tratamiento visible en el propio chat. El chatbot no envía datos personales a terceros que no estén contemplados en vuestro registro de actividades."
+        "text": "Deriva a una persona con todo el contexto de la conversación ya recogido, en lugar de dejar al usuario en un bucle. Un buen chatbot sabe cuándo dejar de hablar. Definimos qué datos se procesan, dónde se almacenan y durante cuánto tiempo, visible en el propio chat."
       }
     }
   ]
 }
-  </script>
+</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -776,9 +768,9 @@
         </div>
         <div class="faq-list reveal reveal-delay-1">
           <div class="faq-item reveal">
-            <button class="faq-question" aria-expanded="false">&iquest;Qu&eacute; diferencia hay entre un chatbot para empresas y uno normal?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">&iquest;Qu&eacute; diferencia hay entre un chatbot para empresas y uno normal?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M12 4.5v15m7.5-7.5h-15" />
-              </svg></button>
+              </svg></button></h3>
             <div class="faq-answer">
               <div class="faq-answer-inner">
                 <p>Un chatbot normal responde con textos preescritos. Uno de empresa est&aacute; conectado a vuestros sistemas: consulta el CRM, comprueba un pedido o agenda una reuni&oacute;n.</p>
@@ -788,9 +780,9 @@
           </div>
 
           <div class="faq-item reveal">
-            <button class="faq-question" aria-expanded="false">&iquest;Con qu&eacute; sistemas se puede integrar?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">&iquest;Con qu&eacute; sistemas se puede integrar?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M12 4.5v15m7.5-7.5h-15" />
-              </svg></button>
+              </svg></button></h3>
             <div class="faq-answer">
               <div class="faq-answer-inner">
                 <p>Con los que ya us&aacute;is: CRM (HubSpot, Pipedrive, Holded), ERP, calendarios, bases internas o ticketing, v&iacute;a API o mediante n8n.</p>
@@ -800,9 +792,9 @@
           </div>
 
           <div class="faq-item reveal">
-            <button class="faq-question" aria-expanded="false">&iquest;Cu&aacute;nto tarda en estar funcionando?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">&iquest;Cu&aacute;nto tarda en estar funcionando?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M12 4.5v15m7.5-7.5h-15" />
-              </svg></button>
+              </svg></button></h3>
             <div class="faq-answer">
               <div class="faq-answer-inner">
                 <p>Depende de la complejidad del sistema.</p>
@@ -812,9 +804,9 @@
           </div>
 
           <div class="faq-item reveal">
-            <button class="faq-question" aria-expanded="false">&iquest;D&oacute;nde se instala el chatbot?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">&iquest;D&oacute;nde se instala el chatbot?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M12 4.5v15m7.5-7.5h-15" />
-              </svg></button>
+              </svg></button></h3>
             <div class="faq-answer">
               <div class="faq-answer-inner">
                 <p>Normalmente como widget en la web, y en WhatsApp cuando el canal principal de atenci&oacute;n es ese. Tambi&eacute;n dentro de una intranet o un &aacute;rea privada de clientes.</p>
@@ -824,9 +816,9 @@
           </div>
 
           <div class="faq-item reveal">
-            <button class="faq-question" aria-expanded="false">&iquest;Qu&eacute; pasa cuando el chatbot no sabe algo?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">&iquest;Qu&eacute; pasa cuando el chatbot no sabe algo?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M12 4.5v15m7.5-7.5h-15" />
-              </svg></button>
+              </svg></button></h3>
             <div class="faq-answer">
               <div class="faq-answer-inner">
                 <p>Deriva a una persona con todo el contexto de la conversaci&oacute;n ya recogido, en lugar de dejar al usuario en un bucle. Un buen chatbot sabe cu&aacute;ndo dejar de hablar.</p>
