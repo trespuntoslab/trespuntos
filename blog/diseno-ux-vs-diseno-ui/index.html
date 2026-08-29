@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css">
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css">
+  </noscript>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var s1 = document.createElement('script');
+        s1.src = '/assets/cookieconsent/cookieconsent.umd.js';
+        s1.onload = function () {
+          var s2 = document.createElement('script');
+          s2.src = '/assets/cookieconsent/cookieconsent-init.js?v=20260829';
+          document.head.appendChild(s2);
+        };
+        document.head.appendChild(s1);
+      }, 800);
+    });
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#5dffbf">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diseño UX vs diseño UI: la diferencia real | Blog | Tres Puntos</title>
+  <meta name="description" content="UX es la experiencia; UI es la interfaz. Suena simple hasta que hay que contratar. Qué hace cada disciplina, dónde se solapan y qué pasa cuando te falta una." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/diseno-ux-vs-diseno-ui/" />
+  <meta property="og:title" content="Diseño UX vs diseño UI: la diferencia y por qué importa" />
+  <meta property="og:description" content="UX es la experiencia; UI es la interfaz. Suena simple hasta que hay que contratar. Qué hace cada disciplina, dónde se solapan y qué pasa cuando te falta una." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/blog/diseno-ux-vs-diseno-ui/" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Tres Puntos Comunicación" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og/blog-diseno-ux-vs-diseno-ui.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Diseño UX vs diseño UI: la diferencia y por qué importa" />
+  <meta name="twitter:description" content="UX es la experiencia; UI es la interfaz. Suena simple hasta que hay que contratar. Qué hace cada disciplina, dónde se solapan y qué pasa cuando te falta una." />
+  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og/blog-diseno-ux-vs-diseno-ui.png" />
+  <meta property="article:published_time" content="2026-08-29" />
+  <meta property="article:modified_time" content="2026-08-29" />
+  <meta property="article:author" content="Jordi Expósito" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Diseño UX vs diseño UI: la diferencia y por qué importa",
+  "description": "UX es la experiencia; UI es la interfaz. Suena simple hasta que hay que contratar. Qué hace cada disciplina, dónde se solapan y qué pasa cuando te falta una.",
+  "image": "https://www.trespuntoscomunicacion.es/img/og/blog-diseno-ux-vs-diseno-ui.png",
+  "datePublished": "2026-08-29",
+  "dateModified": "2026-08-29",
+  "author": {
+    "@type": "Person",
+    "name": "Jordi Expósito",
+    "url": "https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/",
+    "sameAs": [
+      "https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/",
+      "https://www.linkedin.com/in/trespuntoscomunicacion/"
+    ],
+    "jobTitle": "Digital Project Lead & UX/UI Designer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Tres Puntos Comunicación",
+      "url": "https://www.trespuntoscomunicacion.es/"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tres Puntos Comunicación",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.trespuntoscomunicacion.es/img/logo.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.trespuntoscomunicacion.es/blog/diseno-ux-vs-diseno-ui/"
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.trespuntoscomunicacion.es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.trespuntoscomunicacion.es/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Diseño UX vs diseño UI: la diferencia y por qué importa"
+    }
+  ]
+}
+</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/blog-article.css" />
+  <noscript>
+    <link rel="stylesheet" href="/css/design-system.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/blog-article.css">
+  </noscript>
+
+  <style>
+    @font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+    @font-face{font-family:'Jakarta Fallback';src:local('Arial Black');size-adjust:95%;ascent-override:100%;descent-override:22%;line-gap-override:0%}
+    #tp-navbar{position:fixed;top:0;left:0;right:0;z-index:1000;min-height:72px}
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+  <div id="tp-navbar"></div>
+
+  <header class="article-header">
+    <div class="article-header-wrapper">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Inicio</a><span class="article-breadcrumb-sep">/</span><a href="/blog/">Blog</a><span class="article-breadcrumb-sep">/</span><span>Diseño UX vs diseño UI: la diferencia y por qué importa</span>
+      </nav>
+      <div class="article-category">DISEÑO UX/UI</div>
+      <h1 class="article-title">Diseño UX vs diseño UI: la diferencia y por qué importa</h1>
+      <div class="article-meta">
+        <div class="article-meta-author">
+          <img class="article-meta-avatar" src="/img/jordi-exposito.webp" alt="Jordi Expósito" loading="lazy" />
+          <div>
+            <div class="article-meta-name">Jordi Expósito</div>
+            <div class="article-meta-time">29 de agosto de 2026 <span class="article-meta-item">· 6 min de lectura</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <div class="article-toc">
+    <div class="toc-box">
+      <div class="toc-title">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h14"/></svg>
+        En este artículo
+      </div>
+      <ol class="toc-list">
+        <li><a href="#section-0">Qué resuelve el diseño UX</a></li>
+        <li><a href="#section-1">Qué resuelve el diseño UI</a></li>
+        <li><a href="#section-2">La tabla que resuelve la duda</a></li>
+        <li><a href="#section-3">Por qué se confunden tanto</a></li>
+        <li><a href="#section-4">Dónde se solapan de verdad</a></li>
+        <li><a href="#section-5">Qué pedir según lo que te pasa</a></li>
+        <li><a href="#section-6">Cómo saber cuál de los dos te falta, en diez minutos</a></li>
+      </ol>
+    </div>
+  </div>
+
+  <main class="article-body">
+    <article class="article-content">
+      <p><strong>UX es la experiencia. UI es la interfaz.</strong> Esa es la respuesta corta y es correcta, pero no sirve de mucho cuando tienes que decidir a quién contratar o qué pedir en un presupuesto.</p>
+      <p>La distinción importa por una razón práctica: son dos trabajos con métodos distintos, entregables distintos y momentos distintos del proyecto. Confundirlos es la causa más común de plataformas que se ven muy bien y no convierten.</p>
+      <p>Vamos a separarlas de forma que puedas usarlo al leer una propuesta.</p>
+      <h2 id="section-0">Qué resuelve el diseño UX</h2>
+      <p>El diseño UX (<em>user experience</em>) decide <strong>qué existe, cómo se organiza y en qué orden ocurre</strong>. Trabaja antes de que haya nada que mirar.</p>
+      <p>Sus preguntas son de estructura: ¿qué necesita hacer el usuario aquí? ¿Qué información necesita para decidir? ¿Cuántos pasos hacen falta y cuáles sobran? ¿Qué pasa cuando algo va mal?</p>
+      <p>Sus entregables típicos son un mapa de arquitectura de información, los flujos principales, wireframes y un prototipo navegable. Nada de eso tiene color todavía, y es deliberado: si el debate se va a la estética, la estructura no se discute.</p>
+      <div class="checklist-box">
+        <div class="checklist-box-title">SEÑALES DE QUE TU PROBLEMA ES DE UX</div>
+        <ul>
+          <li>Los usuarios preguntan por email cosas que están en la web</li>
+          <li>Un proceso que debería ser de dos pasos tiene cinco</li>
+          <li>La gente abandona siempre en la misma pantalla</li>
+          <li>Hay funcionalidades que nadie encuentra</li>
+          <li>El equipo comercial repite la misma explicación en cada demo</li>
+        </ul>
+      </div>
+      <h2 id="section-1">Qué resuelve el diseño UI</h2>
+      <p>El diseño UI (<em>user interface</em>) decide <strong>cómo se ve y cómo responde</strong> lo que UX ha estructurado. Tipografía, color, espaciado, jerarquía visual, iconografía, estados de cada elemento, micro-interacciones.</p>
+      <p>No es «la parte bonita». Un buen UI hace que la estructura se entienda sin explicación: qué es clicable, qué es importante, qué ha cambiado tras una acción, dónde estoy. La jerarquía visual es comunicación, no adorno.</p>
+      <p>También es donde se resuelve la accesibilidad real: contraste suficiente, tamaños de toque, foco visible, estados que no dependen solo del color. Si te interesa el detalle normativo, lo tratamos en <a href="/blog/wcag-2-2-que-cambia-y-como-aplicarlo-en-tu-diseno-web-en-barcelona/">WCAG 2.2</a>.</p>
+      <p>Un detalle que separa el UI competente del decorativo: los <strong>estados</strong>. Un botón no es un rectángulo con texto. Es siete situaciones distintas —reposo, hover, foco por teclado, pulsado, deshabilitado, cargando, error— y cada una tiene que comunicar algo diferente. Cuando faltan, el usuario pulsa dos veces porque no sabe si el primer clic ha hecho algo.</p>
+      <div class="checklist-box">
+        <div class="checklist-box-title">SEÑALES DE QUE TU PROBLEMA ES DE UI</div>
+        <ul>
+          <li>El equipo comercial se disculpa por el aspecto de la herramienta antes de enseñarla</li>
+          <li>Nadie distingue qué es clicable y qué es solo texto</li>
+          <li>El mismo tipo de acción se ve distinta en cada pantalla</li>
+          <li>El texto secundario no se lee bien en pantallas normales</li>
+          <li>En móvil hay que hacer zoom para acertar con los botones</li>
+        </ul>
+      </div>
+      <h2 id="section-2">La tabla que resuelve la duda</h2>
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+      <thead>
+        <tr><th></th><th>Diseño UX</th><th>Diseño UI</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Pregunta que responde</td><td><span class="badge badge-ok">¿Qué y en qué orden?</span></td><td><span class="badge badge-ok">¿Cómo se ve y responde?</span></td></tr>
+        <tr><td>Momento del proyecto</td><td><span class="badge badge-neutral">Antes</span></td><td><span class="badge badge-neutral">Después</span></td></tr>
+        <tr><td>Entregable principal</td><td><span class="badge badge-ok">Flujos y prototipo</span></td><td><span class="badge badge-ok">Pantallas y componentes</span></td></tr>
+        <tr><td>Se valida con</td><td><span class="badge badge-ok">Test con usuarios</span></td><td><span class="badge badge-ok">Contraste, jerarquía, estados</span></td></tr>
+        <tr><td>Si falta</td><td><span class="badge badge-bad">Interfaz bonita que no convierte</span></td><td><span class="badge badge-bad">Estructura correcta que nadie entiende</span></td></tr>
+      </tbody>
+        </table>
+      </div>
+      <p>La última fila es la importante. Los dos fallos existen y se ven distinto: sin UX tienes una web premiada que no vende; sin UI tienes una herramienta correcta que la gente evita usar.</p>
+      <p>Hay un tercer fallo, menos comentado y más caro: tener las dos disciplinas pero en equipos que no se hablan. El diseñador de experiencia entrega un flujo, el de interfaz lo interpreta a su manera, y la estructura original se diluye sin que nadie tome la decisión de cambiarla.</p>
+      <h2 id="section-3">Por qué se confunden tanto</h2>
+      <p>Por dos motivos, y ninguno es culpa de quien pregunta.</p>
+      <p>El primero es que <strong>las ofertas de empleo llevan años mezclándolas</strong>. Se busca un «diseñador UX/UI» esperando una persona que haga research, arquitectura, interfaz, sistema de componentes y a veces también front-end. Existen perfiles así, pero son híbridos, no la norma.</p>
+      <p>El segundo es que <strong>el entregable visible es siempre el mismo</strong>: una pantalla. El trabajo de UX se nota justo cuando no se nota —cuando el usuario llega al final sin pensar—, así que es fácil atribuir el mérito entero a la parte que se ve.</p>
+      <div class="question-block" role="note">
+        <p>¿Cuántas veces has oído «necesitamos un rediseño» cuando el problema era que nadie encontraba el botón de contacto?</p>
+      </div>
+      <h2 id="section-4">Dónde se solapan de verdad</h2>
+      <p>En proyectos reales la frontera no es limpia, y está bien que no lo sea. Hay decisiones que son de las dos: el diseño de un formulario largo, la jerarquía de una tabla con muchos datos, el comportamiento de una búsqueda con filtros.</p>
+      <p>Lo que sí conviene mantener separado es el <strong>orden</strong>. Si se abren simultáneamente, gana siempre la conversación visual, porque es la que todo el mundo se siente capaz de opinar. Y una vez que hay color sobre la mesa, nadie vuelve a discutir la estructura.</p>
+      <blockquote class="quote-pull">
+        <img class="quote-pull-avatar" src="/nosotros/Jordi.webp" alt="" loading="lazy" onerror="this.style.display='none'">
+        <div class="quote-pull-body">
+          <p class="quote-pull-text">Cuando alguien enseña una pantalla con color antes de haber cerrado el flujo, la reunión se convierte en una discusión sobre gustos. Y la estructura, que es lo que decide si el usuario llega al final, se queda sin revisar.</p>
+          <div class="quote-pull-author">JORDI EXPÓSITO · Digital Project Lead</div>
+        </div>
+      </blockquote>
+      <h2 id="section-5">Qué pedir según lo que te pasa</h2>
+      <p>Si lo que tienes es una plataforma que funciona pero la gente se pierde, tu problema es de UX y empezar por un rediseño visual es tirar el dinero: vas a repintar la misma estructura confusa.</p>
+      <p>Si lo que tienes es una herramienta que el equipo usa a diario pero que parece de 2009 y transmite poca confianza a los clientes, tu problema es de UI y no necesitas rehacer los flujos.</p>
+      <p>Si estás construyendo algo nuevo, necesitas las dos, en ese orden, y lo razonable es que las lleve el mismo equipo para que no se pierda el contexto entre una fase y otra. En <a href="/servicios/diseno-ux-ui-barcelona/">nuestro servicio de diseño de interfaces</a> las trabajamos juntas por ese motivo.</p>
+      <div class="article-cta-inline">
+        <div class="article-cta-inline-text">¿No sabes si lo tuyo es un problema de estructura o de interfaz?</div>
+        <a href="/servicios/diseno-ux-ui-barcelona/" class="article-cta-inline-btn">Cuéntanoslo →</a>
+      </div>
+      <h2 id="section-6">Cómo saber cuál de los dos te falta, en diez minutos</h2>
+      <p>Hay una prueba barata que puedes hacer hoy mismo sin contratar a nadie. Coge a tres personas que no conozcan tu producto —vale gente de otro departamento— y pídeles que completen la tarea más importante mientras piensan en voz alta. No les ayudes.</p>
+      <p>Fíjate en <strong>dónde</strong> se atascan, porque el sitio te dice la disciplina:</p>
+      <ul>
+        <li>Si se paran porque <strong>no saben qué hacer a continuación</strong> o no encuentran una sección, es UX. La estructura no está comunicando.</li>
+        <li>Si se paran porque <strong>no ven un elemento que está ahí</strong>, o pulsan algo que no era un botón, es UI. La jerarquía visual no está funcionando.</li>
+        <li>Si completan la tarea pero dicen «ha sido raro», suele ser UX: el flujo tiene pasos que sobran.</li>
+        <li>Si completan la tarea y dicen «parece antigua», es UI y probablemente no urgente.</li>
+      </ul>
+      <p>Tres personas bastan para detectar la mayoría de los problemas graves. No es investigación rigurosa, pero es infinitamente mejor que discutirlo en una reunión interna donde todos conocéis el producto de memoria. Lo desarrollamos en <a href="/blog/tests-de-usuarios-de-guerrilla/">tests de usuarios de guerrilla</a>.</p>
+      <p>El error que conviene evitar: preguntarles si les gusta. La opinión estética de tres personas no predice nada. Lo que sí predice es dónde se atascaron.</p>
+    </article>
+  </main>
+
+  <section class="article-cta">
+    <p class="article-cta-eyebrow">Tres Puntos — Diseño UX/UI</p>
+    <h2>¿Tu plataforma se ve bien pero no convierte?</h2>
+    <p>Casi siempre es estructura, no estética. Miramos los flujos reales y te decimos dónde se está cayendo la gente antes de tocar una sola pantalla.</p>
+    <a href="/servicios/diseno-ux-ui-barcelona/" class="article-cta-btn" data-cta="blog-bridge">Cuéntanos tu proyecto</a>
+  </section>
+
+  <div class="author-card">
+    <div class="author-card-inner">
+      <img class="author-card-avatar" src="/img/jordi-exposito.webp" alt="Jordi Expósito" loading="lazy" />
+      <div class="author-card-info">
+        <div class="author-card-name">Jordi Expósito</div>
+        <div class="author-card-role">Digital Project Lead & UX/UI Designer · Tres Puntos</div>
+        <a class="author-card-link" href="https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Conectar en LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-footer-divider"></div>
+
+  <section class="related-articles" aria-label="Artículos relacionados">
+    <h2 class="related-articles-title">Artículos relacionados</h2>
+    <div class="related-articles-grid">
+      <a href="/blog/experiencia-de-usuario-10-heuristicas-de-nielsen-para-tu-web/" class="related-card">
+        <div class="related-card-cat">UX/UI</div>
+        <h3 class="related-card-title">Experiencia de usuario: 10 heurísticas de Nielsen para tu web</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+      <a href="/blog/las-leyes-de-ux-el-manual-invisible-del-diseno-centrado-en-el-usuario/" class="related-card">
+        <div class="related-card-cat">UX/UI</div>
+        <h3 class="related-card-title">Las Leyes de UX: manual del diseño centrado en el usuario</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+      <a href="/blog/errores-ux-ui-que-destruyen-el-roi/" class="related-card">
+        <div class="related-card-cat">UX/UI</div>
+        <h3 class="related-card-title">7 errores de UX/UI que destruyen el ROI de tu empresa</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js?v=27" defer></script>
+  <script src="/js/supabase-forms.js?v=20260416" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      try { TP.navbar('blog'); } catch (e) {}
+      try { TP.footer(); } catch (e) {}
+      try { TP.initJS(); } catch (e) {}
+    });
+  </script>
+
+  <script src="/js/blog-article.js" defer></script>
+
+  <script defer>
+    (function () {
+      if (window.innerWidth > 1024) {
+        var outerCursor = document.createElement('div');
+        outerCursor.id = 'outer-cursor';
+        var innerCursor = document.createElement('div');
+        innerCursor.id = 'inner-cursor';
+        document.body.appendChild(outerCursor);
+        document.body.appendChild(innerCursor);
+        var style = document.createElement('style');
+        style.textContent = '#outer-cursor,#inner-cursor{position:fixed;pointer-events:none;border-radius:50%;mix-blend-mode:lighten;z-index:99999}#outer-cursor{width:40px;height:40px;border:2px solid #5dffbf;top:-20px;left:-20px;transition:transform .2s ease-out,opacity .2s ease-out;opacity:.6}#inner-cursor{width:8px;height:8px;background:#5dffbf;top:-4px;left:-4px;opacity:1;transition:transform .1s ease-out}#outer-cursor.active{transform:scale(1.5);border-width:3px;opacity:.8}#inner-cursor.active{transform:scale(.75)}#outer-cursor.click{transform:scale(.75);opacity:.4}#inner-cursor.click{transform:scale(1.5)}@media(max-width:1024px){#outer-cursor,#inner-cursor{display:none!important}}';
+        document.head.appendChild(style);
+        var mouseX = 0, mouseY = 0, outerX = 0, outerY = 0;
+        document.addEventListener('mousemove', function (e) { mouseX = e.clientX; mouseY = e.clientY; });
+        (function animate() {
+          outerX += (mouseX - outerX) * 0.2;
+          outerY += (mouseY - outerY) * 0.2;
+          outerCursor.style.transform = 'translate3d(' + outerX + 'px,' + outerY + 'px,0)';
+          innerCursor.style.transform = 'translate3d(' + mouseX + 'px,' + mouseY + 'px,0)';
+          requestAnimationFrame(animate);
+        })();
+        document.querySelectorAll('a,button,[role="button"],input,textarea,select').forEach(function (el) {
+          el.addEventListener('mouseenter', function () { outerCursor.classList.add('active'); innerCursor.classList.add('active'); });
+          el.addEventListener('mouseleave', function () { outerCursor.classList.remove('active', 'click'); innerCursor.classList.remove('active', 'click'); });
+          el.addEventListener('mousedown', function () { outerCursor.classList.add('click'); innerCursor.classList.add('click'); });
+          el.addEventListener('mouseup', function () { outerCursor.classList.remove('click'); innerCursor.classList.remove('click'); });
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

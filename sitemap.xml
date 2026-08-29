@@ -260,7 +260,7 @@
   </url>
   <url>
     <loc>https://www.trespuntoscomunicacion.es/blog/beneficios-de-la-arquitectura-de-informacion-en-el-diseno-web/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -272,7 +272,7 @@
   </url>
   <url>
     <loc>https://www.trespuntoscomunicacion.es/blog/como-elegir-agencia-ecommerce-barcelona/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -290,7 +290,7 @@
   </url>
   <url>
     <loc>https://www.trespuntoscomunicacion.es/blog/como-mejorar-la-velocidad-de-carga-de-tu-sitio-web/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -332,7 +332,7 @@
   </url>
   <url>
     <loc>https://www.trespuntoscomunicacion.es/blog/errores-comunes-en-el-diseno-de-e-commerce-y-como-evitarlos/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -380,7 +380,7 @@
   </url>
   <url>
     <loc>https://www.trespuntoscomunicacion.es/blog/la-deuda-de-arquitectura-ux-en-plataformas-b2b-modernas/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -515,5 +515,53 @@
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.trespuntoscomunicacion.es/blog/que-es-un-design-system/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.trespuntoscomunicacion.es/blog/diseno-ux-vs-diseno-ui/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.trespuntoscomunicacion.es/blog/fases-de-un-proyecto-de-diseno-web/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.trespuntoscomunicacion.es/blog/diseno-web-vs-desarrollo-web/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.trespuntoscomunicacion.es/blog/software-a-medida-vs-saas/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.trespuntoscomunicacion.es/blog/como-aparecer-en-respuestas-de-ia-geo/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.trespuntoscomunicacion.es/blog/auditoria-ux-que-es-y-que-incluye/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.trespuntoscomunicacion.es/blog/que-es-un-prototipo-navegable/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

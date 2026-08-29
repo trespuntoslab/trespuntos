@@ -47,7 +47,7 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="article:published_time" content="2026-01-28" />
-  <meta property="article:modified_time" content="2026-01-28" />
+  <meta property="article:modified_time" content="2026-08-29" />
   <meta property="article:author" content="Jordi Expósito" />
 
   <script type="application/ld+json">
@@ -58,7 +58,7 @@
       "description": "Descubre cómo acelerar la velocidad de carga de tu sitio web y mejora la experiencia de tus usuarios. Implementa cambios significativos y optimiza tu rendimi...",
       "image": "https://www.trespuntoscomunicacion.es/img/og/blog-como-mejorar-la-velocidad-de-carga-de-tu-sitio-web.png",
       "datePublished": "2026-01-28",
-      "dateModified": "2026-01-28",
+      "dateModified": "2026-08-29",
       "author": {
         "@type": "Person",
         "name": "Jordi Expósito",
@@ -669,11 +669,10 @@
   <li>Optimización del código: Elimina el código innecesario, utiliza CSS y JavaScript eficientes, y prioriza el contenido visible para una carga más rápida.</li>
 </ul>
 
-<h3>¿Cuáles son las mejores prácticas de velocidad de carga en 2024?</h3>
-
-<p>En 2024, las mejores prácticas para mejorar la velocidad de carga incluyen el uso de tecnologías avanzadas como el HTTP/2, el prefetching de recursos críticos y la implementación de técnicas de compresión de datos.</p>
-
-<h3>¿Qué errores comunes debo evitar al implementar mejoras de velocidad de carga?</h3>
+<h3>¿Cuáles son las mejores prácticas de velocidad de carga hoy?</h3>
+        <p>Las prácticas que más impacto tienen ahora mismo son cuatro: servir por <strong>HTTP/3</strong>, que reduce la latencia en redes móviles frente a HTTP/2; entregar las imágenes en <strong>AVIF</strong> con WebP como alternativa; precargar únicamente los recursos que bloquean el primer renderizado; y diferir todo el JavaScript que no haga falta para pintar la pantalla inicial.</p>
+        <p>Por encima de la lista de técnicas, el criterio que ordena el trabajo es este: optimiza primero lo que retrasa el elemento más grande de la parte visible. Casi siempre es una imagen o una fuente, no el framework.</p>
+      <h3>¿Qué errores comunes debo evitar al implementar mejoras de velocidad de carga?</h3>
 
 <p>Algunos errores comunes al optimizar la velocidad de carga incluyen no priorizar el contenido visible, ignorar la compresión de recursos y no realizar pruebas de rendimiento periódicas. Evitar estos errores te ayudará a maximizar el rendimiento de tu sitio web.</p>
 
@@ -701,11 +700,11 @@
 
 <p>Según datos actualizados de Google, la velocidad de carga de un sitio web es un factor clave para determinar su posición en los resultados de búsqueda. Los sitios web más rápidos tienden a clasificarse más alto en Google, ya que ofrecen una mejor experiencia al usuario y cumplen con los estándares de rendimiento de la plataforma. Por lo tanto, optimizar la velocidad de carga es fundamental para mejorar el SEO y aumentar la visibilidad en Google.</p>
 
-<h3>Estrategias avanzadas de velocidad de carga para el año 2025</h3>
-
-<p>En el año 2025, se espera que las estrategias avanzadas de velocidad de carga incluyan el uso de tecnologías emergentes como el WebP para imágenes más livianas, el lazy loading progresivo para una carga aún más eficiente y la implementación de AMP (Accelerated Mobile Pages) para una experiencia móvil optimizada. Estas técnicas permitirán a los sitios web mantenerse competitivos en un entorno digital en constante evolución. Según expertos en SEO, la optimización de la velocidad de carga seguirá siendo un factor crítico para el éxito en línea en el futuro cercano. Las empresas que inviertan en mejorar la velocidad de carga de sus sitios web estarán mejor posicionadas para atraer y retener a los usuarios, así como para mejorar su visibilidad en los motores de búsqueda.</p>
-
-<h2 id="section-5">Conclusión</h2>
+<h3>Estrategias avanzadas: qué mover cuando lo básico ya está hecho</h3>
+        <p>Cuando las imágenes ya pesan lo que deben y el JavaScript está acotado, quedan tres palancas de segundo nivel. La primera es el <strong>INP</strong> (<em>Interaction to Next Paint</em>), que desde 2024 sustituye al antiguo FID como métrica oficial de interactividad: mide cuánto tarda la interfaz en responder a un clic, y penaliza el JavaScript que bloquea el hilo principal aunque la página cargue rápido.</p>
+        <p>La segunda es reservar espacio para todo lo que llega tarde —imágenes, anuncios, banners de consentimiento— declarando sus dimensiones. Es lo que evita que el contenido salte y dispare el CLS.</p>
+        <p>Y la tercera es el <em>caching</em> en el borde: servir el HTML desde una red de distribución reduce el tiempo hasta el primer byte de segundos a decenas de milisegundos. Una nota sobre AMP, que aparecía en muchas guías: Google dejó de exigirlo para aparecer destacado y ya no compensa como estrategia de velocidad.</p>
+      <h2 id="section-5">Conclusión</h2>
 
 <p>Optimizar la velocidad de carga de tu sitio web es esencial para ofrecer una experiencia de usuario óptima, mejorar el SEO y aumentar las conversiones. Al seguir las estrategias y mejores prácticas recomendadas en esta guía, estarás en el camino correcto para acelerar el rendimiento de tu sitio y alcanzar tus objetivos en línea.</p>
 
