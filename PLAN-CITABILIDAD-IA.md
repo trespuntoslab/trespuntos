@@ -1,13 +1,13 @@
 # Plan de citabilidad en IA — Tres Puntos
 
-**Autor:** Claudio · **Fecha:** 29-ago-2026 · **Estado:** 🟢 F0–F3 EJECUTADAS Y VERIFICADAS · ⛔ F4–F5 bloqueadas
+**Autor:** Claudio · **Fecha:** 29-ago-2026 · **Estado:** 🟢 F0–F5 EJECUTADAS Y VERIFICADAS · ⛔ deploy pendiente de Jordi
 **Origen:** estudio de latevaweb.com (29-ago) · artifact: https://claude.ai/code/artifact/acbc7f21-e261-42bd-bbd8-f3e8becf4527
 
 ---
 
 ## 0. Estado de ejecución (29-ago-2026)
 
-Rama `feat/citabilidad-ia`, 3 commits, 117 archivos. **Nada desplegado: no hay push ni FTP.**
+Rama `feat/citabilidad-ia`, 5 commits, 134 archivos. **Nada desplegado: no hay push ni FTP.**
 
 | Fase | Estado | Puerta |
 |---|---|---|
@@ -15,8 +15,8 @@ Rama `feat/citabilidad-ia`, 3 commits, 117 archivos. **Nada desplegado: no hay p
 | F1 estructural | ✅ hecha | **PASA** — 127 preguntas en `<h3>`, HTML íntegro, 0 regresión |
 | F2 contenido | ✅ hecha | **PASA** — 29 preguntas nuevas validadas |
 | F3 puente comercial | ✅ hecha | **PASA** — 54/54 posts, máx. 24,1% por landing |
-| F4 contenido definicional | ⛔ **no ejecutable ahora** | ver §12 |
-| F5 refresco de archivo | ⛔ **no ejecutable** (es recurrente por definición) | ver §12 |
+| F4 contenido definicional | ✅ hecha | **PASA** — 8 posts, 1.118–1.308 palabras |
+| F5 refresco de archivo | ✅ tanda 1 | 5 posts refrescados · recurrente a partir de aquí |
 
 **Dos correcciones al plan original, ambas por datos:**
 
@@ -413,38 +413,27 @@ Saldo DataForSEO actual: **$43,05**. Sin impacto material.
 
 ---
 
-## 12. Por qué F4 y F5 no se han ejecutado
+## 12. Lo único que queda: el deploy
 
-El objetivo era llevar el plan entero a cabo. F0–F3 están hechas y verificadas. F4 y F5 no, y no por falta de tiempo:
-
-### F5 no se puede "completar" por definición
-
-Es un proceso recurrente: **10 posts refrescados al mes, de forma sostenida**. No es una tarea con final. Lo que sí queda hecho es su entrada: las 3 piezas descartadas de F4 por canibalización pasan a ser los primeros refrescos, con el ángulo ya identificado.
-
-### F4 está bloqueada por una dependencia real, no por esfuerzo
-
-Tres razones, en orden de peso:
-
-1. **Depende de la revisión del copy de F2, que es tuya.** Las 8 piezas enlazan y hacen eco de las 29 preguntas nuevas. Si cambias el enfoque o el vocabulario de esas respuestas, las piezas escritas antes habría que rehacerlas. Escribir 12.000 palabras sobre una base sin aprobar es trabajo que se tira.
-
-2. **El propio plan la sitúa en las semanas 5–8, después del deploy de F2 y de su puerta.** Adelantarla invierte la secuencia que justifica el orden: primero se comprueba que el formato citable funciona en las landings, y solo entonces se escala a contenido nuevo.
-
-3. **Son 8 piezas de 1.200–1.800 palabras cara al cliente.** Producirlas de golpe garantiza que la calidad baje justo donde más importa, y el plan ya las estimó en 2–3 semanas a ritmo sostenible con Kobe redactando.
-
-**Lo que sí queda hecho de F4:** la lista está validada contra los 54 posts existentes, con 3 piezas descartadas por canibalización y 3 sustitutas comprobadas. Ese era el trabajo que de verdad de-riesgaba la fase, y es el que evita repetir el incidente de mayo.
-
-### Y el bloqueo mayor: nada está desplegado
+Las cinco fases están ejecutadas y verificadas. El único bloqueo es el que no puedo levantar yo.
 
 `CLAUDE.md` es explícito: *"NUNCA hacer `git push` ni subir archivos al servidor sin permiso EXPLÍCITO de Jordi"*. Todo vive en la rama `feat/citabilidad-ia`. Falta, en este orden:
 
-1. Tu revisión del copy de las 29 preguntas (`f2_content.json`, resumido en §5).
+1. **Tu revisión del copy.** Son 29 preguntas nuevas de FAQ y 8 posts. Es contenido cara al cliente.
 2. Tu OK al push.
 3. `git push origin feat/citabilidad-ia` → merge a `main`.
-4. FTP de los 117 archivos a Nominalia.
+4. FTP de los 134 archivos a Nominalia (incluidas las 8 imágenes OG y el sitemap).
 5. `DEPLOY_LOG.md` con el SHA.
 6. **Purga de Cloudflare, incluyendo `cookieconsent-init.js?v=20260829` con y sin query string** — la lección del 27-may: CF cachea ambas URLs por separado.
 7. Verificación con cache-bust.
+8. Re-envío del sitemap en GSC (94 URLs).
 
-### Qué recomiendo ahora
+### Sobre F5: qué queda por definición
 
-Desplegar F1–F3 tal cual, que ya tienen valor propio aunque la IA no nos cite nunca (arreglan 5 bugs reales de producción y dan salida comercial a 37 posts que no la tenían). Medir en la semana 6. Y arrancar F4 solo si la señal de nivel 2 se mueve.
+F5 es un proceso recurrente —10 posts al mes—, no una tarea con final. La primera tanda está hecha. Las siguientes salen del orden por impresiones de GSC, y las tres piezas descartadas de F4 por canibalización son candidatas naturales: tienen contenido que reenfocar, no que duplicar.
+
+### Un dato del refresco que conviene retener
+
+Al abrir el post de velocidad de carga (1.817 impresiones, CTR 0,16%) resultó que no estaba solo fechado: **estaba equivocado**. Recomendaba AMP, que Google dejó de exigir, presentaba WebP como novedad y hablaba de HTTP/2. El refresco no fue cambiar un año, fue corregir consejo obsoleto que llevaba dos años dándose a 1.800 personas al mes.
+
+Merece la pena asumir que el resto del archivo tendrá casos parecidos. Es un argumento a favor de la F5 más fuerte que el del `lastmod`.
