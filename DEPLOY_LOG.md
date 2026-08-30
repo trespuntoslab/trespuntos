@@ -2,6 +2,53 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-08-30 · `28be4f0` + `7982d7f` — Citabilidad en IA (F0–F5): FAQ citable, puente comercial y 8 posts nuevos
+
+**Autorizado por Jordi.** 133 archivos por FTP. Purga: `purge_everything` + purga por URL del fix posterior.
+
+**Origen.** Medición del 29-ago con DataForSEO LLM Mentions: en las respuestas de IA de Google en
+España, `latevaweb.com` acumula 167 menciones y `trespuntoscomunicacion.es` **0**. Al abrir el capó,
+el problema no era de schema ni de contenido: las preguntas del FAQ vivían dentro de un `<button>`,
+sin encabezado que Google pudiera citar como fragmento. Plan completo en `PLAN-CITABILIDAD-IA.md`.
+
+**Qué se subió:**
+
+- **F1 — 14 páginas indexables.** Cada `<button class="faq-question">` envuelto en `<h3 class="faq-q">`.
+  Seguro porque el handler de `components.js` usa `closest('.faq-item')`, no `parentElement`. CSS:
+  `.faq-q` neutralizado (verificado contra producción: 71 propiedades computadas idénticas) y
+  `.faq-item.open .faq-answer` de 400 a 900px.
+- **F2 — 29 preguntas nuevas** en las 5 landings con impresiones reales (47 → 76 preguntas).
+  Respuestas autocontenidas de 40–60 palabras. Ningún title, H1 ni meta tocado.
+- **F3 — puente comercial en los 54 posts** (37 nuevos; el componente `.article-cta` ya existía con
+  su CSS). Evento GA4 `blog_bridge_click`. Sin UTM: en enlaces internos rompen la atribución.
+- **F4 — 8 posts definicionales nuevos** + 8 OG + 8 tarjetas en el hub + 8 URLs en sitemap (86 → 94).
+- **F5 — 5 posts refrescados.** El de velocidad de carga (1.817 impr) recomendaba AMP, WebP como
+  novedad y HTTP/2: reescrito con HTTP/3, AVIF e INP.
+- **Cache-bust** `cookieconsent-init.js?v=20260701` → `?v=20260829` en 114 HTML.
+
+**Bugs pre-existentes corregidos de paso:** `agentes-de-voz-ia` y `automatizacion-de-procesos-con-ia`
+mostraban las mismas 5 preguntas genéricas de otra landing (el schema sí tenía el contenido correcto);
+8 de 14 páginas con `FAQPage` desincronizado; 3 `<h3>` de la home cerrando con `</h4>`;
+`diseno-web-para-empresas` con marcado sin `.faq-answer-inner` y 6 `</div>` huérfanos.
+
+**Verificación en producción** (cache-bust + `no-cache`): 8/8 posts HTTP 200, OG servidas,
+h3 = schema en las 5 landings (13/13, 14/14, 14/14, 13/13, 13/13), JS servido con el listener,
+sitemap 94 URLs, hub 62 tarjetas, `cf-cache-status: MISS`. Lighthouse móvil sin regresión
+(A11y 95, BP 92, SEO 100, idénticos a antes; post nuevo A11y 100 / SEO 100 / BP 96).
+
+**Incidente menor y su corrección.** Durante la F1 se quitaron 2 `</div>` huérfanos del hero de
+`diseno-ux-ui-barcelona` por limpieza. Al medir tras el deploy apareció CLS 0,13–0,17 en esa página
+y se atribuyó a ese cambio: se revirtió (`7982d7f`) y se subió el archivo. **La atribución era falsa**
+— tras revertir, el CLS seguía igual, y `diseno-ux-ui-madrid`, nunca tocado, mide 0,216. El CLS es
+**pre-existente** y lo causa el visual animado `dux-*` del hero, en las 4 variantes. Corregido en el
+registro (`1109f30`). El revert se mantiene por ser la opción de riesgo cero.
+
+**Pendiente derivado:** el CLS del hero de `diseno-ux-ui` afecta a una página en posición 1 para
+"diseño de interfaces barcelona". Merece tarea propia con medición antes/después.
+
+**Pendiente de Jordi:** re-enviar el sitemap en GSC (94 URLs).
+
+
 ## 2026-08-08 (2) · `63edd17` — `.htaccess`: 301 al destino real en tipsuxui, portfolio y blog-diseno-web
 
 **Contexto:** con el export de cobertura solo se veía el resumen, así que se entró en GSC con el
