@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent.css">
+    <link rel="stylesheet" href="/assets/cookieconsent/cookieconsent-theme.css">
+  </noscript>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var s1 = document.createElement('script');
+        s1.src = '/assets/cookieconsent/cookieconsent.umd.js';
+        s1.onload = function () {
+          var s2 = document.createElement('script');
+          s2.src = '/assets/cookieconsent/cookieconsent-init.js?v=20260829';
+          document.head.appendChild(s2);
+        };
+        document.head.appendChild(s1);
+      }, 800);
+    });
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#5dffbf">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qué es un design system y cuándo lo necesitas | Blog | Tres Puntos</title>
+  <meta name="description" content="Un design system no es una guía de estilo: es infraestructura de producto. Qué contiene, qué problema resuelve y a partir de cuándo compensa construirlo." />
+  <link rel="canonical" href="https://www.trespuntoscomunicacion.es/blog/que-es-un-design-system/" />
+  <meta property="og:title" content="Qué es un design system y cuándo lo necesita una empresa" />
+  <meta property="og:description" content="Un design system no es una guía de estilo: es infraestructura de producto. Qué contiene, qué problema resuelve y a partir de cuándo compensa construirlo." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.trespuntoscomunicacion.es/blog/que-es-un-design-system/" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Tres Puntos Comunicación" />
+  <meta property="og:image" content="https://www.trespuntoscomunicacion.es/img/og/blog-que-es-un-design-system.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Qué es un design system y cuándo lo necesita una empresa" />
+  <meta name="twitter:description" content="Un design system no es una guía de estilo: es infraestructura de producto. Qué contiene, qué problema resuelve y a partir de cuándo compensa construirlo." />
+  <meta name="twitter:image" content="https://www.trespuntoscomunicacion.es/img/og/blog-que-es-un-design-system.png" />
+  <meta property="article:published_time" content="2026-08-29" />
+  <meta property="article:modified_time" content="2026-08-29" />
+  <meta property="article:author" content="Jordi Expósito" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Qué es un design system y cuándo lo necesita una empresa",
+  "description": "Un design system no es una guía de estilo: es infraestructura de producto. Qué contiene, qué problema resuelve y a partir de cuándo compensa construirlo.",
+  "image": "https://www.trespuntoscomunicacion.es/img/og/blog-que-es-un-design-system.png",
+  "datePublished": "2026-08-29",
+  "dateModified": "2026-08-29",
+  "author": {
+    "@type": "Person",
+    "name": "Jordi Expósito",
+    "url": "https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/",
+    "sameAs": [
+      "https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/",
+      "https://www.linkedin.com/in/trespuntoscomunicacion/"
+    ],
+    "jobTitle": "Digital Project Lead & UX/UI Designer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Tres Puntos Comunicación",
+      "url": "https://www.trespuntoscomunicacion.es/"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tres Puntos Comunicación",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.trespuntoscomunicacion.es/img/logo.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.trespuntoscomunicacion.es/blog/que-es-un-design-system/"
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.trespuntoscomunicacion.es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.trespuntoscomunicacion.es/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Qué es un design system y cuándo lo necesita una empresa"
+    }
+  ]
+}
+</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/blog-article.css" />
+  <noscript>
+    <link rel="stylesheet" href="/css/design-system.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/blog-article.css">
+  </noscript>
+
+  <style>
+    @font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107%;ascent-override:90%;descent-override:22%;line-gap-override:0%}
+    @font-face{font-family:'Jakarta Fallback';src:local('Arial Black');size-adjust:95%;ascent-override:100%;descent-override:22%;line-gap-override:0%}
+    #tp-navbar{position:fixed;top:0;left:0;right:0;z-index:1000;min-height:72px}
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+  <div id="tp-navbar"></div>
+
+  <header class="article-header">
+    <div class="article-header-wrapper">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Inicio</a><span class="article-breadcrumb-sep">/</span><a href="/blog/">Blog</a><span class="article-breadcrumb-sep">/</span><span>Qué es un design system y cuándo lo necesita una empresa</span>
+      </nav>
+      <div class="article-category">DISEÑO UX/UI</div>
+      <h1 class="article-title">Qué es un design system y cuándo lo necesita una empresa</h1>
+      <div class="article-meta">
+        <div class="article-meta-author">
+          <img class="article-meta-avatar" src="/img/jordi-exposito.webp" alt="Jordi Expósito" loading="lazy" />
+          <div>
+            <div class="article-meta-name">Jordi Expósito</div>
+            <div class="article-meta-time">29 de agosto de 2026 <span class="article-meta-item">· 7 min de lectura</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <div class="article-toc">
+    <div class="toc-box">
+      <div class="toc-title">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h14"/></svg>
+        En este artículo
+      </div>
+      <ol class="toc-list">
+        <li><a href="#section-0">Qué contiene un design system de verdad</a></li>
+        <li><a href="#section-1">El problema que resuelve (y que no se ve hasta que duele)</a></li>
+        <li><a href="#section-2">Cuándo compensa construirlo</a></li>
+        <li><a href="#section-3">Cómo se construye sin parar el producto</a></li>
+        <li><a href="#section-4">Qué pasa si no lo mantienes</a></li>
+        <li><a href="#section-5">Lo que hay que llevarse de aquí</a></li>
+      </ol>
+    </div>
+  </div>
+
+  <main class="article-body">
+    <article class="article-content">
+      <p>Un <strong>design system</strong> es una biblioteca de componentes, tokens y reglas de uso compartida entre diseño y desarrollo. No es una guía de estilo, no es una carpeta de Figma bien ordenada y no es un manual de marca. Es infraestructura de producto.</p>
+      <p>La confusión importa porque determina quién lo mantiene y para qué sirve. Una guía de estilo describe cómo debería verse algo. Un design system <em>es</em> ese algo: los componentes que el equipo usa en producción salen de ahí.</p>
+      <p>Este artículo explica qué contiene realmente, qué problema resuelve y —lo más útil— a partir de qué momento compensa construirlo y cuándo es tirar dinero.</p>
+      <h2 id="section-0">Qué contiene un design system de verdad</h2>
+      <p>Un design system operativo tiene tres capas, y las tres tienen que existir. Si falta una, lo que hay es documentación, no un sistema.</p>
+      <p><strong>Tokens.</strong> Los valores primitivos: color, tipografía, espaciado, radios, sombras, duraciones de animación. Se definen una vez y se referencian desde todas partes. Cambiar el color de marca debería ser editar un token, no buscar cincuenta y tres hexadecimales por el código.</p>
+      <p><strong>Componentes.</strong> Botones, campos de formulario, tarjetas, tablas, modales. Cada uno con todos sus estados: reposo, hover, foco, activo, deshabilitado, cargando, error. Un componente sin estados definidos es una pantalla bonita, no un componente.</p>
+      <p><strong>Reglas de uso.</strong> Cuándo usar un botón primario y cuándo uno secundario. Qué hacer cuando un texto no cabe. Cómo se comporta una tabla en móvil. Esta capa es la que casi siempre falta, y es la que evita que dos personas resuelvan el mismo problema de tres formas distintas.</p>
+      <div class="checklist-box">
+        <div class="checklist-box-title">LAS TRES CAPAS, EN ORDEN</div>
+        <ul>
+          <li><strong>Tokens</strong> — color, tipografía, espaciado, radios, sombras</li>
+          <li><strong>Componentes</strong> — con todos sus estados, no solo el estado feliz</li>
+          <li><strong>Reglas de uso</strong> — cuándo usar cada cosa y qué hacer en los casos raros</li>
+          <li><strong>Documentación viva</strong> — accesible para diseño y desarrollo a la vez</li>
+          <li><strong>Un dueño</strong> — alguien responsable de que no se pudra</li>
+        </ul>
+      </div>
+      <h2 id="section-1">El problema que resuelve (y que no se ve hasta que duele)</h2>
+      <p>El síntoma clásico llega cuando el producto crece: cada pantalla nueva empieza a parecer de otra web. Hay cuatro tonos de gris para el mismo texto secundario. El botón principal tiene tres tamaños según quién lo hiciera. El formulario de alta y el de edición validan distinto.</p>
+      <p>Nada de eso se percibe como un problema grave por separado. El coste real es acumulativo: cada decisión que ya se tomó una vez se vuelve a tomar, y cada vez con menos contexto que la anterior.</p>
+      <div class="before-after">
+        <div class="before-after-side before-after-before">
+          <div class="before-after-label">Antes</div>
+          <div class="before-after-title">Cada pantalla se decide de cero</div>
+          <div class="before-after-desc">El diseñador reinventa el espaciado. El desarrollador reinterpreta el diseño. Nadie recuerda por qué el botón de la pantalla de pago es distinto. La coherencia depende de la memoria del equipo.</div>
+        </div>
+        <div class="before-after-side before-after-after">
+          <div class="before-after-label">Con Tres Puntos</div>
+          <div class="before-after-title">Las decisiones se toman una vez</div>
+          <div class="before-after-desc">El componente existe, tiene sus estados y su regla de uso. La conversación pasa de «cómo se ve esto» a «qué tiene que hacer esto». La iteración se acelera y la coherencia deja de ser un acto de voluntad.</div>
+        </div>
+      </div>
+      <p>Hay un efecto secundario que suele sorprender: el design system mejora la calidad de las conversaciones. Cuando el vocabulario está compartido, el equipo discute sobre el problema del usuario en vez de sobre el radio de las esquinas.</p>
+      <h2 id="section-2">Cuándo compensa construirlo</h2>
+      <p>Aquí es donde la mayoría de artículos se van por las ramas. La respuesta corta: cuando el coste de la incoherencia supera al coste de mantener el sistema. Y eso pasa antes de lo que parece, pero no desde el día uno.</p>
+      <p>Señales razonablemente fiables de que ya toca:</p>
+      <ul>
+        <li>Hay <strong>más de una persona</strong> diseñando o desarrollando interfaz.</li>
+        <li>El producto tiene <strong>más de 15–20 pantallas</strong> distintas.</li>
+        <li>Vais a mantenerlo <strong>más de un año</strong>.</li>
+        <li>El equipo ya discute sobre consistencia en las revisiones.</li>
+        <li>Alguien ha dicho en voz alta «¿esto no lo hicimos ya en otro sitio?».</li>
+      </ul>
+      <div class="question-block" role="note">
+        <p>Si tu equipo se pasa más tiempo decidiendo cómo se ve algo que qué debe hacer, ya vas tarde.</p>
+      </div>
+      <p>Y cuándo <strong>no</strong>: una landing de campaña, un MVP que probablemente se tire en tres meses, un proyecto de una sola persona con cinco pantallas. Ahí un design system es sobreingeniería: cuesta más mantenerlo que el caos que evita.</p>
+      <h2 id="section-3">Cómo se construye sin parar el producto</h2>
+      <p>El error habitual es tratarlo como un proyecto aparte que dura tres meses y termina con una entrega. Los design systems que sobreviven se construyen extrayéndolos del producto real, no diseñándolos en el vacío.</p>
+      <div class="timeline-mini">
+        <div class="timeline-mini-step">
+          <div class="timeline-mini-step-num">FASE 01</div>
+          <div class="timeline-mini-step-title">Inventario</div>
+          <div class="timeline-mini-step-desc">Captura de todo lo que ya existe en producción. Suele aparecer que hay 11 estilos de botón donde debería haber 3.</div>
+        </div>
+        <div class="timeline-mini-step">
+          <div class="timeline-mini-step-num">FASE 02</div>
+          <div class="timeline-mini-step-title">Consolidación</div>
+          <div class="timeline-mini-step-desc">Se decide qué se queda, qué se fusiona y qué se elimina. Aquí se toman las decisiones incómodas.</div>
+        </div>
+        <div class="timeline-mini-step">
+          <div class="timeline-mini-step-num">FASE 03</div>
+          <div class="timeline-mini-step-title">Tokens y base</div>
+          <div class="timeline-mini-step-desc">Se definen los primitivos y se construyen los 8–10 componentes que cubren el 80% de las pantallas.</div>
+        </div>
+        <div class="timeline-mini-step">
+          <div class="timeline-mini-step-num">FASE 04</div>
+          <div class="timeline-mini-step-title">Adopción</div>
+          <div class="timeline-mini-step-desc">Se aplica en la siguiente funcionalidad real, no en una refactorización masiva. El sistema se valida usándolo.</div>
+        </div>
+      </div>
+      <p>La fase de inventario es la que más resistencia genera y la que más valor aporta: pone un número a un problema que hasta entonces era una sensación.</p>
+      <blockquote class="quote-pull">
+        <img class="quote-pull-avatar" src="/nosotros/Judith.webp" alt="" loading="lazy" onerror="this.style.display='none'">
+        <div class="quote-pull-body">
+          <p class="quote-pull-text">Un design system que nadie usa es documentación. La adopción no se decreta en una reunión: se consigue haciendo que usar el componente sea más rápido que reinventarlo.</p>
+          <div class="quote-pull-author">JUDITH KLIMOVSKY · UX/UI Designer</div>
+        </div>
+      </blockquote>
+      <h2 id="section-4">Qué pasa si no lo mantienes</h2>
+      <p>Un design system sin dueño se pudre en unos meses. El patrón es siempre igual: aparece un caso que el sistema no cubre, alguien resuelve por su cuenta, esa excepción se copia, y en medio año el sistema describe una realidad que ya no existe.</p>
+      <p>Mantenerlo no es un proyecto: es una rutina pequeña. Alguien revisa las excepciones que aparecen, decide si son un caso nuevo que hay que incorporar o una desviación que hay que corregir, y actualiza la documentación. Media jornada al mes suele bastar en un producto de tamaño medio.</p>
+      <p>Cuando ese rol no existe, lo que ocurre es que el equipo deja de confiar en el sistema, y en cuanto se deja de confiar se deja de usar.</p>
+      <div class="article-cta-inline">
+        <div class="article-cta-inline-text">¿Tu producto ha crecido más rápido que su coherencia visual?</div>
+        <a href="/servicios/diseno-ux-ui-barcelona/" class="article-cta-inline-btn">Ver cómo trabajamos el UX/UI →</a>
+      </div>
+      <h2 id="section-5">Lo que hay que llevarse de aquí</h2>
+      <p>Un design system es infraestructura, no decoración. Contiene tokens, componentes con todos sus estados y reglas de uso, y necesita un dueño para no degradarse.</p>
+      <p>Compensa cuando hay más de una persona tocando interfaz, más de quince pantallas y voluntad de mantener el producto más de un año. Antes de eso, es sobreingeniería.</p>
+      <p>Y se construye extrayéndolo de lo que ya existe, empezando por un inventario honesto. Si te interesa el paso previo —cómo se organiza la información antes de diseñar ninguna pantalla— lo tratamos en <a href="/blog/beneficios-de-la-arquitectura-de-informacion-en-el-diseno-web/">arquitectura de información</a>.</p>
+    </article>
+  </main>
+
+  <section class="article-cta">
+    <p class="article-cta-eyebrow">Tres Puntos — Diseño UX/UI</p>
+    <h2>¿Cada pantalla nueva parece de otra web?</h2>
+    <p>Hacemos el inventario, consolidamos lo que hay y montamos el sistema sobre tu producto real, no sobre una plantilla. Cuéntanos en qué punto estáis.</p>
+    <a href="/servicios/diseno-ux-ui-barcelona/" class="article-cta-btn" data-cta="blog-bridge">Cuéntanos tu proyecto</a>
+  </section>
+
+  <div class="author-card">
+    <div class="author-card-inner">
+      <img class="author-card-avatar" src="/img/jordi-exposito.webp" alt="Jordi Expósito" loading="lazy" />
+      <div class="author-card-info">
+        <div class="author-card-name">Jordi Expósito</div>
+        <div class="author-card-role">Digital Project Lead & UX/UI Designer · Tres Puntos</div>
+        <a class="author-card-link" href="https://www.linkedin.com/in/jordi-exp%C3%B3sito-lozano/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Conectar en LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-footer-divider"></div>
+
+  <section class="related-articles" aria-label="Artículos relacionados">
+    <h2 class="related-articles-title">Artículos relacionados</h2>
+    <div class="related-articles-grid">
+      <a href="/blog/atomic-design-ultima-tendencia-en-diseno-web/" class="related-card">
+        <div class="related-card-cat">DISEÑO WEB</div>
+        <h3 class="related-card-title">Atomic Design, última tendencia en diseño web</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+      <a href="/blog/beneficios-de-la-arquitectura-de-informacion-en-el-diseno-web/" class="related-card">
+        <div class="related-card-cat">UX/UI</div>
+        <h3 class="related-card-title">Beneficios de la arquitectura de información en el diseño web</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+      <a href="/blog/metodologias-para-el-diseno-de-productos-digitales/" class="related-card">
+        <div class="related-card-cat">METODOLOGÍA</div>
+        <h3 class="related-card-title">Metodologías para el diseño de productos digitales</h3>
+        <span class="related-card-link">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <div id="tp-footer"></div>
+
+  <script src="/js/components.js?v=27" defer></script>
+  <script src="/js/supabase-forms.js?v=20260416" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      try { TP.navbar('blog'); } catch (e) {}
+      try { TP.footer(); } catch (e) {}
+      try { TP.initJS(); } catch (e) {}
+    });
+  </script>
+
+  <script src="/js/blog-article.js" defer></script>
+
+  <script defer>
+    (function () {
+      if (window.innerWidth > 1024) {
+        var outerCursor = document.createElement('div');
+        outerCursor.id = 'outer-cursor';
+        var innerCursor = document.createElement('div');
+        innerCursor.id = 'inner-cursor';
+        document.body.appendChild(outerCursor);
+        document.body.appendChild(innerCursor);
+        var style = document.createElement('style');
+        style.textContent = '#outer-cursor,#inner-cursor{position:fixed;pointer-events:none;border-radius:50%;mix-blend-mode:lighten;z-index:99999}#outer-cursor{width:40px;height:40px;border:2px solid #5dffbf;top:-20px;left:-20px;transition:transform .2s ease-out,opacity .2s ease-out;opacity:.6}#inner-cursor{width:8px;height:8px;background:#5dffbf;top:-4px;left:-4px;opacity:1;transition:transform .1s ease-out}#outer-cursor.active{transform:scale(1.5);border-width:3px;opacity:.8}#inner-cursor.active{transform:scale(.75)}#outer-cursor.click{transform:scale(.75);opacity:.4}#inner-cursor.click{transform:scale(1.5)}@media(max-width:1024px){#outer-cursor,#inner-cursor{display:none!important}}';
+        document.head.appendChild(style);
+        var mouseX = 0, mouseY = 0, outerX = 0, outerY = 0;
+        document.addEventListener('mousemove', function (e) { mouseX = e.clientX; mouseY = e.clientY; });
+        (function animate() {
+          outerX += (mouseX - outerX) * 0.2;
+          outerY += (mouseY - outerY) * 0.2;
+          outerCursor.style.transform = 'translate3d(' + outerX + 'px,' + outerY + 'px,0)';
+          innerCursor.style.transform = 'translate3d(' + mouseX + 'px,' + mouseY + 'px,0)';
+          requestAnimationFrame(animate);
+        })();
+        document.querySelectorAll('a,button,[role="button"],input,textarea,select').forEach(function (el) {
+          el.addEventListener('mouseenter', function () { outerCursor.classList.add('active'); innerCursor.classList.add('active'); });
+          el.addEventListener('mouseleave', function () { outerCursor.classList.remove('active', 'click'); innerCursor.classList.remove('active', 'click'); });
+          el.addEventListener('mousedown', function () { outerCursor.classList.add('click'); innerCursor.classList.add('click'); });
+          el.addEventListener('mouseup', function () { outerCursor.classList.remove('click'); innerCursor.classList.remove('click'); });
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

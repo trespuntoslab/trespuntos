@@ -16,7 +16,7 @@
         s1.src = '/assets/cookieconsent/cookieconsent.umd.js';
         s1.onload = function () {
           var s2 = document.createElement('script');
-          s2.src = '/assets/cookieconsent/cookieconsent-init.js?v=20260701';
+          s2.src = '/assets/cookieconsent/cookieconsent-init.js?v=20260829';
           document.head.appendChild(s2);
         };
         document.head.appendChild(s1);
@@ -69,53 +69,117 @@
     }
   </script>
   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Qué hace una agencia de diseño UX/UI?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Analiza cómo interactúan los usuarios con una plataforma y diseña una experiencia más clara, más útil y más orientada a conversión. No se queda en la parte visual. Trabaja estructura, navegación, flujos, contenido y comportamiento de la interfaz."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cuándo tiene sentido invertir en un rediseño UX/UI?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cuando la plataforma genera dudas, no convierte como debería, ha crecido sin sistema o el equipo detecta fricciones constantes en captación, uso o venta."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Trabajáis solo la parte visual?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Trabajamos la experiencia completa. Eso incluye arquitectura de información, estructura de flujos, prototipado, componentes y criterios para pasar a desarrollo con claridad."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cuánto dura un proyecto de UX/UI?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Depende del alcance, del número de pantallas y de la complejidad del sistema. No es lo mismo rediseñar una web corporativa que una plataforma con múltiples flujos y perfiles de usuario."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Podéis trabajar sobre una plataforma ya existente?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí. De hecho, muchos proyectos empiezan revisando una plataforma en funcionamiento para detectar fricciones, deuda de experiencia y oportunidades de mejora."
-          }
-        }
-      ]
+      "@type": "Question",
+      "name": "¿Qué hace una agencia de diseño UX/UI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Analiza cómo interactúan los usuarios con una plataforma y diseña una experiencia más clara, más útil y más orientada a conversión. No se queda en la parte visual. Trabaja estructura, navegación, flujos, contenido y comportamiento de la interfaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo tiene sentido invertir en un rediseño UX/UI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cuando la plataforma genera dudas, no convierte como debería, ha crecido sin sistema o el equipo detecta fricciones constantes en captación, uso o venta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajáis solo la parte visual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Trabajamos la experiencia completa. Eso incluye arquitectura de información, estructura de flujos, prototipado, componentes y criterios para pasar a desarrollo con claridad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto dura un proyecto de UX/UI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del alcance, del número de pantallas y de la complejidad del sistema. No es lo mismo rediseñar una web corporativa que una plataforma con múltiples flujos y perfiles de usuario."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Podéis trabajar sobre una plataforma ya existente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. De hecho, muchos proyectos empiezan revisando una plataforma en funcionamiento para detectar fricciones, deuda de experiencia y oportunidades de mejora."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre UX y UI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UX es la experiencia: cómo se estructura la información, cómo fluye el usuario y si consigue lo que venía a hacer. UI es la interfaz: tipografía, color, componentes y estados. Una interfaz bonita sobre una experiencia mal planteada sigue sin convertir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es la arquitectura de información?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es la organización de los contenidos y funciones de una plataforma: qué existe, cómo se agrupa, cómo se nombra y desde dónde se llega a cada cosa. Es la decisión que más condiciona si un usuario encuentra lo que busca, y se toma antes de diseñar ninguna pantalla."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es un design system y cuándo lo necesita una empresa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es una biblioteca de componentes, tokens y reglas de uso compartida entre diseño y desarrollo. Hace falta cuando el producto crece y cada pantalla nueva empieza a parecer de otra web. Ahorra tiempo en cada iteración y evita que la coherencia dependa de la memoria del equipo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es un prototipo navegable y para qué sirve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es una versión clicable de la interfaz, antes de programarla. Sirve para validar flujos con usuarios y con el equipo cuando corregir todavía cuesta horas y no semanas de desarrollo. Un cambio en el prototipo es barato; el mismo cambio en producción, no."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué entregables recibo de un proyecto de diseño de interfaces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un mapa de arquitectura de información, los flujos principales, el prototipo navegable, las pantallas finales y el sistema de componentes con todos sus estados. Todo documentado y con criterios de aceptación, para que cualquier equipo de desarrollo pueda implementarlo sin tener que adivinar por qué se tomó cada decisión."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se mide si un diseño UX/UI funciona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con métricas de negocio, no con opiniones. Se define antes qué debe mejorar (conversión de un flujo, tiempo hasta completar una tarea, abandono en un paso concreto) y se compara contra el dato previo. Sin línea base medida antes del rediseño, no hay forma honesta de saberlo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hacéis test con usuarios reales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, cuando el proyecto lo justifica. Trabajamos con tests de guerrilla y sesiones moderadas sobre el prototipo navegable, con pocos participantes y foco en las tareas críticas. Cinco usuarios bien elegidos detectan la mayoría de los problemas graves de una interfaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo pasa el diseño a desarrollo sin perderse por el camino?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con especificación, no con capturas de pantalla. Entregamos cada componente documentado con sus medidas, estados y comportamiento responsive, más los criterios de aceptación de cada flujo. El desarrollador no tiene que interpretar la intención del diseño: la lee, la implementa y se puede verificar objetivamente."
+      }
     }
-  </script>
+  ]
+}
+</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1429,7 +1493,6 @@
             <svg viewBox="0 0 18 22" fill="#fff"><path d="M2 1l14 8-6 2 4 8-3 1-4-8-5 4z" stroke="#0e0e0e" stroke-width="1.2"/></svg>
             <span class="dux-cursor-tag">Jordi · designer</span>
           </div>
-        </div>          </div>
         </div>
       </div>
     </div>
@@ -2063,10 +2126,10 @@
         </div>
         <div class="faq-list reveal reveal-delay-1">
           <div class="faq-item reveal">
-            <button class="faq-question" aria-expanded="false">¿Qué hace una agencia de diseño UX/UI?<svg
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Qué hace una agencia de diseño UX/UI?<svg
                 class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M12 4.5v15m7.5-7.5h-15" />
-              </svg></button>
+              </svg></button></h3>
             <div class="faq-answer">
               <div class="faq-answer-inner">Analiza cómo interactúan los usuarios con una plataforma y diseña una
                 experiencia más clara, más útil y más orientada a conversión. No se queda en la parte visual. Trabaja
@@ -2074,20 +2137,20 @@
             </div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-question" aria-expanded="false">¿Cuándo tiene sentido invertir en un rediseño UX/UI?<svg
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Cuándo tiene sentido invertir en un rediseño UX/UI?<svg
                 class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M12 4.5v15m7.5-7.5h-15" />
-              </svg></button>
+              </svg></button></h3>
             <div class="faq-answer">
               <div class="faq-answer-inner">Cuando la plataforma genera dudas, no convierte como debería, ha crecido sin
                 sistema o el equipo detecta fricciones constantes en captación, uso o venta.</div>
             </div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-question" aria-expanded="false">¿Trabajáis solo la parte visual?<svg class="faq-icon"
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Trabajáis solo la parte visual?<svg class="faq-icon"
                 fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M12 4.5v15m7.5-7.5h-15" />
-              </svg></button>
+              </svg></button></h3>
             <div class="faq-answer">
               <div class="faq-answer-inner">No. Trabajamos la experiencia completa. Eso incluye arquitectura de
                 información, estructura de flujos, prototipado, componentes y criterios para pasar a desarrollo con
@@ -2095,10 +2158,10 @@
             </div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-question" aria-expanded="false">¿Cuánto dura un proyecto de UX/UI?<svg class="faq-icon"
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Cuánto dura un proyecto de UX/UI?<svg class="faq-icon"
                 fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M12 4.5v15m7.5-7.5h-15" />
-              </svg></button>
+              </svg></button></h3>
             <div class="faq-answer">
               <div class="faq-answer-inner">Depende del alcance, del número de pantallas y de la complejidad del
                 sistema. No es lo mismo rediseñar una web corporativa que una plataforma con múltiples flujos y perfiles
@@ -2106,13 +2169,93 @@
             </div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-question" aria-expanded="false">¿Podéis trabajar sobre una plataforma ya existente?<svg
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Podéis trabajar sobre una plataforma ya existente?<svg
                 class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M12 4.5v15m7.5-7.5h-15" />
-              </svg></button>
+              </svg></button></h3>
             <div class="faq-answer">
               <div class="faq-answer-inner">Sí. De hecho, muchos proyectos empiezan revisando una plataforma en
                 funcionamiento para detectar fricciones, deuda de experiencia y oportunidades de mejora.</div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Qué diferencia hay entre UX y UI?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>UX es la experiencia: cómo se estructura la información, cómo fluye el usuario y si consigue lo que venía a hacer. UI es la interfaz: tipografía, color, componentes y estados. Una interfaz bonita sobre una experiencia mal planteada sigue sin convertir.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Qué es la arquitectura de información?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Es la organización de los contenidos y funciones de una plataforma: qué existe, cómo se agrupa, cómo se nombra y desde dónde se llega a cada cosa. Es la decisión que más condiciona si un usuario encuentra lo que busca, y se toma antes de diseñar ninguna pantalla.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Qué es un design system y cuándo lo necesita una empresa?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Es una biblioteca de componentes, tokens y reglas de uso compartida entre diseño y desarrollo. Hace falta cuando el producto crece y cada pantalla nueva empieza a parecer de otra web. Ahorra tiempo en cada iteración y evita que la coherencia dependa de la memoria del equipo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Qué es un prototipo navegable y para qué sirve?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Es una versión clicable de la interfaz, antes de programarla. Sirve para validar flujos con usuarios y con el equipo cuando corregir todavía cuesta horas y no semanas de desarrollo. Un cambio en el prototipo es barato; el mismo cambio en producción, no.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Qué entregables recibo de un proyecto de diseño de interfaces?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Un mapa de arquitectura de información, los flujos principales, el prototipo navegable, las pantallas finales y el sistema de componentes con todos sus estados. Todo documentado y con criterios de aceptación, para que cualquier equipo de desarrollo pueda implementarlo sin tener que adivinar por qué se tomó cada decisión.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Cómo se mide si un diseño UX/UI funciona?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Con métricas de negocio, no con opiniones. Se define antes qué debe mejorar (conversión de un flujo, tiempo hasta completar una tarea, abandono en un paso concreto) y se compara contra el dato previo. Sin línea base medida antes del rediseño, no hay forma honesta de saberlo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Hacéis test con usuarios reales?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Sí, cuando el proyecto lo justifica. Trabajamos con tests de guerrilla y sesiones moderadas sobre el prototipo navegable, con pocos participantes y foco en las tareas críticas. Cinco usuarios bien elegidos detectan la mayoría de los problemas graves de una interfaz.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <h3 class="faq-q"><button class="faq-question" aria-expanded="false">¿Cómo pasa el diseño a desarrollo sin perderse por el camino?<svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 4.5v15m7.5-7.5h-15" />
+              </svg></button></h3>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Con especificación, no con capturas de pantalla. Entregamos cada componente documentado con sus medidas, estados y comportamiento responsive, más los criterios de aceptación de cada flujo. El desarrollador no tiene que interpretar la intención del diseño: la lee, la implementa y se puede verificar objetivamente.</p>
+              </div>
             </div>
           </div>
         </div>
