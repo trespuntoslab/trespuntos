@@ -207,6 +207,11 @@ Desde 2026-04-17 la web pasa por Cloudflare con **Cache Rule de 2h** (HTML cache
 - **DNS + Proxy**: Cloudflare (nameservers `ruben.ns.cloudflare.com` + `surina.ns.cloudflare.com`)
 - **SSL mode**: Full (no Flexible — Flexible causa bucle de redirects)
 - **Always Use HTTPS**: ON
+- **HSTS**: ON desde 2026-09-03 · `max-age` 1 mes · **includeSubDomains OFF** · preload OFF.
+  ⚠️ NO activar `includeSubDomains`: `ftp.`, `mail.` y `webmail.` no sirven HTTPS válido y quedarían
+  inaccesibles desde navegador. Subir el `max-age` solo tras semanas sin incidencias (es difícil de revertir).
+- **DMARC**: `_dmarc` TXT publicado 2026-09-03 → `v=DMARC1; p=none; rua=mailto:jordi@trespuntoscomunicacion.es; fo=1`.
+  Pendiente endurecer a `p=quarantine` cuando haya informes RUA suficientes.
 - **Automatic HTTPS Rewrites**: ON
 - **Cache Rule activa**: "Cache HTML estático" → All incoming requests → Eligible for cache → Edge TTL 2h (Ignore cache-control header)
 - **TTFB medido**: 65-80ms (antes 6.000ms sin Cloudflare)

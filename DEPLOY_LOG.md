@@ -2,6 +2,43 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-09-03 · Cloudflare (sin commit) — HSTS activado + registro DMARC publicado
+
+**Autorizado por Jordi.** Cambios de infraestructura en el panel de Cloudflare, no en el repo. Jordi
+inició sesión; el resto se ejecutó por navegador. Sin FTP ni purga (no toca contenido).
+
+**Por qué.** Los otros dos hallazgos reales de la due diligence del 3-sep. El token de la API que
+tenemos es solo de purga de caché, así que no era posible por API.
+
+**1. DMARC** — `_dmarc` TXT en la zona:
+
+```
+v=DMARC1; p=none; rua=mailto:jordi@trespuntoscomunicacion.es; fo=1
+```
+
+`p=none` solo monitoriza, no bloquea correo. El propio Cloudflare lo recomendaba en el panel
+("Block fake emails sent from @trespuntoscomunicacion.es"). Verificado en el NS autoritativo
+(`ruben.ns.cloudflare.com`) y en 1.1.1.1 / 8.8.8.8 / 9.9.9.9. **Pendiente:** endurecer a
+`p=quarantine` cuando lleguen unas semanas de informes RUA a jordi@.
+
+**2. HSTS** — SSL/TLS → Edge Certificates:
+
+| Opción | Valor | Motivo |
+|---|---|---|
+| Enable HSTS | On | |
+| Max-Age | **1 mes** (mínimo real; `2592000`) | HSTS es difícil de revertir: los navegadores cachean la política. Se sube después |
+| **includeSubDomains** | **Off** ⚠️ | `ftp.`, `mail.` y `webmail.` **no sirven HTTPS válido** (comprobado). Activarlo dejaría el webmail inaccesible desde navegador |
+| Preload | Off | Irreversible en la práctica |
+| No-Sniff Header | Off | Ya servimos `x-content-type-options: nosniff` por otra vía; no duplicar |
+
+**Verificación.** `strict-transport-security: max-age=2592000` en `www` y en el ápex, sin
+`includeSubDomains` en la cabecera. Los tres subdominios sin HTTPS siguen respondiendo igual que
+antes (301/301/404), confirmando que no les afecta.
+
+**Estado de las cabeceras tras el cambio:** 5 de 6 (falta solo CSP, aplazada a propósito).
+
+---
+
 ## 2026-09-03 · `dc84990` — Quitar `aggregateRating` self-serving del JSON-LD de la home
 
 **Autorizado por Jordi.** 1 archivo (`index.html`) por FTP. Purga: por URL (`/` y ápex).
@@ -26,11 +63,11 @@ Las 12 reseñas 5★ de Google Business Profile siguen siendo reales; dejan de d
 `BreadcrumbList`). En producción con cache-bust: `cf-cache-status: MISS`, `aggregateRating` = 0
 ocurrencias, `meta description` sigue presente, 166.229 bytes (coincide con lo subido).
 
-**No desplegado — requiere acción de Jordi.** HSTS y DMARC, los otros dos hallazgos reales. El token
-de `~/.config/tres-puntos/cloudflare.env` es **solo Cache Purge**: `dns_records` devuelve
-"Authentication error" y `settings/security_header` "Unauthorized". Hacen falta permisos
-`Zone.DNS:Edit` + `Zone Settings:Edit`, o hacerlo a mano en el panel. CSP queda aplazada a propósito
-(mal configurada rompe GA4, Clarity, Turnstile y el widget Jordan; toca `report-only` primero).
+**HSTS y DMARC — aplicados el mismo día en el panel de Cloudflare** (ver entrada siguiente). El token
+de `~/.config/tres-puntos/cloudflare.env` es **solo Cache Purge** (`dns_records` → "Authentication
+error", `settings/security_header` → "Unauthorized"), así que se hicieron por navegador. CSP queda
+aplazada a propósito (mal configurada rompe GA4, Clarity, Turnstile y el widget Jordan; toca
+`report-only` primero).
 
 ---
 
