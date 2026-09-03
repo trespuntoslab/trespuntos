@@ -2,6 +2,38 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-09-03 · `dc84990` — Quitar `aggregateRating` self-serving del JSON-LD de la home
+
+**Autorizado por Jordi.** 1 archivo (`index.html`) por FTP. Purga: por URL (`/` y ápex).
+
+**Origen.** Due diligence técnica externa recibida el 3-sep (`evaluacion-trespuntos.md`, comparativa
+con Programon). De sus 5 hallazgos, 3 son reales (HSTS, CSP y DMARC ausentes) y **2 son falsos**:
+
+- *"Falta la meta description en la home y páginas clave"* — **falso**. Verificadas las 138 páginas
+  del repo con chequeo multilínea: 0 sin `description`. Su regex era de una sola línea y nuestro
+  atributo `content=` va en la línea siguiente (`index.html:35`). Su propio comando del anexo
+  (`grep -c 'name="description"'`) devuelve 1, no 0 — el informe se contradice.
+- *"8 botones sin aria-label"* — **falso positivo**. Son 7 acordeones de FAQ + "Enviar mensaje",
+  todos con texto visible (nombre accesible válido en WCAG) y los FAQ además con `aria-expanded`.
+
+**Qué se subió.** Eliminado el bloque `aggregateRating` (5.0 / 12 reseñas) del JSON-LD
+`Organization`+`LocalBusiness`+`ProfessionalService`. Motivo: desde 2019 Google no admite reseñas
+declaradas por la propia empresa sobre sí misma para rich results de esos tipos, así que el bloque
+no generaba estrellas en la SERP y solo abría la pregunta de si las 12 reseñas son verificables.
+Las 12 reseñas 5★ de Google Business Profile siguen siendo reales; dejan de declararse en el markup.
+
+**Verificación.** Los 4 bloques JSON-LD siguen parseando (`Organization`, `FAQPage`, `WebSite`,
+`BreadcrumbList`). En producción con cache-bust: `cf-cache-status: MISS`, `aggregateRating` = 0
+ocurrencias, `meta description` sigue presente, 166.229 bytes (coincide con lo subido).
+
+**No desplegado — requiere acción de Jordi.** HSTS y DMARC, los otros dos hallazgos reales. El token
+de `~/.config/tres-puntos/cloudflare.env` es **solo Cache Purge**: `dns_records` devuelve
+"Authentication error" y `settings/security_header` "Unauthorized". Hacen falta permisos
+`Zone.DNS:Edit` + `Zone Settings:Edit`, o hacerlo a mano en el panel. CSP queda aplazada a propósito
+(mal configurada rompe GA4, Clarity, Turnstile y el widget Jordan; toca `report-only` primero).
+
+---
+
 ## 2026-08-30 · `28be4f0` + `7982d7f` — Citabilidad en IA (F0–F5): FAQ citable, puente comercial y 8 posts nuevos
 
 **Autorizado por Jordi.** 133 archivos por FTP. Purga: `purge_everything` + purga por URL del fix posterior.
