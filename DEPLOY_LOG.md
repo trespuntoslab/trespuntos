@@ -2,6 +2,55 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-09-04 · `5be91ed` — Red de seguridad para los `.reveal` (toda la web)
+
+**Autorizado por Jordi.** Origen: Jordi reporta que no se ven los proyectos en
+`/casos-de-negocio/`. La página estaba correcta en producción (13 casos, imágenes 200, 0 errores de
+consola, verificado en escritorio y móvil) — era caché de su navegador. Pero el diagnóstico destapó
+una fragilidad real y se arregla.
+
+**El problema.** Los bloques `.reveal` nacen con `opacity:0` en `design-system.css` y solo el
+`IntersectionObserver` de `components.js` les añade `.visible`. Si ese observer no existe, revienta o
+no dispara, el contenido queda invisible para siempre y el usuario ve un hueco vacío. Solo
+`/casos-de-negocio/` tenía protección propia (un `setTimeout` inline de 800 ms); **las otras 52
+páginas con `.reveal` no tenían ninguna**.
+
+**Archivos subidos (3).**
+
+| Archivo | Cambio |
+|---|---|
+| `js/components.js` | Observer dentro de `try/catch` + rescate a 2,5 s |
+| `css/design-system.css` | `prefers-reduced-motion` muestra los `.reveal` sin depender del JS |
+| `casos-de-negocio/index.html` | Eliminado el failsafe inline de 800 ms, ya redundante |
+
+**Detalle del failsafe.** El `setTimeout` se registra *antes* de construir el observer, para
+sobrevivir a un fallo en la construcción. A los 2,5 s comprueba si hay algún `.reveal` con ≥50% de su
+altura dentro del viewport y todavía sin `.visible`: si lo hay, el observer no funciona y revela
+todo. Si funciona, no hace nada — la animación de scroll queda intacta. El `try/catch` tapa además un
+fallo latente: sin guard, un navegador sin `IntersectionObserver` lanzaba `TypeError` y abortaba el
+resto de `initJS()`, navbar y footer incluidos.
+
+**Efecto visible.** El inline de 800 ms revelaba las 13 tarjetas de golpe aunque estuvieran fuera de
+pantalla. Al quitarlo, la rejilla recupera su *stagger* al hacer scroll.
+
+**Purga Cloudflare (by URL).** `js/components.js` (con `?v=27` y sin query — la lección del 27-may),
+`css/design-system.css` (con y sin query), `/casos-de-negocio/` y `/`. Respuesta `success: true`.
+
+**Verificación en producción** (cache-bust + `Cache-Control: no-cache`): `cf-cache-status: MISS` en
+JS y HTML; `revealObserverBroken` presente en el JS servido; regla `prefers-reduced-motion` al final
+del CSS; 0 ocurrencias del inline viejo. Funcional con Playwright: al cargar 0 tarjetas visibles (las
+13 fuera de vista, esperando), tras scroll las 6 en pantalla a opacidad 1. Home: navbar, footer y
+formulario intactos, reveal progresivo (7 de 53).
+
+Antes, en local, se probaron los tres escenarios: funcionamiento normal (animación intacta),
+`IntersectionObserver` que lanza excepción (recupera al instante) y observer que nunca dispara
+(recupera a los 2,5 s).
+
+**Nota, sin tocar:** `css/design-system.css` tiene 2 llaves `}` de cierre sobrantes (preexistente:
+231 vs 233 antes de este cambio). Hoy el parser las ignora, pero puede silenciar una regla futura.
+
+---
+
 ## 2026-09-03 · Cloudflare (sin commit) — HSTS activado + registro DMARC publicado
 
 **Autorizado por Jordi.** Cambios de infraestructura en el panel de Cloudflare, no en el repo. Jordi
