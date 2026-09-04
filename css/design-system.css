@@ -27,3 +27,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 @keyframes menuLinkSlide{0%{opacity:0;filter:blur(12px);transform:translateX(-40px) scale(.92)}60%{opacity:1;filter:blur(2px);transform:translateX(8px) scale(1.02)}100%{opacity:1;filter:blur(0);transform:translateX(0) scale(1)}}
 @keyframes menuLinkSlideRight{0%{opacity:0;filter:blur(12px);transform:translateX(40px) scale(.92)}60%{opacity:1;filter:blur(2px);transform:translateX(-8px) scale(1.02)}100%{opacity:1;filter:blur(0);transform:translateX(0) scale(1)}}
 @keyframes menuCtaPop{0%{opacity:0;filter:blur(8px);transform:scale(.8)}70%{opacity:1;filter:blur(0);transform:scale(1.05)}100%{opacity:1;filter:blur(0);transform:scale(1)}}
+/* Failsafe reveal (2026-09-04) — el contenido no debe depender solo del JS.
+   Con prefers-reduced-motion no hay animación de entrada: se muestra directo.
+   La red de seguridad por JS (rescate a 2,5 s) vive en js/components.js. */
+@media (prefers-reduced-motion:reduce){.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1 !important;transform:none !important}}
