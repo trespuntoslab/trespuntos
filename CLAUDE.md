@@ -2,6 +2,34 @@
 
 ---
 
+## 📍 SEO — Documento único de referencia (desde 09-sep-2026)
+
+**Antes de cualquier tarea SEO — análisis, informe, brief, cambio on-page — leer
+`/root/shared/seo/ESTADO-SEO.md` en el VPS (`tp-vps`).**
+
+Es la única referencia de estado SEO y existe porque hasta el 9-sep cada agente miraba una fuente
+distinta y llegaba a conclusiones contradictorias. Contiene:
+
+- **Qué fuente responde a qué pregunta.** Tráfico real → Search Console. Posición que ve el usuario →
+  DataForSEO (absoluta, móvil). Autoridad y backlinks → Semrush. Citas de IA → Semrush y
+  `geo-visibility` por separado, porque miden cosas distintas.
+- **Diccionario de métricas.** Posición GSC, orgánica real, ABSOLUTA y Semrush no son la misma cifra.
+  Para "desarrollo web a medida": Semrush dice 6, GSC dice 7,2, la absoluta en móvil es 16.
+- **Cifras oficiales del mes** y la tabla de estacionalidad (el suelo de verano son 55-80 clics/mes
+  y no es un fallo).
+- **Hechos establecidos, decisiones vigentes y frentes abiertos** con dueño.
+
+Reglas derivadas que aplican a este repo:
+- Antes de proponer contenido nuevo, cruzar `query` × `page` en Search Console. Si ya hay una página
+  nuestra en top 10, **no es un hueco de contenido**.
+- Antes de atribuir un CTR bajo al title o la meta, medir la **posición absoluta**. Con AI Overview o
+  map pack encima, el problema no es el snippet.
+- El **tráfico orgánico estimado de Semrush no se usa nunca como KPI**: es un modelo. Hoy dice 360
+  visitas/mes donde Search Console dice 62 clics.
+- `keyword-map.md` sigue siendo vinculante para propiedad de keywords y prohibiciones on-page.
+
+---
+
 ## 🔐 Sanitización de credenciales en n8n (completada 2026-05-03 noche)
 
 **Estado:** ✅ COMPLETADO. Los 9 workflows n8n están limpios + 4 env vars inyectadas en el contenedor + workflows leen tokens vía `$env.X`.
