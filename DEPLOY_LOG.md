@@ -2,6 +2,47 @@
 
 Registro cronológico de cada deploy a producción. Una entrada por subida FTP a Nominalia.
 
+## 2026-09-09 · `74b1ed9` + `86fa3c2` — Post "Tendencias de diseño web 2027" (apuesta estacional)
+
+**Autorizado por Jordi.** Es la apuesta estacional del año y la única línea del blog con retorno
+demostrado: el clúster "tendencias" hizo 196 clics entre diciembre y abril, 157 solo en feb-mar, y
+150 los hizo un único post en posición 5,5. La demanda arranca en febrero, así que había que estar
+publicado e indexado antes de diciembre.
+
+**Contexto de la decisión.** Se descartó el tema que proponía el brief anterior ("aplicaciones web a
+medida") tras comprobar cruzando `query` × `page` que la landing de desarrollo web ya rankea entre
+2,9 y 6,0 en las siete consultas del clúster con 0 clics: es zero-click bajo AI Overview, no un hueco
+de contenido. Un post nuevo habría sido el tercer activo propio en esa keyword.
+
+**Decisiones de arquitectura.** URL nueva, sin reciclar ni consolidar la de 2026. La consolidación de
+mayo (`ec58c0c`) hundió esa familia de posición 2,7 a 15,2 y no se ha recuperado, así que no se
+repite la operación.
+
+**Revisión del texto antes de maquetar.** Se eliminó una estadística inventada sin fuente en el primer
+párrafo, y se acotó el alcance de la European Accessibility Act, que se presentaba como aplicable a
+cualquier web corporativa cuando cubre servicios concretos. Se añadió nota de contraste con asesoría
+legal.
+
+**Archivos subidos (4):**
+- `blog/tendencias-de-diseno-web-2027-conversion-coste-y-percepcion-de-marca/index.html` (35.830 b)
+- `img/og/blog-tendencias-de-diseno-web-2027-conversion-coste-y-percepcion-de-marca.png` (46.508 b)
+- `sitemap.xml` (95 URLs, +1, lastmod real por archivo)
+- `blog/tendencias-de-diseno-web-2026-rendimiento-ux-y-conversion/index.html` — aviso con enlace al
+  post de 2027, para pasar parte de la autoridad de la temporada pasada
+
+**Purga Cloudflare:** by-URL, 5 URLs (artículo, sitemap, hub del blog, imagen OG, post de 2026). OK.
+
+**Verificación en producción** (cache-bust + `Cache-Control: no-cache`): artículo HTTP 200, title y H1
+correctos, canonical correcto, 7 anclas, imagen OG 200 `image/png`, sitemap con la entrada, los 6
+enlaces internos en 200, y el enlace desde el post de 2026 vivo.
+
+**Reglas cumplidas:** cero apariciones de "desarrollo web" en title y H1 (prohibición 2 del
+keyword-map), CTAs a `/iniciar-proyecto/`, sin `service-page.css`, JSON-LD BlogPosting y
+BreadcrumbList válidos, sin reclamos comerciales inventados.
+
+**Pendiente de Jordi:** solicitar indexación en Search Console (Inspección de URL → Solicitar
+indexación).
+
 ## 2026-09-04 · `5be91ed` — Red de seguridad para los `.reveal` (toda la web)
 
 **Autorizado por Jordi.** Origen: Jordi reporta que no se ven los proyectos en
